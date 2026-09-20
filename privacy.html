@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Dortus</title>
+  <meta name="description" content="Privacy policy for Dortus Atlassian Marketplace apps, including AskSpace for Confluence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="askspace.html">AskSpace</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a class="btn btn-primary" href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Privacy Policy</h1>
+      <p class="page-meta">Last updated: 19 September 2026</p>
+    </div>
+
+    <div class="prose">
+      <p>
+        This policy explains how <strong>Dortus</strong> (“we”, “us”) handles information in connection with our
+        Atlassian Marketplace apps, including <strong>AskSpace</strong>.
+      </p>
+
+      <h2>1. Who we are</h2>
+      <p>
+        Dortus is an independent software vendor publishing apps on the Atlassian Marketplace.
+        Contact: <a href="mailto:thijs.duinhouwer2002@gmail.com">thijs.duinhouwer2002@gmail.com</a>
+      </p>
+
+      <h2>2. What our apps do</h2>
+      <p>
+        AskSpace is a Confluence app built on <strong>Atlassian Forge</strong>. It lets people in a Confluence space
+        ask questions, post answers, vote, mark a best answer, and receive in-app notifications.
+      </p>
+
+      <h2>3. Where data is stored</h2>
+      <p>
+        AskSpace runs entirely inside Atlassian’s cloud (Forge). Questions, answers, votes, settings, and
+        in-app notifications are stored using Forge app storage in your Atlassian site.
+        <strong>We do not operate a separate application server for AskSpace, and we do not send app content to Dortus’s own servers.</strong>
+      </p>
+      <p>
+        AskSpace is eligible for Atlassian’s <em>Runs on Atlassian</em> program: there is no required data egress
+        to Dortus for normal use of the app.
+      </p>
+
+      <h2>4. What data the app processes</h2>
+      <p>Depending on how you use AskSpace, the app may process:</p>
+      <ul>
+        <li>Question and answer text you enter</li>
+        <li>Votes and “best answer” marks</li>
+        <li>Space settings (for example who may ask or answer)</li>
+        <li>Atlassian account identifiers needed to show authors and enforce permissions</li>
+        <li>Display names and avatar URLs provided by Atlassian APIs, so authors can be shown in the UI</li>
+        <li>In-app notification records (for example that someone answered your question)</li>
+      </ul>
+      <p>
+        We do not ask for payment card details inside the app. Marketplace billing is handled by Atlassian.
+      </p>
+
+      <h2>5. Why we process it</h2>
+      <p>Only to provide the app features you enable: storing Q&amp;A content, permissions, voting, and notifications.</p>
+
+      <h2>6. Sharing</h2>
+      <p>
+        We do not sell personal data. App data stays in your Atlassian environment under Atlassian’s platform
+        and your organisation’s Atlassian admin controls. We may see limited information if you contact support
+        (for example your email and what you write to us).
+      </p>
+
+      <h2>7. Retention</h2>
+      <p>
+        Content remains while the app is installed and the data is kept in Forge storage for your site.
+        If you uninstall the app or delete content in the product, Atlassian’s uninstall/storage rules apply.
+        Support emails we receive are kept only as long as needed to help you.
+      </p>
+
+      <h2>8. Your rights</h2>
+      <p>
+        Depending on where you live, you may have rights to access, correct, or delete personal data.
+        For data inside Confluence/Forge, start with your Atlassian site admin.
+        For questions to Dortus, email us at the address above.
+      </p>
+
+      <h2>9. Children</h2>
+      <p>Our apps are intended for workplace use, not for children.</p>
+
+      <h2>10. Changes</h2>
+      <p>We may update this policy. The “Last updated” date at the top will change when we do.</p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Dortus<br />
+        <a href="mailto:thijs.duinhouwer2002@gmail.com">thijs.duinhouwer2002@gmail.com</a><br />
+        Website: <a href="index.html">Dortus home</a> · <a href="support.html">Support</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>© Dortus</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="askspace.html">AskSpace</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector(".site-header");
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+</body>
+</html>

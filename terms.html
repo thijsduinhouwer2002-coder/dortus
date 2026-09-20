@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service — Dortus</title>
+  <meta name="description" content="Terms of service for Dortus Atlassian Marketplace apps, including AskSpace." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="askspace.html">AskSpace</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html" aria-current="page">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Terms of Service</h1>
+      <p class="page-meta">Last updated: 19 September 2026</p>
+    </div>
+
+    <div class="prose">
+      <p>These terms apply to Dortus apps on the Atlassian Marketplace, including AskSpace.</p>
+
+      <h2>1. The service</h2>
+      <p>
+        AskSpace is provided as an Atlassian Forge app. Availability depends on Atlassian Cloud and Forge.
+        Features may change as we improve the product.
+      </p>
+
+      <h2>2. Your responsibilities</h2>
+      <p>
+        You (or your organisation) are responsible for how the app is used on your Atlassian site, including
+        the content people post and who you allow to ask or answer.
+      </p>
+
+      <h2>3. Marketplace billing</h2>
+      <p>Paid plans are billed through Atlassian Marketplace under Atlassian’s customer agreement with you.</p>
+
+      <h2>4. No warranty</h2>
+      <p>
+        The apps are provided “as is”. We work to keep them reliable, but we do not promise uninterrupted
+        service or that they will meet every need.
+      </p>
+
+      <h2>5. Liability</h2>
+      <p>
+        To the fullest extent allowed by law, Dortus is not liable for indirect or consequential damages
+        arising from use of the apps. Our total liability for a claim is limited to the fees you paid for the
+        app through Atlassian in the three months before the claim.
+      </p>
+
+      <h2>6. Support</h2>
+      <p>
+        Support is available via <a href="support.html">our support page</a> and
+        <a href="mailto:thijs.duinhouwer2002@gmail.com">thijs.duinhouwer2002@gmail.com</a>.
+      </p>
+
+      <h2>7. Contact</h2>
+      <p><a href="mailto:thijs.duinhouwer2002@gmail.com">thijs.duinhouwer2002@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>© Dortus</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="askspace.html">AskSpace</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector(".site-header");
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support — Dortus</title>
+  <meta name="description" content="Get support for Dortus Atlassian apps including AskSpace. Email a real person with your site and issue details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="askspace.html">AskSpace</a>
+        <a href="support.html" aria-current="page">Support</a>
+        <a class="nav-hide-sm" href="privacy.html">Privacy</a>
+        <a class="btn btn-primary" href="mailto:thijs.duinhouwer2002@gmail.com">Email us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <p class="section-kicker">Support</p>
+      <h1>We’re here to help</h1>
+      <p class="page-meta">Dortus publishes AskSpace and future Atlassian apps. Support is handled by email.</p>
+    </div>
+
+    <div class="prose">
+      <p>
+        For install issues, permissions questions, billing through Marketplace, or a suspected bug,
+        email us with as much context as you can. We reply as a small vendor — usually within one or two business days.
+      </p>
+
+      <div class="support-block">
+        <p class="section-kicker">Email</p>
+        <a class="mail" href="mailto:thijs.duinhouwer2002@gmail.com">thijs.duinhouwer2002@gmail.com</a>
+      </div>
+
+      <h2>What to include</h2>
+      <ul>
+        <li>Your Atlassian site URL (for example <code>your-company.atlassian.net</code>)</li>
+        <li>The app name (AskSpace) and whether you are on a trial or paid plan</li>
+        <li>The Confluence space key if the issue is space-specific</li>
+        <li>What you expected, what happened, and any screenshots</li>
+      </ul>
+
+      <h2>Privacy and terms</h2>
+      <p>
+        How AskSpace handles data:
+        <a href="privacy.html">Privacy Policy</a>.
+        Use of the apps:
+        <a href="terms.html">Terms of Service</a>.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        AskSpace runs on Atlassian Forge and is eligible for Runs on Atlassian.
+        Report security concerns to the same email address with “Security” in the subject line.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Atlassian Marketplace vendor.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="askspace.html">AskSpace</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector(".site-header");
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+</body>
+</html>
