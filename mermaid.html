@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mermaid Live Preview - diagrams from text in Confluence · Dortus</title>
+  <meta name="description" content="Mermaid Live Preview is a Confluence macro by Dortus. Type a flowchart, sequence diagram or timeline in Mermaid syntax and watch it draw next to the text. The source stays editable in the page." />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Mermaid Live Preview - diagrams from text in Confluence" />
+  <meta property="og:description" content="Type the diagram, watch it draw. Flowcharts, sequence diagrams and timelines inside a Confluence page." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-hide-sm" href="index.html">Dortus</a>
+        <a href="arrears.html">Shopify</a>
+        <a href="atlassian.html" aria-current="page">Atlassian</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="mailto:dortus.support@gmail.com?subject=Mermaid%20Live%20Preview%20access">Ask for access <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">Mermaid Live Preview &middot; Confluence macro</p>
+          <h1 class="enter enter-1">Type the diagram. Watch it draw itself.</h1>
+          <p class="lede enter enter-2">
+            Flowcharts, sequence diagrams and timelines inside a Confluence page. The preview
+            updates next to the text while you write, and the text stays in the page.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="mailto:dortus.support@gmail.com?subject=Mermaid%20Live%20Preview%20access">Ask for access <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="atlassian.html">Both Confluence apps</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Running in Confluence, listing in prep</span></p>
+        </div>
+
+        <div class="enter enter-3">
+          <div class="mock">
+            <div class="mock-bar">Diagram macro: source and live preview</div>
+            <div class="mock-split">
+              <pre class="mock-code">flowchart TD
+  A[Order placed]
+  A --&gt; B{Credit ok?}
+  B -- yes --&gt; C[Fulfil]
+  B -- no --&gt; D[Hold account]</pre>
+              <div class="mock-render" role="img" aria-label="Flowchart: order placed, then a credit check, then either fulfil or hold the account">
+                <span class="mock-node">Order placed</span>
+                <span class="mock-link" aria-hidden="true"></span>
+                <span class="mock-node">Credit ok?</span>
+                <span class="mock-link" aria-hidden="true"></span>
+                <span class="mock-node mock-node-alt">Fulfil</span>
+                <span class="mock-node">Hold account</span>
+              </div>
+            </div>
+          </div>
+          <p class="mock-note">
+            Layout of the macro, drawn in CSS. Product screenshots go up with the Marketplace
+            listing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Diagrams rot because they are pictures</h2>
+          <p class="lede">
+            Someone exports a flowchart from a drawing tool, pastes the image in, and leaves the
+            company. The process changes and nobody can edit the picture. A Mermaid diagram is
+            text: change one line, the drawing follows.
+          </p>
+        </div>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <h3>Write it in the page</h3>
+            <p>Add the macro, type Mermaid syntax, see the diagram appear beside it as you type.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>Keep it editable</h3>
+            <p>No round trip to a drawing tool and no orphan PNG in an attachment list.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>Step back safely</h3>
+            <p>Earlier versions of the source are kept, so a bad edit is not a lost diagram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it draws -->
+    <section class="band band-tint">
+      <div class="wrap split split-tight">
+        <div>
+          <h2 class="reveal">Three shapes cover most pages</h2>
+          <p class="lede reveal reveal-1" style="margin: 0.9rem 0 1.4rem">
+            Not every diagram type in Mermaid, the three that runbooks and integration docs
+            actually need.
+          </p>
+          <ul class="rows reveal reveal-1">
+            <li>
+              <b>Flowchart</b>
+              <p>Decisions, branches and handovers. The diagram most runbooks are missing.</p>
+            </li>
+            <li>
+              <b>Sequence</b>
+              <p>Who calls whom, in order. Useful for the integration you keep re-explaining.</p>
+            </li>
+            <li>
+              <b>Timeline</b>
+              <p>Phases and milestones, without dragging boxes into place by hand.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal reveal-2">
+          <div class="mock">
+            <div class="mock-bar">Sequence source</div>
+            <pre class="mock-code">sequenceDiagram
+  Buyer-&gt;&gt;Store: Order on net 30
+  Store-&gt;&gt;Arrears: Payment schedule
+  Arrears-&gt;&gt;Buyer: Reminder at day 31
+  Buyer-&gt;&gt;Store: Bank transfer</pre>
+          </div>
+          <p class="mock-note">Same macro, sequence syntax.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forge trust -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Rendered in your site, by a Forge app</h2>
+          <p class="lede">
+            The macro runs on Atlassian Forge. Diagram source and version history live in Forge
+            app storage in your cloud site. Rendering happens in the browser and in the Forge
+            environment, so no diagram content is sent to Dortus or to a third party.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge macro</dd>
+          </div>
+          <div>
+            <dt>Storage</dt>
+            <dd>Forge app storage, your site</dd>
+          </div>
+          <div>
+            <dt>Syntax</dt>
+            <dd>Mermaid, kept as page text</dd>
+          </div>
+          <div>
+            <dt>History</dt>
+            <dd>Earlier versions of the source</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="privacy.html">What the macro stores <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <section class="band band-brand">
+      <div class="wrap wrap-narrow">
+        <h2 class="reveal">Running today, listing on the way</h2>
+        <p class="lede reveal reveal-1" style="margin-top: 0.9rem">
+          Mermaid Live Preview works in Confluence now. The public Marketplace listing under the
+          Dortus vendor account is still being prepared, so there is no install link here yet.
+          Email us for early access or a look at it.
+        </p>
+        <div class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-light" href="mailto:dortus.support@gmail.com?subject=Mermaid%20Live%20Preview%20early%20access">Email Dortus <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="askspace.html">See AskSpace</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
+        <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="atlassian.html">Confluence apps</a></li>
+          <li><a href="askspace.html">AskSpace</a></li>
+          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Shopify</h2>
+        <ul>
+          <li><a href="arrears.html">Arrears</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an
+        open source project. Dortus is not affiliated with these companies or projects.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arrears - collections for Shopify B2B · Dortus</title>
+  <meta name="description" content="Arrears turns the payment terms in your Shopify store into a collections desk: aging, statement PDFs, reminder sequences, cash application oldest due first, and credit holds at B2B checkout." />
+  <meta name="theme-color" content="#004c3f" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Arrears - collections for Shopify B2B" />
+  <meta property="og:description" content="See who owes what, send statements and reminders, apply bank payments across open invoices, hold accounts over their credit limit." />
+  <meta property="og:image" content="assets/feature-media.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="shopify">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-hide-sm" href="index.html">Dortus</a>
+        <a href="arrears.html" aria-current="page">Shopify</a>
+        <a href="atlassian.html">Atlassian</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#walkthrough">Watch the demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Shopify world, full bleed green -->
+    <section class="world-hero">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 7h16l-1.2 13H5.2L4 7Z" stroke-linejoin="round" />
+              <path d="M9 7V5.6A3 3 0 0 1 15 5.6V7" stroke-linecap="round" />
+            </svg>
+            Arrears for Shopify B2B
+          </p>
+          <h1 class="enter enter-1">Net 30 means nothing until someone checks day 31.</h1>
+          <p class="lede enter enter-2">
+            Shopify stores your companies and payment terms. It will not tell you who is late,
+            write the reminder, or stop the next order on credit. Arrears does that, in the
+            admin, on your own data.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#walkthrough">Watch the walkthrough <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="mailto:dortus.support@gmail.com?subject=Arrears%20for%20Shopify%20B2B">Ask for early access</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">In Shopify App Store review</span></p>
+        </div>
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="assets/01-aging.png" alt="Arrears aging screen: total outstanding of 23,295 dollars split across current, 1-30, 31-60, 61-90 and 90 plus buckets" width="1600" height="2057" />
+          </span>
+          <figcaption><strong>Day one.</strong> Aging built from the payment schedules already in your store. No import, no parallel ledger.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- The video gets a band of its own -->
+    <section class="band band-dark" id="walkthrough">
+      <div class="wrap">
+        <div class="head" style="margin-bottom: 1.6rem">
+          <h2>Watch a full walkthrough</h2>
+          <p class="lede">
+            One seeded store, every screen in order: aging, statement, reminder, payment, hold.
+            Recorded in the real app, no slides.
+          </p>
+        </div>
+        <figure class="video reveal">
+          <div class="video-inner">
+            <iframe
+              src="https://www.youtube.com/embed/Ncq521XnSyM?rel=0"
+              title="Arrears walkthrough: collections for Shopify B2B"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+        </figure>
+        <p class="small" style="margin-top: 0.9rem">
+          Prefer the direct link? <a href="https://youtu.be/Ncq521XnSyM">Open the walkthrough on YouTube</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- What it does, as plain rows -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Five jobs, one desk</h2>
+          <p class="lede">
+            This is the whole product. If you need something outside this list, say so before
+            you install and we will tell you straight.
+          </p>
+        </div>
+        <ul class="rows reveal reveal-1">
+          <li>
+            <b>Aging</b>
+            <p>Total outstanding per company, split into current, 1-30, 31-60, 61-90 and 90 plus. Read from Shopify payment schedules.</p>
+          </li>
+          <li>
+            <b>Statements</b>
+            <p>A statement PDF per company with aging summary and open lines. Download it, or email it from the company desk.</p>
+          </li>
+          <li>
+            <b>Reminders</b>
+            <p>A Ready queue of who to chase today, in sequence up to final notice. Every send is logged with the exact message.</p>
+          </li>
+          <li>
+            <b>Cash application</b>
+            <p>One bank transfer, allocated across open invoices, oldest due first. Partials stay correct in Arrears.</p>
+          </li>
+          <li>
+            <b>Credit holds</b>
+            <p>Set a limit per company. Over the limit, B2B checkout becomes a draft order instead of new debt.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Real screens -->
+    <section class="band band-tint">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>The screens, not a mockup</h2>
+          <p class="lede">
+            Captured in the running app on a store seeded with realistic B2B orders and terms.
+          </p>
+        </div>
+        <div class="shots">
+          <figure class="frame reveal">
+            <span class="frame-media">
+              <img src="assets/02-company.png" alt="Arrears company desk with balance, statement, payment and hold actions for Harbor Supplies" width="1600" height="2057" loading="lazy" />
+            </span>
+            <figcaption><strong>Company desk.</strong> Balance, open lines, and every action for one account in one place.</figcaption>
+          </figure>
+          <figure class="frame reveal reveal-1">
+            <span class="frame-media">
+              <img src="assets/03-statement-pdf.png" alt="Arrears statement PDF showing aging summary and open invoice lines" width="1600" height="1200" loading="lazy" />
+            </span>
+            <figcaption><strong>Statement.</strong> Aging summary plus open lines, ready to send or attach.</figcaption>
+          </figure>
+          <figure class="frame reveal">
+            <span class="frame-media">
+              <img src="assets/04-reminders-ready.png" alt="Arrears Ready queue listing overdue companies with reminder stage and final notice" width="1600" height="2057" loading="lazy" />
+            </span>
+            <figcaption><strong>Reminders.</strong> Who is due a nudge today, and which stage they are on.</figcaption>
+          </figure>
+          <figure class="frame reveal reveal-1">
+            <span class="frame-media">
+              <img src="assets/05-payments.png" alt="Arrears payment screen allocating one bank payment across open invoices" width="1600" height="2057" loading="lazy" />
+            </span>
+            <figcaption><strong>Payments.</strong> Enter the bank amount, let it land on the oldest invoices first.</figcaption>
+          </figure>
+          <figure class="frame reveal">
+            <span class="frame-media">
+              <img src="assets/06-holds.png" alt="Arrears credit limit screen with hold and release controls per company" width="1600" height="2057" loading="lazy" />
+            </span>
+            <figcaption><strong>Holds.</strong> A limit per company, and a log of who held or released what.</figcaption>
+          </figure>
+          <div class="card reveal reveal-1">
+            <span class="card-mark" aria-hidden="true">&#8250;</span>
+            <h3>Everything lands on one timeline</h3>
+            <p>
+              Statements, reminders, payments and holds are written to one activity log per
+              shop. The next person can see what already happened without asking you.
+            </p>
+            <p style="margin-top: 0.9rem">
+              <a href="mailto:dortus.support@gmail.com?subject=Arrears%20walkthrough">Ask for a look at your own data</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform truth -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>No second ledger to keep in sync</h2>
+          <p class="lede">
+            Arrears reads companies, locations, orders and payment terms through the Shopify
+            Admin API. Your terms stay where you set them.
+          </p>
+        </div>
+        <dl class="facts facts-3 reveal reveal-1">
+          <div>
+            <dt>Source of truth</dt>
+            <dd>Shopify payment schedules</dd>
+          </div>
+          <div>
+            <dt>Install</dt>
+            <dd>Embedded app, Shopify OAuth</dd>
+          </div>
+          <div>
+            <dt>Hosting</dt>
+            <dd>Fly.io, Amsterdam region</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd>Sent through Resend</dd>
+          </div>
+          <div>
+            <dt>Billing</dt>
+            <dd>Shopify, no card details in app</dd>
+          </div>
+          <div>
+            <dt>Data requests</dt>
+            <dd>GDPR webhooks implemented</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="privacy.html">Read what Arrears stores <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="band" id="pricing">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Free until it is worth paying for</h2>
+          <p class="lede">
+            The free plan is a working desk for a few accounts, not a locked preview. Paid plans
+            add scale and automation. Charges run through Shopify billing.
+          </p>
+        </div>
+        <div class="plans">
+          <div class="plan reveal">
+            <h3>Free</h3>
+            <p class="plan-price">$0</p>
+            <ul>
+              <li>Up to 3 companies</li>
+              <li>Aging, statement PDF and email</li>
+              <li>Manual reminders</li>
+              <li>Cash application and credit holds</li>
+            </ul>
+          </div>
+          <div class="plan plan-featured reveal reveal-1">
+            <h3>Starter</h3>
+            <p class="plan-price">$29 <small>/ month</small></p>
+            <ul>
+              <li>Unlimited companies</li>
+              <li>Everything in Free</li>
+              <li>Daily auto-send reminders</li>
+              <li>14 day trial</li>
+            </ul>
+          </div>
+          <div class="plan reveal reveal-2">
+            <h3>Pro</h3>
+            <p class="plan-price">$59 <small>/ month</small></p>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>Automatic hold over the credit limit</li>
+              <li>14 day trial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope -->
+    <section class="band band-grey">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>What Arrears is not</h2>
+          <p class="lede">Knowing the edges saves you an install.</p>
+        </div>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <h3>Not a wholesale suite</h3>
+            <p>No price lists, no order forms, no catalogue. Arrears starts once the order exists.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>Not an invoicing platform</h3>
+            <p>No legal invoice numbering, no PEPPOL, no e-invoicing compliance. Statements, not tax documents.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>Not just extra emails</h3>
+            <p>Reminders are one part. The value is the desk around them: aging, allocation, holds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-brand">
+      <div class="wrap wrap-narrow" style="text-align: left">
+        <h2 class="reveal">Want it on your own terms data?</h2>
+        <p class="lede reveal reveal-1" style="margin-top: 0.9rem">
+          Arrears runs in production today and is in review for the Shopify App Store. Email us
+          for a walkthrough, early access, or the listing link the day it goes live.
+        </p>
+        <div class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-light" href="mailto:dortus.support@gmail.com?subject=Arrears%20walkthrough">Email Dortus <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="support.html">Support and response times</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
+        <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Shopify</h2>
+        <ul>
+          <li><a href="arrears.html">Arrears</a></li>
+          <li><a href="#walkthrough">Walkthrough video</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="atlassian.html">Confluence apps</a></li>
+          <li><a href="askspace.html">AskSpace</a></li>
+          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Shopify is a trademark of Shopify Inc. Atlassian and Confluence are trademarks
+        of Atlassian Pty Ltd. Dortus is not affiliated with either company.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

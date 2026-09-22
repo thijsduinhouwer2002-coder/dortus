@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dortus for Atlassian Confluence - AskSpace and Mermaid Live Preview</title>
+  <meta name="description" content="Two Forge apps for Confluence from Dortus: AskSpace gives each space its own question and answer board, Mermaid Live Preview draws diagrams from text in the page. Data stays in your Atlassian site." />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Dortus for Atlassian Confluence" />
+  <meta property="og:description" content="AskSpace and Mermaid Live Preview: two small Forge apps that keep answers and diagrams inside Confluence." />
+  <meta property="og:image" content="assets/01-question-list-app.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-hide-sm" href="index.html">Dortus</a>
+        <a href="arrears.html">Shopify</a>
+        <a href="atlassian.html" aria-current="page">Atlassian</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#apps">See the apps <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M5 4h9l5 5v11H5V4Z" stroke-linejoin="round" />
+              <path d="M14 4v5h5" stroke-linejoin="round" />
+              <path d="M9 13h6M9 16.5h4" stroke-linecap="round" />
+            </svg>
+            Dortus for Confluence
+          </p>
+          <h1 class="enter enter-1">Confluence should already hold the answer.</h1>
+          <p class="lede enter enter-2">
+            Instead the answer sits in a chat thread and the flowchart is a PNG nobody can edit.
+            Two Forge apps fix exactly that, one space at a time.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#apps">Pick an app <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="mailto:dortus.support@gmail.com?subject=Dortus%20Confluence%20apps">Ask for access</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Runs on Atlassian, no Dortus server</span></p>
+        </div>
+
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="assets/01-question-list-app.png" alt="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" width="797" height="837" />
+          </span>
+          <figcaption><strong>AskSpace.</strong> A question list that lives in the space, with status and search where people already work.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- The two doorways inside this world -->
+    <section class="band band-tint" id="apps">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Two apps, two jobs</h2>
+          <p class="lede">
+            Both are Forge apps. Both keep their data inside your Atlassian cloud site. Neither
+            one asks you to move your documentation anywhere else.
+          </p>
+        </div>
+
+        <div class="cols cols-2">
+          <div class="card reveal">
+            <span class="card-mark" aria-hidden="true">Q</span>
+            <h3>AskSpace</h3>
+            <p>
+              A question and answer board per Confluence space. Ask, answer, vote, and mark one
+              best answer that the asker cannot award to itself. Who may ask and who may answer
+              are two separate settings.
+            </p>
+            <p style="margin: 1rem 0"><span class="status">Submitted, pending Atlassian review</span></p>
+            <p class="btns">
+              <a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+
+          <div class="card reveal reveal-1">
+            <span class="card-mark" aria-hidden="true">&#9651;</span>
+            <h3>Mermaid Live Preview</h3>
+            <p>
+              A macro for flowcharts, sequence diagrams and timelines. You type Mermaid syntax,
+              the diagram draws itself next to the text, and the source stays in the page so the
+              next person can edit it.
+            </p>
+            <p style="margin: 1rem 0"><span class="status">Running in Confluence, listing in prep</span></p>
+            <p class="btns">
+              <a class="btn btn-primary" href="mermaid.html">About Mermaid Live Preview <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust: Forge -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Your content never leaves your site</h2>
+          <p class="lede">
+            Both apps run on Atlassian Forge. Questions, answers, votes, settings and diagram
+            source live in Forge app storage inside your own cloud site. Dortus operates no
+            server for them and receives no app content.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge</dd>
+          </div>
+          <div>
+            <dt>Storage</dt>
+            <dd>Forge app storage, your site</dd>
+          </div>
+          <div>
+            <dt>Egress</dt>
+            <dd>None required for normal use</dd>
+          </div>
+          <div>
+            <dt>Billing</dt>
+            <dd>Atlassian Marketplace</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="privacy.html">Read the data handling <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Honest status -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Where both apps stand today</h2>
+          <p class="lede">No launch theatre. This is the actual state.</p>
+        </div>
+        <ul class="rows reveal reveal-1">
+          <li>
+            <b>AskSpace</b>
+            <p>Published as a public app under the Dortus vendor account and waiting on Atlassian review. Email us and you get the install path now.</p>
+          </li>
+          <li>
+            <b>Mermaid Live Preview</b>
+            <p>Running in Confluence today. The public Marketplace listing is still being prepared, so there is no install link on this page yet.</p>
+          </li>
+          <li>
+            <b>Support</b>
+            <p>One inbox, answered by the person who wrote the code. First reply within one business day, Monday to Friday.</p>
+          </li>
+        </ul>
+        <div class="btns reveal reveal-2" style="margin-top: 1.8rem">
+          <a class="btn btn-primary" href="mailto:dortus.support@gmail.com?subject=Confluence%20app%20access">Email Dortus <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="support.html">Support page</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
+        <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="askspace.html">AskSpace</a></li>
+          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Shopify</h2>
+        <ul>
+          <li><a href="arrears.html">Arrears</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Confluence and Forge are trademarks of Atlassian Pty Ltd. Shopify is a
+        trademark of Shopify Inc. Dortus is not affiliated with either company.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
