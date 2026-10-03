@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data &amp; privacy · AskSpace docs · Dortus</title>
+  <meta name="description" content="Where AskSpace stores data, what it stores, which permissions it asks for, and why Dortus cannot see your content.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dortus">
+  <meta property="og:title" content="Data &amp; privacy · AskSpace docs · Dortus">
+  <meta property="og:description" content="Where AskSpace stores data, what it stores, which permissions it asks for, and why Dortus cannot see your content.">
+  <meta property="og:url" content="https://dortus.com/docs/askspace/data-privacy.html">
+  <meta property="og:image" content="https://dortus.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dortus: calm, focused apps for Confluence">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg><span>Dortus</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+        <li><a href="../../askspace.html">AskSpace</a></li>
+        <li><a href="../../docs/askspace/" aria-current="true">Docs</a></li>
+        <li><a href="../../support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container docs">
+      <nav class="docs-nav" aria-label="AskSpace docs">
+        <p class="docs-nav-title">AskSpace docs</p>
+        <ul>
+            <li><a href="./">Getting started</a></li>
+            <li><a href="admin-guide.html">Admin guide</a></li>
+            <li><a href="user-guide.html">User guide</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="data-privacy.html" aria-current="page">Data &amp; privacy</a>
+              <ul class="sub">
+                <li><a href="#where-is-data-stored">Where is data stored?</a></li>
+                <li><a href="#what-does-askspace-store">What does AskSpace store?</a></li>
+                <li><a href="#permissions">What permissions does the app ask for?</a></li>
+                <li><a href="#can-dortus-see-our-content">Can Dortus see our content?</a></li>
+              </ul></li>
+        </ul>
+        <ul class="docs-nav-extra">
+          <li><a href="../../changelog.html">Changelog</a></li>
+          <li><a href="../../support.html">Support</a></li>
+        </ul>
+      </nav>
+      <article class="docs-article">
+        <div class="prose">
+        <h1>Data &amp; privacy</h1>
+        <h2 id="where-is-data-stored">Where is data stored?<a class="anchor" href="#where-is-data-stored" aria-label="Link to this section">#</a></h2>
+        <p>In Atlassian Forge storage for your site. AskSpace has no external servers and sends no data outside Atlassian (Runs on Atlassian).</p>
+
+        <h2 id="what-does-askspace-store">What does AskSpace store?<a class="anchor" href="#what-does-askspace-store" aria-label="Link to this section">#</a></h2>
+        <p>Questions, answers, votes, the best-answer mark, tags, space settings (on/off, who may ask, answer and moderate) and in-app notifications.</p>
+        <p>To show authors and check permissions, it uses Atlassian account IDs and display names. Avatars are shown as initials; no profile photos are loaded.</p>
+
+        <h2 id="permissions">What permissions does the app ask for?<a class="anchor" href="#permissions" aria-label="Link to this section">#</a></h2>
+        <!-- TODO: the move from Questions for Confluence Cloud adds read access to Confluence content.
+             Add it to this list as soon as that permission ships in the app manifest. -->
+        <ul>
+          <li>Its own storage.</li>
+          <li>Reading spaces, to check who is a space admin.</li>
+          <li>Reading users, to show names.</li>
+          <li>Reading groups, for group-based permissions.</li>
+        </ul>
+
+        <h2 id="can-dortus-see-our-content">Can Dortus see our content?<a class="anchor" href="#can-dortus-see-our-content" aria-label="Link to this section">#</a></h2>
+        <p>No. We have no access to your Forge storage. The app only logs technical information such as timings and error codes, never question or answer text.</p>
+        <p>See also the <a href="../../privacy.html">Privacy Policy</a>.</p>
+        </div>
+        <aside class="still-stuck" aria-label="Help">
+          <p>Still stuck? <a href="../../support.html">Contact support</a></p>
+        </aside>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-brand"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg>Dortus <span>· Atlassian Marketplace apps</span></p>
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+          <li><a href="../../askspace.html">AskSpace</a></li>
+          <li><a href="../../docs/askspace/">Docs</a></li>
+          <li><a href="../../support.html">Support</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+          <li><a href="../../changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
+           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
+    </div>
+  </footer>
+</body>
+</html>

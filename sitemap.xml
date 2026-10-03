@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Absolute URLs assume the site runs on https://dortus.com. Change them if it lives elsewhere. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dortus.com/</loc></url>
+  <url><loc>https://dortus.com/askspace.html</loc></url>
+  <url><loc>https://dortus.com/docs/askspace/</loc></url>
+  <url><loc>https://dortus.com/docs/askspace/admin-guide.html</loc></url>
+  <url><loc>https://dortus.com/docs/askspace/user-guide.html</loc></url>
+  <url><loc>https://dortus.com/docs/askspace/faq.html</loc></url>
+  <url><loc>https://dortus.com/docs/askspace/data-privacy.html</loc></url>
+  <url><loc>https://dortus.com/support.html</loc></url>
+  <url><loc>https://dortus.com/changelog.html</loc></url>
+  <url><loc>https://dortus.com/privacy.html</loc></url>
+  <url><loc>https://dortus.com/terms.html</loc></url>
+</urlset>

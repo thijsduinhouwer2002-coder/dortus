@@ -1,244 +1,182 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AskSpace - question and answer per Confluence space · Dortus</title>
-  <meta name="description" content="AskSpace gives each Confluence space its own question and answer board: ask, answer, vote, one best answer, and separate permissions for asking and answering. A Forge app, data stays in your site." />
-  <meta name="theme-color" content="#0052cc" />
-  <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="AskSpace - question and answer per Confluence space" />
-  <meta property="og:description" content="Keep the question and the answer in the space where the work already happens. Built on Atlassian Forge." />
-  <meta property="og:image" content="assets/01-question-list-app.png" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AskSpace · Q&amp;A for each Confluence space · Dortus</title>
+  <meta name="description" content="AskSpace: Q&amp;A for each Confluence space, with separate ask and answer permissions. Built on Atlassian Forge.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dortus">
+  <meta property="og:title" content="AskSpace · Q&amp;A for each Confluence space · Dortus">
+  <meta property="og:description" content="AskSpace: Q&amp;A for each Confluence space, with separate ask and answer permissions. Built on Atlassian Forge.">
+  <meta property="og:url" content="https://dortus.com/askspace.html">
+  <meta property="og:image" content="https://dortus.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dortus: calm, focused apps for Confluence">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
-<body data-world="atlassian">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-hide-sm" href="index.html">Dortus</a>
-        <a href="arrears.html">Shopify</a>
-        <a href="atlassian.html" aria-current="page">Atlassian</a>
-        <a href="support.html">Support</a>
-        <a class="btn btn-primary" href="mailto:dortus.support@gmail.com?subject=AskSpace%20access">Ask for access <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    <div class="container header-inner">
+      <a class="brand" href="./"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg><span>Dortus</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+        <li><a href="askspace.html" aria-current="page">AskSpace</a></li>
+        <li><a href="docs/askspace/">Docs</a></li>
+        <li><a href="support.html">Support</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Confluence app by Dortus</p>
+        <h1>AskSpace</h1>
+        <p class="lead">Q&amp;A for each Confluence space, with separate ask and answer permissions.</p>
+        <div class="actions">
+          <!-- AFTER-APPROVAL: when AskSpace is live on the Atlassian Marketplace, add this button first
+               and change the docs button below to btn-secondary:
+          <a class="btn btn-primary" href="[MARKETPLACE-URL]">Get it on the Atlassian Marketplace</a>
+          -->
+          <a class="btn btn-primary" href="docs/askspace/">Read the docs</a>
+        </div>
+        <!-- AFTER-APPROVAL: remove the line below. -->
+        <p class="status">Coming soon to the Atlassian Marketplace.</p>
+        <figure class="shot hero-shot"><img src="assets/screenshots/askspace-question-list.png" alt="AskSpace question list in the Confluence space Platform Engineering" width="1840" height="900" fetchpriority="high" decoding="async"></figure>
+      </div>
+    </section>
 
-    <section class="world-hero world-hero-blue">
-      <div class="wrap split">
+    <section class="section section-soft problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="narrow">
+          <h2 id="problem-title">The same questions, again and again</h2>
+          <p>Someone asks in chat, someone answers, and next month the next person asks the same thing. The answer never ends up where people look. AskSpace keeps questions and answers in the Confluence space they belong to, so the next person finds them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="features-title">Features</h2>
+        </div>
+        <ul class="features" role="list">
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-turn-on.png" alt="The Turn on Q&amp;A button in a Confluence space" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Turn it on per space</h3>
+            <p>A space admin turns on Q&amp;A with one click. Spaces that don’t need it stay untouched.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-permissions.png" alt="AskSpace space settings with separate ask and answer permissions" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Separate ask and answer permissions</h3>
+            <p>For each space, choose who may ask and who may answer: everyone in the space, space admins only, or chosen Confluence groups.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-moderators.png" alt="AskSpace space settings with moderator groups" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Moderators</h3>
+            <p>Space admins are always moderators. Add groups that may edit or remove any question or answer and choose the best answer. Edits show a small “Edited by a moderator” label, and the author is notified.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-best-answer.png" alt="A question with votes and a best answer" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>One best answer, plus votes</h3>
+            <p>The person who asked picks the best answer, but never their own. Moderators can pick or clear it too. Everyone can vote answers up or down.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-search.png" alt="AskSpace search results with a match in an answer" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Search that reads the answers</h3>
+            <p>Search looks through titles, details and answers. If a match is only in an answer, AskSpace tells you.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-similar-questions.png" alt="Similar questions shown while typing a new question" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Similar questions while you type</h3>
+            <p>Before posting, people see up to three similar questions, so duplicates don’t pile up.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-tags.png" alt="Questions filtered by one tag" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Tags</h3>
+            <p>Add up to three tags per question, click a tag to see every question with it, and share the filtered list.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-page-block.png" alt="The AskSpace block on a Confluence page" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>A block for any page</h3>
+            <p>Add the AskSpace block to a space home or onboarding page. It shows recent, unanswered or solved questions, optionally for one tag, with an “Ask a question” button.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-formatting.png" alt="An answer with a link, bold text, code and a list" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>Links and simple formatting</h3>
+            <p>Every question has its own link to share. Answers support links, bold, inline code, code blocks and lists.</p>
+          </li>
+          <li class="feature">
+            <figure class="shot"><img src="assets/screenshots/askspace-question-page.png" alt="A question page with answers and no points or badges" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <h3>No points, no leaderboards</h3>
+            <p>AskSpace is about answers, not scores.</p>
+          </li>
+          <li class="feature feature-wide">
+            <figure class="shot"><img src="assets/screenshots/askspace-import-export.png" alt="AskSpace import and export settings with an import preview" width="1840" height="900" loading="lazy" decoding="async"></figure>
+            <div>
+              <h3>Never locked in</h3>
+              <p>Import questions from a CSV file or from Questions for Confluence (Server/Data Center), and export everything to CSV whenever you want. Moving from Questions for Confluence Cloud on the same site takes one click.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft" aria-labelledby="trust-title">
+      <div class="container trust">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8 4.5 5.6v6.1c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V5.6Z"/><path d="m8.8 12 2.2 2.2 4.4-4.4"/></svg></div>
         <div>
-          <p class="eyebrow enter">AskSpace &middot; Confluence app</p>
-          <h1 class="enter enter-1">The answer belongs in the space, not in a chat thread.</h1>
-          <p class="lede enter enter-2">
-            Someone asks in chat. Someone answers. Two weeks later the next joiner asks the same
-            thing. AskSpace keeps that loop inside the space, without turning on question and
-            answer across the whole site.
-          </p>
-          <div class="btns enter enter-2">
-            <a class="btn btn-light" href="mailto:dortus.support@gmail.com?subject=AskSpace%20access">Ask for access <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-line" href="atlassian.html">Both Confluence apps</a>
-          </div>
-          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Submitted, pending Atlassian review</span></p>
-        </div>
-
-        <figure class="frame enter enter-3">
-          <span class="frame-media">
-            <img src="assets/01-question-list-app.png" alt="AskSpace question list in a Confluence Engineering space: eight questions with solved, still open and unanswered status" width="797" height="837" />
-          </span>
-          <figcaption><strong>The list.</strong> Eight questions, five solved, one unanswered, filtered and searchable inside the space.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Three verbs -->
-    <section class="band">
-      <div class="wrap">
-        <div class="head reveal">
-          <h2>Ask, answer, and one answer that wins</h2>
-          <p class="lede">
-            A question board is only useful if you can tell which answer is the real one. That is
-            the part most wikis skip.
-          </p>
-        </div>
-        <div class="cols cols-3">
-          <div class="card reveal">
-            <span class="card-mark" aria-hidden="true">1</span>
-            <h3>Ask</h3>
-            <p>Title plus details, with author and timestamp. Filter the list for unanswered, open, or solved.</p>
-          </div>
-          <div class="card reveal reveal-1">
-            <span class="card-mark" aria-hidden="true">2</span>
-            <h3>Answer</h3>
-            <p>Helpful and not helpful votes sit next to each answer, so what actually worked rises.</p>
-          </div>
-          <div class="card reveal reveal-2">
-            <span class="card-mark" aria-hidden="true">3</span>
-            <h3>Mark best</h3>
-            <p>One answer can be marked best, and never by the person who asked the question.</p>
-          </div>
+          <h2 id="trust-title">Your questions stay in your Atlassian cloud</h2>
+          <p>AskSpace is built on Atlassian Forge and qualifies for Runs on Atlassian. Questions, answers, votes and settings are stored in Forge storage on your site. Nothing is sent to Dortus or anyone else.</p>
+          <p class="more more-tight"><a class="arrow-link" href="docs/askspace/data-privacy.html">Data &amp; privacy</a></p>
         </div>
       </div>
     </section>
 
-    <!-- Admin control -->
-    <section class="band band-tint">
-      <div class="wrap split split-tight">
-        <div>
-          <h2 class="reveal">Control that fits one space at a time</h2>
-          <p class="lede reveal reveal-1" style="margin: 0.9rem 0 1.4rem">
-            A space admin switches it on where a team wants it. Nothing changes anywhere else.
-          </p>
-          <ul class="rows reveal reveal-1">
-            <li>
-              <b>Per space</b>
-              <p>Question and answer is off by default. Enable it only in the spaces that need it.</p>
-            </li>
-            <li>
-              <b>Two permissions</b>
-              <p>Who may ask and who may answer are set separately: everyone, space admins, or chosen Confluence groups.</p>
-            </li>
-            <li>
-              <b>Notifications</b>
-              <p>An in-app alert when someone answers you, or marks your answer as best.</p>
-            </li>
-          </ul>
-        </div>
-
-        <figure class="frame reveal reveal-2">
-          <span class="frame-media">
-            <img src="assets/03-space-settings-app.png" alt="AskSpace space settings: a toggle for this space, plus policies for who may ask and who may answer" width="767" height="813" loading="lazy" />
-          </span>
-          <figcaption><strong>Space settings.</strong> One toggle, then two policies. Nothing site wide to negotiate with your admin.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Real screens -->
-    <section class="band" id="screens">
-      <div class="wrap">
-        <div class="head reveal">
-          <h2>What it looks like in a real space</h2>
-          <p class="lede">
-            Captured in an Engineering space with the questions a team actually asks.
-          </p>
-        </div>
-        <div class="shots">
-          <figure class="frame reveal">
-            <span class="frame-media">
-              <img src="assets/02-question-detail-app.png" alt="AskSpace question detail with four answers, up and down votes, and one marked as best answer" width="797" height="837" loading="lazy" />
-            </span>
-            <figcaption><strong>One answer wins.</strong> Four answers, votes in place, and a best answer the asker can clear but never award to itself.</figcaption>
-          </figure>
-          <figure class="frame reveal reveal-1">
-            <span class="frame-media">
-              <img src="assets/04-notifications-app.png" alt="AskSpace notification panel listing new answers and a best answer mark" width="797" height="837" loading="lazy" />
-            </span>
-            <figcaption><strong>You hear about it.</strong> A bell alert when someone answers you, or marks your answer as best.</figcaption>
-          </figure>
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container closing">
+        <h2 id="pricing-title">Pricing</h2>
+        <p>Free for teams up to 10 users. Larger teams pay per user through the Atlassian Marketplace, with a free trial.</p>
+        <div class="actions">
+          <!-- AFTER-APPROVAL: add this button first and change the docs button below to btn-secondary:
+          <a class="btn btn-primary" href="[MARKETPLACE-URL]">Get it on the Atlassian Marketplace</a>
+          -->
+          <a class="btn btn-primary" href="docs/askspace/">Read the docs</a>
         </div>
       </div>
     </section>
-
-    <!-- Forge trust -->
-    <section class="band band-deep">
-      <div class="wrap">
-        <div class="head reveal">
-          <h2>Questions never leave your Atlassian site</h2>
-          <p class="lede">
-            AskSpace is a Forge app. Questions, answers, votes, settings and notifications are
-            stored in Forge app storage inside your cloud site. There is no Dortus server behind
-            it and no app content is sent to us.
-          </p>
-        </div>
-        <dl class="facts facts-4 reveal reveal-1">
-          <div>
-            <dt>Platform</dt>
-            <dd>Atlassian Forge</dd>
-          </div>
-          <div>
-            <dt>Storage</dt>
-            <dd>Forge app storage, your site</dd>
-          </div>
-          <div>
-            <dt>Identity</dt>
-            <dd>Atlassian accounts and groups</dd>
-          </div>
-          <div>
-            <dt>Billing</dt>
-            <dd>Atlassian Marketplace</dd>
-          </div>
-        </dl>
-        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
-          <a class="btn btn-line" href="privacy.html">What AskSpace stores <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </p>
-      </div>
-    </section>
-
-    <section class="band band-brand">
-      <div class="wrap wrap-narrow">
-        <h2 class="reveal">Submitted to the Marketplace, waiting on review</h2>
-        <p class="lede reveal reveal-1" style="margin-top: 0.9rem">
-          AskSpace is published as a public app under the Dortus vendor account. Email us and we
-          will send the install path, a walkthrough, or the listing link the moment it is live.
-        </p>
-        <div class="btns reveal reveal-2" style="margin-top: 1.6rem">
-          <a class="btn btn-light" href="mailto:dortus.support@gmail.com?subject=AskSpace%20access">Email Dortus <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <a class="btn btn-line" href="mermaid.html">See Mermaid Live Preview</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div>
-        <p class="footer-brand">Dortus</p>
-        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
-        <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
-      </div>
-      <div>
-        <h2>Atlassian</h2>
-        <ul>
-          <li><a href="atlassian.html">Confluence apps</a></li>
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-brand"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg>Dortus <span>· Atlassian Marketplace apps</span></p>
+        <nav aria-label="Footer">
+          <ul class="footer-links">
           <li><a href="askspace.html">AskSpace</a></li>
-          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Shopify</h2>
-        <ul>
-          <li><a href="arrears.html">Arrears</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
+          <li><a href="docs/askspace/">Docs</a></li>
           <li><a href="support.html">Support</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
-          <li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
-        </ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <div class="wrap footer-rule">
-      <p class="footer-legal">
-        Dortus. Atlassian, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
-        affiliated with Atlassian.
-      </p>
+      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
+           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
     </div>
   </footer>
-
-  <script src="site.js" defer></script>
 </body>
 </html>

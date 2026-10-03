@@ -1,157 +1,131 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus - apps for Shopify B2B and Atlassian Confluence</title>
-  <meta name="description" content="Dortus builds focused apps for Shopify B2B and Atlassian Confluence. Arrears collects money on net terms. AskSpace and Mermaid Live Preview make Confluence easier to work in." />
-  <meta name="theme-color" content="#004c3f" />
-  <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="Dortus - apps for Shopify B2B and Atlassian Confluence" />
-  <meta property="og:description" content="Two platforms, three products. Arrears for Shopify B2B collections, AskSpace and Mermaid Live Preview for Confluence." />
-  <meta property="og:image" content="assets/feature-media.png" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dortus · Calm, focused apps for Confluence</title>
+  <meta name="description" content="Dortus builds small Atlassian apps that do one job well. Our first app is AskSpace: Q&amp;A for each Confluence space.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dortus">
+  <meta property="og:title" content="Dortus · Calm, focused apps for Confluence">
+  <meta property="og:description" content="Dortus builds small Atlassian apps that do one job well. Our first app is AskSpace: Q&amp;A for each Confluence space.">
+  <meta property="og:url" content="https://dortus.com/">
+  <meta property="og:image" content="https://dortus.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dortus: calm, focused apps for Confluence">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-hide-sm" href="index.html" aria-current="page">Dortus</a>
-        <a href="arrears.html">Shopify</a>
-        <a href="atlassian.html">Atlassian</a>
-        <a href="support.html">Support</a>
-        <a class="btn btn-line nav-hide-sm" href="mailto:dortus.support@gmail.com?subject=Dortus">Email us</a>
+    <div class="container header-inner">
+      <a class="brand" href="./"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg><span>Dortus</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+        <li><a href="askspace.html">AskSpace</a></li>
+        <li><a href="docs/askspace/">Docs</a></li>
+        <li><a href="support.html">Support</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-
-    <!-- One composition: who we are, then the two doors you must pick -->
-    <div class="home-shell">
-      <div class="wrap home-top">
-        <h1 class="wordmark enter"><span>Dortus</span></h1>
-        <p class="home-line enter enter-1">
-          Software for two platforms. Each app fixes one annoying job:
-          <strong>getting paid</strong> on Shopify B2B, and <strong>finding the answer</strong>
-          in Confluence.
-        </p>
-        <p class="home-meta enter enter-2">Two platforms. Pick a side.</p>
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container">
+        <h1>Calm, focused apps for Confluence</h1>
+        <p class="lead">Dortus builds small Atlassian apps that do one job well. Our first app is AskSpace: Q&amp;A for each Confluence space.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="askspace.html">Meet AskSpace</a>
+        </div>
+        <!-- AFTER-APPROVAL: when AskSpace is live on the Atlassian Marketplace, replace the line below with:
+        <p class="status"><a href="[MARKETPLACE-URL]">Get it on the Atlassian Marketplace</a></p>
+        -->
+        <p class="status">Coming soon to the Atlassian Marketplace.</p>
       </div>
+    </section>
 
-      <div class="wrap chooser">
-
-        <a class="door door-shopify enter enter-1" href="arrears.html">
-          <h2 class="door-platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M4 7h16l-1.2 13H5.2L4 7Z" stroke-linejoin="round" />
-              <path d="M9 7V5.6A3 3 0 0 1 15 5.6V7" stroke-linecap="round" />
-            </svg>
-            Shopify
-          </h2>
-          <p class="door-pitch">
-            Net terms put money on the books. Arrears is the desk that ages it, matches bank
-            payments, and holds credit when needed.
-          </p>
-          <ul class="door-apps">
-            <li>
-              <b>Arrears</b>
-              <span>Aging, statements, reminders, cash application and credit holds, built on the companies and payment terms already in your store.</span>
-            </li>
-          </ul>
-          <span class="status">In Shopify App Store review</span>
-          <span class="door-enter">Open Shopify apps <span class="arrow" aria-hidden="true">&rarr;</span></span>
-          <span class="door-peek">
-            <img src="assets/01-aging.png" alt="Arrears aging screen inside the Shopify admin, showing total outstanding split into aging buckets" width="1600" height="2057" />
-          </span>
-        </a>
-
-        <a class="door door-atlassian enter enter-2" href="atlassian.html">
-          <h2 class="door-platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M5 4h9l5 5v11H5V4Z" stroke-linejoin="round" />
-              <path d="M14 4v5h5" stroke-linejoin="round" />
-              <path d="M9 13h6M9 16.5h4" stroke-linecap="round" />
-            </svg>
-            Atlassian
-          </h2>
-          <p class="door-pitch">
-            The answer is in someone's chat history and the flowchart is a dead PNG. Two apps
-            that put both back in the page.
-          </p>
-          <ul class="door-apps">
-            <li>
-              <b>AskSpace</b>
-              <span>Question and answer per Confluence space, with separate rules for who may ask and who may answer.</span>
-            </li>
-            <li>
-              <b>Mermaid Live Preview</b>
-              <span>Type a diagram, watch it draw, keep it as editable text in the page.</span>
-            </li>
-          </ul>
-          <span class="status">AskSpace pending Atlassian review</span>
-          <span class="door-enter">Open Atlassian apps <span class="arrow" aria-hidden="true">&rarr;</span></span>
-          <span class="door-peek">
-            <img src="assets/01-question-list-app.png" alt="AskSpace question list in a Confluence space, with solved, still open and unanswered questions" width="797" height="837" />
-          </span>
-        </a>
-
+    <section class="section section-soft" aria-labelledby="askspace-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="askspace-title">Q&amp;A where each team already works</h2>
+          <p>Give every Confluence space its own questions and answers. Space admins decide who may ask, who may answer and who moderates.</p>
+        </div>
+        <figure class="shot"><img src="assets/screenshots/askspace-question-list.png" alt="AskSpace question list in the Confluence space Platform Engineering" width="1840" height="900" loading="lazy" decoding="async"></figure>
+        <ul class="points points-spaced" role="list">
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="6.5" width="19" height="11" rx="5.5"/><circle cx="16" cy="12" r="3"/></svg></div>
+            <h3>One click per space</h3>
+            <p>Turn Q&amp;A on only where it helps.</p>
+          </li>
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="m16 11.5 2 2 4-4"/></svg></div>
+            <h3>You decide who answers</h3>
+            <p>Separate permissions for asking and answering, plus moderators.</p>
+          </li>
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></svg></div>
+            <h3>Answers people can find</h3>
+            <p>Search runs through questions and answers, and similar questions show up while you type.</p>
+          </li>
+        </ul>
+        <p class="more"><a class="arrow-link" href="askspace.html">Read more about AskSpace</a></p>
       </div>
+    </section>
 
-      <p class="wrap home-foot-note enter enter-3">
-        <span>Screens on this site come from the running products.</span>
-        <a href="support.html">Support, answered by the person who wrote the code</a>
-      </p>
-    </div>
-
+    <section class="section" aria-labelledby="build-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="build-title">Built on Atlassian, nothing else</h2>
+        </div>
+        <ul class="points" role="list">
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 9Z"/></svg></div>
+            <h3>Runs on Atlassian</h3>
+            <p>Our apps run on Atlassian Forge. Your content stays in your Atlassian cloud and is never sent to our servers. We don’t have any.</p>
+          </li>
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></div>
+            <h3>Billing through Atlassian</h3>
+            <p>Install, trial and pay through the Atlassian Marketplace.</p>
+          </li>
+          <li class="point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></div>
+            <h3>Support by email</h3>
+            <p>Questions go straight to the person who builds the app. We usually reply within two business days.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div>
-        <p class="footer-brand">Dortus</p>
-        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
-        <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
-      </div>
-      <div>
-        <h2>Shopify</h2>
-        <ul>
-          <li><a href="arrears.html">Arrears</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Atlassian</h2>
-        <ul>
-          <li><a href="atlassian.html">Confluence apps</a></li>
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-brand"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg>Dortus <span>· Atlassian Marketplace apps</span></p>
+        <nav aria-label="Footer">
+          <ul class="footer-links">
           <li><a href="askspace.html">AskSpace</a></li>
-          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
+          <li><a href="docs/askspace/">Docs</a></li>
           <li><a href="support.html">Support</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
-          <li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
-        </ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <div class="wrap footer-rule">
-      <p class="footer-legal">
-        Dortus. Shopify is a trademark of Shopify Inc. Atlassian and Confluence are trademarks
-        of Atlassian Pty Ltd. Dortus is not affiliated with either company.
-      </p>
+      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
+           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
     </div>
   </footer>
-
-  <script src="site.js" defer></script>
 </body>
 </html>

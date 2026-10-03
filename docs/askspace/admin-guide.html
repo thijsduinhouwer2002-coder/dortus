@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin guide · AskSpace docs · Dortus</title>
+  <meta name="description" content="Turn Q&amp;A on or off, choose who may ask and answer, add moderators, add the AskSpace block to a page, and import or export questions.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dortus">
+  <meta property="og:title" content="Admin guide · AskSpace docs · Dortus">
+  <meta property="og:description" content="Turn Q&amp;A on or off, choose who may ask and answer, add moderators, add the AskSpace block to a page, and import or export questions.">
+  <meta property="og:url" content="https://dortus.com/docs/askspace/admin-guide.html">
+  <meta property="og:image" content="https://dortus.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dortus: calm, focused apps for Confluence">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg><span>Dortus</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+        <li><a href="../../askspace.html">AskSpace</a></li>
+        <li><a href="../../docs/askspace/" aria-current="true">Docs</a></li>
+        <li><a href="../../support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container docs">
+      <nav class="docs-nav" aria-label="AskSpace docs">
+        <p class="docs-nav-title">AskSpace docs</p>
+        <ul>
+            <li><a href="./">Getting started</a></li>
+            <li><a href="admin-guide.html" aria-current="page">Admin guide</a>
+              <ul class="sub">
+                <li><a href="#turn-qa-on-or-off">Turn Q&amp;A on or off</a></li>
+                <li><a href="#who-may-ask-and-answer">Who may ask and who may answer</a></li>
+                <li><a href="#moderators">Moderators</a></li>
+                <li><a href="#add-askspace-to-a-page">Add AskSpace to a page</a></li>
+                <li><a href="#import-and-export">Import &amp; export</a></li>
+              </ul></li>
+            <li><a href="user-guide.html">User guide</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="data-privacy.html">Data &amp; privacy</a></li>
+        </ul>
+        <ul class="docs-nav-extra">
+          <li><a href="../../changelog.html">Changelog</a></li>
+          <li><a href="../../support.html">Support</a></li>
+        </ul>
+      </nav>
+      <article class="docs-article">
+        <div class="prose">
+        <h1>Admin guide</h1>
+        <h2 id="turn-qa-on-or-off">Turn Q&amp;A on or off<a class="anchor" href="#turn-qa-on-or-off" aria-label="Link to this section">#</a></h2>
+        <p>Go to <span class="ui">Space settings › Integrations › AskSpace</span>. Turning Q&amp;A off hides it in that space. Questions are kept and come back when you turn it on again.</p>
+
+        <h2 id="who-may-ask-and-answer">Who may ask and who may answer<a class="anchor" href="#who-may-ask-and-answer" aria-label="Link to this section">#</a></h2>
+        <p>For each, choose:</p>
+        <dl>
+          <dt>Everyone in the space</dt>
+          <dd>Anyone who can view this space.</dd>
+          <dt>Space admins only</dt>
+          <dd>People with admin permission for this space.</dd>
+          <dt>Chosen groups</dt>
+          <dd>Members of the Confluence groups you pick.</dd>
+        </dl>
+        <p>Asking and answering are set separately. A common setup is “everyone may ask, the support group answers”.</p>
+
+        <h2 id="moderators">Moderators<a class="anchor" href="#moderators" aria-label="Link to this section">#</a></h2>
+        <p>Space admins are always moderators. Add Confluence groups as moderators if other people should help.</p>
+        <p>Moderators can edit or delete any question or answer in the space, and choose or clear the best answer. When a moderator changes or deletes someone’s post, the author gets a notification, and an edited post shows “Edited by a moderator”.</p>
+
+        <h2 id="add-askspace-to-a-page">Add AskSpace to a page<a class="anchor" href="#add-askspace-to-a-page" aria-label="Link to this section">#</a></h2>
+        <p>In the Confluence editor, type <code>/AskSpace</code> and choose the AskSpace block. In its settings, choose:</p>
+        <ul>
+          <li>what to show: <span class="ui">Recent</span>, <span class="ui">Unanswered</span> or <span class="ui">Solved</span></li>
+          <li>how many questions: 3, 5 or 10</li>
+          <li>optionally, only questions with one tag</li>
+        </ul>
+        <p>The block only shows questions from the space the page is in.</p>
+
+        <!-- Import & export: written from the brief for the next release.
+             CHECK against the released app before going live: button labels, who may import,
+             and the exact column formats (see the TODO at the CSV table). -->
+        <h2 id="import-and-export">Import &amp; export<a class="anchor" href="#import-and-export" aria-label="Link to this section">#</a></h2>
+        <p>Space admins find import and export under <span class="ui">Space settings › Integrations › AskSpace › Import &amp; export</span>.</p>
+
+        <h3 id="import-questions">Import questions<a class="anchor" href="#import-questions" aria-label="Link to this section">#</a></h3>
+        <ol>
+          <li><strong>Choose a source:</strong> a CSV file in the Simple CSV format (see <a href="#simple-csv-columns">the columns below</a>), a Questions for Confluence (Server/Data Center) export, or Questions for Confluence Cloud on the same site.</li>
+          <li><strong>Check the preview.</strong> You see what will be imported before you import it.</li>
+          <li><strong>Import.</strong></li>
+          <li><strong>Undo if you need to.</strong> You can undo an import.</li>
+        </ol>
+        <p>Moving from Questions for Confluence Cloud on the same site takes one click: choose it as the source.</p>
+
+        <h3 id="export-to-csv">Export to CSV<a class="anchor" href="#export-to-csv" aria-label="Link to this section">#</a></h3>
+        <p>Space admins can export all questions and answers of a space to CSV, whenever they want, under <span class="ui">Space settings › Integrations › AskSpace › Import &amp; export</span>.</p>
+
+        <h3 id="simple-csv-columns">Simple CSV columns<a class="anchor" href="#simple-csv-columns" aria-label="Link to this section">#</a></h3>
+        <!-- TODO before going live: add the expected formats for asked_by, answered_by (account ID, email or name?),
+             asked_at (date format) and tags (separator, maximum). Not known when this page was written. -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Column</th><th scope="col">Required</th><th scope="col">Holds</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>title</code></td><td>Yes</td><td>The question title</td></tr>
+              <tr><td><code>details</code></td><td>No</td><td>More text for the question</td></tr>
+              <tr><td><code>answer</code></td><td>No</td><td>An answer to the question</td></tr>
+              <tr><td><code>asked_by</code></td><td>No</td><td>Who asked the question</td></tr>
+              <tr><td><code>answered_by</code></td><td>No</td><td>Who answered it</td></tr>
+              <tr><td><code>asked_at</code></td><td>No</td><td>When the question was asked</td></tr>
+              <tr><td><code>tags</code></td><td>No</td><td>Tags for the question</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <aside class="still-stuck" aria-label="Help">
+          <p>Still stuck? <a href="../../support.html">Contact support</a></p>
+        </aside>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-brand"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0b6b66"/><path fill="#fff" fill-rule="evenodd" d="M10 8h5.5a8 8 0 0 1 0 16H10Zm3.2 3.1v9.8h2.1a4.9 4.9 0 0 0 0-9.8Z"/></svg>Dortus <span>· Atlassian Marketplace apps</span></p>
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+          <li><a href="../../askspace.html">AskSpace</a></li>
+          <li><a href="../../docs/askspace/">Docs</a></li>
+          <li><a href="../../support.html">Support</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+          <li><a href="../../changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
+           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
+    </div>
+  </footer>
+</body>
+</html>
