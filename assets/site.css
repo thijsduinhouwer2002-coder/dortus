@@ -928,6 +928,11 @@ th {
   color: inherit;
 }
 
+.trademarks {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+}
+
 /* --------------------------------------------------------- helpers */
 
 main:focus {

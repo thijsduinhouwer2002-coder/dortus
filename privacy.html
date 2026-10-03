@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · Dortus</title>
-  <meta name="description" content="How Dortus handles data for AskSpace and its other Atlassian Marketplace apps.">
+  <meta name="description" content="How Dortus handles data in AskSpace for Confluence and in Arrears for Shopify.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f1416" media="(prefers-color-scheme: dark)">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dortus">
   <meta property="og:title" content="Privacy Policy · Dortus">
-  <meta property="og:description" content="How Dortus handles data for AskSpace and its other Atlassian Marketplace apps.">
+  <meta property="og:description" content="How Dortus handles data in AskSpace for Confluence and in Arrears for Shopify.">
   <meta property="og:url" content="https://dortus.com/privacy.html">
   <meta property="og:image" content="https://dortus.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -43,7 +43,8 @@
       <div class="container">
         <div class="narrow">
           <h1>Privacy Policy</h1>
-          <p class="meta">Last updated: [DATE]</p>
+          <p class="lead">AskSpace runs inside Atlassian, while Arrears for Shopify runs on a server operated by Dortus.</p>
+          <p class="meta meta-spaced">Last updated: [DATE]</p>
         </div>
       </div>
     </section>
@@ -54,7 +55,7 @@
         <p>Dortus is a sole proprietorship of [NAME], [ADDRESS], VAT [VAT-ID]. Contact: <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
 
         <h2 id="our-apps">2. Our apps</h2>
-        <p>This policy covers Dortus apps on the Atlassian Marketplace, starting with AskSpace for Confluence Cloud.</p>
+        <p>This policy covers Dortus apps on the Atlassian Marketplace, starting with AskSpace for Confluence Cloud. It also covers Arrears for Shopify, see <a href="#arrears-for-shopify">section 9</a>.</p>
 
         <h2 id="data-inside-the-app">3. Data inside the app</h2>
         <p>AskSpace runs on Atlassian Forge and qualifies for Runs on Atlassian. Content you create in the app (questions, answers, votes, best-answer marks, tags, space settings and in-app notifications) is stored in Forge storage on your Atlassian site. Dortus does not operate servers for the app and has no access to this content.</p>
@@ -76,7 +77,72 @@
         <h2 id="your-rights">8. Your rights</h2>
         <p>You can ask us for access to, correction of, or deletion of the personal data we hold (support emails). For content inside Confluence, contact your site admin. You can also complain to your data protection authority (in the Netherlands: Autoriteit Persoonsgegevens).</p>
 
-        <h2 id="changes">9. Changes</h2>
+        <!-- Arrears for Shopify: restored from the previous privacy policy (22 September 2026), content unchanged
+             apart from section numbers. The Arrears listing in the Shopify App Store links to this page. -->
+        <h2 id="arrears-for-shopify">9. Arrears for Shopify</h2>
+
+        <h3 id="arrears-what-the-app-does">9.1 What the app does</h3>
+        <p>Arrears is an embedded Shopify app for business-to-business collections. It reads your companies, company locations, contacts, orders, and payment terms through the Shopify Admin API, and turns them into aging views, statements, reminders, payment allocations, and credit holds.</p>
+
+        <h3 id="arrears-where-it-runs">9.2 Where it runs</h3>
+        <p>Unlike our Confluence apps, Arrears needs a server. We host it on <strong>Fly.io in the Amsterdam region (EU)</strong>, with the application database on a persistent volume attached to that machine. Access to the production environment is limited to Dortus.</p>
+
+        <h3 id="arrears-our-role">9.3 Our role</h3>
+        <p>For business data inside Arrears, you are the controller and Dortus is the processor. You decide which companies and contacts exist. We process that data only to deliver the features you switched on.</p>
+        <p>For your own contact with us (support email, billing questions), Dortus is the controller of that correspondence.</p>
+
+        <h3 id="arrears-data">9.4 What data Arrears processes and stores</h3>
+        <ul>
+          <li>Your shop domain and the Shopify access token issued during install</li>
+          <li>Company names, company locations, and payment terms as configured in Shopify</li>
+          <li>Company contact names and email addresses, used to address statements and reminders</li>
+          <li>Order references, amounts, currencies, due dates, and payment schedule status</li>
+          <li>Reminder records: recipient address, subject, message body, send time, and result</li>
+          <li>Payment records you enter, including allocation across open invoices</li>
+          <li>Credit limits, hold and release events, and the staff action behind them</li>
+          <li>App settings, such as sender name, dunning policy, and automation switches</li>
+        </ul>
+        <p>Arrears does not ask for or store payment card details. Subscription charges are handled by Shopify billing.</p>
+
+        <h3 id="arrears-protected-customer-data">9.5 Protected customer data</h3>
+        <p>Business contact data (company contact names and email addresses) is used only to produce and send the statements and reminders you request, and to show you who was contacted. We do not use it for our own marketing, we do not sell it, and we do not share it with anyone outside the subprocessors listed in <a href="#arrears-subprocessors">section 9.8</a>.</p>
+
+        <h3 id="arrears-email-sending">9.6 Email sending</h3>
+        <p>Statement and reminder emails are delivered through <strong>Resend</strong>. That means the recipient address, subject, and message body pass through Resend in order to be delivered, along with normal delivery metadata.</p>
+
+        <h3 id="arrears-data-requests">9.7 Shopify data requests and deletion</h3>
+        <p>Arrears implements Shopify’s mandatory compliance webhooks:</p>
+        <ul>
+          <li><strong>customers/data_request</strong>: we respond to the merchant with the data we hold for the requested person.</li>
+          <li><strong>customers/redact</strong>: we delete or anonymise the stored personal data for that person.</li>
+          <li><strong>shop/redact</strong>: we delete the shop’s stored data after Shopify’s redaction window.</li>
+        </ul>
+        <p>Uninstalling the app also revokes our access: the stored session for your shop is removed when we receive the <strong>app/uninstalled</strong> webhook.</p>
+
+        <h3 id="arrears-subprocessors">9.8 Subprocessors</h3>
+        <ul>
+          <li><strong>Shopify Inc.</strong>: platform, app hosting surface, and billing for Arrears.</li>
+          <li><strong>Fly.io</strong>: application hosting and database storage for Arrears, EU (Amsterdam) region.</li>
+          <li><strong>Resend</strong>: delivery of statement and reminder email from Arrears.</li>
+        </ul>
+        <p>We do not use advertising networks, session recording, or third-party analytics inside our apps.</p>
+
+        <h3 id="arrears-why">9.9 Why we process data</h3>
+        <p>Only to provide the features you enable: showing aging, producing statements, sending the reminders you approve, allocating payments, and applying credit holds. Our legal basis is the performance of our agreement with you, and our legitimate interest in keeping the service running securely.</p>
+
+        <h3 id="arrears-retention">9.10 Retention</h3>
+        <p>Arrears data is kept while the app is installed. It is deleted on shop redaction, and on request. Reminder history is kept so you can prove what was sent, until the shop data is deleted.</p>
+
+        <h3 id="arrears-security">9.11 Security</h3>
+        <p>Traffic to Arrears is served over HTTPS only. Platform credentials and API keys are held as environment secrets, not in source code. Access to production is limited to Dortus. We are a small vendor and we do not claim certifications we do not have: if you need a security review or a data processing agreement, email us and we will answer concretely.</p>
+
+        <h3 id="arrears-your-rights">9.12 Your rights</h3>
+        <p>For data inside Arrears, start with the merchant that installed the app, or contact us directly.</p>
+
+        <h3 id="arrears-international-transfers">9.13 International transfers</h3>
+        <p>Arrears is hosted in the EU. Some subprocessors listed in <a href="#arrears-subprocessors">section 9.8</a> are established outside the EU and may process limited data there under their own transfer mechanisms.</p>
+
+        <h2 id="changes">10. Changes</h2>
         <p>We update this page when things change and adjust the date above.</p>
       </div>
     </div>
@@ -97,9 +163,9 @@
           </ul>
         </nav>
       </div>
-      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
-           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
-      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
+      <!-- Imprint. Fill in [NAME], [ADDRESS] and [VAT-ID] before this goes live. -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID]</p>
+      <p class="trademarks">Atlassian, Confluence and Forge are trademarks of Atlassian. Dortus is not affiliated with Atlassian. Other product names belong to their owners.</p>
     </div>
   </footer>
 </body>

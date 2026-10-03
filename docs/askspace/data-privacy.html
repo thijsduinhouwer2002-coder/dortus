@@ -71,13 +71,15 @@
         <p>To show authors and check permissions, it uses Atlassian account IDs and display names. Avatars are shown as initials; no profile photos are loaded.</p>
 
         <h2 id="permissions">What permissions does the app ask for?<a class="anchor" href="#permissions" aria-label="Link to this section">#</a></h2>
-        <!-- TODO: the move from Questions for Confluence Cloud adds read access to Confluence content.
-             Add it to this list as soon as that permission ships in the app manifest. -->
         <ul>
           <li>Its own storage.</li>
           <li>Reading spaces, to check who is a space admin.</li>
           <li>Reading users, to show names.</li>
           <li>Reading groups, for group-based permissions.</li>
+          <!-- Belongs to the release with the move from Questions for Confluence Cloud
+               (scopes: search:confluence, read:confluence-content.all, read:confluence-props).
+               Do not publish this site before that release is live. -->
+          <li>Reading and searching Confluence content and content properties. This is only used when a space admin moves questions from Questions for Confluence Cloud on the same site.</li>
         </ul>
 
         <h2 id="can-dortus-see-our-content">Can Dortus see our content?<a class="anchor" href="#can-dortus-see-our-content" aria-label="Link to this section">#</a></h2>
@@ -106,9 +108,9 @@
           </ul>
         </nav>
       </div>
-      <!-- Imprint. Fill in [NAME], [ADDRESS], [VAT-ID] and [KVK-NUMBER] before this goes live.
-           The KvK number is required on Dutch business websites (art. 3:15d BW). -->
-      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID] · KvK [KVK-NUMBER]</p>
+      <!-- Imprint. Fill in [NAME], [ADDRESS] and [VAT-ID] before this goes live. -->
+      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID]</p>
+      <p class="trademarks">Atlassian, Confluence and Forge are trademarks of Atlassian. Dortus is not affiliated with Atlassian. Other product names belong to their owners.</p>
     </div>
   </footer>
 </body>
