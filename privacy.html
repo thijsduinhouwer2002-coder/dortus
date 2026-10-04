@@ -52,7 +52,7 @@
     <div class="container page-body">
       <div class="prose">
         <h2 id="who-we-are">1. Who we are</h2>
-        <p>Dortus is a sole proprietorship of [NAME], [ADDRESS], VAT [VAT-ID]. Contact: <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
+        <p>Dortus is a sole proprietorship of T. Duinhouwer, Aardbei 19, 7559 RS Hengelo, Netherlands, VAT NL004768444B78. This is not a visiting address. Contact us by email: <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
 
         <h2 id="our-apps">2. Our apps</h2>
         <p>This policy covers Dortus apps on the Atlassian Marketplace, starting with AskSpace for Confluence Cloud. It also covers Arrears for Shopify, see <a href="#arrears-for-shopify">section 9</a>.</p>
@@ -60,6 +60,10 @@
         <h2 id="data-inside-the-app">3. Data inside the app</h2>
         <p>AskSpace runs on Atlassian Forge and qualifies for Runs on Atlassian. Content you create in the app (questions, answers, votes, best-answer marks, tags, space settings and in-app notifications) is stored in Forge storage on your Atlassian site. Dortus does not operate servers for the app and has no access to this content.</p>
         <p>To show authors and check permissions, the app uses Atlassian account IDs, display names and group memberships provided by Atlassian.</p>
+        <!-- Belongs to the release with the move from Questions for Confluence Cloud
+             (scopes: search:confluence, read:confluence-content.all, read:confluence-props).
+             Do not publish this site before that release is live. -->
+        <p>When a space admin moves questions from Questions for Confluence Cloud on the same site, AskSpace reads Confluence content and content properties for that import only. It does not change anything in Questions for Confluence.</p>
 
         <h2 id="who-is-responsible">4. Who is responsible</h2>
         <p>Your organisation decides how the app is used on its Atlassian site. Atlassian hosts and processes the data under its own terms and privacy policy.</p>
@@ -69,7 +73,7 @@
         <p>Through the Atlassian Marketplace we receive licence information about your site (for example the site address and licence type), which we use for billing and support.</p>
 
         <h2 id="logs">6. Logs</h2>
-        <p>The app only logs technical information, such as timings and error codes. It does not log question or answer text.</p>
+        <p>AskSpace only logs technical information, such as timings and error codes. It does not log question or answer text.</p>
 
         <h2 id="no-selling-no-tracking">7. No selling, no tracking</h2>
         <p>We do not sell personal data. Our website uses no tracking cookies.</p>
@@ -163,8 +167,7 @@
           </ul>
         </nav>
       </div>
-      <!-- Imprint. Fill in [NAME], [ADDRESS] and [VAT-ID] before this goes live. -->
-      <p class="imprint">Dortus, sole proprietorship of [NAME] · [ADDRESS] · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT [VAT-ID]</p>
+      <p class="imprint">Dortus, sole proprietorship of T. Duinhouwer · Aardbei 19, 7559 RS Hengelo, Netherlands (not a visiting address, contact us by email) · <a href="mailto:support@dortus.com">support@dortus.com</a> · VAT NL004768444B78</p>
       <p class="trademarks">Atlassian, Confluence and Forge are trademarks of Atlassian. Dortus is not affiliated with Atlassian. Other product names belong to their owners.</p>
     </div>
   </footer>
