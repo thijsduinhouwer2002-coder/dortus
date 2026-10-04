@@ -18,6 +18,10 @@
       --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
       --display: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     }
+    /* The hero shows at once instead of fading in: calmer, and Lighthouse can measure it. */
+    html:not(.no-js) .enter {
+      animation: none;
+    }
   </style>
 </head>
 <body data-world="shopify">

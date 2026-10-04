@@ -110,6 +110,22 @@
         <h3 id="export-to-csv">Export to CSV<a class="anchor" href="#export-to-csv" aria-label="Link to this section">#</a></h3>
         <p>Space admins can export all questions and answers of a space to CSV, whenever they want, under <span class="ui">Space settings › Integrations › AskSpace › Import &amp; export</span>.</p>
 
+        <!-- Limits: belong to the release with import and export. Do not publish before that release is live. -->
+        <h3 id="limits">Limits<a class="anchor" href="#limits" aria-label="Link to this section">#</a></h3>
+        <ul>
+          <li><strong>6,000 questions per space.</strong> When a space is full, nobody can ask a new question there, and AskSpace points to support.</li>
+          <li><strong>5,000 questions per import</strong>, with up to 100 answers per question.</li>
+          <li><strong>If an import doesn’t fit</strong> in the space, AskSpace imports the newest questions that fit. The preview tells you how many don’t fit.</li>
+          <li><strong>Importing again</strong> skips questions that were already imported into that space from the same source.</li>
+        </ul>
+        <p>When you move from Questions for Confluence Cloud:</p>
+        <ul>
+          <li>AskSpace only reads. Nothing changes in Questions for Confluence.</li>
+          <li>Answers added in Questions for Confluence after the import are not copied over. There is no sync.</li>
+          <li>Images, attachments and mentions of people become “[content omitted during import]”.</li>
+          <li>Headings become bold text, and italics are dropped.</li>
+        </ul>
+
         <h3 id="simple-csv-columns">Simple CSV columns<a class="anchor" href="#simple-csv-columns" aria-label="Link to this section">#</a></h3>
         <!-- TODO before going live: add the expected formats for asked_by, answered_by (account ID, email or name?),
              asked_at (date format) and tags (separator, maximum). Not known when this page was written. -->
