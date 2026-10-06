@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MailView - open .msg and .eml email attachments in Jira Cloud · Dortus</title>
+<meta name="description" content="MailView shows Outlook .msg and .eml email attachments on the Jira work item as the email they are: subject, sender, formatting, inline images, the files inside, and a details tab with headers and link destinations. A Forge app; nothing is stored or sent anywhere." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView - read .msg and .eml email attachments inside Jira" />
+<meta property="og:description" content="Jira shows .msg files as code and .eml files as raw text. MailView shows the email. Built on Atlassian Forge." />
+<meta property="og:image" content="assets/mailview-01-message.png" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="arrears.html">Shopify</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="world-hero world-hero-blue">
+<div class="wrap split">
+<div>
+<p class="eyebrow enter">MailView &middot; Jira app</p>
+<h1 class="enter enter-1">An email you can't read is a ticket you can't finish.</h1>
+<p class="lede enter enter-2">
+A customer forwards a thread, a colleague drags an Outlook message onto a ticket, a
+migration brings years of .msg files along. Jira shows them as code or raw text, so
+everyone downloads the file and opens it somewhere else. MailView shows the email right
+there on the work item.
+</p>
+<div class="btns enter enter-2">
+<a class="btn btn-light" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="btn btn-line" href="support.html">Support</a>
+</div>
+<p style="margin-top: 1.3rem"><span class="status enter enter-3">Atlassian Marketplace listing in progress</span></p>
+</div>
+
+<figure class="frame enter enter-3">
+<span class="frame-media">
+<img src="assets/mailview-01-message.png" alt="MailView panel on a Jira work item showing a forwarded customer email with subject, sender, recipients, a formatted body with a table, and two PDF attachments" width="895" height="1000" />
+</span>
+<figcaption><strong>The email, as it was sent.</strong> Subject, sender, recipients, formatting, the company logo from inside the email, and the files that came with it.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="head reveal">
+<h2>What MailView shows</h2>
+<p class="lede">
+Everything that is in the file, nothing that is not. No copies, no storage, no external
+services.
+</p>
+</div>
+<div class="cols cols-3">
+<div class="card reveal">
+<span class="card-mark" aria-hidden="true">1</span>
+<h3>The email as it was sent</h3>
+<p>Subject, from, to, cc and date, with the body formatted the way the sender wrote it. Long recipient lists are folded.</p>
+</div>
+<div class="card reveal reveal-1">
+<span class="card-mark" aria-hidden="true">2</span>
+<h3>Outlook .msg and standard .eml</h3>
+<p>Both formats, including .msg files that only carry RTF. The app looks at the bytes, not the file extension.</p>
+</div>
+<div class="card reveal reveal-2">
+<span class="card-mark" aria-hidden="true">3</span>
+<h3>Inline images, safe by default</h3>
+<p>Images that travel inside the email are shown. Images from the internet are blocked, and a single line tells you so.</p>
+</div>
+<div class="card reveal">
+<span class="card-mark" aria-hidden="true">4</span>
+<h3>Files inside the email</h3>
+<p>Attachments inside the email appear as tiles with name, type and size, ready to download. An email inside an email opens in place.</p>
+</div>
+<div class="card reveal reveal-1">
+<span class="card-mark" aria-hidden="true">5</span>
+<h3>A details tab for the headers</h3>
+<p>Every header, SPF, DKIM and DMARC results, and every link with its real destination. If the link text names one domain and the link goes to another, MailView says so.</p>
+</div>
+<div class="card reveal reveal-2">
+<span class="card-mark" aria-hidden="true">6</span>
+<h3>Only on work items with email</h3>
+<p>The panel exists only where there is a .eml or .msg attachment. Other work items don't load the app at all.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band band-tint">
+<div class="wrap split split-tight">
+<div>
+<h2 class="reveal">Clear messages instead of errors</h2>
+<p class="lede reveal reveal-1" style="margin: 0.9rem 0 1.4rem">
+A broken file, a protected Outlook message (.rpmsg) or a very large file gets one plain
+sentence and a link to download the original.
+</p>
+<ul class="rows reveal reveal-1">
+<li>
+<b>Several emails on one work item</b>
+<p>A list with the newest first, with subject and sender filled in while you look. Click one to read it, use All emails to go back.</p>
+</li>
+<li>
+<b>Download the original</b>
+<p>Every email keeps a download link, so you can always open it in your mail app.</p>
+</li>
+<li>
+<b>Keyboard</b>
+<p>Tab moves through the list, links and buttons; Enter opens; Escape or Back returns.</p>
+</li>
+</ul>
+</div>
+
+<figure class="frame reveal reveal-2">
+<span class="frame-media">
+<img src="assets/mailview-02-list.png" alt="MailView list on a Jira work item: three emails with file name, size, date, subject and sender" width="895" height="308" loading="lazy" />
+</span>
+<figcaption><strong>The list.</strong> File name, size and date at once; subject and sender a moment later.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="band band-deep">
+<div class="wrap">
+<div class="head reveal">
+<h2>Nothing is stored, nothing is sent</h2>
+<p class="lede">
+MailView is built on Atlassian Forge. It reads the attachment from your Jira with your
+own permissions and renders it in your browser. Dortus has no servers, keeps no copies
+and never sees your email. Scripts, forms and remote images in emails are removed
+before anything is shown.
+</p>
+</div>
+<dl class="facts facts-4 reveal reveal-1">
+<div>
+<dt>Platform</dt>
+<dd>Atlassian Forge</dd>
+</div>
+<div>
+<dt>Storage</dt>
+<dd>None</dd>
+</div>
+<div>
+<dt>Permission</dt>
+<dd>Read work items and attachments</dd>
+</div>
+<div>
+<dt>Billing</dt>
+<dd>Atlassian Marketplace</dd>
+</div>
+</dl>
+<p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+<a class="btn btn-line" href="privacy.html">Privacy policy <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</p>
+</div>
+</section>
+
+<section class="band" id="docs">
+<div class="wrap">
+<div class="head reveal">
+<h2>Documentation</h2>
+<p class="lede">Everything you need to install and use MailView. There are no settings.</p>
+</div>
+<div class="prose">
+
+<h3 id="getting-started">Getting started</h3>
+<ol>
+<li><strong>Install MailView</strong> from the Atlassian Marketplace. You need to be a Jira admin.</li>
+<li><strong>Open a work item that has a .eml or .msg attachment.</strong> Under <strong>Apps</strong> (the round icon under the work item title) choose <strong>MailView</strong>. The panel appears above the activity section and shows the email.</li>
+<li><strong>Show it everywhere at once (Jira admins).</strong> Open the panel menu (the three dots in the MailView panel) and choose <strong>Show for all work items</strong>. From then on the panel is there automatically on every work item that has an email attachment. Work items without one stay as they are. Note that <em>Hide from all work items</em> also removes the panels people added by hand.</li>
+<li><strong>That's it.</strong> There are no settings.</li>
+</ol>
+
+<h3 id="user-guide">User guide</h3>
+<p><strong>Open an email.</strong> If a work item has one email attachment, the panel shows it right away. If it has several, you see a list with the newest first; click one to open it, and use <strong>All emails</strong> to go back.</p>
+<p><strong>What you see.</strong> Subject, from, to, cc and date at the top. Below that, the message on a light "paper", formatted as it was sent. Inline images from the email are shown. If the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy." Very long messages are shown in a scrollable area with a <strong>Show full message</strong> button.</p>
+<p><strong>Files inside the email.</strong> Attachments inside the email are listed under the message with their name, type and size. Click one to download it. An email inside an email opens in place; use <strong>Back</strong> to return.</p>
+<p><strong>Details tab.</strong> Switch to <strong>Details</strong> to see every header of the email, the authentication results (SPF, DKIM, DMARC) when they are present, and a list of all links with their real destination. A warning appears when the visible link text names a different domain than the link actually goes to, or when the address uses punycode (xn--).</p>
+<p><strong>Download the original.</strong> Every email has a <strong>Download the original</strong> link, so you can always open it in your mail app.</p>
+<p><strong>Keyboard.</strong> Tab moves through the list, links and buttons; Enter opens; Escape or <strong>Back</strong> returns.</p>
+
+<h3 id="limits">Limits</h3>
+<ul>
+<li><strong>Supported:</strong> .eml files and Outlook .msg files, including messages that only contain RTF, and emails nested inside emails (one level).</li>
+<li><strong>Not supported:</strong> protected Outlook messages (.rpmsg), which only open in Outlook; files over 10 MB (you get a download link instead).</li>
+<li><strong>Where it works:</strong> Jira work items in company-managed and team-managed projects, and the agent view of Jira Service Management. Not in the JSM customer portal, and not in Confluence.</li>
+<li><strong>What it does not do:</strong> MailView never sends email, replies, or creates work items from email. It only shows what is already attached.</li>
+</ul>
+
+<h3 id="faq">FAQ</h3>
+<p><strong>I don't see the panel.</strong> The panel only exists on work items that have a .eml or .msg attachment. Open such a work item and choose MailView under <strong>Apps</strong>, or ask a Jira admin to turn on <strong>Show for all work items</strong> in the panel menu.</p>
+<p><strong>Can everyone see the email?</strong> Everyone who can see the attachment in Jira can read it in MailView. The app uses the permissions of the person who is looking, nothing more.</p>
+<p><strong>Does MailView store the emails?</strong> No. The email is read from the attachment and rendered in your browser each time. Nothing is copied or kept.</p>
+<p><strong>Why are images missing?</strong> Images that come from the internet are blocked on purpose, because loading them would tell the sender that the email was opened. Images that travel inside the email are shown.</p>
+<p><strong>Why is a link in the email not clickable?</strong> Links that use javascript: or other unsafe schemes are removed. Normal web links open in a new tab.</p>
+<p><strong>Does it work in Jira Service Management?</strong> Yes, in the agent view. Not in the customer portal.</p>
+<p><strong>Does it work in Confluence?</strong> Not yet. Tell us if you need it: <a href="mailto:dortus.support@gmail.com?subject=MailView">dortus.support@gmail.com</a>.</p>
+<p><strong>Which languages are supported?</strong> The app is in English. The email itself is shown in whatever language it was written in.</p>
+
+<h3 id="data-privacy">Data and privacy</h3>
+<p><strong>Where is data stored?</strong> Nowhere. MailView has no storage. It reads the attachment from your Jira site when you open it and renders it in your browser.</p>
+<p><strong>What does the app send outside Atlassian?</strong> Nothing. There are no external servers and no outbound connections.</p>
+<p><strong>What permissions does the app ask for?</strong> Read access to work items and their attachments (<code>read:jira-work</code>). It cannot change anything.</p>
+<p><strong>How does it handle unsafe content?</strong> Before an email is shown, scripts, forms, embedded frames and external images and stylesheets are removed. Links open in a new tab with no referrer. The email is rendered inside its own isolated area so its styling cannot affect Jira.</p>
+<p><strong>Can Dortus see our emails?</strong> No. The app runs in your browser and logs nothing about the email content. There is no Dortus server behind it.</p>
+<p><strong>What happens if I uninstall?</strong> Nothing to clean up: the app stored nothing.</p>
+<p>Full policy: <a href="privacy.html">Privacy policy</a>. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+<h3 id="support">Support</h3>
+<p>Questions, a bug, or an idea? Email <a href="mailto:dortus.support@gmail.com?subject=MailView">dortus.support@gmail.com</a>. The person who builds the app reads every message. Please include your site URL, the work item key, whether the file is .eml or .msg and roughly how big it is, what you expected and what happened. Please don't send us the email itself unless it contains nothing private.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Independent software vendor. Apps for Shopify B2B and Atlassian Jira and Confluence.</p>
+<p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+</ul>
+</div>
+<div>
+<h2>Shopify</h2>
+<ul>
+<li><a href="arrears.html">Arrears</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
