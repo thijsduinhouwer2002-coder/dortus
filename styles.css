@@ -527,6 +527,11 @@ body:not([data-world]) .btn-primary {
   background: #fff;
 }
 
+/* Link in een statusregel: zelfde kleur als de regel (leesbaar op blauw). */
+.status a {
+  color: inherit;
+}
+
 /* ===============================================================
    HOME: brand moment plus two doorways, one composition
    =============================================================== */
