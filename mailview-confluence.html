@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Niet indexeren tot de lancering: de app is nog niet ingediend. Bij lancering deze regel weghalen en de pagina linken vanuit navigatie, home en footer. -->
+<meta name="robots" content="noindex" />
+<title>MailView for Confluence - read .eml and .msg email attachments on Confluence pages · Dortus</title>
+<meta name="description" content="MailView for Confluence shows .eml and Outlook .msg email attachments on a Confluence page as the email they are, with a phishing check, a list of all emails on the page, and a clean version in PDF and Word exports. A Forge app; nothing is stored or sent anywhere." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView for Confluence - read .msg and .eml email attachments on Confluence pages" />
+<meta property="og:description" content="Confluence shows email attachments as files to download. MailView shows the email, with a phishing check. Built on Atlassian Forge." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="arrears.html">Shopify</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="world-hero world-hero-blue">
+<div class="wrap">
+<p class="eyebrow enter">MailView &middot; Confluence app</p>
+<h1 class="enter enter-1">The email on the page, not a file to download.</h1>
+<p class="lede enter enter-2">
+Meeting notes with the customer's email attached, an incident page with the alert that
+started it, a decision log with the thread behind it. Confluence keeps the .eml or .msg
+file, but to read it everyone downloads it and opens it somewhere else. MailView shows
+the email on the page, and tells you when it looks like phishing.
+</p>
+<div class="btns enter enter-2">
+<a class="btn btn-light" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="btn btn-line" href="support.html">Support</a>
+</div>
+<p style="margin-top: 1.3rem"><span class="status enter enter-3">Atlassian Marketplace listing in progress</span></p>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="head reveal">
+<h2>What MailView shows</h2>
+<p class="lede">
+Everything that is in the file, nothing that is not. No copies, no storage, no external
+services.
+</p>
+</div>
+<div class="cols cols-3">
+<div class="card reveal">
+<span class="card-mark" aria-hidden="true">1</span>
+<h3>An email macro</h3>
+<p>Add the <strong>Email (MailView)</strong> macro and choose an .eml or .msg attachment of the page. The email shows on the page, in the editor and when people read it.</p>
+</div>
+<div class="card reveal reveal-1">
+<span class="card-mark" aria-hidden="true">2</span>
+<h3>Emails on this page</h3>
+<p>Under the page title: every email attachment of the page, with subject, sender, date and a verdict icon. Click one to read it in a large view.</p>
+</div>
+<div class="card reveal reveal-2">
+<span class="card-mark" aria-hidden="true">3</span>
+<h3>Message, Details, Original</h3>
+<p>The email as it was sent; every header and link with its real destination; and the plain text and source of the file.</p>
+</div>
+<div class="card reveal">
+<span class="card-mark" aria-hidden="true">4</span>
+<h3>A phishing check</h3>
+<p>Looks OK, Be careful or Likely phishing, with the reasons: failed SPF, DKIM or DMARC, lookalike domains, links that go somewhere else than their text shows.</p>
+</div>
+<div class="card reveal reveal-1">
+<span class="card-mark" aria-hidden="true">5</span>
+<h3>PDF and Word export</h3>
+<p>Exporting the page gives a clean static version of the email: subject, from, to, date, text and attachments, plus the verdict line.</p>
+</div>
+<div class="card reveal reveal-2">
+<span class="card-mark" aria-hidden="true">6</span>
+<h3>Outlook .msg and standard .eml</h3>
+<p>Both formats. The app looks at the bytes, not the file extension, so a forwarded email without a file name is recognized too.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band band-deep">
+<div class="wrap">
+<div class="head reveal">
+<h2>Nothing is stored, nothing is sent</h2>
+<p class="lede">
+MailView is built on Atlassian Forge, for Atlassian's Runs on Atlassian programme. It
+reads the email attachments of the page you open, with your own permissions, and renders
+them in your browser. Dortus has no servers, keeps no copies and never sees your email.
+Scripts, forms and remote images in emails are removed before anything is shown.
+</p>
+</div>
+<dl class="facts facts-4 reveal reveal-1">
+<div>
+<dt>Platform</dt>
+<dd>Atlassian Forge</dd>
+</div>
+<div>
+<dt>Storage</dt>
+<dd>None</dd>
+</div>
+<div>
+<dt>Permission</dt>
+<dd>Read page attachments</dd>
+</div>
+<div>
+<dt>Sent outside Atlassian</dt>
+<dd>Nothing</dd>
+</div>
+</dl>
+<p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+<a class="btn btn-line" href="privacy.html">Privacy policy <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</p>
+</div>
+</section>
+
+<section class="band" id="docs">
+<div class="wrap">
+<div class="head reveal">
+<h2>Documentation</h2>
+<p class="lede">Everything you need to install and use MailView for Confluence. There are no app settings.</p>
+</div>
+<div class="prose">
+
+<h3 id="getting-started">Getting started</h3>
+<ol>
+<li><strong>Install MailView for Confluence</strong> from the Atlassian Marketplace. You need to be a Confluence admin.</li>
+<li><strong>Attach an .eml or .msg file to a page.</strong> MailView only reads the attachments of the page itself.</li>
+<li><strong>Show one email on the page.</strong> Edit the page and insert the <strong>Email (MailView)</strong> macro. Its settings open by themselves: choose the email attachment and click <strong>Save</strong>. The email shows in the editor and, after you publish, for everyone who reads the page.</li>
+<li><strong>Or open any email without a macro.</strong> Click <strong>Emails on this page</strong> under the page title to see all email attachments of the page.</li>
+</ol>
+
+<h3 id="user-guide">User guide</h3>
+<p><strong>The macro.</strong> The <strong>Email (MailView)</strong> macro shows one email attachment of the page. The macro settings list the .eml and .msg attachments of the page, and also files without a file type, marked "(no file type)", because a forwarded email often has no file name. To show a different email, edit the page and open the macro settings again.</p>
+<p><strong>Emails on this page.</strong> Under the page title, <strong>Emails on this page</strong> opens a list of every email attachment of the page, newest first, with subject, sender, date and an icon: a red warning for <em>Likely phishing</em>, an orange one for <em>Be careful</em>, an envelope otherwise. Click an email to open it in a large view. No download needed. Forwarded emails without a file name are recognized by their headers and listed too.</p>
+<p><strong>Message.</strong> Subject, from, to, cc and date at the top. Below that, the message formatted as it was sent. If the email looks suspicious, a bar above the message says <em>Be careful</em> or <em>Likely phishing</em> with the main reasons. Images that travel inside the email are shown; if the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy."</p>
+<p><strong>Details.</strong> The verdict with all its reasons, the authentication results (SPF, DKIM, DMARC) with a line of explanation each, every header of the email, and a list of all links with their real destination. MailView warns when a sender or link domain is a lookalike of a known one, and when a link's text names a different domain than the link actually goes to.</p>
+<p><strong>Original.</strong> The plain text of the email, and its source: the raw email for an .eml file, or every header and text field for an Outlook .msg file.</p>
+<p><strong>PDF and Word export.</strong> When you export the page, each <strong>Email (MailView)</strong> macro becomes a static version of the email: subject, from, to, cc and date, then the verdict line, then the text and the name and size of each attachment. The verdict line is, for example, "MailView: Likely phishing" with the main reasons, or "MailView: Looks OK, no warnings found." Very long emails are shortened and earlier replies are left out; the export says so.</p>
+<p><strong>Download the original.</strong> Every email keeps a <strong>Download the original</strong> link, so you can always open it in your mail app.</p>
+
+<h3 id="limits">Limits</h3>
+<ul>
+<li><strong>Supported:</strong> .eml files and Outlook .msg files attached to the page, including emails forwarded without a file name.</li>
+<li><strong>Size:</strong> files over 10 MB are not shown and not included in the export; you get a download link instead. This is the same limit as MailView for Jira.</li>
+<li><strong>The list under the page title:</strong> subject and sender are filled in for the first 10 emails. The verdict icon appears for emails up to 2 MB; a larger email shows its verdict when you open it.</li>
+<li><strong>Not supported:</strong> protected Outlook messages (.rpmsg), which only open in Outlook. MailView says so and offers the download link.</li>
+<li><strong>Where it works:</strong> Confluence Cloud only. Not Confluence Data Center or Server.</li>
+<li><strong>The phishing check can miss things.</strong> It looks at the headers, links and attachments of the email. Treat "Looks OK" as "nothing suspicious found", not as a guarantee.</li>
+<li><strong>What it does not do:</strong> MailView never sends email, replies, or changes the page. It only shows what is already attached.</li>
+</ul>
+
+<h3 id="faq">FAQ</h3>
+<p><strong>The macro says "Choose an email attachment in the macro settings."</strong> The macro was added but no email was chosen yet. Edit the page, open the macro settings, choose the attachment and click <strong>Save</strong>.</p>
+<p><strong>The macro settings list no emails.</strong> The page has no email attachments yet. Attach an .eml or .msg file to the page, then open the settings again.</p>
+<p><strong>Emails on this page says "No email attachments on this page."</strong> MailView only looks at the attachments of the page you are on, not at other pages or at files linked from somewhere else.</p>
+<p><strong>Can everyone see the email?</strong> Everyone who can see the attachment in Confluence can read it in MailView. The app uses the permissions of the person who is looking, nothing more. The export uses the permissions of the person who exports.</p>
+<p><strong>Does MailView store the emails?</strong> No. The email is read from the attachment each time it is shown or exported. Nothing is copied or kept.</p>
+<p><strong>Why are images missing?</strong> Images that come from the internet are blocked on purpose, because loading them would tell the sender that the email was opened. Images that travel inside the email are shown.</p>
+<p><strong>Is there a version for Jira?</strong> Yes, <a href="mailview.html">MailView for Jira</a> is a separate app. Installing one does not install the other.</p>
+<p><strong>Which languages are supported?</strong> The app is in English. The email itself is shown in whatever language it was written in.</p>
+
+<h3 id="data-privacy">Data and privacy</h3>
+<p><strong>Where is data stored?</strong> Nowhere. MailView has no storage. It reads the email attachments of the page you open from your Confluence site and renders them in your browser.</p>
+<p><strong>What about PDF and Word exports?</strong> For an export, Confluence asks MailView for a static version of the email. MailView makes it inside Atlassian's Forge platform, with the permissions of the person who exports, and gives it back to Confluence for the export file. Nothing is kept afterwards.</p>
+<p><strong>What does the app send outside Atlassian?</strong> Nothing. There are no external servers and no outbound connections.</p>
+<p><strong>What permissions does the app ask for?</strong> One: read access to attachments (<code>read:attachment:confluence</code>). It cannot read the page text, and it cannot change anything.</p>
+<p><strong>How does it handle unsafe content?</strong> Before an email is shown, scripts, forms, embedded frames and external images and stylesheets are removed. Links open in a new tab with no referrer. The email is rendered inside its own isolated area so its styling cannot affect Confluence.</p>
+<p><strong>Can Dortus see our emails?</strong> No. There is no Dortus server behind the app, and it logs nothing about the email content.</p>
+<p><strong>What happens if I uninstall?</strong> Nothing to clean up: the app stored nothing, and the email attachments stay on the page.</p>
+<p>Full policy: <a href="privacy.html">Privacy policy</a>. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+<h3 id="support">Support</h3>
+<p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=MailView%20for%20Confluence">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL, a link to the page, whether the file is .eml or .msg and roughly how big it is, what you expected and what happened. Please don't send us the email itself unless it contains nothing private.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+</ul>
+</div>
+<div>
+<h2>Shopify</h2>
+<ul>
+<li><a href="arrears.html">Arrears</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
