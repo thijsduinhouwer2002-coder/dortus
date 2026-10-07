@@ -361,6 +361,12 @@ ol {
   .nav .nav-hide-sm {
     display: none;
   }
+  /* Ook de knop rechts in de navigatie: logo, drie links en een knop passen
+     niet naast elkaar op een telefoon (liep er tot 72px buiten). Elke knop
+     staat met dezelfde link ook in de pagina zelf. */
+  .nav > .btn {
+    display: none;
+  }
   .nav {
     gap: 0.9rem;
   }
@@ -370,6 +376,19 @@ ol {
   .site-header .wrap {
     padding-inline: 1rem;
     min-height: 58px;
+  }
+}
+
+/* Heel smalle telefoons (320px): iets minder ruimte tussen de items. */
+@media (max-width: 360px) {
+  .site-header .wrap {
+    gap: 0.6rem;
+  }
+  .nav {
+    gap: 0.6rem;
+  }
+  .nav > a:not(.btn) {
+    font-size: 0.88rem;
   }
 }
 
@@ -506,6 +525,11 @@ body:not([data-world]) .btn-primary {
 .door .status::before,
 .world-hero .status::before {
   background: #fff;
+}
+
+/* Link in een statusregel: zelfde kleur als de regel (leesbaar op blauw). */
+.status a {
+  color: inherit;
 }
 
 /* ===============================================================
@@ -1541,4 +1565,73 @@ html:not(.no-js) .reveal.is-in {
   .arrow {
     transition: none;
   }
+}
+
+/* Home (okt 2026): Atlassian eerst en breed, Shopify kleiner eronder. */
+.chooser.chooser-stack {
+  grid-template-columns: 1fr;
+}
+
+/* Blok met losse app-links (geen link om het hele blok heen). */
+div.door:hover,
+div.door:focus-within {
+  transform: none;
+  box-shadow: none;
+}
+
+div.door:hover .door-peek {
+  transform: none;
+}
+
+.door-apps a {
+  display: grid;
+  gap: 0.12rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Zichtbaar een link, ook zonder hover (mobiel). */
+.door-apps a b {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.door-apps a:hover b,
+.door-apps a:focus-visible b {
+  text-decoration-thickness: 2px;
+}
+
+@media (min-width: 820px) {
+  .door-wide {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    column-gap: clamp(1.25rem, 3vw, 2.5rem);
+    row-gap: 0.85rem;
+    align-content: start;
+  }
+
+  .door-wide > :not(.door-peek) {
+    grid-column: 1;
+  }
+
+  .door-wide > .status,
+  .door-wide > .door-enter {
+    justify-self: start;
+  }
+
+  .door-wide .door-peek {
+    grid-column: 2;
+    grid-row: 1 / span 6;
+    align-self: end;
+    height: clamp(280px, 36vh, 380px);
+  }
+}
+
+.door-small {
+  padding-bottom: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.door-small .door-platform {
+  font-size: clamp(1.25rem, 1rem + 0.9vw, 1.6rem);
 }

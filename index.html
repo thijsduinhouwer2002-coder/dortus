@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus - apps for Shopify B2B and Atlassian Confluence</title>
-  <meta name="description" content="Dortus builds focused apps for Shopify B2B and Atlassian Confluence. Arrears collects money on net terms. AskSpace and Mermaid Live Preview make Confluence easier to work in." />
+  <title>Dortus: small apps for Jira and Confluence</title>
+  <meta name="description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Built on Atlassian Forge, nothing stored on our servers." />
   <meta name="theme-color" content="#004c3f" />
   <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="Dortus - apps for Shopify B2B and Atlassian Confluence" />
-  <meta property="og:description" content="Two platforms, three products. Arrears for Shopify B2B collections, AskSpace and Mermaid Live Preview for Confluence." />
+  <meta property="og:title" content="Dortus: small apps for Jira and Confluence" />
+  <meta property="og:description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Built on Atlassian Forge, nothing stored on our servers." />
   <meta property="og:image" content="assets/feature-media.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,8 +24,8 @@
       <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
       <nav class="nav" aria-label="Primary">
         <a class="nav-hide-sm" href="index.html" aria-current="page">Dortus</a>
-        <a href="arrears.html">Shopify</a>
         <a href="atlassian.html">Atlassian</a>
+        <a href="arrears.html">Shopify</a>
         <a href="support.html">Support</a>
         <a class="btn btn-line nav-hide-sm" href="mailto:dortus.support@gmail.com?subject=Dortus">Email us</a>
       </nav>
@@ -34,46 +34,18 @@
 
   <main id="main">
 
-    <!-- One composition: who we are, then the two doors you must pick -->
+    <!-- Atlassian eerst en breed; Shopify kleiner eronder -->
     <div class="home-shell">
       <div class="wrap home-top">
         <h1 class="wordmark enter"><span>Dortus</span></h1>
         <p class="home-line enter enter-1">
-          Software for two platforms. Each app fixes one annoying job:
-          <strong>getting paid</strong> on Shopify B2B, and <strong>finding the answer</strong>
-          in Confluence.
+          Small apps for Jira and Confluence. Each one does one job well.
         </p>
-        <p class="home-meta enter enter-2">Two platforms. Pick a side.</p>
       </div>
 
-      <div class="wrap chooser">
+      <div class="wrap chooser chooser-stack">
 
-        <a class="door door-shopify enter enter-1" href="arrears.html">
-          <h2 class="door-platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M4 7h16l-1.2 13H5.2L4 7Z" stroke-linejoin="round" />
-              <path d="M9 7V5.6A3 3 0 0 1 15 5.6V7" stroke-linecap="round" />
-            </svg>
-            Shopify
-          </h2>
-          <p class="door-pitch">
-            Net terms put money on the books. Arrears is the desk that ages it, matches bank
-            payments, and holds credit when needed.
-          </p>
-          <ul class="door-apps">
-            <li>
-              <b>Arrears</b>
-              <span>Aging, statements, reminders, cash application and credit holds, built on the companies and payment terms already in your store.</span>
-            </li>
-          </ul>
-          <span class="status">In Shopify App Store review</span>
-          <span class="door-enter">Open Shopify apps <span class="arrow" aria-hidden="true">&rarr;</span></span>
-          <span class="door-peek">
-            <img src="assets/01-aging.png" alt="Arrears aging screen inside the Shopify admin, showing total outstanding split into aging buckets" width="1600" height="2057" />
-          </span>
-        </a>
-
-        <a class="door door-atlassian enter enter-2" href="atlassian.html">
+        <div class="door door-atlassian door-wide enter enter-1">
           <h2 class="door-platform">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
               <path d="M5 4h9l5 5v11H5V4Z" stroke-linejoin="round" />
@@ -82,25 +54,59 @@
             </svg>
             Atlassian
           </h2>
-          <p class="door-pitch">
-            The answer is in someone's chat history and the flowchart is a dead PNG. Two apps
-            that put both back in the page.
-          </p>
+          <p class="door-pitch">Built on Atlassian Forge. Nothing is stored on our servers.</p>
           <ul class="door-apps">
             <li>
-              <b>AskSpace</b>
-              <span>Question and answer per Confluence space, with separate rules for who may ask and who may answer.</span>
+              <a href="mailview.html">
+                <b>MailView</b>
+                <span>Read .msg and .eml email attachments right on the Jira work item. Nothing leaves Jira.</span>
+              </a>
+            </li>
+            <!-- Klaar voor later, nu niet zichtbaar: MailView for Confluence is nog niet ingediend.
+            <li>
+              <b>MailView for Confluence</b>
+              <span>Open .msg and .eml attachments on any Confluence page, with a phishing check. Nothing leaves Confluence.</span>
+            </li>
+            -->
+            <li>
+              <a href="askspace.html">
+                <b>AskSpace</b>
+                <span>Question and answer per Confluence space, with separate rules for who may ask and who may answer.</span>
+              </a>
             </li>
             <li>
-              <b>Mermaid Live Preview</b>
-              <span>Type a diagram, watch it draw, keep it as editable text in the page.</span>
+              <a href="mermaid.html">
+                <b>Mermaid Live Preview</b>
+                <span>Type a diagram, watch it draw, keep it as editable text in the page.</span>
+              </a>
             </li>
           </ul>
-          <span class="status">AskSpace pending Atlassian review</span>
-          <span class="door-enter">Open Atlassian apps <span class="arrow" aria-hidden="true">&rarr;</span></span>
+          <span class="status"><span>Mermaid Live Preview is <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">live on the Atlassian Marketplace</a>. MailView and AskSpace pending Atlassian review.</span></span>
+          <!-- Na goedkeuring van MailView deze regel gebruiken:
+          <span class="status"><span>Mermaid Live Preview and MailView are live on the Atlassian Marketplace: <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Mermaid Live Preview</a>, <a href="https://marketplace.atlassian.com/apps/4078695191">MailView</a>. AskSpace pending Atlassian review.</span></span>
+          -->
+          <a class="door-enter" href="atlassian.html">Open Atlassian apps <span class="arrow" aria-hidden="true">&rarr;</span></a>
           <span class="door-peek">
-            <img src="assets/01-question-list-app.png" alt="AskSpace question list in a Confluence space, with solved, still open and unanswered questions" width="797" height="837" />
+            <img src="assets/mailview-01-message.png" alt="MailView panel on a Jira work item showing a forwarded customer email with subject, sender, recipients and a formatted body" width="895" height="1000" />
           </span>
+        </div>
+
+        <a class="door door-shopify door-small enter enter-2" href="arrears.html">
+          <h2 class="door-platform">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 7h16l-1.2 13H5.2L4 7Z" stroke-linejoin="round" />
+              <path d="M9 7V5.6A3 3 0 0 1 15 5.6V7" stroke-linecap="round" />
+            </svg>
+            Shopify
+          </h2>
+          <ul class="door-apps">
+            <li>
+              <b>Arrears</b>
+              <span>Aging, statements, reminders, cash application and credit holds, built on the companies and payment terms already in your store.</span>
+            </li>
+          </ul>
+          <span class="status">In Shopify App Store review</span>
+          <span class="door-enter">Open Shopify apps <span class="arrow" aria-hidden="true">&rarr;</span></span>
         </a>
 
       </div>
@@ -117,21 +123,22 @@
     <div class="wrap">
       <div>
         <p class="footer-brand">Dortus</p>
-        <p>Independent software vendor. Apps for Shopify B2B and Atlassian Confluence.</p>
+        <p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
         <p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="atlassian.html">Atlassian apps</a></li>
+          <li><a href="mailview.html">MailView</a></li>
+          <li><a href="askspace.html">AskSpace</a></li>
+          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+        </ul>
       </div>
       <div>
         <h2>Shopify</h2>
         <ul>
           <li><a href="arrears.html">Arrears</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Atlassian</h2>
-        <ul>
-          <li><a href="atlassian.html">Confluence apps</a></li>
-          <li><a href="askspace.html">AskSpace</a></li>
-          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
         </ul>
       </div>
       <div>
@@ -146,7 +153,7 @@
     </div>
     <div class="wrap footer-rule">
       <p class="footer-legal">
-        Dortus. Shopify is a trademark of Shopify Inc. Atlassian and Confluence are trademarks
+        Dortus. Shopify is a trademark of Shopify Inc. Atlassian, Jira and Confluence are trademarks
         of Atlassian Pty Ltd. Dortus is not affiliated with either company.
       </p>
     </div>
