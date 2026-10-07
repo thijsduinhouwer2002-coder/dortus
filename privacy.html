@@ -41,7 +41,7 @@ Two platforms, two very different data stories. Arrears runs on servers Dortus
 operates. The Atlassian apps run inside your own Atlassian site. Both are described
 below.
 </p>
-<p class="page-meta enter enter-2">Last updated: 6 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 7 October 2026</p>
 </div>
 </section>
 
@@ -56,7 +56,7 @@ Atlassian Confluence, and <strong>MailView</strong> for Atlassian Jira.
 </p>
 <p>
 Contact for privacy questions and data requests:
-<a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a>
+<a href="mailto:support@dortus.com">support@dortus.com</a>
 </p>
 
 <h2>2. Our role</h2>
@@ -153,9 +153,10 @@ removed when we receive the <strong>app/uninstalled</strong> webhook.
 
 <h3>4.1 Where the data lives</h3>
 <p>
-All three apps are built on <strong>Atlassian Forge</strong> and run entirely inside
+These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
 Atlassian's cloud. AskSpace and Mermaid Live Preview keep their data in <strong>Forge
-app storage in your Atlassian site</strong>. MailView has no storage at all.
+app storage in your Atlassian site</strong>. MailView and MailView for Confluence have
+no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
 </p>
@@ -200,7 +201,24 @@ as the panel is open.
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3>4.5 Billing</h3>
+<h3>4.5 What MailView for Confluence processes</h3>
+<p>
+MailView for Confluence shows .eml and .msg email attachments on a Confluence page. It
+only reads the email attachments of the page you open, with your own Confluence
+permissions and with one permission for the app: <code>read:attachment:confluence</code>.
+The email is rendered <strong>in your browser</strong> and only for as long as it is open.
+</p>
+<ul>
+<li>To find the emails, the app reads the list of attachments of that page. Files without a known file type are opened only to check whether they are an email. Files with a known type, such as PDF or images, are not opened.</li>
+<li>When a page is exported to PDF or Word, the email chosen in the macro is read and turned into a static version inside Atlassian's Forge platform, with the permissions of the person who exports, and handed back to Confluence for the export file. Nothing is kept afterwards.</li>
+<li>MailView for Confluence keeps no copies: it has no app storage and no server.</li>
+<li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>
+<li>Emails usually contain personal data (names, addresses, message text). That data stays in your Confluence attachment, under your organisation's control, exactly as before you installed the app.</li>
+<li>The permission is read-only and covers attachments only. The app cannot read page text, and it cannot change, send or delete anything.</li>
+<li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
+</ul>
+
+<h3>4.6 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
@@ -295,7 +313,7 @@ directly.
 </ul>
 <p>
 You can always email
-<a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a> and
+<a href="mailto:support@dortus.com">support@dortus.com</a> and
 we will answer within one business day.
 </p>
 
@@ -317,7 +335,7 @@ we do, and material changes will be noted in the app release notes.
 <h2>14. Contact</h2>
 <p>
 Dortus<br />
-<a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a><br />
+<a href="mailto:support@dortus.com">support@dortus.com</a><br />
 <a href="index.html">Home</a> &middot; <a href="support.html">Support</a> &middot;
 <a href="terms.html">Terms of service</a>
 </p>
@@ -331,7 +349,7 @@ Dortus<br />
 <div>
 <p class="footer-brand">Dortus</p>
 <p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
-<p class="mono"><a href="mailto:dortus.support@gmail.com">dortus.support@gmail.com</a></p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
 </div>
 <div>
 <h2>Atlassian</h2>
@@ -354,7 +372,7 @@ Dortus<br />
 <li><a href="support.html">Support</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
-<li><a href="mailto:dortus.support@gmail.com">Email us</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
 </ul>
 </div>
 </div>
