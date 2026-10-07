@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus for Atlassian Confluence - AskSpace and Mermaid Live Preview</title>
-  <meta name="description" content="Two Forge apps for Confluence from Dortus: AskSpace gives each space its own question and answer board, Mermaid Live Preview draws diagrams from text in the page. Data stays in your Atlassian site." />
+  <title>Dortus: apps for Jira and Confluence - MailView, AskSpace and Mermaid Live Preview</title>
+  <meta name="description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Mermaid Live Preview draws diagrams from text in the page. Built on Atlassian Forge, nothing stored on our servers." />
   <meta name="theme-color" content="#0052cc" />
   <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="Dortus for Atlassian Confluence" />
-  <meta property="og:description" content="AskSpace and Mermaid Live Preview: two small Forge apps that keep answers and diagrams inside Confluence." />
+  <meta property="og:title" content="Dortus: apps for Jira and Confluence" />
+  <meta property="og:description" content="MailView, AskSpace and Mermaid Live Preview: small Forge apps for Jira and Confluence. Nothing stored on our servers." />
   <meta property="og:image" content="assets/01-question-list-app.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,12 +43,12 @@
               <path d="M14 4v5h5" stroke-linejoin="round" />
               <path d="M9 13h6M9 16.5h4" stroke-linecap="round" />
             </svg>
-            Dortus for Confluence
+            Dortus for Atlassian
           </p>
-          <h1 class="enter enter-1">Confluence should already hold the answer.</h1>
+          <h1 class="enter enter-1">Apps for Jira and Confluence</h1>
           <p class="lede enter enter-2">
-            Instead the answer sits in a chat thread and the flowchart is a PNG nobody can edit.
-            Two Forge apps fix exactly that, one space at a time.
+            Each one does one job well. All of them run on Atlassian Forge, and nothing is stored
+            on our servers.
           </p>
           <div class="btns enter enter-2">
             <a class="btn btn-light" href="#apps">Pick an app <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -70,15 +70,40 @@
     <section class="band band-tint" id="apps">
       <div class="wrap">
         <div class="head reveal">
-          <h2>Two apps, two jobs</h2>
+          <h2>Three apps, three jobs</h2>
           <p class="lede">
-            Both are Forge apps. Both keep their data inside your Atlassian cloud site. Neither
-            one asks you to move your documentation anywhere else.
+            All three are Forge apps. Your content stays inside your Atlassian cloud site.
+            None of them asks you to move your work anywhere else.
           </p>
         </div>
 
-        <div class="cols cols-2">
+        <div class="cols cols-3">
           <div class="card reveal">
+            <span class="card-mark" aria-hidden="true">&#9993;</span>
+            <h3>MailView</h3>
+            <p>
+              Read .msg and .eml email attachments right on the Jira work item. Nothing leaves Jira.
+            </p>
+            <p style="margin: 1rem 0"><span class="status">Pending Atlassian review</span></p>
+            <!-- Na goedkeuring van MailView deze regel gebruiken:
+            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4078695191">MailView on the Atlassian Marketplace</a></p>
+            -->
+            <p class="btns">
+              <a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+
+          <!-- Klaar voor later, nu niet zichtbaar: MailView for Confluence is nog niet ingediend.
+          <div class="card reveal">
+            <span class="card-mark" aria-hidden="true">&#9993;</span>
+            <h3>MailView for Confluence</h3>
+            <p>
+              Open .msg and .eml attachments on any Confluence page, with a phishing check. Nothing leaves Confluence.
+            </p>
+          </div>
+          -->
+
+          <div class="card reveal reveal-1">
             <span class="card-mark" aria-hidden="true">Q</span>
             <h3>AskSpace</h3>
             <p>
@@ -92,7 +117,7 @@
             </p>
           </div>
 
-          <div class="card reveal reveal-1">
+          <div class="card reveal reveal-2">
             <span class="card-mark" aria-hidden="true">&#9651;</span>
             <h3>Mermaid Live Preview</h3>
             <p>
@@ -115,9 +140,10 @@
         <div class="head reveal">
           <h2>Your content never leaves your site</h2>
           <p class="lede">
-            Both apps run on Atlassian Forge. Questions, answers, votes, settings and diagram
-            source live in Forge app storage inside your own cloud site. Dortus operates no
-            server for them and receives no app content.
+            All apps run on Atlassian Forge. MailView stores nothing: it reads the attachment and
+            renders it in your browser. AskSpace and Mermaid Live Preview keep questions, answers,
+            votes, settings and diagram source in Forge app storage inside your own cloud site.
+            Dortus operates no server for them and receives no app content.
           </p>
         </div>
         <dl class="facts facts-4 reveal reveal-1">
@@ -127,7 +153,7 @@
           </div>
           <div>
             <dt>Storage</dt>
-            <dd>Forge app storage, your site</dd>
+            <dd>Forge app storage, your site. MailView: none</dd>
           </div>
           <div>
             <dt>Egress</dt>
@@ -148,10 +174,14 @@
     <section class="band">
       <div class="wrap">
         <div class="head reveal">
-          <h2>Where both apps stand today</h2>
+          <h2>Where the apps stand today</h2>
           <p class="lede">No launch theatre. This is the actual state.</p>
         </div>
         <ul class="rows reveal reveal-1">
+          <li>
+            <b>MailView</b>
+            <p>Submitted, pending Atlassian review.</p>
+          </li>
           <li>
             <b>AskSpace</b>
             <p>Published as a public app under the Dortus vendor account and waiting on Atlassian review. Email us and you get the install path now.</p>
