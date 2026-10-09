@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to open .msg and .eml email attachments in Jira Cloud · Dortus</title>
+<meta name="description" content="Jira Cloud shows Outlook .msg attachments as code and .eml files as raw text. Here is every way to actually read them: download and open in a mail app, free scripts, and Marketplace apps that show the email on the work item." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to open .msg and .eml email attachments in Jira Cloud" />
+<meta property="og:description" content="Every way to read Outlook .msg and .eml attachments in Jira, from free workarounds to apps that show the email on the work item." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="arrears.html">Shopify</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to open .msg and .eml email attachments in Jira</h1>
+<p class="lede">
+Someone attaches an Outlook message to a work item and Jira shows a wall of code.
+This page lists every way to actually read it, including the free ones.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="why">Why Jira can't show the email</h3>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Jira Cloud has no built-in viewer for either, so the preview shows raw source for .eml and unreadable code for .msg. This has been an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>) since 2021.</p>
+
+<h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
+<p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. On a Mac or on Linux, Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg you need a separate converter or viewer.</p>
+<p>This works, but it has real costs on a busy helpdesk: every reader downloads a copy outside Jira, opening unknown attachments in a mail app is exactly what security training tells people not to do, and nothing of the email is visible in the ticket itself.</p>
+
+<h3 id="option-2">Option 2: renaming the file does not work</h3>
+<p>A common tip is renaming <code>.msg</code> to <code>.eml</code>. That does not work: the formats are unrelated, so the renamed file is still unreadable. Saving the email as .eml or PDF <em>before</em> attaching it does work, if you can ask the sender to do that every time.</p>
+
+<h3 id="option-3">Option 3: free browser scripts</h3>
+<p>There are community userscripts (for example for Tampermonkey) that parse .msg files in the browser on a Jira page. They are free and clever. Mind the trade-offs: every agent has to install a browser extension plus the script themselves, it is unmanaged (no admin control, no review process), and it can break whenever Jira's interface changes.</p>
+
+<h3 id="option-4">Option 4: a Marketplace app that shows the email on the work item</h3>
+<p>Marketplace apps add a viewer inside Jira, so the email is readable where the work happens and nothing needs to be downloaded. There are a few; compare them on these points:</p>
+<ul>
+<li><strong>Where the email is processed.</strong> Prefer apps that render in your browser with no external servers ("Runs on Atlassian"), so the email never leaves your site.</li>
+<li><strong>Both formats</strong>, including .msg files that only carry RTF, and forwarded emails that were attached without a file extension.</li>
+<li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped, so reading a suspicious email in the ticket is safe.</li>
+<li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and where each link really goes saves the round-trip to a separate analysis tool.</li>
+</ul>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, lookalike domains, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
+
+<h3 id="which">Which option fits</h3>
+<p>One email a month: downloading is fine. A migration folder full of .msg files, or a service desk where customers forward emails daily: an in-Jira viewer pays for itself quickly, and a security-minded team will want the rendering isolation and the authentication details rather than agents opening attachments in Outlook.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can Jira Cloud preview .eml natively?</strong> No, it shows the raw source. .msg shows as code.</p>
+<p><strong>Does Outlook on the web open .msg files?</strong> Not from a download; classic Outlook for Windows does.</p>
+<p><strong>Is it safe to open a suspicious .msg from a ticket?</strong> Opening it in Outlook runs the risk every phishing training warns about. Read it in a viewer that strips scripts and remote content instead, and check the link destinations before anyone clicks.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a case we missed? Email <a href="mailto:support@dortus.com?subject=Opening%20email%20attachments%20in%20Jira">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+</ul>
+</div>
+<div>
+<h2>Shopify</h2>
+<ul>
+<li><a href="arrears.html">Arrears</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
