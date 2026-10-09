@@ -46,7 +46,7 @@ This page lists every way to actually read it, including the free ones.
 <div class="prose">
 
 <h3 id="why">Why Jira can't show the email</h3>
-<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Jira Cloud has no built-in viewer for either, so the preview shows raw source for .eml and unreadable code for .msg. This has been an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>) since 2021.</p>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Jira Cloud has no built-in viewer for either, so the preview shows raw source for .eml and unreadable code for .msg. This is an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>).</p>
 
 <h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
 <p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. On a Mac or on Linux, Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg you need a separate converter or viewer.</p>
@@ -55,10 +55,7 @@ This page lists every way to actually read it, including the free ones.
 <h3 id="option-2">Option 2: renaming the file does not work</h3>
 <p>A common tip is renaming <code>.msg</code> to <code>.eml</code>. That does not work: the formats are unrelated, so the renamed file is still unreadable. Saving the email as .eml or PDF <em>before</em> attaching it does work, if you can ask the sender to do that every time.</p>
 
-<h3 id="option-3">Option 3: free browser scripts</h3>
-<p>There are community userscripts (for example for Tampermonkey) that parse .msg files in the browser on a Jira page. They are free and clever. Mind the trade-offs: every agent has to install a browser extension plus the script themselves, it is unmanaged (no admin control, no review process), and it can break whenever Jira's interface changes.</p>
-
-<h3 id="option-4">Option 4: a Marketplace app that shows the email on the work item</h3>
+<h3 id="option-3">Option 3: a Marketplace app that shows the email on the work item</h3>
 <p>Marketplace apps add a viewer inside Jira, so the email is readable where the work happens and nothing needs to be downloaded. There are a few; compare them on these points:</p>
 <ul>
 <li><strong>Where the email is processed.</strong> Prefer apps that render in your browser with no external servers ("Runs on Atlassian"), so the email never leaves your site.</li>
