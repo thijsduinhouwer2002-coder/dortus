@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to open .msg and .eml email attachments in Confluence Cloud · Dortus</title>
+<meta name="description" content="Confluence Cloud only offers a download for Outlook .msg and .eml attachments. Here is every way to actually read them: open in a mail app, convert before uploading, and Marketplace apps that show the email on the page." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to open .msg and .eml email attachments in Confluence Cloud" />
+<meta property="og:description" content="Every way to read Outlook .msg and .eml attachments in Confluence, from free workarounds to apps that show the email on the page." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="arrears.html">Shopify</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview-confluence.html">MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to open .msg and .eml email attachments in Confluence</h1>
+<p class="lede">
+Meeting notes with the original request attached, incident write-ups, audit trails:
+teams keep emails in Confluence all the time. Confluence itself can only offer the
+file as a download. These are the ways to actually read it.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="why">Why Confluence can't show the email</h3>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Confluence Cloud previews images, PDFs and Office files, but it has no viewer for email formats, so both show up as a bare download link on the page. There is a request for this on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>).</p>
+
+<h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
+<p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg on a Mac you need a separate viewer.</p>
+<p>The catch: every reader downloads a copy outside Confluence, the page itself stays uninformative, and if the email was attached precisely because it looked suspicious, opening it in Outlook is the one thing security training says not to do.</p>
+
+<h3 id="option-2">Option 2: convert before uploading (free, needs discipline)</h3>
+<p>Renaming <code>.msg</code> to <code>.eml</code> does not work; the formats are unrelated. What does work is saving the email as PDF before attaching it, or pasting the relevant text into the page. You lose the headers and the original file, and it only helps when whoever uploads remembers to do it, every time.</p>
+
+<h3 id="option-3">Option 3: a Marketplace app that shows the email on the page</h3>
+<p>Marketplace apps add a viewer inside Confluence, so the email is readable where it is kept. There are only a few for email formats; compare them on these points:</p>
+<ul>
+<li><strong>Where the email is processed.</strong> Prefer apps that render in your browser with no external servers ("Runs on Atlassian"), so the email never leaves your site.</li>
+<li><strong>Both formats</strong>, including .msg files that only carry RTF, and forwarded emails that were attached without a file extension.</li>
+<li><strong>An overview.</strong> On pages that collect several emails, a list with subject, sender and date beats clicking through bare file names.</li>
+<li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped before anything is shown.</li>
+<li><strong>Export.</strong> If the page goes out as PDF or Word, the email should export as readable text, not disappear.</li>
+</ul>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview-confluence.html">MailView for Confluence</a> adds an "Email (MailView)" macro that shows a chosen .msg or .eml attachment on the page, and an "Emails on this page" list with a verdict icon per email. Every email gets a plain-English phishing check (authentication results, lookalike domains, links whose text points elsewhere), and the PDF and Word export of the page includes a clean version of the email. It stores nothing and sends nothing anywhere.</p>
+
+<h3 id="which">Which option fits</h3>
+<p>An occasional email on a personal page: downloading is fine. A space that documents decisions, incidents or customer requests with the original emails attached: a viewer keeps the page self-contained, keeps readers out of Outlook, and keeps the email readable years later in exports and archives.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can Confluence Cloud preview .eml or .msg natively?</strong> No. Both are offered as a download only.</p>
+<p><strong>Does renaming .msg to .eml work?</strong> No. The formats are unrelated; the renamed file stays unreadable.</p>
+<p><strong>Do email attachments survive PDF export?</strong> Natively they export as a file name only. A viewer app can include the email's content in the export.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a case we missed? Email <a href="mailto:support@dortus.com?subject=Opening%20email%20attachments%20in%20Confluence">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+</ul>
+</div>
+<div>
+<h2>Shopify</h2>
+<ul>
+<li><a href="arrears.html">Arrears</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
