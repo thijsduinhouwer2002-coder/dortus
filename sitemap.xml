@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Base URL changes to https://dortus.com/ once the custom domain is connected. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/atlassian.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/mailview.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/askspace.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/mermaid.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/open-msg-eml-in-jira.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/open-msg-eml-in-confluence.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/attach-outlook-email-to-jira.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/phishing-reports-jira-service-management.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/arrears.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/support.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/privacy.html</loc></url>
-  <url><loc>https://thijsduinhouwer2002-coder.github.io/dortus/terms.html</loc></url>
+  <url><loc>https://dortus.com/</loc></url>
+  <url><loc>https://dortus.com/atlassian.html</loc></url>
+  <url><loc>https://dortus.com/mailview.html</loc></url>
+  <url><loc>https://dortus.com/askspace.html</loc></url>
+  <url><loc>https://dortus.com/mermaid.html</loc></url>
+  <url><loc>https://dortus.com/open-msg-eml-in-jira.html</loc></url>
+  <url><loc>https://dortus.com/open-msg-eml-in-confluence.html</loc></url>
+  <url><loc>https://dortus.com/attach-outlook-email-to-jira.html</loc></url>
+  <url><loc>https://dortus.com/phishing-reports-jira-service-management.html</loc></url>
+  <url><loc>https://dortus.com/arrears.html</loc></url>
+  <url><loc>https://dortus.com/support.html</loc></url>
+  <url><loc>https://dortus.com/privacy.html</loc></url>
+  <url><loc>https://dortus.com/terms.html</loc></url>
 </urlset>
