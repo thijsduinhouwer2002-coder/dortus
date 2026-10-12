@@ -1341,6 +1341,27 @@ body > main .band:not(.band-deep):not(.band-dark) .mock {
   font-size: 0.97rem;
 }
 
+/* Kaartje onderaan een gids: de weg naar de productpagina, ook op een
+   telefoon (daar is de knop in de navigatie verborgen). Hergebruikt .card,
+   .eyebrow, .btns en .small; hier alleen de ruimte in de leeskolom en de
+   kleur van het label op wit. */
+.prose .card {
+  margin: 2rem 0 1.4rem;
+}
+
+.prose .card .eyebrow {
+  color: var(--brand-text);
+  margin-bottom: 0.6rem;
+}
+
+.prose .card h3 {
+  margin-top: 0;
+}
+
+.prose .card .small {
+  color: var(--ink-3);
+}
+
 .checks {
   list-style: none;
   display: grid;
