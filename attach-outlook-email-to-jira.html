@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to attach an Outlook email to a Jira work item (and keep it readable) · Dortus</title>
+<meta name="description" content="Four ways to get an Outlook email onto a Jira Cloud work item: the Jira Cloud for Outlook add-in, drag and drop (.msg or .eml), forwarding to the Jira mail handler, and saving as PDF. What each one looks like afterwards, and how to keep the email readable in the ticket." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to attach an Outlook email to a Jira work item (and keep it readable)" />
+<meta property="og:description" content="Add-in, drag and drop, forward to Jira, or PDF: what each way produces on the work item, and how to keep the email readable." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="arrears.html">Shopify</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to attach an Outlook email to a Jira work item (and keep it readable)</h1>
+<p class="lede">
+A customer sends the details by email, a colleague forwards an approval, a supplier confirms a date.
+The email belongs on the work item. There are four ways to get it there, and they do not end the same way.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="add-in">Way 1: the Jira Cloud for Outlook add-in</h3>
+<p>Atlassian's own add-in lets you create a work item from an email, or add an email to an existing one, from inside Outlook. Emails added this way show up on the work item under <strong>Attached emails</strong> in the web view, where they can be read. Two limits to know: the add-in has to be installed and signed in for everyone who files emails, and only emails added through the add-in appear in that section. Files that arrive any other way do not.</p>
+
+<h3 id="drag">Way 2: drag the email onto the work item</h3>
+<p>Dragging a message from Outlook onto the attachment area of a work item is the quickest route, and it is where most of the confusion starts. Classic Outlook for Windows saves the message as a <code>.msg</code> file. New Outlook, Outlook for Mac, Apple Mail and Thunderbird save it as <code>.eml</code>. Both land on the work item as ordinary attachments.</p>
+<p>The problem comes when someone opens them: Jira Cloud has no viewer for either format. A <code>.eml</code> shows as raw source, a <code>.msg</code> as unreadable code. That has been an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>) since 2021. The content is all there, but every reader has to download the file and open it in a mail client.</p>
+
+<h3 id="forward">Way 3: forward the email to Jira</h3>
+<p>If your project has an email channel (Jira Service Management does, and Jira can be set up with a mail handler), you can forward the email to that address. Forwarding <em>inline</em> puts the text in the description or in a comment, which is readable but drops the headers and sometimes the formatting. Forwarding <em>as an attachment</em> keeps the original email, but Jira's mail handler stores it as a file without an extension, so it does not even look like an email (<a href="https://jira.atlassian.com/browse/JRACLOUD-40477" rel="noopener noreferrer">JRACLOUD-40477</a>, open since 2014). Readers have to download it, rename it to <code>.eml</code> and open it in a mail client.</p>
+
+<h3 id="pdf">Way 4: save as PDF first</h3>
+<p>Printing the email to PDF before attaching it gives a file Jira can preview. You lose the headers, the original attachments and the ability to reply or forward later, and it only works when the person attaching remembers to do it every time. Fine for an occasional contract confirmation; not workable for a service desk.</p>
+
+<h3 id="readable">Keeping the email readable on the work item</h3>
+<p>Ways 2 and 3 are the ones people actually use day to day, and both leave an email on the work item that Jira cannot show. Renaming <code>.msg</code> to <code>.eml</code> does not help; the formats are unrelated. What does help is a viewer inside Jira. Compare apps on these points: whether the email is rendered in your browser with no external servers ("Runs on Atlassian"), whether both formats are covered, including <code>.msg</code> files that only carry RTF and forwarded emails without an extension, and whether scripts and remote images are stripped before anything is shown.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> lists every email on the work item and shows the one you click with formatting, inline images and the files inside, no matter how it was attached. It also gives a plain-English check for suspicious mail (authentication results, lookalike domains, where links really go). It stores nothing and sends nothing anywhere, and it works in Jira and in the agent view of Jira Service Management.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Which way should a team pick?</strong> If everyone works in Outlook and will install the add-in, Way 1 gives readable emails out of the box. If emails arrive from customers, automations or colleagues who just drag and drop, plan for <code>.msg</code> and <code>.eml</code> files on your work items and add a viewer.</p>
+<p><strong>Does the file type matter?</strong> Not for storing. Both are kept intact. It matters for reading: Outlook for Windows opens both, Apple Mail and Thunderbird open <code>.eml</code> only.</p>
+<p><strong>Can Jira show the email in the mobile app?</strong> No. Attached emails from the add-in are a web-only feature, and other email files are downloads everywhere.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a case we missed? Email <a href="mailto:support@dortus.com?subject=Attaching%20Outlook%20emails%20to%20Jira">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+</ul>
+</div>
+<div>
+<h2>Shopify</h2>
+<ul>
+<li><a href="arrears.html">Arrears</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
