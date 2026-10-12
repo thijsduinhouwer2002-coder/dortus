@@ -46,7 +46,7 @@ This page lists every way to actually read it, including the free ones.
 <div class="prose">
 
 <h3 id="why">Why Jira can't show the email</h3>
-<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Jira Cloud has no built-in viewer for either, so the preview shows raw source for .eml and unreadable code for .msg. This is an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>).</p>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Jira Cloud has no built-in viewer for either, so the preview shows raw source for .eml and unreadable code for .msg. This has been an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>) since 2021. The one exception: emails you add with Atlassian's Jira Cloud for Outlook add-in appear under "Attached emails" on the work item. Files that are uploaded, forwarded or added by automation don't.</p>
 
 <h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
 <p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. On a Mac or on Linux, Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg you need a separate converter or viewer.</p>
@@ -69,7 +69,7 @@ This page lists every way to actually read it, including the free ones.
 <p>One email a month: downloading is fine. A migration folder full of .msg files, or a service desk where customers forward emails daily: an in-Jira viewer pays for itself quickly, and a security-minded team will want the rendering isolation and the authentication details rather than agents opening attachments in Outlook.</p>
 
 <h3 id="faq">Short answers</h3>
-<p><strong>Can Jira Cloud preview .eml natively?</strong> No, it shows the raw source. .msg shows as code.</p>
+<p><strong>Can Jira Cloud preview .eml natively?</strong> No, uploaded .eml files show as raw source and .msg as code. Emails added with the Jira Cloud for Outlook add-in are the exception.</p>
 <p><strong>Does Outlook on the web open .msg files?</strong> Not from a download; classic Outlook for Windows does.</p>
 <p><strong>Is it safe to open a suspicious .msg from a ticket?</strong> Opening it in Outlook runs the risk every phishing training warns about. Read it in a viewer that strips scripts and remote content instead, and check the link destinations before anyone clicks.</p>
 
