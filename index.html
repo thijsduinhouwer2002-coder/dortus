@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus: small apps for Jira and Confluence</title>
-  <meta name="description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Built on Atlassian Forge, nothing stored on our servers." />
+  <title>Dortus: small apps for Jira and Confluence that never phone home</title>
+  <meta name="description" content="Dortus makes small apps for Jira and Confluence. Each one does one job, runs entirely on Atlassian and sends nothing to us. MailView shows .msg and .eml email attachments where the work happens, with a plain-English phishing check." />
   <meta name="theme-color" content="#004c3f" />
   <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="Dortus: small apps for Jira and Confluence" />
-  <meta property="og:description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Built on Atlassian Forge, nothing stored on our servers." />
+  <meta property="og:title" content="Dortus: small apps for Jira and Confluence that never phone home" />
+  <meta property="og:description" content="Each app does one job, runs entirely on Atlassian and sends nothing to us. MailView shows .msg and .eml email attachments in Jira and Confluence." />
   <meta property="og:image" content="assets/feature-media.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +25,7 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav-hide-sm" href="index.html" aria-current="page">Dortus</a>
         <a href="atlassian.html">Atlassian</a>
-        <a href="arrears.html">Shopify</a>
+        <a href="index.html#guides">Guides</a>
         <a href="support.html">Support</a>
         <a class="btn btn-line nav-hide-sm" href="mailto:support@dortus.com?subject=Dortus">Email us</a>
       </nav>
@@ -34,93 +34,130 @@
 
   <main id="main">
 
-    <!-- Atlassian eerst en breed; Shopify kleiner eronder -->
     <div class="home-shell">
       <div class="wrap home-top">
         <h1 class="wordmark enter"><span>Dortus</span></h1>
         <p class="home-line enter enter-1">
-          Small apps for Jira and Confluence. Each one does one job well.
+          Small apps for Jira and Confluence that never phone home. Each app does one job, runs entirely on Atlassian, and sends nothing to us. Support comes from the person who wrote the code.
         </p>
       </div>
+    </div>
 
-      <div class="wrap chooser chooser-stack">
+    <!-- MailView: het grootste blok -->
+    <section class="band band-tint" id="mailview">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="eyebrow" style="color: var(--brand-text)">MailView</p>
+          <h2>Email attachments you can actually read, in Jira and Confluence</h2>
+          <p class="lede">
+            Jira and Confluence show an Outlook .msg as code and a .eml as raw text. MailView shows the email as it was sent, with inline images and the files inside, and adds a plain-English check for suspicious mail: SPF, DKIM and DMARC results, lookalike domains, and where each link really goes.
+          </p>
+        </div>
 
-        <div class="door door-atlassian door-wide enter enter-1">
-          <h2 class="door-platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M5 4h9l5 5v11H5V4Z" stroke-linejoin="round" />
-              <path d="M14 4v5h5" stroke-linejoin="round" />
-              <path d="M9 13h6M9 16.5h4" stroke-linecap="round" />
-            </svg>
-            Atlassian
-          </h2>
-          <p class="door-pitch">Built on Atlassian Forge. Nothing is stored on our servers.</p>
-          <ul class="door-apps">
-            <li>
-              <a href="mailview.html">
-                <b>MailView</b>
-                <span>Read .msg and .eml email attachments right on the Jira work item. Nothing leaves Jira.</span>
-              </a>
-            </li>
-            <li>
-              <a href="mailview-confluence.html">
-                <b>MailView for Confluence</b>
-                <span>Open .msg and .eml attachments on any Confluence page, with a phishing check. Nothing leaves Confluence.</span>
-              </a>
-            </li>
-            <li>
-              <a href="askspace.html">
-                <b>AskSpace</b>
-                <span>Question and answer per Confluence space, with separate rules for who may ask and who may answer.</span>
-              </a>
-            </li>
-            <li>
-              <a href="mermaid.html">
-                <b>Mermaid Live Preview</b>
-                <span>Type a diagram, watch it draw, keep it as editable text in the page.</span>
-              </a>
-            </li>
-          </ul>
-          <span class="status"><span>Mermaid Live Preview is <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">live on the Atlassian Marketplace</a>. MailView and AskSpace pending Atlassian review. MailView for Confluence: submitted to the Atlassian Marketplace, in review.</span></span>
-          <!-- Na goedkeuring van MailView deze regel gebruiken:
-          <span class="status"><span>Mermaid Live Preview and MailView are live on the Atlassian Marketplace: <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Mermaid Live Preview</a>, <a href="https://marketplace.atlassian.com/apps/4078695191">MailView</a>. AskSpace pending Atlassian review. MailView for Confluence: submitted to the Atlassian Marketplace, in review.</span></span>
-          -->
-          <!-- Na goedkeuring van MailView for Confluence in de regel hierboven de laatste zin vervangen door:
-          MailView for Confluence is <a href="https://marketplace.atlassian.com/apps/218321273">live on the Atlassian Marketplace</a>.
-          -->
-          <a class="door-enter" href="atlassian.html">Open Atlassian apps <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <span class="door-peek">
-            <img src="assets/mailview-01-message.png" alt="MailView panel on a Jira work item showing a forwarded customer email with subject, sender, recipients and a formatted body" width="895" height="1000" />
+        <figure class="frame reveal reveal-1" style="max-width: 975px; width: 100%; margin-inline: auto">
+          <span class="frame-media">
+            <img src="assets/mailview-demo-phishing.gif" alt="MailView on a Jira Service Management request: a list of email attachments, one opened with a 'Likely phishing' verdict, and a Details tab with SPF, DKIM and DMARC results and link destinations." width="975" height="661" loading="lazy" />
           </span>
-        </div>
-
-        <div class="door door-shopify door-small enter enter-2">
-          <h2 class="door-platform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M4 7h16l-1.2 13H5.2L4 7Z" stroke-linejoin="round" />
-              <path d="M9 7V5.6A3 3 0 0 1 15 5.6V7" stroke-linecap="round" />
-            </svg>
-            Shopify
-          </h2>
-          <ul class="door-apps">
-            <li>
-              <a href="arrears.html">
-                <b>Arrears</b>
-                <span>Aging, statements, reminders, cash application and credit holds, built on the companies and payment terms already in your store.</span>
-              </a>
-            </li>
-          </ul>
-          <a class="status" href="https://apps.shopify.com/arrears">Live on the Shopify App Store</a>
-          <a class="door-enter" href="arrears.html">Open Shopify apps <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </div>
-
+        </figure>
       </div>
 
-      <p class="wrap home-foot-note enter enter-3">
-        <span>Screens on this site come from the running products.</span>
-        <a href="support.html">Support, answered by the person who wrote the code</a>
-      </p>
-    </div>
+      <div class="wrap cols cols-2" style="margin-top: clamp(2rem, 4vw, 3rem)">
+        <div class="card reveal">
+          <h3>MailView for Jira and Jira Service Management</h3>
+          <p>Reads .msg and .eml attachments on the work item, also in the JSM agent view. Includes forwarded emails attached without a file extension.</p>
+          <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, in review</span></p>
+          <!-- Na goedkeuring van MailView deze regel gebruiken:
+          <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4078695191">Available on the Atlassian Marketplace</a></p>
+          -->
+          <p class="btns">
+            <a class="btn btn-primary" href="mailview.html" aria-label="Read more about MailView for Jira and Jira Service Management">Read more <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          </p>
+        </div>
+        <div class="card reveal reveal-1">
+          <h3>MailView for Confluence</h3>
+          <p>Shows a chosen email attachment on the page, lists the emails on a page, and keeps the email readable in PDF and Word exports.</p>
+          <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, in review</span></p>
+          <!-- Na goedkeuring van MailView for Confluence deze regel gebruiken:
+          <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/218321273">Available on the Atlassian Marketplace</a></p>
+          -->
+          <p class="btns">
+            <a class="btn btn-primary" href="mailview-confluence.html" aria-label="Read more about MailView for Confluence">Read more <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hoe we bouwen -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>How every Dortus app is built</h2>
+        </div>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <p><strong>Runs on Atlassian.</strong> Built on Atlassian Forge. The app runs inside your own site; there are no Dortus servers.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <p><strong>Nothing leaves.</strong> Your data is read where it is, with your own permissions, and never stored or sent anywhere.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <p><strong>Plain English.</strong> Every warning, verdict and setting is written for the person who has to act on it. Support is answered by the developer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Also from Dortus -->
+    <section class="band band-tint">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Also from Dortus</h2>
+        </div>
+        <div class="cols cols-2">
+          <div class="card reveal">
+            <h3>AskSpace</h3>
+            <p>Questions and answers per Confluence space, with separate rules for who may ask and who may answer.</p>
+            <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, in review</span></p>
+            <!-- Na goedkeuring van AskSpace deze regel gebruiken. De Marketplace-link van AskSpace staat nog nergens in deze repo: vul hem in bij MARKETPLACE-LINK.
+            <p style="margin: 1rem 0"><a class="status" href="MARKETPLACE-LINK">Available on the Atlassian Marketplace</a></p>
+            -->
+            <p class="btns">
+              <a class="btn btn-line" href="askspace.html" aria-label="Read more about AskSpace">Read more <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>Mermaid Live Preview</h3>
+            <p>Write Mermaid diagrams in Confluence with a live side-by-side preview. Free.</p>
+            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Live on the Atlassian Marketplace</a></p>
+            <p class="btns">
+              <a class="btn btn-line" href="mermaid.html" aria-label="Read more about Mermaid Live Preview">Read more <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guides -->
+    <section class="band" id="guides" style="scroll-margin-top: 4rem">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Guides</h2>
+        </div>
+        <div class="prose reveal" style="padding-block: 0">
+          <ul>
+            <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml email attachments in Jira</a></li>
+            <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item (and keep it readable)</a></li>
+            <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+            <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml email attachments in Confluence</a></li>
+          </ul>
+        </div>
+
+        <p class="home-foot-note">
+          <span>Screens on this site come from the running products.</span>
+          <a href="support.html">Support, answered by the person who wrote the code</a>
+        </p>
+      </div>
+    </section>
 
   </main>
 
@@ -128,7 +165,7 @@
     <div class="wrap">
       <div>
         <p class="footer-brand">Dortus</p>
-        <p>Independent software vendor. Apps for Atlassian Jira and Confluence, and for Shopify B2B.</p>
+        <p>Small apps for Jira and Confluence that never phone home.</p>
         <p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
       </div>
       <div>
@@ -140,12 +177,14 @@
           <li><a href="mermaid.html">Mermaid Live Preview</a></li>
           <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
           <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+          <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+          <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
         </ul>
       </div>
       <div>
-        <h2>Shopify</h2>
+        <h2>Other</h2>
         <ul>
-          <li><a href="arrears.html">Arrears</a></li>
+          <li><a href="arrears.html">Arrears (Shopify)</a></li>
         </ul>
       </div>
       <div>

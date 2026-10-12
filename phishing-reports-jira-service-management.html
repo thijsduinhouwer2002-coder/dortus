@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Handling phishing reports in Jira Service Management · Dortus</title>
+<meta name="description" content="How reported phishing emails end up on JSM requests as .eml or .msg attachments, how to triage them without opening the email in Outlook, and what to check: SPF, DKIM, DMARC, lookalike domains and where links really go." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Handling phishing reports in Jira Service Management" />
+<meta property="og:description" content="Triage reported phishing emails on the JSM request itself: authentication results, lookalike domains, link destinations. No Outlook needed." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira Service Management</p>
+<h1 style="margin-bottom: 0.9rem">Handling phishing reports in Jira Service Management</h1>
+<p class="lede">
+"Is this email legit?" is one of the most common requests a service desk gets.
+This page covers how those reports arrive in JSM, how to look at the suspicious
+email safely, and what to check before you answer.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="arrive">How phishing reports arrive on a request</h3>
+<p>Most teams route reports into JSM through its email channel. Three patterns are common:</p>
+<ul>
+<li><strong>Forward as attachment.</strong> The user forwards the suspicious email to the service desk address as an attachment. The original arrives on the request as a <code>.eml</code> file, or, when it goes through Jira's mail handler, as a file without an extension.</li>
+<li><strong>Report button in Microsoft 365.</strong> If your tenant sends user-reported messages to a custom mailbox and that mailbox is the JSM email channel, every report becomes a request with the original message attached.</li>
+<li><strong>Drag and drop.</strong> An agent or user drags the message from Outlook onto an existing request. Classic Outlook produces a <code>.msg</code> file, new Outlook and Mac clients produce <code>.eml</code>.</li>
+</ul>
+<p>Forwarding inline (the text pasted into the body) is the one pattern to discourage: it drops the headers, which are exactly what you need to judge the email.</p>
+
+<h3 id="look">Looking at the email without opening it in Outlook</h3>
+<p>JSM cannot show <code>.eml</code> or <code>.msg</code> attachments; it offers them as a download. The habit that follows, download and open in Outlook, is the one thing phishing training tells people not to do: it can load remote tracking images, render active content and make the links one accidental click away. Safer options, in order:</p>
+<ol>
+<li>Read the raw <code>.eml</code> in a text editor. Safe, but the headers are hard to read and the body is often base64 or HTML soup.</li>
+<li>Use a viewer that renders the email with scripts, forms and remote images stripped, and that shows the headers in plain words. Inside JSM is best, so the triage happens on the request and the answer goes back through the same ticket.</li>
+</ol>
+
+<h3 id="check">What to check</h3>
+<p><strong>Authentication results.</strong> The receiving mail server records three checks in the headers. <em>SPF</em>: was the sending server allowed to send for that domain? <em>DKIM</em>: was the message signed by the domain and unchanged since? <em>DMARC</em>: does the visible From address line up with those two, and what did the domain owner ask to happen on failure? A fail on all three is a strong signal; a pass on all three does not prove the email is safe, only that it really came from that domain.</p>
+<p><strong>The From domain.</strong> Look for lookalikes: an extra letter, a swapped character, an accented letter that renders like the real one, or the brand name in a subdomain of an unrelated domain. Compare it with the Reply-To address, which attackers often point somewhere else.</p>
+<p><strong>Where links really go.</strong> The link text and the link target are two different things. Check the target of every link and button, and treat "the text says our portal, the target is somewhere else" as a red flag. When you paste a link into the ticket, defang it (<code>hxxps://</code>, dots in brackets) so nobody clicks it by accident.</p>
+<p><strong>Attachments inside the email.</strong> Note the names and types. Office files with macros, archives and HTML files deserve a sandbox, not a double-click.</p>
+<p><strong>Pressure.</strong> "Within 24 hours", "your mailbox will be suspended", "final notice". Urgency is the oldest trick and still the most common.</p>
+
+<h3 id="answer">Answering and closing</h3>
+<p>Write the findings into the request in plain words so the reporter learns something: which checks failed, which domain was faked, where the link went. Keep the original attachment on the request; it is your evidence. If the email was genuine, say so and thank the reporter, because the next report from that person may be the one that matters.</p>
+
+<h3 id="app">Doing this inside JSM</h3>
+<p>Full disclosure: Dortus makes an app for exactly this. <a href="mailview.html">MailView</a> shows <code>.eml</code> and <code>.msg</code> attachments on the request in the agent view, with scripts and remote images blocked, and adds a Details tab with the SPF, DKIM and DMARC results in plain English, lookalike-domain warnings, the real target of every link, and a "Copy findings" button that puts a defanged summary in the clipboard for the ticket comment. It runs on Atlassian and stores or sends nothing. It is an aid for the agent's judgement, not a replacement for it.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can JSM preview a reported email?</strong> No. <code>.eml</code> and <code>.msg</code> attachments are downloads only.</p>
+<p><strong>Is a DMARC pass enough to mark a report as safe?</strong> No. It shows the email came from the domain it claims. A compromised or newly registered domain passes just fine.</p>
+<p><strong>Should agents open reported emails in Outlook?</strong> Not as a routine. Use a text editor or a viewer that strips active content, and check the link targets before anyone clicks.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a case we missed? Email <a href="mailto:support@dortus.com?subject=Phishing%20reports%20in%20JSM">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
