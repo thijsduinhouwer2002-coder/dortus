@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MailView for Atlassian Solution Partners · Dortus</title>
+<meta name="description" content="For Atlassian Solution Partners: what MailView does on a Jira or JSM work item, how to try it on a demo site in a minute, and who to ask when a customer project needs it." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView for Atlassian Solution Partners" />
+<meta property="og:description" content="Readable .msg and .eml attachments on the work item, with a phishing check. Try it on a demo site in a minute." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">For Solution Partners</p>
+<h1 style="margin-bottom: 0.9rem">The email attachment problem your JSM customers already have</h1>
+<p class="lede">
+Jira Cloud shows uploaded .eml files as raw text and .msg files as code. It comes up in phishing-report desks,
+Outlook-heavy customers and after Data Center migrations. MailView fixes it on the work item, and you can test it
+on a demo site in a minute.
+</p>
+</div>
+
+<figure class="frame" style="max-width: 975px; width: 100%; margin-inline: auto">
+<span class="frame-media">
+<img src="assets/mailview-demo-phishing.gif" width="975" height="661" loading="lazy" alt="MailView on a Jira Service Management request: a list of email attachments, one opened with a 'Likely phishing' verdict, and a Details tab with SPF, DKIM and DMARC results and link destinations." />
+</span>
+</figure>
+
+<div class="prose">
+
+<h3 id="what">What it does</h3>
+<ul>
+<li>Lists the .eml and .msg attachments on a work item and shows the one you click: sender, recipients, formatting, inline images, the files inside.</li>
+<li>Gives a plain-English verdict for suspicious mail: SPF, DKIM and DMARC results, lookalike domains, links whose text points somewhere else, risky attachments. A "Copy findings" button puts a defanged summary in the clipboard for the ticket comment.</li>
+<li>Works in Jira and in the Jira Service Management agent view. Handles .msg files that only carry RTF and forwarded emails attached without a file extension.</li>
+<li>Runs on Atlassian: the email is read from the attachment in the user's browser with the user's own permissions. Nothing is stored or sent anywhere. Scripts, remote images and tracking pixels are blocked.</li>
+</ul>
+
+<h3 id="try">Try it on a demo site</h3>
+<p>MailView is submitted to the Atlassian Marketplace and in review. Once it is listed, installing it on any Jira Cloud site you use for demos takes a minute: open a work item with an .eml or .msg attachment and the MailView panel is there. No configuration, no account with us. Pricing is on the listing.</p>
+<!-- After approval, replace the paragraph above with:
+<p>Install from the Atlassian Marketplace on any Jira Cloud site you use for demos, open a work item with an .eml or .msg attachment, and the MailView panel is there. No configuration, no account with us. Pricing is on the listing. <a href="https://marketplace.atlassian.com/apps/4078695191" rel="noopener noreferrer">MailView on the Atlassian Marketplace</a>.</p>
+-->
+
+<h3 id="when">When it fits a customer project</h3>
+<p>A service desk that receives forwarded or reported emails. A migration from Data Center or another tool that brings years of .msg files along. A security team that triages "is this legit?" tickets in JSM. For one email a month, downloading is fine; for a queue of them, a viewer on the work item saves the round-trip to Outlook and keeps suspicious mail out of it.</p>
+
+<h3 id="contact">Questions from partners</h3>
+<p>Missing a feature a customer needs, or want a walkthrough? Email <a href="mailto:support@dortus.com?subject=MailView%20partner%20question">support@dortus.com</a>. We are a small, independent Marketplace Partner and answer ourselves.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
