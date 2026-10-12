@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email attachments after a Jira migration: making years of .msg files readable again · Dortus</title>
+<meta name="description" content="After a migration to Jira Cloud, Outlook .msg and .eml attachments arrive as unreadable files. What you can do about it: free options, what to check before you migrate, and apps that show the email on the work item." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Email attachments after a Jira migration: making years of .msg files readable again" />
+<meta property="og:description" content="Migrated .msg and .eml attachments show up as code in Jira Cloud. Free options and apps that fix it on the work item." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Migrations</p>
+<h1 style="margin-bottom: 0.9rem">Email attachments after a Jira migration: making years of .msg files readable again</h1>
+<p class="lede">
+Support desks, legal teams and procurement attach emails to tickets for years. When those tickets move to Jira Cloud, every .msg and .eml comes along as a file, and Jira Cloud shows it as code or raw text. This page is for the person who finds that out after the migration.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="what-happens">What happens to email attachments in a migration</h3>
+<p>Attachments are normally copied over as files, within the size limits of your Cloud site. Nothing is converted: a .msg that was attached in 2019 is still the same .msg after the move. What changes is where you read it. Jira Cloud has no built-in viewer for email formats, so an attachment that Outlook opened with one click from the old system now shows up as a download, and opening it means saving the file and switching to a mail app. For one ticket that is a nuisance. For an archive of thousands of tickets it is the difference between a searchable history and a pile of files nobody opens.</p>
+
+<h3 id="before">Three things to check before you migrate</h3>
+<ul>
+<li><strong>How many emails are attached, and where.</strong> Search for attachments ending in .msg and .eml in the projects you are moving. A handful: ignore this page. Thousands in a support or legal project: decide now how people will read them afterwards.</li>
+<li><strong>Who needs to read them.</strong> Agents on a service desk open old emails daily; a finance team maybe once a quarter. The daily readers decide whether a viewer is worth it.</li>
+<li><strong>Forwarded emails without a file extension.</strong> Some mail handlers and integrations attach a forwarded email as a file with no extension or a generic name. Those migrate too, and they are even harder to recognise afterwards.</li>
+</ul>
+
+<h3 id="free">Free options after the migration</h3>
+<p><strong>Download and open in a mail app.</strong> Works for every file, costs a round-trip per email, and puts the email on someone's laptop. Fine for occasional reads.</p>
+<p><strong>Convert the archive before or after the move.</strong> Scripts can turn .msg into .eml or PDF in bulk. You keep readable files, but you lose the original format and headers, you double the attachments, and someone has to own the script. Worth it only for a one-off archive nobody will add to.</p>
+<p><strong>Leave them as they are.</strong> Honest answer for an archive that is rarely opened. The files are safe; they are just inconvenient.</p>
+
+<h3 id="apps">Apps that show the email on the work item</h3>
+<p>Marketplace apps add a viewer to the work item, so a migrated .msg reads like an email again, where it is. For an archive, compare them on these points:</p>
+<ul>
+<li><strong>Both formats, including old ones.</strong> Archives contain .msg files that only carry RTF, nested emails, and forwarded messages without an extension. A viewer that only handles clean .eml files will leave half the archive unreadable.</li>
+<li><strong>Where the email is processed.</strong> Years of customer and legal correspondence should not leave your site. Prefer apps that render in the browser with no external servers ("Runs on Atlassian").</li>
+<li><strong>Nothing stored.</strong> A viewer that copies emails into its own storage doubles your data and your questions from security.</li>
+<li><strong>No configuration.</strong> After a migration, nobody wants another project to set up.</li>
+</ul>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, including RTF-only .msg files, nested emails and forwarded emails attached without a file name. It reads the attachment with the permissions of the person looking, renders it in the browser, and stores nothing. There are no settings: a Jira admin installs it and turns it on for all work items in one click.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Do .msg attachments survive a migration to Jira Cloud?</strong> Normally yes, as files, within your Cloud attachment size limit. They are not converted; they are just not readable inside Jira without a viewer.</p>
+<p><strong>Should I convert .msg to .eml before migrating?</strong> Only for a closed archive. Jira Cloud cannot read .eml natively either, so conversion alone does not solve it.</p>
+<p><strong>Does a viewer app change the attachments?</strong> It should not. A good viewer reads the file and shows it; the original stays as it was.</p>
+
+<h3 id="support">Questions</h3>
+<p>Planning a migration and unsure whether this applies to you? Email <a href="mailto:support@dortus.com?subject=Email%20attachments%20after%20migration">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Submitted to the Atlassian Marketplace, in review.</p>
+<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
