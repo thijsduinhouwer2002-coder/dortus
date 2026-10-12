@@ -81,6 +81,35 @@
             saves a day.
           </p>
         </div>
+        <div class="cols cols-2" style="margin-bottom: clamp(1.1rem, 2.4vw, 1.7rem)">
+          <div class="card reveal">
+            <h3>MailView for Jira and Jira Service Management</h3>
+            <p>
+              Send us what you saw, not the email itself. MailView runs inside your Jira site and we
+              have no access to your data, so a description is all we need.
+            </p>
+            <ul class="checks" style="margin-top: 0.7rem">
+              <li>Your Atlassian site URL (yoursite.atlassian.net) and the work item key, for example SUP-123</li>
+              <li>The file type (.msg, .eml, or no extension) and its size</li>
+              <li>What the panel showed: the exact message text, or "no panel"</li>
+              <li>Whether it happened in Jira, in the JSM agent view, or in the full view (Open in full view)</li>
+              <li>Your browser and whether an ad blocker or strict privacy setting is on</li>
+              <li>If you can share the file: only a test email or one without personal data, never a real customer email</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>MailView for Confluence</h3>
+            <p>
+              Same as above: a description, not the email.
+            </p>
+            <ul class="checks" style="margin-top: 0.7rem">
+              <li>Your Atlassian site URL and the page URL</li>
+              <li>Whether you used the "Email (MailView)" macro or "Emails on this page"</li>
+              <li>The file type (.msg, .eml, or no extension) and its size</li>
+              <li>What you saw on the page and in the PDF or Word export, if that is where it went wrong</li>
+            </ul>
+          </div>
+        </div>
         <div class="cols cols-3">
           <div class="card reveal">
             <h3>Arrears for Shopify</h3>
@@ -152,6 +181,16 @@
             <p>
               Billing runs through the platform: Shopify for Arrears, the Atlassian Marketplace
               for the Confluence apps. Cancel there, and email us if an invoice looks wrong.
+            </p>
+          </details>
+          <details>
+            <summary>The MailView panel does not appear on a work item</summary>
+            <p>
+              It only appears on work items that have an email attachment (.msg or .eml, or a
+              forwarded email without an extension). Open the work item and add MailView under Apps,
+              or ask a Jira admin to turn it on for every work item with an email attachment from the
+              panel menu: Show for all work items. Files over 10 MB show a download link instead. It
+              is not available in the JSM customer portal.
             </p>
           </details>
         </div>
