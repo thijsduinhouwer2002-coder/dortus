@@ -63,7 +63,7 @@ email safely, and what to check before you answer.
 </ol>
 
 <h3 id="check">What to check</h3>
-<p><strong>Authentication results.</strong> The receiving mail server records three checks in the headers. <em>SPF</em>: was the sending server allowed to send for that domain? <em>DKIM</em>: was the message signed by the domain and unchanged since? <em>DMARC</em>: does the visible From address line up with those two, and what did the domain owner ask to happen on failure? A fail on all three is a strong signal; a pass on all three does not prove the email is safe, only that it really came from that domain.</p>
+<p><strong>Authentication results.</strong> The receiving mail server records three checks in the headers. <em>SPF</em>: was the sending server allowed to send for that domain? <em>DKIM</em>: was the message signed by the domain and unchanged since? <em>DMARC</em>: does the visible From address line up with those two, and what did the domain owner ask to happen on failure? A fail on all three is a strong signal; a pass on all three does not prove the email is safe, only that it really came from that domain. You can run these checks on a file or pasted headers with the <a href="email-check.html">email check</a> on this site.</p>
 <p><strong>The From domain.</strong> Look for lookalikes: an extra letter, a swapped character, an accented letter that renders like the real one, or the brand name in a subdomain of an unrelated domain. Compare it with the Reply-To address, which attackers often point somewhere else.</p>
 <p><strong>Where links really go.</strong> The link text and the link target are two different things. Check the target of every link and button, and treat "the text says our portal, the target is somewhere else" as a red flag. When you paste a link into the ticket, defang it (<code>hxxps://</code>, dots in brackets) so nobody clicks it by accident.</p>
 <p><strong>Attachments inside the email.</strong> Note the names and types. Office files with macros, archives and HTML files deserve a sandbox, not a double-click.</p>
@@ -121,6 +121,7 @@ email safely, and what to check before you answer.
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
 </ul>
 </div>
 <div>
