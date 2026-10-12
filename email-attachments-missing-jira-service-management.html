@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email request attachments missing in Jira Service Management: a checklist · Dortus</title>
+<meta name="description" content="A customer emailed a file and it is not on the ticket. Six reasons that happens in Jira Service Management Cloud, from the 25 MB limit to winmail.dat, where to look in the processing log, and how to get the original email back." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Email request attachments missing in Jira Service Management: a checklist" />
+<meta property="og:description" content="The 25 MB limit, filtered emails, winmail.dat, inline images, truncation, and how to download the original email from the processing log." />
+<meta property="og:image" content="assets/mailview-01-message.png" />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Email channel</p>
+<h1 style="margin-bottom: 0.9rem">Email request attachments missing in Jira Service Management: a checklist</h1>
+<p class="lede">
+"They sent the file, it is not on the ticket." Six things cause that in Jira Service Management Cloud, and the processing log tells you which one. This page goes through them in the order you should check, and ends with how to get the original email back when the ticket has lost it.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="log">Start with the processing log</h3>
+<p>Every email that reaches your project address passes through one log. In the project, go to Channels &amp; self service, then Email, then View logs under the account, then Processing log. You need to be a project admin. Search by sender, subject or work item key, and filter by status and date. If the email is there with a status that says why it was not processed, you have your answer. If it is not there at all, the email never reached Jira (see the first two points). From the same log, More, then "Download raw email message" gives you the original email as an .eml file; keep that in mind for the last section.</p>
+
+<h3 id="size">1. The email was over 25 MB</h3>
+<p>Jira Service Management fetches unread emails from the connected inbox every minute, but skips any email whose total size, attachments included, is more than 25 MB. Atlassian's documentation says such an email stays unread in the mailbox or bounces back to the sender, depending on whether it went to a custom or an Atlassian-provided email channel. Nothing appears on a ticket. Ask the customer how large the file was; a scanned contract or a video is often enough to go over.</p>
+
+<h3 id="filtered">2. The email was filtered out</h3>
+<p>After fetching, the processor drops emails that look like non-requests: auto-replies (based on the auto-submitted headers), emails the mail server marked as spam, delivery status notifications, and Jira's own notifications. Atlassian also applies DMARC sender verification: an email from a participating provider that cannot certify its sender is prevented from reaching the project. Atlassian's documentation says this verification is turned off by upgrading to a paid Jira Service Management plan, so on a Free site it is on. The processing log shows which filter caught an email.</p>
+
+<h3 id="winmail">3. The attachment arrived as winmail.dat</h3>
+<p>Outlook can send a message in its own TNEF format. The real attachment is then packed inside a file called winmail.dat, and the ticket shows that file instead of the document the customer sent. The mail handler does not unpack it; the Atlassian ticket for that (JSDCLOUD-4383) has been open since 2016. The fix is on the sender's side: Outlook set to send in HTML or plain text, or the file sent from a different client. Agents can open a winmail.dat with a TNEF reader. If the original email is still available as an .eml (see section 6), an email viewer that unpacks TNEF shows the real attachment inside it.</p>
+
+<h3 id="inline">4. The file is there, but not where you expect</h3>
+<p>Images that were inline in the email become attachments on the ticket, while the comment shows "Preview unavailable" where the image was. Signature logos and banners arrive the same way, as small image attachments on every reply. Two site settings affect this (Settings, Jira apps, Email requests, Jira admin only): "HTML email parsing" decides whether HTML emails display in wiki markup or plain text, and "Strip quotes" decides whether emailed comments contain the whole thread or only the latest reply. A third, "Hide email signatures", hides the signature text in an expandable block using default detection (HTML-based, for Outlook Web, Gmail, Yahoo, Mail.RU, Outlook Android and Gmail Android) or custom text markers; it hides text, not image attachments.</p>
+
+<h3 id="truncated">5. The message was cut off</h3>
+<p>Email text longer than 32,767 characters is truncated when displayed as a request or a comment. A long forwarded thread, or a message with a huge signature block, can lose its end. The attachments are not affected, but the text that referred to them may be.</p>
+
+<h3 id="raw">6. Getting the original email back</h3>
+<p>Jira keeps the raw emails it processed in its own database, by default for 45 days (a Jira admin can set 14 to 180 days in Global mail settings). Within that window, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
+<p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, with the inline images and the files inside the message, including attachments packed in winmail.dat, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>What is the attachment size limit for email requests?</strong> 25 MB for the whole email, attachments included. Larger emails are not fetched.</p>
+<p><strong>Where do I see why an email was not turned into a ticket?</strong> Channels &amp; self service, Email, View logs, Processing log (project admin).</p>
+<p><strong>Can I recover an email the ticket mangled?</strong> Yes, for 45 days by default: download the raw message from the processing log and attach the .eml to the ticket.</p>
+
+<h3 id="support">Questions</h3>
+<p>Stuck on an email that will not come through? Email <a href="mailto:support@dortus.com?subject=Email%20request%20attachments">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Submitted to the Atlassian Marketplace, in review.</p>
+<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
