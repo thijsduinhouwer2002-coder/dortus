@@ -3,6 +3,25 @@
    Worlds are set with data-world on <body>: shopify, atlassian, or absent.
    ========================================================================== */
 
+/* Fonts, served from this site (no Google Fonts request). Latin subset of the
+   variable fonts as Google Fonts served them; licences in assets/fonts/. */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 500 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/fonts/archivo-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("assets/fonts/publicsans-latin.woff2") format("woff2");
+}
+
 :root {
   /* Neutral shell */
   --paper: #ffffff;
