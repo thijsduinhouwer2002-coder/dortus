@@ -66,10 +66,10 @@
         <div class="prose" style="padding-block: 0">
           <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
             <li>Install AskSpace from the Atlassian Marketplace (Confluence admin).</li>
-            <li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>AskSpace</strong>. Q&amp;A is off by default in every space, so you will see "Q&amp;A is still off".</li>
-            <li>Turn it on: go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong> and switch on <strong>Turn on Q&amp;A in this space</strong>. On the same page, choose <strong>Who may ask questions?</strong> and <strong>Who may answer?</strong> (default: everyone who can view the space).</li>
+            <li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>AskSpace</strong>. Q&amp;A is off by default in every space, so you will see "Q&amp;A is off in this space" and a <strong>Turn on Q&amp;A</strong> button.</li>
+            <li>Click <strong>Turn on Q&amp;A</strong>. To choose <strong>Who may ask questions?</strong>, <strong>Who may answer?</strong> and <strong>Moderators</strong>, or for <strong>Import &amp; export</strong>, go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong> (default: everyone who can view the space may ask and answer).</li>
             <li>Go back to <strong>AskSpace</strong> in the space sidebar and click <strong>Ask a question</strong>. Others can answer and vote; the person who asked can mark the best answer.</li>
-            <li>Use <strong>Search questions and answers</strong> and the tabs <strong>All, Unanswered, Still open, Solved</strong> to find answers. The bell shows when someone answers your question.</li>
+            <li>Use <strong>Search questions and answers</strong> and the tabs <strong>All, Unanswered, Solved</strong> to find answers. The <strong>For you</strong> tab shows when someone answers your question.</li>
           </ol>
           <p>Need help? Email <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
         </div>
@@ -90,7 +90,7 @@
           <div class="card reveal">
             <span class="card-mark" aria-hidden="true">1</span>
             <h3>Ask</h3>
-            <p>Title plus details, with author and timestamp. Filter the list for unanswered, open, or solved.</p>
+            <p>Title plus details and optional tags, with author and timestamp. Similar questions show up while you type. Filter the list for unanswered or solved.</p>
           </div>
           <div class="card reveal reveal-1">
             <span class="card-mark" aria-hidden="true">2</span>
@@ -124,8 +124,20 @@
               <p>Who may ask and who may answer are set separately: everyone, space admins, or chosen Confluence groups.</p>
             </li>
             <li>
+              <b>Moderators</b>
+              <p>Space admins, and Confluence groups you choose, can edit or delete any question or answer in the space and choose the best answer.</p>
+            </li>
+            <li>
               <b>Notifications</b>
               <p>An in-app alert when someone answers you, or marks your answer as best.</p>
+            </li>
+            <li>
+              <b>On a page</b>
+              <p>The <em>AskSpace questions</em> block shows the latest questions from the space on a page, optionally for one tag.</p>
+            </li>
+            <li>
+              <b>Import and export</b>
+              <p>Bring questions in from Questions for Confluence or a CSV file, with a preview first and an undo afterwards. A space admin can export the questions and answers to CSV.</p>
             </li>
           </ul>
         </div>
@@ -171,9 +183,11 @@
         <div class="head reveal">
           <h2>Questions never leave your Atlassian site</h2>
           <p class="lede">
-            AskSpace is a Forge app. Questions, answers, votes, settings and notifications are
+            AskSpace is a Forge app. Questions, answers, tags, votes, settings and notifications are
             stored in Forge app storage inside your cloud site. There is no Dortus server behind
-            it and no app content is sent to us.
+            it and no app content is sent to us. AskSpace reads Confluence content only to import
+            questions from Questions for Confluence, when a space admin starts an import. It reads
+            as that admin and only keeps the imported questions and answers.
           </p>
         </div>
         <dl class="facts facts-4 reveal reveal-1">
