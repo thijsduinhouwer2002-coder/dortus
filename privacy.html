@@ -146,14 +146,14 @@ Uninstalling the app also revokes our access: the stored session for your shop i
 removed when we receive the <strong>app/uninstalled</strong> webhook.
 </p>
 
-<h2>4. AskSpace, Mermaid Live Preview and MailView for Atlassian</h2>
+<h2>4. AskSpace, Mermaid Live Preview, MailView and AttachClean for Atlassian</h2>
 
 <h3>4.1 Where the data lives</h3>
 <p>
 These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
 Atlassian's cloud. AskSpace and Mermaid Live Preview keep their data in <strong>Forge
-app storage in your Atlassian site</strong>. MailView and MailView for Confluence have
-no storage at all.
+app storage in your Atlassian site</strong>. MailView, MailView for Confluence and
+AttachClean have no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
 </p>
@@ -222,7 +222,22 @@ The email is rendered <strong>in your browser</strong> and only for as long as i
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3>4.6 Billing</h3>
+<h3>4.6 What AttachClean processes</h3>
+<p>
+AttachClean shows a space admin which attachments in a Confluence space are not used on
+any page. When a space admin runs the scan, the app reads the pages, blog posts and
+comments of that space, the attachments and their versions, and pages in other spaces
+that link to it. It reads <strong>in the browser of the space admin</strong>, with that
+person's own Confluence permissions.
+</p>
+<ul>
+<li>To show who uploaded a file, the app also reads the names of the people who uploaded the attachments.</li>
+<li>AttachClean keeps nothing: it has no app storage and no server. The report exists only while it is open. Export CSV creates the file in your browser.</li>
+<li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections.</li>
+<li>The permissions are read-only. The app cannot change, move or delete anything.</li>
+</ul>
+
+<h3>4.7 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>

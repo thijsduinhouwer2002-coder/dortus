@@ -801,6 +801,10 @@ body:not([data-world]) .btn-primary {
   background: var(--atl);
 }
 
+.world-hero-green {
+  background: var(--atl-success);
+}
+
 .world-hero::before {
   content: "";
   position: absolute;

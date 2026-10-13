@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AttachClean - find unused attachments in a Confluence space · Dortus</title>
+  <meta name="description" content="AttachClean shows a space admin which attachments in a Confluence space are not used on any page. A read-only report: it changes, moves or deletes nothing." />
+  <meta name="theme-color" content="#00875a" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="AttachClean - find unused attachments in a Confluence space" />
+  <meta property="og:description" content="A read-only report for space admins: which attachments are used, where, and which are not." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-hide-sm" href="index.html">Dortus</a>
+        <a href="atlassian.html" aria-current="page">Atlassian</a>
+        <a href="index.html#guides">Guides</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#getting-started">Getting started <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-green">
+      <div class="wrap">
+        <p class="eyebrow enter">AttachClean &middot; Confluence app</p>
+        <h1 class="enter enter-1">Find attachments nobody uses in a Confluence space.</h1>
+        <p class="lede enter enter-2">
+          AttachClean lists the attachments of a space and shows where each one is used.
+          A read-only report for space admins.
+        </p>
+        <div class="btns enter enter-2">
+          <a class="btn btn-light" href="#getting-started">Getting started <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="support.html">Support</a>
+        </div>
+        <p style="margin-top: 1.3rem"><span class="status enter enter-3">Coming soon to the Atlassian Marketplace</span></p>
+        <!-- Na goedkeuring van AttachClean deze regel gebruiken (LISTING-LINK invullen):
+        <p style="margin-top: 1.3rem"><a class="status enter enter-3" href="LISTING-LINK">Available on the Atlassian Marketplace</a></p>
+        -->
+      </div>
+    </section>
+
+    <!-- Getting started -->
+    <section class="band band-tint" id="getting-started" style="scroll-margin-top: 4rem">
+      <div class="wrap">
+        <div class="head">
+          <h2>Getting started</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+            <li>Install AttachClean from the Atlassian Marketplace (Confluence admin).</li>
+            <li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>Unused attachments</strong>.</li>
+            <li>Click <strong>Scan this space</strong>. You see the progress while it runs; you can cancel at any time.</li>
+            <li>Use the filters <strong>All, Unused, Old versions only, Used</strong>. The column <strong>Found in</strong> shows where each used file appears.</li>
+            <li>Click <strong>Export CSV</strong> to review the list in Excel before you delete anything yourself.</li>
+          </ol>
+          <p>Only space admins can run the scan.</p>
+          <p>Need help? Email <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it decides -->
+    <section class="band" id="how-it-decides">
+      <div class="wrap">
+        <div class="head">
+          <h2>How AttachClean decides</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>A file counts as used when it is shown or linked on its own page, on another page, in a blog post, in a comment or inline comment, or on a page in another space.</p>
+          <p>Unused means: not shown or linked on any page, blog post or comment that you can view. A file that people only download from the page's attachment list also counts as unused.</p>
+          <p>Old versions are counted separately: <strong>Old versions only</strong> means the file is used, and older versions of it are kept as well.</p>
+          <p>If a page cannot be read with your permissions, files are marked <strong>Not found</strong> instead of Unused.</p>
+          <p>Drafts and templates are not checked.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Read-only -->
+    <section class="band band-deep" id="read-only">
+      <div class="wrap">
+        <div class="head">
+          <h2>Read-only</h2>
+          <p class="lede">
+            AttachClean changes, moves or deletes nothing. It reads pages, blog posts, comments
+            and attachment details in your browser, with your own Confluence permissions. It
+            stores nothing and sends nothing outside Atlassian.
+          </p>
+        </div>
+        <p class="btns" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="privacy.html">What AttachClean processes <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Small apps for Jira and Confluence that never phone home.</p>
+        <p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="atlassian.html">Atlassian apps</a></li>
+          <li><a href="mailview.html">MailView</a></li>
+          <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+          <li><a href="askspace.html">AskSpace</a></li>
+          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+          <li><a href="partners.html">For Solution Partners</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+          <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+          <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+          <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+          <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+          <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+          <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+          <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+          <li><a href="email-check.html">Email check</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Other</h2>
+        <ul>
+          <li><a href="arrears.html">Arrears (Shopify)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:support@dortus.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+        affiliated with Atlassian.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
