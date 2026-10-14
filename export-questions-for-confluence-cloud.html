@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to export Questions for Confluence Cloud data · Dortus</title>
+<meta name="description" content="Export questions, answers, topics and accepted answers from Questions for Confluence Cloud with the Confluence REST API: where the data lives, a curl example and a short script that writes JSON and CSV." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to export Questions for Confluence Cloud data" />
+<meta property="og:description" content="Get your questions and answers out of Questions for Confluence Cloud with the Confluence REST API, without an app." />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to export Questions for Confluence Cloud data</h1>
+<p class="lede">
+An exporter for Questions for Confluence in Cloud is a feature request on Atlassian's tracker, marked Future Consideration (<a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>). You don't have to wait for it. Questions for Confluence stores its questions and answers as Confluence content, and the Confluence REST API can read that content. This guide shows how.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="data">Where Questions for Confluence keeps its data</h3>
+<p>Questions for Confluence stores everything as Confluence content of its own types. This is what we found on a Confluence Cloud site:</p>
+<ul>
+<li><strong>Questions</strong> are content of the type <code>ac:com.atlassian.confluence.plugins.confluence-questions:question</code>.</li>
+<li><strong>Answers</strong> are content of the type <code>ac:com.atlassian.confluence.plugins.confluence-questions:answer</code>. The container of an answer is its question.</li>
+<li><strong>Text</strong> is in <code>body.storage</code>, Confluence's storage format (HTML). The author and date are in <code>history.createdBy</code> and <code>history.createdDate</code>.</li>
+<li><strong>Topics</strong> are ordinary labels on the question.</li>
+<li><strong>The accepted answer</strong> is a content property on the question, <code>atl_cq_accepted_answer</code>, with a value like <code>{"answer_id": "1376269"}</code>.</li>
+</ul>
+<p>Because it is Confluence content, the API only returns what your own account may see. Use an account that can see every space with questions.</p>
+
+<h3 id="need">What you need</h3>
+<ul>
+<li><strong>An API token</strong> for your Atlassian account, made at id.atlassian.com (Atlassian: <a href="https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/" rel="noopener noreferrer">Manage API tokens for your Atlassian account</a>). Treat it like a password and revoke it when you're done.</li>
+<li><strong>Basic auth</strong>: your account email as the user name and the token as the password (Atlassian: <a href="https://developer.atlassian.com/cloud/confluence/basic-auth-for-rest-apis/" rel="noopener noreferrer">Basic auth for REST APIs</a>).</li>
+<li><strong>Python 3</strong>, only for the script below. It uses nothing outside the standard library.</li>
+</ul>
+
+<h3 id="curl">Try it with curl</h3>
+<p>This asks Confluence's search for the first five questions, with their text, topics, space and accepted answer:</p>
+<pre><code>curl -s -u "you@example.com:$API_TOKEN" -G \
+  "https://your-site.atlassian.net/wiki/rest/api/content/search" \
+  --data-urlencode 'cql=type = "ac:com.atlassian.confluence.plugins.confluence-questions:question" order by created asc' \
+  --data-urlencode 'expand=body.storage,history,metadata.labels,space,metadata.properties.atl_cq_accepted_answer' \
+  --data-urlencode 'limit=5'</code></pre>
+<p>Each result is one question: <code>id</code>, <code>title</code>, <code>space</code>, the question in <code>body.storage.value</code>, the topics in <code>metadata.labels</code> and, when there is one, the accepted answer's ID in <code>metadata.properties.atl_cq_accepted_answer.value.answer_id</code>. For the answers, put the answer type in the CQL and use <code>expand=body.storage,history,container,space</code>; <code>container.id</code> is the ID of the question.</p>
+<p>When there are more results, the response has <code>_links.next</code>: a link with a cursor to the next page (Atlassian: <a href="https://developer.atlassian.com/cloud/confluence/rest/v1/api-group-search/" rel="noopener noreferrer">Confluence REST API, search</a>).</p>
+
+<h3 id="script">Export everything with a short script</h3>
+<p>This script reads every question and answer your account can see, page by page, and writes two files: <code>qfc-export.json</code> with everything Confluence returned, and <code>qfc-export.csv</code> with one row per question and one per answer. For a question, the <code>accepted</code> column holds the ID of the accepted answer; for an answer, it says <code>yes</code> when that answer is the accepted one.</p>
+<pre><code># Export Questions for Confluence Cloud: questions and answers to JSON and CSV.
+# Run: SITE=your-site.atlassian.net EMAIL=you@example.com API_TOKEN=... python3 export_qfc.py
+import base64, csv, json, os, urllib.parse, urllib.request
+
+SITE = os.environ["SITE"]
+AUTH = base64.b64encode(f"{os.environ['EMAIL']}:{os.environ['API_TOKEN']}".encode()).decode()
+QFC = "ac:com.atlassian.confluence.plugins.confluence-questions"
+
+
+def search(kind, expand):
+    """All content of one Questions type, oldest first, page by page."""
+    params = {"cql": f'type = "{QFC}:{kind}" order by created asc', "expand": expand, "limit": 50}
+    url = f"https://{SITE}/wiki/rest/api/content/search?" + urllib.parse.urlencode(params)
+    while url:
+        request = urllib.request.Request(url, headers={"Authorization": f"Basic {AUTH}", "Accept": "application/json"})
+        with urllib.request.urlopen(request) as response:
+            data = json.load(response)
+        yield from data["results"]
+        links = data.get("_links", {})
+        url = links.get("base", f"https://{SITE}/wiki") + links["next"] if links.get("next") else None
+
+
+questions = list(search("question", "body.storage,history,metadata.labels,space,metadata.properties.atl_cq_accepted_answer"))
+answers = list(search("answer", "body.storage,history,container,space"))
+
+
+def accepted_answer_id(question):
+    prop = question.get("metadata", {}).get("properties", {}).get("atl_cq_accepted_answer") or {}
+    return str((prop.get("value") or {}).get("answer_id", ""))
+
+
+def row(item, kind, question_id, accepted):
+    history = item.get("history", {})
+    labels = item.get("metadata", {}).get("labels", {}).get("results", [])
+    return {
+        "type": kind,
+        "id": item["id"],
+        "question_id": question_id,
+        "space": item.get("space", {}).get("key", ""),
+        "title": item.get("title", ""),
+        "author": history.get("createdBy", {}).get("displayName", ""),
+        "created": history.get("createdDate", ""),
+        "topics": " ".join(label["name"] for label in labels),
+        "accepted": accepted,
+        "body_html": item.get("body", {}).get("storage", {}).get("value", ""),
+    }
+
+
+answers_by_question = {}
+for answer in answers:
+    answers_by_question.setdefault(str(answer.get("container", {}).get("id")), []).append(answer)
+
+rows = []
+for question in questions:
+    accepted = accepted_answer_id(question)
+    rows.append(row(question, "question", question["id"], accepted))
+    for answer in answers_by_question.get(question["id"], []):
+        rows.append(row(answer, "answer", question["id"], "yes" if answer["id"] == accepted else ""))
+
+with open("qfc-export.json", "w", encoding="utf-8") as f:
+    json.dump({"questions": questions, "answers": answers}, f, indent=2, ensure_ascii=False)
+with open("qfc-export.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=["type", "id", "question_id", "space", "title", "author",
+                                           "created", "topics", "accepted", "body_html"])
+    writer.writeheader()
+    writer.writerows(rows)
+print(f"{len(questions)} questions, {len(answers)} answers")</code></pre>
+<p>The text stays in Confluence's storage format (HTML), so anything you import elsewhere needs to handle HTML.</p>
+
+<h3 id="move">Moving to another app instead</h3>
+<p>Full disclosure: I build AskSpace at Dortus. If you want to move your questions rather than keep a copy, AskSpace reads Questions for Confluence on the same site directly: questions, answers, topics and accepted answers. You see a preview before anything is saved, and you can undo the import afterwards. Nothing changes in Questions for Confluence. AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>; <a href="docs/askspace/">Getting started with AskSpace</a> has the steps, and <a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a> compares the two.</p>
+
+<h3 id="support">Questions</h3>
+<p>Did the script not work on your site, or did we miss something? Email <a href="mailto:support@dortus.com?subject=Export%20Questions%20for%20Confluence">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
