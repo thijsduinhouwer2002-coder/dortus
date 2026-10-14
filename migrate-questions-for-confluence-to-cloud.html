@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Migrating Questions for Confluence to Cloud: what moves and what doesn't · Dortus</title>
-<meta name="description" content="How to move Questions for Confluence from Server or Data Center to Confluence Cloud: what Atlassian's migration assistant moves, what has to be in place first, what does not come along, and your options if the questions were left behind." />
+<title>Migrating Questions for Confluence to Cloud: when questions are missing · Dortus</title>
+<meta name="description" content="Atlassian's migration assistant moves Questions for Confluence to Cloud. What has to be in place, what does not come along, the known issues, and your options when questions are missing after the migration." />
 <meta name="theme-color" content="#0052cc" />
 <link rel="icon" href="assets/app-icon.png" />
-<meta property="og:title" content="Migrating Questions for Confluence from Data Center to Cloud" />
-<meta property="og:description" content="What the Confluence Cloud Migration Assistant moves for Questions for Confluence, what it needs first, and your options if questions were left behind." />
+<meta property="og:title" content="Migrating Questions for Confluence to Cloud: when questions are missing" />
+<meta property="og:description" content="What the migration assistant needs for Questions for Confluence, what does not come along, and what to do when questions are missing." />
 <meta property="og:type" content="article" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -34,51 +34,49 @@
 <div class="wrap">
 <div class="head">
 <p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
-<h1 style="margin-bottom: 0.9rem">Migrating Questions for Confluence from Data Center to Cloud</h1>
+<h1 style="margin-bottom: 0.9rem">Migrating Questions for Confluence to Cloud: when questions are missing</h1>
 <p class="lede">
-Questions for Confluence exists for Data Center and for Cloud, and Atlassian's Confluence Cloud Migration Assistant can move its questions and answers. It works best when you plan for it before the migration. This page sets out what Atlassian says has to be in place, what does not come along, and what you can do if the questions were left behind.
+Atlassian's Confluence Cloud Migration Assistant migrates Questions for Confluence along with your spaces, and Questions for Confluence is available on Cloud. For most teams that is all they need. This page is for when the migration did not go as planned: what has to be in place, what does not come along, the known issues, and your options when questions are missing.
 </p>
 </div>
 <div class="prose">
 
-<h3 id="short">The short answer</h3>
-<p>Yes, the migration assistant can move them. Atlassian's migration knowledge base says the Questions for Confluence app can be migrated with the Confluence Cloud Migration Assistant (CCMA) (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>). The feature request for this on Atlassian's tracker, MIG-106 "Support the Migration of Questions for Confluence", is closed with the resolution Done, and the ticket gives 1 November 2021 as the date it was resolved (Atlassian: <a href="https://jira.atlassian.com/browse/MIG-106" rel="noopener noreferrer">MIG-106</a>).</p>
-<p>You may also find an older Atlassian page that says the opposite. The Server-to-Cloud guide in the documentation for Confluence 7.1 says that Atlassian's own apps, such as Team Calendars for Confluence and Questions for Confluence, are not included in the migration (Atlassian: <a href="https://confluence.atlassian.com/conf71/migrate-from-confluence-server-to-cloud-979424250.html" rel="noopener noreferrer">Migrate from Confluence Server to Cloud</a>). That page belongs to an older release; the migration article above is the current one to follow.</p>
+<h3 id="normal">The normal route: the migration assistant</h3>
+<p>Atlassian's migration knowledge base says the Questions for Confluence app can be migrated with the Confluence Cloud Migration Assistant, CCMA for short (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>). The request for this on Atlassian's tracker, MIG-106 "Support the Migration of Questions for Confluence", was created on 27 December 2019 and closed with the resolution Done on 1 November 2021 (Atlassian: <a href="https://jira.atlassian.com/browse/MIG-106" rel="noopener noreferrer">MIG-106</a>).</p>
+<p>So if Questions for Confluence works for your team, migrate it with the assistant and keep using it on Cloud. There is no reason to change apps for the migration.</p>
 
-<h3 id="before">Before you migrate</h3>
-<p>The migration article lists what has to be in place. In short:</p>
+<h3 id="before">What has to be in place</h3>
+<p>The migration article lists what has to be in place. Check these before you migrate, and again first if something went wrong:</p>
 <ul>
-<li><strong>Check that the app is installed on Data Center.</strong> Atlassian's pre-migration checklist has a check for Questions for Confluence in your Support Zip, under the step about Marketplace apps (Atlassian: <a href="https://support.atlassian.com/migration/docs/confluence-pre-migration-checklist/" rel="noopener noreferrer">Confluence pre-migration checklist</a>).</li>
-<li><strong>Install the app on Cloud first.</strong> The article says Questions for Confluence has to be installed on your Cloud site before the migration, and to reinstall it if it was installed there before. That registers the site to receive the migration events. Atlassian's Cloud documentation explains how to <a href="https://support.atlassian.com/confluence-cloud/docs/install-questions-for-confluence/" rel="noopener noreferrer">install Questions for Confluence</a>.</li>
-<li><strong>Move users and spaces with the assistant.</strong> According to the article, the app only migrates correctly if the users and spaces were migrated through CCMA as well.</li>
-<li><strong>Permissions on Cloud.</strong> The app creates the questions and answers on behalf of the people who wrote them, so those people need matching permissions on the Cloud site.</li>
+<li><strong>The app is installed on Data Center.</strong> Atlassian's pre-migration checklist has a check for Questions for Confluence in your Support Zip, under the step about Marketplace apps (Atlassian: <a href="https://support.atlassian.com/migration/docs/confluence-pre-migration-checklist/" rel="noopener noreferrer">Confluence pre-migration checklist</a>).</li>
+<li><strong>The app is installed on Cloud before the migration.</strong> The article says Questions for Confluence has to be installed on your Cloud site first, and to reinstall it if it was installed there before. That registers the site to receive the migration events. Atlassian's Cloud documentation explains how to <a href="https://support.atlassian.com/confluence-cloud/docs/install-questions-for-confluence/" rel="noopener noreferrer">install Questions for Confluence</a>.</li>
+<li><strong>Users and spaces go through the assistant too.</strong> According to the article, the app only migrates correctly if the users and spaces were migrated through CCMA as well.</li>
+<li><strong>People have permissions on Cloud.</strong> The app creates the questions and answers on behalf of the people who wrote them, so those people need matching permissions on the Cloud site.</li>
 </ul>
 
-<h3 id="limits">Limits of the migration</h3>
+<h3 id="not-moved">What does not come along</h3>
 <ul>
 <li><strong>Drafts.</strong> The article says drafts are not supported on Cloud, so they are not migrated.</li>
-<li><strong>An easy second try.</strong> If a migration was partial, migrating again is hard, the article says, because there is no export or import tool for Questions in Cloud. An exporter and importer for Questions in Cloud is a feature request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>).</li>
-</ul>
-<p>For questions that went missing because of permissions, the article describes a second run: fix the permissions, create a dummy space, start a new migration with the users and groups, and include only the Questions app. See the article for the exact steps.</p>
-
-<h3 id="known-issues">Known issues to check</h3>
-<p>The article lists known issues with their tickets. Open the tickets to see their current status before you migrate:</p>
-<ul>
-<li><strong>Questions or answers that do not show.</strong> During the import, the app's plugin key can be set wrongly, and those questions and answers then do not appear (<a href="https://jira.atlassian.com/browse/CONFCLOUD-77079" rel="noopener noreferrer">CONFCLOUD-77079</a>). This is why the article asks you to install or reinstall the app on Cloud first.</li>
-<li><strong>Dates reset to the migration date.</strong> The dates of questions and answers can be reset to the day of the migration (<a href="https://jira.atlassian.com/browse/CONFCLOUD-76360" rel="noopener noreferrer">CONFCLOUD-76360</a>).</li>
 </ul>
 
-<h3 id="left-behind">If the questions were left behind</h3>
-<p>Say your spaces are already in Cloud, moved without the questions, or the migration route above does not fit. These are the options, roughly from least to most effort:</p>
+<h3 id="known-issues">Known issues</h3>
 <ul>
-<li><strong>Ask Atlassian.</strong> If you migrated with the assistant and questions are missing, start with the migration article above, and contact Atlassian Support with the details of your migration.</li>
+<li><strong>Questions or answers that do not show.</strong> <a href="https://jira.atlassian.com/browse/CONFCLOUD-77079" rel="noopener noreferrer">CONFCLOUD-77079</a>, "Migrating Questions for Confluence sets the wrong plugin key". According to the migration article, the affected questions and answers then do not show. Atlassian closed the ticket on 13 May 2025 with the resolution Timed out, not as fixed, so whether it still happens is not known. Installing or reinstalling the app on Cloud before the migration, as above, is what the migration article asks for.</li>
+<li><strong>Dates reset to the migration date (fixed).</strong> <a href="https://jira.atlassian.com/browse/CONFCLOUD-76360" rel="noopener noreferrer">CONFCLOUD-76360</a>, "Migrating Questions for Confluence resets the Timestamps", was a known issue. Atlassian closed it as Fixed on 16 October 2024.</li>
+</ul>
+
+<h3 id="missing">When questions are missing after the migration</h3>
+<ul>
+<li><strong>Go through the list above.</strong> Most of the conditions are about the order of things: the app on Cloud first, users and spaces through the assistant, permissions in place.</li>
+<li><strong>Questions missing because of permissions.</strong> The migration article describes a second run: fix the permissions, create a dummy space, start a new migration with the users and groups, and include only the Questions app. See the article for the exact steps.</li>
+<li><strong>Contact Atlassian Support</strong> with the details of your migration if that does not explain it.</li>
+<li><strong>Know that a second try is hard.</strong> The article says re-migrating after a partial migration is difficult, because there is no export or import tool for Questions in Cloud. An exporter and importer for Questions in Cloud is a feature request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>).</li>
+<li><strong>Keep a copy while the old site still runs.</strong> Questions for Confluence 2.3.0 and later on Server and Data Center has a REST API. Atlassian's export article uses <code>GET /rest/questions/1.0/question?limit=700</code> for the questions; the answers are fetched one by one with <code>/rest/questions/1.0/answer/{answerId}</code> (Atlassian: <a href="https://support.atlassian.com/questions-for-confluence/kb/how-to-export-confluence-questions-data/" rel="noopener noreferrer">How to export Confluence Questions data</a>). The REST reference lists <code>limit</code> as required and <code>start</code> for the next page (Atlassian: <a href="https://docs.atlassian.com/confluence-questions/rest/" rel="noopener noreferrer">Confluence Questions REST API</a>). Even if you never import it, that file is your archive.</li>
 <li><strong>Recreate the ones that matter.</strong> For a few dozen questions, asking them again in Questions for Confluence on Cloud, with their best answer, is often quickest. They get today's date and the name of whoever posts them.</li>
-<li><strong>Keep a copy from Data Center.</strong> Questions for Confluence 2.3.0 and later on Server and Data Center has a REST API. Atlassian's export article uses <code>GET /rest/questions/1.0/question?limit=700</code> for the questions; the answers are fetched one by one with <code>/rest/questions/1.0/answer/{answerId}</code> (Atlassian: <a href="https://support.atlassian.com/questions-for-confluence/kb/how-to-export-confluence-questions-data/" rel="noopener noreferrer">How to export Confluence Questions data</a>). The REST reference lists <code>limit</code> as required and <code>start</code> for the next page (Atlassian: <a href="https://docs.atlassian.com/confluence-questions/rest/" rel="noopener noreferrer">Confluence Questions REST API</a>). Even if you never import it, that file is your archive.</li>
-<li><strong>Use an app that imports that file.</strong> That is where AskSpace comes in; see below.</li>
 </ul>
 
 <h3 id="askspace">AskSpace as one of the options</h3>
-<p>Full disclosure: I build AskSpace at Dortus. AskSpace is a Q&amp;A app per Confluence space, and it can import the JSON file from the Questions REST API on your old Confluence. What that import does:</p>
+<p>Full disclosure: I build AskSpace at Dortus. AskSpace is a Q&amp;A app per Confluence space. It is mainly an option if you are already on Cloud and the questions stayed behind, or if you want to keep the questions without Questions for Confluence. It can import the JSON file from the Questions REST API on your old Confluence. What that import does:</p>
 <ul>
 <li><strong>What comes in.</strong> Each question's title and text, the author's name, the date, up to 3 topics as tags, and, when the file contains them, the answers with their author and date. The accepted answer becomes the best answer.</li>
 <li><strong>Answers only when they are in the file.</strong> If the file lists answers by ID without their text, AskSpace imports the questions only and says the answers are missing, with the call to fetch them.</li>
@@ -91,8 +89,9 @@ Questions for Confluence exists for Data Center and for Cloud, and Atlassian's C
 
 <h3 id="which">Which route fits</h3>
 <ul>
-<li><strong>You are about to migrate with the assistant.</strong> Include Questions for Confluence and follow Atlassian's steps above. That keeps the questions in the app your people know. If Questions for Confluence works for your team, there is no reason to change apps.</li>
-<li><strong>The spaces are already in Cloud without the questions.</strong> Start with Atlassian Support. For what remains, recreate a handful by hand, or export the file and import it into an app that reads it.</li>
+<li><strong>You are still on Data Center.</strong> Include Questions for Confluence in the migration and check the list above first. That keeps the questions in the app your people know.</li>
+<li><strong>You migrated and questions are missing.</strong> Go through the list above, try the second run if it is about permissions, and contact Atlassian Support.</li>
+<li><strong>You are on Cloud, the questions stayed behind, and the old site still runs.</strong> Export the file. Then recreate the questions that matter, or import the file into an app that reads it.</li>
 <li><strong>Whatever you choose,</strong> keep the export file from Data Center as an archive before you switch the old site off.</li>
 </ul>
 
