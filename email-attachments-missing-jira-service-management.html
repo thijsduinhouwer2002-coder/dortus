@@ -61,13 +61,13 @@
 <p>Email text longer than 32,767 characters is truncated when displayed as a request or a comment. A long forwarded thread, or a message with a huge signature block, can lose its end. The attachments are not affected, but the text that referred to them may be.</p>
 
 <h3 id="raw">6. Getting the original email back</h3>
-<p>Jira keeps the raw emails it processed in its own database, by default for 45 days (a Jira admin can set 14 to 180 days in Global mail settings). Within that window, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
+<p>The processing log keeps the raw email for a limited time. Atlassian says "Both connectivity and processing logs are deleted after the number of days specified for Database cleaner", a value in global mail settings (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>). Until then, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
 <p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, with the inline images and the files inside the message, including attachments packed in winmail.dat, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>What is the attachment size limit for email requests?</strong> 25 MB for the whole email, attachments included. Larger emails are not fetched.</p>
 <p><strong>Where do I see why an email was not turned into a ticket?</strong> Channels &amp; self service, Email, View logs, Processing log (project admin).</p>
-<p><strong>Can I recover an email the ticket mangled?</strong> Yes, for 45 days by default: download the raw message from the processing log and attach the .eml to the ticket.</p>
+<p><strong>Can I recover an email the ticket mangled?</strong> Yes, as long as it is still in the processing log: download the raw message and attach the .eml to the ticket. How long that is depends on the Database cleaner value in global mail settings.</p>
 
 <h3 id="support">Questions</h3>
 <p>Stuck on an email that will not come through? Email <a href="mailto:support@dortus.com?subject=Email%20request%20attachments">support@dortus.com</a>.</p>
