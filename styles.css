@@ -1408,6 +1408,15 @@ body > main .band:not(.band-deep):not(.band-dark) .mock {
   border-bottom-color: var(--line-strong);
 }
 
+/* Tabel met drie kolommen (vergelijking QfC, 14 oktober): op 320 px past
+   die alleen met minder ruimte in de cellen. */
+@media (max-width: 359px) {
+  .prose th,
+  .prose td {
+    padding-inline: 0.3rem;
+  }
+}
+
 /* Codeblok in een gids (exportgids QfC, 14 oktober). Lange regels scrollen
    binnen het blok, zodat de pagina op 375 px niet zijwaarts schuift. */
 .prose pre {

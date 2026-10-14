@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AskSpace vs Questions for Confluence (Confluence Cloud) · Dortus</title>
-<meta name="description" content="Looking for a Questions for Confluence alternative in Confluence Cloud? How AskSpace and Atlassian's Questions for Confluence compare on permissions, search, spaces, import and export, and where questions show up." />
+<title>Questions for Confluence vs AskSpace: an honest comparison for Confluence Cloud · Dortus</title>
+<meta name="description" content="Using Questions for Confluence in Confluence Cloud and looking at an alternative? What it shares with AskSpace, where Questions for Confluence is ahead, the real differences, and how to move your questions." />
 <meta name="theme-color" content="#0052cc" />
 <link rel="icon" href="assets/app-icon.png" />
-<meta property="og:title" content="AskSpace vs Questions for Confluence" />
-<meta property="og:description" content="How AskSpace and Questions for Confluence compare in Confluence Cloud, where each one is ahead, and how to move your questions." />
+<meta property="og:title" content="Questions for Confluence vs AskSpace: an honest comparison" />
+<meta property="og:description" content="What Questions for Confluence and AskSpace share in Confluence Cloud, where each one is ahead, and how to move your questions." />
 <meta property="og:type" content="article" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -34,64 +34,90 @@
 <div class="wrap">
 <div class="head">
 <p class="eyebrow" style="color: var(--brand-text)">Comparison &middot; Confluence Cloud</p>
-<h1 style="margin-bottom: 0.9rem">AskSpace vs Questions for Confluence</h1>
+<h1 style="margin-bottom: 0.9rem">Questions for Confluence vs AskSpace: an honest comparison</h1>
 <p class="lede">
-Questions for Confluence is Atlassian's own Q&amp;A app. AskSpace is a Q&amp;A app per Confluence space, and I build it. If Questions for Confluence works for you, there is no reason to change. If you are looking at alternatives, this page compares the two on five points, says where Questions for Confluence is ahead, and shows how to move.
+Questions for Confluence is Atlassian's own Q&amp;A app for Confluence. AskSpace is a Q&amp;A app per Confluence space, and I build it at Dortus. If Questions for Confluence works for your team, keep it. This page shows what the two apps share, where Questions for Confluence is ahead, the real differences, and how to move if you decide to.
 </p>
 </div>
 <div class="prose">
 
-<h3 id="compare">Side by side</h3>
-<p>What each app does in Confluence Cloud. For Questions for Confluence this follows Atlassian's documentation; for AskSpace, the version that runs today.</p>
-<table>
-<thead>
-<tr><th scope="col"></th><th scope="col">AskSpace</th><th scope="col">Questions for Confluence</th></tr>
-</thead>
-<tbody>
-<tr><th scope="row">Who asks, who answers</th><td>Set separately, per space: everyone in the space, space admins only, or chosen Confluence groups.</td><td>Anyone who can ask can also answer. Per space, admins set View, Add and Delete permissions for the app.</td></tr>
-<tr><th scope="row">Search</th><td>Looks in titles, details, tags and answers. AskSpace questions don't show up in Confluence's own search.</td><td>Questions show up in Confluence's quick search and full search, with a filter for questions.</td></tr>
-<tr><th scope="row">Per space</th><td>Off in every space until a space admin turns it on. Every question belongs to one space.</td><td>Questions can be asked in a space or globally, for the whole site. Access follows the space's permissions.</td></tr>
-<tr><th scope="row">Import and export</th><td>Import from Questions for Confluence (on the same site, or a JSON file from Server or Data Center) and from CSV, with a preview first and an undo afterwards. Export to CSV.</td><td>An exporter and importer for Questions in Cloud is an open feature request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>).</td></tr>
-<tr><th scope="row">Where you see questions</th><td>AskSpace in the space sidebar, and the <em>AskSpace questions</em> block on a page: recent, unanswered or solved, optionally for one tag.</td><td>Questions in the space sidebar, global questions, Confluence search, and the Questions List macro on a page: recent, popular or unanswered, by topic.</td></tr>
-</tbody>
-</table>
-<p>Both apps have votes on answers and one accepted answer. In Questions for Confluence the person who asked, or an admin, accepts an answer. In AskSpace the person who asked, or a moderator, marks the best answer.</p>
-<p>Atlassian's documentation for Questions for Confluence: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/what-are-questions-permissions/" rel="noopener noreferrer">Assign Questions for Confluence permissions</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a> and <a href="https://support.atlassian.com/confluence-cloud/docs/use-questions-for-confluence/" rel="noopener noreferrer">Use Questions for Confluence</a>.</p>
+<p>Written on 14 October 2026. Facts about Questions for Confluence come from Atlassian's documentation and Marketplace listing, linked next to each point. Facts about AskSpace describe the version on the Atlassian Marketplace today. Atlassian changes its pages and menu names now and then, so if your site looks different, go by the linked Atlassian page.</p>
 
-<h3 id="qfc-ahead">Where Questions for Confluence is ahead</h3>
+<h3 id="same">What both apps do</h3>
+<p>Some things look like differences, but both apps have them:</p>
 <ul>
-<li><strong>Confluence search.</strong> Its questions show up in Confluence's own search, next to pages. AskSpace questions only show up in AskSpace's search.</li>
-<li><strong>Made by Atlassian.</strong> It is Atlassian's own app, documented on Atlassian's support site.</li>
-<li><strong>Around for years.</strong> Atlassian introduced it as Confluence Questions in 2014 (<a href="https://www.atlassian.com/blog/2014/05/confluence-questions-1-0-share-knowledge-qa" rel="noopener noreferrer">Atlassian blog</a>).</li>
-<li><strong>Site-wide questions.</strong> Questions can also be asked globally, not only inside a space.</li>
-<li><strong>Popular questions.</strong> The Questions List macro can show popular questions. The AskSpace block shows recent, unanswered or solved ones.</li>
+<li><strong>A place in the sidebar.</strong> Questions for Confluence is under <strong>Apps &rarr; Questions</strong> in the Confluence sidebar (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a>). AskSpace opens from the space sidebar.</li>
+<li><strong>Permissions per space.</strong> In Questions for Confluence, access follows the space permissions, and per space you set View, Add and Delete for each group (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/what-are-questions-permissions/" rel="noopener noreferrer">Assign Questions for Confluence permissions</a>). AskSpace has its own settings per space. How the permissions are split up is different; see <a href="#askspace-fits">When AskSpace may fit better</a>.</li>
+<li><strong>Votes and one best answer.</strong> People vote answers up or down. In Questions for Confluence the person who asked accepts an answer, or an admin does (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>). In AskSpace the person who asked marks the best answer, or a moderator does.</li>
+<li><strong>Questions on a page.</strong> Questions for Confluence has the Questions List macro (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a>). AskSpace has the <em>AskSpace questions</em> block.</li>
 </ul>
-<p>If your team uses Questions for Confluence and it works for you, there is no reason to change.</p>
+
+<h3 id="qfc-enough">When Questions for Confluence is enough</h3>
+<p>On these points Questions for Confluence is ahead of AskSpace. If they matter to your team, stay with it.</p>
+<ul>
+<li><strong>Made by Atlassian.</strong> It is Atlassian's own app, with its own <a href="https://marketplace.atlassian.com/apps/1211644/questions-for-confluence" rel="noopener noreferrer">Marketplace listing</a> and documentation on Atlassian's support site (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-questions-for-confluence/" rel="noopener noreferrer">Use Questions for Confluence</a>).</li>
+<li><strong>Questions in Confluence search.</strong> Questions show up in Confluence's quick search and full search results, with a filter for questions (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>). AskSpace questions don't: AskSpace has its own search, one space at a time.</li>
+<li><strong>Questions for the whole site.</strong> Besides questions in a space, there are global questions, asked to the whole site (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a>). In AskSpace every question belongs to one space.</li>
+<li><strong>One list across spaces.</strong> The Questions List macro can show questions from every space the reader can view, and it can show popular questions (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a>). The AskSpace block shows the questions of one space: recent, unanswered or solved.</li>
+<li><strong>Points and experts.</strong> Votes build a reputation, and a leaderboard shows the top experts (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/what-are-votes-and-experts/" rel="noopener noreferrer">What are votes and experts?</a>). AskSpace has no points.</li>
+</ul>
+<p>If your team asks questions across the whole site, or wants them to turn up next to pages in search, Questions for Confluence is the better fit. There is no reason to switch.</p>
 
 <h3 id="askspace-fits">When AskSpace may fit better</h3>
+<p>These are the real differences. Each AskSpace point describes the app as it runs today.</p>
 <ul>
-<li>You want to choose separately who may ask and who may answer.</li>
-<li>You want search to look inside the answers, not only the questions.</li>
-<li>Each team should decide for its own space whether to use Q&amp;A.</li>
-<li>You want a way to get your questions and answers out again, as a CSV file.</li>
+<li><strong>Different people ask and answer.</strong> In Questions for Confluence, &ldquo;any user that can ask a question can answer a question&rdquo; (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>). In AskSpace a space admin sets <em>Who may ask questions?</em> and <em>Who may answer?</em> separately: everyone in the space, space admins only, or chosen groups. For example: everyone may ask, and only the support team answers.</li>
+<li><strong>Off until a space turns it on.</strong> In Questions for Confluence, &ldquo;if someone has access to a space, they'll be able to view, ask, and interact with questions in that space&rdquo;; a space admin can take permissions away (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/what-are-questions-permissions/" rel="noopener noreferrer">Assign Questions for Confluence permissions</a>). AskSpace is off in every space until a space admin turns it on, so each team decides for its own space.</li>
+<li><strong>One search box for questions and answers.</strong> AskSpace's search looks in the titles, details, tags and answers of the space's questions, and says <em>Found in an answer</em> when only an answer matches. Questions for Confluence uses Confluence search instead, and its listing says you can find questions and answers there (Atlassian: <a href="https://marketplace.atlassian.com/apps/1211644/questions-for-confluence" rel="noopener noreferrer">Questions for Confluence on the Marketplace</a>). So this is a different way to search, not a missing feature.</li>
+<li><strong>Import with a preview and an undo.</strong> AskSpace imports from Questions for Confluence on the same site, from a Server or Data Center export file, or from CSV. You see a preview before anything is saved, and <em>Undo this import</em> removes the imported questions again. For Questions for Confluence in Cloud, an exporter and importer is an open feature request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>).</li>
+<li><strong>Export to CSV.</strong> A space admin exports the space's questions and answers to one CSV file, and AskSpace can import that file again. Atlassian's FAQ says there is currently no way to export content from Questions for Confluence Cloud (Atlassian: <a href="https://confluence.atlassian.com/questions/confluence-questions-faq-407724483.html" rel="noopener noreferrer">Confluence Questions FAQ</a>). The Confluence REST API can still read it: <a href="export-questions-for-confluence-cloud.html">How to export Questions for Confluence Cloud data</a> shows how.</li>
 </ul>
 <p>AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>.</p>
 
+<h3 id="compare">Side by side</h3>
+<p>The same points in one table. The Atlassian sources are linked in the sections above.</p>
+<table>
+<thead>
+<tr><td></td><th scope="col">Questions for Confluence</th><th scope="col">AskSpace</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Made by</th><td>Atlassian</td><td>Dortus</td></tr>
+<tr><th scope="row">In the sidebar</th><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Permis&shy;sions per space</th><td>View, Add and Delete per group; whoever can ask can answer</td><td>Who may ask and who may answer, set separately</td></tr>
+<tr><th scope="row">In a space by default</th><td>On, following the space permissions</td><td>Off until a space admin turns it on</td></tr>
+<tr><th scope="row">In Confluence search</th><td>Yes, with a filter for questions</td><td>No; own search per space, answers included</td></tr>
+<tr><th scope="row">Site-wide questions</th><td>Yes, global questions</td><td>No; every question belongs to one space</td></tr>
+<tr><th scope="row">List on a page</th><td>Recent, popular or un&shy;answered; one space or all</td><td>Recent, un&shy;answered or solved; one space</td></tr>
+<tr><th scope="row">Votes and best answer</th><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Points and experts</th><td>Yes</td><td>No</td></tr>
+<tr><th scope="row">Import</th><td>From Server or Data Center with Atlassian's migration assistant; an importer in Cloud is an open request</td><td>From Questions for Confluence, a Server or Data Center file, or CSV; with preview and undo</td></tr>
+<tr><th scope="row">Export</th><td>No export in Cloud; the REST API can read the data</td><td>CSV per space</td></tr>
+</tbody>
+</table>
+
 <h3 id="move">How to move from Questions for Confluence</h3>
-<p>On the same Confluence Cloud site, AskSpace reads your questions directly. You don't need an export file.</p>
+<p>On the same Confluence Cloud site, AskSpace reads your questions directly. You don't need an export file, and you can start with one space.</p>
 <ul>
-<li><strong>Start the import.</strong> In a space where you are a space admin, go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong>, then <strong>Import &amp; export</strong>. When your site has questions in Questions for Confluence, <em>Questions for Confluence (this site)</em> is one of the sources.</li>
-<li><strong>What it reads.</strong> AskSpace reads the questions, answers, topics and accepted answers, as you. Topics become tags, up to 3 per question.</li>
-<li><strong>Preview first.</strong> You see what was found, grouped by space, before anything is saved. Per space you choose: import into that space, into another space where you are a space admin, or skip.</li>
-<li><strong>Undo.</strong> After the import, <em>Undo this import</em> takes it out again.</li>
-<li><strong>The originals stay.</strong> AskSpace only reads. Nothing changes in Questions for Confluence, so your questions stay there as they were.</li>
-<li><strong>From Server or Data Center.</strong> Use the JSON file from <code>GET /rest/questions/1.0/question?limit=700</code> on your old Confluence.</li>
+<li><strong>Start the import.</strong> You need to be a space admin. Go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong>, then <strong>Import &amp; export</strong>. When your site has questions in Questions for Confluence, <em>Questions for Confluence (this site)</em> is one of the sources.</li>
+<li><strong>What it reads.</strong> The questions, answers, topics and accepted answers, as you: you bring over what your own account can see. The original dates come along. Topics become tags, up to 3 per question, and AskSpace tells you how many topics did not fit.</li>
+<li><strong>Preview first.</strong> Before anything is saved, you see how many questions were found, per space, and the first 5. Per space you choose: import into that space, into another space where you are a space admin, or skip.</li>
+<li><strong>What doesn't come along.</strong> Votes. Images, attachments and mentions in the text become <em>[content omitted during import]</em>. One import takes up to 5,000 questions, with up to 100 answers each, and a space holds up to 6,000 questions.</li>
+<li><strong>Undo.</strong> <em>Undo this import</em> deletes the imported questions with all their answers, also answers people added after the import. That delete is final.</li>
+<li><strong>The originals stay.</strong> AskSpace only reads. Nothing changes in Questions for Confluence, so both can run side by side while you decide.</li>
+<li><strong>From Server or Data Center.</strong> Use the JSON file from <code>GET /rest/questions/1.0/question?limit=700</code> on your old Confluence. If the file has no answers, AskSpace tells you. To move to Questions for Confluence in Cloud instead, Atlassian's Cloud Migration Assistant can migrate it (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>).</li>
 </ul>
-<p>Only want a copy of your data? <a href="export-questions-for-confluence-cloud.html">How to export Questions for Confluence Cloud data</a> shows how, without an app.</p>
-<p>Step by step: <a href="docs/askspace/">Getting started with AskSpace</a>. For other ways to run Q&amp;A, see <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a>.</p>
+<p>Step by step: <a href="docs/askspace/">Getting started with AskSpace</a>.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can I use both apps at the same time?</strong> Yes. AskSpace only reads from Questions for Confluence, and it stays off in a space until a space admin turns it on. So you can try AskSpace in one space while the rest of the site keeps using Questions for Confluence.</p>
+<p><strong>Do AskSpace questions show up in Confluence search?</strong> No. AskSpace has its own search per space. Questions for Confluence questions do show up in Confluence search (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>).</p>
+<p><strong>Do votes come along when I import?</strong> No. Questions, answers, original dates, topics (as tags) and accepted answers do.</p>
+<p><strong>Can I get my questions out of AskSpace again?</strong> Yes. A space admin exports the space to CSV: one row per question or answer, with author, date, tags and best answer. Votes are not in the file.</p>
+<p><strong>Where are AskSpace questions stored?</strong> AskSpace runs on Atlassian Forge, so your questions are stored by Atlassian with your site, not on Dortus servers.</p>
+<p><strong>Are there other ways to run Q&amp;A in Confluence?</strong> Yes. <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a> lists them, <a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a> shows how to do it without an app, and <a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A inside Confluence</a> helps if you are weighing a separate tool.</p>
 
 <h3 id="support">Questions</h3>
-<p>Spotted something wrong on this page, or something Questions for Confluence does that we missed? Email <a href="mailto:support@dortus.com?subject=AskSpace%20vs%20Questions%20for%20Confluence">support@dortus.com</a>.</p>
+<p>Spotted something wrong on this page, or something Questions for Confluence does that we missed? Email <a href="mailto:support@dortus.com?subject=Questions%20for%20Confluence%20vs%20AskSpace">support@dortus.com</a>.</p>
 <div class="card">
 <p class="eyebrow">AskSpace by Dortus</p>
 <h3>Questions and answers per Confluence space</h3>
