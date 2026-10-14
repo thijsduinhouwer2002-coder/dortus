@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to build an FAQ in Confluence Cloud (3 ways that work) · Dortus</title>
+<meta name="description" content="Three ways to build an FAQ in Confluence Cloud: one page with expands, a page per question collected with labels and the Filter by label macro, or a Q&amp;A app. Steps, limits and which one to pick." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to build an FAQ in Confluence Cloud (3 ways that work)" />
+<meta property="og:description" content="One page with expands, pages with labels, or a Q&amp;A app: three ways to build an FAQ in Confluence Cloud, and which one to pick." />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to build an FAQ in Confluence Cloud (3 ways that work)</h1>
+<p class="lede">
+An FAQ in Confluence Cloud can be one page, a set of pages, or a place where people ask their own questions. Which one works depends on how many questions you have and who should answer them. Here are all three, with the steps and the catch for each.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="expand">1. One FAQ page with an expand per question</h3>
+<p>The quickest FAQ needs nothing extra. Create a page called FAQ. For each question, type <code>/expand</code> in the editor, use the question as the title of the expand, and write the answer inside it. Readers see a short list of questions and open only the one they need (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-expand-macro/" rel="noopener noreferrer">Insert the expand macro</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/insert-elements-into-a-page/" rel="noopener noreferrer">Add elements to a page or live doc</a>).</p>
+<ul>
+<li><strong>Works well for</strong> up to about 20 questions that one person or one team owns.</li>
+<li><strong>The catch.</strong> Nobody can add a question except in a comment, and one person ends up keeping the page up to date. Confluence search takes you to the page, not to the one question you were looking for.</li>
+</ul>
+
+<h3 id="labels">2. A page per question, collected with labels</h3>
+<p>When the list grows, give every question its own page: the question as the page title, the answer as the body. Then tie the pages together with a label.</p>
+<ul>
+<li><strong>Label each page.</strong> Give every FAQ page the same label, for example <code>faq</code>. In Confluence Cloud, select the Details icon in the floating action bar at the bottom right of the page, then + next to Labels. Labels can't contain spaces (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-labels-to-organize-your-content/" rel="noopener noreferrer">Use labels to organize content and attachments</a>).</li>
+<li><strong>Make the label automatic.</strong> Create a template for FAQ pages and add the label to the template. Every page created from it gets the label (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/create-a-template/" rel="noopener noreferrer">Create a template</a>).</li>
+<li><strong>List them on one page.</strong> On your FAQ overview page, type <code>/filterbylabel</code> to add the Filter by label macro, choose the <code>faq</code> label, add a Space filter if you only want this space, and sort by title. It shows 15 items by default and up to 500 (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-filter-by-label-macro/" rel="noopener noreferrer">Insert the filter by label macro</a>). Older documentation and Confluence Data Center call this macro <a href="https://confluence.atlassian.com/doc/content-by-label-macro-145566.html" rel="noopener noreferrer">Content by Label</a>.</li>
+</ul>
+<ul>
+<li><strong>Works well for</strong> dozens or hundreds of questions, written by several people.</li>
+<li><strong>The catch.</strong> Each answer is one page by one author. Colleagues can comment or edit, but there are no competing answers, no votes and no built-in way to mark a question as answered. Asking a new question still means writing a page yourself.</li>
+</ul>
+
+<h3 id="qa-app">3. A Q&amp;A app, so people ask their own questions</h3>
+<p>The first two ways depend on someone writing the questions down. A Q&amp;A app turns that around: people ask in their own words, colleagues answer, and the answer that worked is marked. The FAQ grows from real questions instead of guesses. Atlassian's own Questions for Confluence is one such app; <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a> compares the choices.</p>
+<p>Full disclosure: I build AskSpace at Dortus. In AskSpace:</p>
+<ul>
+<li><strong>Per space.</strong> A space admin turns Q&amp;A on in the spaces that need it and chooses who may ask and who may answer.</li>
+<li><strong>Answers from colleagues.</strong> Answers get up and down votes, and the person who asked, or a moderator, marks the best answer.</li>
+<li><strong>Search that includes answers.</strong> Search looks in the questions and in the answers. Similar questions show up while someone types a new one, so the same question gets asked less often.</li>
+<li><strong>On your FAQ page.</strong> The <em>AskSpace questions</em> block shows the latest questions of the space on a page, or only the unanswered or solved ones, 3, 5 or 10 at a time, optionally for one tag.</li>
+</ul>
+<p>AskSpace is <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">on the Atlassian Marketplace</a>. <a href="docs/askspace/">Getting started with AskSpace</a> walks through the setup.</p>
+<ul>
+<li><strong>Works well for</strong> teams where questions keep coming and more than one person knows the answers.</li>
+<li><strong>The catch.</strong> It is one more app on your site, and someone should keep an eye on the unanswered questions.</li>
+</ul>
+
+<h3 id="which">Which one should you pick?</h3>
+<table>
+<thead>
+<tr><th scope="col"></th><th scope="col">One page with expands</th><th scope="col">Pages with a label</th><th scope="col">Q&amp;A app</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Questions</th><td>Up to about 20</td><td>Dozens to hundreds</td><td>Keeps growing</td></tr>
+<tr><th scope="row">Who asks</th><td>The page owner picks them</td><td>Whoever writes a page</td><td>Anyone allowed to ask</td></tr>
+<tr><th scope="row">Who answers</th><td>The page owner</td><td>The page author</td><td>Colleagues; best answer marked</td></tr>
+<tr><th scope="row">Upkeep</th><td>One person edits one page</td><td>Keep the label on every page</td><td>Watch the unanswered questions</td></tr>
+</tbody>
+</table>
+<p>Not sure? Start with one page of expands. When it gets long, or when the same few people keep answering the same questions in chat, move to labels or a Q&amp;A app.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=FAQ%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
