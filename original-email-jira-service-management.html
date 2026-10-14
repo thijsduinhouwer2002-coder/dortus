@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See the original email behind a Jira Service Management request · Dortus</title>
+<meta name="description" content="A request made from an email does not keep the email itself. How a project admin downloads the original from the processing log, how to read its headers safely, and how to keep it with the request." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to see the original email behind a Jira Service Management request" />
+<meta property="og:description" content="Download the original email from the processing log, read its headers safely, and keep it with the request." />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/original-email-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/original-email-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to see the original email behind a Jira Service Management request",
+  "description": "A request made from an email does not keep the email itself. How a project admin downloads the original from the processing log, how to read its headers safely, and how to keep it with the request.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-14T20:19:07+00:00",
+  "dateModified": "2026-10-14T20:51:32+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/original-email-jira-service-management.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Email channel</p>
+<h1 style="margin-bottom: 0.9rem">How to see the original email behind a Jira Service Management request</h1>
+<p class="lede">
+A request that came in by email shows the subject, the text and the attachments, but not the email itself: who really sent it, through which servers, to which address. This page shows how to get the original email in Jira Service Management Cloud, how to read its headers safely, and how to keep it with the request. Atlassian's newer screens say space where older ones say project; the menus are the same.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="short">The short answer</h3>
+<p>Jira Service Management turns an email into a request or a comment. The original email is not added to the request. A project admin can download it from the email processing log as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>). Saving the original email as an attachment is a suggestion on Atlassian's tracker: <a href="https://jira.atlassian.com/browse/JRACLOUD-42402" rel="noopener noreferrer">JRACLOUD-42402</a>, "Include the Original Email as an Attachment when the Issue created", created in March 2015, with the status Gathering Interest and 76 votes on 14 October 2026.</p>
+
+<h3 id="download">Step 1: download the raw email</h3>
+<ul>
+<li><strong>Open the email settings.</strong> As a project admin, open the project and go to Channels &amp; self service, then Email.</li>
+<li><strong>Open the processing log.</strong> Next to the email account, select View logs, then Processing log. You can search by email address, subject line or work item key, and filter by status and date range.</li>
+<li><strong>Download the email.</strong> On the line of the email, select More, then Download raw email message. You get the email as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>).</li>
+</ul>
+<p>Do it soon. The log is not an archive: Atlassian says "Both connectivity and processing logs are deleted after the number of days specified for Database cleaner", a value in global mail settings (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>). If the email is not in the log at all, it never reached Jira Service Management; see <a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email</a>.</p>
+<p>Two cases where you do not need the log:</p>
+<ul>
+<li><strong>The customer forwarded the email as an attachment.</strong> Then the original is already on the request, as an .eml or .msg file; see <a href="forwarding-email-jira-service-management.html">forwarding emails into Jira Service Management</a>.</li>
+<li><strong>The email channel is a mailbox of your own.</strong> Jira Service Management reads unread emails from the inbox and then marks them as read (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/email-process-for-pop-imap-cloud-and-other-email-types/" rel="noopener noreferrer">Email process for POP, IMAP, cloud, and other email types</a>). The email may still be in that mailbox, where your mail admin can find it.</li>
+</ul>
+
+<h3 id="open">Step 2: open it safely</h3>
+<p>An .eml file is plain text: first the header lines, then an empty line, then the body (<a href="https://www.rfc-editor.org/rfc/rfc5322" rel="noopener noreferrer">RFC 5322</a>, section 2.1). A text editor shows all of it and runs nothing, but the body is often encoded, for example as base64 (<a href="https://www.rfc-editor.org/rfc/rfc2045" rel="noopener noreferrer">RFC 2045</a>, section 6), and hard to read.</p>
+<p>Opening the file in Outlook or another mail app shows it as a normal email, with its links and images. For a suspicious email, that is exactly what you want to avoid; see <a href="phishing-reports-jira-service-management.html">handling phishing reports in Jira Service Management</a>.</p>
+<p>On this site, <a href="email-check.html">Email check</a> reads an .eml or .msg file, or pasted headers, in your browser and explains the authentication results, the sender, the links and the route; nothing is uploaded. Full disclosure: Dortus makes it.</p>
+
+<h3 id="headers">Step 3: what the headers tell you</h3>
+<ul>
+<li><strong>From.</strong> The author of the email, as the sending side wrote it (<a href="https://www.rfc-editor.org/rfc/rfc5322" rel="noopener noreferrer">RFC 5322</a>, section 3.6.2). On its own it proves nothing; the authentication results below say whether the sending domain checks out.</li>
+<li><strong>Reply-To.</strong> Where the sender asks replies to go (RFC 5322, section 3.6.2); mail apps use it when someone presses Reply. A Reply-To on a different domain than From deserves a second look.</li>
+<li><strong>To and Cc.</strong> The addresses the email was sent to (RFC 5322, section 3.6.3). If your project has more than one email address, this usually shows which one the customer used.</li>
+<li><strong>Date.</strong> When the sender's mail program says the email was ready to send (RFC 5322, section 3.6.1). The Received lines show when servers actually handled it.</li>
+<li><strong>Received.</strong> Each mail server that receives the email adds one of these at the top (<a href="https://www.rfc-editor.org/rfc/rfc5321" rel="noopener noreferrer">RFC 5321</a>, section 4.4). Read them from the bottom up: the lowest is the first server, the highest the last. The times show where an email was delayed.</li>
+<li><strong>Return-Path.</strong> The address that bounces go to, added on final delivery (RFC 5321, section 4.4). It can differ from From.</li>
+<li><strong>Authentication-Results.</strong> What the receiving side found when it checked SPF, DKIM and DMARC (<a href="https://www.rfc-editor.org/rfc/rfc8601" rel="noopener noreferrer">RFC 8601</a>). What those three checks mean is explained in <a href="phishing-reports-jira-service-management.html">handling phishing reports</a>.</li>
+<li><strong>Message-ID.</strong> A unique ID for this email (RFC 5322, section 3.6.4). Use it to find the same email in a mailbox or in another system.</li>
+</ul>
+
+<h3 id="keep">Step 4: keep it with the request</h3>
+<p>The downloaded file is on your computer. To keep it as evidence, attach it to the request. The headers can show details of your own mail setup, so check who in your project can see attachments before you add it.</p>
+<p>Jira Cloud shows an attached .eml as raw text, not as an email. See <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>.</p>
+<p>Full disclosure: Dortus makes <a href="mailview.html">MailView</a>. Once the .eml is attached, MailView shows it on the request, in Jira and in the Jira Service Management agent view, to everyone who can see the attachment. Its Details tab has the SPF, DKIM and DMARC results, the sender fields (From, Reply-To, Return-Path, Message-ID), the delivery route read from the Received headers, and every header; the Original tab shows the source. MailView does not fetch the original email for you. It only reads files that are attached to the work item, so a project admin still downloads the email from the processing log and attaches it.</p>
+
+<h3 id="not-solved">What this does not solve</h3>
+<ul>
+<li><strong>An email that is not in the log.</strong> It never reached Jira Service Management; start with <a href="jsm-not-creating-requests-from-email.html">the checklist</a>.</li>
+<li><strong>A mailbox that forwards to Jira.</strong> Then the forward comes from the mailbox, and the original sender is gone before Jira sees the email; see <a href="forwarding-email-jira-service-management.html">forwarding emails into Jira Service Management</a>.</li>
+<li><strong>Every request, automatically.</strong> Jira Service Management does not attach the original email by itself; that is the suggestion above. For each email you need, someone downloads it and attaches it.</li>
+<li><strong>An email the log no longer has.</strong> Then Jira cannot give it back. Ask the customer to forward the original as an attachment, or ask your mail admin if the channel is a mailbox of your own.</li>
+</ul>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can an agent download the original email?</strong> Not from the log: that needs a project admin. Once the .eml is attached to the request, every agent who can see the attachment can download it.</p>
+<p><strong>Does Jira keep the original email on the request?</strong> No. The email becomes a request or a comment; the raw email is only in the processing log, until the Database cleaner removes it.</p>
+<p><strong>Which address did the customer email?</strong> Open the raw email and look at the To and Cc lines.</p>
+
+<h3 id="support">Questions</h3>
+<p>Found a step that works differently on your site? Email <a href="mailto:support@dortus.com?subject=Original%20email%20in%20JSM">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the request</h3>
+<p>The email as it was sent, with a Details tab for the headers and a plain-English phishing check. Runs on Atlassian, stores nothing. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

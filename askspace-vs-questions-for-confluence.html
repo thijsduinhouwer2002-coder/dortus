@@ -10,6 +10,44 @@
 <meta property="og:title" content="Questions for Confluence vs AskSpace: an honest comparison" />
 <meta property="og:description" content="What Questions for Confluence and AskSpace share in Confluence Cloud, where Questions for Confluence is ahead, where AskSpace may fit better, and how to move your questions." />
 <meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/askspace-vs-questions-for-confluence.html" />
+<meta property="og:url" content="https://dortus.com/askspace-vs-questions-for-confluence.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
+<meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Questions for Confluence vs AskSpace: an honest comparison",
+  "description": "Using Questions for Confluence in Confluence Cloud and looking at an alternative? What it shares with AskSpace, where Questions for Confluence is ahead, where AskSpace may fit better, and how to move your questions.",
+  "image": [
+    "https://dortus.com/assets/01-question-list-app.png"
+  ],
+  "datePublished": "2026-10-14T15:10:37+00:00",
+  "dateModified": "2026-10-14T19:39:29+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/askspace-vs-questions-for-confluence.html"
+  },
+  "inLanguage": "en"
+}
+</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -109,7 +147,7 @@ Questions for Confluence is Atlassian's own Q&amp;A app for Confluence (Atlassia
 <li><strong>Limits.</strong> One import takes up to 5,000 questions. Of each question it takes the first 100 answers and leaves out the rest without a note. A space holds up to 6,000 questions in total; if an import doesn't fit, the preview says so, and AskSpace imports the newest questions that fit.</li>
 <li><strong>Undo.</strong> <em>Undo this import</em> deletes the imported questions and all their answers, including answers people added after the import. You can't get them back.</li>
 <li><strong>The originals stay.</strong> AskSpace only reads. Nothing changes in Questions for Confluence. The import is a copy, not a sync. If you run it again later, AskSpace skips the questions it already imported that are still in the space you import into, and adds the rest. So a question you deleted in AskSpace comes back. New answers and edits to questions you already imported don't come along.</li>
-<li><strong>From Server or Data Center.</strong> Questions for Confluence on Server and Data Center has a REST API that can export questions; it needs version 2.3.0 or later (Atlassian: <a href="https://support.atlassian.com/questions-for-confluence/kb/how-to-export-confluence-questions-data/" rel="noopener noreferrer">How to export Confluence Questions data</a>). AskSpace reads the JSON file from <code>GET /rest/questions/1.0/question?limit=700</code> on your Server or Data Center site: it takes the fields it knows and leaves the rest empty. If the file lists answers but leaves out their text, AskSpace tells you how to get them. To move to Questions for Confluence in Cloud instead, Atlassian's Confluence Cloud Migration Assistant can migrate your questions (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>).</li>
+<li><strong>From Server or Data Center.</strong> Questions for Confluence on Server and Data Center has a REST API that can export questions; it needs version 2.3.0 or later (Atlassian: <a href="https://support.atlassian.com/questions-for-confluence/kb/how-to-export-confluence-questions-data/" rel="noopener noreferrer">How to export Confluence Questions data</a>). AskSpace reads the JSON file from <code>GET /rest/questions/1.0/question?limit=700</code> on your Server or Data Center site: it takes the fields it knows and leaves the rest empty. If the file lists answers but leaves out their text, AskSpace tells you how to get them. To move to Questions for Confluence in Cloud instead, Atlassian's Confluence Cloud Migration Assistant can migrate your questions (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>). What has to be in place, and what to do when questions are missing: <a href="migrate-questions-for-confluence-to-cloud.html">Migrating Questions for Confluence to Cloud</a>.</li>
 </ul>
 <p>To install AskSpace and turn it on in a space first, see <a href="docs/askspace/">Getting started with AskSpace</a>.</p>
 
@@ -152,6 +190,7 @@ Questions for Confluence is Atlassian's own Q&amp;A app for Confluence (Atlassia
 <li><a href="askspace.html">AskSpace</a></li>
 <li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
 <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
@@ -161,12 +200,14 @@ Questions for Confluence is Atlassian's own Q&amp;A app for Confluence (Atlassia
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
 <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="email-check.html">Email check</a></li>
 </ul>

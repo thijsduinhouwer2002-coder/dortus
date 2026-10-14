@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create Jira work items from email, without Jira Service Management · Dortus</title>
+<meta name="description" content="Jira can turn emails into work items without Jira Service Management. What the mail handler needs, who can email in, what happens to attachments and forwarded emails, and what to use when the senders are customers." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to create Jira work items from email (Jira, not Jira Service Management)" />
+<meta property="og:description" content="Jira's mail handler: what it needs, who can email in, attachments and forwarded emails, and what to use for customers." />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/create-jira-work-items-from-email.html" />
+<meta property="og:url" content="https://dortus.com/create-jira-work-items-from-email.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to create Jira work items from email (Jira, not Jira Service Management)",
+  "description": "Jira can turn emails into work items without Jira Service Management. What the mail handler needs, who can email in, what happens to attachments and forwarded emails, and what to use when the senders are customers.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-14T20:55:59+00:00",
+  "dateModified": "2026-10-14T20:55:59+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/create-jira-work-items-from-email.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to create Jira work items from email (Jira, not Jira Service Management)</h1>
+<p class="lede">
+Jira can turn an email into a work item without Jira Service Management, but it is set up differently and works only for some senders. This page covers Jira's own mail handler, who can email in, what happens to attachments, and what to use when the senders are customers. Atlassian's newer screens say space where older ones say project; the menus are the same.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="short">The short answer</h3>
+<p>A Jira admin connects a mailbox and adds a mail handler. Jira then checks that mailbox for new emails and creates work items or comments from them (Atlassian: <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>). In a software or business project, only emails from licensed Jira users who may create work items in that project become work items. If the people who email you are customers or other outsiders, use the email channel of Jira Service Management instead.</p>
+
+<h3 id="handler">Set up the mail handler</h3>
+<ul>
+<li><strong>Who sets it up.</strong> Configuring mail servers needs the Administer Jira global permission.</li>
+<li><strong>A mailbox.</strong> Jira reads a mail account over POP or IMAP and checks it periodically for new emails.</li>
+<li><strong>Where.</strong> In Jira's settings, go to System, then Mail, then Incoming Mail, and add a mail handler.</li>
+<li><strong>What it creates.</strong> In the handler you choose the destination project and the work item type for new work items. The handler type "Create a new issue or add a comment to an existing issue" creates a new work item, or adds the email as a comment to an existing one.</li>
+</ul>
+<p>All four points come from Atlassian's page <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>, which also has the step-by-step setup.</p>
+
+<h3 id="who">Who can email in</h3>
+<p>Atlassian says that in a software or business project, only emails sent by licensed Jira users who have permission to create work items in the destination project result in new work items. An email from anyone else does not create a work item. Jira Service Management works differently: there the sender does not need a license to create a request (Atlassian: <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>).</p>
+
+<h3 id="attachments">Attachments and size</h3>
+<p>Attachments in the email become attachments on the work item, as long as attachments are enabled in Jira, which they are by default. The maximum for the message and its attachments together is 25 MB per email (Atlassian: <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>).</p>
+
+<h3 id="forwarded">Forwarded emails</h3>
+<p>Forwarding an email inline puts its text in the work item, without the original headers. Forwarding it as an attachment keeps the original email, but Jira's mail handler stores that file without an extension (<a href="https://jira.atlassian.com/browse/JRACLOUD-40477" rel="noopener noreferrer">JRACLOUD-40477</a>), so it does not look like an email on the work item. See <a href="attach-outlook-email-to-jira.html">how to attach an Outlook email to a Jira work item</a> for the other ways to get an email onto a work item.</p>
+<p>Full disclosure: Dortus makes <a href="mailview.html">MailView</a>. It recognizes a forwarded email attached without a file name by its headers and shows it on the work item, with a Details tab for the headers. It does not set up or change the mail handler; it only reads email files that are already attached.</p>
+
+<h3 id="by-hand">From your own mailbox, one email at a time</h3>
+<ul>
+<li><strong>Gmail.</strong> Atlassian's Jira Cloud for Gmail lets you create a work item from an email in Gmail (Atlassian: <a href="https://support.atlassian.com/jira-software-cloud/docs/integrate-jira-cloud-with-gmail/" rel="noopener noreferrer">Integrate Jira Cloud with Gmail</a>).</li>
+<li><strong>Outlook.</strong> Atlassian's Jira Cloud for Outlook add-in does the same in Outlook; see the first way in <a href="attach-outlook-email-to-jira.html">how to attach an Outlook email to a Jira work item</a>.</li>
+</ul>
+<p>Both work per person: someone opens the email and files it. That suits people who work from their own inbox. For a shared address that should turn into work items by itself, the mail handler is the route.</p>
+
+<h3 id="customers">When the senders are customers</h3>
+<p>For emails from outside your company, a Jira Service Management project with an email channel turns each email into a request (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/how-customers-create-requests-by-email/" rel="noopener noreferrer">How customers create requests by email</a>). If those requests do not show up, see <a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email</a>. To see the email behind a request, see <a href="original-email-jira-service-management.html">how to see the original email behind a Jira Service Management request</a>.</p>
+
+<h3 id="not-solved">What the mail handler does not do</h3>
+<ul>
+<li><strong>Accept everyone.</strong> In a software or business project, senders without a Jira license do not create work items.</li>
+<li><strong>Take large emails.</strong> The maximum is 25 MB for the message and its attachments together.</li>
+<li><strong>Keep the email readable.</strong> An email forwarded as an attachment arrives as a file without an extension, and Jira Cloud does not show it as an email.</li>
+</ul>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can people outside the company create Jira work items by email?</strong> Not in a software or business project. Use Jira Service Management for that.</p>
+<p><strong>Do I need a Jira admin?</strong> Yes. Setting up incoming mail and the handler needs the Administer Jira global permission.</p>
+<p><strong>Can I keep the email itself on the work item?</strong> Forward it as an attachment, or attach the .msg or .eml file. Jira Cloud stores the file but does not show it as an email; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>.</p>
+
+<h3 id="support">Questions</h3>
+<p>Set it up differently, or hit a limit we did not mention? Email <a href="mailto:support@dortus.com?subject=Jira%20work%20items%20from%20email">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, including forwarded emails attached without a file name, with a Details tab for the headers. Runs on Atlassian, stores nothing. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
