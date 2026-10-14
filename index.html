@@ -9,8 +9,41 @@
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Dortus: small apps for Jira and Confluence that never phone home" />
   <meta property="og:description" content="Each app does one job, runs entirely on Atlassian and sends nothing to us. MailView shows .msg and .eml email attachments in Jira and Confluence." />
-  <meta property="og:image" content="assets/feature-media.png" />
+  <meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+  <meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/" />
+  <meta property="og:url" content="https://dortus.com/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dortus.com/#organization",
+        "name": "Dortus",
+        "url": "https://dortus.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+        },
+        "email": "support@dortus.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dortus.com/#website",
+        "name": "Dortus",
+        "url": "https://dortus.com/",
+        "publisher": {
+          "@id": "https://dortus.com/#organization"
+        },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -153,6 +186,7 @@
             <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal (Stack Overflow for Teams) vs Q&amp;A inside Confluence</a></li>
             <li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
             <li><a href="askspace-vs-questions-for-confluence.html">Questions for Confluence vs AskSpace: an honest comparison</a></li>
+            <li><a href="export-questions-for-confluence-cloud.html">How to export Questions for Confluence Cloud data</a></li>
             <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrating Questions for Confluence to Cloud: when questions are missing</a></li>
             <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud (3 ways that work)</a></li>
             <li><a href="confluence-cloud-storage-full.html">Confluence Cloud storage is full? How to find what takes up space</a></li>
