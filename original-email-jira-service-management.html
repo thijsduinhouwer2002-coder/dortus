@@ -43,15 +43,15 @@ A request that came in by email shows the subject, the text and the attachments,
 <div class="prose">
 
 <h3 id="short">The short answer</h3>
-<p>Jira Service Management turns an email into a request or a comment. The original email is not added to the request. A project admin can download it from the email processing log as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>). Saving the original email as an attachment on every new work item is a suggestion on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-42402" rel="noopener noreferrer">JRACLOUD-42402</a>).</p>
+<p>Jira Service Management turns an email into a request or a comment. The original email is not added to the request. A project admin can download it from the email processing log as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>). Saving the original email as an attachment is a suggestion on Atlassian's tracker: <a href="https://jira.atlassian.com/browse/JRACLOUD-42402" rel="noopener noreferrer">JRACLOUD-42402</a>, "Include the Original Email as an Attachment when the Issue created", created in March 2015, with the status Gathering Interest and 76 votes on 14 October 2026.</p>
 
 <h3 id="download">Step 1: download the raw email</h3>
 <ul>
 <li><strong>Open the email settings.</strong> As a project admin, open the project and go to Channels &amp; self service, then Email.</li>
-<li><strong>Open the processing log.</strong> Next to the email account, select View logs, then Processing log. You can search by sender, subject or work item key.</li>
+<li><strong>Open the processing log.</strong> Next to the email account, select View logs, then Processing log. You can search by email address, subject line or work item key, and filter by status and date range.</li>
 <li><strong>Download the email.</strong> On the line of the email, select More, then Download raw email message. You get the email as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>).</li>
 </ul>
-<p>Do it soon. The log is not an archive: Atlassian removes older log entries (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>). If the email is not in the log at all, it never reached Jira Service Management; see <a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email</a>.</p>
+<p>Do it soon. The log is not an archive: Atlassian says "Both connectivity and processing logs are deleted after the number of days specified for Database cleaner", a value in global mail settings (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>). If the email is not in the log at all, it never reached Jira Service Management; see <a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email</a>.</p>
 <p>Two cases where you do not need the log:</p>
 <ul>
 <li><strong>The customer forwarded the email as an attachment.</strong> Then the original is already on the request, as an .eml or .msg file; see <a href="forwarding-email-jira-service-management.html">forwarding emails into Jira Service Management</a>.</li>
@@ -76,7 +76,7 @@ A request that came in by email shows the subject, the text and the attachments,
 </ul>
 
 <h3 id="keep">Step 4: keep it with the request</h3>
-<p>The downloaded file is on your computer. To keep it as evidence, attach it to the request. Agents choose per comment who sees an attachment: with an internal note it stays with your team, with a reply to the customer the customer sees it too (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/attach-files-and-screenshots-to-issues/" rel="noopener noreferrer">Attach files and screenshots to work items</a>). The headers can show details of your own mail setup, so an internal note is usually the right choice.</p>
+<p>The downloaded file is on your computer. To keep it as evidence, attach it to the request. The headers can show details of your own mail setup, so check who in your project can see attachments before you add it.</p>
 <p>Jira Cloud shows an attached .eml as raw text, not as an email. See <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>.</p>
 <p>Full disclosure: Dortus makes <a href="mailview.html">MailView</a>. Once the .eml is attached, MailView shows it on the request, in Jira and in the Jira Service Management agent view, to everyone who can see the attachment. Its Details tab has the SPF, DKIM and DMARC results, the sender fields (From, Reply-To, Return-Path, Message-ID), the delivery route read from the Received headers, and every header; the Original tab shows the source. MailView does not fetch the original email for you. It only reads files that are attached to the work item, so a project admin still downloads the email from the processing log and attaches it.</p>
 
@@ -90,7 +90,7 @@ A request that came in by email shows the subject, the text and the attachments,
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Can an agent download the original email?</strong> Not from the log: that needs a project admin. Once the .eml is attached to the request, every agent who can see the attachment can download it.</p>
-<p><strong>Does Jira keep the original email on the request?</strong> No. The email becomes a request or a comment; the raw email is only in the processing log, and not forever.</p>
+<p><strong>Does Jira keep the original email on the request?</strong> No. The email becomes a request or a comment; the raw email is only in the processing log, until the Database cleaner removes it.</p>
 <p><strong>Which address did the customer email?</strong> Open the raw email and look at the To and Cc lines.</p>
 
 <h3 id="support">Questions</h3>
