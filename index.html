@@ -9,8 +9,41 @@
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Dortus: small apps for Jira and Confluence that never phone home" />
   <meta property="og:description" content="Each app does one job, runs entirely on Atlassian and sends nothing to us. MailView shows .msg and .eml email attachments in Jira and Confluence." />
-  <meta property="og:image" content="assets/feature-media.png" />
+  <meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+  <meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/" />
+  <meta property="og:url" content="https://dortus.com/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dortus.com/#organization",
+        "name": "Dortus",
+        "url": "https://dortus.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+        },
+        "email": "support@dortus.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dortus.com/#website",
+        "name": "Dortus",
+        "url": "https://dortus.com/",
+        "publisher": {
+          "@id": "https://dortus.com/#organization"
+        },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -148,6 +181,7 @@
           <ul>
             <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml email attachments in Jira</a></li>
             <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item (and keep it readable)</a></li>
+            <li><a href="create-jira-work-items-from-email.html">How to create Jira work items from email (Jira, not Jira Service Management)</a></li>
             <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
             <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml email attachments in Confluence</a></li>
             <li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
@@ -155,12 +189,15 @@
             <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack: keep them in Confluence</a></li>
             <li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
             <li><a href="askspace-vs-questions-for-confluence.html">Questions for Confluence vs AskSpace: an honest comparison</a></li>
+            <li><a href="export-questions-for-confluence-cloud.html">How to export Questions for Confluence Cloud data</a></li>
+            <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrating Questions for Confluence to Cloud: when questions are missing</a></li>
             <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud (3 ways that work)</a></li>
             <li><a href="confluence-cloud-storage-full.html">Confluence Cloud storage is full? How to find what takes up space</a></li>
             <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
             <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
             <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
             <li><a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email: a checklist</a></li>
+            <li><a href="original-email-jira-service-management.html">How to see the original email behind a Jira Service Management request</a></li>
             <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
           </ul>
         </div>
@@ -190,6 +227,7 @@
           <li><a href="askspace.html">AskSpace</a></li>
           <li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
           <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+          <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
           <li><a href="mermaid.html">Mermaid Live Preview</a></li>
           <li><a href="partners.html">For Solution Partners</a></li>
           <li><a href="security.html">Security</a></li>
@@ -199,6 +237,7 @@
           <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
           <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
           <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+          <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
           <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
           <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
           <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
@@ -206,6 +245,7 @@
           <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
           <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
           <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+          <li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
           <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
           <li><a href="email-check.html">Email check</a></li>
         </ul>
