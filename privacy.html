@@ -237,6 +237,7 @@ person's own Confluence permissions.
 <li>It also reads the space name, checks whether the person is a space admin, and uses Confluence search to count the pages and attachments, to estimate how big the space is.</li>
 <li>AttachClean keeps nothing: it has no app storage and no server. The report exists only while it is open. Export CSV creates the file in your browser.</li>
 <li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections.</li>
+<li>AttachClean writes no logs. It has no server-side functions, so Atlassian's developer console, where app vendors see the logs of their apps, has none from AttachClean. We never see the pages, files or names it reads. Atlassian does show us which sites have the app installed.</li>
 <li>The permissions are read-only. The app cannot change, move or delete anything.</li>
 </ul>
 
