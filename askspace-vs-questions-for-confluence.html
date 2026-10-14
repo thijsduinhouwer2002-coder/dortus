@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AskSpace vs Questions for Confluence (Confluence Cloud) · Dortus</title>
+<meta name="description" content="Looking for a Questions for Confluence alternative in Confluence Cloud? How AskSpace and Atlassian's Questions for Confluence compare on permissions, search, spaces, import and export, and where questions show up." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="AskSpace vs Questions for Confluence" />
+<meta property="og:description" content="How AskSpace and Questions for Confluence compare in Confluence Cloud, where each one is ahead, and how to move your questions." />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Comparison &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">AskSpace vs Questions for Confluence</h1>
+<p class="lede">
+Questions for Confluence is Atlassian's own Q&amp;A app. AskSpace is a Q&amp;A app per Confluence space, and I build it. If Questions for Confluence works for you, there is no reason to change. If you are looking at alternatives, this page compares the two on five points, says where Questions for Confluence is ahead, and shows how to move.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="compare">Side by side</h3>
+<p>What each app does in Confluence Cloud. For Questions for Confluence this follows Atlassian's documentation; for AskSpace, the version that runs today.</p>
+<table>
+<thead>
+<tr><th scope="col"></th><th scope="col">AskSpace</th><th scope="col">Questions for Confluence</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Who asks, who answers</th><td>Set separately, per space: everyone in the space, space admins only, or chosen Confluence groups.</td><td>Anyone who can ask can also answer. Per space, admins set View, Add and Delete permissions for the app.</td></tr>
+<tr><th scope="row">Search</th><td>Looks in titles, details, tags and answers. AskSpace questions don't show up in Confluence's own search.</td><td>Questions show up in Confluence's quick search and full search, with a filter for questions.</td></tr>
+<tr><th scope="row">Per space</th><td>Off in every space until a space admin turns it on. Every question belongs to one space.</td><td>Questions can be asked in a space or globally, for the whole site. Access follows the space's permissions.</td></tr>
+<tr><th scope="row">Import and export</th><td>Import from Questions for Confluence (on the same site, or a JSON file from Server or Data Center) and from CSV, with a preview first and an undo afterwards. Export to CSV.</td><td>An exporter and importer for Questions in Cloud is an open feature request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>).</td></tr>
+<tr><th scope="row">Where you see questions</th><td>AskSpace in the space sidebar, and the <em>AskSpace questions</em> block on a page: recent, unanswered or solved, optionally for one tag.</td><td>Questions in the space sidebar, global questions, Confluence search, and the Questions List macro on a page: recent, popular or unanswered, by topic.</td></tr>
+</tbody>
+</table>
+<p>Both apps have votes on answers and one accepted answer. In Questions for Confluence the person who asked, or an admin, accepts an answer. In AskSpace the person who asked, or a moderator, marks the best answer.</p>
+<p>Atlassian's documentation for Questions for Confluence: <a href="https://support.atlassian.com/confluence-cloud/docs/ask-a-question/" rel="noopener noreferrer">Ask a question</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/what-are-questions-permissions/" rel="noopener noreferrer">Assign Questions for Confluence permissions</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-questions-with-your-spaces/" rel="noopener noreferrer">Integrate questions with your spaces</a> and <a href="https://support.atlassian.com/confluence-cloud/docs/use-questions-for-confluence/" rel="noopener noreferrer">Use Questions for Confluence</a>.</p>
+
+<h3 id="qfc-ahead">Where Questions for Confluence is ahead</h3>
+<ul>
+<li><strong>Confluence search.</strong> Its questions show up in Confluence's own search, next to pages. AskSpace questions only show up in AskSpace's search.</li>
+<li><strong>Made by Atlassian.</strong> It is Atlassian's own app, documented on Atlassian's support site.</li>
+<li><strong>Around for years.</strong> Atlassian introduced it as Confluence Questions in 2014 (<a href="https://www.atlassian.com/blog/2014/05/confluence-questions-1-0-share-knowledge-qa" rel="noopener noreferrer">Atlassian blog</a>).</li>
+<li><strong>Site-wide questions.</strong> Questions can also be asked globally, not only inside a space.</li>
+<li><strong>Popular questions.</strong> The Questions List macro can show popular questions. The AskSpace block shows recent, unanswered or solved ones.</li>
+</ul>
+<p>If your team uses Questions for Confluence and it works for you, there is no reason to change.</p>
+
+<h3 id="askspace-fits">When AskSpace may fit better</h3>
+<ul>
+<li>You want to choose separately who may ask and who may answer.</li>
+<li>You want search to look inside the answers, not only the questions.</li>
+<li>Each team should decide for its own space whether to use Q&amp;A.</li>
+<li>You want a way to get your questions and answers out again, as a CSV file.</li>
+</ul>
+<p>AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>.</p>
+
+<h3 id="move">How to move from Questions for Confluence</h3>
+<p>On the same Confluence Cloud site, AskSpace reads your questions directly. You don't need an export file.</p>
+<ul>
+<li><strong>Start the import.</strong> In a space where you are a space admin, go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong>, then <strong>Import &amp; export</strong>. When your site has questions in Questions for Confluence, <em>Questions for Confluence (this site)</em> is one of the sources.</li>
+<li><strong>What it reads.</strong> AskSpace reads the questions, answers, topics and accepted answers, as you. Topics become tags, up to 3 per question.</li>
+<li><strong>Preview first.</strong> You see what was found, grouped by space, before anything is saved. Per space you choose: import into that space, into another space where you are a space admin, or skip.</li>
+<li><strong>Undo.</strong> After the import, <em>Undo this import</em> takes it out again.</li>
+<li><strong>The originals stay.</strong> AskSpace only reads. Nothing changes in Questions for Confluence, so your questions stay there as they were.</li>
+<li><strong>From Server or Data Center.</strong> Use the JSON file from <code>GET /rest/questions/1.0/question?limit=700</code> on your old Confluence.</li>
+</ul>
+<p>Step by step: <a href="docs/askspace/">Getting started with AskSpace</a>. For other ways to run Q&amp;A, see <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a>.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or something Questions for Confluence does that we missed? Email <a href="mailto:support@dortus.com?subject=AskSpace%20vs%20Questions%20for%20Confluence">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
