@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Getting started with AttachClean · Dortus</title>
-  <meta name="description" content="Getting started with AttachClean for Confluence: install, open Unused attachments in a space, scan, filter and export the report." />
+  <meta name="description" content="Getting started with AttachClean for Confluence: install, scan a space, what the statuses mean, export, big spaces, data and permissions." />
   <meta name="theme-color" content="#00875a" />
   <link rel="icon" href="../../assets/app-icon.png" />
   <link rel="stylesheet" href="../../styles.css" />
@@ -34,15 +34,71 @@
           <h1 style="margin-bottom: 0.9rem">Getting started</h1>
         </div>
         <div class="prose" style="padding-block: 0">
+          <p>
+            AttachClean shows space admins which attachments in a Confluence space are not shown or linked
+            on any page, blog post or comment they can view, and how much space those files take up. It only
+            reads: nothing is moved or deleted.
+          </p>
           <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
             <li>Install AttachClean from the Atlassian Marketplace (Confluence admin).</li>
             <li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>Unused attachments</strong>.</li>
-            <li>Click <strong>Scan this space</strong>. You see the progress while it runs; you can cancel at any time.</li>
+            <li>Click <strong>Scan this space</strong>. You see the progress and the time left while it runs; you can cancel at any time.</li>
+            <li>When the scan is done, the line at the top tells you how much space the unused attachments take up, and how much the older versions of files in use take up.</li>
             <li>Use the filters <strong>All, Unused, Old versions only, Used</strong>. The column <strong>Found in</strong> shows where each used file appears.</li>
-            <li>Click <strong>Export CSV</strong> to review the list in Excel before you delete anything yourself.</li>
+            <li>Click <strong>Export unused (CSV)</strong> or <strong>Export CSV</strong> to review the list in Excel before you delete anything yourself.</li>
           </ol>
-          <p>Only space admins can run the scan.</p>
-          <p>Need help? Email <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
+          <p>Only space admins can run the scan. Other people see one line asking them to contact their space admin.</p>
+
+          <h2>What the statuses mean</h2>
+          <ul>
+            <li><strong>Unused</strong>: not shown or linked on any page, blog post or comment you can view. A file that people only download from the page's attachment list also counts as unused.</li>
+            <li><strong>Old versions only</strong>: the file is in use, but older versions of it are kept as well.</li>
+            <li><strong>Used</strong>: the file is in use and has no older versions.</li>
+            <li><strong>Not found</strong>: no use was found, but some pages in the space could not be read with your permissions. The report says how many. The file may be used there.</li>
+            <li><strong>Not checked</strong>: the scan was stopped before this file was checked.</li>
+          </ul>
+          <p>A file counts as used when it is shown or linked on its own page, on another page, in a blog post, in a comment or inline comment, on a page in another space, or as a page's header image.</p>
+
+          <h2>What is not checked</h2>
+          <p>
+            Drafts and templates are not checked. Whiteboards, databases and the trash are not checked either.
+            Pages you cannot view are not checked: the report is based on what you can view.
+          </p>
+
+          <h2>Export</h2>
+          <p>
+            <strong>Export unused (CSV)</strong> downloads the unused files, biggest first, with file, size, page,
+            upload date and uploader. <strong>Export CSV</strong> downloads the rows of the current filter.
+            The file is made in your browser.
+          </p>
+
+          <h2>Big spaces</h2>
+          <p>
+            AttachClean checks up to ten pages at a time. Above 5,000 attachments it warns you first, because the
+            scan can take several minutes. If you cancel, the report keeps what was checked, and
+            <strong>Continue scan</strong> picks up where it stopped.
+          </p>
+
+          <h2>Data and permissions</h2>
+          <p>
+            AttachClean runs on Atlassian Forge. It has no backend and stores nothing: the report exists only
+            while the page is open. All requests go from your browser to your own Confluence site, with your
+            permissions. Nothing is sent to Dortus or to any third party. See the
+            <a href="../../privacy.html">privacy policy</a>.
+          </p>
+          <p>It uses these read-only permissions:</p>
+          <ul>
+            <li><strong>read:space:confluence</strong>: the space name, and whether you are a space admin.</li>
+            <li><strong>read:page:confluence</strong>: pages and their content, to find where files are used.</li>
+            <li><strong>read:blogpost:confluence</strong>: the same for blog posts.</li>
+            <li><strong>read:comment:confluence</strong>: comments, because an image in a comment counts as use.</li>
+            <li><strong>read:attachment:confluence</strong>: the attachments, their sizes and their versions.</li>
+            <li><strong>read:user:confluence</strong>: the name of the person who uploaded a file.</li>
+            <li><strong>search:confluence</strong>: a quick estimate of the space size before the scan.</li>
+          </ul>
+
+          <h2>Support</h2>
+          <p>Need help? Email <a href="mailto:support@dortus.com">support@dortus.com</a> or see the <a href="../../support.html">support page</a>.</p>
           <p><a href="../../attachclean.html">&larr; Back to AttachClean</a></p>
         </div>
       </div>

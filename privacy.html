@@ -233,6 +233,7 @@ person's own Confluence permissions.
 </p>
 <ul>
 <li>To show who uploaded a file, the app also reads the names of the people who uploaded the attachments.</li>
+<li>It also reads the space name, checks whether the person is a space admin, and uses Confluence search to count the pages and attachments, to estimate how big the space is.</li>
 <li>AttachClean keeps nothing: it has no app storage and no server. The report exists only while it is open. Export CSV creates the file in your browser.</li>
 <li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections.</li>
 <li>The permissions are read-only. The app cannot change, move or delete anything.</li>
@@ -257,7 +258,7 @@ Marketplace billing is handled by Atlassian. We never see card details.
 </li>
 <li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
-AskSpace, Mermaid Live Preview and MailView.
+AskSpace, Mermaid Live Preview, MailView and AttachClean.
 </li>
 </ul>
 <p>
@@ -281,7 +282,8 @@ YouTube receives your IP address and player data under Google's own terms.
 <p>
 Only to provide the features you enable: showing aging, producing statements, sending
 the reminders you approve, allocating payments, applying credit holds, storing and
-displaying questions and answers, rendering diagrams, and showing email attachments.
+displaying questions and answers, rendering diagrams, showing email attachments, and
+finding unused attachments.
 Our legal basis is the performance of our agreement with you, and our legitimate
 interest in keeping the service running securely.
 </p>
@@ -299,6 +301,9 @@ your site. Uninstall and deletion follow Atlassian's platform rules for app stor
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.
+</li>
+<li>
+<strong>AttachClean</strong>: nothing is retained. Closing the report is enough.
 </li>
 <li>
 <strong>Support email</strong>: kept only as long as needed to help you and to keep a
