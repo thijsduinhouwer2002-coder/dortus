@@ -1381,6 +1381,33 @@ body > main .band:not(.band-deep):not(.band-dark) .mock {
   color: var(--ink-3);
 }
 
+/* Tabel in een gids (FAQ-gids, 14 oktober). Korte celteksten die breken,
+   zodat hij op 375 px in de leeskolom past zonder zijwaarts scrollen. */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1.4rem;
+  font-size: 0.93rem;
+}
+
+.prose th,
+.prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+}
+
+.prose th {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.prose thead th {
+  border-bottom-color: var(--line-strong);
+}
+
 .checks {
   list-style: none;
   display: grid;
