@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stop answering the same questions in Slack: keep the answers in Confluence · Dortus</title>
+<meta name="description" content="The same questions keep coming back in Slack. How to give the answers one findable place in Confluence Cloud, link instead of retyping, and what Atlassian's Slack apps and AskSpace can and cannot do." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Stop answering the same questions in Slack: keep them in Confluence" />
+<meta property="og:description" content="Give repeated Slack questions one findable place in Confluence Cloud, with the options that need no app first." />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Stop answering the same questions in Slack: keep them in Confluence</h1>
+<p class="lede">
+Where is the VPN guide? Who approves a laptop? How do I get access to the test site? Someone answers in Slack, the thread scrolls away, and next month the same question comes back. This guide shows how to give those answers one place in Confluence that people can find. First with what you already have, then with an app.
+</p>
+</div>
+<div class="prose">
+
+<p>Written on 14 October 2026 from the Atlassian and Slack pages linked next to each step. Menu names change now and then. If your Slack or Confluence looks different, follow the linked page.</p>
+<p>Some of the Community questions this guide answers: &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Capturing-knowledge-sharing-happening-in-Slack-into-Confluence/qaq-p/1324432" rel="noopener noreferrer">Capturing knowledge sharing happening in Slack into Confluence pages</a>&rdquo;, &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/How-can-I-add-a-slack-message-to-confluence-cloud-blog-space/qaq-p/2430252" rel="noopener noreferrer">How can I add a slack message to confluence cloud blog space from slack channel</a>&rdquo; and &ldquo;<a href="https://community.atlassian.com/t5/Confluence-questions/Confluence-FAQ-Slack-Bot/qaq-p/1767672" rel="noopener noreferrer">Confluence FAQ Slack Bot</a>&rdquo; (Atlassian Community).</p>
+
+<h3 id="why">Why answers get lost in Slack</h3>
+<ul>
+<li><strong>Threads scroll away.</strong> An answer in a thread is easy to give and hard to find a month later, especially for someone who was not in the channel.</li>
+<li><strong>Search needs the right words.</strong> The person asking often uses different words than the person who answered.</li>
+<li><strong>History can disappear.</strong> Without a paid Slack plan, a workspace can only see and search the last 90 days of messages, and messages older than a year are deleted (Slack: <a href="https://slack.com/help/articles/115002422943-Usage-limits-for-free-workspaces" rel="noopener noreferrer">Usage limits</a>, <a href="https://slack.com/help/articles/203457187" rel="noopener noreferrer">Customize data retention in Slack</a>).</li>
+</ul>
+<p>The fix is a habit more than a tool: answer once, write it down in one place, and from then on answer with a link.</p>
+
+<h3 id="place">Step 1: pick one place in Confluence for the answers</h3>
+<ul>
+<li><strong>One page or one space.</strong> For a handful of questions, one FAQ page is enough. For more, use a space or a parent page with one page per answer. <a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a> compares the ways to set that up.</li>
+<li><strong>Start from a template.</strong> In a knowledge base space, use <strong>Create</strong> and pick a how-to or troubleshooting template (Atlassian: <a href="https://www.atlassian.com/software/confluence/resources/guides/best-practices/knowledge-base" rel="noopener noreferrer">Knowledge base with Confluence</a>). The troubleshooting template describes the problem, then the fix, and shows related articles by label (Atlassian: <a href="https://www.atlassian.com/software/confluence/templates/troubleshooting-article" rel="noopener noreferrer">Troubleshooting article template</a>).</li>
+<li><strong>Add labels.</strong> Labels are keywords you add to pages, so related answers can be found together (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-labels-to-organize-your-content/" rel="noopener noreferrer">Use labels to organize content and attachments</a>). The filter by label macro lists all pages that share a label (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-filter-by-label-macro/" rel="noopener noreferrer">Insert the filter by label macro</a>).</li>
+<li><strong>Put a search box on the start page.</strong> The Live Search macro adds a search box to a page, and you can limit it to one space or to a label (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-livesearch-macro/" rel="noopener noreferrer">Insert the Live Search macro</a>).</li>
+</ul>
+
+<h3 id="link">Step 2: answer with a link, not by retyping</h3>
+<ul>
+<li><strong>Copy the link.</strong> In Confluence, the link icon next to <strong>Share</strong> copies the page's link. A link does not give access by itself, so check who can see the page (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/share-confluence-content/" rel="noopener noreferrer">Share Confluence content</a>).</li>
+<li><strong>Or share it to Slack from Confluence.</strong> The Share window has a <strong>Share to Slack</strong> option: pick the workspace, then the channel or person, and add a message. The Confluence app for Slack is a system app that is installed on every Confluence Cloud site (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/share-confluence-content/" rel="noopener noreferrer">Share Confluence content</a>).</li>
+<li><strong>Link previews.</strong> Once your accounts are connected, the Confluence Cloud app for Slack shows a preview when someone posts a Confluence link. Restricted pages get no preview (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-slack-and-confluence-together/" rel="noopener noreferrer">Use Slack and Confluence together</a>).</li>
+<li><strong>Not written down yet?</strong> Answer in Slack as usual, then copy the answer into the page and reply in the thread with the link. The next person gets the link right away.</li>
+</ul>
+
+<h3 id="find">Step 3: make the place easy to find from Slack</h3>
+<ul>
+<li><strong>Pin it.</strong> Pin the message with the link. Pinned messages are in the Pins tab at the top of the channel, for everyone in it. A channel holds up to 100 pins (Slack: <a href="https://slack.com/help/articles/205239997-Pin-messages" rel="noopener noreferrer">Pin messages</a>).</li>
+<li><strong>Put it in a tab.</strong> Channels have tabs at the top. Add the link to a folder in a tab, or add a canvas tab with the most-asked links (Slack: <a href="https://slack.com/help/articles/32562841868307-Add-and-manage-tabs-in-channels-and-direct-messages" rel="noopener noreferrer">Add and manage tabs in channels and direct messages</a>).</li>
+<li><strong>Greet new members with it.</strong> Workflow Builder has a template, &ldquo;New channel member welcome&rdquo;, that sends a direct message to everyone who joins the channel (Slack: <a href="https://slack.com/help/articles/31449260577043-Build-a-workflow--Use-a-workflow-template" rel="noopener noreferrer">Build a workflow: Use a workflow template</a>). Put the link in that message. Workflow Builder needs a paid Slack plan (Slack: <a href="https://slack.com/help/articles/360035692513-Guide-to-Slack-Workflow-Builder" rel="noopener noreferrer">Guide to Slack Workflow Builder</a>).</li>
+</ul>
+
+<h3 id="notify">Step 4: tell the channel when an answer changes</h3>
+<p>With the Confluence Cloud app for Slack, a channel can follow a space or a page. In the channel, run <code>/confluence connect</code> with the URL of the space or page. Updates then show up in the channel. A subscription made from Slack sends notifications for all events by default, and <code>/confluence list</code> lets you edit it (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-slack-and-confluence-together/" rel="noopener noreferrer">Use Slack and Confluence together</a>).</p>
+
+<h3 id="limits">What Atlassian's Slack apps do and don't do</h3>
+<ul>
+<li><strong>The Confluence Cloud app for Slack works from Confluence to Slack:</strong> notifications, link previews, reactions that like a page in Confluence, and sharing to Slack (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-slack-and-confluence-together/" rel="noopener noreferrer">Use Slack and Confluence together</a>). Atlassian's documentation does not describe saving a Slack message or thread as a Confluence page. A Community answer says the same: you can add comments from Slack, but not create Confluence content from existing Slack messages (Atlassian Community: <a href="https://community.atlassian.com/forums/Confluence-questions/How-can-I-add-a-slack-message-to-confluence-cloud-blog-space/qaq-p/2430252" rel="noopener noreferrer">How can I add a slack message to confluence cloud blog space from slack channel</a>).</li>
+<li><strong>Atlassian Rovo has its own Slack app.</strong> If your organisation uses Rovo, its Slack app brings Rovo's AI assistance into Slack, through direct messages and mentions. In a channel, it works with the permissions of a bot account, so Atlassian advises giving that account access only to what anyone in the organisation may see (Atlassian: <a href="https://support.atlassian.com/rovo/docs/using-the-atlassian-rovo-slack-app/" rel="noopener noreferrer">Using the Atlassian Rovo Slack app</a>).</li>
+<li><strong>Other apps.</strong> Community answers point to Marketplace apps and custom scripts for turning Slack threads into pages. This guide does not compare them.</li>
+</ul>
+
+<h3 id="askspace">Where AskSpace fits</h3>
+<p>Full disclosure: I build AskSpace at Dortus. It is a Q&amp;A app per Confluence space. <strong>AskSpace has no Slack integration. It does not connect to Slack, posts nothing to Slack, and talks to nothing outside Atlassian.</strong> It is a place in Confluence for the questions, not a bot in your chat.</p>
+<p>What it adds to the steps above:</p>
+<ul>
+<li><strong>People ask in their own words.</strong> A space admin turns Q&amp;A on in the spaces that need it and chooses who may ask and who may answer. Answers get votes, and the person who asked, or a moderator, marks the best answer.</li>
+<li><strong>Repeated questions show up before they are asked.</strong> While someone types a new question, AskSpace shows up to 3 similar questions from the same space, after the first two words.</li>
+<li><strong>Search includes the answers.</strong> Search looks in the titles, details, tags and answers of the space's questions, and says <em>Found in an answer</em> when a search word is only found in an answer.</li>
+<li><strong>A link for Slack.</strong> Every question has <strong>Copy link</strong> in its menu. Paste that in Slack instead of retyping the answer. Only people who can open that space in Confluence can open the link, and AskSpace adds no preview in Slack.</li>
+<li><strong>On the team's start page.</strong> The <em>AskSpace questions</em> block shows the space's recent, unanswered or solved questions on a page, 3, 5 or 10 at a time, optionally for one tag.</li>
+</ul>
+<p>What it does not do:</p>
+<ul>
+<li><strong>Nobody is notified of a new question.</strong> AskSpace only notifies inside AskSpace: when someone answers your question, marks your answer as best, or a moderator edits or deletes what you wrote. Someone has to check the unanswered questions.</li>
+<li><strong>No screenshots.</strong> Questions and answers hold text, links, bold, code and lists, but no images or attachments. Slack threads often have screenshots; those stay in Slack or go on a Confluence page.</li>
+<li><strong>Not in Confluence search.</strong> AskSpace questions are found with AskSpace's own search, one space at a time.</li>
+<li><strong>No import from Slack.</strong> Old answers come over by hand, or as a simple CSV file with one question and at most one answer per row. The names in such a file are not linked to Confluence accounts.</li>
+</ul>
+<p>AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>. <a href="docs/askspace/">Getting started with AskSpace</a> walks through the setup.</p>
+
+<h3 id="which">Which setup fits?</h3>
+<table>
+<thead>
+<tr><th scope="col">Your situation</th><th scope="col">A setup that fits</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">A handful of questions keep coming back</th><td>One FAQ page, pinned in the channel</td></tr>
+<tr><th scope="row">Dozens of how-tos for one team</th><td>A space or parent page with templates and labels, a Live Search box, and the link in a channel tab</td></tr>
+<tr><th scope="row">New questions keep coming, and several people answer</th><td>A Q&amp;A app in the team's space, linked from the channel</td></tr>
+<tr><th scope="row">People want answers inside Slack itself</th><td>Atlassian's Slack apps, or a Q&amp;A tool that lives in chat; see <a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A inside Confluence</a></td></tr>
+</tbody>
+</table>
+<p>For all the ways to run Q&amp;A in Confluence, see <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a>.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can Atlassian's Slack app turn a Slack thread into a Confluence page?</strong> Atlassian's documentation does not describe that. The app sends Confluence activity to Slack, shows link previews and lets you share pages to Slack (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-slack-and-confluence-together/" rel="noopener noreferrer">Use Slack and Confluence together</a>).</p>
+<p><strong>Can a Slack channel see when the FAQ page changes?</strong> Yes. Run <code>/confluence connect</code> with the page or space URL in the channel (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-slack-and-confluence-together/" rel="noopener noreferrer">Use Slack and Confluence together</a>).</p>
+<p><strong>Does AskSpace work inside Slack?</strong> No. AskSpace has no Slack integration and talks to nothing outside Atlassian. You can paste a link to an AskSpace question in Slack.</p>
+<p><strong>How long does Slack keep messages?</strong> It depends on your Slack plan. Without a paid plan, a workspace sees the last 90 days, and messages older than a year are deleted (Slack: <a href="https://slack.com/help/articles/203457187" rel="noopener noreferrer">Customize data retention in Slack</a>).</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Slack%20questions%20in%20Confluence">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
