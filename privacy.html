@@ -164,13 +164,20 @@ data egress to Dortus for normal use of the apps.
 
 <h3>4.2 What AskSpace processes</h3>
 <ul>
-<li>Question and answer text people enter</li>
+<li>Question and answer text people enter, and the tags they add</li>
 <li>Votes and best-answer marks</li>
-<li>Space settings, for example who may ask and who may answer</li>
+<li>Space settings, for example who may ask, who may answer and who may moderate</li>
+<li>Questions and answers imported from Questions for Confluence or a CSV file, and a record of each import so it can be undone</li>
 <li>Atlassian account identifiers, needed to show authors and enforce permissions</li>
 <li>Display names and avatar URLs provided by Atlassian APIs, so authors can be shown</li>
 <li>In-app notification records, for example that someone answered your question</li>
 </ul>
+<p>
+AskSpace reads Confluence content only to import questions from Questions for Confluence,
+when a space admin starts an import. It reads as that admin, so it sees only what they can
+see in Confluence, and it does not change anything in Questions for Confluence. Of what it
+reads, it keeps only the imported questions and answers, in Forge app storage.
+</p>
 
 <h3>4.3 What Mermaid Live Preview processes</h3>
 <ul>
