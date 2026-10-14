@@ -55,7 +55,6 @@ checkable against the Marketplace listing and the app's declared permissions.
 <p><strong>MailView for Jira and Jira Service Management</strong> requests one permission: <code>read:jira-work</code>. It reads the attachments of the work item you are looking at, as you. Jira enforces your permissions on every read, so the app can never show you an attachment you could not download yourself. It has no write permission: it cannot change, add or remove anything on the work item.</p>
 <p><strong>MailView for Confluence</strong> requests <code>read:attachment:confluence</code>. It reads the email attachments of the current page, as you. The one server-side function it has (used for PDF and Word export) also reads the attachment as the current user and does not log email content.</p>
 <p>Both apps are built to qualify for Atlassian's <strong>Runs on Atlassian</strong> badge: no external network calls and no data stored outside the Atlassian platform. Once an app is listed, that badge on the Marketplace listing is the independent confirmation.</p>
-<!-- After approval: simplify to present tense and link the listing. -->
 
 <h3 id="flow">Where the email is processed</h3>
 <p>The attachment is fetched from your Atlassian site into the browser of the person reading it, parsed there, and shown there. There is no Dortus backend in the path. The one exception is the PDF and Word export in MailView for Confluence: a Forge function on Atlassian's own platform reads the attachment as the current user, builds the export, and keeps nothing. Closing the work item or page discards the parsed email; MailView keeps no copy and no cache outside the browser session.</p>
@@ -72,7 +71,6 @@ checkable against the Marketplace listing and the app's declared permissions.
 <p>In the event of a security incident affecting the app, Atlassian is notified within 24 hours through their partner process, as their guidelines require. Affected customers are notified within 72 hours; that is our own commitment, not an Atlassian rule.</p>
 
 <h3 id="verify">How to check this yourself</h3>
-<!-- After approval: simplify to present tense and link the listing. -->
 <p>Once the app is listed on the Marketplace:</p>
 <ul>
 <li>The Marketplace listing's <strong>Privacy &amp; Security</strong> tab contains the questionnaire answers these pages are based on.</li>
