@@ -87,7 +87,7 @@ Jira can turn an email into a work item without Jira Service Management, but it 
 <li><strong>Who sets it up.</strong> Configuring incoming mail needs the Administer Jira global permission.</li>
 <li><strong>A mailbox.</strong> Jira reads a mail account over POP or IMAP. For Gmail and Microsoft accounts, Atlassian's page says "we recommend that you switch to OAuth".</li>
 <li><strong>Where.</strong> In Jira's settings, choose System, then Mail, then Incoming Mail. Add the incoming mail server there; the mail handler is in the same section.</li>
-<li><strong>What it creates.</strong> In the handler you choose the destination project and the work item type for new work items. The handler type "Create a new work item or add a comment to an existing work item" does what its name says.</li>
+<li><strong>What it creates.</strong> In the handler you "specify the space key of the default project where you want new work items to be created by this handler", plus, depending on the handler, more options. The handler type "Create a new work item or add a comment to an existing work item" does what its name says.</li>
 <li><strong>How often.</strong> In the handler you "specify the delay in minutes between the mail handler's running time".</li>
 </ul>
 <p>All five points come from Atlassian's page <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>, which also has the step-by-step setup.</p>
@@ -102,7 +102,7 @@ Jira can turn an email into a work item without Jira Service Management, but it 
 </ul>
 
 <h3 id="attachments">Attachments and size</h3>
-<p>Attachments in the email become attachments on the work item, as long as attachments are enabled in Jira, which they are by default. The maximum for the message and its attachments together is 25 MB per email (Atlassian: <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>).</p>
+<p>Atlassian: "Any attachments to the email will become attachments to the work item if attachments have been enabled in Jira (they are by default)." And: "The maximum limit for message data and attachments for an email is 25 MB." (Atlassian: <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>).</p>
 
 <h3 id="forwarded">Forwarded emails</h3>
 <p>Forwarding an email inline puts its text in the work item, without the original headers. Forwarding it as an attachment keeps the original email, but Jira's mail handler stores that file without an extension, so it does not look like an email on the work item. The request to change that is <a href="https://jira.atlassian.com/browse/JRACLOUD-40477" rel="noopener noreferrer">JRACLOUD-40477</a>, "Allow forwarded email attachments to be detected by JIRA mail handler and renamed to .eml or .msg": created in October 2014, with the status Gathering Interest on 14 October 2026. See <a href="attach-outlook-email-to-jira.html">how to attach an Outlook email to a Jira work item</a> for the other ways to get an email onto a work item.</p>
