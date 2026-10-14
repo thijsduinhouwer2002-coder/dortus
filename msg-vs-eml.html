@@ -67,7 +67,7 @@ Two file types carry a whole email: .msg from Outlook, .eml from almost everythi
 <p><strong>For a mixed team</strong> (Mac, web, Gmail users reading what Outlook users attached): prefer .eml, so nobody needs Outlook to open it.</p>
 
 <h3 id="jira">Reading either one in Jira</h3>
-<p>Jira Cloud shows an .eml as raw text and a .msg as unreadable code; neither is readable on the work item. Free routes and viewer apps are compared in <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> reads both formats on the work item, including .msg files whose body is only RTF, forwarded emails attached without a file name, and emails inside emails, and shows the headers with a plain-English verdict when they are there.</p>
+<p>Jira Cloud shows an .eml as raw text and a .msg as unreadable code; neither is readable on the work item. Free routes and viewer apps are compared in <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> reads both formats on the work item up to 10 MB, including .msg files whose body is only RTF, forwarded emails attached without a file extension, and an email inside an email, and shows the headers with a plain-English verdict when they are there.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Can I convert .msg to .eml?</strong> Outlook can save a message in either format (new Outlook: Save as; classic Outlook: Save As). Converting after the fact does not add headers that the .msg never had.</p>

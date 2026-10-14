@@ -6,11 +6,11 @@
 <!-- CSP from the Email check README (Sprintbrief web/email-check): only this site's own files, the check reads in a blob: worker, no connections. No Google Fonts on this page; the tool uses system fonts. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'" />
 <title>Email check: is this .msg or .eml safe? Free, runs in your browser · Dortus</title>
-<meta name="description" content="Drop a .msg or .eml file or paste email headers. Checks SPF, DKIM, DMARC, sender, links and attachments in your browser. Nothing is uploaded." />
+<meta name="description" content="Drop a .msg or .eml file or paste email headers. Reads the SPF, DKIM and DMARC results and checks sender, links and attachments in your browser. Nothing is uploaded." />
 <meta name="theme-color" content="#0052cc" />
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Email check: is this .msg or .eml safe?" />
-<meta property="og:description" content="Drop a .msg or .eml file or paste email headers. Checks SPF, DKIM, DMARC, sender, links and attachments in your browser. Nothing is uploaded." />
+<meta property="og:description" content="Drop a .msg or .eml file or paste email headers. Reads the SPF, DKIM and DMARC results and checks sender, links and attachments in your browser. Nothing is uploaded." />
 <meta property="og:type" content="website" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -37,7 +37,7 @@
 <div class="head">
 <h1 style="margin-bottom: 0.9rem">Email check</h1>
 <p class="lede">
-Drop an email file (.msg or .eml, or a forwarded email without an extension) or paste the raw headers.
+Drop an email file up to 10 MB (.msg or .eml, or a forwarded email without an extension) or paste the raw headers. With headers only, links and attachments are not checked.
 </p>
 </div>
 <div style="max-width: 860px">
@@ -49,11 +49,11 @@ Drop an email file (.msg or .eml, or a forwarded email without an extension) or 
 <ul>
 <li><strong>Authentication results:</strong> SPF, DKIM and DMARC, as the receiving mail server recorded them in the headers.</li>
 <li><strong>The sender:</strong> the From address compared with the Reply-To address.</li>
-<li><strong>Links:</strong> where each link really goes, next to the text it shows.</li>
+<li><strong>Links:</strong> the address each link points to, next to the text it shows. Links are not opened, so a short link or redirect shows as it is.</li>
 <li><strong>Attachments:</strong> their names and types.</li>
 <li><strong>The route:</strong> the servers the email passed through, read from the Received headers.</li>
 </ul>
-<p>It can miss things. Use it as a second pair of eyes, not as a verdict machine.</p>
+<p>It checks the email you drop, not an email attached inside it: save that one on its own and drop it here. It can miss things. Use it as a second pair of eyes, not as a verdict machine.</p>
 
 <div class="card">
 <p class="eyebrow">MailView by Dortus</p>

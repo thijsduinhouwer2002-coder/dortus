@@ -191,9 +191,9 @@ sent to Dortus and is not sent to any third party for rendering.
 
 <h3>4.4 What MailView processes</h3>
 <p>
-MailView shows .eml and .msg email attachments on a Jira work item. When you open one,
-the app reads that attachment from your Jira site <strong>in your browser</strong>, with
-your own Jira permissions, and renders it there. The email, its headers, its inline
+MailView shows .eml and .msg email attachments on a Jira work item. When the panel opens,
+the app reads the work item's email attachments, and files without a known file type to see whether they are emails,
+from your Jira site <strong>in your browser</strong>, with your own Jira permissions, and renders the one you open there. The email, its headers, its inline
 images and the files inside it are processed only in your browser and only for as long
 as the panel is open.
 </p>
@@ -213,7 +213,7 @@ permissions and with one permission for the app: <code>read:attachment:confluenc
 The email is rendered <strong>in your browser</strong> and only for as long as it is open.
 </p>
 <ul>
-<li>To find the emails, the app reads the list of attachments of that page. Files without a known file type are opened only to check whether they are an email. Files with a known type, such as PDF or images, are not opened.</li>
+<li>To find the emails, the app reads the list of attachments of that page. Files without a known file extension are opened only to check whether they are an email (the 10 newest). Files with a known extension, such as .pdf, and images are not opened.</li>
 <li>When a page is exported to PDF or Word, the email chosen in the macro is read and turned into a static version inside Atlassian's Forge platform, with the permissions of the person who exports, and handed back to Confluence for the export file. Nothing is kept afterwards.</li>
 <li>MailView for Confluence keeps no copies: it has no app storage and no server.</li>
 <li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>

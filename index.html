@@ -47,7 +47,7 @@
           <p class="eyebrow" style="color: var(--brand-text)">MailView</p>
           <h2>Email attachments you can actually read, in Jira and Confluence</h2>
           <p class="lede">
-            Jira and Confluence show an Outlook .msg as code and a .eml as raw text. MailView shows the email as it was sent, with inline images and the files inside, and adds a plain-English check for suspicious mail: SPF, DKIM and DMARC results, lookalike domains, and where each link really goes.
+            Jira and Confluence show an Outlook .msg as code and a .eml as raw text. MailView shows the email as it was sent, with inline images and the files inside, and adds a plain-English check for suspicious mail: SPF, DKIM and DMARC results from the headers, domains with lookalike letters from other alphabets or with accents, and the address behind each link.
           </p>
         </div>
 
@@ -129,7 +129,7 @@
           </div>
           <div class="card reveal reveal-2">
             <h3>Email check</h3>
-            <p>Drop a .msg or .eml file or paste email headers. Checks SPF, DKIM, DMARC, sender, links and attachments in your browser. Nothing is uploaded.</p>
+            <p>Drop a .msg or .eml file or paste email headers. Reads the SPF, DKIM and DMARC results and checks sender, links and attachments in your browser. Nothing is uploaded.</p>
             <p class="btns">
               <a class="btn btn-line" href="email-check.html" aria-label="Read more about Email check">Read more <span class="arrow" aria-hidden="true">&rarr;</span></a>
             </p>
