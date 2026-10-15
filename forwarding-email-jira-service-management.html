@@ -87,6 +87,7 @@ Email is still how most requests reach a service desk, and forwarding is how the
 <h3 id="thread">2. In Outlook, the first email does not join the conversation</h3>
 <p>A customer sends a request, Jira answers with a confirmation, agents reply from Jira. In the new Outlook, everything after the first email groups into one conversation, but the customer's original email stays on its own. This is a known limitation, not a misconfiguration: Outlook groups messages by headers (Thread-Index, In-Reply-To, References), and Jira's confirmation is a new message that does not reference the customer's original. Moving or removing the issue key in the subject does not help; the headers decide.</p>
 <p>There is no Jira Service Management setting that changes this today. What works: point customers to the "View request" link in any notification (the portal shows the full history), and accept that the first email sits apart in Outlook.</p>
+<p>If replies turn into new requests in Jira itself, see <a href="email-replies-new-request-jira-service-management.html">why a reply becomes a new request</a>.</p>
 
 <h3 id="formatting">3. Formatting and inline images do not survive</h3>
 <p>An HTML email that arrives as a ticket description or comment loses part of itself: lists come out flat, signatures come out wrong, and inline images show "Preview unavailable" in the comment while the image files appear as attachments. HTML parsing for the email channel is the setting to check first; people report the problem with it switched on. The faithful copy of the email is the email itself, and the ticket does not keep it: the raw message sits in the <a href="email-attachments-missing-jira-service-management.html#raw">email processing log</a> (Channels &amp; self service, Email, View logs) until the Database cleaner removes it, not on the work item.</p>
@@ -159,6 +160,7 @@ Email is still how most requests reach a service desk, and forwarding is how the
 <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
 <li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
 <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>

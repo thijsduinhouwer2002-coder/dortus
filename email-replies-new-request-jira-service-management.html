@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email replies in Jira Service Management: why a reply becomes a new request · Dortus</title>
+<meta name="description" content="A customer replies and Jira Service Management opens a second request. Or a new email lands as a comment on an old one. How JSM Cloud decides between comment and new request, how to check what happened, and which settings change it." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Email replies in Jira Service Management: why a reply becomes a new request" />
+<meta property="og:description" content="Subject key, threading headers, who may comment: how JSM Cloud matches an email to a request, how to check it in the email log, and what to change." />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/forwarding-email-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/forwarding-email-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Forwarding emails into Jira Service Management: what gets lost and how to keep it",
+  "description": "When an email is forwarded into Jira Service Management, the reporter, the Outlook conversation, the formatting and the inline images can all go wrong. What causes each one, what you can change, and when to attach the original email instead.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-12T16:25:45+00:00",
+  "dateModified": "2026-10-15T18:24:29+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/forwarding-email-jira-service-management.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Email channel</p>
+<h1 style="margin-bottom: 0.9rem">Email replies in Jira Service Management: why a reply becomes a new request</h1>
+<p class="lede">
+A customer replies to a notification and a second request appears. Or the opposite: a fresh email about something new lands as a comment on last month's ticket. Both come from the same matching rule.
+This page explains that rule for Jira Service Management Cloud, how to see which way an email went, and what you can change.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="rule">How JSM Cloud decides: comment or new request</h3>
+<p>For every incoming email, Jira runs the same checks in this order:</p>
+<ol>
+<li><strong>A work item key in the subject.</strong> If the subject contains a key that matches an existing request, the email is treated as a reply to it. With several keys in the subject, the leftmost one counts.</li>
+<li><strong>The threading headers.</strong> Without a key, Jira compares the email's <code>In-Reply-To</code> and <code>References</code> headers with the <code>Message-ID</code>s it has stored for earlier emails. A match means: reply.</li>
+<li><strong>Who sent it.</strong> Even when one of the first two checks matches, the sender has to be allowed to comment on that request. If not, Jira creates a new request instead.</li>
+</ol>
+<p>No key and no matching header: new request. That is the whole rule, and every mix-up below is one of these three checks going a way you did not expect.</p>
+
+<h3 id="check">Check what Jira actually received</h3>
+<p>Before changing settings, look at the email itself. In the project, go to <strong>Channels &amp; self service</strong>, then <strong>Email</strong>, then <strong>View logs</strong> (older screens call this Email requests, View logs). Search for the work item key, open the <strong>&bull;&bull;&bull;</strong> menu on the entry and download the raw email message.</p>
+<p>Open the downloaded <code>.eml</code> file in a text editor. That is safer than a mail client because nothing in the email is loaded or run. In the header block at the top, note three lines: <code>Message-ID</code> (this email), <code>In-Reply-To</code> (the email it answers) and <code>References</code> (the earlier emails in the thread). The <code>Message-ID</code> can appear more than once when older messages are quoted; use the one in the header block. Then download the email that created the request and compare its <code>Message-ID</code> with the other two lines. A match explains a comment; no match and no key in the subject explains a new request.</p>
+
+<h3 id="new-request">"I replied, and now there are two requests"</h3>
+<p><strong>The key disappeared from the subject.</strong> Some mail clients and some people rewrite the subject. If the key is gone and the reply did not keep the threading headers, the reply looks new. Atlassian notes that most duplicates come from a key that was stripped from the subject or from a reply sent as a fresh thread. Ask customers to reply to the notification instead of starting a new email, and leave the key in the subject.</p>
+<p><strong>The person replying is not on the request.</strong> Only the reporter, request participants and members of an organization the request is shared with can comment. The classic case: a customer copies a colleague, the colleague replies, and a new request appears. Three settings help, each with a different reach:</p>
+<ul>
+<li><strong>Customer sharing</strong> (Project settings, Access, Customer permissions): let customers add other customers by email address, so people in To or Cc when the request is created become participants.</li>
+<li>The organization setting <em>"Should new requests automatically be shared with a customer's organization?"</em> (Settings, Products, Jira Service Management, Configuration, Organization management): colleagues in the same organization can then comment.</li>
+<li>The email setting <em>"Allow all emails that contain a valid issue key to be added as a comment to the issue?"</em> (Settings, Products, Jira Service Management, Configuration, Email). Set to Yes, anyone who emails a valid key can comment, including from an address the customer does not normally use. It is a site-wide setting, so weigh it before switching it on.</li>
+</ul>
+<p><strong>Two accounts with the same address.</strong> When a portal-only customer later also gets a full Atlassian account, replies can stop matching. In admin.atlassian.com, filter the users by that email address; if an active portal-only customer shows up, use <strong>&bull;&bull;&bull;</strong> and <strong>Migrate to Atlassian Account</strong>. Check approvals and portal access afterwards.</p>
+<p><strong>The request is in a status that blocks comments.</strong> If the workflow status has a property that denies comments, a reply cannot be added and becomes a new request. Sometimes that is exactly what you want (see the next section); if not, look at the status properties in the workflow.</p>
+
+<h3 id="wrong-request">"A new email landed on an old request"</h3>
+<p><strong>The customer replied to an old notification.</strong> It is quicker than writing a new email, and the headers point to the old request. Atlassian's advice is the plain one: ask people to write a new email for a new question.</p>
+<p><strong>A reused Message-ID.</strong> Mail clients, mail servers, automations, and templates or drafts based on an old email can carry an earlier <code>Message-ID</code> into a new email. Jira then matches it to the old request. Check automations and templates that send email to the project. An email re-sent with the same <code>Message-ID</code> is treated as a duplicate and creates neither a comment nor a request.</p>
+<p><strong>An old key in the subject.</strong> Recurring emails with a fixed subject can pick up a key. Add something that changes each time, such as a date or a client name.</p>
+<p><strong>Replies to closed requests.</strong> By default Jira accepts comments on closed requests, so a reply to a request that is done becomes a comment on it. To turn those replies into new requests, add the workflow property <code>jira.permission.comment.denied</code> with an empty value to your end statuses, such as Done, Closed, Cancelled and Declined. This blocks comments in that status through every channel: Jira, the portal and email. Atlassian describes the steps in <a href="https://confluence.atlassian.com/jirakb/how-to-process-email-replies-to-closed-requests-as-new-requests-1167745370.html" rel="noopener noreferrer">How to process email replies to closed requests as new requests</a>.</p>
+
+<h3 id="outlook">Outlook shows the thread differently</h3>
+<p>A separate question is how the conversation looks in the customer's mailbox. In the new Outlook, the customer's first email often sits apart from Jira's confirmation and later replies. That is about how Outlook groups messages, not about how Jira files them, and there is no Jira Service Management setting for it today. See <a href="forwarding-email-jira-service-management.html#thread">Forwarding emails into Jira Service Management</a>.</p>
+
+<h3 id="evidence">Keeping the evidence on the request</h3>
+<p>The raw email in the log is the proof of what happened, but it is not on the work item, and the log does not keep it forever. When a mix-up needs explaining later ("I replied, why is there a new ticket?"), attach the downloaded <code>.eml</code> to the request. A text editor is enough to read the headers.</p>
+<p>Full disclosure: Dortus makes an app that helps here. <a href="mailview.html">MailView</a> shows <code>.eml</code> and <code>.msg</code> attachments on the work item, and its Details tab lists every header of the email, including <code>Message-ID</code>, <code>In-Reply-To</code> and <code>References</code>, without downloading the file or opening a mail client. It does not read the email log and it does not change how Jira Service Management matches emails to requests.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Does removing the key from the subject stop a reply from becoming a comment?</strong> Not always. If the reply keeps its <code>In-Reply-To</code> and <code>References</code> headers, Jira can still match it.</p>
+<p><strong>Why did a colleague's reply create a new request?</strong> Most likely they are not the reporter, a participant or in an organization the request is shared with, so they may not comment. See the three settings above.</p>
+<p><strong>Can replies to closed requests open a new request?</strong> Yes, with the <code>jira.permission.comment.denied</code> property on the end statuses. It also blocks comments in the portal and in Jira for those statuses.</p>
+<p><strong>Where do I see why an email went where it went?</strong> In the email log of the project (Channels &amp; self service, Email, View logs). Download the raw email and compare the headers.</p>
+
+<h3 id="support">Questions</h3>
+<p>Seeing a case that does not fit any of these? Email <a href="mailto:support@dortus.com?subject=JSM%20email%20replies">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Submitted to the Atlassian Marketplace, in review.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
