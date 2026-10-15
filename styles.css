@@ -1408,6 +1408,31 @@ body > main .band:not(.band-deep):not(.band-dark) .mock {
   border-bottom-color: var(--line-strong);
 }
 
+/* Codeblok in een gids (exportgids QfC, 14 oktober). Lange regels scrollen
+   binnen het blok, zodat de pagina op 375 px niet zijwaarts schuift. */
+.prose pre {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.6rem 0 1.2rem;
+  max-width: 100%;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.prose pre code {
+  font: inherit;
+}
+
+/* Lange namen in losse code (zoals het QfC-contenttype) mogen afbreken. */
+.prose :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
 .checks {
   list-style: none;
   display: grid;
