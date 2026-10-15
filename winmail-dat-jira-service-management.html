@@ -96,7 +96,7 @@ This page explains where that file comes from, what to do with the one you alrea
 <h3 id="stop">Stopping it at the source</h3>
 <p>The file is created by the sender's Outlook or Exchange, so the fix lives there. Pass this section on to the customer or their IT team.</p>
 <p><strong>In Outlook (per person).</strong> In new Outlook for Windows: Settings, then Mail, then Compose and reply, and set Message format to HTML. Rich Text is the setting that produces TNEF. Outlook also remembers a rich-text preference for individual addresses it has autocompleted before; removing the address from the autocomplete list (the small X next to the suggestion) and typing it again clears that memory.</p>
-<p><strong>In Exchange Online (for everyone in the organisation).</strong> An admin can tell Exchange never to send TNEF to outside domains. In the Exchange admin center: Mail flow, then Remote domains, open the remote domain that covers the service desk's email address and set "Use rich-text format" to Never. The same thing in PowerShell, from Microsoft's own article, for that remote domain:</p>
+<p><strong>In Exchange Online (for everyone in the organisation).</strong> An admin can tell Exchange never to send TNEF to outside domains. In the Exchange admin center: Mail flow, then Remote domains, open the remote domain that covers the service desk's email address, choose Edit text and character set, and set "Use rich-text format" to Never. The same thing in PowerShell, from Microsoft's own article, for that remote domain:</p>
 <pre><code>Set-RemoteDomain -Identity &lt;remote domain&gt; -TNEFEnabled $false</code></pre>
 <p>For a single external address instead of a whole domain:</p>
 <pre><code>Set-MailContact &lt;address&gt; -UseMapiRichTextFormat Never</code></pre>
