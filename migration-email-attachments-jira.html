@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-12T13:57:21+00:00",
-  "dateModified": "2026-10-12T13:57:21+00:00",
+  "dateModified": "2026-10-14T21:55:23+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -102,7 +102,7 @@ Support desks, legal teams and procurement attach emails to tickets for years. W
 <li><strong>Nothing stored.</strong> A viewer that copies emails into its own storage doubles your data and your questions from security.</li>
 <li><strong>No configuration.</strong> After a migration, nobody wants another project to set up.</li>
 </ul>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, including RTF-only .msg files, nested emails and forwarded emails attached without a file name. It reads the attachment with the permissions of the person looking, renders it in the browser, and stores nothing. There are no settings: a Jira admin installs it and turns it on for all work items in one click.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments up to 10 MB on the work item, including RTF-only .msg files, an email inside an email and forwarded emails attached without a file extension. It reads the attachment with the permissions of the person looking, renders it in the browser, and stores nothing. There are no settings: a Jira admin installs it, opens it once on a work item with an email and chooses Show for all work items in the panel menu, per project.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Do .msg attachments survive a migration to Jira Cloud?</strong> Normally yes, as files, within your Cloud attachment size limit. They are not converted; they are just not readable inside Jira without a viewer.</p>
@@ -117,7 +117,6 @@ Support desks, legal teams and procurement attach emails to tickets for years. W
 <p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
 </div>
 <p>See also: <a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a> and <a href="msg-vs-eml.html">Outlook .msg vs .eml</a></p>
 </div>
@@ -149,12 +148,14 @@ Support desks, legal teams and procurement attach emails to tickets for years. W
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
 <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>

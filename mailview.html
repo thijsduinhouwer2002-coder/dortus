@@ -53,9 +53,6 @@ English whether it looks like phishing, and why.
 <a class="btn btn-line" href="support.html">Support</a>
 </div>
 <p style="margin-top: 1.3rem"><span class="status enter enter-3">Atlassian Marketplace listing in progress</span></p>
-<!-- Na goedkeuring van MailView deze regel gebruiken:
-<p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://marketplace.atlassian.com/apps/4078695191">MailView on the Atlassian Marketplace</a></p>
--->
 </div>
 
 <figure class="frame enter enter-3" style="max-width: 975px; width: 100%; margin: clamp(2rem, 4vw, 3rem) auto 0">
@@ -71,7 +68,7 @@ English whether it looks like phishing, and why.
 <div class="head reveal">
 <h2>What MailView shows</h2>
 <p class="lede">
-Everything that is in the file, nothing that is not. No copies, no storage, no external
+The email from the file, with nothing added and scripts and forms taken out. No copies, no storage, no external
 services.
 </p>
 </div>
@@ -99,12 +96,12 @@ services.
 <div class="card reveal reveal-1">
 <span class="card-mark" aria-hidden="true">5</span>
 <h3>A details tab for the headers</h3>
-<p>Every header, SPF, DKIM and DMARC results, and every link with its real destination. If the link text names one domain and the link goes to another, MailView says so.</p>
+<p>Every header, the SPF, DKIM and DMARC results recorded by the receiving mail server, and the address behind every link (short links and redirects are not followed). If the link text names one domain and the link goes to another, MailView says so.</p>
 </div>
 <div class="card reveal reveal-2">
 <span class="card-mark" aria-hidden="true">6</span>
 <h3>Only on work items with email</h3>
-<p>Only shows up where there is an email attachment: .eml, .msg, or a forwarded email without a file name.</p>
+<p>Only shows up where an attachment could be an email: .eml, .msg, or a file without a known file type, such as a forwarded email without a file name.</p>
 </div>
 </div>
 <p class="reveal" style="margin-top: 1.4rem"><strong>Forwarded from Outlook without a file name?</strong> MailView recognizes the email by its headers and shows it anyway.</p>
@@ -117,13 +114,13 @@ services.
 <p class="eyebrow">Phishing triage</p>
 <h2>"Is this legit?" Answered on the work item</h2>
 <p class="lede">
-An employee forwards a suspicious email to the service desk. Instead of downloading the file and opening it in Outlook, the agent opens it in MailView and gets a verdict, Likely phishing, Be careful or Looks OK, with the reasons underneath.
+An employee forwards a suspicious email to the service desk. Instead of downloading the file and opening it in Outlook, the agent opens it in MailView and gets a verdict, Likely phishing, Be careful, Looks OK or Not enough to judge, with the reasons underneath.
 </p>
 </div>
 <div class="cols cols-3">
 <div class="card reveal">
 <h3>What it checks</h3>
-<p>SPF, DKIM and DMARC results from the email's headers. Lookalike sender domains and punycode addresses. Links whose visible text names one domain while the link goes to another. Risky attachment types.</p>
+<p>SPF, DKIM and DMARC results from the email's headers. Sender and link domains with lookalike letters from other alphabets or with accents (punycode); a typo in plain letters, such as paypa1.com, is not caught. Links whose visible text names one domain while the link goes to another. Risky attachment types.</p>
 </div>
 <div class="card reveal reveal-1">
 <h3>Copy findings</h3>
@@ -150,7 +147,7 @@ sentence and a link to download the original.
 <ul class="rows reveal reveal-1">
 <li>
 <b>Several emails on one work item</b>
-<p>A list with the newest first, with subject and sender filled in while you look. Click one to read it, use All emails to go back.</p>
+<p>A list with the newest first; subject and sender of the 10 newest are filled in while you look. Click one to read it, use All emails to go back.</p>
 </li>
 <li>
 <b>Download the original</b>
@@ -219,34 +216,36 @@ before anything is shown.
 <ol>
 <li><strong>Install MailView</strong> from the Atlassian Marketplace. You need to be a Jira admin.</li>
 <li><strong>Open a work item that has a .eml or .msg attachment.</strong> Under <strong>Apps</strong> (the round icon under the work item title) choose <strong>MailView</strong>. The panel appears above the activity section and shows the email.</li>
-<li><strong>Show it everywhere at once (Jira admins).</strong> Open the panel menu (the three dots in the MailView panel) and choose <strong>Show for all work items</strong>. From then on the panel is there automatically on every work item that has an email attachment. Work items without one stay as they are. Note that <em>Hide from all work items</em> also removes the panels people added by hand.</li>
+<li><strong>Show it everywhere at once (Jira admins).</strong> Open the panel menu (the three dots in the MailView panel) and choose <strong>Show for all work items</strong>. From then on the panel is there automatically on every work item in that project that has an email attachment. Work items without attachments, or with only common file types such as .pdf, .docx or .png, stay as they are. Note that <em>Hide from all work items</em> also removes the panels people added by hand.</li>
 <li><strong>That's it.</strong> There are no settings.</li>
 </ol>
 
 <h3 id="user-guide">User guide</h3>
 <p><strong>Open an email.</strong> If a work item has one email attachment, the panel shows it right away. If it has several, you see a list with the newest first; click one to open it, and use <strong>All emails</strong> to go back.</p>
-<p><strong>What you see.</strong> Subject, from, to, cc and date at the top. Below that, the message on a light "paper", formatted as it was sent. Inline images from the email are shown. If the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy." Very long messages are shown in a scrollable area with a <strong>Show full message</strong> button.</p>
+<p><strong>What you see.</strong> Subject, from, to, cc and date at the top. Below that, the message on a light "paper", formatted as it was sent. Inline images from the email are shown. If the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy." Very long messages are shortened, with a <strong>Show entire message</strong> button to see the rest.</p>
 <p><strong>Files inside the email.</strong> Attachments inside the email are listed under the message with their name, type and size. Click one to download it. An email inside an email opens in place; use <strong>Back</strong> to return.</p>
-<p><strong>Details tab.</strong> Switch to <strong>Details</strong> to see every header of the email, the authentication results (SPF, DKIM, DMARC) when they are present, and a list of all links with their real destination. A warning appears when the visible link text names a different domain than the link actually goes to, or when the address uses punycode (xn--).</p>
-<p><strong>Verdict.</strong> In the Details tab, and in a bar above the message when something is wrong, MailView says whether the email looks like phishing and lists the reasons: failed SPF, DKIM or DMARC, a lookalike sender domain, links that go somewhere else than they show, risky attachments. Use <strong>Copy findings</strong> to put a defanged summary in the clipboard for the ticket comment. The verdict is an aid, not a guarantee; the Details tab has the raw headers and links.</p>
+<p><strong>Details tab.</strong> Switch to <strong>Details</strong> to see every header of the email, the authentication results (SPF, DKIM, DMARC) when they are present, and a list of all links with the address each one points to (short links and redirects are not followed). A warning appears when the visible link text names a different domain than the link actually goes to, or when an international (punycode, xn--) address uses lookalike or accented letters.</p>
+<p><strong>Verdict.</strong> In the Details tab, and in a bar above the message when something is wrong, MailView says whether the email looks like phishing and lists the reasons: a failed SPF, DKIM or DMARC result recorded in the headers, a sender domain with lookalike letters from other alphabets or with accents, links that go somewhere else than they show, risky attachments. Use <strong>Copy findings</strong> to put a defanged summary in the clipboard for the ticket comment. The verdict is an aid, not a guarantee; the Details tab has the raw headers and links.</p>
+<p><strong>Not enough to judge.</strong> The file has no authentication results and either no delivery headers or no sender address (for example a message saved from Outlook before it was sent, or an internal email that never left the mail server), so authentication and sender could not be checked; links and attachments are still checked.</p>
 <p><strong>Download the original.</strong> Every email has a <strong>Download the original</strong> link, so you can always open it in your mail app.</p>
 <p><strong>Keyboard.</strong> Tab moves through the list, links and buttons; Enter opens; Escape or <strong>Back</strong> returns.</p>
+<p><strong>Leave a review.</strong> At the bottom of the panel there is a small link to leave a review on the Atlassian Marketplace. MailView does not count or store anything to show it.</p>
 
 <h3 id="limits">Limits</h3>
 <ul>
-<li><strong>Supported:</strong> .eml files and Outlook .msg files, including messages that only contain RTF, and emails nested inside emails (one level).</li>
-<li><strong>Not supported:</strong> protected Outlook messages (.rpmsg), which only open in Outlook; files over 10 MB (you get a download link instead).</li>
+<li><strong>Supported:</strong> .eml files and Outlook .msg files, including messages that only contain RTF in the form Outlook usually saves (other RTF, or RTF over 2 MB, shows the plain-text version if the file has one), and emails nested inside emails (one level).</li>
+<li><strong>Not supported:</strong> protected Outlook messages (.rpmsg), which only open in Outlook; files over 10 MB (you get a download link instead); inline images over 5 MB (an empty frame).</li>
 <li><strong>Where it works:</strong> Jira work items in company-managed and team-managed projects, and the agent view of Jira Service Management. Not in the JSM customer portal, and not in Confluence.</li>
 <li><strong>What it does not do:</strong> MailView never sends email, replies, or creates work items from email. It only shows what is already attached. It does not replace your email security; the verdict is based only on what is in the attached file.</li>
 </ul>
 
 <h3 id="faq">FAQ</h3>
-<p><strong>I don't see the panel.</strong> The panel only exists on work items that have a .eml or .msg attachment. Open such a work item and choose MailView under <strong>Apps</strong>, or ask a Jira admin to turn on <strong>Show for all work items</strong> in the panel menu.</p>
+<p><strong>I don't see the panel.</strong> The panel only exists on work items with an attachment that could be an email: a .eml or .msg file, or a file without a known file type. Open such a work item and choose MailView under <strong>Apps</strong>, or ask a Jira admin to turn on <strong>Show for all work items</strong> in the panel menu.</p>
 <p><strong>Can everyone see the email?</strong> Everyone who can see the attachment in Jira can read it in MailView. The app uses the permissions of the person who is looking, nothing more.</p>
 <p><strong>Does MailView store the emails?</strong> No. The email is read from the attachment and rendered in your browser each time. Nothing is copied or kept.</p>
 <p><strong>Why are images missing?</strong> Images that come from the internet are blocked on purpose, because loading them would tell the sender that the email was opened. Images that travel inside the email are shown.</p>
 <p><strong>Why is a link in the email not clickable?</strong> Links that use javascript: or other unsafe schemes are removed. Normal web links open in a new tab.</p>
-<p><strong>How reliable is the phishing verdict?</strong> It checks what is in the file: authentication results in the headers, the sender domain, the links and the attachments. It does not look anything up on the internet (nothing leaves your Jira), so it cannot know whether a domain was registered yesterday or whether a link is on a blocklist. Treat Likely phishing as a reason to look closer, and Looks OK as "nothing obvious in the file", not as proof.</p>
+<p><strong>How reliable is the phishing verdict?</strong> It checks what is in the file: authentication results in the headers, the sender domain, the links and the attachments. It does not look anything up on the internet (nothing leaves your Jira), so it cannot know whether a domain was registered yesterday, whether a link is on a blocklist, or where a short or redirecting link finally leads. Treat Likely phishing as a reason to look closer, and Looks OK as "nothing obvious in the file", not as proof.</p>
 <p><strong>Does it work in Jira Service Management?</strong> Yes, in the agent view. Not in the customer portal.</p>
 <p><strong>Does it work in Confluence?</strong> Yes: MailView for Confluence is a separate app, submitted to the Atlassian Marketplace and in review. See <a href="mailview-confluence.html">MailView for Confluence</a>.</p>
 <p><strong>Which languages are supported?</strong> The app is in English. The email itself is shown in whatever language it was written in.</p>
@@ -255,7 +254,7 @@ before anything is shown.
 <p><strong>Where is data stored?</strong> Nowhere. MailView has no storage. It reads the attachment from your Jira site when you open it and renders it in your browser.</p>
 <p><strong>What does the app send outside Atlassian?</strong> Nothing. There are no external servers and no outbound connections.</p>
 <p><strong>What permissions does the app ask for?</strong> Read access to work items and their attachments (<code>read:jira-work</code>). It cannot change anything.</p>
-<p><strong>How does it handle unsafe content?</strong> Before an email is shown, scripts, forms, embedded frames and external images and stylesheets are removed. Links open in a new tab with no referrer. The email is rendered inside its own isolated area so its styling cannot affect Jira.</p>
+<p><strong>How does it handle unsafe content?</strong> Before an email is shown, scripts, forms, embedded frames and external images and stylesheets are removed. Links open in a new browser tab. The email is rendered inside its own isolated area so its styling cannot affect Jira.</p>
 <p><strong>Can Dortus see our emails?</strong> No. The app runs in your browser and logs nothing about the email content. There is no Dortus server behind it.</p>
 <p><strong>What happens if I uninstall?</strong> Nothing to clean up: the app stored nothing.</p>
 <p>Full policy: <a href="privacy.html">Privacy policy</a>. Terms: <a href="terms.html">Terms of service</a>.</p>
@@ -293,12 +292,14 @@ before anything is shown.
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
 <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>

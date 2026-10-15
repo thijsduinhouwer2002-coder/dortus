@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-12T17:36:47+00:00",
-  "dateModified": "2026-10-12T17:42:05+00:00",
+  "dateModified": "2026-10-14T21:55:23+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -104,10 +104,10 @@ Two file types carry a whole email: .msg from Outlook, .eml from almost everythi
 <p><strong>For a mixed team</strong> (Mac, web, Gmail users reading what Outlook users attached): prefer .eml, so nobody needs Outlook to open it.</p>
 
 <h3 id="jira">Reading either one in Jira</h3>
-<p>Jira Cloud shows an .eml as raw text and a .msg as unreadable code; neither is readable on the work item. Free routes and viewer apps are compared in <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> reads both formats on the work item, including .msg files whose body is only RTF, forwarded emails attached without a file name, and emails inside emails, and shows the headers with a plain-English verdict when they are there.</p>
+<p>Jira Cloud shows an .eml as raw text and a .msg as unreadable code; neither is readable on the work item. Free routes and viewer apps are compared in <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> reads both formats on the work item up to 10 MB, including .msg files whose body is only RTF, forwarded emails attached without a file extension, and an email inside an email, and shows the headers with a plain-English verdict when they are there.</p>
 
 <h3 id="faq">Short answers</h3>
-<p><strong>Can I convert .msg to .eml?</strong> Outlook can save a message in either format (new Outlook: Save as; classic Outlook: Save As). Converting after the fact does not add headers that the .msg never had.</p>
+<p><strong>Can I convert .msg to .eml?</strong> The new Outlook can save a message as .eml or .msg (More actions, Save as). In classic Outlook, Save As gives a .msg by default (Microsoft: <a href="https://support.microsoft.com/en-us/office/save-an-outlook-message-as-a-eml-file-a-pdf-file-or-as-a-draft-4821bcd4-7687-4d6d-a486-b89a291a56e2" rel="noopener noreferrer">Save an Outlook message as a .eml file, a PDF file, or as a draft</a>). Converting after the fact does not add headers that the .msg never had.</p>
 <p><strong>Does Jira treat them differently?</strong> No. Both are attachments; Jira displays neither.</p>
 
 <h3 id="support">Questions</h3>
@@ -118,7 +118,6 @@ Two file types carry a whole email: .msg from Outlook, .eml from almost everythi
 <p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
 </div>
 <p>See also: <a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a> and <a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></p>
 </div>
@@ -150,12 +149,14 @@ Two file types carry a whole email: .msg from Outlook, .eml from almost everythi
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
 <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>

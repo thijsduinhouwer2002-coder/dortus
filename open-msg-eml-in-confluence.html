@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-09T12:26:29+00:00",
-  "dateModified": "2026-10-12T13:37:50+00:00",
+  "dateModified": "2026-10-14T21:55:23+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -82,7 +82,7 @@ file as a download. These are the ways to actually read it.
 <div class="prose">
 
 <h3 id="why">Why Confluence can't show the email</h3>
-<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Confluence Cloud previews images, PDFs and Office files, but it has no viewer for email formats, so both show up as a bare download link on the page. There is a request for this on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>).</p>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Confluence Cloud previews images, PDFs and Office files (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/work-with-images-videos-and-files/" rel="noopener noreferrer">Work with images, videos, and files</a>), but it has no viewer for email formats, so both show up as a file on the page, with no email preview. Atlassian tracks requests for this: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a> for .msg, and <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a> for .msg and .eml.</p>
 
 <h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
 <p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg on a Mac you need a separate viewer.</p>
@@ -100,13 +100,13 @@ file as a download. These are the ways to actually read it.
 <li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped before anything is shown.</li>
 <li><strong>Export.</strong> If the page goes out as PDF or Word, the email should export as readable text, not disappear.</li>
 </ul>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview-confluence.html">MailView for Confluence</a> adds an "Email (MailView)" macro that shows a chosen .msg or .eml attachment on the page, and an "Emails on this page" list with a verdict icon. Every email gets a plain-English phishing check (authentication results, lookalike domains, links whose text points elsewhere), and the PDF and Word export of the page includes a clean version of the email. It stores nothing and sends nothing anywhere.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview-confluence.html">MailView for Confluence</a> adds an "Email (MailView)" macro that shows a chosen .msg or .eml attachment on the page, and an "Emails on this page" list with a verdict icon for the 10 newest emails. Every email you open gets a plain-English phishing check (authentication results from the headers, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere), and the PDF and Word export of the page includes a clean version of each email shown with the macro. It stores nothing and sends nothing anywhere.</p>
 
 <h3 id="which">Which option fits</h3>
 <p>An occasional email on a personal page: downloading is fine. A space that documents decisions, incidents or customer requests with the original emails attached: a viewer keeps the page self-contained, keeps readers out of Outlook, and keeps the email readable years later in exports and archives.</p>
 
 <h3 id="faq">Short answers</h3>
-<p><strong>Can Confluence Cloud preview .eml or .msg natively?</strong> No. Both are offered as a download only.</p>
+<p><strong>Can Confluence Cloud preview .eml or .msg natively?</strong> No. Both stay files on the page, with no email preview (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>, <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a>).</p>
 <p><strong>Does renaming .msg to .eml work?</strong> No. The formats are unrelated; the renamed file stays unreadable.</p>
 <p><strong>Do email attachments survive PDF export?</strong> Natively they export as a file name only. A viewer app can include the email's content in the export.</p>
 
@@ -118,7 +118,6 @@ file as a download. These are the ways to actually read it.
 <p>Shows a chosen email attachment on the page, lists the emails on a page, and keeps the email readable in PDF and Word exports. Runs on Atlassian, stores nothing, sends nothing anywhere.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/218321273 -->
 </div>
 <p>See also: <a href="msg-vs-eml.html">Outlook .msg vs .eml</a> and <a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></p>
 </div>
@@ -150,12 +149,14 @@ file as a download. These are the ways to actually read it.
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
 <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
