@@ -48,6 +48,7 @@ checkable against the Marketplace listing and the app's declared permissions.
 <h3 id="permissions">What the app is allowed to read</h3>
 <p><strong>MailView for Jira and Jira Service Management</strong> requests one permission: <code>read:jira-work</code>. It reads the attachments of the work item you are looking at, as you. Jira enforces your permissions on every read, so the app can never show you an attachment you could not download yourself. It has no write permission: it cannot change, add or remove anything on the work item.</p>
 <p><strong>MailView for Confluence</strong> requests <code>read:attachment:confluence</code>. It reads the email attachments of the current page, as you. The one server-side function it has (used for PDF and Word export) also reads the attachment as the current user and does not log email content.</p>
+<!-- MailView for Confluence, once the badge is confirmed on its listing, present tense: "MailView for Confluence carries Atlassian's Runs on Atlassian badge" -->
 <p>Both apps are built to qualify for Atlassian's <strong>Runs on Atlassian</strong> badge: no external network calls and no data stored outside the Atlassian platform. Once an app is listed, that badge on the Marketplace listing is the independent confirmation.</p>
 <!-- After approval: simplify to present tense and link the listing. -->
 
