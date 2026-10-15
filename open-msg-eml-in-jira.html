@@ -96,9 +96,9 @@ This page lists every way to actually read it, including the free ones.
 <li><strong>Where the email is processed.</strong> Prefer apps that render in your browser with no external servers ("Runs on Atlassian"), so the email never leaves your site.</li>
 <li><strong>Both formats</strong>, including .msg files that only carry RTF, and forwarded emails that were attached without a file extension.</li>
 <li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped, so reading a suspicious email in the ticket is safe.</li>
-<li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and where each link really goes saves the round-trip to a separate analysis tool.</li>
+<li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and the address behind each link saves the round-trip to a separate analysis tool.</li>
 </ul>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, lookalike domains, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
 
 <h3 id="which">Which option fits</h3>
 <p>One email a month: downloading is fine. A migration folder full of .msg files, or a service desk where customers forward emails daily: an in-Jira viewer pays for itself quickly, and a security-minded team will want the rendering isolation and the authentication details rather than agents opening attachments in Outlook.</p>
