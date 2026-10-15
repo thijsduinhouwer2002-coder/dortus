@@ -82,7 +82,7 @@ file as a download. These are the ways to actually read it.
 <div class="prose">
 
 <h3 id="why">Why Confluence can't show the email</h3>
-<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Confluence Cloud previews images, PDFs and Office files, but it has no viewer for email formats, so both show up as a bare download link on the page. There is a request for this on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>).</p>
+<p>A .eml file is the raw text of an email; an Outlook .msg file is a binary container. Confluence Cloud previews images, PDFs and Office files (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/work-with-images-videos-and-files/" rel="noopener noreferrer">Work with images, videos, and files</a>), but it has no viewer for email formats, so both show up as a file on the page, with no email preview. Atlassian tracks requests for this: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a> for .msg, and <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a> for .msg and .eml.</p>
 
 <h3 id="option-1">Option 1: download and open in a mail app (free)</h3>
 <p>Download the attachment and open it in a desktop mail client. Outlook for Windows opens both .msg and .eml. Apple Mail and Thunderbird open .eml, but <strong>not .msg</strong>; for .msg on a Mac you need a separate viewer.</p>
@@ -106,7 +106,7 @@ file as a download. These are the ways to actually read it.
 <p>An occasional email on a personal page: downloading is fine. A space that documents decisions, incidents or customer requests with the original emails attached: a viewer keeps the page self-contained, keeps readers out of Outlook, and keeps the email readable years later in exports and archives.</p>
 
 <h3 id="faq">Short answers</h3>
-<p><strong>Can Confluence Cloud preview .eml or .msg natively?</strong> No. Both are offered as a download only.</p>
+<p><strong>Can Confluence Cloud preview .eml or .msg natively?</strong> No. Both stay files on the page, with no email preview (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>, <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a>).</p>
 <p><strong>Does renaming .msg to .eml work?</strong> No. The formats are unrelated; the renamed file stays unreadable.</p>
 <p><strong>Do email attachments survive PDF export?</strong> Natively they export as a file name only. A viewer app can include the email's content in the export.</p>
 
