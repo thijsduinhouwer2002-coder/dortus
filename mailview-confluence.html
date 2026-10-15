@@ -85,7 +85,7 @@ services.
 <div class="card reveal">
 <span class="card-mark" aria-hidden="true">4</span>
 <h3>A phishing check</h3>
-<p>Looks OK, Be careful or Likely phishing, with the reasons: failed SPF, DKIM or DMARC, lookalike domains, links that go somewhere else than their text shows.</p>
+<p>Looks OK, Be careful, Likely phishing or Not enough to judge, with the reasons: failed SPF, DKIM or DMARC, lookalike domains, links that go somewhere else than their text shows.</p>
 </div>
 <div class="card reveal reveal-1">
 <span class="card-mark" aria-hidden="true">5</span>
@@ -154,12 +154,14 @@ Scripts, forms and remote images in emails are removed before anything is shown.
 
 <h3 id="user-guide">User guide</h3>
 <p><strong>The macro.</strong> The <strong>Email (MailView)</strong> macro shows one email attachment of the page. The macro settings list the .eml and .msg attachments of the page, and also files without a file type, marked "(no file type)", because a forwarded email often has no file name. To show a different email, edit the page and open the macro settings again.</p>
-<p><strong>Emails on this page.</strong> Under the page title, <strong>Emails on this page</strong> opens a list of every email attachment of the page, newest first, with subject, sender, date and an icon: a red warning for <em>Likely phishing</em>, an orange one for <em>Be careful</em>, an envelope otherwise. Click an email to open it in a large view. No download needed. Forwarded emails without a file name are recognized by their headers and listed too.</p>
+<p><strong>Emails on this page.</strong> Under the page title, <strong>Emails on this page</strong> opens a list of every email attachment of the page, newest first, with subject, sender, date and an icon: a red warning for <em>Likely phishing</em>, an orange one for <em>Be careful</em>, a grey question mark for <em>Not enough to judge</em>, an envelope otherwise. Click an email to open it in a large view. No download needed. Forwarded emails without a file name are recognized by their headers and listed too.</p>
 <p><strong>Message.</strong> Subject, from, to, cc and date at the top. Below that, the message formatted as it was sent. If the email looks suspicious, a bar above the message says <em>Be careful</em> or <em>Likely phishing</em> with the main reasons. Images that travel inside the email are shown; if the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy."</p>
 <p><strong>Details.</strong> The verdict with all its reasons, the authentication results (SPF, DKIM, DMARC) with a line of explanation each, every header of the email, and a list of all links with their real destination. MailView warns when a sender or link domain is a lookalike of a known one, and when a link's text names a different domain than the link actually goes to.</p>
+<p><strong>Not enough to judge.</strong> The file has no delivery headers, or no authentication results and no sender address, so authentication and sender could not be checked. Links and attachments are still checked.</p>
 <p><strong>Original.</strong> The plain text of the email, and its source: the raw email for an .eml file, or every header and text field for an Outlook .msg file.</p>
 <p><strong>PDF and Word export.</strong> When you export the page, each <strong>Email (MailView)</strong> macro becomes a static version of the email: subject, from, to, cc and date, then the verdict line, then the text and the name and size of each attachment. The verdict line is, for example, "MailView: Likely phishing" with the main reasons, or "MailView: Looks OK, no warnings found." Very long emails are shortened and earlier replies are left out; the export says so.</p>
 <p><strong>Download the original.</strong> Every email keeps a <strong>Download the original</strong> link, so you can always open it in your mail app.</p>
+<p><strong>Leave a review.</strong> Under the list in <strong>Emails on this page</strong> there is a small link to leave a review on the Atlassian Marketplace. MailView does not count or store anything to show it.</p>
 
 <h3 id="limits">Limits</h3>
 <ul>
