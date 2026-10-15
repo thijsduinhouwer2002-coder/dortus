@@ -96,9 +96,9 @@ This page lists every way to actually read it, including the free ones.
 <li><strong>Where the email is processed.</strong> Prefer apps that render in your browser with no external servers ("Runs on Atlassian"), so the email never leaves your site.</li>
 <li><strong>Both formats</strong>, including .msg files that only carry RTF, and forwarded emails that were attached without a file extension.</li>
 <li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped, so reading a suspicious email in the ticket is safe.</li>
-<li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and where each link really goes saves the round-trip to a separate analysis tool.</li>
+<li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and the address behind each link saves the round-trip to a separate analysis tool.</li>
 </ul>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, lookalike domains, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
 
 <h3 id="which">Which option fits</h3>
 <p>One email a month: downloading is fine. A migration folder full of .msg files, or a service desk where customers forward emails daily: an in-Jira viewer pays for itself quickly, and a security-minded team will want the rendering isolation and the authentication details rather than agents opening attachments in Outlook.</p>
@@ -140,20 +140,25 @@ This page lists every way to actually read it, including the free ones.
 <li><a href="askspace.html">AskSpace</a></li>
 <li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
 <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
 <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="email-check.html">Email check</a></li>
 </ul>

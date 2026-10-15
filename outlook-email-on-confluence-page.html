@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to save an Outlook email to a Confluence page (Cloud) · Dortus</title>
+<meta name="description" content="How to save an Outlook email to a Confluence Cloud page: copy and paste, save as PDF, attach the .msg or .eml file, or show it with an app. What each way keeps, what it loses, with Atlassian and Microsoft sources." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to put an Outlook email on a Confluence page" />
+<meta property="og:description" content="Four ways to get an Outlook email onto a Confluence Cloud page, with what each one keeps and what it loses." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/outlook-email-on-confluence-page.html" />
+<meta property="og:url" content="https://dortus.com/outlook-email-on-confluence-page.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to put an Outlook email on a Confluence page",
+  "description": "How to save an Outlook email to a Confluence Cloud page: copy and paste, save as PDF, attach the .msg or .eml file, or show it with an app. What each way keeps, what it loses, with Atlassian and Microsoft sources.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-14T20:33:19+00:00",
+  "dateModified": "2026-10-14T21:23:12+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/outlook-email-on-confluence-page.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview-confluence.html">MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to put an Outlook email on a Confluence page</h1>
+<p class="lede">
+A customer request for the project page, the approval behind a decision, the alert that started an incident: sooner or later an email belongs in Confluence. Confluence Cloud cannot receive an email, and dragging one in from Outlook does not always work. So people ask about it on Atlassian Community again and again. Here are four ways: three without an app, and one with an app that Dortus makes. For each one: what it keeps and what it loses.
+</p>
+</div>
+<div class="prose">
+
+<p>Written on 14 October 2026 from the Atlassian, Microsoft and Apple pages and tickets linked next to each step. Menu names change now and then. If your Outlook or Confluence looks different, follow the linked page.</p>
+<p>Some of the Community questions this guide answers: &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/how-do-upload-an-email-on-confluence-page/qaq-p/2526815" rel="noopener noreferrer">how do upload an email on confluence page</a>&rdquo;, &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Embed-Outlook-email-msg-file-into-a-confluence-page/qaq-p/2644504" rel="noopener noreferrer">Embed Outlook email.msg file into a confluence page</a>&rdquo; and &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/I-am-uploading-an-outlook-mail-in-msg-format-in-confluence-page/qaq-p/2934576" rel="noopener noreferrer">I am uploading an outlook mail in .msg format in confluence page and there is no preview</a>&rdquo; (Atlassian Community).</p>
+
+<h3 id="save">For Options 3 and 4: save the email as a file</h3>
+<p>Options 3 and 4 below start with the email saved as a .msg or .eml file. Outlook can do that without any add-in (Microsoft: <a href="https://support.microsoft.com/en-us/office/save-an-outlook-message-as-a-eml-file-a-pdf-file-or-as-a-draft-4821bcd4-7687-4d6d-a486-b89a291a56e2" rel="noopener noreferrer">Save an Outlook message as a .eml file, a PDF file, or as a draft</a>):</p>
+<ul>
+<li><strong>Classic Outlook for Windows.</strong> Open the email, choose <strong>File &rarr; Save As</strong> and keep the default type. That gives an Outlook <strong>.msg</strong> file.</li>
+<li><strong>New Outlook for Windows.</strong> Open the email, choose <strong>More actions</strong> (the three dots) and then <strong>Save as</strong>. Microsoft says the file is saved as an .eml or .msg file.</li>
+<li><strong>Outlook on the web.</strong> Select the email, then <strong>More actions &rarr; Download</strong>.</li>
+</ul>
+<p><strong>Dragging straight from Outlook into Confluence is not reliable.</strong> Atlassian's ticket says dragging an email from the Outlook client on Windows into Confluence Cloud &ldquo;doesn't work all the time&rdquo;. Sometimes nothing uploads, and there is no error. Its workarounds: drag the email to the desktop first and then into Confluence, or use <strong>Forward as attachment</strong> and drag that attachment. Atlassian closed the ticket in May 2025 without a change (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-76968" rel="noopener noreferrer">CONFCLOUD-76968</a>). From the new Outlook, a drag to a folder gives an .eml file, not a .msg (Microsoft Q&amp;A: <a href="https://learn.microsoft.com/en-us/answers/questions/5528600/outlook-drag-and-drop-to-explorer-saves-email-as-a" rel="noopener noreferrer">Outlook: drag and drop to Explorer saves email as a .eml file not a .msg file</a>).</p>
+<p>Not sure which format to keep? <a href="msg-vs-eml.html">Outlook .msg vs .eml</a> explains the difference.</p>
+
+<h3 id="paste">Option 1: copy and paste the text into the page</h3>
+<p>Open the email in Outlook, select the text, copy it and paste it into the page in the Confluence editor.</p>
+<ul>
+<li><strong>What you get.</strong> The words become part of the page. Anyone who can read the page can read them, and Confluence search finds them like any other page text.</li>
+<li><strong>Images may not come along.</strong> Atlassian has a ticket about pasting text with images from Word, OneNote or Google Docs. It says the text usually comes through, but images often do not. It also says copy and paste from other formats is not a supported feature. Upload the images separately if you need them (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-77928" rel="noopener noreferrer">CONFCLOUD-77928</a>).</li>
+<li><strong>Attachments don't come along.</strong> Pasting the text does not bring the email's attachments. Save each attachment from Outlook to your computer and upload it to the page. Atlassian tracks a request to allow copying or dragging attachments straight from Outlook (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-28812" rel="noopener noreferrer">CONFCLOUD-28812</a>).</li>
+<li><strong>It is a copy, not the email.</strong> Only what you selected ends up on the page. The sender, date and recipients are there only if you copy them too. The technical headers are never there. Anyone who can edit the page can change the text.</li>
+</ul>
+
+<h3 id="pdf">Option 2: save the email as PDF and attach it</h3>
+<p>Outlook has no PDF type under Save As, so you print the email to a PDF (Microsoft: <a href="https://support.microsoft.com/en-us/office/save-an-outlook-message-as-a-eml-file-a-pdf-file-or-as-a-draft-4821bcd4-7687-4d6d-a486-b89a291a56e2" rel="noopener noreferrer">Save an Outlook message as a .eml file, a PDF file, or as a draft</a>). In classic Outlook, open the email and choose <strong>File &rarr; Print</strong>. In the new Outlook and Outlook on the web, choose <strong>Print</strong> under <strong>More actions</strong>. Pick <strong>Microsoft Print to PDF</strong> as the printer, print, and choose where to save the file. That printer is built into Windows 10 and 11. On a Mac, choose <strong>Save as PDF</strong> in the print dialog instead (Apple: <a href="https://support.apple.com/guide/mac-help/save-a-document-as-a-pdf-on-mac-mchlp1531/mac" rel="noopener noreferrer">Save a document as a PDF on Mac</a>).</p>
+<p>Then insert the PDF in the page: drag it in, or type <strong>/files</strong> and choose <strong>Image, video, or file</strong> (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/upload-a-file/" rel="noopener noreferrer">Upload a file</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/display-files-and-images/" rel="noopener noreferrer">Display files and images</a>).</p>
+<ul>
+<li><strong>What you get.</strong> The email as it looked on screen, with its images, in a file that anyone can open.</li>
+<li><strong>How it shows on the page.</strong> As a small inline tile or as a thumbnail. The file can be opened in a full-screen preview, so it can be read without downloading, or it can be downloaded (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/work-with-images-videos-and-files/" rel="noopener noreferrer">Work with images, videos, and files</a>). The PDF macro that showed a PDF's pages on the page is only available in the legacy editor (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/review-macros-only-available-in-the-legacy-editor/" rel="noopener noreferrer">Review macros only available in the legacy editor</a>).</li>
+<li><strong>It is a printout, not the email.</strong> The PDF holds what Outlook printed. The technical headers are not in it, and neither are the attachments of the email.</li>
+<li><strong>It can be blocked.</strong> If your organisation requires sensitivity labels, Print to PDF can be blocked in Outlook (Microsoft: <a href="https://support.microsoft.com/en-us/office/print-to-pdf-is-blocked-if-mandatory-labeling-is-enabled-328c575c-9db9-4879-953b-a5e176f61e78" rel="noopener noreferrer">Print to PDF is blocked if Mandatory Labeling is enabled</a>).</li>
+</ul>
+
+<h3 id="attach">Option 3: attach the .msg or .eml file</h3>
+<p>Save the email as a file (see <a href="#save">above</a>) and drag it into the page, or type <strong>/files</strong> and choose <strong>Image, video, or file</strong>. You need the Add Attachments permission in the space, and by default a file can be up to 100 MB (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/upload-a-file/" rel="noopener noreferrer">Upload a file</a>).</p>
+<ul>
+<li><strong>What you get.</strong> The original email. Sender, recipients, date and the attachments inside it are all kept in the file. An .eml also keeps the technical headers. A .msg has them only if the email came in over the internet (see <a href="msg-vs-eml.html">Outlook .msg vs .eml</a>).</li>
+<li><strong>What readers see.</strong> A file on the page, not an email. Confluence Cloud has no email view. Previewing .msg files is an open request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>). Showing attached .msg and .eml files on the page is another open request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a>). An answer on Atlassian Community also says that previewing .msg files is not supported in Confluence Cloud (Atlassian Community: <a href="https://community.atlassian.com/forums/Confluence-questions/I-am-uploading-an-outlook-mail-in-msg-format-in-confluence-page/qaq-p/2934576" rel="noopener noreferrer">I am uploading an outlook mail in .msg format in confluence page and there is no preview</a>).</li>
+<li><strong>Reading it means downloading it.</strong> Atlassian's workaround for .msg is to download the file and open it in Outlook (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>). Readers without Outlook, on a Mac or a phone, may not be able to open a .msg at all. <a href="open-msg-eml-in-confluence.html">How to open .msg and .eml email attachments in Confluence</a> covers the ways to read them.</li>
+</ul>
+
+<h3 id="mailview">Option 4: attach the file and show it with MailView for Confluence</h3>
+<p>Full disclosure: Dortus makes MailView for Confluence. It shows an attached .msg or .eml file as a readable email on the page. Other apps on the Atlassian Marketplace also handle email in Confluence. This guide only describes the one we make.</p>
+<p>You still need Option 3 first. MailView does not take the email out of Outlook. It reads the file that is attached to the page.</p>
+<ul>
+<li><strong>Show one email on the page.</strong> Edit the page, insert the <em>Email (MailView)</em> macro, choose the attachment and click Save. The email shows in the editor. After you publish, readers of the page see it too: sender, recipients, date, the message with its formatting, the images stored inside the email, and its attachments. Images that the email loads from the internet stay blocked, for privacy.</li>
+<li><strong>A list of the emails on the page.</strong> <em>Emails on this page</em>, under the page title, lists the .eml and .msg attachments of the page. Click one to read it in a large view.</li>
+<li><strong>A phishing check.</strong> Each email you open gets a verdict: Looks OK, Be careful, Likely phishing or Not enough to judge, with the reasons. An email you wrote yourself, or one that never left your company, often has no delivery or authentication headers. It then gets Not enough to judge, unless something else in it looks suspicious, such as a link or an attachment. The check can miss things, so treat Looks OK as &ldquo;nothing suspicious found&rdquo;.</li>
+<li><strong>PDF and Word export.</strong> When you export the page, each MailView macro becomes a plain-text version of the email: subject, sender, recipients, the date in UTC, the verdict line, the text without earlier replies, and the names and sizes of the attachments. Images and formatting are left out, and very long emails are shortened.</li>
+<li><strong>What it does not do.</strong> It does not copy the email text into the page. If people need to find the email with Confluence search, also paste the key text into the page (Option 1). Files over 10 MB show a download link instead of the email. Protected Outlook messages (.rpmsg) show a note that they can only be opened in Outlook. Confluence Cloud only.</li>
+<li><strong>Before you install.</strong> A Confluence admin installs it, and it needs an active license. Without one, MailView shows a message on the page instead of the email. Once installed, <em>Emails on this page</em> shows under the title of every page and blog post, also on pages without emails.</li>
+<li><strong>Privacy.</strong> It only has read access to attachments. The email is shown in the reader's browser. For a PDF or Word export, it is read inside Atlassian's Forge platform. MailView keeps no copy of the email and sends nothing outside Atlassian.</li>
+</ul>
+<p>The details, limits and documentation are on the <a href="mailview-confluence.html">MailView for Confluence</a> page.</p>
+
+<h3 id="not-cloud">Not in Confluence Cloud: sending an email to a page</h3>
+<p>Confluence Cloud has no address you can send or forward an email to so that it lands on a page. Creating pages from emails is an open request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-1726" rel="noopener noreferrer">CONFCLOUD-1726</a>). A newer request asks for &ldquo;Email into Confluence&rdquo; and says this is only available in Confluence Server and Data Center (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-79455" rel="noopener noreferrer">CONFCLOUD-79455</a>). Confluence Data Center has its own email features (Atlassian: <a href="https://confluence.atlassian.com/doc/create-content-with-email-1236929886.html" rel="noopener noreferrer">Create content with email</a>, <a href="https://confluence.atlassian.com/spaces/DOC/pages/139502/Mail+Archives" rel="noopener noreferrer">Mail Archives</a>).</p>
+
+<h3 id="which">Which one should you use?</h3>
+<table>
+<thead>
+<tr><td></td><th scope="col">Readable on the page</th><th scope="col">Original email kept</th><th scope="col">Text in the page itself</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Copy and paste</th><td>Yes, the text</td><td>No</td><td>Yes</td></tr>
+<tr><th scope="row">PDF</th><td>In a full-screen preview</td><td>No, a printout</td><td>No</td></tr>
+<tr><th scope="row">.msg or .eml file</th><td>No, download it first</td><td>Yes</td><td>No</td></tr>
+<tr><th scope="row">File with MailView</th><td>Yes, up to 10 MB</td><td>Yes</td><td>No</td></tr>
+</tbody>
+</table>
+<p>Only the text matters, and nobody will need the original email later? Copy and paste. Readers should see the email as it looked, without an app? Save it as PDF and attach it. The email is evidence (a complaint, an approval, a phishing report) or people will need it again? Attach the .msg or .eml file, so the original stays with the page. Put a PDF next to it for reading, or use a viewer app.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can I drag an email from Outlook straight onto a Confluence page?</strong> Sometimes. It does not always work, and a failed drop shows no error. Save the email as a file first (see <a href="#save">above</a>) and drag that file into the page. For the Outlook client on Windows, Atlassian's ticket also suggests dragging the email to the desktop first (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-76968" rel="noopener noreferrer">CONFCLOUD-76968</a>).</p>
+<p><strong>Can I forward an email to Confluence Cloud?</strong> Not with Confluence Cloud alone. It has no email address for pages or spaces (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-1726" rel="noopener noreferrer">CONFCLOUD-1726</a>). Some apps on the Atlassian Marketplace add one. MailView does not.</p>
+<p><strong>Does Confluence Cloud show .msg or .eml files as an email?</strong> No. Both stay files. Showing them as an email is an open request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>, <a href="https://jira.atlassian.com/browse/CONFCLOUD-41597" rel="noopener noreferrer">CONFCLOUD-41597</a>).</p>
+<p><strong>.msg or .eml?</strong> Both can be attached. Classic Outlook saves .msg. The new Outlook saves an .eml or .msg file, and Outlook on the web downloads the email as a file (Microsoft: <a href="https://support.microsoft.com/en-us/office/save-an-outlook-message-as-a-eml-file-a-pdf-file-or-as-a-draft-4821bcd4-7687-4d6d-a486-b89a291a56e2" rel="noopener noreferrer">Save an Outlook message as a .eml file, a PDF file, or as a draft</a>). If some readers have no Outlook for Windows, choose .eml when your Outlook offers it. Apple Mail and Thunderbird open .eml, but not .msg. <a href="msg-vs-eml.html">Outlook .msg vs .eml</a> explains which keeps what.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Outlook%20email%20on%20a%20Confluence%20page">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView for Confluence by Dortus</p>
+<h3>Read .msg and .eml attachments on the page</h3>
+<p>Shows a chosen email attachment on the page, lists the emails on a page, and keeps the email readable in PDF and Word exports. Built on Atlassian Forge. Keeps no copy of the email and sends nothing outside Atlassian.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

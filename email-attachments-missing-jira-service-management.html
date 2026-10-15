@@ -99,7 +99,7 @@
 
 <h3 id="raw">6. Getting the original email back</h3>
 <p>Jira keeps the raw emails it processed in its own database, by default for 45 days (a Jira admin can set 14 to 180 days in Global mail settings). Within that window, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
-<p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, with the inline images and the files inside the message, including attachments packed in winmail.dat, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
+<p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments up to 10 MB on the work item, with the inline images and the files inside the message, including attachments packed in a winmail.dat inside the email, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>What is the attachment size limit for email requests?</strong> 25 MB for the whole email, attachments included. Larger emails are not fetched.</p>
@@ -138,20 +138,25 @@
 <li><a href="askspace.html">AskSpace</a></li>
 <li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
 <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
 <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
 <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="email-check.html">Email check</a></li>
 </ul>
