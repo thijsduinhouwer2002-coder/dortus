@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jira Service Management not creating requests from email: a checklist · Dortus</title>
+<meta name="description" content="A customer emailed your service desk and no request appeared. The places to check in Jira Service Management Cloud, in order: the email log, the address, the mailbox connection, sender access, filters, the request type and empty emails." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Jira Service Management not creating requests from email: a checklist" />
+<meta property="og:description" content="Emails that never become requests in Jira Service Management Cloud: what to check, in order, with Atlassian's documentation for each step." />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/jsm-not-creating-requests-from-email.html" />
+<meta property="og:url" content="https://dortus.com/jsm-not-creating-requests-from-email.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Jira Service Management not creating requests from email: a checklist",
+  "description": "A customer emailed your service desk and no request appeared. The places to check in Jira Service Management Cloud, in order: the email log, the address, the mailbox connection, sender access, filters, the request type and empty emails.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-14T17:45:35+00:00",
+  "dateModified": "2026-10-14T19:36:14+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/jsm-not-creating-requests-from-email.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Email channel</p>
+<h1 style="margin-bottom: 0.9rem">Jira Service Management not creating requests from email: a checklist</h1>
+<p class="lede">
+A customer says they emailed the service desk, and no request shows up. This page goes through the usual causes in Jira Service Management Cloud, in the order worth checking, with a link to Atlassian's documentation for each. Atlassian's newer screens say space where older ones say project; the menus are the same.
+</p>
+</div>
+<div class="prose">
+<h3 id="log">Start with the email log</h3>
+<p>Every email Jira Service Management fetches gets a line in the processing log, with a status: New request, New comment, Failed or Rejected. For Failed and Rejected, the Details column says why (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs in Jira Service Management</a>). As a project admin, go to Channels &amp; self service, then Email, select View logs for the account and choose Processing log. You can search by sender, subject or work item key, and download the raw message as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>).</p>
+<p>For a connected mailbox of your own there is also a connectivity log: the result of each attempt to pull mail, roughly every 60 seconds. Atlassian shows it for company-managed spaces only. If the email is not in the processing log at all, it never reached Jira Service Management: start with steps 1 to 3.</p>
+
+<h3 id="address">1. Was it sent to the right address?</h3>
+<p>Email to the site's general address, jira@yoursite.atlassian.net, does not create or update requests. Customers need the address of the service space, which you find under Channels &amp; self service, then Email. When a reply goes missing, look at the address the customer actually replied to: some email clients reply to the From address and ignore Reply-To (Atlassian: <a href="https://support.atlassian.com/jira/kb/emails-are-not-processed-into-comments-or-new-requests-in-a-jira-service-management-project/" rel="noopener noreferrer">Troubleshoot email processing issues in Jira Service Management Cloud</a>).</p>
+
+<h3 id="channel">2. Is email turned on for the space?</h3>
+<p>Atlassian's troubleshooting article lists a turned-off email channel as a cause: replies to notifications then cannot be processed into comments. Turn email support on under Channels &amp; self service, then Email (same Atlassian article).</p>
+
+<h3 id="mailbox">3. Can Jira Service Management still read the mailbox?</h3>
+<p>This applies when you connected your own Microsoft, Google or other mailbox.</p>
+<ul>
+<li><strong>Only unread mail in the inbox.</strong> Jira Service Management looks at messages in the inbox that are unread and arrived after the mailbox was linked, and marks them read once processed. If another mail client, a mailbox rule or another app opens or moves a message first, Jira Service Management never sees it. To retry a message, move it back to the inbox and mark it unread (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/email-process-for-pop-imap-cloud-and-other-email-types/" rel="noopener noreferrer">Email process for POP, IMAP, cloud, and other email types</a>).</li>
+<li><strong>The connection itself.</strong> Microsoft and Google mailboxes connect with OAuth. "Rate Limited" or access-token errors in the connectivity log usually point to a permission or grant problem, and the usual fix is to remove the account under Channels &amp; self service, then Email, and connect it again. For Microsoft 365, Atlassian notes that the person connecting needs Full Access to the mailbox, and the mailbox a valid license (Atlassian: <a href="https://support.atlassian.com/jira/kb/email-requests-failing-due-to-rate-limiting-and-access-token-retrieval/" rel="noopener noreferrer">Resolve Email Request Failures due to Rate Limit in JSM Cloud</a>).</li>
+<li><strong>Reconnect at a quiet moment.</strong> Email that arrives while the account is being reconnected is not processed (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/switch-microsoft-and-google-email-accounts-to-oauth/" rel="noopener noreferrer">Switch your Microsoft and Google email accounts to OAuth</a>). Atlassian also says shared mailboxes are not fully supported with OAuth and suggests a dedicated account.</li>
+</ul>
+
+<h3 id="sender">4. Was the sender allowed to raise a request?</h3>
+<ul>
+<li><strong>No account, no request.</strong> If your customer access settings do not let customers create accounts, an email from an unknown sender is rejected; the log shows a self-signup error. Either allow account creation or add the customer yourself (Atlassian: <a href="https://support.atlassian.com/jira/kb/jsm-incoming-email-error-self-signup-disabled/" rel="noopener noreferrer">Fix "self-signup disabled" error in Jira Service Management emails</a>, <a href="https://support.atlassian.com/jira-service-management-cloud/docs/what-are-the-customer-permission-settings-for-email-requests/" rel="noopener noreferrer">What are customer permission settings for email requests?</a>).</li>
+<li><strong>Domain restrictions.</strong> If account creation is limited to certain domains, an email from another domain is rejected with "Email doesn't belong to domains allowed in customer access settings" (Atlassian: <a href="https://support.atlassian.com/jira/kb/fixing-email-doesnt-belong-to-domains-allowed-in-customer-access-settings-error-for-jsm-cloud-incoming-email/" rel="noopener noreferrer">Resolving Domain Restriction Issues in JSM Cloud Email</a>).</li>
+<li><strong>Condition Pending.</strong> A first-time internal sender may need to verify a new Atlassian account before the request is processed; until then the log says Condition Pending (Atlassian: <a href="https://support.atlassian.com/jira/kb/condition-pending-status-in-jira-service-management-cloud-mail-logs/" rel="noopener noreferrer">"Condition Pending" status in Jira Service Management Cloud email requests</a>).</li>
+</ul>
+
+<h3 id="filters">5. Was it filtered out?</h3>
+<p>A Rejected line means a filter caught the email. Reasons in the log include auto-replies, email sent from Jira itself, a potential mail loop and a sender on your blocklist (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>).</p>
+<ul>
+<li><strong>Blocklist.</strong> Whole domains or single addresses, exact match only: example.com does not cover mail.example.com. Atlassian's page on the blocklist says: "This page applies to company-managed spaces only." (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/manage-your-blocklist/" rel="noopener noreferrer">Manage your blocklist</a>).</li>
+<li><strong>Allowlist.</strong> Domains only. Mail from an allowlisted domain is not filtered, except that DMARC overrides the allowlist: an email that fails the DMARC check is still blocked (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/add-edit-and-delete-domains-from-the-allowlist/" rel="noopener noreferrer">Manage domains on your allowlist</a>, <a href="https://support.atlassian.com/jira-service-management-cloud/docs/manage-dmarc-authentication-for-incoming-emails/" rel="noopener noreferrer">Manage DMARC authentication for incoming emails</a>).</li>
+</ul>
+
+<h3 id="request-type">6. Can the request type take an email?</h3>
+<p>An email fills exactly two fields: the subject becomes the Summary and the body the Description. If the request type linked to the email address has any other required field, no request is created. Keep Summary and Description visible and make every other field optional (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/choose-suitable-request-type-for-connected-email-accounts/" rel="noopener noreferrer">Choose suitable request type for connected email accounts</a>). A workflow validator on the Create transition that demands a value for a custom field blocks email requests in the same way (Atlassian: <a href="https://support.atlassian.com/jira/kb/emailed-requests-are-not-created-with-an-error-in-the-logs-indicating-that-a-custom-field-is-not-correctly-filled-in/" rel="noopener noreferrer">Emailed requests are not created with an error in the logs indicating that a custom field is not correctly filled in</a>).</p>
+
+<h3 id="empty">7. Was the email empty?</h3>
+<p>By default the Description is required, so an email with an empty body does not become a request, and the customer is not told. You can make the Description optional on the request type for email. Atlassian points out the trade-off: the requirement also keeps spam from creating empty requests (Atlassian: <a href="https://support.atlassian.com/jira/kb/how-to-create-service-management-issues-without-an-email-body/" rel="noopener noreferrer">How to Create Service Management Issues without an Email Body</a>).</p>
+
+<h3 id="alerts">8. Get told next time</h3>
+<p>Jira Service Management can send an email when an email request fails: under Channels &amp; self service, then Email, edit the address and choose all project admins, one email address, or no one. It does not cover everything. Emails rejected by a filter, emails over 25 MB and emails rejected by permission or access settings send no notice, so the processing log stays the place to look (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/receive-email-notifications-for-failed-email-requests/" rel="noopener noreferrer">Receive email notifications for failed email requests</a>). Atlassian lists it for company-managed spaces.</p>
+
+<h3 id="not-covered">What this checklist does not solve</h3>
+<ul>
+<li><strong>Email that never reaches your mailbox.</strong> Spam filtering at your email provider, routing or forwarding rules happen before Jira Service Management. Its logs cannot see them; your mail administrator can trace the message.</li>
+<li><strong>Replies that become new requests</strong> instead of comments on the existing one. That is a different problem, not covered here.</li>
+<li><strong>Jira Service Management Data Center.</strong> This page is about Cloud. Data Center has its own mail handler and settings.</li>
+<li><strong>An incident on Atlassian's side.</strong> Check Atlassian's status page before you change settings.</li>
+<li><strong>What arrived.</strong> When the request is created but its attachment is missing or mangled, see <a href="email-attachments-missing-jira-service-management.html">email request attachments missing in JSM</a>.</li>
+</ul>
+
+<h3 id="forwarded">When the request is a forwarded email</h3>
+<p>Customers often forward a suspicious or important email as an attachment. The request is created, but Jira Cloud shows the attached .eml as raw text and a .msg as code; see <a href="forwarding-email-jira-service-management.html">forwarding emails into Jira Service Management</a>. Full disclosure: Dortus makes <a href="mailview.html">MailView</a>, which shows forwarded .msg and .eml attachments as the email on the request, in Jira and in the Jira Service Management agent view. It does not help with any of the eight steps above: it only reads emails that are already attached.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Where do I see why an email did not become a request?</strong> In the processing log: Channels &amp; self service, Email, View logs, Processing log (project admin).</p>
+<p><strong>Why does Jira Service Management ignore emails that are in the mailbox?</strong> It only reads unread messages in the inbox that arrived after the mailbox was linked. Anything another client opened or moved is skipped.</p>
+<p><strong>Can I get an alert when an email request fails?</strong> Yes, for failed requests in company-managed spaces. Filtered and rejected emails send no alert.</p>
+
+<h3 id="support">Questions</h3>
+<p>Found a cause that is not on this list? Email <a href="mailto:support@dortus.com?subject=JSM%20email%20requests">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read forwarded .msg and .eml attachments on the request</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
