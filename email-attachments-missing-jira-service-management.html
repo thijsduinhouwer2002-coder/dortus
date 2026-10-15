@@ -90,6 +90,7 @@
 
 <h3 id="winmail">3. The attachment arrived as winmail.dat</h3>
 <p>Outlook can send a message in its own TNEF format. The real attachment is then packed inside a file called winmail.dat, and the ticket shows that file instead of the document the customer sent. The mail handler does not unpack it; the Atlassian ticket for that (JSDCLOUD-4383) has been open since 2016. The fix is on the sender's side: Outlook set to send in HTML or plain text, or the file sent from a different client. Agents can open a winmail.dat with a TNEF reader. If the original email is still available as an .eml (see section 6), an email viewer that unpacks TNEF shows the real attachment inside it.</p>
+<p>Full page: <a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a>, with the Outlook and Exchange settings that stop it.</p>
 
 <h3 id="inline">4. The file is there, but not where you expect</h3>
 <p>Images that were inline in the email become attachments on the ticket, while the comment shows "Preview unavailable" where the image was. Signature logos and banners arrive the same way, as small image attachments on every reply. Two site settings affect this (Settings, Jira apps, Email requests, Jira admin only): "HTML email parsing" decides whether HTML emails display in wiki markup or plain text, and "Strip quotes" decides whether emailed comments contain the whole thread or only the latest reply. A third, "Hide email signatures", hides the signature text in an expandable block using default detection (HTML-based, for Outlook Web, Gmail, Yahoo, Mail.RU, Outlook Android and Gmail Android) or custom text markers; it hides text, not image attachments.</p>
@@ -156,6 +157,7 @@
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
 <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
 <li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
