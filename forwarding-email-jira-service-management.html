@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-12T16:25:45+00:00",
-  "dateModified": "2026-10-12T17:06:12+00:00",
+  "dateModified": "2026-10-14T21:27:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -89,7 +89,7 @@ Email is still how most requests reach a service desk, and forwarding is how the
 <p>There is no Jira Service Management setting that changes this today. What works: point customers to the "View request" link in any notification (the portal shows the full history), and accept that the first email sits apart in Outlook.</p>
 
 <h3 id="formatting">3. Formatting and inline images do not survive</h3>
-<p>An HTML email that arrives as a ticket description or comment loses part of itself: lists come out flat, signatures come out wrong, and inline images show "Preview unavailable" in the comment while the image files appear as attachments. HTML parsing for the email channel is the setting to check first; people report the problem with it switched on. The faithful copy of the email is the email itself, and the ticket does not keep it: the raw message sits in the <a href="email-attachments-missing-jira-service-management.html#raw">email processing log</a> for 45 days by default (Channels &amp; self service, Email, View logs), not on the work item.</p>
+<p>An HTML email that arrives as a ticket description or comment loses part of itself: lists come out flat, signatures come out wrong, and inline images show "Preview unavailable" in the comment while the image files appear as attachments. HTML parsing for the email channel is the setting to check first; people report the problem with it switched on. The faithful copy of the email is the email itself, and the ticket does not keep it: the raw message sits in the <a href="email-attachments-missing-jira-service-management.html#raw">email processing log</a> (Channels &amp; self service, Email, View logs) until the Database cleaner removes it, not on the work item.</p>
 <p>If the exact appearance matters (a complaint, a contract, a phishing report), attach the original message to the ticket as a file. From Outlook, drag the message onto the work item, or save it as .msg or .eml and upload it. The file keeps the formatting, the inline images, the headers and the attachments inside the message. Jira Cloud cannot display that file on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>.</p>
 
 <h3 id="signatures">4. Signature images become attachments</h3>
