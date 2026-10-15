@@ -45,11 +45,43 @@
         <div class="prose" style="padding-block: 0">
           <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
             <li>Install AskSpace from the Atlassian Marketplace (Confluence admin).</li>
-            <li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>AskSpace</strong>. Q&amp;A is off by default in every space, so you will see "Q&amp;A is off in this space" and a <strong>Turn on Q&amp;A</strong> button.</li>
+            <li>Turn on Q&amp;A in the spaces that need it. Q&amp;A is off by default in every space. Use the <a href="#get-started">Get started page</a>, or open a space where you are a space admin: in the space sidebar, under <strong>Apps</strong>, click <strong>AskSpace</strong>. You will see "Q&amp;A is off in this space" and a <strong>Turn on Q&amp;A</strong> button.</li>
             <li>Click <strong>Turn on Q&amp;A</strong>. To choose <strong>Who may ask questions?</strong>, <strong>Who may answer?</strong> and <strong>Moderators</strong>, or for <strong>Import &amp; export</strong>, go to <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong> (default: everyone who can view the space may ask and answer).</li>
-            <li>Go back to <strong>AskSpace</strong> in the space sidebar and click <strong>Ask a question</strong>. Others can answer and vote; the person who asked can mark the best answer.</li>
+            <li>Go back to <strong>AskSpace</strong> in the space sidebar and click <strong>Ask a question</strong> (in a space without questions yet: <strong>Ask the first question</strong>, from version 4.2.0). Others can answer and vote; the person who asked can mark the best answer.</li>
             <li>Use <strong>Search questions and answers</strong> and the tabs <strong>All, Unanswered, Solved</strong> to find answers. The <strong>For you</strong> tab shows when someone answers your question.</li>
           </ol>
+
+          <h2 id="get-started">The Get started page</h2>
+          <p class="note">Available from version 4.2.0.</p>
+          <p>Right after you install AskSpace, Confluence offers a <strong>Get started</strong> link. You also find it next to AskSpace in <strong>Manage apps</strong>. The page is for Confluence admins.</p>
+          <ul>
+            <li><strong>Spaces you manage.</strong> The page lists the spaces where you are a space admin, 25 at a time. <strong>Show more spaces</strong> loads the next ones.</li>
+            <li><strong>Turn on Q&amp;A per space.</strong> Next to a space where Q&amp;A is off, click <strong>Turn on Q&amp;A</strong>. Where it is on, you see <strong>Q&amp;A is on</strong> and a link to <strong>Open AskSpace</strong> in that space.</li>
+            <li><strong>Nothing is turned on for you.</strong> Opening the page changes nothing. Q&amp;A only goes on in a space after you click its button. To turn Q&amp;A off again, use <strong>Space settings &rarr; Integrations &rarr; AskSpace</strong>.</li>
+            <li><strong>Other spaces.</strong> In a space you don't manage, a space admin turns Q&amp;A on from AskSpace in that space's sidebar.</li>
+          </ul>
+
+          <h2 id="import-qfc">Import from Questions for Confluence</h2>
+          <p>If your site has questions in Atlassian's Questions for Confluence (Cloud), a space admin can bring them into AskSpace. Go to <strong>Space settings &rarr; Integrations &rarr; AskSpace &rarr; Import &amp; export</strong>, click <strong>Import questions</strong> and choose <strong>Questions for Confluence (this site)</strong>. Your questions in Questions for Confluence stay where they are; AskSpace only reads them.</p>
+          <ul>
+            <li><strong>Who.</strong> A space admin. You can import into spaces where you are a space admin. AskSpace reads as you, so questions you can't open in Confluence (for example because of restrictions) are not found.</li>
+            <li><strong>Preview first.</strong> Before anything is imported, AskSpace shows how many questions and answers it found, per space, and you choose for each space: import into the space with the same key, import into another space, or skip. Questions you imported before are skipped.</li>
+            <li><strong>What comes along.</strong> The question title and text, the answers (oldest first), the accepted answer as the best answer, topics as tags, and the author and date of each question and answer. Authors stay the same Atlassian accounts on your site; if an author was an app or an unknown account, their name is kept as text.</li>
+            <li><strong>What doesn't.</strong> Votes, comments, and images and attachments. An image becomes the text "[image omitted]". AskSpace does not create or change any accounts.</li>
+            <li><strong>Limits.</strong> Up to 5,000 questions per import (skip some spaces and import them later), up to 6,000 questions per space, up to 100 answers per question and up to 3 tags per question. Titles longer than 300 characters are cut off; very long texts are shortened and end with "[truncated during import]".</li>
+            <li><strong>Undo.</strong> After an import, <strong>Undo this import</strong> removes the imported questions and their answers. Earlier imports are listed under <strong>Import &amp; export</strong>, each with an <strong>Undo</strong> link.</li>
+            <li><strong>When Confluence is busy</strong> (from version 4.2.0). AskSpace waits and tries the same part again. If an import still stops with an error, <strong>Continue import</strong> picks up where it stopped; questions that are already in are skipped, and Undo covers everything that was imported.</li>
+          </ul>
+
+          <h2 id="subscription">If your subscription isn't active</h2>
+          <p class="note">Available from version 4.2.0.</p>
+          <p>When AskSpace's subscription isn't active on your site, AskSpace becomes read-only. Nothing is deleted.</p>
+          <ul>
+            <li><strong>Still works:</strong> reading and searching questions and answers, notifications, export to CSV, deleting, undoing an import, and all space settings.</li>
+            <li><strong>Paused:</strong> asking, answering, editing, voting, choosing the best answer, and importing.</li>
+            <li>A single line in AskSpace says so and asks a Confluence admin to renew it. Space admins also see a link to AskSpace on the Atlassian Marketplace.</li>
+          </ul>
+
           <p>Need help? Email <a href="mailto:support@dortus.com">support@dortus.com</a>.</p>
           <p><a href="../../askspace.html">&larr; Back to AskSpace</a></p>
         </div>
