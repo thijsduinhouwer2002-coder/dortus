@@ -26,7 +26,7 @@
     "https://dortus.com/assets/01-question-list-app.png"
   ],
   "datePublished": "2026-10-14T19:09:58+00:00",
-  "dateModified": "2026-10-14T20:13:54+00:00",
+  "dateModified": "2026-10-15T15:54:35+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -120,7 +120,7 @@ Atlassian's Confluence Cloud Migration Assistant migrates Questions for Confluen
 <li><strong>Answers only when they are in the file.</strong> If the file lists answers by ID without their text, AskSpace imports the questions only and says the answers are missing, with the call to fetch them.</li>
 <li><strong>What does not come in.</strong> Votes and comments. Author names arrive as text, not linked to Cloud accounts. Paragraphs, lists, links, bold and code stay; images and attachments become the line <code>[image omitted]</code>; other formatting is dropped.</li>
 <li><strong>A preview first, an undo afterwards.</strong> A space admin starts the import from the AskSpace settings of a space. Before anything is saved, the preview shows how many questions it found, the first five, and what it left out or changed: a question without a title, a repeated question, an answer without text, a date it could not read (that question gets today's date). Afterwards, <em>Undo this import</em> removes the imported questions again. Nothing changes on your old Confluence.</li>
-<li><strong>Limits.</strong> Up to 5,000 questions per import and 6,000 per space.</li>
+<li><strong>Limits.</strong> AskSpace imports up to 100 answers per question and up to 3 tags per question, and up to 5,000 questions per import and 6,000 per space. Answers after the 100th are left out, also when one of them is the accepted answer.</li>
 <li><strong>The file format.</strong> Atlassian does not document the format of this file in detail. AskSpace reads the field names it knows; a field it does not find stays empty.</li>
 </ul>
 <p>Whether AskSpace or Questions for Confluence on Cloud fits your team better is a separate question: see <a href="askspace-vs-questions-for-confluence.html">Questions for Confluence vs AskSpace</a>. AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>, and <a href="docs/askspace/">Getting started with AskSpace</a> has the setup.</p>
