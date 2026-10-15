@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Confluence Cloud storage is full? How to find what takes up space · Dortus</title>
+<meta name="description" content="Where to see how much storage Confluence Cloud uses, the storage limit per plan, what takes up space (attachments, old versions, the trash) and how to clean up without an app." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Confluence Cloud storage is full? How to find what takes up space" />
+<meta property="og:description" content="See your Confluence Cloud storage, your plan's limit, and what takes up space: attachments, old versions and the trash. How to clean up, with the limits of each step." />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Confluence Cloud storage is full? How to find what takes up space</h1>
+<p class="lede">
+Confluence Cloud Free and Standard have a storage limit. When you reach it, Atlassian asks you to upgrade or delete content. Here is where to see how much you use, what takes up storage, and how to clean up with what Confluence gives you, with the catch for each step.
+</p>
+</div>
+<div class="prose">
+
+<p>Written on 14 October 2026 from the Atlassian pages and tickets linked next to each step. Atlassian changes its pages and menu names now and then, so if your site looks different, go by the linked Atlassian page.</p>
+
+<h3 id="check">1. See how much storage you use, and your plan's limit</h3>
+<p>You need admin rights to see storage: Atlassian's Confluence help names Confluence admins, its administration help names site admins. Go to admin.atlassian.com, select your organization if you have more than one, and open your site. With the original user management you select the site's name and URL in the left navigation; with centralized user management you select Apps, then the site. Under Site settings, select Storage. For each app on the site you see the storage used and, unless the plan is unlimited, the storage remaining. The figures are updated only every 4 hours, so a cleanup can take up to 4 hours to show up (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>, <a href="https://support.atlassian.com/security-and-access-policies/docs/track-storage-and-move-data-across-products/" rel="noopener noreferrer">Track storage and move data across apps</a>).</p>
+<p>Confluence and Jira each have their own storage, and how much an app gets depends on its plan. For Confluence Cloud:</p>
+<table>
+<thead>
+<tr><th scope="col">Plan</th><th scope="col">Storage, as listed by Atlassian</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Free</th><td>2 GB</td></tr>
+<tr><th scope="row">Standard</th><td>250 GB</td></tr>
+<tr><th scope="row">Premium</th><td>Unlimited</td></tr>
+<tr><th scope="row">Enterprise</th><td>Unlimited</td></tr>
+</tbody>
+</table>
+<p>Premium and Enterprise have unlimited storage "regardless of your user tier". Currently, the only way to get more storage is to upgrade the plan (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>, <a href="https://www.atlassian.com/licensing/cloud" rel="noopener noreferrer">Atlassian Cloud Licensing</a>, <a href="https://support.atlassian.com/security-and-access-policies/docs/track-storage-and-move-data-across-products/" rel="noopener noreferrer">Track storage and move data across apps</a>).</p>
+<p>When Confluence reaches its limit, you have to upgrade or delete content. Atlassian does not remove your data, but if nothing changes within the time it gives you, your team can no longer edit or create spaces, pages, whiteboards and other content (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>, <a href="https://support.atlassian.com/security-and-access-policies/docs/track-storage-and-move-data-across-products/" rel="noopener noreferrer">Track storage and move data across apps</a>).</p>
+<p>The Storage page shows one total per app. To see where it goes:</p>
+<ul>
+<li><strong>Storage per space.</strong> The space report shows which space is the big one. In Confluence, select the gear icon at the top right, then Data management, Space reports, Create report and Download. The CSV has a Storage used (MB) column and the number of attachments for every space. App, organization and site admins can create it (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/download-a-spaces-report/" rel="noopener noreferrer">Download a spaces report</a>). Atlassian's knowledge base lists the report for Standard, Premium and Enterprise, while Atlassian's tracker says it was released for all plans; on Free, check whether the menu is there (Atlassian: <a href="https://support.atlassian.com/confluence/kb/how-to-identify-storage-size-in-confluence-cloud-using-the-space-reports-feature/" rel="noopener noreferrer">How to identify storage size in Confluence Cloud using the Space Reports feature</a>, <a href="https://jira.atlassian.com/browse/CONFCLOUD-73839" rel="noopener noreferrer">CONFCLOUD-73839</a>).</li>
+<li><strong>Attachment size per page.</strong> A Python script in Atlassian's knowledge base adds up attachment sizes per space and per page through the REST API. It skips content the account running it can't see (Atlassian: <a href="https://support.atlassian.com/confluence/kb/finding-storage-usage-of-confluence-space-and-page-using-rest-api/" rel="noopener noreferrer">Finding storage usage of Confluence space and page using REST API</a>).</li>
+</ul>
+
+<h3 id="what">2. What takes up storage</h3>
+<p>All pages, live docs, attachments, files and comments take up storage. Start with the biggest attachments and files (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>, <a href="https://support.atlassian.com/security-and-access-policies/docs/track-storage-and-move-data-across-products/" rel="noopener noreferrer">Track storage and move data across apps</a>). Three things keep files stored longer than people expect:</p>
+<ul>
+<li><strong>Attachments nobody shows any more.</strong> Removing an image or file from the page in the editor does not delete the attached file. It stays in the page's attachments until someone deletes it there (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/display-files-and-images/" rel="noopener noreferrer">Display files and images</a>).</li>
+<li><strong>Old versions of attachments.</strong> Confluence keeps a version history for every attachment. Uploading a file with the same name to the same page adds a new version, and the older versions stay (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>). Each old version is kept until you delete it; how much the old versions add to your storage total is not documented.</li>
+<li><strong>The trash.</strong> A deleted page or file goes to the trash of its space, and the attachments of deleted items stay stored until the trash is purged. Confluence Cloud does not empty a space's trash on its own: a deleted item can be restored "until or unless it is manually purged from the trash" (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/delete-restore-or-purge-a-page/" rel="noopener noreferrer">Delete, restore, or purge a content item</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>). Automatic purging is an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-18160" rel="noopener noreferrer">CONFCLOUD-18160</a>).</li>
+</ul>
+<p>Archiving does not help. Archiving content with attachments frees no storage, because "Confluence keeps files to make historical data available to you". To free storage, delete the attachments or the content itself (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>).</p>
+
+<h3 id="attachments">3. Find and delete files in a space</h3>
+<p>Every space has a list of all its files. Go to the space, select More actions (the three dots) next to the space name in the sidebar, then Space settings, and choose Attachments under Content (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>). The list shows each file and the page or blog post it is attached to (Atlassian: <a href="https://support.atlassian.com/confluence/kb/how-to-search-and-view-space-attachments/" rel="noopener noreferrer">How to search and view space attachments</a>). To see which spaces and pages hold the most, use the space report and the script from step 1.</p>
+<p>To delete a file, open the page it is attached to, select Show details in the toolbar at the bottom right, then Attachments, and delete the file there. That needs the Delete Attachment space permission. Deleting a file removes all its versions, and the file goes to the space trash, where it stays stored until the trash is purged (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-attachments-macro/" rel="noopener noreferrer">Insert the attachments macro</a>).</p>
+<ul>
+<li><strong>The catch.</strong> The list tells you where a file is attached, not whether any page still shows or links it. Confluence Cloud has no built-in way to find unused attachments; a way to detect them is an open request on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-16577" rel="noopener noreferrer">CONFCLOUD-16577</a>). A file attached to one page can also be shown or linked on another page, so checking the page it is attached to is not enough (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-attachments-macro/" rel="noopener noreferrer">Insert the attachments macro</a>). If you are not sure, download a copy before you delete it; until the trash is purged, a space admin can restore it.</li>
+<li><strong>One at a time.</strong> The Confluence interface has no option to bulk delete files, or to delete all files on a page at once (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>; open request <a href="https://jira.atlassian.com/browse/CONFCLOUD-17020" rel="noopener noreferrer">CONFCLOUD-17020</a>). For a REST API script, see the short answers below.</li>
+</ul>
+
+<h3 id="versions">4. Delete old versions of a file</h3>
+<p>Open the page, select Show details, then Attachments, and select the arrow to the left of the file name. All available versions of the file appear below it. Select Delete next to a version and confirm (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>).</p>
+<ul>
+<li><strong>Check the gain.</strong> How much old versions add to your storage total is not documented. Delete a few, check the Storage page after 4 hours, and then decide whether to go on.</li>
+<li><strong>Space admins only.</strong> Deleting one version needs the Space Administrator permission on top of Delete Attachment. In a space where you are not a space admin, ask one of its space admins.</li>
+<li><strong>No undo.</strong> A deleted version can't be restored. A space admin can restore a whole deleted file from the trash, but not a single version. Download the version first if you might need it.</li>
+<li><strong>By hand.</strong> You delete versions one by one. Confluence Data Center can remove old versions automatically with retention rules; they are not available in Cloud (Atlassian: <a href="https://support.atlassian.com/migration/docs/differences-administering-confluence-data-center-and-cloud/" rel="noopener noreferrer">Differences administering Confluence Data Center and Cloud</a>).</li>
+</ul>
+
+<h3 id="trash">5. Empty the trash</h3>
+<p>In the space, open Space settings, then Trash under Content. Purge removes one item, Purge All empties the trash of that space. Purging is permanent: the item, all its versions and its attachments are gone and can't be restored. Atlassian advises checking first that the attachments on trashed items are not used on other pages, and moving them to another page if you are not sure (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/delete-restore-or-purge-a-page/" rel="noopener noreferrer">Delete, restore, or purge a content item</a>). Confluence can't show you where a file is used (see step 3), so when in doubt, restore the item or download its attachments before you purge.</p>
+<ul>
+<li><strong>Per space.</strong> Each space has its own trash, and space admins empty it. A site with many spaces means many trashes; in a space where you are not a space admin, ask one of its space admins.</li>
+<li><strong>Large trashes.</strong> The Trash view shows at most 500 items. Items beyond that can only be reached through the REST API, which this guide does not cover. This is an open bug on Atlassian's tracker (<a href="https://jira.atlassian.com/browse/CONFCLOUD-83600" rel="noopener noreferrer">CONFCLOUD-83600</a>).</li>
+<li><strong>Deleted spaces are separate.</strong> A whole space in the trash is managed in Confluence administration under Trashed spaces. Since 6 January 2025, Atlassian permanently deletes spaces that have been in the trash for at least 60 days (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/delete-a-space/" rel="noopener noreferrer">Delete a space</a>).</li>
+</ul>
+<p>After a cleanup, give the Storage page in admin.atlassian.com up to 4 hours before you check the new total.</p>
+
+<h3 id="coming-soon">Coming soon: an app that shows which attachments are not used on any page</h3>
+<p>Steps 3 to 5 leave one question open: which files can go? Full disclosure: Dortus is building an app that shows, for each attachment in a space, whether it is shown or linked on any page, blog post or comment you can see. It is not on the Atlassian Marketplace yet.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>How much storage does Confluence Cloud Free include?</strong> 2 GB. Standard has 250 GB; Premium and Enterprise are unlimited (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/manage-your-storage-usage/" rel="noopener noreferrer">Manage your storage usage</a>, <a href="https://www.atlassian.com/licensing/cloud" rel="noopener noreferrer">Atlassian Cloud Licensing</a>).</p>
+<p><strong>Does archiving pages free up storage?</strong> No. Delete the attachments or the content to free space.</p>
+<p><strong>Does deleting a page free up storage straight away?</strong> No. Its attachments stay stored until the space trash is purged, and the Storage page updates only every 4 hours.</p>
+<p><strong>Can I bulk delete attachments in Confluence Cloud?</strong> Not in the Confluence interface: there you delete files and old versions one at a time. A REST API script in Atlassian's knowledge base deletes all attachments on one page uploaded before a date you choose, with all their versions; Atlassian recommends backing up the space first (Atlassian: <a href="https://support.atlassian.com/confluence/kb/how-to-delete-attachments-filtered-by-date-from-a-confluence-cloud-page-using-the-rest-api/" rel="noopener noreferrer">How to delete attachments filtered by date from a Confluence Cloud page using the REST API</a>).</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Confluence%20Cloud%20storage">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
