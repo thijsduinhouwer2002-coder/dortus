@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to find unused attachments in Confluence Cloud · Dortus</title>
+<meta name="description" content="Confluence Cloud lists the attachments of a space, but not whether a file is shown or linked anywhere. The manual way to check, why it does not scale to hundreds of files, and a read-only report that does." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to find unused attachments in Confluence Cloud" />
+<meta property="og:description" content="The manual way with Confluence's own attachments list, and a read-only report that shows where each file is used." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/find-unused-attachments-confluence.html" />
+<meta property="og:url" content="https://dortus.com/find-unused-attachments-confluence.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to find unused attachments in Confluence Cloud",
+  "description": "Confluence Cloud lists the attachments of a space, but not whether a file is shown or linked anywhere. The manual way to check, why it does not scale to hundreds of files, and a read-only report that does.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-14T15:26:33+00:00",
+  "dateModified": "2026-10-14T15:29:47+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/find-unused-attachments-confluence.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="index.html#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="attachclean.html">AttachClean <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to find unused attachments in Confluence Cloud</h1>
+<p class="lede">
+Spaces collect files: images that were removed from the text but stayed attached, old exports, earlier versions of the same document. Confluence can list them. It cannot tell you which ones are still shown or linked anywhere.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="why">Why unused files stay behind</h3>
+<p>Removing an image or a file link from a page does not remove the attachment: the file stays attached to the page. Uploading a new version of a file keeps the older versions as well. And a file attached to one page can be shown or linked on another page, so the page it belongs to tells you little about where it is used.</p>
+
+<h3 id="manual">The manual way: Confluence's own attachments list</h3>
+<p>Atlassian's documentation (<a href="https://support.atlassian.com/confluence-cloud/docs/manage-uploaded-files/" rel="noopener noreferrer">Manage uploaded files</a>) gives this path to all files in a space:</p>
+<ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+<li>Go to the space.</li>
+<li>Next to the space name in the sidebar, select <strong>More actions (&bull;&bull;&bull;)</strong>, then <strong>Space settings</strong>.</li>
+<li>In the settings sidebar, under <strong>Content</strong>, choose <strong>Attachments</strong>.</li>
+</ol>
+<p>The <strong>Attachments</strong> page lists the files attached in the space, with the columns <strong>Name</strong>, <strong>Size</strong>, <strong>Creator</strong>, <strong>Creation Date</strong>, <strong>Last Modification Date</strong>, <strong>Labels</strong> and <strong>Attached To</strong> (for example "Page: &hellip;" or "Blog: &hellip;"). At the top you can narrow the list with <strong>Filter By File Extension</strong> and <strong>Filter By Label</strong>. Each page also has its own list of attachments.</p>
+<p>None of these columns says whether a file is used. <strong>Attached To</strong> tells you where a file hangs, not whether it is displayed or linked on its own page, on another page, in a blog post or in a comment. To find out, you open the pages and look. For a handful of files that works. For hundreds of files across hundreds of pages it does not, and a file that looks forgotten may still be shown on a page you did not open.</p>
+
+<h3 id="attachclean">A faster way: AttachClean</h3>
+<p>Full disclosure: Dortus makes <a href="attachclean.html">AttachClean</a>, a read-only report that checks the pages, blog posts and comments of a space that you can view, and shows for each attachment where it is used.</p>
+<ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+<li>Install AttachClean from the Atlassian Marketplace (Confluence admin).</li>
+<li>Open a space where you are a space admin. In the space sidebar, under <strong>Apps</strong>, click <strong>Unused attachments</strong>.</li>
+<li>Click <strong>Scan this space</strong>. You see the progress while it runs; you can cancel at any time.</li>
+<li>Use the filters <strong>All, Unused, Old versions only, Used</strong>. The column <strong>Found in</strong> shows where each used file appears.</li>
+<li>Click <strong>Export CSV</strong> to review the list in Excel before you delete anything yourself.</li>
+</ol>
+<p>Only space admins can run the scan.</p>
+
+<h3 id="limits">What AttachClean does not do</h3>
+<ul>
+<li><strong>It deletes nothing.</strong> It also changes and moves nothing. Deleting stays a decision you make in Confluence yourself.</li>
+<li><strong>Drafts and templates are not checked.</strong></li>
+<li><strong>It only sees what you can see.</strong> Unused means: not shown or linked on any page, blog post or comment that you can view. A file that people only download from the page's attachment list also counts as unused.</li>
+</ul>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a case we missed? Email <a href="mailto:support@dortus.com?subject=Unused%20attachments%20in%20Confluence">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AttachClean by Dortus</p>
+<h3>Unused attachments in a Confluence space</h3>
+<p>A read-only report for space admins: which attachments are used and where, and which are not used on any page, blog post or comment you can view. Runs in your browser with your own permissions, stores nothing.</p>
+<p class="btns"><a class="btn btn-primary" href="attachclean.html">About AttachClean <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Coming soon to the Atlassian Marketplace.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="attachclean.html">AttachClean</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

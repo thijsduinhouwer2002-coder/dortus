@@ -44,7 +44,7 @@ Two platforms, two very different data stories. Arrears runs on servers Dortus
 operates. The Atlassian apps run inside your own Atlassian site. Both are described
 below.
 </p>
-<p class="page-meta enter enter-2">Last updated: 13 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 16 October 2026</p>
 </div>
 </section>
 
@@ -152,14 +152,14 @@ Uninstalling the app also revokes our access: the stored session for your shop i
 removed when we receive the <strong>app/uninstalled</strong> webhook.
 </p>
 
-<h2>4. AskSpace, Mermaid Live Preview and MailView for Atlassian</h2>
+<h2>4. AskSpace, Mermaid Live Preview, MailView and AttachClean for Atlassian</h2>
 
 <h3>4.1 Where the data lives</h3>
 <p>
 These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
 Atlassian's cloud. AskSpace and Mermaid Live Preview keep their data in <strong>Forge
-app storage in your Atlassian site</strong>. MailView and MailView for Confluence have
-no storage at all.
+app storage in your Atlassian site</strong>. MailView, MailView for Confluence and
+AttachClean have no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
 </p>
@@ -228,7 +228,25 @@ The email is rendered <strong>in your browser</strong> and only for as long as i
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3>4.6 Billing</h3>
+<h3>4.6 What AttachClean processes</h3>
+<p>
+AttachClean shows a space admin which attachments in a Confluence space are not shown or
+linked on any page, blog post or comment that the space admin can view. When a space admin
+runs the scan, the app reads the pages, blog posts and comments of that space, page details
+such as the header image, the attachments and their versions, and pages in other spaces
+that link to it. It reads <strong>in the browser of the space admin</strong>, with that
+person's own Confluence permissions.
+</p>
+<ul>
+<li>To show who uploaded a file, the app also reads the names of the people who uploaded the attachments.</li>
+<li>It also reads the space name, checks whether the person is a space admin, and uses Confluence search to count the pages and attachments, to estimate how big the space is.</li>
+<li>AttachClean keeps nothing: it has no app storage and no server. The report exists only while it is open. Export CSV creates the file in your browser.</li>
+<li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections.</li>
+<li>AttachClean writes no logs. It has no server-side functions, so Atlassian's developer console, where app vendors see the logs of their apps, has none from AttachClean. We never see the pages, files or names it reads. Atlassian does show us which sites have the app installed.</li>
+<li>The permissions are read-only. The app cannot change, move or delete anything.</li>
+</ul>
+
+<h3>4.7 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
@@ -247,7 +265,7 @@ Marketplace billing is handled by Atlassian. We never see card details.
 </li>
 <li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
-AskSpace, Mermaid Live Preview and MailView.
+AskSpace, Mermaid Live Preview, MailView and AttachClean.
 </li>
 </ul>
 <p>
@@ -271,7 +289,8 @@ YouTube receives your IP address and player data under Google's own terms.
 <p>
 Only to provide the features you enable: showing aging, producing statements, sending
 the reminders you approve, allocating payments, applying credit holds, storing and
-displaying questions and answers, rendering diagrams, and showing email attachments.
+displaying questions and answers, rendering diagrams, showing email attachments, and
+finding unused attachments.
 Our legal basis is the performance of our agreement with you, and our legitimate
 interest in keeping the service running securely.
 </p>
@@ -289,6 +308,9 @@ your site. Uninstall and deletion follow Atlassian's platform rules for app stor
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.
+</li>
+<li>
+<strong>AttachClean</strong>: nothing is retained. Closing the report is enough.
 </li>
 <li>
 <strong>Support email</strong>: kept only as long as needed to help you and to keep a
@@ -372,6 +394,7 @@ Dortus<br />
 <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
 <li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="attachclean.html">AttachClean</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
@@ -394,6 +417,7 @@ Dortus<br />
 <li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
 <li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
 <li><a href="email-check.html">Email check</a></li>
 </ul>
 </div>
