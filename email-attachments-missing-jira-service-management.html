@@ -9,8 +9,45 @@
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Email request attachments missing in Jira Service Management: a checklist" />
 <meta property="og:description" content="The 25 MB limit, filtered emails, winmail.dat, inline images, truncation, and how to download the original email from the processing log." />
-<meta property="og:image" content="assets/mailview-01-message.png" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
 <meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/email-attachments-missing-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/email-attachments-missing-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Email request attachments missing in Jira Service Management: a checklist",
+  "description": "A customer emailed a file and it is not on the ticket. Six reasons that happens in Jira Service Management Cloud, from the 25 MB limit to winmail.dat, where to look in the processing log, and how to get the original email back.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-12T17:06:12+00:00",
+  "dateModified": "2026-10-15T21:13:03+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/email-attachments-missing-jira-service-management.html"
+  },
+  "inLanguage": "en"
+}
+</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -18,11 +55,11 @@
 
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a class="nav-hide-sm" href="/">Dortus</a>
 <a href="atlassian.html" aria-current="page">Atlassian</a>
-<a href="index.html#guides">Guides</a>
+<a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
 </nav>
@@ -53,6 +90,7 @@
 
 <h3 id="winmail">3. The attachment arrived as winmail.dat</h3>
 <p>Outlook can send a message in its own TNEF format. The real attachment is then packed inside a file called winmail.dat, and the ticket shows that file instead of the document the customer sent. The mail handler does not unpack it; the Atlassian ticket for that (JSDCLOUD-4383) has been open since 2016. The fix is on the sender's side: Outlook set to send in HTML or plain text, or the file sent from a different client. Agents can open a winmail.dat with a TNEF reader. If the original email is still available as an .eml (see section 6), an email viewer that unpacks TNEF shows the real attachment inside it.</p>
+<p>Full page: <a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a>, with the Outlook and Exchange settings that stop it.</p>
 
 <h3 id="inline">4. The file is there, but not where you expect</h3>
 <p>Images that were inline in the email become attachments on the ticket, while the comment shows "Preview unavailable" where the image was. Signature logos and banners arrive the same way, as small image attachments on every reply. Two site settings affect this (Settings, Jira apps, Email requests, Jira admin only): "HTML email parsing" decides whether HTML emails display in wiki markup or plain text, and "Strip quotes" decides whether emailed comments contain the whole thread or only the latest reply. A third, "Hide email signatures", hides the signature text in an expandable block using default detection (HTML-based, for Outlook Web, Gmail, Yahoo, Mail.RU, Outlook Android and Gmail Android) or custom text markers; it hides text, not image attachments.</p>
@@ -61,13 +99,13 @@
 <p>Email text longer than 32,767 characters is truncated when displayed as a request or a comment. A long forwarded thread, or a message with a huge signature block, can lose its end. The attachments are not affected, but the text that referred to them may be.</p>
 
 <h3 id="raw">6. Getting the original email back</h3>
-<p>Jira keeps the raw emails it processed in its own database, by default for 45 days (a Jira admin can set 14 to 180 days in Global mail settings). Within that window, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
-<p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, with the inline images and the files inside the message, including attachments packed in winmail.dat, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
+<p>The processing log keeps the raw email for a limited time. Atlassian says "Both connectivity and processing logs are deleted after the number of days specified for Database cleaner", a value in global mail settings (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs</a>). Until then, the processing log's "Download raw email message" gives you the exact email as an .eml file: headers, formatting, inline images and all attachments, including anything inside winmail.dat. Attach that .eml to the ticket and the evidence is on the work item for good, which matters for complaints, legal requests and phishing reports.</p>
+<p>Jira Cloud cannot display an .eml on its own; see <a href="open-msg-eml-in-jira.html">how to open .msg and .eml attachments in Jira</a>. Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments up to 10 MB on the work item, with the inline images and the files inside the message, including attachments packed in a winmail.dat inside the email, reads the attachment with the permissions of the person looking, renders it in the browser and stores nothing. It works in Jira and in the Jira Service Management agent view.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>What is the attachment size limit for email requests?</strong> 25 MB for the whole email, attachments included. Larger emails are not fetched.</p>
 <p><strong>Where do I see why an email was not turned into a ticket?</strong> Channels &amp; self service, Email, View logs, Processing log (project admin).</p>
-<p><strong>Can I recover an email the ticket mangled?</strong> Yes, for 45 days by default: download the raw message from the processing log and attach the .eml to the ticket.</p>
+<p><strong>Can I recover an email the ticket mangled?</strong> Yes, as long as it is still in the processing log: download the raw message and attach the .eml to the ticket. How long that is depends on the Database cleaner value in global mail settings.</p>
 
 <h3 id="support">Questions</h3>
 <p>Stuck on an email that will not come through? Email <a href="mailto:support@dortus.com?subject=Email%20request%20attachments">support@dortus.com</a>.</p>
@@ -77,8 +115,8 @@
 <p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
 </div>
+<p>See also: <a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a>, <a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email</a> and <a href="jsm-shared-mailbox-microsoft-365.html">Connecting a Microsoft 365 shared mailbox to JSM Cloud</a></p>
 </div>
 </div>
 </section>
@@ -99,19 +137,33 @@
 <li><a href="mailview.html">MailView</a></li>
 <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="attachclean.html">AttachClean</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
 <li><a href="email-check.html">Email check</a></li>

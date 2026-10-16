@@ -3,15 +3,20 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- CSP from the Email check README (Sprintbrief web/email-check): only this site's own files, the check reads in a blob: worker, no connections. No Google Fonts on this page; the tool uses system fonts. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'" />
 <title>Email check: is this .msg or .eml safe? Free, runs in your browser · Dortus</title>
-<meta name="description" content="Drop a .msg or .eml file or paste email headers. Checks SPF, DKIM, DMARC, sender, links and attachments in your browser. Nothing is uploaded." />
+<meta name="description" content="Drop a .msg or .eml file or paste email headers. Reads the SPF, DKIM and DMARC results and checks sender, links and attachments in your browser. Nothing is uploaded." />
 <meta name="theme-color" content="#0052cc" />
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Email check: is this .msg or .eml safe?" />
-<meta property="og:description" content="Drop a .msg or .eml file or paste email headers. Checks SPF, DKIM, DMARC, sender, links and attachments in your browser. Nothing is uploaded." />
+<meta property="og:description" content="Drop a .msg or .eml file or paste email headers. Reads the SPF, DKIM and DMARC results and checks sender, links and attachments in your browser. Nothing is uploaded." />
 <meta property="og:type" content="website" />
+<link rel="canonical" href="https://dortus.com/email-check.html" />
+<meta property="og:url" content="https://dortus.com/email-check.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -19,11 +24,11 @@
 
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a class="nav-hide-sm" href="/">Dortus</a>
 <a href="atlassian.html" aria-current="page">Atlassian</a>
-<a href="index.html#guides">Guides</a>
+<a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
 </nav>
@@ -37,7 +42,7 @@
 <div class="head">
 <h1 style="margin-bottom: 0.9rem">Email check</h1>
 <p class="lede">
-Drop an email file (.msg or .eml, or a forwarded email without an extension) or paste the raw headers.
+Drop an email file up to 10 MB (.msg or .eml, or a forwarded email without an extension) or paste the raw headers. With headers only, links and attachments are not checked.
 </p>
 </div>
 <div style="max-width: 860px">
@@ -49,11 +54,11 @@ Drop an email file (.msg or .eml, or a forwarded email without an extension) or 
 <ul>
 <li><strong>Authentication results:</strong> SPF, DKIM and DMARC, as the receiving mail server recorded them in the headers.</li>
 <li><strong>The sender:</strong> the From address compared with the Reply-To address.</li>
-<li><strong>Links:</strong> where each link really goes, next to the text it shows.</li>
+<li><strong>Links:</strong> the address each link points to, next to the text it shows. Links are not opened, so a short link or redirect shows as it is.</li>
 <li><strong>Attachments:</strong> their names and types.</li>
 <li><strong>The route:</strong> the servers the email passed through, read from the Received headers.</li>
 </ul>
-<p>It can miss things. Use it as a second pair of eyes, not as a verdict machine.</p>
+<p>It checks the email you drop, not an email attached inside it: save that one on its own and drop it here. It can miss things. Use it as a second pair of eyes, not as a verdict machine.</p>
 
 <div class="card">
 <p class="eyebrow">MailView by Dortus</p>
@@ -61,7 +66,6 @@ Drop an email file (.msg or .eml, or a forwarded email without an extension) or 
 <p>MailView opens .msg and .eml attachments on Jira work items and Confluence pages and shows this check next to the email.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a> <a class="btn btn-line" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 (Jira) and https://marketplace.atlassian.com/apps/218321273 (Confluence) -->
 </div>
 </div>
 </div>
@@ -83,19 +87,33 @@ Drop an email file (.msg or .eml, or a forwarded email without an extension) or 
 <li><a href="mailview.html">MailView</a></li>
 <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="attachclean.html">AttachClean</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
 <li><a href="email-check.html">Email check</a></li>

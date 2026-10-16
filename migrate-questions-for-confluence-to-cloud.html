@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Migrating Questions for Confluence to Cloud: when questions are missing · Dortus</title>
+<meta name="description" content="Atlassian's migration assistant moves Questions for Confluence to Cloud. What has to be in place, what does not come along, the known issues, and your options when questions are missing after the migration." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Migrating Questions for Confluence to Cloud: when questions are missing" />
+<meta property="og:description" content="What the migration assistant needs for Questions for Confluence, what does not come along, and what to do when questions are missing." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/migrate-questions-for-confluence-to-cloud.html" />
+<meta property="og:url" content="https://dortus.com/migrate-questions-for-confluence-to-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
+<meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Migrating Questions for Confluence to Cloud: when questions are missing",
+  "description": "Atlassian's migration assistant moves Questions for Confluence to Cloud. What has to be in place, what does not come along, the known issues, and your options when questions are missing after the migration.",
+  "image": [
+    "https://dortus.com/assets/01-question-list-app.png"
+  ],
+  "datePublished": "2026-10-14T19:09:58+00:00",
+  "dateModified": "2026-10-15T15:54:35+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/migrate-questions-for-confluence-to-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Migrating Questions for Confluence to Cloud: when questions are missing</h1>
+<p class="lede">
+Atlassian's Confluence Cloud Migration Assistant migrates Questions for Confluence along with your spaces, and Questions for Confluence is available on Cloud. For most teams that is all they need. This page is for when the migration did not go as planned: what has to be in place, what does not come along, the known issues, and your options when questions are missing.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="normal">The normal route: the migration assistant</h3>
+<p>Atlassian's migration knowledge base says the Questions for Confluence app can be migrated with the Confluence Cloud Migration Assistant, CCMA for short (Atlassian: <a href="https://confluence.atlassian.com/migrationkb/migrating-questions-for-confluence-app-1345620608.html" rel="noopener noreferrer">Migrating Questions for Confluence App</a>). The request for this on Atlassian's tracker, MIG-106 "Support the Migration of Questions for Confluence", was created on 27 December 2019 and closed with the resolution Done on 1 November 2021 (Atlassian: <a href="https://jira.atlassian.com/browse/MIG-106" rel="noopener noreferrer">MIG-106</a>).</p>
+<p>So if Questions for Confluence works for your team, migrate it with the assistant and keep using it on Cloud. There is no reason to change apps for the migration.</p>
+
+<h3 id="before">What has to be in place</h3>
+<p>The migration article lists what has to be in place. Check these before you migrate, and again first if something went wrong:</p>
+<ul>
+<li><strong>The app is installed on Data Center.</strong> Atlassian's pre-migration checklist has a check for Questions for Confluence in your Support Zip, under the step about Marketplace apps (Atlassian: <a href="https://support.atlassian.com/migration/docs/confluence-pre-migration-checklist/" rel="noopener noreferrer">Confluence pre-migration checklist</a>).</li>
+<li><strong>The app is installed on Cloud before the migration.</strong> The article says Questions for Confluence has to be installed on your Cloud site first: "if the app was already installed in the past, we recommend re-installing the app". That registers the site to receive the migration events. Atlassian's Cloud documentation explains how to <a href="https://support.atlassian.com/confluence-cloud/docs/install-questions-for-confluence/" rel="noopener noreferrer">install Questions for Confluence</a>.</li>
+<li><strong>Users and spaces go through the assistant too.</strong> The article says: "If users or spaces were not migrated through CCMA then app migration will not work properly." Migrate with all users and groups and the spaces; otherwise only part of the questions comes along.</li>
+<li><strong>People have permissions on Cloud.</strong> The app creates the questions and answers on behalf of the people who wrote them, so according to the article those people "should have permissions on the cloud side too". The article adds that this also covers comments and attachments in the CQ space.</li>
+</ul>
+
+<h3 id="not-moved">What does not come along</h3>
+<ul>
+<li><strong>Drafts.</strong> The article says: "Drafts are not supported on cloud, thus not migrated."</li>
+</ul>
+
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li><strong>Questions or answers that do not show.</strong> <a href="https://jira.atlassian.com/browse/CONFCLOUD-77079" rel="noopener noreferrer">CONFCLOUD-77079</a>, "Migrating Questions for Confluence sets the wrong plugin key". According to the migration article, the affected questions and answers then do not show. Atlassian closed the ticket on 13 May 2025 with the resolution Timed out, not as fixed, so whether it still happens is not known. Installing or reinstalling the app on Cloud before the migration, as above, is what the migration article asks for.</li>
+<li><strong>Dates reset to the migration date (fixed).</strong> <a href="https://jira.atlassian.com/browse/CONFCLOUD-76360" rel="noopener noreferrer">CONFCLOUD-76360</a>, "Migrating Questions for Confluence resets the Timestamps", was a known issue. The migration article still lists it with "No workaround is available", but the ticket was marked Fixed on 16 October 2024.</li>
+</ul>
+
+<h3 id="missing">When questions are missing after the migration</h3>
+<ul>
+<li><strong>Go through the list above.</strong> Most of the conditions are about the order of things: the app on Cloud first, users and spaces through the assistant, permissions in place.</li>
+<li><strong>Questions missing because of permissions.</strong> The migration article describes a second run: fix the permissions first, create a dummy space, start a new migration with all users and groups, and include only the Questions for Confluence app. See the article for the exact steps.</li>
+<li><strong>Contact Atlassian Support</strong> with the details of your migration if that does not explain it.</li>
+<li><strong>Know that a second try is hard.</strong> The article says re-migrating after a partial migration is difficult, because there is no export or import tool for Questions in Cloud: that feature request "has not been implemented on the cloud yet". The request is <a href="https://jira.atlassian.com/browse/CONFCLOUD-51723" rel="noopener noreferrer">CONFCLOUD-51723</a>, "Exporter / Importer for Confluence Questions (Cloud)": created in October 2013, with the status Future Consideration and 140 votes on 14 October 2026.</li>
+<li><strong>Keep a copy while the old site still runs.</strong> Questions for Confluence 2.3.0 and later on Server and Data Center has a REST API. Atlassian's export article uses <code>GET /rest/questions/1.0/question?limit=700</code> for the questions; the answers are fetched one by one with <code>/rest/questions/1.0/answer/{answerId}</code> (Atlassian: <a href="https://support.atlassian.com/questions-for-confluence/kb/how-to-export-confluence-questions-data/" rel="noopener noreferrer">How to export Confluence Questions data</a>). The REST reference lists <code>limit</code> as required and <code>start</code> for the next page (Atlassian: <a href="https://docs.atlassian.com/confluence-questions/rest/" rel="noopener noreferrer">Confluence Questions REST API</a>). Even if you never import it, that file is your archive.</li>
+<li><strong>Recreate the ones that matter.</strong> For a few dozen questions, asking them again in Questions for Confluence on Cloud, with their best answer, is often quickest. They get today's date and the name of whoever posts them.</li>
+</ul>
+
+<h3 id="askspace">AskSpace as one of the options</h3>
+<p>Full disclosure: I build AskSpace at Dortus. AskSpace is a Q&amp;A app per Confluence space. It is mainly an option if you are already on Cloud and the questions stayed behind, or if you want to keep the questions without Questions for Confluence. It can import the JSON file from the Questions REST API on your old Confluence. What that import does:</p>
+<ul>
+<li><strong>What comes in.</strong> Each question's title and text, the author's name, the date, up to 3 topics as tags, and, when the file contains them, the answers with their author and date. The accepted answer becomes the best answer.</li>
+<li><strong>Answers only when they are in the file.</strong> If the file lists answers by ID without their text, AskSpace imports the questions only and says the answers are missing, with the call to fetch them.</li>
+<li><strong>What does not come in.</strong> Votes and comments. Author names arrive as text, not linked to Cloud accounts. Paragraphs, lists, links, bold and code stay; images and attachments become the line <code>[image omitted]</code>; other formatting is dropped.</li>
+<li><strong>A preview first, an undo afterwards.</strong> A space admin starts the import from the AskSpace settings of a space. Before anything is saved, the preview shows how many questions it found, the first five, and what it left out or changed: a question without a title, a repeated question, an answer without text, a date it could not read (that question gets today's date). Afterwards, <em>Undo this import</em> removes the imported questions again. Nothing changes on your old Confluence.</li>
+<li><strong>Limits.</strong> AskSpace imports up to 100 answers per question and up to 3 tags per question, and up to 5,000 questions per import and 6,000 per space. Answers after the 100th are left out, also when one of them is the accepted answer.</li>
+<li><strong>The file format.</strong> Atlassian does not document the format of this file in detail. AskSpace reads the field names it knows; a field it does not find stays empty.</li>
+</ul>
+<p>Whether AskSpace or Questions for Confluence on Cloud fits your team better is a separate question: see <a href="askspace-vs-questions-for-confluence.html">Questions for Confluence vs AskSpace</a>. AskSpace is listed on the <a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Atlassian Marketplace</a>, and <a href="docs/askspace/">Getting started with AskSpace</a> has the setup.</p>
+
+<h3 id="which">Which route fits</h3>
+<ul>
+<li><strong>You are still on Data Center.</strong> Include Questions for Confluence in the migration and check the list above first. That keeps the questions in the app your people know.</li>
+<li><strong>You migrated and questions are missing.</strong> Go through the list above, try the second run if it is about permissions, and contact Atlassian Support.</li>
+<li><strong>You are on Cloud, the questions stayed behind, and the old site still runs.</strong> Export the file. Then recreate the questions that matter, or import the file into an app that reads it.</li>
+<li><strong>Whatever you choose,</strong> keep the export file from Data Center as an archive before you switch the old site off.</li>
+</ul>
+
+<h3 id="support">Questions</h3>
+<p>Did your migration go differently, or did we miss a step? Email <a href="mailto:support@dortus.com?subject=Questions%20for%20Confluence%20migration">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

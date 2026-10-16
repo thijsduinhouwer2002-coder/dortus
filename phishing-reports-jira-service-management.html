@@ -10,6 +10,44 @@
 <meta property="og:title" content="Handling phishing reports in Jira Service Management" />
 <meta property="og:description" content="Triage reported phishing emails on the JSM request itself: authentication results, lookalike domains, link destinations. No Outlook needed." />
 <meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/phishing-reports-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/phishing-reports-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Handling phishing reports in Jira Service Management",
+  "description": "How reported phishing emails end up on JSM requests as .eml or .msg attachments, how to triage them without opening the email in Outlook, and what to check: SPF, DKIM, DMARC, lookalike domains and where links really go.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-12T08:54:52+00:00",
+  "dateModified": "2026-10-14T21:55:23+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/phishing-reports-jira-service-management.html"
+  },
+  "inLanguage": "en"
+}
+</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -17,11 +55,11 @@
 
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a class="nav-hide-sm" href="/">Dortus</a>
 <a href="atlassian.html" aria-current="page">Atlassian</a>
-<a href="index.html#guides">Guides</a>
+<a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
 </nav>
@@ -60,7 +98,7 @@ email safely, and what to check before you answer.
 </ol>
 
 <h3 id="check">What to check</h3>
-<p><strong>Authentication results.</strong> The receiving mail server records three checks in the headers. <em>SPF</em>: was the sending server allowed to send for that domain? <em>DKIM</em>: was the message signed by the domain and unchanged since? <em>DMARC</em>: does the visible From address line up with those two, and what did the domain owner ask to happen on failure? A fail on all three is a strong signal; a pass on all three does not prove the email is safe, only that it really came from that domain. You can run these checks on a file or pasted headers with the <a href="email-check.html">email check</a> on this site.</p>
+<p><strong>Authentication results.</strong> The receiving mail server records three checks in the headers. <em>SPF</em>: was the sending server allowed to send for that domain? <em>DKIM</em>: was the message signed by the domain and unchanged since? <em>DMARC</em>: does the visible From address line up with those two, and what did the domain owner ask to happen on failure? A fail on all three is a strong signal; a pass on all three does not prove the email is safe, only that it really came from that domain. The <a href="email-check.html">email check</a> on this site shows these results for a file or pasted headers, as the receiving server recorded them.</p>
 <p><strong>The From domain.</strong> Look for lookalikes: an extra letter, a swapped character, an accented letter that renders like the real one, or the brand name in a subdomain of an unrelated domain. Compare it with the Reply-To address, which attackers often point somewhere else.</p>
 <p><strong>Where links really go.</strong> The link text and the link target are two different things. Check the target of every link and button, and treat "the text says our portal, the target is somewhere else" as a red flag. When you paste a link into the ticket, defang it (<code>hxxps://</code>, dots in brackets) so nobody clicks it by accident.</p>
 <p><strong>Attachments inside the email.</strong> Note the names and types. Office files with macros, archives and HTML files deserve a sandbox, not a double-click.</p>
@@ -70,7 +108,7 @@ email safely, and what to check before you answer.
 <p>Write the findings into the request in plain words so the reporter learns something: which checks failed, which domain was faked, where the link went. Keep the original attachment on the request; it is your evidence. If the email was genuine, say so and thank the reporter, because the next report from that person may be the one that matters.</p>
 
 <h3 id="app">Doing this inside JSM</h3>
-<p>Full disclosure: Dortus makes an app for exactly this. <a href="mailview.html">MailView</a> shows <code>.eml</code> and <code>.msg</code> attachments on the request in the agent view, with scripts and remote images blocked, and adds a Details tab with the SPF, DKIM and DMARC results in plain English, lookalike-domain warnings, the real target of every link, and a "Copy findings" button that puts a defanged summary in the clipboard for the ticket comment. It runs on Atlassian and stores or sends nothing. It is an aid for the agent's judgement, not a replacement for it.</p>
+<p>Full disclosure: Dortus makes an app for exactly this. <a href="mailview.html">MailView</a> shows <code>.eml</code> and <code>.msg</code> attachments on the request in the agent view, with scripts and remote images blocked, and adds a Details tab with the SPF, DKIM and DMARC results from the headers in plain English, warnings for domains with lookalike letters from other alphabets or with accents, the address behind every link, and a "Copy findings" button that puts a defanged summary in the clipboard for the ticket comment. It runs on Atlassian and stores or sends nothing. It is an aid for the agent's judgement, not a replacement for it.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Can JSM preview a reported email?</strong> No. <code>.eml</code> and <code>.msg</code> attachments are downloads only.</p>
@@ -85,7 +123,6 @@ email safely, and what to check before you answer.
 <p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Submitted to the Atlassian Marketplace, in review.</p>
-<!-- After approval: replace the status line with "Available on the Atlassian Marketplace" linking to https://marketplace.atlassian.com/apps/4078695191 -->
 </div>
 </div>
 </div>
@@ -107,19 +144,33 @@ email safely, and what to check before you answer.
 <li><a href="mailview.html">MailView</a></li>
 <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="attachclean.html">AttachClean</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
 <li><a href="email-check.html">Email check</a></li>

@@ -10,6 +10,12 @@
 <meta property="og:title" content="MailView for Confluence - read .msg and .eml email attachments on Confluence pages" />
 <meta property="og:description" content="Confluence shows email attachments as files to download. MailView shows the email, with a phishing check. Built on Atlassian Forge." />
 <meta property="og:type" content="website" />
+<link rel="canonical" href="https://dortus.com/mailview-confluence.html" />
+<meta property="og:url" content="https://dortus.com/mailview-confluence.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -17,11 +23,11 @@
 
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="index.html">Dortus</a>
+<a class="nav-hide-sm" href="/">Dortus</a>
 <a href="atlassian.html" aria-current="page">Atlassian</a>
-<a href="index.html#guides">Guides</a>
+<a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
 </nav>
@@ -45,9 +51,6 @@ the email on the page, and tells you when it looks like phishing.
 <a class="btn btn-line" href="support.html">Support</a>
 </div>
 <p style="margin-top: 1.3rem"><span class="status enter enter-3">Submitted to the Atlassian Marketplace, in review</span></p>
-<!-- Na goedkeuring van MailView for Confluence deze regel gebruiken:
-<p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://marketplace.atlassian.com/apps/218321273">MailView for Confluence on the Atlassian Marketplace</a></p>
--->
 </div>
 </section>
 
@@ -56,7 +59,7 @@ the email on the page, and tells you when it looks like phishing.
 <div class="head reveal">
 <h2>What MailView shows</h2>
 <p class="lede">
-Everything that is in the file, nothing that is not. No copies, no storage, no external
+The email from the file, with nothing added and scripts and forms taken out. No copies, no storage, no external
 services.
 </p>
 </div>
@@ -69,27 +72,27 @@ services.
 <div class="card reveal reveal-1">
 <span class="card-mark" aria-hidden="true">2</span>
 <h3>Emails on this page</h3>
-<p>Under the page title: every email attachment of the page, with subject, sender, date and a verdict icon. Click one to read it in a large view.</p>
+<p>Under the page title: every email attachment of the page, newest first. The 10 newest get subject, sender and a verdict icon (up to 2 MB each). Click one to read it in a large view.</p>
 </div>
 <div class="card reveal reveal-2">
 <span class="card-mark" aria-hidden="true">3</span>
 <h3>Message, Details, Original</h3>
-<p>The email as it was sent; every header and link with its real destination; and the plain text and source of the file.</p>
+<p>The email as it was sent; every header, and every link with the address it points to; and the plain text and source of the file.</p>
 </div>
 <div class="card reveal">
 <span class="card-mark" aria-hidden="true">4</span>
 <h3>A phishing check</h3>
-<p>Looks OK, Be careful or Likely phishing, with the reasons: failed SPF, DKIM or DMARC, lookalike domains, links that go somewhere else than their text shows.</p>
+<p>Looks OK, Be careful, Likely phishing or Not enough to judge, with the reasons: a failed SPF, DKIM or DMARC result recorded in the headers, domains with lookalike letters from other alphabets or with accents, links that go somewhere else than their text shows.</p>
 </div>
 <div class="card reveal reveal-1">
 <span class="card-mark" aria-hidden="true">5</span>
 <h3>PDF and Word export</h3>
-<p>Exporting the page gives a clean static version of the email: subject, from, to, date, text and attachments, plus the verdict line.</p>
+<p>Exporting the page gives a clean static version of each email shown with the macro: subject, from, to, date, text and the names of its attachments, plus the verdict line.</p>
 </div>
 <div class="card reveal reveal-2">
 <span class="card-mark" aria-hidden="true">6</span>
 <h3>Outlook .msg and standard .eml</h3>
-<p>Both formats. The app looks at the bytes, not the file extension, so a forwarded email without a file name is recognized too.</p>
+<p>Both formats. The app reads the bytes to tell .msg from .eml, and also checks attachments without a known file type, so a forwarded email without a file name is recognized too.</p>
 </div>
 </div>
 </div>
@@ -148,18 +151,20 @@ Scripts, forms and remote images in emails are removed before anything is shown.
 
 <h3 id="user-guide">User guide</h3>
 <p><strong>The macro.</strong> The <strong>Email (MailView)</strong> macro shows one email attachment of the page. The macro settings list the .eml and .msg attachments of the page, and also files without a file type, marked "(no file type)", because a forwarded email often has no file name. To show a different email, edit the page and open the macro settings again.</p>
-<p><strong>Emails on this page.</strong> Under the page title, <strong>Emails on this page</strong> opens a list of every email attachment of the page, newest first, with subject, sender, date and an icon: a red warning for <em>Likely phishing</em>, an orange one for <em>Be careful</em>, an envelope otherwise. Click an email to open it in a large view. No download needed. Forwarded emails without a file name are recognized by their headers and listed too.</p>
+<p><strong>Emails on this page.</strong> Under the page title, <strong>Emails on this page</strong> opens a list of every email attachment of the page, newest first, with subject, sender, date and an icon: a red warning for <em>Likely phishing</em>, an orange one for <em>Be careful</em>, a grey question mark for <em>Not enough to judge</em>, an envelope otherwise. Subject, sender and icon are filled in for the 10 newest emails; an email that was not checked keeps the envelope, the same as one that looks OK (see Limits). Click an email to open it in a large view. No download needed. Forwarded emails without a file name are recognized by their headers and listed too (the 10 newest files without a known file type are checked).</p>
 <p><strong>Message.</strong> Subject, from, to, cc and date at the top. Below that, the message formatted as it was sent. If the email looks suspicious, a bar above the message says <em>Be careful</em> or <em>Likely phishing</em> with the main reasons. Images that travel inside the email are shown; if the email tried to load images from the internet, they are blocked and a line says: "Remote images are blocked to protect your privacy."</p>
-<p><strong>Details.</strong> The verdict with all its reasons, the authentication results (SPF, DKIM, DMARC) with a line of explanation each, every header of the email, and a list of all links with their real destination. MailView warns when a sender or link domain is a lookalike of a known one, and when a link's text names a different domain than the link actually goes to.</p>
+<p><strong>Details.</strong> The verdict with all its reasons, the authentication results (SPF, DKIM, DMARC) recorded by the receiving mail server, with a line of explanation each, every header of the email, and a list of all links with the address each one points to (short links and redirects are not followed). MailView warns when a sender or link domain uses lookalike letters from other alphabets or with accents, and when a link's text names a different domain than the link actually goes to. A typo in plain letters, such as paypa1.com, is not caught.</p>
+<p><strong>Not enough to judge.</strong> The file has no delivery headers, or no authentication results and no sender address, so authentication and sender could not be checked. Links and attachments are still checked.</p>
 <p><strong>Original.</strong> The plain text of the email, and its source: the raw email for an .eml file, or every header and text field for an Outlook .msg file.</p>
 <p><strong>PDF and Word export.</strong> When you export the page, each <strong>Email (MailView)</strong> macro becomes a static version of the email: subject, from, to, cc and date, then the verdict line, then the text and the name and size of each attachment. The verdict line is, for example, "MailView: Likely phishing" with the main reasons, or "MailView: Looks OK, no warnings found." Very long emails are shortened and earlier replies are left out; the export says so.</p>
 <p><strong>Download the original.</strong> Every email keeps a <strong>Download the original</strong> link, so you can always open it in your mail app.</p>
+<p><strong>Leave a review.</strong> Under the list in <strong>Emails on this page</strong> there is a small link to leave a review on the Atlassian Marketplace. MailView does not count or store anything to show it.</p>
 
 <h3 id="limits">Limits</h3>
 <ul>
 <li><strong>Supported:</strong> .eml files and Outlook .msg files attached to the page, including emails forwarded without a file name.</li>
 <li><strong>Size:</strong> files over 10 MB are not shown and not included in the export; you get a download link instead. This is the same limit as MailView for Jira.</li>
-<li><strong>The list under the page title:</strong> subject and sender are filled in for the first 10 emails. The verdict icon appears for emails up to 2 MB; a larger email shows its verdict when you open it.</li>
+<li><strong>The list under the page title:</strong> subject, sender and the verdict icon are filled in for the 10 newest emails. The icon needs a file of up to 2 MB that is read within 10 seconds. Every other email keeps the plain envelope, the same icon as an email that looks OK, and shows its verdict when you open it.</li>
 <li><strong>Not supported:</strong> protected Outlook messages (.rpmsg), which only open in Outlook. MailView says so and offers the download link.</li>
 <li><strong>Where it works:</strong> Confluence Cloud only. Not Confluence Data Center or Server.</li>
 <li><strong>The phishing check can miss things.</strong> It looks at the headers, links and attachments of the email. Treat "Looks OK" as "nothing suspicious found", not as a guarantee.</li>
@@ -188,7 +193,7 @@ Scripts, forms and remote images in emails are removed before anything is shown.
 
 <h3 id="support">Support</h3>
 <p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=MailView%20for%20Confluence">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL, a link to the page, whether the file is .eml or .msg and roughly how big it is, what you expected and what happened. Please don't send us the email itself unless it contains nothing private.</p>
-<p>See also: <a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></p>
+<p>See also: <a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a> and <a href="msg-vs-eml.html">Outlook .msg vs .eml</a></p>
 <p><a href="security.html">How MailView handles your data</a></p>
 </div>
 </div>
@@ -210,19 +215,33 @@ Scripts, forms and remote images in emails are removed before anything is shown.
 <li><a href="mailview.html">MailView</a></li>
 <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Live Preview</a></li>
 <li><a href="attachclean.html">AttachClean</a></li>
 <li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="security.html">Security</a></li>
 <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
 <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
 <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
 <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
 <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
 <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
 <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
 <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
 <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
 <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
 <li><a href="find-unused-attachments-confluence.html">Unused attachments in Confluence</a></li>
 <li><a href="email-check.html">Email check</a></li>
