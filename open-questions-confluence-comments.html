@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open questions buried in Confluence comments: how to find them and stop losing them · Dortus</title>
+<meta name="description" content="Questions asked in Confluence page comments get answered once and then disappear in a thread nobody revisits. What Confluence Cloud shows you today (per page), what it does not (per space), and how to move recurring questions somewhere they can be found." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Open questions buried in Confluence comments" />
+<meta property="og:description" content="Per page you can filter open comments. Per space you cannot. What to do about the questions hiding in there." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/build-faq-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/build-faq-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
+<meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to build an FAQ in Confluence Cloud (3 ways that work)",
+  "description": "Three ways to build an FAQ in Confluence Cloud: one page with expands, a page per question collected with labels and the Filter by label macro, or a Q&A app. Steps, limits and which one to pick.",
+  "image": [
+    "https://dortus.com/assets/01-question-list-app.png"
+  ],
+  "datePublished": "2026-10-14T14:27:54+00:00",
+  "dateModified": "2026-10-14T14:27:54+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/build-faq-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Open questions buried in Confluence comments: how to find them and stop losing them</h1>
+<p class="lede">
+Someone reads a how-to page, gets stuck, and leaves a comment: "Does this also work for the EU region?" A colleague answers, or nobody does, and three weeks later the same question appears on another page. Comments are where a lot of real questions end up in Confluence.
+This page covers what Confluence Cloud lets you see today, where the gap is, and how to stop recurring questions from getting lost.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="kinds">Two kinds of comments</h3>
+<p>Confluence Cloud has <strong>general comments</strong>, added below the content of a page, and <strong>inline comments</strong>, attached to a highlighted piece of text, an image or a video. Inline comments can be resolved: resolving removes the highlight, and you can do it while viewing or editing the page. Only the first comment of a thread can be resolved, not a reply. Atlassian's documentation describes resolving for inline comments only.</p>
+
+<h3 id="page">Per page: the comments panel</h3>
+<p>On a single page, select <strong>Show comments</strong> in the floating action bar. The panel lists the comments on that page and lets you filter to open comments. To see what was resolved, filter for <strong>Resolved</strong>; the green Reopen check brings a resolved comment back. On pages with enough discussion, Rovo can summarise the unresolved general and inline comments.</p>
+<p>That is a good tool for the owner of one page. It does not help the person who owns a whole space.</p>
+
+<h3 id="space">Per space: the gap</h3>
+<p>Atlassian's documentation describes the comments panel for one page; it does not describe a view of all open inline comments across a space. The request to see all inline comments at once has been open on Atlassian's tracker since 2014 (<a href="https://jira.atlassian.com/browse/CONFCLOUD-34510" rel="noopener noreferrer">CONFCLOUD-34510</a>, 341 votes, status "Gathering Interest" as of October 2026). There are Marketplace apps that list unresolved comments across pages; we have not tested them.</p>
+<p>Without an app, the practical routes are habits rather than features:</p>
+<ul>
+<li><strong>Watch the pages you own.</strong> Watching a page notifies you of changes to it; check your notification settings for comments.</li>
+<li><strong>Answer, then move.</strong> When a comment is really a question that others will have too, answer it, then put the question and answer into the page body or an FAQ, and resolve the comment with a link to where it now lives.</li>
+<li><strong>A recurring review.</strong> Once a month, open the pages in your space that get the most comments and filter for open ones. It is manual, but it is the only complete view Confluence offers today.</li>
+</ul>
+
+<h3 id="qa">When comments are really a Q&amp;A</h3>
+<p>If a space gets the same kinds of questions again and again, comments are the wrong container: they are attached to one page, they are hard to search on their own, and there is no way to mark which answer solved the problem. A place where each question stands on its own, with its answers and a best answer, works better. Our guide to <a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud</a> compares the options, including doing it with plain pages.</p>
+<p>Full disclosure: Dortus makes <a href="askspace.html">AskSpace</a>, a Q&amp;A app for Confluence Cloud spaces. It does not read or move existing page comments; questions start in AskSpace, or are imported from a spreadsheet or from Questions for Confluence.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can I see all open inline comments in a space?</strong> Not with Confluence Cloud alone, as far as Atlassian's documentation shows. Per page, yes: Show comments, then filter.</p>
+<p><strong>Can general comments be resolved?</strong> Atlassian's documentation only describes resolving inline comments.</p>
+<p><strong>Can I get a resolved comment back?</strong> Yes: filter for Resolved in the comments panel and use Reopen. A deleted comment cannot be restored.</p>
+<p><strong>Can I turn comments off?</strong> A space admin can turn commenting off for a space.</p>
+
+<h3 id="support">Questions</h3>
+<p>Seen a better way to keep track of comment questions? Email <a href="mailto:support@dortus.com?subject=Confluence%20comments">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
