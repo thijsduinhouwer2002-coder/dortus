@@ -88,17 +88,17 @@ This page covers the two routes that work today, and what each one gives up. If 
 <p>If the FAQ is meant to keep growing, with people asking new questions and answers being improved over time, each row is better off as a question of its own. Full disclosure: Dortus makes <a href="askspace.html">AskSpace</a>, a Q&amp;A app for Confluence Cloud, and this route describes its CSV import. There are other Q&amp;A apps on the Atlassian Marketplace; the general idea is the same, the column names differ.</p>
 <p>In AskSpace, a space admin opens Space settings, then Integrations, then AskSpace, and chooses Import questions, then Simple CSV. The file needs a first row with these column names:</p>
 <pre><code>title, details, answer, asked_by, answered_by, asked_at, tags</code></pre>
-<p>Only <code>title</code> is required; every other column may be empty. One row is one question. A filled-in <code>answer</code> becomes the best answer of that question, so an FAQ imports as a list of solved questions. <code>asked_by</code> and <code>answered_by</code> are plain names, not accounts. A template file with an example row can be downloaded in the import dialog.</p>
+<p>Only <code>title</code> is required; every other column may be empty. One row is one question. A filled-in <code>answer</code> becomes the best answer of that question, so an FAQ imports as a list of solved questions. <code>asked_by</code> and <code>answered_by</code> are plain names, not accounts. A template file with two example rows can be downloaded in the import dialog.</p>
 <p>Three things to get right in the sheet before you export it as CSV:</p>
 <ul>
-<li><strong>Dates.</strong> Write <code>asked_at</code> as 2024-03-05. A date like 03/05/2024 is read as month/day, and the import says so in the preview.</li>
+<li><strong>Dates.</strong> Write <code>asked_at</code> as 2024-03-05. Dates with slashes are read as month/day unless another date in the file shows day/month (such as 25/03/2024); ISO dates avoid the guesswork.</li>
 <li><strong>Tags.</strong> Separate tags with a semicolon or a comma. A question keeps at most three tags; extra ones are dropped and the preview tells you.</li>
-<li><strong>Duplicates.</strong> A row that repeats an earlier row exactly is skipped, with a note.</li>
+<li><strong>Duplicates.</strong> A row with the same <code>title</code>, <code>details</code>, <code>asked_by</code> and <code>asked_at</code> as an earlier row is skipped, with a note (even if the answer differs).</li>
 </ul>
 <p>Before anything is written, the import shows a preview: how many questions will be created, which rows have a problem and why. After the import, it is listed under Recent imports with an Undo, so a wrong file is one click to reverse. Text in <code>details</code> and <code>answer</code> is imported as plain text; attachments cannot travel in a CSV.</p>
 
 <h3 id="sheets">Exporting the CSV from Excel or Google Sheets</h3>
-<p>In Excel: File, Save As, and choose CSV UTF-8. In Google Sheets: File, Download, Comma Separated Values. Keep the header row, remove any title rows above it, and make sure the column names match exactly (lower case, underscores). If a cell contains line breaks or commas, that is fine: both tools quote those cells on export.</p>
+<p>In Excel: File, Save As, and choose CSV UTF-8. In Google Sheets: File, Download, Comma Separated Values. Keep the header row and remove any title rows above it. Use the column names above; they are not case-sensitive and "asked by" also works, but copying them exactly is safest. If a cell contains line breaks or commas, that is fine: both tools quote those cells on export.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Can I import the answer and the question in one row?</strong> Yes. In the Simple CSV format, the <code>answer</code> column becomes the best answer of that row's question.</p>
