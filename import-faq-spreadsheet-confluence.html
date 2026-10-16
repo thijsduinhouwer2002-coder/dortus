@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Import an FAQ from a spreadsheet into Confluence Cloud · Dortus</title>
+<meta name="description" content="Your FAQ lives in Excel or Google Sheets and you want it in Confluence. The two honest routes: paste it as a table on a page, or import the CSV into a Q&amp;A space where each row becomes a question with its answer. Columns, limits and what to check before you import." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Import an FAQ from a spreadsheet into Confluence Cloud" />
+<meta property="og:description" content="Paste it as a table, or import the CSV into Q&amp;A. Columns, limits and the preview step." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/build-faq-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/build-faq-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
+<meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to build an FAQ in Confluence Cloud (3 ways that work)",
+  "description": "Three ways to build an FAQ in Confluence Cloud: one page with expands, a page per question collected with labels and the Filter by label macro, or a Q&A app. Steps, limits and which one to pick.",
+  "image": [
+    "https://dortus.com/assets/01-question-list-app.png"
+  ],
+  "datePublished": "2026-10-14T14:27:54+00:00",
+  "dateModified": "2026-10-14T14:27:54+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/build-faq-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="askspace.html">AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Import an FAQ from a spreadsheet into Confluence Cloud</h1>
+<p class="lede">
+Most FAQs start life in a spreadsheet: one row per question, an answer next to it, maybe an owner and a date. Confluence Cloud has no "import CSV as page" button, so the question is where the rows should land.
+This page covers the two routes that work today, and what each one gives up. If you are still deciding how the FAQ should live in Confluence at all, read <a href="build-faq-confluence-cloud.html">how to build an FAQ in Confluence Cloud</a> first.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="table">Route 1: paste the rows as a table on a page</h3>
+<p>Open the sheet, select the cells including the header row, copy, and paste into a Confluence page. The editor turns the cells into a Confluence table. (Check with one row first.) That is the whole import. It is quick, needs no app, and anyone with edit rights can do it.</p>
+<p>What you give up: the result is a table, not a set of questions. People cannot search an answer separately from the page, cannot mark which answer solved their problem, and the table grows harder to read with every row. Long answers with formatting or links usually need cleaning up after the paste. For a short, stable FAQ (say under 30 rows) this is often all you need.</p>
+
+<h3 id="qa">Route 2: import the CSV into a Q&amp;A space</h3>
+<p>If the FAQ is meant to keep growing, with people asking new questions and answers being improved over time, each row is better off as a question of its own. Full disclosure: Dortus makes <a href="askspace.html">AskSpace</a>, a Q&amp;A app for Confluence Cloud, and this route describes its CSV import. There are other Q&amp;A apps on the Atlassian Marketplace; the general idea is the same, the column names differ.</p>
+<p>In AskSpace, a space admin opens Space settings, then Integrations, then AskSpace, and chooses Import questions, then Simple CSV. The file needs a first row with these column names:</p>
+<pre><code>title, details, answer, asked_by, answered_by, asked_at, tags</code></pre>
+<p>Only <code>title</code> is required; every other column may be empty. One row is one question. A filled-in <code>answer</code> becomes the best answer of that question, so an FAQ imports as a list of solved questions. <code>asked_by</code> and <code>answered_by</code> are plain names, not accounts. A template file with an example row can be downloaded in the import dialog.</p>
+<p>Three things to get right in the sheet before you export it as CSV:</p>
+<ul>
+<li><strong>Dates.</strong> Write <code>asked_at</code> as 2024-03-05. A date like 03/05/2024 is read as month/day, and the import says so in the preview.</li>
+<li><strong>Tags.</strong> Separate tags with a semicolon or a comma. A question keeps at most three tags; extra ones are dropped and the preview tells you.</li>
+<li><strong>Duplicates.</strong> A row that repeats an earlier row exactly is skipped, with a note.</li>
+</ul>
+<p>Before anything is written, the import shows a preview: how many questions will be created, which rows have a problem and why. After the import, it is listed under Recent imports with an Undo, so a wrong file is one click to reverse. Text in <code>details</code> and <code>answer</code> is imported as plain text; attachments cannot travel in a CSV.</p>
+
+<h3 id="sheets">Exporting the CSV from Excel or Google Sheets</h3>
+<p>In Excel: File, Save As, and choose CSV UTF-8. In Google Sheets: File, Download, Comma Separated Values. Keep the header row, remove any title rows above it, and make sure the column names match exactly (lower case, underscores). If a cell contains line breaks or commas, that is fine: both tools quote those cells on export.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can I import the answer and the question in one row?</strong> Yes. In the Simple CSV format, the <code>answer</code> column becomes the best answer of that row's question.</p>
+<p><strong>What if my sheet has more columns?</strong> Extra columns are ignored. Only the seven names above are read.</p>
+<p><strong>Can I undo an import?</strong> Yes, from Recent imports in the AskSpace settings of that space.</p>
+<p><strong>Who can import?</strong> Space admins only.</p>
+
+<h3 id="support">Questions</h3>
+<p>Something on this page out of date? Email <a href="mailto:support@dortus.com?subject=FAQ%20import">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">AskSpace by Dortus</p>
+<h3>Questions and answers per Confluence space</h3>
+<p>Ask, answer, vote and mark one best answer, with separate rules for who may ask and who may answer. Runs on Atlassian Forge; your questions are stored by Atlassian, not on Dortus servers.</p>
+<p class="btns"><a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
