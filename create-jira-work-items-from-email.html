@@ -85,20 +85,32 @@ Jira can turn an email into a work item without Jira Service Management, but it 
 <h3 id="handler">Set up the mail handler</h3>
 <ul>
 <li><strong>Who sets it up.</strong> Configuring incoming mail needs the Administer Jira global permission.</li>
-<li><strong>A mailbox.</strong> Jira reads a mail account over POP or IMAP. For Gmail and Microsoft accounts, Atlassian's page says "we recommend that you switch to OAuth".</li>
+<li><strong>A mailbox.</strong> Jira reads a mail account over POP or IMAP. For Gmail and Microsoft accounts, Atlassian's page says "we recommend that you switch to OAuth". For Microsoft Exchange Online it is required: "If you're using Microsoft Exchange Online to create work items and comments from your email, then you need to configure OAuth 2.0".</li>
 <li><strong>Where.</strong> In Jira's settings, choose System, then Mail, then Incoming Mail. Add the incoming mail server there; the mail handler is in the same section.</li>
 <li><strong>What it creates.</strong> In the handler you "specify the space key of the default project where you want new work items to be created by this handler", plus, depending on the handler, more options. The handler type "Create a new work item or add a comment to an existing work item" does what its name says.</li>
 <li><strong>How often.</strong> In the handler you "specify the delay in minutes between the mail handler's running time".</li>
 </ul>
 <p>All five points come from Atlassian's page <a href="https://support.atlassian.com/jira-cloud-administration/docs/create-issues-and-comments-from-email/" rel="noopener noreferrer">Create work items and comments from email</a>, which also has the step-by-step setup.</p>
+<p>The five handler types, in Atlassian's names:</p>
+<ul>
+<li><strong>Create a new work item or add a comment to an existing work item.</strong> If the subject contains a work item key, the email becomes a comment on that work item; otherwise it becomes a new work item in the default project.</li>
+<li><strong>Add a comment from the non quoted email body.</strong> Comment only, on the first key in the subject, with quoted lines (starting with &gt; or |) removed.</li>
+<li><strong>Add a comment with the entire email body.</strong> Comment only, full body, first key in the subject.</li>
+<li><strong>Create a new work item from each email message.</strong> One new work item per message, every time.</li>
+<li><strong>Add a comment before a specified marker or separator in the email body.</strong> Keeps the text before a regular expression you provide, for example a forwarded-message divider. If the expression is missing or invalid, the whole body is used.</li>
+</ul>
+<p>Two options worth knowing: <strong>Catch Email Address</strong> processes a message only if a given address is in To or CC (one per handler), and <strong>CC Assignee</strong> and <strong>CC Watchers</strong> assign the work item to the first CCed Jira user or add CCed Jira users as watchers.</p>
 
 <h3 id="who">Who can email in</h3>
 <p>Atlassian's page says "Jira can receive emails from licensed users". For senders who are not Jira users yet, the page describes a separate route with a dummy account; see the page for the steps.</p>
+<p>If the sender's address does not match a Jira user, the handler uses the <strong>Default Reporter</strong> you set, and the original sender's address is noted at the end of the description. The default reporter must be allowed to create work items in the target project.</p>
 
 <h3 id="skipped">Emails the handler skips</h3>
 <ul>
 <li><strong>Old emails.</strong> According to Atlassian's page, "the sent date must not be older than 7 days".</li>
 <li><strong>Emails that fail SPF.</strong> The page says an email that fails the SPF check is rejected.</li>
+<li><strong>Emails without a subject.</strong> The subject becomes the summary, and an email without a subject is not processed.</li>
+<li><strong>Many emails from one sender in a short time.</strong> Mail loop detection can block a sender that sends many emails in a short period. Allowlisting trusted domains exists, but Atlassian does not recommend it.</li>
 </ul>
 
 <h3 id="attachments">Attachments and size</h3>
@@ -122,6 +134,7 @@ Jira can turn an email into a work item without Jira Service Management, but it 
 <ul>
 <li><strong>Take every sender.</strong> Jira receives emails from licensed users; other senders need the dummy-account route from Atlassian's page.</li>
 <li><strong>Take old or large emails.</strong> The sent date must not be older than 7 days, and the maximum is 25 MB for the message and its attachments together.</li>
+<li><strong>Keep the formatting.</strong> Atlassian states that HTML and rich text are not expected to be processed correctly; the comment handlers convert the body to plain text.</li>
 <li><strong>Keep the email readable.</strong> An email forwarded as an attachment arrives as a file without an extension, and Jira Cloud does not show it as an email.</li>
 </ul>
 
