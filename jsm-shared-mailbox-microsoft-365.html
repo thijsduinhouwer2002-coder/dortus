@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Connecting a Microsoft 365 shared mailbox to Jira Service Management Cloud · Dortus</title>
+<meta name="description" content="Three ways to get mail from a Microsoft 365 shared mailbox into Jira Service Management Cloud: redirect it to the project's Atlassian address, sign in with the mailbox's own account, or use a licensed service mailbox. What each one needs from your Microsoft admin, what silently breaks, and the open requests for app-only access." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Connecting a Microsoft 365 shared mailbox to Jira Service Management Cloud" />
+<meta property="og:description" content="Redirect, sign in as the mailbox, or a licensed service account: what works in JSM Cloud today, what does not, and what to test before you rely on it." />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/jsm-shared-mailbox-microsoft-365.html" />
+<meta property="og:url" content="https://dortus.com/jsm-shared-mailbox-microsoft-365.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Connecting a Microsoft 365 shared mailbox to Jira Service Management Cloud",
+  "description": "Three ways to get mail from a Microsoft 365 shared mailbox into Jira Service Management Cloud: redirect it to the project's Atlassian address, sign in with the mailbox's own account, or use a licensed service mailbox. What each one needs from your Microsoft admin, what silently breaks, and the open requests for app-only access.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-15T21:13:03+00:00",
+  "dateModified": "2026-10-15T21:13:03+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/jsm-shared-mailbox-microsoft-365.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira Service Management</p>
+<h1 style="margin-bottom: 0.9rem">Connecting a Microsoft 365 shared mailbox to Jira Service Management Cloud</h1>
+<p class="lede">
+The service desk reads support@yourcompany.com, a shared mailbox in Microsoft 365. You want every email in it to become a request in Jira Service Management.
+The mailbox has no password and sign-in is disabled, which is how shared mailboxes are meant to be. So how does JSM get in? This page covers the three routes that work today, what each one asks of your Microsoft admin, and the one route everyone asks for that does not exist yet.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="why">Why the obvious route does not exist</h3>
+<p>JSM Cloud connects a Microsoft mailbox through an interactive Microsoft sign-in. Someone signs in during setup, and JSM keeps polling the mailbox with the token it was given. There is no option to register an application in Microsoft Entra ID and hand JSM a client ID and secret or certificate, the way you would for any other integration that reads a mailbox without a person attached. Atlassian tracks that request as <a href="https://jira.atlassian.com/browse/JSDCLOUD-14422" rel="noopener noreferrer">JSDCLOUD-14422</a> (78 votes, open since July 2024) and <a href="https://jira.atlassian.com/browse/JSDCLOUD-13197" rel="noopener noreferrer">JSDCLOUD-13197</a> (35 votes, open since October 2023). Both sit at "Gathering Interest", which is not a commitment to build it.</p>
+<p>So every working route either gives JSM a sign-in that can reach the mailbox, or keeps JSM out of your tenant altogether and moves the mail instead.</p>
+
+<h3 id="redirect">Route 1: redirect the mailbox to the project's own address</h3>
+<p>Every service project in JSM Cloud comes with an Atlassian-hosted email address of its own. Leave the shared mailbox unconnected and let Exchange pass the mail on: a mail flow rule in the Exchange admin center that redirects messages arriving at support@yourcompany.com to the project's Atlassian address. Nothing from your tenant is stored in Jira, no account gets a password it should not have, and your Microsoft admin stays in control.</p>
+<p>Three things to get right:</p>
+<ul>
+<li><strong>Redirect, not forward.</strong> In Exchange, a redirect passes the message on with the original sender intact, so the customer becomes the reporter of the request. A forward makes the mailbox the sender, and then every request is reported by support@ instead of the customer. That failure and its side effects are covered in our <a href="forwarding-email-jira-service-management.html">forwarding guide</a>. Test it with one message and check who the reporter is before you switch the desk over.</li>
+<li><strong>Outbound forwarding policy.</strong> Exchange Online's outbound spam policy restricts automatic forwarding to external addresses, and the Atlassian address is external to your tenant. If the rule looks right and nothing arrives, check that policy first; it is the usual reason, and your Microsoft admin may have to allow it for this mailbox.</li>
+<li><strong>Failures are silent on the Jira side.</strong> When the rule stops working, JSM simply receives nothing, and there is no error to see in Jira. Send yourself a test request on a schedule, or watch the mailbox for mail that is not being picked up.</li>
+</ul>
+<p>Replies from agents go out through the project's email settings, not through your Microsoft tenant. Atlassian's page on managing the reply-to address for a service project covers what customers will see as the sender.</p>
+
+<h3 id="signin">Route 2: sign in with the shared mailbox's own account</h3>
+<p>A shared mailbox in Microsoft 365 has an account behind it; sign-in is disabled and it has no password by default. Community reports say the Microsoft sign-in in JSM completes if your admin enables sign-in on that account, sets a password and keeps IMAP enabled on the mailbox. One admin reported that receiving worked but that agent replies still went out from the default Atlassian address, which that thread never resolved.</p>
+<p>What you give up: a mailbox that was deliberately created without a password now has one, and a sign-in-enabled account that your MFA and Conditional Access policies apply to. If your tenant requires compliant devices, that account needs an exclusion, because JSM polls from Atlassian's cloud, not from a laptop. When the password is rotated, the channel stops and someone has to reconnect it by hand. Some admins reject this route for exactly these reasons; the question that prompted this page was one of them.</p>
+<p>If the sign-in ends in "Admin approval required", that is your tenant's user-consent policy, not Jira. A Global Administrator can grant consent for the Atlassian app, do the connect step themselves, or turn on the admin consent request workflow in Entra so the request can be approved.</p>
+
+<h3 id="service">Route 3: a licensed service mailbox</h3>
+<p>The cleanest version of Route 2 is not a shared mailbox at all: a normal, licensed user mailbox that exists only for JSM. IMAP on, its own credentials, excluded from the device-compliance policy, password rotation on a calendar with the reconnect step next to it. It costs a Microsoft license, which is the one thing Route 1 avoids, and it behaves like what it is: a service account. If you need the branded address on the outside and the mailbox on the inside, give the service mailbox the address, or alias it.</p>
+
+<h3 id="gives">What the email channel gives you, and what it does not</h3>
+<p>Whichever route you pick, an email becomes a request with a summary, a description and the request type you set for the channel. It does not fill in forms or extra fields; for that you need the portal or an automation afterwards. Attachments on the email become attachments on the request. Emails that customers forward <em>as an attachment</em>, which is what phishing-report buttons and "see the thread below" habits produce, arrive as <code>.eml</code> or <code>.msg</code> files on the request, and JSM shows those as downloads only. If that is part of your desk's day, read <a href="email-attachments-missing-jira-service-management.html">the attachments checklist</a> before customers start reporting that "the attachment is missing".</p>
+
+<h3 id="app">Reading the attached email on the request</h3>
+<p>Full disclosure: Dortus makes an app for that last problem. <a href="mailview.html">MailView</a> shows <code>.eml</code> and <code>.msg</code> files on the request in the agent view, with scripts, forms and remote images removed, and adds a plain-English check of the email itself: SPF, DKIM and DMARC results from the email's headers; sender and link domains with lookalike letters from other alphabets or with accents (a typo in plain letters, such as paypa1.com, is not caught); and links whose visible text names one domain while the link goes to another. It only reads attachments: no copies, no storage, no external services. It does not touch the email channel; the mailbox routes on this page work exactly the same with or without it.</p>
+
+<h3 id="faq">Short answers</h3>
+<p><strong>Can JSM Cloud use an Entra app registration (client ID and secret) for a shared mailbox?</strong> Not today. Vote on <a href="https://jira.atlassian.com/browse/JSDCLOUD-14422" rel="noopener noreferrer">JSDCLOUD-14422</a> if you need it; the alternatives are above.</p>
+<p><strong>Does the shared mailbox need a license?</strong> For Route 1, no: the mailbox stays as it is and Exchange moves the mail. For Route 2, your Microsoft admin decides what enabling sign-in on that account requires in your tenant; admins in the Community threads assigned the cheapest license and a password, which is Route 3 in all but name.</p>
+<p><strong>Will the customer still be the reporter?</strong> With a redirect, yes. With a forward, no. Check it with one test message.</p>
+<p><strong>How do I know the channel is still working?</strong> You do not, unless you test it. JSM shows nothing when nothing arrives. A scheduled test request is the cheapest monitor there is.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or a route we missed? Email <a href="mailto:support@dortus.com?subject=Shared%20mailbox%20and%20JSM">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Submitted to the Atlassian Marketplace, in review.</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that never phone home.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

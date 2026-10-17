@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dortus.com/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/mermaid.html</loc><lastmod>2026-10-07</lastmod></url>
@@ -11,8 +11,9 @@
   <url><loc>https://dortus.com/attach-outlook-email-to-jira.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/phishing-reports-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/migration-email-attachments-jira.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/forwarding-email-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/email-attachments-missing-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/forwarding-email-jira-service-management.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://dortus.com/email-replies-new-request-jira-service-management.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://dortus.com/email-attachments-missing-jira-service-management.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/jsm-not-creating-requests-from-email.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/msg-vs-eml.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/email-check.html</loc><lastmod>2026-10-14</lastmod></url>
@@ -27,12 +28,15 @@
   <url><loc>https://dortus.com/confluence-cloud-qa-options.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/build-faq-confluence-cloud.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/askspace-vs-questions-for-confluence.html</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://dortus.com/export-questions-for-confluence-cloud.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/export-questions-for-confluence-cloud.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/confluence-cloud-storage-full.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/migrate-questions-for-confluence-to-cloud.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/migrate-questions-for-confluence-to-cloud.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/original-email-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/create-jira-work-items-from-email.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/create-jira-work-items-from-email.html</loc><lastmod>2026-10-16</lastmod></url>
   <url><loc>https://dortus.com/outlook-email-on-confluence-page.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/slack-questions-to-confluence.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/limit-who-answers-questions-for-confluence.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/winmail-dat-jira-service-management.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://dortus.com/jsm-shared-mailbox-microsoft-365.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://dortus.com/import-faq-spreadsheet-confluence.html</loc><lastmod>2026-10-16</lastmod></url>
 </urlset>
