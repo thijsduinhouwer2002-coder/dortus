@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dortus.com/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://dortus.com/</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/mermaid.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://dortus.com/open-msg-eml-in-jira.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/open-msg-eml-in-confluence.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/open-msg-eml-in-confluence.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/attach-outlook-email-to-jira.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/phishing-reports-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/migration-email-attachments-jira.html</loc><lastmod>2026-10-14</lastmod></url>
@@ -16,7 +16,7 @@
   <url><loc>https://dortus.com/email-attachments-missing-jira-service-management.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/jsm-not-creating-requests-from-email.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/msg-vs-eml.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/email-check.html</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://dortus.com/email-check.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/arrears.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/support.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/privacy.html</loc><lastmod>2026-10-14</lastmod></url>
