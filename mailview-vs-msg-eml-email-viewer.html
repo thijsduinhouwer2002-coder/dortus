@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MailView vs MSG/EML Email Viewer for Jira: a side-by-side test · Dortus</title>
+<meta name="description" content="Two Marketplace apps show Outlook .msg and .eml attachments on a Jira work item. We installed both on the same site and opened the same emails. What each one does, and what the other does better." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView vs MSG/EML Email Viewer for Jira: a side-by-side test" />
+<meta property="og:description" content="Both apps installed on the same Jira site, the same emails opened in each. Where they differ, honestly, including what the other does better." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mailview-vs-msg-eml-email-viewer.html" />
+<meta property="og:url" content="https://dortus.com/mailview-vs-msg-eml-email-viewer.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "MailView vs MSG/EML Email Viewer for Jira: a side-by-side test",
+  "description": "Two Marketplace apps show Outlook .msg and .eml attachments on a Jira work item. We installed both on the same site and opened the same emails. What each one does, and what the other does better.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-20T17:30:00+00:00",
+  "dateModified": "2026-10-20T17:30:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/mailview-vs-msg-eml-email-viewer.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Comparison &middot; Jira Cloud</p>
+<h1 style="margin-bottom: 0.9rem">MailView vs MSG/EML Email Viewer for Jira</h1>
+<p class="lede">
+Two Marketplace apps show Outlook .msg and .eml attachments on the work item. We installed both on the same Jira Cloud site and opened the same emails in each. This is what we saw, including what the other app does better.
+</p>
+</div>
+<div class="prose">
+
+<p><strong>Disclosure first:</strong> Dortus makes MailView. We did this test ourselves, on 16 October 2026, with MSG/EML Email Viewer for Jira version 2.2.0 by CloudScript and the MailView build that became 1.5 (1.6 differences are marked). If CloudScript has changed since, or we got something wrong, email <a href="mailto:support@dortus.com?subject=Comparison%20page">support@dortus.com</a> and we will correct it.</p>
+
+<h3 id="setup">How we tested</h3>
+<p>One Jira Cloud site, one work item with nine test emails attached: a normal supplier email with an inline logo, an invoice scam with a misleading link, a reported phishing email with a lookalike domain, a forwarded email without a file extension, a broken file, and a few plain ones. Both apps installed side by side, each opened on the same work item.</p>
+
+<h3 id="table">Side by side</h3>
+<table>
+<thead><tr><th></th><th>MailView (Dortus)</th><th>MSG/EML Email Viewer (CloudScript)</th></tr></thead>
+<tbody>
+<tr><td>Where it appears</td><td>A box in the right column of the work item (new work item view: in the Apps group) listing every email by subject and sender; one click opens the email in a large view. Optional wide panel.</td><td>An "Emails" tab under Activity, next to Comments and History. The first email is open, the others collapsed behind "Show email".</td></tr>
+<tr><td>A normal email</td><td>Subject, from, to, cc, date, formatted text, inline images shown, attachments as tiles. Earlier replies folded away.</td><td>Formatted text; the inline logo showed as "[Inline image unavailable]". Earlier replies written out in full.</td></tr>
+<tr><td>A suspicious email</td><td>Red "Likely phishing" bar with the reasons in plain words (lookalike domain, DMARC failed, two links that go somewhere else than they say), links defanged in the copy-out, tracking pixel blocked, Details tab with SPF, DKIM and DMARC and the address behind every link.</td><td>No verdict. The email is shown as is, with the phishing links clickable; remote images are blocked.</td></tr>
+<tr><td>A forwarded email attached as text</td><td>1.6: says "Original not checked" instead of judging the forwarding email.</td><td>Shown as a normal email.</td></tr>
+<tr><td>Files inside the email</td><td>Tiles with download.</td><td>List with download, plus <strong>"Attach to work item"</strong> and "Attach all files": one click copies a file from the email onto the work item. MailView does not have this.</td></tr>
+<tr><td>A broken file</td><td>1.6: already in the list: "Can't be shown as an email, download the original".</td><td>In the list: "This email couldn't be displayed."</td></tr>
+<tr><td>Permissions asked</td><td>One read scope (read:jira-work). Nothing stored, nothing sent outside Atlassian.</td><td>Ten read scopes and one write scope (needed for "Attach to work item").</td></tr>
+<tr><td>Jira Service Management</td><td>Works in the agent view. Not in the customer portal.</td><td>Not tested by us.</td></tr>
+</tbody>
+</table>
+
+<h3 id="cloudscript-better">What CloudScript does better</h3>
+<p>"Attach to work item" is useful: an agent gets an email with an invoice inside, and wants that invoice on the ticket as a normal attachment. In CloudScript that is one click. In MailView you download the file and upload it again. CloudScript also lives in the Activity tabs, which some teams will find more natural than a box in the right column.</p>
+
+<h3 id="mailview-better">What MailView does better</h3>
+<p>Reading: inline images show, earlier replies are folded, so a long thread reads like a mail client. Safety: a suspicious email gets a verdict with reasons, the Details tab shows what the receiving mail server recorded for SPF, DKIM and DMARC, and every link shows where it really goes. Trust: one read-only permission and nothing leaves your site; the email is parsed in your browser.</p>
+
+<h3 id="which">Which one fits</h3>
+<p>If your main job is pulling files out of emails onto tickets, CloudScript's attach button is a real time saver. If your desk reads forwarded customer emails, handles "is this mail legit?" tickets, or inherited a migration full of Outlook messages, MailView's reading and the phishing check matter more. Both have a free trial on the Marketplace, and installing both on a test site for an afternoon, as we did, answers the question for your own emails.</p>
+
+<div class="card">
+<p class="eyebrow">MailView by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, with inline images and the files inside, plus a phishing check in plain words. Runs on Atlassian, stores nothing, sends nothing anywhere.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">MailView on the Atlassian Marketplace</a> &middot; <a href="https://marketplace.atlassian.com/apps/463039643/msg-eml-email-viewer-for-jira" rel="noopener noreferrer">MSG/EML Email Viewer for Jira on the Atlassian Marketplace</a></p>
+</div>
+<p>See also: <a href="open-msg-eml-in-jira.html">How to open .msg and .eml email attachments in Jira</a>, <a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a>, <a href="msg-vs-eml.html">Outlook .msg vs .eml</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
