@@ -61,11 +61,11 @@ on a demo site in a minute.
 <li>Lists the .eml and .msg attachments on a work item and shows the one you click: sender, recipients, formatting, inline images, the files inside.</li>
 <li>Gives a plain-English verdict for suspicious mail: SPF, DKIM and DMARC results, domains with lookalike letters from other alphabets or with accents, links whose text points somewhere else, risky attachments. A "Copy findings" button puts a defanged summary in the clipboard for the ticket comment.</li>
 <li>Works in Jira and in the Jira Service Management agent view. Handles .msg files that only carry RTF and forwarded emails attached without a file extension.</li>
-<li>Runs on Atlassian: the email is read from the attachment in the user's browser with the user's own permissions. Nothing is stored or sent anywhere. Scripts, remote images and tracking pixels are blocked.</li>
+<li>Runs entirely on Atlassian: the email is read from the attachment in the user's browser with the user's own permissions. Nothing is stored or sent anywhere. Scripts, remote images and tracking pixels are blocked.</li>
 </ul>
 
 <h3 id="try">Try it on a demo site</h3>
-<p>MailView is submitted to the Atlassian Marketplace and in review. Once it is listed, installing it on any Jira Cloud site you use for demos takes a minute: open a work item with an .eml or .msg attachment and add MailView under Apps; a Jira admin can then turn it on for all work items in that project. No configuration, no account with us. Pricing is on the listing.</p>
+<p>Installing MailView on any Jira Cloud site you use for demos takes a minute: open a work item with an .eml or .msg attachment and MailView is there on the right, under the fields (in Jira's new work item view: inside the Apps group). Jira admins also get a Get started page with a built-in sample email, so you can show it before any customer email is attached. No configuration, no account with us. Pricing is on the listing. <a href="https://marketplace.atlassian.com/apps/4078695191" rel="noopener noreferrer">MailView on the Atlassian Marketplace</a>.</p>
 
 <h3 id="when">When it fits a customer project</h3>
 <p>A service desk that receives forwarded or reported emails. A <a href="migration-email-attachments-jira.html">migration</a> from Data Center or another tool that brings years of .msg files along. A security team that triages "is this legit?" tickets in JSM. For one email a month, downloading is fine; for a queue of them, a viewer on the work item saves the round-trip to Outlook and keeps suspicious mail out of it.</p>
@@ -82,7 +82,7 @@ on a demo site in a minute.
 <div class="wrap">
 <div>
 <p class="footer-brand">Dortus</p>
-<p>Small apps for Jira and Confluence that never phone home.</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
 <p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
 </div>
 <div>
