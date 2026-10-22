@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus: apps for Jira and Confluence - MailView, AskSpace and Mermaid Live Preview</title>
-  <meta name="description" content="MailView reads .msg and .eml attachments in Jira. AskSpace adds Q&amp;A to Confluence spaces. Mermaid Live Preview draws diagrams from text in the page. Built on Atlassian Forge, nothing stored on our servers." />
+  <title>Dortus: email apps for Jira and Confluence - MailView</title>
+  <meta name="description" content="MailView shows .msg and .eml email attachments as they were sent, in Jira, Jira Service Management and Confluence, with a plain-English phishing check. Built on Atlassian Forge, nothing stored on our servers." />
   <meta name="theme-color" content="#0052cc" />
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Dortus: apps for Jira and Confluence" />
-  <meta property="og:description" content="MailView, AskSpace and Mermaid Live Preview: small Forge apps for Jira and Confluence. Nothing stored on our servers." />
-  <meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
-  <meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+  <meta property="og:description" content="MailView for Jira and MailView for Confluence: email attachments you can actually read, with a phishing check. Forge apps, nothing stored on our servers." />
+  <meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+  <meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://dortus.com/atlassian.html" />
   <meta property="og:url" content="https://dortus.com/atlassian.html" />
@@ -61,9 +61,9 @@
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <img src="assets/01-question-list-app.png" alt="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" width="797" height="837" />
+            <img src="assets/mailview-01-message.png" alt="MailView showing an email attachment as it was sent: sender, recipients, date and the message" width="895" height="1000" />
           </span>
-          <figcaption><strong>AskSpace.</strong> A question list that lives in the space, with status and search where people already work.</figcaption>
+          <figcaption><strong>MailView.</strong> The email as it was sent, read on the work item or page where people already work.</figcaption>
         </figure>
       </div>
     </section>
@@ -72,14 +72,14 @@
     <section class="band band-tint" id="apps">
       <div class="wrap">
         <div class="head reveal">
-          <h2>Four apps, four jobs</h2>
+          <h2>Two apps, one job: email inside Atlassian</h2>
           <p class="lede">
-            All four are Forge apps. Your content stays inside your Atlassian cloud site.
-            None of them asks you to move your work anywhere else.
+            Both are Forge apps. Your content stays inside your Atlassian cloud site.
+            Neither asks you to move your work anywhere else.
           </p>
         </div>
 
-        <div class="cols cols-3">
+        <div class="cols cols-2">
           <div class="card reveal">
             <span class="card-mark" aria-hidden="true">&#9993;</span>
             <h3>MailView</h3>
@@ -101,34 +101,6 @@
             <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/218321273">Available on the Atlassian Marketplace</a></p>
             <p class="btns">
               <a class="btn btn-primary" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal reveal-2">
-            <span class="card-mark" aria-hidden="true">Q</span>
-            <h3>AskSpace</h3>
-            <p>
-              A question and answer board per Confluence space. Ask, answer, vote, and mark one
-              best answer that the asker cannot award to itself. Who may ask and who may answer
-              are two separate settings.
-            </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a></p>
-            <p class="btns">
-              <a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <span class="card-mark" aria-hidden="true">&#9651;</span>
-            <h3>Mermaid Live Preview</h3>
-            <p>
-              A macro for flowcharts, sequence diagrams and timelines. You type Mermaid syntax,
-              the diagram draws itself next to the text, and the source stays in the page so the
-              next person can edit it.
-            </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Live on the Atlassian Marketplace</a></p>
-            <p class="btns">
-              <a class="btn btn-primary" href="mermaid.html">About Mermaid Live Preview <span class="arrow" aria-hidden="true">&rarr;</span></a>
             </p>
           </div>
         </div>
@@ -183,10 +155,9 @@
         <div class="head reveal">
           <h2>Your content never leaves your site</h2>
           <p class="lede">
-            All apps run on Atlassian Forge. MailView stores nothing: it reads the attachment and
-            renders it in your browser (a Confluence PDF or Word export is built by a Forge function inside Atlassian). AskSpace and Mermaid Live Preview keep questions, answers,
-            votes, settings and diagram source in Forge app storage inside your own cloud site.
-            Dortus operates no server for them and receives no app content.
+            Both apps run on Atlassian Forge. MailView stores nothing: it reads the attachment and
+            renders it in your browser (a Confluence PDF or Word export is built by a Forge function inside Atlassian).
+            Dortus operates no server for the apps and receives no app content.
           </p>
         </div>
         <dl class="facts facts-4 reveal reveal-1">
@@ -196,7 +167,7 @@
           </div>
           <div>
             <dt>Storage</dt>
-            <dd>Forge app storage, your site. MailView: none</dd>
+            <dd>None</dd>
           </div>
           <div>
             <dt>Egress</dt>
@@ -230,14 +201,6 @@
             <p><a href="https://marketplace.atlassian.com/apps/218321273">Available on the Atlassian Marketplace</a>.</p>
           </li>
           <li>
-            <b>AskSpace</b>
-            <p><a href="https://marketplace.atlassian.com/apps/822331687/askspace-q-a-for-confluence-spaces">Available on the Atlassian Marketplace</a>.</p>
-          </li>
-          <li>
-            <b>Mermaid Live Preview</b>
-            <p><a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Live on the Atlassian Marketplace</a>.</p>
-          </li>
-          <li>
             <b>Support</b>
             <p>One inbox, answered by the person who wrote the code. First reply within one business day, Monday to Friday.</p>
           </li>
@@ -266,12 +229,9 @@
           <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
           <li><a href="mailview-vs-msg-eml-email-viewer.html">MailView vs MSG/EML Email Viewer</a></li>
-          <li><a href="askspace.html">AskSpace</a></li>
-          <li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
           <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
           <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
           <li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
-          <li><a href="mermaid.html">Mermaid Live Preview</a></li>
           <li><a href="partners.html">For Solution Partners</a></li>
           <li><a href="security.html">Security</a></li>
           <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
