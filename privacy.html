@@ -173,6 +173,12 @@ the sites where it is installed, in Atlassian's developer console, for 30 days. 
 MailView only write error types, status codes, counts and timings to those logs, never your
 content, names or IDs. Log sharing is on by default; your site's admins can turn it off.
 </p>
+<p>
+MailView for Jira also keeps three plain counters through Atlassian's Forge metrics: how often the
+app loaded with at least one email, how often an email was opened, and how often "Copy findings" was
+used. These are numbers only, with no content, file names, work item keys or user names, and they
+exist so we can tell whether the app is used at all.
+</p>
 
 <h3>4.2 What AskSpace processes</h3>
 <ul>
