@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-12T13:57:21+00:00",
-  "dateModified": "2026-10-14T21:55:23+00:00",
+  "dateModified": "2026-10-21T18:45:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -82,9 +82,12 @@ Support desks, legal teams and procurement attach emails to tickets for years. W
 <h3 id="what-happens">What happens to email attachments in a migration</h3>
 <p>Attachments are normally copied over as files, within the size limits of your Cloud site. Nothing is converted: a .msg that was attached in 2019 is still the same .msg after the move. What changes is where you read it. Jira Cloud has no built-in viewer for email formats, so an attachment that Outlook opened with one click from the old system now shows up as a download, and opening it means saving the file and switching to a mail app. For one ticket that is a nuisance. For an archive of thousands of tickets it is the difference between a searchable history and a pile of files nobody opens.</p>
 
+<h3 id="why-now">Why this comes up now</h3>
+<p>Atlassian is ending Data Center. New Data Center subscriptions stopped on 30 March 2026, existing customers can no longer expand from 30 March 2028, and end of life is 28 March 2029 (<a href="https://www.atlassian.com/licensing/data-center-end-of-life">Atlassian's timeline</a>). In October 2026 Atlassian also asked Data Center customers to patch a critical file access flaw, CVE-2026-21589; Cloud was not affected. If you are one of the teams planning the move now, the checks below take an hour and save a surprise later.</p>
+
 <h3 id="before">Three things to check before you migrate</h3>
 <ul>
-<li><strong>How many emails are attached, and where.</strong> Search for attachments ending in .msg and .eml in the projects you are moving. A handful: ignore this page. Thousands in a support or legal project: decide now how people will read them afterwards.</li>
+<li><strong>How many emails are attached, and where.</strong> Search for attachments ending in .msg and .eml in the projects you are moving. On Data Center, a database admin can count them in the <code>fileattachment</code> table by file name (the same table Atlassian uses in <a href="https://support.atlassian.com/jira/kb/jira-server-throws-attachmentmodule-error-in-the-issue-view-screen/">this support article</a>). A handful: ignore this page. Thousands in a support or legal project: decide now how people will read them afterwards.</li>
 <li><strong>Who needs to read them.</strong> Agents on a service desk open old emails daily; a finance team maybe once a quarter. The daily readers decide whether a viewer is worth it.</li>
 <li><strong>Forwarded emails without a file extension.</strong> Some mail handlers and integrations attach a forwarded email as a file with no extension or a generic name. Those migrate too, and they are even harder to recognise afterwards.</li>
 </ul>
