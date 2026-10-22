@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>winmail.dat bei einer Jira- oder JSM-Anfrage: woher die Datei kommt und wie Sie an den echten Anhang kommen · Dortus</title>
+<meta name="description" content="Ein Kunde hat einen Screenshot gemailt, und in Ihrer Jira Service Management-Anfrage steht stattdessen eine Datei namens winmail.dat. Was TNEF ist, warum Jiras Mail-Handler die Datei unangetastet lässt, wie Sie die vorhandene Datei öffnen und wie Sie das Problem an der Quelle in Outlook und Exchange Online abstellen." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="../assets/app-icon.png" />
+<meta property="og:title" content="winmail.dat bei einer Jira- oder JSM-Anfrage: woher die Datei kommt und wie Sie an den echten Anhang kommen" />
+<meta property="og:description" content="Outlooks Rich-Text-Format verpackt Anhänge in winmail.dat. Jira packt sie nicht aus. So öffnen Sie die Datei und stellen das Problem an der Quelle ab." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/de/winmail-dat-jira-service-management.html" />
+<link rel="alternate" hreflang="de" href="https://dortus.com/de/winmail-dat-jira-service-management.html" />
+<link rel="alternate" hreflang="en" href="https://dortus.com/winmail-dat-jira-service-management.html" />
+<link rel="alternate" hreflang="x-default" href="https://dortus.com/winmail-dat-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/de/winmail-dat-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView zeigt einen E-Mail-Anhang so, wie er gesendet wurde: Absender, Empfänger, Datum und die Nachricht" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "winmail.dat bei einer Jira- oder JSM-Anfrage: woher die Datei kommt und wie Sie an den echten Anhang kommen",
+  "description": "Ein Kunde hat einen Screenshot gemailt, und in Ihrer Jira Service Management-Anfrage steht stattdessen eine Datei namens winmail.dat. Was TNEF ist, warum Jiras Mail-Handler die Datei unangetastet lässt, wie Sie die vorhandene Datei öffnen und wie Sie das Problem an der Quelle in Outlook und Exchange Online abstellen.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-22T20:00:00+00:00",
+  "dateModified": "2026-10-22T20:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/de/winmail-dat-jira-service-management.html"
+  },
+  "inLanguage": "de"
+}
+</script>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Hauptnavigation">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="../atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Anleitungen</a>
+<a href="../support.html">Support</a>
+<a class="btn btn-primary" href="../mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Anleitung &middot; Jira Service Management</p>
+<h1 style="margin-bottom: 0.9rem">winmail.dat bei einer Jira- oder JSM-Anfrage: woher die Datei kommt und wie Sie an den echten Anhang kommen</h1>
+<p class="lang-note">Diese Seite ist die deutsche Fassung von <a href="../winmail-dat-jira-service-management.html">der englischen Anleitung</a>. Die App MailView selbst und ihre Dokumentation sind auf Englisch.</p>
+<p class="lede">
+Ein Kunde meldet sich mit einem Screenshot. Die Anfrage kommt an, aber die einzige Datei darin heißt <code>winmail.dat</code>, und niemand kann sie öffnen.
+Diese Seite erklärt, woher die Datei kommt, was Sie mit der vorhandenen tun können und wie Sie die nächste verhindern.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="what">Was winmail.dat ist</h3>
+<p>Outlook und Exchange haben eine eigene Art, eine formatierte Nachricht zu versenden: Rich Text Format, verpackt in einen Container namens TNEF (Transport Neutral Encapsulation Format). In diesem Container stecken die Formatierung, alle Anhänge und einige Felder, die nur Outlook kennt. Andere Microsoft-Systeme packen ihn aus, ohne dass Sie es merken. Alles, was nicht Exchange ist, einschließlich Jiras Mail-Handler, sieht eine einzige undurchsichtige Datei namens <code>winmail.dat</code> und behandelt sie als den Anhang.</p>
+<p>Der Screenshot ist also nicht verloren. Er steckt in der Datei, zusammen mit allem anderen, was der Absender angehängt hat.</p>
+
+<h3 id="jira">Was Jira damit macht</h3>
+<p>Jira Cloud und Jira Service Management Cloud hängen <code>winmail.dat</code> unverändert an die Anfrage. Sie öffnen den Container nicht und holen die echten Dateien nicht heraus. Das ist seit 2016 ein offener Vorschlag in Atlassians Tracker (<a href="https://jira.atlassian.com/browse/JSDCLOUD-4383" rel="noopener noreferrer">JSDCLOUD-4383</a>). Atlassians eigene Wissensdatenbank beschreibt den schlimmsten Fall: Wenn der gesamte Nachrichtentext als TNEF gesendet wird, kann der Mail-Handler ihn nicht lesen und erstellt den Vorgang (Work Item) mit leerer Beschreibung (<a href="https://support.atlassian.com/jira/kb/jira-created-issue-from-e-mail-has-no-description/" rel="noopener noreferrer">Jira created issue from e-mail has no description</a>). Der Rat dort ist derselbe wie unserer: das Format auf der Absenderseite ändern.</p>
+<p>Meist sehen Sie das bei Anfragen, die aus E-Mails erstellt wurden. Wenn ein Agent eine Nachricht als Anhang weiterleitet, kann auch die weitergeleitete E-Mail selbst eine <code>winmail.dat</code> enthalten.</p>
+
+<h3 id="open">Die vorhandene winmail.dat öffnen</h3>
+<p>Zwei Wege, je nachdem, wo die Datei liegt.</p>
+<p><strong>Den Absender um erneutes Senden bitten.</strong> Am schnellsten, wenn der Kunde erreichbar ist: Bitten Sie ihn, den Anhang noch einmal als normale HTML-E-Mail zu schicken (die Einstellung steht im nächsten Abschnitt). Alles, was er anhängt, kommt dann als normale Dateien an.</p>
+<p><strong>Die Datei selbst öffnen.</strong> Es gibt winmail.dat-Öffner für Windows, macOS und als Websites. Die Websites laden die Datei auf einen fremden Server hoch; bei Kundendaten ist das eine schlechte Gewohnheit, nehmen Sie also lieber ein Werkzeug, das auf Ihrem eigenen Rechner läuft. Hängen Sie die ausgepackten Dateien danach an die Anfrage, damit der nächste Agent das nicht wiederholen muss.</p>
+
+<h3 id="stop">Das Problem an der Quelle abstellen</h3>
+<p>Die Datei wird vom Outlook oder Exchange des Absenders erzeugt, also liegt die Lösung dort. Geben Sie diesen Abschnitt an den Kunden oder dessen IT-Team weiter.</p>
+<p><strong>In Outlook (pro Person).</strong> Im neuen Outlook für Windows: Einstellungen, dann E-Mail, dann Verfassen und Antworten, und das Nachrichtenformat auf HTML stellen. Rich-Text ist die Einstellung, die TNEF erzeugt. Outlook merkt sich außerdem für einzelne Adressen, die es schon einmal automatisch vervollständigt hat, eine Rich-Text-Vorliebe; die Adresse aus der AutoVervollständigen-Liste entfernen (das kleine X neben dem Vorschlag) und neu eintippen löscht diese Erinnerung.</p>
+<p><strong>In Exchange Online (für die ganze Organisation).</strong> Ein Admin kann Exchange anweisen, nie TNEF an externe Domains zu senden. Im Exchange Admin Center: Nachrichtenfluss, dann Remotedomänen, die Remotedomäne öffnen, die die E-Mail-Adresse des Service Desks abdeckt, „Text und Zeichensatz bearbeiten" wählen und „Rich-Text-Format verwenden" auf Nie setzen. Dasselbe in PowerShell, aus Microsofts eigenem Artikel, für diese Remotedomäne:</p>
+<pre><code>Set-RemoteDomain -Identity &lt;Remotedomäne&gt; -TNEFEnabled $false</code></pre>
+<p>Für eine einzelne externe Adresse statt einer ganzen Domain:</p>
+<pre><code>Set-MailContact &lt;Adresse&gt; -UseMapiRichTextFormat Never</code></pre>
+<p>Microsofts Referenz für beides: <a href="https://learn.microsoft.com/en-us/exchange/troubleshoot/send-emails/how-to-specify-email-message-format" rel="noopener noreferrer">How to specify the email message format that's used for external recipients to prevent Winmail.dat attachments</a>.</p>
+<p>Ihre eigene JSM-E-Mail-Adresse zählt für das Exchange des Kunden als externe Domain, und genau deshalb sehen dessen Kollegen das Problem nie und Sie schon.</p>
+
+<h3 id="readable">E-Mails in der Anfrage lesbar halten</h3>
+<p>winmail.dat ist einer von mehreren Wegen, auf denen eine E-Mail auf dem Weg nach Jira etwas verliert. Weitergeleitete E-Mails kommen als Datei ohne Endung an, hineingezogene <code>.msg</code>- und <code>.eml</code>-Dateien erscheinen als Code oder Rohtext, und Weiterleitungen im Text lassen die Header weg. Die Anleitungen zum <a href="../forwarding-email-jira-service-management.html">Weiterleiten von E-Mails an JSM</a> und zu <a href="../email-attachments-missing-jira-service-management.html">fehlenden E-Mail-Anhängen</a> (beide auf Englisch) behandeln diese Fälle.</p>
+<p>Zur Transparenz: Dortus stellt <a href="../mailview.html">MailView</a> her, das <code>.eml</code>- und <code>.msg</code>-Anhänge in einem Vorgang als die E-Mail selbst anzeigt. Die Unterstützung für <code>winmail.dat</code> ist in Arbeit; diese Seite wird es sagen, sobald sie verfügbar ist.</p>
+
+<h3 id="faq">Kurze Antworten</h3>
+<p><strong>Ist winmail.dat gefährlich?</strong> Nicht an sich. Es ist ein Container. Behandeln Sie die Dateien darin so, wie Sie jeden Anhang dieses Absenders behandeln würden.</p>
+<p><strong>Warum passiert das nur bei manchen Kunden?</strong> Weil es von den Outlook- oder Exchange-Einstellungen des Absenders abhängt, nicht von Ihren. Eine Organisation mit eingeschaltetem Rich-Text sendet es jedes Mal; alle anderen nie.</p>
+<p><strong>Kann man Jira so einstellen, dass es die Datei auspackt?</strong> Nein. Dafür gibt es in Jira Cloud und JSM Cloud keine Einstellung. Atlassians Wissensdatenbank verweist dafür auf eine Mail-Handler-App eines Drittanbieters (JEMH); wir haben sie nicht getestet.</p>
+<p><strong>Hilft es, die Datei umzubenennen?</strong> Nein. Sie ist kein Zip und keine E-Mail; sie braucht ein Werkzeug, das TNEF versteht.</p>
+
+<h3 id="support">Fragen</h3>
+<p>Etwas auf dieser Seite ist falsch, oder wir haben einen Fall übersehen? Schreiben Sie an <a href="mailto:support@dortus.com?subject=winmail.dat%20in%20Jira">support@dortus.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Kleine Apps für Jira und Confluence, die vollständig auf Atlassian laufen. Ihre Inhalte erreichen Dortus nie.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="../atlassian.html">Atlassian-Apps</a></li>
+<li><a href="../mailview.html">MailView</a></li>
+<li><a href="../mailview-confluence.html">MailView für Confluence</a></li>
+<li><a href="../email-attachment-audit.html">Email Attachment Audit (kostenlos)</a></li>
+<li><a href="../export-questions-for-confluence-cloud.html">Daten aus Questions for Confluence Cloud exportieren</a></li>
+<li><a href="../migrate-questions-for-confluence-to-cloud.html">Questions for Confluence in die Cloud migrieren</a></li>
+<li><a href="../limit-who-answers-questions-for-confluence.html">Wer in Questions for Confluence antworten darf</a></li>
+<li><a href="../partners.html">Für Solution Partner</a></li>
+<li><a href="../security.html">Sicherheit</a></li>
+<li><a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></li>
+<li><a href="../open-msg-eml-in-confluence.html">.msg- und .eml-Anhänge in Confluence öffnen</a></li>
+<li><a href="../outlook-email-on-confluence-page.html">Eine Outlook-E-Mail auf eine Confluence-Seite bringen</a></li>
+<li><a href="../build-faq-confluence-cloud.html">Eine FAQ in Confluence Cloud aufbauen</a></li>
+<li><a href="../import-faq-spreadsheet-confluence.html">Eine FAQ aus einer Tabelle importieren</a></li>
+<li><a href="../confluence-cloud-storage-full.html">Wenn der Speicher in Confluence Cloud voll ist</a></li>
+<li><a href="outlook-email-an-jira-anhaengen.html">Eine Outlook-E-Mail an einen Jira-Vorgang anhängen</a></li>
+<li><a href="../create-jira-work-items-from-email.html">Jira-Vorgänge aus E-Mails erstellen</a></li>
+<li><a href="phishing-meldungen-jira-service-management.html">Phishing-Meldungen in Jira Service Management</a></li>
+<li><a href="../stack-internal-vs-confluence-qa.html">Stack Internal vs. Q&amp;A in Confluence</a></li>
+<li><a href="../slack-questions-to-confluence.html">Dieselben Fragen nicht mehr in Slack beantworten</a></li>
+<li><a href="../open-questions-confluence-comments.html">Offene Fragen in Confluence-Kommentaren</a></li>
+<li><a href="email-anhaenge-nach-jira-migration.html">E-Mail-Anhänge nach einer Jira-Migration</a></li>
+<li><a href="../forwarding-email-jira-service-management.html">E-Mails an Jira Service Management weiterleiten</a></li>
+<li><a href="../email-replies-new-request-jira-service-management.html">E-Mail-Antworten, die in JSM neue Anfragen werden</a></li>
+<li><a href="../email-attachments-missing-jira-service-management.html">Fehlende Anhänge bei E-Mail-Anfragen in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat bei einer Jira- oder JSM-Anfrage</a></li>
+<li><a href="../jsm-not-creating-requests-from-email.html">JSM erstellt keine Anfragen aus E-Mails</a></li>
+<li><a href="../jsm-shared-mailbox-microsoft-365.html">Microsoft 365-Shared-Mailbox in JSM</a></li>
+<li><a href="../original-email-jira-service-management.html">Die ursprüngliche E-Mail hinter einer JSM-Anfrage sehen</a></li>
+<li><a href="../msg-vs-eml.html">Outlook .msg vs. .eml</a></li>
+<li><a href="../email-check.html">E-Mail-Check</a></li>
+</ul>
+</div>
+<div>
+<h2>Unternehmen</h2>
+<ul>
+<li><a href="../support.html">Support</a></li>
+<li><a href="../privacy.html">Datenschutz</a></li>
+<li><a href="../terms.html">Nutzungsbedingungen</a></li>
+<li><a href="mailto:support@dortus.com">E-Mail an uns</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence und Forge sind Marken von Atlassian Pty Ltd. Dortus steht in keiner
+Verbindung zu Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="../site.js" defer></script>
+</body>
+</html>

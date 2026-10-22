@@ -1736,3 +1736,6 @@ div.door:hover .door-peek {
 .door-small .door-platform {
   font-size: clamp(1.25rem, 1rem + 0.9vw, 1.6rem);
 }
+
+/* 22 okt 2026: taalwissel-regel onder de h1 van vertaalde gidsen */
+.lang-note { font-size: 0.9rem; color: var(--muted, #5e6c84); margin: 0.25rem 0 1rem; }

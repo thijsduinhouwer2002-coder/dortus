@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phishing-Meldungen in Jira Service Management bearbeiten · Dortus</title>
+<meta name="description" content="Wie gemeldete Phishing-E-Mails als .eml- oder .msg-Anhänge in JSM-Anfragen landen, wie Sie sie prüfen, ohne die E-Mail in Outlook zu öffnen, und worauf Sie achten sollten: SPF, DKIM, DMARC, ähnlich aussehende Domains und die echten Linkziele." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="../assets/app-icon.png" />
+<meta property="og:title" content="Phishing-Meldungen in Jira Service Management bearbeiten" />
+<meta property="og:description" content="Gemeldete Phishing-E-Mails direkt in der JSM-Anfrage prüfen: Authentifizierungsergebnisse, ähnlich aussehende Domains, Linkziele. Ganz ohne Outlook." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/de/phishing-meldungen-jira-service-management.html" />
+<link rel="alternate" hreflang="de" href="https://dortus.com/de/phishing-meldungen-jira-service-management.html" />
+<link rel="alternate" hreflang="en" href="https://dortus.com/phishing-reports-jira-service-management.html" />
+<link rel="alternate" hreflang="x-default" href="https://dortus.com/phishing-reports-jira-service-management.html" />
+<meta property="og:url" content="https://dortus.com/de/phishing-meldungen-jira-service-management.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView zeigt einen E-Mail-Anhang so, wie er gesendet wurde: Absender, Empfänger, Datum und die Nachricht" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Phishing-Meldungen in Jira Service Management bearbeiten",
+  "description": "Wie gemeldete Phishing-E-Mails als .eml- oder .msg-Anhänge in JSM-Anfragen landen, wie Sie sie prüfen, ohne die E-Mail in Outlook zu öffnen, und worauf Sie achten sollten: SPF, DKIM, DMARC, ähnlich aussehende Domains und die echten Linkziele.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-22T20:00:00+00:00",
+  "dateModified": "2026-10-22T20:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/de/phishing-meldungen-jira-service-management.html"
+  },
+  "inLanguage": "de"
+}
+</script>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Hauptnavigation">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="../atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Anleitungen</a>
+<a href="../support.html">Support</a>
+<a class="btn btn-primary" href="../mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Anleitung &middot; Jira Service Management</p>
+<h1 style="margin-bottom: 0.9rem">Phishing-Meldungen in Jira Service Management bearbeiten</h1>
+<p class="lang-note">Diese Seite ist die deutsche Fassung von <a href="../phishing-reports-jira-service-management.html">der englischen Anleitung</a>. Die App MailView selbst und ihre Dokumentation sind auf Englisch.</p>
+<p class="lede">
+„Ist diese E-Mail echt?" ist eine der häufigsten Anfragen, die ein Service Desk bekommt.
+Diese Seite beschreibt, wie solche Meldungen in JSM ankommen, wie Sie die verdächtige
+E-Mail sicher ansehen und was Sie prüfen sollten, bevor Sie antworten.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="arrive">Wie Phishing-Meldungen in einer Anfrage ankommen</h3>
+<p>Die meisten Teams leiten Meldungen über den E-Mail-Kanal in JSM. Drei Muster sind üblich:</p>
+<ul>
+<li><strong><a href="../forwarding-email-jira-service-management.html">Weiterleiten</a> als Anhang.</strong> Der Nutzer leitet die verdächtige E-Mail als Anhang an die Service-Desk-Adresse weiter. Das Original kommt als <code>.eml</code>-Datei in der Anfrage an oder, wenn es durch Jiras Mail-Handler geht, als Datei ohne Endung.</li>
+<li><strong>Melden-Schaltfläche in Microsoft 365.</strong> Wenn Ihr Tenant von Nutzern gemeldete Nachrichten an ein eigenes Postfach sendet und dieses Postfach der E-Mail-Kanal von JSM ist, wird jede Meldung zu einer Anfrage mit der ursprünglichen Nachricht als Anhang.</li>
+<li><strong>Drag-and-drop.</strong> Ein Agent oder Nutzer zieht die Nachricht aus Outlook auf eine bestehende Anfrage. Das klassische Outlook erzeugt eine <code>.msg</code>-Datei, das neue Outlook und Mac-Programme erzeugen <code>.eml</code>.</li>
+</ul>
+<p>Das Weiterleiten im Text (der Inhalt in den Nachrichtentext eingefügt) ist das eine Muster, von dem Sie abraten sollten: Dabei gehen die Header verloren, und genau die brauchen Sie, um die E-Mail zu beurteilen.</p>
+
+<h3 id="look">Die E-Mail ansehen, ohne sie in Outlook zu öffnen</h3>
+<p>JSM kann <code>.eml</code>- und <code>.msg</code>-Anhänge nicht anzeigen; es bietet sie zum Download an. Die Gewohnheit, die daraus folgt, herunterladen und in Outlook öffnen, ist genau das, wovor jede Phishing-Schulung warnt: Dabei können externe Tracking-Bilder geladen, aktive Inhalte gerendert und die Links auf einen versehentlichen Klick Entfernung gebracht werden. Sicherere Optionen, in dieser Reihenfolge:</p>
+<ol>
+<li>Die rohe <code>.eml</code> in einem Texteditor lesen. Sicher, aber die Header sind schwer zu lesen und der Nachrichtentext ist oft Base64 oder ein HTML-Wust.</li>
+<li>Einen Viewer verwenden, der die E-Mail ohne Skripte, Formulare und externe Bilder rendert und die Header in verständlichen Worten zeigt. Am besten direkt in JSM, damit die Prüfung in der Anfrage stattfindet und die Antwort über dasselbe Ticket zurückgeht.</li>
+</ol>
+
+<h3 id="check">Was Sie prüfen sollten</h3>
+<p><strong>Authentifizierungsergebnisse.</strong> Der empfangende Mailserver hält drei Prüfungen in den Headern fest. <em>SPF</em>: Durfte der sendende Server für diese Domain senden? <em>DKIM</em>: Wurde die Nachricht von der Domain signiert und seitdem nicht verändert? <em>DMARC</em>: Passt die sichtbare Absenderadresse zu diesen beiden, und was hat der Domaininhaber für den Fehlerfall festgelegt? Ein Fail bei allen dreien ist ein starkes Signal; ein Pass bei allen dreien beweist nicht, dass die E-Mail sicher ist, nur dass sie wirklich von dieser Domain kam. Der <a href="../email-check.html">E-Mail-Check</a> auf dieser Website zeigt diese Ergebnisse für eine Datei oder eingefügte Header, so wie der empfangende Server sie festgehalten hat.</p>
+<p><strong>Die Absenderdomain.</strong> Achten Sie auf Nachahmungen: ein Buchstabe zu viel, ein vertauschtes Zeichen, ein Buchstabe mit Akzent, der wie das Original aussieht, oder der Markenname als Subdomain einer fremden Domain. Vergleichen Sie sie mit der Reply-To-Adresse, die Angreifer oft woandershin zeigen lassen.</p>
+<p><strong>Wohin Links wirklich führen.</strong> Der Linktext und das Linkziel sind zwei verschiedene Dinge. Prüfen Sie das Ziel jedes Links und jeder Schaltfläche, und werten Sie „der Text sagt unser Portal, das Ziel ist woanders" als Warnsignal. Wenn Sie einen Link ins Ticket einfügen, entschärfen Sie ihn (<code>hxxps://</code>, Punkte in eckigen Klammern), damit niemand versehentlich klickt.</p>
+<p><strong>Anhänge in der E-Mail.</strong> Notieren Sie Namen und Typen. Office-Dateien mit Makros, Archive und HTML-Dateien gehören in eine Sandbox, nicht per Doppelklick geöffnet.</p>
+<p><strong>Druck.</strong> „Innerhalb von 24 Stunden", „Ihr Postfach wird gesperrt", „letzte Mahnung". Dringlichkeit ist der älteste Trick und immer noch der häufigste.</p>
+
+<h3 id="answer">Antworten und schließen</h3>
+<p>Schreiben Sie die Ergebnisse in verständlichen Worten in die Anfrage, damit die meldende Person etwas lernt: welche Prüfungen fehlgeschlagen sind, welche Domain gefälscht war, wohin der Link führte. Lassen Sie den ursprünglichen Anhang in der Anfrage; er ist Ihr Beweis. War die E-Mail echt, sagen Sie das und bedanken Sie sich, denn die nächste Meldung dieser Person kann die sein, auf die es ankommt.</p>
+
+<h3 id="app">Das Ganze direkt in JSM erledigen</h3>
+<p>Zur Transparenz: Dortus stellt genau dafür eine App her. <a href="../mailview.html">MailView</a> zeigt <code>.eml</code>- und <code>.msg</code>-Anhänge in der Anfrage in der Agentenansicht, mit blockierten Skripten und externen Bildern, und ergänzt einen Reiter „Details" mit den SPF-, DKIM- und DMARC-Ergebnissen aus den Headern in verständlichem Englisch, Warnungen bei Domains mit ähnlich aussehenden Buchstaben aus anderen Alphabeten oder mit Akzenten, der Adresse hinter jedem Link und einer Schaltfläche „Copy findings", die eine entschärfte Zusammenfassung für den Ticket-Kommentar in die Zwischenablage legt. Die App läuft auf Atlassian und speichert oder sendet nichts. Sie ist eine Hilfe für das Urteil des Agenten, kein Ersatz dafür.</p>
+
+<h3 id="faq">Kurze Antworten</h3>
+<p><strong>Kann JSM eine gemeldete E-Mail in der Vorschau anzeigen?</strong> Nein. <code>.eml</code>- und <code>.msg</code>-Anhänge sind nur als Download verfügbar.</p>
+<p><strong>Reicht ein DMARC-Pass, um eine Meldung als sicher einzustufen?</strong> Nein. Er zeigt, dass die E-Mail von der Domain kam, die sie angibt. Eine kompromittierte oder frisch registrierte Domain besteht die Prüfung problemlos.</p>
+<p><strong>Sollten Agenten gemeldete E-Mails in Outlook öffnen?</strong> Nicht als Routine. Verwenden Sie einen Texteditor oder einen Viewer, der aktive Inhalte entfernt, und prüfen Sie die Linkziele, bevor jemand klickt.</p>
+
+<h3 id="support">Fragen</h3>
+<p>Etwas auf dieser Seite ist falsch, oder wir haben einen Fall übersehen? Schreiben Sie an <a href="mailto:support@dortus.com?subject=Phishing-Meldungen%20in%20JSM">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView von Dortus</p>
+<h3>.msg- und .eml-Anhänge direkt im Vorgang lesen</h3>
+<p>Die E-Mail so, wie sie gesendet wurde, mit eingebetteten Bildern und den enthaltenen Dateien, dazu eine klar formulierte Phishing-Prüfung. Runs on Atlassian, speichert nichts, sendet nichts irgendwohin. Funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+<p class="btns"><a class="btn btn-primary" href="../mailview.html">Über MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Erhältlich im Atlassian Marketplace</a>.</p>
+</div>
+<p>Siehe auch: <a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Kleine Apps für Jira und Confluence, die vollständig auf Atlassian laufen. Ihre Inhalte erreichen Dortus nie.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="../atlassian.html">Atlassian-Apps</a></li>
+<li><a href="../mailview.html">MailView</a></li>
+<li><a href="../mailview-confluence.html">MailView für Confluence</a></li>
+<li><a href="../email-attachment-audit.html">Email Attachment Audit (kostenlos)</a></li>
+<li><a href="../export-questions-for-confluence-cloud.html">Daten aus Questions for Confluence Cloud exportieren</a></li>
+<li><a href="../migrate-questions-for-confluence-to-cloud.html">Questions for Confluence in die Cloud migrieren</a></li>
+<li><a href="../limit-who-answers-questions-for-confluence.html">Wer in Questions for Confluence antworten darf</a></li>
+<li><a href="../partners.html">Für Solution Partner</a></li>
+<li><a href="../security.html">Sicherheit</a></li>
+<li><a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></li>
+<li><a href="../open-msg-eml-in-confluence.html">.msg- und .eml-Anhänge in Confluence öffnen</a></li>
+<li><a href="../outlook-email-on-confluence-page.html">Eine Outlook-E-Mail auf eine Confluence-Seite bringen</a></li>
+<li><a href="../build-faq-confluence-cloud.html">Eine FAQ in Confluence Cloud aufbauen</a></li>
+<li><a href="../import-faq-spreadsheet-confluence.html">Eine FAQ aus einer Tabelle importieren</a></li>
+<li><a href="../confluence-cloud-storage-full.html">Wenn der Speicher in Confluence Cloud voll ist</a></li>
+<li><a href="outlook-email-an-jira-anhaengen.html">Eine Outlook-E-Mail an einen Jira-Vorgang anhängen</a></li>
+<li><a href="../create-jira-work-items-from-email.html">Jira-Vorgänge aus E-Mails erstellen</a></li>
+<li><a href="phishing-meldungen-jira-service-management.html">Phishing-Meldungen in Jira Service Management</a></li>
+<li><a href="../stack-internal-vs-confluence-qa.html">Stack Internal vs. Q&amp;A in Confluence</a></li>
+<li><a href="../slack-questions-to-confluence.html">Dieselben Fragen nicht mehr in Slack beantworten</a></li>
+<li><a href="../open-questions-confluence-comments.html">Offene Fragen in Confluence-Kommentaren</a></li>
+<li><a href="email-anhaenge-nach-jira-migration.html">E-Mail-Anhänge nach einer Jira-Migration</a></li>
+<li><a href="../forwarding-email-jira-service-management.html">E-Mails an Jira Service Management weiterleiten</a></li>
+<li><a href="../email-replies-new-request-jira-service-management.html">E-Mail-Antworten, die in JSM neue Anfragen werden</a></li>
+<li><a href="../email-attachments-missing-jira-service-management.html">Fehlende Anhänge bei E-Mail-Anfragen in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat bei einer Jira- oder JSM-Anfrage</a></li>
+<li><a href="../jsm-not-creating-requests-from-email.html">JSM erstellt keine Anfragen aus E-Mails</a></li>
+<li><a href="../jsm-shared-mailbox-microsoft-365.html">Microsoft 365-Shared-Mailbox in JSM</a></li>
+<li><a href="../original-email-jira-service-management.html">Die ursprüngliche E-Mail hinter einer JSM-Anfrage sehen</a></li>
+<li><a href="../msg-vs-eml.html">Outlook .msg vs. .eml</a></li>
+<li><a href="../email-check.html">E-Mail-Check</a></li>
+</ul>
+</div>
+<div>
+<h2>Unternehmen</h2>
+<ul>
+<li><a href="../support.html">Support</a></li>
+<li><a href="../privacy.html">Datenschutz</a></li>
+<li><a href="../terms.html">Nutzungsbedingungen</a></li>
+<li><a href="mailto:support@dortus.com">E-Mail an uns</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence und Forge sind Marken von Atlassian Pty Ltd. Dortus steht in keiner
+Verbindung zu Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="../site.js" defer></script>
+</body>
+</html>
