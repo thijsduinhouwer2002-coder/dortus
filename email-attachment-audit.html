@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email Attachment Audit - count .msg and .eml email attachments in a Jira project · Dortus</title>
+<meta name="description" content="A free Jira app that counts the .msg, .eml and winmail.dat email attachments in a project: how many, on which work items, how big and how old. Read-only, runs entirely on Atlassian, stores nothing." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Email Attachment Audit - how many emails are stuck as files in your Jira project?" />
+<meta property="og:description" content="Free, read-only Jira app: one scan shows how many .msg, .eml and winmail.dat attachments your project has, where they are, and how big and old they are." />
+<meta property="og:image" content="https://dortus.com/assets/email-attachment-audit-01.png" />
+<meta property="og:image:alt" content="Email Attachment Audit in a Jira project: tiles with 62 emails on 11 work items, a bar per month and a table of work items" />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="https://dortus.com/email-attachment-audit.html" />
+<meta property="og:url" content="https://dortus.com/email-attachment-audit.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="world-hero world-hero-blue">
+<div class="wrap">
+<div>
+<p class="eyebrow enter">Email Attachment Audit &middot; free Jira app</p>
+<h1 class="enter enter-1">How many emails are stuck as files in your Jira project?</h1>
+<p class="lede enter enter-2">
+When someone forwards an email to the service desk or drags an Outlook message onto a ticket,
+it lands as a .msg or .eml file. Jira shows it as code. Nobody knows how many of those are
+sitting in a project, because you cannot search for them. Email Attachment Audit counts them
+in one scan: how many, on which work items, how big and how old. Free, read-only, nothing stored.
+</p>
+<div class="btns enter enter-2">
+<a class="btn btn-light" href="#docs">Read the docs <span class="arrow" aria-hidden="true">&rarr;</span></a>
+<a class="btn btn-line" href="support.html">Support</a>
+</div>
+<p style="margin-top: 1.3rem"><span class="status enter enter-3">Coming to the Atlassian Marketplace</span></p>
+</div>
+
+<figure class="frame enter enter-3" style="max-width: 975px; width: 100%; margin: clamp(2rem, 4vw, 3rem) auto 0">
+<span class="frame-media">
+<img src="assets/email-attachment-audit-01.png" width="1200" height="760" loading="lazy" alt="Email Attachment Audit on a Jira project page: four tiles (62 emails as attachments, 11 work items, 25 MB, oldest email), a bar per month for the last 12 months, and a table of work items with the number of emails, the newest date and the size." />
+</span>
+</figure>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="head reveal">
+<h2>What one scan gives you</h2>
+<p class="lede">
+JQL can find work items with attachments, but not by file type. This page reads the attachment list of each work item in your browser and counts what is an email.
+</p>
+</div>
+<div class="cols cols-3">
+<div class="card reveal">
+<span class="card-mark" aria-hidden="true">1</span>
+<h3>The numbers</h3>
+<p>How many emails sit as attachments, on how many work items, their total size, and the oldest and newest one. Split by Outlook .msg, .eml and winmail.dat.</p>
+</div>
+<div class="card reveal reveal-1">
+<span class="card-mark" aria-hidden="true">2</span>
+<h3>Per month</h3>
+<p>A bar for each of the last 12 months, so you can see whether this is a legacy pile from a migration or something that arrives every week.</p>
+</div>
+<div class="card reveal reveal-2">
+<span class="card-mark" aria-hidden="true">3</span>
+<h3>The list</h3>
+<p>Every work item with an email attached: key, summary, how many emails, the newest one and the size. Click a key to open the work item. Copy the whole list as CSV for a spreadsheet.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band band-deep">
+<div class="wrap">
+<div class="head reveal">
+<h2>Nothing is stored, nothing is sent</h2>
+<p class="lede">
+Email Attachment Audit is built on Atlassian Forge. The scan runs in your browser with your own Jira
+permissions: it asks Jira for the work items you may see and reads only the attachment list (file name,
+type, size, date). It never opens the emails. Dortus has no servers, keeps no copies and never sees your Jira.
+</p>
+</div>
+<dl class="facts facts-4 reveal reveal-1">
+<div>
+<dt>Platform</dt>
+<dd>Atlassian Forge</dd>
+</div>
+<div>
+<dt>Storage</dt>
+<dd>None</dd>
+</div>
+<div>
+<dt>Permission</dt>
+<dd>Read work items and attachments</dd>
+</div>
+<div>
+<dt>Price</dt>
+<dd>Free</dd>
+</div>
+</dl>
+<p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+<a class="btn btn-line" href="privacy.html">Privacy policy <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</p>
+</div>
+</section>
+
+<section class="band band-tint">
+<div class="wrap">
+<div class="head reveal">
+<h2>Then what?</h2>
+<p class="lede">
+The audit tells you how big the problem is. What you do about it is up to you.
+</p>
+</div>
+<ul class="rows reveal reveal-1">
+<li>
+<b>Leave them</b>
+<p>If the count is small or the emails are old and done, that is a fine answer. You now know.</p>
+</li>
+<li>
+<b>Read them in Jira</b>
+<p>If agents open these files every day, <a href="mailview.html">MailView</a> (also by Dortus) shows .msg and .eml attachments as readable email right on the work item, with a phishing check. The free routes are in <a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a>.</p>
+</li>
+<li>
+<b>Stop the inflow</b>
+<p>Many email attachments come from forwarding. See <a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a> and <a href="original-email-jira-service-management.html">See the original email behind a JSM request</a>.</p>
+</li>
+</ul>
+</div>
+</section>
+
+<section class="band" id="docs">
+<div class="wrap">
+<div class="head reveal">
+<h2>Documentation</h2>
+<p class="lede">Everything you need to install and use Email Attachment Audit. There are no settings.</p>
+</div>
+<div class="prose">
+<h3 id="getting-started">Getting started</h3>
+<ol>
+<li><strong>Install Email Attachment Audit</strong> from the Atlassian Marketplace (link follows when the listing is public). You need to be a Jira admin to install it.</li>
+<li><strong>Open a project.</strong> In the project navigation, next to Board, Backlog and the other tabs, open <strong>Email Attachment Audit</strong>. In some projects it sits under the <strong>&hellip;</strong> (more) tab.</li>
+<li><strong>Click Scan this project.</strong> A progress bar shows how many work items with attachments have been checked. Big projects take a minute; you can stop at any time and keep what was counted so far.</li>
+<li><strong>Read the result.</strong> Tiles with the totals, a bar per month, and the table of work items. <strong>Copy as CSV</strong> puts the table on your clipboard, one line per email, ready for a spreadsheet.</li>
+<li><strong>That's it.</strong> Results are not saved. Scan again whenever you want fresh numbers.</li>
+</ol>
+
+<h3 id="what-counts">What counts as an email</h3>
+<p>A .eml file, an Outlook .msg file (by file extension or by MIME type), or a winmail.dat file (the Outlook container some mail servers attach). Other files are ignored. A forwarded email that was saved without a file extension is not counted; MailView does recognise those by their content, this app does not open files.</p>
+
+<h3 id="limits">Limits</h3>
+<ul>
+<li><strong>One project per scan.</strong> The page lives in the project and scans that project only.</li>
+<li><strong>Up to 5,000 work items with attachments per scan</strong>, newest first. Above that the scan stops and says so; the numbers then cover the newest 5,000.</li>
+<li><strong>Your permissions.</strong> The scan asks Jira as you. Work items you cannot see in Jira are not counted.</li>
+<li><strong>Where it works:</strong> company-managed and team-managed Jira projects, and Jira Service Management projects (agent view). Not in the customer portal, not in Confluence.</li>
+<li><strong>What it does not do:</strong> it never opens, changes, moves or deletes anything. It only counts and lists.</li>
+</ul>
+
+<h3 id="faq">FAQ</h3>
+<p><strong>Can everyone run the scan?</strong> Everyone who can open the project page can scan it. Each person sees only the work items they are allowed to see.</p>
+<p><strong>Why is the count different from what I expected?</strong> Only files recognised as email count (see above). Emails pasted as text, screenshots of emails, or PDFs are not attachments of an email type.</p>
+<p><strong>Does the app read the emails?</strong> No. It reads the attachment list of each work item: file name, type, size and date. Never the content.</p>
+<p><strong>Is it really free?</strong> Yes. No trial, no user limit, no upgrade. Dortus makes a paid app, <a href="mailview.html">MailView</a>, that shows these emails as readable email; the audit mentions it once at the bottom of the results. You do not need MailView for the audit to work.</p>
+<p><strong>Does it work in Jira Service Management?</strong> Yes, in the agent view of a service project.</p>
+
+<h3 id="data-privacy">Data and privacy</h3>
+<p><strong>Where is data stored?</strong> Nowhere. The app has no storage. The result lives in your browser tab until you close it.</p>
+<p><strong>What does the app send outside Atlassian?</strong> Nothing. There are no external servers and no outbound connections.</p>
+<p><strong>What permissions does the app ask for?</strong> Read access to work items and their attachments (<code>read:jira-work</code>). It cannot change anything.</p>
+<p><strong>Can Dortus see our Jira?</strong> No. The app runs in your browser and logs nothing. There is no Dortus server behind it.</p>
+<p><strong>What happens if I uninstall?</strong> Nothing to clean up: the app stored nothing.</p>
+<p>Full policy: <a href="privacy.html">Privacy policy</a>. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+<h3 id="support">Support</h3>
+<p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=Email%20Attachment%20Audit">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL and what you expected to see.</p>
+<p>See also: <a href="mailview.html">MailView</a>, <a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a>, <a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="askspace-vs-questions-for-confluence.html">AskSpace vs Questions for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Other</h2>
+<ul>
+<li><a href="arrears.html">Arrears (Shopify)</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
