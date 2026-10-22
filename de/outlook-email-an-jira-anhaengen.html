@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eine Outlook-E-Mail an einen Jira-Vorgang anhängen (und lesbar halten) · Dortus</title>
+<meta name="description" content="Vier Wege, eine Outlook-E-Mail auf einen Vorgang in Jira Cloud zu bringen: das Add-in Jira Cloud for Outlook, Drag-and-drop (.msg oder .eml), Weiterleiten an den Jira-Mail-Handler und Speichern als PDF. Wie das Ergebnis jeweils aussieht und wie die E-Mail im Ticket lesbar bleibt." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="../assets/app-icon.png" />
+<meta property="og:title" content="Eine Outlook-E-Mail an einen Jira-Vorgang anhängen (und lesbar halten)" />
+<meta property="og:description" content="Add-in, Drag-and-drop, Weiterleiten an Jira oder PDF: was jeder Weg im Vorgang hinterlässt und wie die E-Mail lesbar bleibt." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/de/outlook-email-an-jira-anhaengen.html" />
+<link rel="alternate" hreflang="de" href="https://dortus.com/de/outlook-email-an-jira-anhaengen.html" />
+<link rel="alternate" hreflang="en" href="https://dortus.com/attach-outlook-email-to-jira.html" />
+<link rel="alternate" hreflang="x-default" href="https://dortus.com/attach-outlook-email-to-jira.html" />
+<meta property="og:url" content="https://dortus.com/de/outlook-email-an-jira-anhaengen.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView zeigt einen E-Mail-Anhang so, wie er gesendet wurde: Absender, Empfänger, Datum und die Nachricht" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Eine Outlook-E-Mail an einen Jira-Vorgang anhängen (und lesbar halten)",
+  "description": "Vier Wege, eine Outlook-E-Mail auf einen Vorgang in Jira Cloud zu bringen: das Add-in Jira Cloud for Outlook, Drag-and-drop (.msg oder .eml), Weiterleiten an den Jira-Mail-Handler und Speichern als PDF. Wie das Ergebnis jeweils aussieht und wie die E-Mail im Ticket lesbar bleibt.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-22T20:00:00+00:00",
+  "dateModified": "2026-10-22T20:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/de/outlook-email-an-jira-anhaengen.html"
+  },
+  "inLanguage": "de"
+}
+</script>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Hauptnavigation">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="../atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Anleitungen</a>
+<a href="../support.html">Support</a>
+<a class="btn btn-primary" href="../mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Anleitung &middot; Jira Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Eine Outlook-E-Mail an einen Jira-Vorgang anhängen (und lesbar halten)</h1>
+<p class="lang-note">Diese Seite ist die deutsche Fassung von <a href="../attach-outlook-email-to-jira.html">der englischen Anleitung</a>. Die App MailView selbst und ihre Dokumentation sind auf Englisch.</p>
+<p class="lede">
+Ein Kunde schickt die Details per E-Mail, ein Kollege leitet eine Freigabe weiter, ein Lieferant bestätigt einen Termin.
+Die E-Mail gehört in den Vorgang (Work Item). Es gibt vier Wege, sie dorthin zu bringen, und sie enden nicht alle gleich.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="add-in">Weg 1: das Add-in Jira Cloud for Outlook</h3>
+<p>Mit Atlassians eigenem Add-in können Sie direkt aus Outlook einen Vorgang aus einer E-Mail erstellen oder eine E-Mail zu einem bestehenden Vorgang hinzufügen. So hinzugefügte E-Mails erscheinen im Vorgang in der Webansicht unter <strong>Angehängte E-Mails</strong> und sind dort lesbar. Zwei Einschränkungen: Das Add-in muss bei allen installiert und angemeldet sein, die E-Mails ablegen, und nur über das Add-in hinzugefügte E-Mails erscheinen in diesem Bereich. Dateien, die auf anderem Weg ankommen, nicht.</p>
+
+<h3 id="drag">Weg 2: die E-Mail auf den Vorgang ziehen</h3>
+<p>Eine Nachricht aus Outlook in den Anhangbereich eines Vorgangs zu ziehen ist der schnellste Weg, und hier beginnt die meiste Verwirrung. Das klassische Outlook für Windows speichert die Nachricht als <code>.msg</code>-Datei. Das neue Outlook, Outlook für Mac, Apple Mail und Thunderbird speichern sie als <code>.eml</code>. Direkt aus dem neuen Outlook in den Browser zu ziehen funktioniert nicht immer; die Nachricht zuerst auf den Desktop zu speichern und diese Datei zu ziehen funktioniert. Beide landen als gewöhnliche Anhänge im Vorgang.</p>
+<p>Das Problem entsteht, wenn jemand sie öffnet: Jira Cloud hat für keines der beiden Formate einen Viewer. Eine <code>.eml</code> erscheint als Quelltext, eine <code>.msg</code> als unlesbarer Code. Das ist seit 2021 ein offener Wunsch in Atlassians Tracker (<a href="https://jira.atlassian.com/browse/JRACLOUD-77500" rel="noopener noreferrer">JRACLOUD-77500</a>). Der Inhalt ist vollständig da, aber jeder Leser muss die Datei herunterladen und in einem Mailprogramm öffnen.</p>
+
+<h3 id="forward">Weg 3: die E-Mail an Jira weiterleiten</h3>
+<p>Wenn Ihr Projekt einen E-Mail-Kanal hat (Jira Service Management hat einen, und Jira lässt sich mit einem Mail-Handler einrichten), können Sie die E-Mail an diese Adresse weiterleiten. Beim Weiterleiten <em>im Text</em> landet der Inhalt in der Beschreibung oder in einem Kommentar: lesbar, aber ohne die Header und manchmal ohne die Formatierung. Beim Weiterleiten <em>als Anhang</em> bleibt die ursprüngliche E-Mail erhalten, aber Jiras Mail-Handler speichert sie als Datei ohne Endung, sodass sie nicht einmal wie eine E-Mail aussieht (<a href="https://jira.atlassian.com/browse/JRACLOUD-40477" rel="noopener noreferrer">JRACLOUD-40477</a>, offen seit 2014). Leser müssen sie herunterladen, in <code>.eml</code> umbenennen und in einem Mailprogramm öffnen.</p>
+
+<h3 id="pdf">Weg 4: zuerst als PDF speichern</h3>
+<p>Die E-Mail vor dem Anhängen als PDF zu drucken ergibt eine Datei, die Jira in der Vorschau anzeigen kann. Sie verlieren die Header, die ursprünglichen Anhänge und die Möglichkeit, später zu antworten oder weiterzuleiten, und es funktioniert nur, wenn die Person, die anhängt, jedes Mal daran denkt. Für eine gelegentliche Vertragsbestätigung in Ordnung; für einen Service Desk nicht praktikabel.</p>
+
+<h3 id="readable">Die E-Mail im Vorgang lesbar halten</h3>
+<p>Weg 2 und 3 sind die, die im Alltag tatsächlich genutzt werden, und beide hinterlassen im Vorgang eine E-Mail, die Jira nicht anzeigen kann. <a href="../msg-vs-eml.html"><code>.msg</code> in <code>.eml</code></a> umzubenennen hilft nicht; die Formate haben nichts miteinander zu tun. Was hilft, ist ein Viewer in Jira. Vergleichen Sie Apps anhand dieser Punkte: ob die E-Mail im Browser ohne externe Server gerendert wird („Runs on Atlassian"), ob beide Formate abgedeckt sind, einschließlich <code>.msg</code>-Dateien, die nur RTF enthalten, und weitergeleiteter E-Mails ohne Endung, und ob Skripte und externe Bilder entfernt werden, bevor etwas angezeigt wird.</p>
+<p>Zur Transparenz: Dortus stellt eine solche App her. <a href="../mailview.html">MailView</a> listet die E-Mail-Dateien im Vorgang auf und zeigt die angeklickte (bis 10 MB) mit Formatierung, eingebetteten Bildern und den enthaltenen Dateien, egal ob die Datei hochgeladen, hineingezogen oder über den Mail-Handler weitergeleitet wurde. Dazu kommt eine klar formulierte Prüfung verdächtiger E-Mails (Authentifizierungsergebnisse, Domains mit ähnlich aussehenden Buchstaben aus anderen Alphabeten oder mit Akzenten, Links, deren Text woandershin zeigt). Die App speichert nichts und sendet nichts irgendwohin, und sie funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+
+<h3 id="faq">Kurze Antworten</h3>
+<p><strong>Welchen Weg sollte ein Team wählen?</strong> Wenn alle in Outlook arbeiten und das Add-in installieren, liefert Weg 1 von Anfang an lesbare E-Mails. Wenn E-Mails von Kunden, Automatisierungen oder Kollegen kommen, die einfach ziehen und ablegen, rechnen Sie mit <code>.msg</code>- und <code>.eml</code>-Dateien in Ihren Vorgängen und ergänzen Sie einen Viewer.</p>
+<p><strong>Spielt der Dateityp eine Rolle?</strong> Fürs Speichern nicht. Beide bleiben unverändert erhalten. Fürs Lesen schon: Outlook für Windows öffnet beide, Apple Mail und Thunderbird nur <code>.eml</code>.</p>
+<p><strong>Kann Jira die E-Mail in der Mobile-App anzeigen?</strong> Nein. Angehängte E-Mails aus dem Add-in gibt es nur in der Webansicht, und andere E-Mail-Dateien sind überall nur Downloads.</p>
+
+<h3 id="support">Fragen</h3>
+<p>Etwas auf dieser Seite ist falsch, oder wir haben einen Fall übersehen? Schreiben Sie an <a href="mailto:support@dortus.com?subject=Outlook-E-Mails%20an%20Jira%20anh%C3%A4ngen">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView von Dortus</p>
+<h3>.msg- und .eml-Anhänge direkt im Vorgang lesen</h3>
+<p>Die E-Mail so, wie sie gesendet wurde, mit eingebetteten Bildern und den enthaltenen Dateien, dazu eine klar formulierte Phishing-Prüfung. Runs on Atlassian, speichert nichts, sendet nichts irgendwohin. Funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+<p class="btns"><a class="btn btn-primary" href="../mailview.html">Über MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Erhältlich im Atlassian Marketplace</a>.</p>
+</div>
+<p>Siehe auch: <a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Kleine Apps für Jira und Confluence, die vollständig auf Atlassian laufen. Ihre Inhalte erreichen Dortus nie.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="../atlassian.html">Atlassian-Apps</a></li>
+<li><a href="../mailview.html">MailView</a></li>
+<li><a href="../mailview-confluence.html">MailView für Confluence</a></li>
+<li><a href="../email-attachment-audit.html">Email Attachment Audit (kostenlos)</a></li>
+<li><a href="../export-questions-for-confluence-cloud.html">Daten aus Questions for Confluence Cloud exportieren</a></li>
+<li><a href="../migrate-questions-for-confluence-to-cloud.html">Questions for Confluence in die Cloud migrieren</a></li>
+<li><a href="../limit-who-answers-questions-for-confluence.html">Wer in Questions for Confluence antworten darf</a></li>
+<li><a href="../partners.html">Für Solution Partner</a></li>
+<li><a href="../security.html">Sicherheit</a></li>
+<li><a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></li>
+<li><a href="../open-msg-eml-in-confluence.html">.msg- und .eml-Anhänge in Confluence öffnen</a></li>
+<li><a href="../outlook-email-on-confluence-page.html">Eine Outlook-E-Mail auf eine Confluence-Seite bringen</a></li>
+<li><a href="../build-faq-confluence-cloud.html">Eine FAQ in Confluence Cloud aufbauen</a></li>
+<li><a href="../import-faq-spreadsheet-confluence.html">Eine FAQ aus einer Tabelle importieren</a></li>
+<li><a href="../confluence-cloud-storage-full.html">Wenn der Speicher in Confluence Cloud voll ist</a></li>
+<li><a href="outlook-email-an-jira-anhaengen.html">Eine Outlook-E-Mail an einen Jira-Vorgang anhängen</a></li>
+<li><a href="../create-jira-work-items-from-email.html">Jira-Vorgänge aus E-Mails erstellen</a></li>
+<li><a href="phishing-meldungen-jira-service-management.html">Phishing-Meldungen in Jira Service Management</a></li>
+<li><a href="../stack-internal-vs-confluence-qa.html">Stack Internal vs. Q&amp;A in Confluence</a></li>
+<li><a href="../slack-questions-to-confluence.html">Dieselben Fragen nicht mehr in Slack beantworten</a></li>
+<li><a href="../open-questions-confluence-comments.html">Offene Fragen in Confluence-Kommentaren</a></li>
+<li><a href="email-anhaenge-nach-jira-migration.html">E-Mail-Anhänge nach einer Jira-Migration</a></li>
+<li><a href="../forwarding-email-jira-service-management.html">E-Mails an Jira Service Management weiterleiten</a></li>
+<li><a href="../email-replies-new-request-jira-service-management.html">E-Mail-Antworten, die in JSM neue Anfragen werden</a></li>
+<li><a href="../email-attachments-missing-jira-service-management.html">Fehlende Anhänge bei E-Mail-Anfragen in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat bei einer Jira- oder JSM-Anfrage</a></li>
+<li><a href="../jsm-not-creating-requests-from-email.html">JSM erstellt keine Anfragen aus E-Mails</a></li>
+<li><a href="../jsm-shared-mailbox-microsoft-365.html">Microsoft 365-Shared-Mailbox in JSM</a></li>
+<li><a href="../original-email-jira-service-management.html">Die ursprüngliche E-Mail hinter einer JSM-Anfrage sehen</a></li>
+<li><a href="../msg-vs-eml.html">Outlook .msg vs. .eml</a></li>
+<li><a href="../email-check.html">E-Mail-Check</a></li>
+</ul>
+</div>
+<div>
+<h2>Unternehmen</h2>
+<ul>
+<li><a href="../support.html">Support</a></li>
+<li><a href="../privacy.html">Datenschutz</a></li>
+<li><a href="../terms.html">Nutzungsbedingungen</a></li>
+<li><a href="mailto:support@dortus.com">E-Mail an uns</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence und Forge sind Marken von Atlassian Pty Ltd. Dortus steht in keiner
+Verbindung zu Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="../site.js" defer></script>
+</body>
+</html>

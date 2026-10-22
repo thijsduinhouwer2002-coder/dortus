@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>E-Mail-Anhänge nach einer Jira-Migration: Jahre an .msg-Dateien wieder lesbar machen · Dortus</title>
+<meta name="description" content="Nach einer Migration zu Jira Cloud kommen Outlook-.msg- und .eml-Anhänge als unlesbare Dateien an. Was Sie dagegen tun können: kostenlose Optionen, was Sie vor der Migration prüfen sollten, und Apps, die die E-Mail direkt im Vorgang anzeigen." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="../assets/app-icon.png" />
+<meta property="og:title" content="E-Mail-Anhänge nach einer Jira-Migration: Jahre an .msg-Dateien wieder lesbar machen" />
+<meta property="og:description" content="Migrierte .msg- und .eml-Anhänge erscheinen in Jira Cloud als Code. Kostenlose Optionen und Apps, die das direkt im Vorgang lösen." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/de/email-anhaenge-nach-jira-migration.html" />
+<link rel="alternate" hreflang="de" href="https://dortus.com/de/email-anhaenge-nach-jira-migration.html" />
+<link rel="alternate" hreflang="en" href="https://dortus.com/migration-email-attachments-jira.html" />
+<link rel="alternate" hreflang="x-default" href="https://dortus.com/migration-email-attachments-jira.html" />
+<meta property="og:url" content="https://dortus.com/de/email-anhaenge-nach-jira-migration.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView zeigt einen E-Mail-Anhang so, wie er gesendet wurde: Absender, Empfänger, Datum und die Nachricht" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "E-Mail-Anhänge nach einer Jira-Migration: Jahre an .msg-Dateien wieder lesbar machen",
+  "description": "Nach einer Migration zu Jira Cloud kommen Outlook-.msg- und .eml-Anhänge als unlesbare Dateien an. Was Sie dagegen tun können: kostenlose Optionen, was Sie vor der Migration prüfen sollten, und Apps, die die E-Mail direkt im Vorgang anzeigen.",
+  "image": [
+    "https://dortus.com/assets/mailview-01-message.png"
+  ],
+  "datePublished": "2026-10-22T20:00:00+00:00",
+  "dateModified": "2026-10-22T20:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/de/email-anhaenge-nach-jira-migration.html"
+  },
+  "inLanguage": "de"
+}
+</script>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Hauptnavigation">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="../atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Anleitungen</a>
+<a href="../support.html">Support</a>
+<a class="btn btn-primary" href="../mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Anleitung &middot; Migrationen</p>
+<h1 style="margin-bottom: 0.9rem">E-Mail-Anhänge nach einer Jira-Migration: Jahre an .msg-Dateien wieder lesbar machen</h1>
+<p class="lang-note">Diese Seite ist die deutsche Fassung von <a href="../migration-email-attachments-jira.html">der englischen Anleitung</a>. Die App MailView selbst und ihre Dokumentation sind auf Englisch.</p>
+<p class="lede">
+Support-Teams, Rechtsabteilungen und Einkauf hängen über Jahre E-Mails an Tickets. Wenn diese Tickets nach Jira Cloud umziehen, kommt jede .msg und .eml als Datei mit, und Jira Cloud zeigt sie als Code oder Rohtext. Diese Seite ist für die Person, die das nach der Migration feststellt.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="what-happens">Was bei einer Migration mit E-Mail-Anhängen passiert</h3>
+<p>Anhänge werden normalerweise als Dateien übernommen, innerhalb der Größenlimits Ihrer Cloud-Site. Nichts wird konvertiert: Eine .msg, die 2019 angehängt wurde, ist nach dem Umzug noch dieselbe .msg. Was sich ändert, ist, wo Sie sie lesen. Jira Cloud hat keinen eingebauten Viewer für E-Mail-Formate, deshalb erscheint ein Anhang, den Outlook im alten System mit einem Klick öffnete, jetzt als Download, und Öffnen heißt: Datei speichern und in ein Mailprogramm wechseln. Bei einem Ticket ist das lästig. Bei einem Archiv mit tausenden Tickets ist es der Unterschied zwischen einer durchsuchbaren Historie und einem Haufen Dateien, die niemand öffnet.</p>
+
+<h3 id="why-now">Warum das gerade jetzt aufkommt</h3>
+<p>Atlassian stellt Data Center ein. Neue Data Center-Abonnements gibt es seit dem 30. März 2026 nicht mehr, Bestandskunden können ab dem 30. März 2028 nicht mehr erweitern, und das End of Life ist der 28. März 2029 (<a href="https://www.atlassian.com/licensing/data-center-end-of-life">Atlassians Zeitplan</a>). Im Oktober 2026 hat Atlassian Data Center-Kunden außerdem aufgefordert, eine kritische Schwachstelle beim Dateizugriff zu patchen, CVE-2026-21589; Cloud war nicht betroffen. Wenn Sie zu den Teams gehören, die den Umzug jetzt planen, kosten die Prüfungen unten eine Stunde und ersparen später eine Überraschung.</p>
+
+<h3 id="before">Drei Dinge, die Sie vor der Migration prüfen sollten</h3>
+<ul>
+<li><strong>Wie viele E-Mails angehängt sind, und wo.</strong> Suchen Sie in den Projekten, die Sie umziehen, nach Anhängen, die auf .msg und .eml enden. Auf Data Center kann ein Datenbank-Admin sie in der Tabelle <code>fileattachment</code> nach Dateiname zählen (dieselbe Tabelle, die Atlassian in <a href="https://support.atlassian.com/jira/kb/jira-server-throws-attachmentmodule-error-in-the-issue-view-screen/">diesem Support-Artikel</a> verwendet). Eine Handvoll: Ignorieren Sie diese Seite. Tausende in einem Support- oder Rechtsprojekt: Entscheiden Sie jetzt, wie die Leute sie danach lesen sollen.</li>
+<li><strong>Wer sie lesen muss.</strong> Agenten an einem Service Desk öffnen alte E-Mails täglich; ein Finanzteam vielleicht einmal im Quartal. Die täglichen Leser entscheiden, ob sich ein Viewer lohnt.</li>
+<li><strong>Weitergeleitete E-Mails ohne Dateiendung.</strong> Manche Mail-Handler und Integrationen hängen eine weitergeleitete E-Mail als Datei ohne Endung oder mit generischem Namen an. Die werden ebenfalls migriert, und danach sind sie noch schwerer zu erkennen.</li>
+</ul>
+
+<h3 id="free">Kostenlose Optionen nach der Migration</h3>
+<p><strong>Herunterladen und im Mailprogramm öffnen.</strong> Funktioniert für jede Datei, kostet pro E-Mail einen Umweg und legt die E-Mail auf jemandes Laptop ab. Für gelegentliches Lesen in Ordnung.</p>
+<p><strong>Das Archiv vor oder nach dem Umzug konvertieren.</strong> Skripte können .msg massenhaft in .eml oder PDF umwandeln. Sie behalten lesbare Dateien, verlieren aber das Originalformat und die Header, verdoppeln die Anhänge, und jemand muss das Skript verantworten. Lohnt sich nur für ein einmaliges Archiv, zu dem niemand mehr etwas hinzufügt.</p>
+<p><strong>So lassen, wie sie sind.</strong> Die ehrliche Antwort für ein Archiv, das selten geöffnet wird. Die Dateien sind sicher; sie sind nur unbequem.</p>
+
+<h3 id="apps">Apps, die die E-Mail im Vorgang anzeigen</h3>
+<p>Marketplace-Apps ergänzen den Vorgang (Work Item) um einen Viewer, sodass eine migrierte .msg wieder wie eine E-Mail lesbar ist, dort, wo sie liegt. Für ein Archiv vergleichen Sie sie anhand dieser Punkte:</p>
+<ul>
+<li><strong>Beide Formate, auch alte.</strong> Archive enthalten .msg-Dateien, die nur RTF enthalten, verschachtelte E-Mails und weitergeleitete Nachrichten ohne Endung. Ein Viewer, der nur saubere .eml-Dateien verarbeitet, lässt das halbe Archiv unlesbar.</li>
+<li><strong>Wo die E-Mail verarbeitet wird.</strong> Jahre an Kunden- und Rechtskorrespondenz sollten Ihre Site nicht verlassen. Bevorzugen Sie Apps, die im Browser rendern und keine externen Server nutzen („Runs on Atlassian").</li>
+<li><strong>Nichts gespeichert.</strong> Ein Viewer, der E-Mails in einen eigenen Speicher kopiert, verdoppelt Ihre Daten und die Fragen aus der Sicherheitsabteilung.</li>
+<li><strong>Keine Konfiguration.</strong> Nach einer Migration will niemand noch ein Projekt einrichten.</li>
+</ul>
+<p>Zur Transparenz: Dortus stellt eine solche App her. <a href="../mailview.html">MailView</a> zeigt .msg- und .eml-Anhänge bis 10 MB im Vorgang an, einschließlich .msg-Dateien mit nur RTF, einer E-Mail in einer E-Mail und weitergeleiteter E-Mails, die ohne Dateiendung angehängt wurden. Die App liest den Anhang mit den Berechtigungen der Person, die ihn ansieht, rendert ihn im Browser und speichert nichts. Es gibt keine Einstellungen: Ein Jira-Admin installiert sie, öffnet sie einmal in einem Vorgang mit einer E-Mail und wählt im Panel-Menü „Show for all work items", pro Projekt.</p>
+
+<h3 id="faq">Kurze Antworten</h3>
+<p><strong>Überstehen .msg-Anhänge eine Migration zu Jira Cloud?</strong> Normalerweise ja, als Dateien, innerhalb Ihres Größenlimits für Anhänge in der Cloud. Sie werden nicht konvertiert; sie sind ohne Viewer nur nicht in Jira lesbar.</p>
+<p><strong>Sollte ich .msg vor der Migration in .eml konvertieren?</strong> Nur bei einem abgeschlossenen Archiv. Jira Cloud kann .eml ebenfalls nicht von Haus aus lesen, Konvertieren allein löst das Problem also nicht.</p>
+<p><strong>Verändert eine Viewer-App die Anhänge?</strong> Das sollte sie nicht. Ein guter Viewer liest die Datei und zeigt sie an; das Original bleibt, wie es war.</p>
+
+<h3 id="support">Fragen</h3>
+<p>Sie planen eine Migration und sind unsicher, ob das auf Sie zutrifft? Schreiben Sie an <a href="mailto:support@dortus.com?subject=E-Mail-Anh%C3%A4nge%20nach%20Migration">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView von Dortus</p>
+<h3>.msg- und .eml-Anhänge direkt im Vorgang lesen</h3>
+<p>Die E-Mail so, wie sie gesendet wurde, mit eingebetteten Bildern und den enthaltenen Dateien, dazu eine klar formulierte Phishing-Prüfung. Runs on Atlassian, speichert nichts, sendet nichts irgendwohin. Funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+<p class="btns"><a class="btn btn-primary" href="../mailview.html">Über MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Erhältlich im Atlassian Marketplace</a>.</p>
+</div>
+<p>Siehe auch: <a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a> und <a href="../msg-vs-eml.html">Outlook .msg vs. .eml</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Kleine Apps für Jira und Confluence, die vollständig auf Atlassian laufen. Ihre Inhalte erreichen Dortus nie.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="../atlassian.html">Atlassian-Apps</a></li>
+<li><a href="../mailview.html">MailView</a></li>
+<li><a href="../mailview-confluence.html">MailView für Confluence</a></li>
+<li><a href="../email-attachment-audit.html">Email Attachment Audit (kostenlos)</a></li>
+<li><a href="../export-questions-for-confluence-cloud.html">Daten aus Questions for Confluence Cloud exportieren</a></li>
+<li><a href="../migrate-questions-for-confluence-to-cloud.html">Questions for Confluence in die Cloud migrieren</a></li>
+<li><a href="../limit-who-answers-questions-for-confluence.html">Wer in Questions for Confluence antworten darf</a></li>
+<li><a href="../partners.html">Für Solution Partner</a></li>
+<li><a href="../security.html">Sicherheit</a></li>
+<li><a href="msg-eml-in-jira-oeffnen.html">.msg- und .eml-Anhänge in Jira öffnen</a></li>
+<li><a href="../open-msg-eml-in-confluence.html">.msg- und .eml-Anhänge in Confluence öffnen</a></li>
+<li><a href="../outlook-email-on-confluence-page.html">Eine Outlook-E-Mail auf eine Confluence-Seite bringen</a></li>
+<li><a href="../build-faq-confluence-cloud.html">Eine FAQ in Confluence Cloud aufbauen</a></li>
+<li><a href="../import-faq-spreadsheet-confluence.html">Eine FAQ aus einer Tabelle importieren</a></li>
+<li><a href="../confluence-cloud-storage-full.html">Wenn der Speicher in Confluence Cloud voll ist</a></li>
+<li><a href="outlook-email-an-jira-anhaengen.html">Eine Outlook-E-Mail an einen Jira-Vorgang anhängen</a></li>
+<li><a href="../create-jira-work-items-from-email.html">Jira-Vorgänge aus E-Mails erstellen</a></li>
+<li><a href="phishing-meldungen-jira-service-management.html">Phishing-Meldungen in Jira Service Management</a></li>
+<li><a href="../stack-internal-vs-confluence-qa.html">Stack Internal vs. Q&amp;A in Confluence</a></li>
+<li><a href="../slack-questions-to-confluence.html">Dieselben Fragen nicht mehr in Slack beantworten</a></li>
+<li><a href="../open-questions-confluence-comments.html">Offene Fragen in Confluence-Kommentaren</a></li>
+<li><a href="email-anhaenge-nach-jira-migration.html">E-Mail-Anhänge nach einer Jira-Migration</a></li>
+<li><a href="../forwarding-email-jira-service-management.html">E-Mails an Jira Service Management weiterleiten</a></li>
+<li><a href="../email-replies-new-request-jira-service-management.html">E-Mail-Antworten, die in JSM neue Anfragen werden</a></li>
+<li><a href="../email-attachments-missing-jira-service-management.html">Fehlende Anhänge bei E-Mail-Anfragen in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat bei einer Jira- oder JSM-Anfrage</a></li>
+<li><a href="../jsm-not-creating-requests-from-email.html">JSM erstellt keine Anfragen aus E-Mails</a></li>
+<li><a href="../jsm-shared-mailbox-microsoft-365.html">Microsoft 365-Shared-Mailbox in JSM</a></li>
+<li><a href="../original-email-jira-service-management.html">Die ursprüngliche E-Mail hinter einer JSM-Anfrage sehen</a></li>
+<li><a href="../msg-vs-eml.html">Outlook .msg vs. .eml</a></li>
+<li><a href="../email-check.html">E-Mail-Check</a></li>
+</ul>
+</div>
+<div>
+<h2>Unternehmen</h2>
+<ul>
+<li><a href="../support.html">Support</a></li>
+<li><a href="../privacy.html">Datenschutz</a></li>
+<li><a href="../terms.html">Nutzungsbedingungen</a></li>
+<li><a href="mailto:support@dortus.com">E-Mail an uns</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence und Forge sind Marken von Atlassian Pty Ltd. Dortus steht in keiner
+Verbindung zu Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="../site.js" defer></script>
+</body>
+</html>
