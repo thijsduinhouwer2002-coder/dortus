@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-12T08:54:52+00:00",
-  "dateModified": "2026-10-14T21:55:23+00:00",
+  "dateModified": "2026-10-23T13:00:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -89,10 +89,18 @@ email safely, and what to check before you answer.
 <p>Most teams route reports into JSM through its email channel. Three patterns are common:</p>
 <ul>
 <li><strong><a href="forwarding-email-jira-service-management.html">Forward</a> as attachment.</strong> The user forwards the suspicious email to the service desk address as an attachment. The original arrives on the request as a <code>.eml</code> file, or, when it goes through Jira's mail handler, as a file without an extension.</li>
-<li><strong>Report button in Microsoft 365.</strong> If your tenant sends user-reported messages to a custom mailbox and that mailbox is the JSM email channel, every report becomes a request with the original message attached.</li>
+<li><strong>Report button in Microsoft 365.</strong> If your tenant sends user-reported messages to a custom mailbox and that mailbox is the JSM email channel, every report becomes a request with the original message attached. <a href="#report-buttons">Setup details below</a>.</li>
 <li><strong>Drag and drop.</strong> An agent or user drags the message from Outlook onto an existing request. Classic Outlook produces a <code>.msg</code> file, new Outlook and Mac clients produce <code>.eml</code>.</li>
 </ul>
 <p>Forwarding inline (the text pasted into the body) is the one pattern to discourage: it drops the headers, which are exactly what you need to judge the email.</p>
+
+<h3 id="report-buttons">Report buttons: Microsoft 365 and KnowBe4</h3>
+<p>Many companies give employees a "report phishing" button in Outlook and want every report to become a JSM request. That works, but each button has its own rules for where reports can go.</p>
+<p><strong>Microsoft Defender for Office 365.</strong> In the <a href="https://learn.microsoft.com/en-us/defender-office-365/submissions-user-reported-messages-custom-mailbox" rel="nofollow">user reported settings</a>, an admin sends reports to Microsoft, to a reporting mailbox, or to both. That mailbox must be an Exchange Online mailbox. Distribution groups, external addresses and on-premises mailboxes are not allowed, so you cannot enter the JSM project's Atlassian address there. The route is: reporting mailbox first, then connect that mailbox to JSM or let Exchange redirect its mail to the project's address. Our <a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 mailbox guide</a> covers both. Microsoft also asks you to mark it as a SecOps mailbox and exclude it from data loss prevention.</p>
+<p>Per Microsoft's <a href="https://learn.microsoft.com/en-us/defender-office-365/submissions-outlook-report-messages" rel="nofollow">Report button page</a>, a message reported as phishing is deleted from the user's mailbox. A delegate reporting from a shared mailbox needs Send As permission, or the report never reaches the reporting mailbox.</p>
+<p><strong>KnowBe4 Phish Alert Button.</strong> In the <a href="https://support.knowbe4.com/hc/en-us/articles/208969608" rel="nofollow">button's settings</a>, the field "Send Non-Simulated Emails to:" takes one or more addresses, separated by commas. Reported KnowBe4 simulations are not forwarded, so training campaigns stay out of the queue. For the EXE and Hybrid buttons, "Email Format" sets whether the original goes as an EML or MSG attachment, and a "Forwarded Email Prefix" goes in front of the original subject. Test with one report before you rely on it.</p>
+<p><strong>Both together.</strong> Microsoft's settings also accept reports from non-Microsoft buttons. Its rules: the original is attached unmodified as an uncompressed .EML or .MSG file, the subject starts with <code>3|</code> or <code>Phishing:</code> for phishing, and the report comes from the user who received the email, not a service account. Microsoft advises against running its button and another one side by side, because duplicate reports create noise.</p>
+<p>Microsoft's pages do not describe how its own button packages a report in the mailbox, so look at a test report first. Once the original is on the request as a <code>.eml</code> or <code>.msg</code> file, the next section applies; the <a href="#app">part about MailView</a> covers reading it there.</p>
 
 <h3 id="look">Looking at the email without opening it in Outlook</h3>
 <p>JSM cannot show <code>.eml</code> or <code>.msg</code> attachments; it offers them as a download. The habit that follows, download and open in Outlook, is the one thing phishing training tells people not to do: it can load remote tracking images, render active content and make the links one accidental click away. Safer options, in order:</p>
@@ -116,6 +124,7 @@ email safely, and what to check before you answer.
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Can JSM preview a reported email?</strong> No. <code>.eml</code> and <code>.msg</code> attachments are downloads only.</p>
+<p><strong>Can the Microsoft Report button send straight to the JSM email address?</strong> No. Microsoft requires an Exchange Online mailbox and does not allow external addresses. Send reports to that mailbox, then <a href="jsm-shared-mailbox-microsoft-365.html">connect it to JSM or redirect its mail</a> to the project's address.</p>
 <p><strong>Is a DMARC pass enough to mark a report as safe?</strong> No. It shows the email came from the domain it claims. A compromised or newly registered domain passes just fine.</p>
 <p><strong>Should agents open reported emails in Outlook?</strong> Not as a routine. Use a text editor or a viewer that strips active content, and check the link targets before anyone clicks.</p>
 
