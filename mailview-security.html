@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MailView security and compliance overview · Dortus</title>
+<meta name="description" content="For IT, security and procurement reviewers of MailView for Jira: data flow, permissions, what is stored, rendering safety, hosting, continuity, support, and what we do not have." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView security and compliance overview" />
+<meta property="og:description" content="Data flow, permissions, storage, rendering safety, hosting and continuity for MailView for Jira, checked against the app code." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mailview-security.html" />
+<meta property="og:url" content="https://dortus.com/mailview-security.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+@media print {
+  @page { size: A4; margin: 14mm; }
+  .skip-link, .site-header, .site-footer, .no-print { display: none !important; }
+  html { font-size: 8.6pt; }
+  body { background: #fff; color: #000; }
+  .wrap { padding: 0 !important; max-width: none !important; }
+  .page-head { padding: 0 0 0.6rem !important; }
+  .page-head h1 { font-size: 1.9rem !important; margin: 0 0 0.4rem !important; }
+  .prose { max-width: none !important; line-height: 1.38 !important; }
+  .page-head .lede { font-size: 1.1rem !important; margin: 0 !important; }
+  .page-meta { margin: 0.3rem 0 0 !important; }
+  .prose h2 { font-size: 1.3rem !important; margin: 0.7rem 0 0.2rem !important; padding-top: 0.4rem !important; break-after: avoid; }
+  .prose p, .prose ul, .prose ol, .prose table { margin-top: 0.3rem !important; margin-bottom: 0.3rem !important; }
+  .prose li { margin: 0.1rem 0 !important; }
+  .prose th, .prose td { padding: 0.25rem 0.4rem !important; }
+  table, li, p { break-inside: avoid; }
+  a { color: #000; }
+}
+</style>
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4078695191" rel="noopener noreferrer">Get it on the Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head">
+<div class="wrap">
+<h1>MailView security and compliance overview</h1>
+<p class="lede">
+For the IT, security or procurement reviewer who decides whether to keep MailView for Jira after the trial.
+Every statement here was checked against the app code and manifest, our published policies, or Atlassian's
+developer documentation.
+</p>
+<p class="page-meta">Checked against the app code on 23 October 2026. Covers MailView for Jira and Jira Service Management. MailView for Confluence is a separate app.</p>
+</div>
+</section>
+
+<div class="wrap">
+<div class="prose">
+
+<h2 id="what">What MailView does</h2>
+<p>MailView shows .eml and Outlook .msg email attachments inside Jira and Jira Service Management work items. It is read-only and adds a phishing verdict that is based only on what is in the file.</p>
+
+<h2 id="data-flow">Data flow</h2>
+<p>MailView is a Forge Custom UI app. Its manifest declares three user interface modules (the work item panel, the box in the right column, and a Get started page for Jira admins) and one static resource. It declares no backend functions and no remote services.</p>
+<ol>
+<li><strong>Where the file is read.</strong> In the browser of the person looking at the work item. The app asks Jira for the work item's attachment list (<code>GET /rest/api/3/issue/{key}?fields=attachment</code>) and then for the attachment content (<code>GET /rest/api/3/attachment/content/{id}</code>). It uses Forge's <code>requestJira</code>, which Atlassian documents as running <a href="https://developer.atlassian.com/platform/forge/apis-reference/ui-api-bridge/requestJira" rel="nofollow">"on behalf of the user who is currently interacting with the app"</a> and with that user's Jira permissions.</li>
+<li><strong>What is read.</strong> Attachments that are, or could be, emails: .eml, .msg, a lone winmail.dat, a zipped email, and files without a known file type (to check whether they are an email). For the list, the app reads the first 64 KB of an .eml and judges up to the 10 newest emails of up to 2 MB each. Files over 10 MB are not opened.</li>
+<li><strong>Where it is rendered.</strong> In the same browser. Parsing runs in a Web Worker where the browser allows it, with a 30 second limit. The bytes are kept in browser memory for that page load only.</li>
+<li><strong>What leaves the browser.</strong> The Jira requests above, which go to your own Jira site. Three usage counters, sent to Atlassian (see <a href="#stored">What is stored</a>). Nothing else in the code sends data to Dortus or to any third party. Links in an email open in a new tab only when a user clicks one. "Download the original" opens the attachment address on your own Jira site.</li>
+</ol>
+
+<h2 id="permissions">Permissions</h2>
+<table>
+<thead><tr><th>Manifest entry</th><th>Value</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td>OAuth scope</td><td><code>read:jira-work</code></td><td>The only scope. Read access to work items and their attachments. No write scope.</td></tr>
+<tr><td>Content security</td><td><code>styles: unsafe-inline</code></td><td>Lets the <code>style="..."</code> formatting inside emails show. Atlassian <a href="https://developer.atlassian.com/platform/forge/add-content-security-and-egress-controls/" rel="nofollow">blocks policies it considers unsafe</a> unless the app declares them here. No script permission is declared.</td></tr>
+<tr><td>External permissions</td><td>None</td><td>No <code>permissions.external</code> section: no external fetch (backend or client), images, fonts, styles, scripts, media or frames.</td></tr>
+<tr><td>Remotes, storage</td><td>None</td><td>No <code>remotes</code> and no storage module or storage scope.</td></tr>
+</tbody>
+</table>
+<p>In Forge, the external lists in the manifest <a href="https://developer.atlassian.com/platform/forge/manifest-reference/permissions" rel="nofollow">declare which external sources are allowed</a> in the app's Content Security Policy (for example <code>connect-src</code> and <code>img-src</code>), and backend calls to domains not in the manifest are rejected. The Marketplace listing carries the <strong>Runs on Atlassian</strong> badge.</p>
+
+<h2 id="stored">What is stored</h2>
+<ul>
+<li><strong>Email content: nothing.</strong> MailView has no app storage and no server, and keeps no copies (<a href="privacy.html">privacy policy</a>, section 4.4). It does not use localStorage, sessionStorage, IndexedDB or cookies; the app's tests fail if it touches any of them. The email stays a Jira attachment, under your control, as before.</li>
+<li><strong>Retention.</strong> None for email content. The privacy policy, section 8: "nothing is retained. Closing the work item is enough."</li>
+<li><strong>Usage counters.</strong> The privacy policy (section 4.1) states that MailView for Jira keeps three plain counters through Forge metrics: the app loaded with at least one email (<code>mailview.shown</code>), an email was opened (<code>mailview.email-opened</code>), and Copy findings was used (<code>mailview.findings-copied</code>). Each is an increment by one, with no content, file names, work item keys or user names. Atlassian attaches the app's identity and context, and its developer console can <a href="https://developer.atlassian.com/platform/forge/monitor-custom-metrics/" rel="nofollow">filter custom metrics by environment and by site</a>. So Dortus can see these counts per installed site. Atlassian's documentation does not state a retention period for them.</li>
+<li><strong>Logs.</strong> MailView has no backend functions. In production the app switches the browser console off, so error messages, which could contain part of an email, are not written. Technical diagnostics are shown only in Dortus's development environment.</li>
+</ul>
+
+<h2 id="rendering">Rendering safety</h2>
+<ul>
+<li>Every email body is cleaned with <strong>DOMPurify</strong> before it is shown. Removed: <code>script</code>, <code>iframe</code>, <code>frame</code>, <code>object</code>, <code>embed</code>, <code>applet</code>, <code>form</code> and form fields, <code>link</code>, <code>meta</code>, <code>base</code>, <code>svg</code>, <code>math</code>, <code>video</code>, <code>audio</code>, <code>canvas</code>, <code>dialog</code>, image maps, and event handler attributes such as <code>onclick</code>.</li>
+<li><strong>Remote images are removed.</strong> Only images carried inside the email (<code>cid:</code>, turned into a <code>data:</code> address) and <code>data:image</code> addresses are kept. In CSS, <code>@import</code> is removed and <code>url()</code> pointing outside the email becomes <code>none</code>. Positioning properties are removed, so an email cannot place content over the app.</li>
+<li><strong>Links.</strong> Only <code>http</code>, <code>https</code>, <code>mailto</code> and <code>tel</code> links keep their address. They open in a new tab with <code>rel="noopener noreferrer"</code>.</li>
+<li><strong>Isolation.</strong> The cleaned email is placed in a nested Shadow DOM, so its styles cannot change the app around it. The app itself runs in the iframe that Forge uses for <a href="https://developer.atlassian.com/platform/forge/custom-ui/iframe/" rel="nofollow">all Custom UI apps</a>, with iframe permissions and sandbox attributes set by Atlassian.</li>
+<li><strong>Limits.</strong> 10 MB per file, 2,000 MIME parts per .eml, inline images up to 5 MB, nested emails one level deep, 30 seconds to read a file.</li>
+<li>The phishing verdict helps the person triaging the email. It is not a security control and can miss things.</li>
+</ul>
+
+<h2 id="hosting">Hosting and data residency</h2>
+<ul>
+<li>MailView runs on Atlassian Forge. Dortus operates no application server for it (privacy policy, section 4.1).</li>
+<li>Atlassian applies the Runs on Atlassian badge automatically to eligible apps. The published criteria include: apps <a href="https://developer.atlassian.com/platform/marketplace/runs-on-atlassian/" rel="nofollow">"exclusively use Atlassian-hosted compute and storage"</a>, "support data residency that matches data residency provided by the host Atlassian app", and "must not egress data, with the exception of egress for analytics purposes".</li>
+<li>MailView stores no email data of its own, so there is no app data to place in a region. The email stays a Jira attachment and is stored wherever your Jira site stores attachments.</li>
+<li>Atlassian's documentation does not state in which region the usage counters are kept.</li>
+</ul>
+
+<h2 id="continuity">Continuity: if Dortus stops</h2>
+<ul>
+<li>There is no Dortus server in the path. The installed app does not depend on Dortus being available, and keeps working as installed while Atlassian's platform runs it and your Marketplace license is active. Without an active license, MailView shows "MailView has no active license" instead of the email.</li>
+<li>Updates, fixes and support would stop, including any change needed after Atlassian changes its platform.</li>
+<li>Your Jira admins can uninstall MailView at any time. There is nothing to clean up, because the app stores nothing. Your attachments are not changed by MailView, which has no write scope.</li>
+</ul>
+
+<h2 id="support">Support</h2>
+<p>Support by email at <a href="mailto:support@dortus.com?subject=MailView">support@dortus.com</a>, in English or Dutch. The <a href="support.html">support page</a> states a first reply within one business day, Monday to Friday, Europe/Amsterdam. The <a href="terms.html">terms of service</a> (section 7) say we do not offer a formal uptime guarantee.</p>
+
+<h2 id="do-not-have">What we do not have</h2>
+<ul>
+<li>No SOC 2 report and no ISO 27001 certification.</li>
+<li>MailView is not Cloud Fortified.</li>
+<li>MailView is not in the Atlassian Marketplace Bug Bounty program.</li>
+<li>No formal uptime guarantee or SLA.</li>
+</ul>
+<p>What the listing does have: one scope (<code>read:jira-work</code>), the Runs on Atlassian badge, a completed privacy and security questionnaire, payment through Atlassian, and Atlassian's Standard license agreement (Atlassian Marketplace Terms).</p>
+
+<h2 id="questions">Security questions</h2>
+<p>Email <a href="mailto:support@dortus.com?subject=MailView%20security%20review">support@dortus.com</a>. The Marketplace privacy and security questionnaire is available on the <a href="https://marketplace.atlassian.com/apps/4078695191">MailView listing</a>.</p>
+<p class="no-print">See also: <a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of service</a> &middot; <a href="mailview.html">MailView</a></p>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

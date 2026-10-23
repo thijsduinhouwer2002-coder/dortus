@@ -44,7 +44,7 @@ Two platforms, two very different data stories. Arrears runs on servers Dortus
 operates. The Atlassian apps run inside your own Atlassian site. Both are described
 below.
 </p>
-<p class="page-meta enter enter-2">Last updated: 17 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 23 October 2026</p>
 </div>
 </section>
 
@@ -170,14 +170,16 @@ data egress to Dortus for normal use of the apps.
 <p>
 One thing does reach us: Atlassian lets the developer of a Forge app see technical logs from
 the sites where it is installed, in Atlassian's developer console, for 30 days. AskSpace and
-MailView only write error types, status codes, counts and timings to those logs, never your
-content, names or IDs. Log sharing is on by default; your site's admins can turn it off.
+MailView for Confluence only write error types, status codes, counts and timings to those logs, never your
+content, names or IDs. MailView for Jira writes no log lines in the published version. Log sharing is on by default; your site's admins can turn it off.
 </p>
 <p>
 MailView for Jira also keeps three plain counters through Atlassian's Forge metrics: how often the
 app loaded with at least one email, how often an email was opened, and how often "Copy findings" was
 used. These are numbers only, with no content, file names, work item keys or user names, and they
-exist so we can tell whether the app is used at all.
+exist so we can tell whether the app is used at all. Atlassian shows these counts to us per site
+where the app is installed, so we can see how often the app is used on your site, but nothing about
+what was in the emails.
 </p>
 
 <h3>4.2 What AskSpace processes</h3>
@@ -217,7 +219,7 @@ as the panel is open.
 </p>
 <ul>
 <li>MailView keeps no copies: it has no app storage and no server.</li>
-<li>Nothing is sent to Dortus or to any third party. The app makes no outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>
+<li>No email content is sent to Dortus or to any third party. The only thing that reaches Dortus are the three counters described in section 4.1, through Atlassian. The app makes no other outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>
 <li>Emails usually contain personal data (names, addresses, message text). That data stays in your Jira attachment, under your organisation's control, exactly as before you installed the app.</li>
 <li>The app asks for one permission: read access to work items and their attachments. It cannot change, send or delete anything.</li>
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
