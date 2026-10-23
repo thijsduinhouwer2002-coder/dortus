@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dortus.com/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/email-attachment-audit.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-14</lastmod></url>
@@ -26,6 +26,7 @@
   <url><loc>https://dortus.com/partners.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/security.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/mailview-security.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://dortus.com/mailview-agents.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://dortus.com/docs/askspace/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://dortus.com/stack-internal-vs-confluence-qa.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/confluence-cloud-qa-options.html</loc><lastmod>2026-10-14</lastmod></url>

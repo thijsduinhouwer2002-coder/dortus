@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MailView for agents: read email attachments on a ticket · Dortus</title>
+<meta name="description" content="A one-page guide for service desk agents: where MailView is on a Jira ticket, how to read an email attachment, the phishing verdict, the Details tab and Copy findings." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="MailView for agents: read email attachments on a ticket" />
+<meta property="og:description" content="A one-page guide for service desk agents using MailView for Jira during a trial." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mailview-agents.html" />
+<meta property="og:url" content="https://dortus.com/mailview-agents.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
+<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+@media print {
+  @page { size: A4; margin: 14mm; }
+  .skip-link, .site-header, .site-footer, .no-print { display: none !important; }
+  html { font-size: 11pt; }
+  body { background: #fff; color: #000; }
+  .wrap { padding: 0 !important; max-width: none !important; }
+  .page-head { padding: 0 0 0.6rem !important; }
+  .page-head h1 { font-size: 1.9rem !important; margin: 0 0 0.4rem !important; }
+  .prose { max-width: none !important; line-height: 1.38 !important; }
+  .page-head .lede { font-size: 1.1rem !important; margin: 0 !important; }
+  .page-meta { margin: 0.3rem 0 0 !important; }
+  .prose h2 { font-size: 1.3rem !important; margin: 0.7rem 0 0.2rem !important; padding-top: 0.4rem !important; break-after: avoid; }
+  .prose p, .prose ul, .prose ol, .prose table { margin-top: 0.6rem !important; margin-bottom: 0.6rem !important; }
+  .prose li { margin: 0.1rem 0 !important; }
+  .prose th, .prose td { padding: 0.25rem 0.4rem !important; }
+  table, li, p { break-inside: avoid; }
+  a { color: #000; }
+}
+</style>
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4078695191" rel="noopener noreferrer">Get it on the Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head">
+<div class="wrap">
+<h1>MailView for agents: read email attachments on a ticket</h1>
+<p class="lede">For Jira admins: forward this page to your agents, or print it.</p>
+</div>
+</section>
+
+<div class="wrap">
+<div class="prose">
+
+<p><strong>Where it is.</strong> Open a ticket with a .msg or .eml attachment. On the right, below the fields, there is a box called <strong>MailView</strong> (in the new view: open <strong>Apps</strong>, then <strong>MailView</strong>). It lists the emails on the ticket, newest first.</p>
+<p><strong>Read an email.</strong> Click it. It opens in a large view: subject, from, to, cc, date, and the message as it was sent, with its images. <strong>Close</strong> brings you back to the ticket. Usually you do not need to download the file or open Outlook.</p>
+<p><strong>Files inside the email.</strong> Listed under the message with name, type and size. Click to download. An email inside an email opens in place; <strong>Back</strong> returns.</p>
+<p><strong>Images from the internet are blocked on purpose</strong>, so the sender cannot see you opened it. A line tells you when that happened.</p>
+<p><strong>A warning icon means MailView found signs of phishing.</strong> (The icons cover the 10 newest emails.) Open the email and look at the reasons in the bar or in the <strong>Details</strong> tab (for example: the email failed SPF, DKIM or DMARC, or a link goes somewhere else than it says). A grey question mark means MailView could not judge it, for example an email forwarded as text. The verdict is a help for you, not a security control: when in doubt, follow your own phishing procedure.</p>
+<p><strong>Details tab.</strong> All headers, the authentication results and every link with the address it points to. Links are not opened.</p>
+<p><strong>Copy findings</strong> puts a short, safe summary of the findings on your clipboard, ready to paste in a comment. Links in it are written so nobody clicks them by accident.</p>
+<p><strong>Something doesn't open?</strong> A protected Outlook message (.rpmsg) only opens in Outlook; MailView says so and offers the download. Very large files (over 10 MB) are not opened. Every email keeps a <strong>Download the original</strong> link.</p>
+<p><strong>Questions:</strong> <a href="mailto:support@dortus.com?subject=MailView">support@dortus.com</a></p>
+<p class="no-print">See also: <a href="mailview.html#docs">MailView documentation</a></p>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+affiliated with Atlassian.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
