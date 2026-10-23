@@ -49,7 +49,7 @@ checkable against the Marketplace listing and the app's declared permissions.
 <div class="prose">
 
 <h3 id="summary">In one paragraph</h3>
-<p>MailView runs on Atlassian Forge inside your own Atlassian site. It reads email attachments (.eml and .msg) with the user's own permissions, in the user's browser (and, for PDF and Word export in Confluence only, in a short-lived Forge function on Atlassian's platform), and renders them with scripts, forms and remote content removed. It has no servers of its own, no external connections, no storage and no logging of email content. Nothing leaves your site.</p>
+<p>MailView runs on Atlassian Forge inside your own Atlassian site. It reads email attachments (.eml and .msg) with the user's own permissions, in the user's browser (and, for PDF and Word export in Confluence only, in a short-lived Forge function on Atlassian's platform), and renders them with scripts, forms and remote content removed. It has no servers of its own, no storage and no logging of email content. Email content never leaves your site. The only thing that reaches Dortus are three usage counters for MailView for Jira, numbers only, which Atlassian shows to us per site (see the <a href="privacy.html">privacy policy</a>, section 4.1).</p>
 
 <h3 id="permissions">What the app is allowed to read</h3>
 <p><strong>MailView for Jira and Jira Service Management</strong> requests one permission: <code>read:jira-work</code>. It reads the attachments of the work item you are looking at, as you. Jira enforces your permissions on every read, so the app can never show you an attachment you could not download yourself. It has no write permission: it cannot change, add or remove anything on the work item.</p>
