@@ -29,7 +29,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-22T20:00:00+00:00",
-  "dateModified": "2026-10-22T20:00:00+00:00",
+  "dateModified": "2026-10-24T07:10:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -109,7 +109,7 @@ Diese Seite erklärt, woher die Datei kommt, was Sie mit der vorhandenen tun kö
 
 <h3 id="readable">E-Mails in der Anfrage lesbar halten</h3>
 <p>winmail.dat ist einer von mehreren Wegen, auf denen eine E-Mail auf dem Weg nach Jira etwas verliert. Weitergeleitete E-Mails kommen als Datei ohne Endung an, hineingezogene <code>.msg</code>- und <code>.eml</code>-Dateien erscheinen als Code oder Rohtext, und Weiterleitungen im Text lassen die Header weg. Die Anleitungen zum <a href="../forwarding-email-jira-service-management.html">Weiterleiten von E-Mails an JSM</a> und zu <a href="../email-attachments-missing-jira-service-management.html">fehlenden E-Mail-Anhängen</a> (beide auf Englisch) behandeln diese Fälle.</p>
-<p>Zur Transparenz: Dortus stellt <a href="../mailview.html">MailView</a> her, das <code>.eml</code>- und <code>.msg</code>-Anhänge in einem Vorgang als die E-Mail selbst anzeigt. Die Unterstützung für <code>winmail.dat</code> ist in Arbeit; diese Seite wird es sagen, sobald sie verfügbar ist.</p>
+<p>Zur Transparenz: Dortus stellt <a href="../mailview.html">MailView</a> her, das <code>.eml</code>- und <code>.msg</code>-Anhänge in einem Vorgang als die E-Mail selbst anzeigt. Es öffnet auch eine <code>winmail.dat</code>, die an einer Anfrage hängt: Sie sehen den Text und die Dateien darin und können sie herunterladen. MailView kann die Anfrage nicht ändern; die echten Dateien hängen Sie weiterhin selbst an.</p>
 
 <h3 id="faq">Kurze Antworten</h3>
 <p><strong>Ist winmail.dat gefährlich?</strong> Nicht an sich. Es ist ein Container. Behandeln Sie die Dateien darin so, wie Sie jeden Anhang dieses Absenders behandeln würden.</p>

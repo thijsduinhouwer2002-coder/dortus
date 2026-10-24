@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-15T18:24:29+00:00",
-  "dateModified": "2026-10-15T19:58:44+00:00",
+  "dateModified": "2026-10-24T07:10:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -109,7 +109,7 @@ This page explains where that file comes from, what to do with the one you alrea
 
 <h3 id="readable">Keeping emails readable on the request</h3>
 <p>winmail.dat is one of several ways an email loses something on the way into Jira. Forwarded emails arrive as a file without an extension, dragged-in <code>.msg</code> and <code>.eml</code> files show as code or raw text, and inline forwards drop the headers. The guides on <a href="forwarding-email-jira-service-management.html">forwarding emails into JSM</a> and <a href="email-attachments-missing-jira-service-management.html">missing email attachments</a> cover those.</p>
-<p>Full disclosure: Dortus makes <a href="mailview.html">MailView</a>, which shows <code>.eml</code> and <code>.msg</code> attachments on a work item as the email itself. Support for <code>winmail.dat</code> is being built; this page will say so when it is live.</p>
+<p>Full disclosure: Dortus makes <a href="mailview.html">MailView</a>, which shows <code>.eml</code> and <code>.msg</code> attachments on a work item as the email itself. It also opens a <code>winmail.dat</code> attached to a request: you see the text and the files inside, and can download them. It cannot change the request, so attaching the real files is still a manual step.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Is winmail.dat dangerous?</strong> Not by itself. It is a container. Treat the files inside it the way you would treat any attachment from that sender.</p>
