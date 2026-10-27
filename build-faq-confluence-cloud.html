@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>How to build an FAQ in Confluence Cloud (3 ways that work) · Dortus</title>
-<meta name="description" content="Three ways to build an FAQ in Confluence Cloud: one page with expands, a page per question collected with labels and the Filter by label macro, or a Q&amp;A app. Steps, limits and which one to pick." />
+<title>Confluence FAQ in Cloud: the FAQ macro, a template and 3 ways that work · Dortus</title>
+<meta name="description" content="Is there an FAQ macro in Confluence Cloud? What to use instead, a copy-ready FAQ page template, and three ways to build an FAQ: expands, pages with labels, or a Q&amp;A app." />
 <meta name="theme-color" content="#0052cc" />
 <link rel="icon" href="assets/app-icon.png" />
-<meta property="og:title" content="How to build an FAQ in Confluence Cloud (3 ways that work)" />
+<meta property="og:title" content="Confluence FAQ in Cloud: the FAQ macro, a template and 3 ways that work" />
 <meta property="og:description" content="One page with expands, pages with labels, or a Q&amp;A app: three ways to build an FAQ in Confluence Cloud, and which one to pick." />
 <meta property="og:type" content="article" />
 <link rel="canonical" href="https://dortus.com/build-faq-confluence-cloud.html" />
@@ -20,13 +20,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How to build an FAQ in Confluence Cloud (3 ways that work)",
-  "description": "Three ways to build an FAQ in Confluence Cloud: one page with expands, a page per question collected with labels and the Filter by label macro, or a Q&A app. Steps, limits and which one to pick.",
+  "headline": "Confluence FAQ in Cloud: the FAQ macro, a template and 3 ways that work",
+  "description": "Is there an FAQ macro in Confluence Cloud? What to use instead, a copy-ready FAQ page template, and three ways to build an FAQ: expands, pages with labels, or a Q&A app.",
   "image": [
     "https://dortus.com/assets/01-question-list-app.png"
   ],
   "datePublished": "2026-10-14T14:27:54+00:00",
-  "dateModified": "2026-10-14T14:27:54+00:00",
+  "dateModified": "2026-10-27T11:00:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -72,12 +72,31 @@
 <div class="wrap">
 <div class="head">
 <p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
-<h1 style="margin-bottom: 0.9rem">How to build an FAQ in Confluence Cloud (3 ways that work)</h1>
+<h1 style="margin-bottom: 0.9rem">Confluence FAQ in Cloud: the FAQ macro, a template and 3 ways that work</h1>
 <p class="lede">
 An FAQ in Confluence Cloud can be one page, a set of pages, or a place where people ask their own questions. Which one works depends on how many questions you have and who should answer them. Here are all three, with the steps and the catch for each.
 </p>
 </div>
 <div class="prose">
+
+<h3 id="faq-macro">Is there an FAQ macro in Confluence Cloud?</h3>
+<p>Not one called FAQ. Confluence Cloud has no dedicated FAQ macro out of the box. What people usually mean by "the Confluence FAQ macro" is one of these:</p>
+<ul>
+<li><strong>The Expand macro</strong> for one page of questions: the question is the title, the answer opens on click. See <a href="#expand">way 1</a> below.</li>
+<li><strong>The Filter by label macro</strong> for a list of FAQ pages that updates itself. See <a href="#labels">way 2</a>.</li>
+<li><strong>A macro from a Marketplace app</strong>, when you want people to ask and answer questions themselves. See <a href="#qa-app">way 3</a>.</li>
+</ul>
+
+<h3 id="template">A simple FAQ page template</h3>
+<p>First look in the template gallery on your own site: <em>+ Create</em> &rarr; <em>Templates</em>, then search for "FAQ". The gallery changes over time. If nothing fits, this structure works on any page:</p>
+<ol>
+<li><strong>One line at the top:</strong> who this FAQ is for and who to ask if your question is missing.</li>
+<li><strong>A heading per topic</strong> (for example Access, Tools, Holidays), so readers can scan.</li>
+<li><strong>One expand per question</strong> under each heading, with the question in the expand title, written the way people actually ask it.</li>
+<li><strong>A short answer first</strong> inside the expand, then the details or a link to the full page.</li>
+<li><strong>"Last checked" with a date and owner</strong> at the bottom, so people know the answers are still true.</li>
+</ol>
+<p>Save it as a space template so every team starts from the same structure (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/create-a-template/" rel="noopener noreferrer">Create a template</a>).</p>
 
 <h3 id="expand">1. One FAQ page with an expand per question</h3>
 <p>The quickest FAQ needs nothing extra. Create a page called FAQ. For each question, type <code>/expand</code> in the editor, use the question as the title of the expand, and write the answer inside it. Readers see a short list of questions and open only the one they need (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/insert-the-expand-macro/" rel="noopener noreferrer">Insert the expand macro</a>, <a href="https://support.atlassian.com/confluence-cloud/docs/insert-elements-into-a-page/" rel="noopener noreferrer">Add elements to a page or live doc</a>).</p>
