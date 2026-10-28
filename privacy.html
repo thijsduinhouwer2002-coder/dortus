@@ -44,7 +44,7 @@ Two platforms, two very different data stories. Arrears runs on servers Dortus
 operates. The Atlassian apps run inside your own Atlassian site. Both are described
 below.
 </p>
-<p class="page-meta enter enter-2">Last updated: 23 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 27 October 2026</p>
 </div>
 </section>
 
@@ -157,8 +157,10 @@ removed when we receive the <strong>app/uninstalled</strong> webhook.
 <h3>4.1 Where the data lives</h3>
 <p>
 These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
-Atlassian's cloud. AskSpace and Mermaid Live Preview keep their data in <strong>Forge
-app storage in your Atlassian site</strong>. MailView and MailView for Confluence have
+Atlassian's cloud. AskSpace keeps its data in <strong>Forge app storage in your
+Atlassian site</strong>. Mermaid Live Preview saves the diagram source in the macro on the
+Confluence page, and keeps version history in <strong>Forge app storage in your Atlassian
+site</strong>. MailView and MailView for Confluence have
 no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
@@ -202,11 +204,13 @@ reads, it keeps only the imported questions and answers, in Forge app storage.
 <h3>4.3 What Mermaid Live Preview processes</h3>
 <ul>
 <li>The diagram source you type in the macro</li>
-<li>Earlier versions of that source, kept so you can step back after a bad edit</li>
+<li>Earlier versions of that source (the last 20 saves per diagram), kept so you can step back after a bad edit</li>
+<li>For each person who inserts diagrams: their Atlassian account ID, a count of successful inserts (it stops at 3) and whether the app has already asked them once for feedback. Nothing else about the person is stored, and their answer is not stored</li>
 </ul>
 <p>
-Rendering happens in the browser and in the Forge environment. Diagram content is not
-sent to Dortus and is not sent to any third party for rendering.
+The diagram source is saved in the macro on the Confluence page. Earlier versions are kept
+in Forge app storage in your Atlassian site. The diagram is drawn in the browser of the
+person viewing the page. The app uses no external services, and nothing is sent to Dortus.
 </p>
 
 <h3>4.4 What MailView processes</h3>
@@ -298,8 +302,14 @@ shop redaction, and on request. Reminder history is kept so you can prove what w
 sent, until the shop data is deleted.
 </li>
 <li>
-<strong>AskSpace and Mermaid Live Preview</strong>: content stays in Forge storage for
+<strong>AskSpace</strong>: content stays in Forge storage for
 your site. Uninstall and deletion follow Atlassian's platform rules for app storage.
+</li>
+<li>
+<strong>Mermaid Live Preview</strong>: the diagram source is part of the Confluence page,
+so it follows the page's own retention and deletion. Version history (the last 20 saves
+per diagram) and the feedback counter per account ID stay in Forge storage for your site.
+Uninstall and deletion follow Atlassian's platform rules for app storage.
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.

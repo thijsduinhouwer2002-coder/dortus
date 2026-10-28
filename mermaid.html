@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mermaid Live Preview - diagrams from text in Confluence · Dortus</title>
-  <meta name="description" content="Mermaid Live Preview is a Confluence macro by Dortus. Type a flowchart, sequence diagram or timeline in Mermaid syntax and watch it draw next to the text. The source stays editable in the page." />
+  <meta name="description" content="Mermaid Live Preview is a Confluence macro by Dortus. Type a flowchart, sequence diagram, Gantt chart, mindmap or other Mermaid diagram and watch it draw next to the text. The source stays editable in the page." />
   <meta name="theme-color" content="#0052cc" />
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Mermaid Live Preview - diagrams from text in Confluence" />
-  <meta property="og:description" content="Type the diagram, watch it draw. Flowcharts, sequence diagrams and timelines inside a Confluence page." />
+  <meta property="og:description" content="Type the diagram, watch it draw. Flowcharts, sequence diagrams, Gantt charts, mindmaps and more inside a Confluence page." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://dortus.com/mermaid.html" />
   <meta property="og:url" content="https://dortus.com/mermaid.html" />
@@ -42,8 +42,9 @@
           <p class="eyebrow enter">Mermaid Live Preview &middot; Confluence macro</p>
           <h1 class="enter enter-1">Type the diagram. Watch it draw itself.</h1>
           <p class="lede enter enter-2">
-            Flowcharts, sequence diagrams and timelines inside a Confluence page. The preview
-            updates next to the text while you write, and the text stays in the page.
+            Flowcharts, sequence diagrams, Gantt charts, mindmaps and more inside a Confluence
+            page. The preview updates next to the text while you write, and the text stays in
+            the page.
           </p>
           <div class="btns enter enter-2">
             <a class="btn btn-light" href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Get it on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -93,15 +94,15 @@
         <div class="cols cols-3">
           <div class="card reveal">
             <h3>Write it in the page</h3>
-            <p>Add the macro, type Mermaid syntax, see the diagram appear beside it as you type.</p>
+            <p>Add the macro and type Mermaid syntax on the left. The preview on the right redraws as you type. If a line is wrong, the error shows the line and what Mermaid expected.</p>
           </div>
           <div class="card reveal reveal-1">
             <h3>Keep it editable</h3>
-            <p>No round trip to a drawing tool and no orphan PNG in an attachment list.</p>
+            <p>No round trip to a drawing tool and no orphan PNG in an attachment list. Need a picture anyway? Download the diagram as SVG or PNG.</p>
           </div>
           <div class="card reveal reveal-2">
             <h3>Step back safely</h3>
-            <p>Earlier versions of the source are kept, so a bad edit is not a lost diagram.</p>
+            <p>The last 20 saves of each diagram are kept, so a bad edit is not a lost diagram.</p>
           </div>
         </div>
       </div>
@@ -111,10 +112,11 @@
     <section class="band band-tint">
       <div class="wrap split split-tight">
         <div>
-          <h2 class="reveal">Three shapes cover most pages</h2>
+          <h2 class="reveal">Start from an example</h2>
           <p class="lede reveal reveal-1" style="margin: 0.9rem 0 1.4rem">
-            Not every diagram type in Mermaid, the three that runbooks and integration docs
-            actually need.
+            The editor has 12 examples: flowchart, sequence, class, state, Gantt, pie, mindmap,
+            timeline, journey, ER, architecture and kanban. On the page, a diagram fits the
+            width, and you can zoom in or open it large. Light and dark theme follow Confluence.
           </p>
           <ul class="rows reveal reveal-1">
             <li>
@@ -124,6 +126,14 @@
             <li>
               <b>Sequence</b>
               <p>Who calls whom, in order. Useful for the integration you keep re-explaining.</p>
+            </li>
+            <li>
+              <b>Gantt</b>
+              <p>Tasks, dates and dependencies for a project plan that changes every week.</p>
+            </li>
+            <li>
+              <b>Mindmap</b>
+              <p>Ideas and topics around one centre, for workshops and planning pages.</p>
             </li>
             <li>
               <b>Timeline</b>
@@ -150,11 +160,12 @@
     <section class="band band-deep">
       <div class="wrap">
         <div class="head reveal">
-          <h2>Rendered in your site, by a Forge app</h2>
+          <h2>Runs on Forge, draws in your browser</h2>
           <p class="lede">
-            The macro runs on Atlassian Forge. Diagram source and version history live in Forge
-            app storage in your cloud site. Rendering happens in the browser and in the Forge
-            environment, so no diagram content is sent to Dortus or to a third party.
+            The macro runs on Atlassian Forge. The diagram source is saved in the macro on the
+            Confluence page. Version history is kept in Forge app storage in your cloud site. The
+            diagram is drawn in the browser of the person viewing the page. There are no external
+            services and no account, and nothing is sent to Dortus.
           </p>
         </div>
         <dl class="facts facts-4 reveal reveal-1">
@@ -163,16 +174,16 @@
             <dd>Atlassian Forge macro</dd>
           </div>
           <div>
-            <dt>Storage</dt>
-            <dd>Forge app storage, your site</dd>
+            <dt>Source</dt>
+            <dd>In the macro on the page</dd>
           </div>
           <div>
-            <dt>Syntax</dt>
-            <dd>Mermaid, kept as page text</dd>
+            <dt>Rendering</dt>
+            <dd>Mermaid 12, in the viewer's browser</dd>
           </div>
           <div>
             <dt>History</dt>
-            <dd>Earlier versions of the source</dd>
+            <dd>Last 20 saves, Forge app storage</dd>
           </div>
         </dl>
         <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
