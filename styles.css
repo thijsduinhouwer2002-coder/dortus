@@ -91,6 +91,9 @@ body[data-world="atlassian"] {
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* A link to a heading (privacy.html#math, #privacy on an app page) lands
+     below the sticky header instead of under it. */
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -311,7 +314,6 @@ ol {
 .site-header.is-scrolled {
   border-bottom-color: var(--line);
 }
-
 .site-header .wrap {
   display: flex;
   align-items: center;
