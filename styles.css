@@ -314,6 +314,7 @@ ol {
 .site-header.is-scrolled {
   border-bottom-color: var(--line);
 }
+
 .site-header .wrap {
   display: flex;
   align-items: center;
