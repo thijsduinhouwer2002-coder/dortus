@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude) · Dortus</title>
+<meta name="description" content="Pasting Mermaid code into Confluence Cloud gives you a code block, not a diagram. Three ways to get a real diagram on the page: an image from mermaid.live, Atlassian Labs' Mermaid diagrams viewer, or a macro with live preview. Also for diagrams from ChatGPT or Claude." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)" />
+<meta property="og:description" content="Confluence turns a pasted Mermaid block into plain code. Three ways to get a real diagram on the page, and how to ask an AI assistant for one." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mermaid-diagrams-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/mermaid-diagrams-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)",
+  "description": "Pasting Mermaid code into Confluence Cloud gives you a code block, not a diagram. Three ways to get a real diagram on the page: an image from mermaid.live, Atlassian Labs' Mermaid diagrams viewer, or a macro with live preview. Also for diagrams from ChatGPT or Claude.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-28T09:00:00+00:00",
+  "dateModified": "2026-10-28T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/mermaid-diagrams-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Live Preview <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</h1>
+<p class="lede">
+You have Mermaid code: written by hand, copied from a README on GitHub, or produced by an AI assistant. You want a diagram on a Confluence Cloud page, not a block of text. This page shows what Confluence does on its own, and three ways to get a real diagram.
+</p>
+</div>
+<div class="prose">
+
+<h3 id="what-confluence-does">What Confluence Cloud does with Mermaid on its own</h3>
+<p>In our test on 27 October 2026, Confluence Cloud did not draw Mermaid on its own. Pasting Markdown into the Confluence editor converts headings, lists, tables, links and code blocks. A <code>```mermaid</code> block becomes an ordinary code block with the Mermaid code as text. No diagram is drawn.</p>
+<p>So the code arrives safely, but readers see the code. To see the diagram you need one of the options below.</p>
+
+<h3 id="image">Option 1: export an image from the Mermaid Live Editor</h3>
+<p>The Mermaid Live Editor at <a href="https://mermaid.live/" rel="noopener noreferrer">mermaid.live</a> is a free online editor. Paste your code, check the diagram, download it as PNG or SVG, and upload the image to your Confluence page.</p>
+<ul>
+<li><strong>It works today</strong> without installing anything in Confluence.</li>
+<li><strong>The image goes stale.</strong> When the process changes, someone has to find the original code, edit it in the Live Editor, export again and replace the image.</li>
+<li><strong>Nobody can edit the picture on the page.</strong> If the code was not saved with it, the next person has to redraw the diagram.</li>
+</ul>
+<p>If you go this way, put the Mermaid code in a code block (or an expand) under the image, so the next person can redraw it.</p>
+
+<h3 id="labs">Option 2: Atlassian Labs' Mermaid diagrams viewer</h3>
+<p>Atlassian Labs publishes a free app called <a href="https://marketplace.atlassian.com/apps/1232887/mermaid-diagrams-viewer" rel="noopener noreferrer">Mermaid diagrams viewer</a>. You put the Mermaid code in a normal Confluence code block, add the app's macro on the same page, and the macro draws the diagram from that code block. The app is open source (<a href="https://github.com/atlassian-labs/mermaid-diagrams-viewer" rel="noopener noreferrer">on GitHub</a>).</p>
+<p>This suits you if a code block plus a diagram that follows it is all you need.</p>
+
+<h3 id="live-preview">Option 3: Mermaid Live Preview</h3>
+<p>Full disclosure: Dortus makes <a href="mermaid.html">Mermaid Live Preview</a> (<a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">on the Atlassian Marketplace</a>). What it does:</p>
+<ul>
+<li><strong>Code and preview side by side.</strong> The macro editor has the Mermaid code on the left and a live preview on the right that redraws while you type. If a line is wrong, the error shows the line and what Mermaid expected.</li>
+<li><strong>Mermaid 12.</strong> Flowcharts, sequence, class, state, ER and Gantt diagrams, mindmaps, timelines and other Mermaid diagram types.</li>
+<li><strong>Fits the page.</strong> On the page, a diagram fits the width. You can zoom in or open it large.</li>
+<li><strong>Download when you need a picture.</strong> SVG or PNG, for a slide or an email.</li>
+<li><strong>Version history.</strong> The last 20 saves of each diagram are kept, so a bad edit is not a lost diagram.</li>
+<li><strong>Runs on Atlassian.</strong> The macro runs on Atlassian Forge. The code is saved in the macro on the page and the diagram is drawn in the browser of the person viewing it. No external account, and nothing is sent to Dortus.</li>
+</ul>
+<p>Other Mermaid apps are on the Atlassian Marketplace as well. Points worth comparing: whether you see a preview while you edit, which Mermaid version it uses, and where the diagram is drawn (in the viewer's browser, or on the vendor's servers).</p>
+
+<h3 id="steps">Step by step with Mermaid Live Preview</h3>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Mermaid Live Preview from the Atlassian Marketplace</a>.</li>
+<li>Edit a Confluence page and type <code>/mermaid</code>. Choose Mermaid Live Preview.</li>
+<li>Paste your Mermaid code on the left. The preview on the right shows the diagram.</li>
+<li>Insert the macro and publish the page. To change the diagram later, edit the macro and change the code.</li>
+</ol>
+
+<h3 id="ai">Asking ChatGPT or Claude for a diagram</h3>
+<p>AI assistants such as ChatGPT and Claude can write Mermaid code for you. Describe the process in plain words, say which diagram type you want, and ask for the code only. An example prompt:</p>
+<pre><code>Draw the approval process for a purchase request as a Mermaid flowchart.
+An employee submits the request. The manager approves or rejects it.
+Above 5,000 euros, finance must also approve. After approval,
+purchasing places the order. Reply with only the Mermaid code.</code></pre>
+<p>The answer can look like this. You can copy it and paste it as it is:</p>
+<pre><code>flowchart TD
+    A[Employee submits purchase request] --&gt; B{Manager approves?}
+    B -- No --&gt; R[Request rejected]
+    B -- Yes --&gt; C{Amount above 5,000?}
+    C -- No --&gt; E[Purchasing places the order]
+    C -- Yes --&gt; D{Finance approves?}
+    D -- Yes --&gt; E
+    D -- No --&gt; R
+    E --&gt; F[Goods received]</code></pre>
+<p>Three things that save time:</p>
+<ul>
+<li><strong>Leave out the fence lines.</strong> If the answer starts with <code>```mermaid</code> and ends with <code>```</code>, copy only the lines in between.</li>
+<li><strong>Quote labels with brackets.</strong> A label such as <code>A[Check stock (optional)]</code> is a syntax error; <code>A["Check stock (optional)"]</code> works.</li>
+<li><strong>Paste the error back.</strong> If Mermaid reports an error, give the error message to the assistant and ask for a corrected version.</li>
+</ul>
+<p>For other diagram types, see <a href="mermaid-examples-confluence.html">12 Mermaid diagram examples for Confluence</a>.</p>
+
+<h3 id="which">Which option fits</h3>
+<p>One diagram that will never change: an image from the Mermaid Live Editor, with the code saved under it. A diagram next to a code block that readers may also want to see: Atlassian Labs' Mermaid diagrams viewer. Diagrams that people keep editing on the page, with a preview while they type: a macro such as Mermaid Live Preview.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or an option we missed? Email <a href="mailto:support@dortus.com?subject=Mermaid%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Live Preview by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge; nothing is sent to Dortus.</p>
+<p class="btns"><a class="btn btn-primary" href="mermaid.html">About Mermaid Live Preview <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">Available on the Atlassian Marketplace</a>.</p>
+</div>
+<p>See also: <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence: copy and paste</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an
+open source project. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not
+affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
