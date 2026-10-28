@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mermaid diagram examples for Confluence: copy and paste · Dortus</title>
+<meta name="description" content="Twelve short Mermaid examples to copy into Confluence: flowchart, sequence, class, state, ER, Gantt, pie, mindmap, timeline, user journey, git graph and quadrant chart, each with when to use it. All checked to render." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Mermaid diagram examples for Confluence: copy and paste" />
+<meta property="og:description" content="Twelve short Mermaid examples, from flowchart to quadrant chart, each with when to use it. Copy, paste, change the labels." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mermaid-examples-confluence.html" />
+<meta property="og:url" content="https://dortus.com/mermaid-examples-confluence.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mermaid diagram examples for Confluence: copy and paste",
+  "description": "Twelve short Mermaid examples to copy into Confluence: flowchart, sequence, class, state, ER, Gantt, pie, mindmap, timeline, user journey, git graph and quadrant chart, each with when to use it. All checked to render.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-28T09:00:00+00:00",
+  "dateModified": "2026-10-28T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/mermaid-examples-confluence.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-hide-sm" href="/">Dortus</a>
+<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="/#guides">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Live Preview <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Mermaid diagram examples for Confluence: copy and paste</h1>
+<p class="lede">
+Twelve short Mermaid examples, one per diagram type, each with a line on when to use it. Copy one, change the labels, and paste it wherever your Confluence site draws Mermaid. We rendered every example with Mermaid before publishing this page.
+</p>
+</div>
+<div class="prose">
+
+<p>Jump to: <a href="#flowchart">flowchart</a>, <a href="#sequence">sequence diagram</a>, <a href="#class">class diagram</a>, <a href="#state">state diagram</a>, <a href="#er">ER diagram</a>, <a href="#gantt">Gantt chart</a>, <a href="#pie">pie chart</a>, <a href="#mindmap">mindmap</a>, <a href="#timeline">timeline</a>, <a href="#journey">user journey</a>, <a href="#git-graph">git graph</a>, <a href="#quadrant">quadrant chart</a>.</p>
+
+<h3 id="flowchart">1. Flowchart</h3>
+<p>For a process with decisions and branches, such as an approval, a runbook or a support escalation.</p>
+<pre><code>flowchart TD
+    A[Request received] --&gt; B{Approved?}
+    B -- Yes --&gt; C[Order the item]
+    B -- No --&gt; D[Tell the requester why]
+    C --&gt; E[Close the request]
+    D --&gt; E</code></pre>
+
+<h3 id="sequence">2. Sequence diagram</h3>
+<p>For who talks to whom, in order: an integration, an API call or a handover between teams.</p>
+<pre><code>sequenceDiagram
+    actor User
+    participant App
+    participant API
+    User-&gt;&gt;App: Clicks "Save"
+    App-&gt;&gt;API: POST /pages
+    API--&gt;&gt;App: 201 Created
+    App--&gt;&gt;User: Shows "Saved"</code></pre>
+
+<h3 id="class">3. Class diagram</h3>
+<p>For the objects in a system, their fields and how they relate, when you document a data model or code structure.</p>
+<pre><code>classDiagram
+    class Customer {
+        +String name
+        +String email
+        +placeOrder()
+    }
+    class Order {
+        +int id
+        +Date created
+        +total() float
+    }
+    class OrderLine {
+        +String product
+        +int quantity
+    }
+    Customer "1" --&gt; "*" Order : places
+    Order "1" *-- "1..*" OrderLine : contains</code></pre>
+
+<h3 id="state">4. State diagram</h3>
+<p>For the statuses something moves through, such as a document, a ticket or an order, and what moves it on.</p>
+<pre><code>stateDiagram-v2
+    [*] --&gt; Draft
+    Draft --&gt; InReview : submit
+    InReview --&gt; Draft : changes requested
+    InReview --&gt; Published : approve
+    Published --&gt; Archived : retire
+    Archived --&gt; [*]</code></pre>
+
+<h3 id="er">5. Entity relationship (ER) diagram</h3>
+<p>For database tables, their columns and how they link, when you describe a schema.</p>
+<pre><code>erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ ORDER_LINE : contains
+    PRODUCT ||--o{ ORDER_LINE : "appears in"
+    CUSTOMER {
+        int id PK
+        string name
+        string email
+    }
+    ORDER {
+        int id PK
+        int customer_id FK
+        date created
+    }</code></pre>
+
+<h3 id="gantt">6. Gantt chart</h3>
+<p>For a project plan with tasks, durations and dependencies that you want to change as text.</p>
+<pre><code>gantt
+    title Website relaunch
+    dateFormat YYYY-MM-DD
+    section Design
+    Wireframes        :a1, 2026-11-02, 5d
+    Visual design     :a2, after a1, 7d
+    section Build
+    Templates         :b1, after a2, 10d
+    Content migration :b2, after a2, 8d
+    section Launch
+    Go live           :milestone, m1, after b1, 0d</code></pre>
+
+<h3 id="pie">7. Pie chart</h3>
+<p>For a share of a whole with a few categories, such as tickets per channel.</p>
+<pre><code>pie title Support tickets by channel
+    "Email" : 48
+    "Portal" : 31
+    "Chat" : 15
+    "Phone" : 6</code></pre>
+
+<h3 id="mindmap">8. Mindmap</h3>
+<p>For ideas around one topic, in a workshop or a planning page. Indentation sets the levels.</p>
+<pre><code>mindmap
+  root((Team offsite))
+    Agenda
+      Retrospective
+      Roadmap
+    Logistics
+      Venue
+      Travel
+    Social
+      Dinner
+      Workshop</code></pre>
+
+<h3 id="timeline">9. Timeline</h3>
+<p>For phases and milestones over time, such as a product history or a roadmap overview.</p>
+<pre><code>timeline
+    title Product history
+    2024 : Idea : First prototype
+    2025 : Beta with five teams
+    2026 : General availability : First 100 customers</code></pre>
+
+<h3 id="journey">10. User journey</h3>
+<p>For the steps a person goes through, with a score from 1 to 5 per step and who is involved.</p>
+<pre><code>journey
+    title New employee, first day
+    section Morning
+      Collect laptop: 3: Employee, IT
+      Log in to all tools: 2: Employee
+    section Afternoon
+      Meet the team: 5: Employee, Manager
+      Read onboarding pages: 4: Employee</code></pre>
+
+<h3 id="git-graph">11. Git graph</h3>
+<p>For explaining a branching strategy: branches, commits and merges.</p>
+<pre><code>gitGraph
+    commit id: "Initial"
+    branch feature/login
+    checkout feature/login
+    commit id: "Add form"
+    commit id: "Add tests"
+    checkout main
+    commit id: "Fix typo"
+    merge feature/login
+    commit id: "Release 1.0"</code></pre>
+
+<h3 id="quadrant">12. Quadrant chart</h3>
+<p>For placing items on two axes, such as effort against impact for a backlog. Values run from 0 to 1.</p>
+<pre><code>quadrantChart
+    title Backlog: effort vs impact
+    x-axis Low effort --&gt; High effort
+    y-axis Low impact --&gt; High impact
+    quadrant-1 Plan carefully
+    quadrant-2 Do first
+    quadrant-3 Fill-ins
+    quadrant-4 Avoid
+    Single sign-on: [0.75, 0.85]
+    Dark mode: [0.30, 0.40]
+    Export to CSV: [0.20, 0.70]
+    Rewrite backend: [0.90, 0.30]</code></pre>
+
+<h3 id="confluence">Getting these diagrams into Confluence</h3>
+<p>Confluence Cloud does not draw Mermaid on its own: pasted code stays a code block. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares the options, from an exported image to a macro. Full disclosure: Dortus makes one of those macros, <a href="mermaid.html">Mermaid Live Preview</a>. You paste an example on the left, see the diagram on the right while you change it, and the code stays editable in the page. It is <a href="https://marketplace.atlassian.com/apps/4235692896/mermaid-live-preview">on the Atlassian Marketplace</a>.</p>
+
+<h3 id="support">Questions</h3>
+<p>An example that does not render for you, or a diagram type you miss? Email <a href="mailto:support@dortus.com?subject=Mermaid%20examples">support@dortus.com</a>.</p>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<p class="footer-brand">Dortus</p>
+<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+</div>
+<div>
+<h2>Atlassian</h2>
+<ul>
+<li><a href="atlassian.html">Atlassian apps</a></li>
+<li><a href="mailview.html">MailView</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
+<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+<li><a href="email-check.html">Email check</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="mailto:support@dortus.com">Email us</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an
+open source project. Dortus is not
+affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
