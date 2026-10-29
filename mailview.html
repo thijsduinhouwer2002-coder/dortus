@@ -9,8 +9,8 @@
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="MailView - read .msg and .eml email attachments inside Jira" />
 <meta property="og:description" content="Jira shows .msg files as code and .eml files as raw text. MailView shows the email. Built on Atlassian Forge." />
-<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
-<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
+<meta property="og:image:alt" content="MailView in Jira: an email that asks to pay an invoice to new bank details, with a Likely phishing notice" />
 <meta property="og:type" content="website" />
 <link rel="canonical" href="https://dortus.com/mailview.html" />
 <meta property="og:url" content="https://dortus.com/mailview.html" />
@@ -58,7 +58,10 @@ plain English whether it looks like phishing, and why.
 
 <figure class="frame enter enter-3" style="max-width: 640px; width: 100%; margin: clamp(2rem, 4vw, 3rem) auto 0">
 <span class="frame-media">
-<img src="assets/mailview-01-message.png" width="895" height="1000" loading="lazy" alt="MailView showing an email opened from the list: subject, From, To, Cc and date at the top, Message and Details tabs, and the message as it was sent, with the sender's logo and a table of damaged items. All emails and Download the original links sit above it." />
+<picture>
+  <source media="(max-width: 560px)" srcset="assets/mailview-message-narrow.webp" width="800" height="1861" />
+  <img src="assets/mailview-message.webp" width="1280" height="1848" alt="MailView on a Jira work item, showing an email that asks to pay invoice 2291 to new bank details. At the top: All emails, Download the original and Open in full view. Then From, To, Date and a Reply-To marked different domain than From; the tabs Message, Details and Original; a Likely phishing notice with a failed DMARC check, a failed SPF check and a link that goes to another domain; the email itself; and the attached Invoice-2291.pdf." />
+</picture>
 </span>
 </figure>
 <p class="small enter enter-3" style="max-width: 640px; margin: 0.8rem auto 0"><a href="https://youtu.be/3CsC7-iLpQ8" target="_blank" rel="noopener noreferrer" style="color: inherit">Watch the 34-second demo on YouTube</a></p>
@@ -164,9 +167,9 @@ sentence and a link to download the original.
 
 <figure class="frame reveal reveal-2">
 <span class="frame-media">
-<img src="assets/mailview-02-list.png" alt="MailView list on a Jira work item: three emails with subject and sender; one marked with a red warning icon, one with a grey question mark" width="895" height="308" loading="lazy" />
+<img src="assets/mailview-list-jira.webp" alt="The Apps area in the right column of a Jira work item, with MailView open: Click an email to open it in full view, and three emails with subject and sender. A plain envelope icon for a reply from Acme Supplies, a red warning icon for the email asking to pay invoice 2291 today, and a grey question mark for a forwarded copy of it." width="590" height="388" loading="lazy" />
 </span>
-<figcaption><strong>The list.</strong> Subject and sender per email. A red warning marks a suspicious email; a grey question mark means MailView could not judge it, for example an email forwarded as text.</figcaption>
+<figcaption><strong>The right column.</strong> Subject and sender per email. A red warning marks a suspicious email; a grey question mark means MailView could not judge it, for example an email forwarded as text.</figcaption>
 </figure>
 </div>
 </section>

@@ -9,8 +9,8 @@
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Dortus apps for Confluence and Jira Cloud" />
   <meta property="og:description" content="MailView for Jira, MailView for Confluence, Mermaid Live Preview and AskSpace. Small, focused apps that run on Atlassian." />
-  <meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
-  <meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+  <meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
+  <meta property="og:image:alt" content="MailView in Jira: an email that asks to pay an invoice to new bank details, with a Likely phishing notice" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://dortus.com/atlassian.html" />
   <meta property="og:url" content="https://dortus.com/atlassian.html" />
@@ -60,7 +60,10 @@
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <img src="assets/mailview-01-message.png" alt="MailView showing an email attachment as it was sent: sender, recipients, date and the message" width="895" height="1000" />
+            <picture>
+              <source media="(max-width: 560px)" srcset="assets/mailview-message-narrow.webp" width="800" height="1861" />
+              <img src="assets/mailview-message.webp" alt="MailView on a Jira work item, showing an email that asks to pay invoice 2291 to new bank details. At the top: All emails, Download the original and Open in full view. Then From, To, Date and a Reply-To marked different domain than From; the tabs Message, Details and Original; a Likely phishing notice with a failed DMARC check, a failed SPF check and a link that goes to another domain; the email itself; and the attached Invoice-2291.pdf." width="1280" height="1848" />
+            </picture>
           </span>
           <figcaption><strong>MailView.</strong> The email as it was sent, read on the work item or page where people already work.</figcaption>
         </figure>
