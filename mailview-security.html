@@ -45,8 +45,7 @@
 <div class="wrap">
 <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="/">Dortus</a>
-<a href="atlassian.html" aria-current="page">Atlassian</a>
+<a href="atlassian.html" aria-current="true">Apps</a>
 <a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4078695191" rel="noopener noreferrer">Get it on the Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -97,9 +96,9 @@ developer documentation.
 
 <h2 id="stored">What is stored</h2>
 <ul>
-<li><strong>Email content: nothing.</strong> MailView has no app storage and no server, and keeps no copies (<a href="privacy.html">privacy policy</a>, section 4.4). It does not use localStorage, sessionStorage, IndexedDB or cookies; the app's tests fail if it touches any of them. The email stays a Jira attachment, under your control, as before.</li>
-<li><strong>Retention.</strong> None for email content. The privacy policy, section 8: "nothing is retained. Closing the work item is enough."</li>
-<li><strong>Usage counters.</strong> The privacy policy (section 4.1) states that MailView for Jira keeps three plain counters through Forge metrics: the app loaded with at least one email (<code>mailview.shown</code>), an email was opened (<code>mailview.email-opened</code>), and Copy findings was used (<code>mailview.findings-copied</code>). Each is an increment by one, with no content, file names, work item keys or user names. Atlassian attaches the app's identity and context, and its developer console can <a href="https://developer.atlassian.com/platform/forge/monitor-custom-metrics/" rel="nofollow">filter custom metrics by environment and by site</a>. So Dortus can see these counts per installed site. Atlassian's documentation does not state a retention period for them.</li>
+<li><strong>Email content: nothing.</strong> MailView has no app storage and no server, and keeps no copies (<a href="privacy.html#mailview">privacy policy</a>, section 3.4). It does not use localStorage, sessionStorage, IndexedDB or cookies; the app's tests fail if it touches any of them. The email stays a Jira attachment, under your control, as before.</li>
+<li><strong>Retention.</strong> None for email content. The privacy policy, section 7: "nothing is retained. Closing the work item is enough."</li>
+<li><strong>Usage counters.</strong> The privacy policy (section 3.1) states that MailView for Jira keeps three plain counters through Forge metrics: the app loaded with at least one email (<code>mailview.shown</code>), an email was opened (<code>mailview.email-opened</code>), and Copy findings was used (<code>mailview.findings-copied</code>). Each is an increment by one, with no content, file names, work item keys or user names. Atlassian attaches the app's identity and context, and its developer console can <a href="https://developer.atlassian.com/platform/forge/monitor-custom-metrics/" rel="nofollow">filter custom metrics by environment and by site</a>. So Dortus can see these counts per installed site. Atlassian's documentation does not state a retention period for them.</li>
 <li><strong>Logs.</strong> MailView has no backend functions. It writes no logs or error reports to Atlassian, Dortus or anyone else; the three usage counters above are its only telemetry. In production it also switches the browser console off, so error messages, which could contain part of an email, do not stay in the user's browser. Technical diagnostics are shown only in Dortus's development environment.</li>
 </ul>
 
@@ -115,7 +114,7 @@ developer documentation.
 
 <h2 id="hosting">Hosting and data residency</h2>
 <ul>
-<li>MailView runs on Atlassian Forge. Dortus operates no application server for it (privacy policy, section 4.1).</li>
+<li>MailView runs on Atlassian Forge. Dortus operates no application server for it (privacy policy, section 3.1).</li>
 <li>Atlassian applies the Runs on Atlassian badge automatically to eligible apps. The published criteria include: apps <a href="https://developer.atlassian.com/platform/marketplace/runs-on-atlassian/" rel="nofollow">"exclusively use Atlassian-hosted compute and storage"</a>, "support data residency that matches data residency provided by the host Atlassian app", and "must not egress data, with the exception of egress for analytics purposes".</li>
 <li>MailView stores no email data of its own, so there is no app data to place in a region. The email stays a Jira attachment and is stored wherever your Jira site stores attachments.</li>
 <li>Atlassian's documentation does not state in which region the usage counters are kept.</li>
@@ -129,7 +128,7 @@ developer documentation.
 </ul>
 
 <h2 id="support">Support</h2>
-<p>Support by email at <a href="mailto:support@dortus.com?subject=MailView">support@dortus.com</a>, in English or Dutch. The <a href="support.html">support page</a> states a first reply within one business day, Monday to Friday, Europe/Amsterdam. The <a href="terms.html">terms of service</a> (section 7) say we do not offer a formal uptime guarantee.</p>
+<p>Support by email at <a href="mailto:support@dortus.com?subject=MailView">support@dortus.com</a>, in English or Dutch. The <a href="support.html">support page</a> states a first reply within one business day, Monday to Friday, Europe/Amsterdam. The <a href="terms.html">terms of service</a> (section 6) say we do not offer a formal uptime guarantee.</p>
 
 <h2 id="incidents">Vulnerabilities and incidents</h2>
 <p>These commitments are published on our <a href="security.html#dependencies">security page</a>. Reported vulnerabilities are fixed within Atlassian's Marketplace bug fix timelines: critical within 10 days, high within 4 weeks, medium within 12 weeks. If a security incident affects the app, Atlassian is notified within 24 hours through their partner process, and affected customers within 72 hours; the 72 hours is our own commitment. Report security issues to <a href="mailto:support@dortus.com?subject=MailView%20security">support@dortus.com</a>. Dependencies are pinned to exact versions in the lockfile.</p>
@@ -155,52 +154,36 @@ developer documentation.
 <footer class="site-footer">
 <div class="wrap">
 <div>
-<p class="footer-brand">Dortus</p>
-<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
-<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
 </div>
 <div>
-<h2>Atlassian</h2>
+<h2>Guides</h2>
 <ul>
-<li><a href="atlassian.html">Atlassian apps</a></li>
-<li><a href="mailview.html">MailView</a></li>
-<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
-<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
-<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
-<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
-<li><a href="partners.html">For Solution Partners</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
-<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
-<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
-<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
-<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
-<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
-<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
-<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
-<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
-<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
-<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
-<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
-<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
-<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
-<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
-<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
-<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
-<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
-<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
-<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
-<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
-<li><a href="email-check.html">Email check</a></li>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
 </ul>
 </div>
 <div>
 <h2>Company</h2>
 <ul>
 <li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
-<li><a href="mailto:support@dortus.com">Email us</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
 </ul>
 </div>
 </div>

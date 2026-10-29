@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Support - Dortus</title>
-  <meta name="description" content="Support for Dortus apps: Arrears for Shopify B2B, AskSpace and Mermaid Live Preview for Confluence. One inbox, answered by the person who wrote the code, first reply within one business day." />
+  <meta name="description" content="Support for the Dortus apps: MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace and Live Countdown for Confluence. One inbox, answered by the person who wrote the code, first reply within one business day." />
   <meta name="theme-color" content="#15181c" />
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Support - Dortus" />
@@ -25,8 +25,7 @@
     <div class="wrap">
       <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
       <nav class="nav" aria-label="Primary">
-        <a class="nav-hide-sm" href="/">Dortus</a>
-        <a href="atlassian.html">Atlassian</a>
+        <a href="atlassian.html">Apps</a>
         <a href="/#guides">Guides</a>
         <a href="support.html" aria-current="page">Support</a>
         <a class="btn btn-primary" href="mailto:support@dortus.com?subject=Dortus%20support">Email support <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -40,8 +39,9 @@
       <div class="wrap">
         <h1 class="enter">One inbox. Answered by the person who wrote the code.</h1>
         <p class="lede enter enter-1">
-          No ticket portal and no first line script. Write to us in English or Dutch,
-          add the details below, and you get a straight answer.
+          Support for MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace
+          and Live Countdown. No ticket portal and no first line script. Write to us in English
+          or Dutch, add the details below, and you get a straight answer.
         </p>
         <p class="page-meta enter enter-2">First reply within one business day, Monday to Friday, Europe/Amsterdam</p>
       </div>
@@ -55,8 +55,8 @@
             <a href="mailto:support@dortus.com?subject=Dortus%20support">support@dortus.com</a>
           </p>
           <p>
-            One address for every Dortus app. Anything that blocks collections or breaks a page
-            jumps the queue ahead of feature questions.
+            One address for every Dortus app. Anything that breaks a page or a work item jumps
+            the queue ahead of feature questions.
           </p>
           <p class="btns" style="margin-top: 1.1rem">
             <a class="btn btn-primary" href="mailto:support@dortus.com?subject=Dortus%20support">Write to support <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -80,8 +80,8 @@
         <div class="head reveal">
           <h2>Tell us where you are and what you saw</h2>
           <p class="lede">
-            Most back and forth comes from a missing store or site name. One extra line usually
-            saves a day.
+            Most back and forth comes from a missing site name. One extra line usually saves a
+            day.
           </p>
         </div>
         <div class="cols cols-2" style="margin-bottom: clamp(1.1rem, 2.4vw, 1.7rem)">
@@ -115,15 +115,6 @@
         </div>
         <div class="cols cols-3">
           <div class="card reveal">
-            <h3>Arrears for Shopify</h3>
-            <ul class="checks" style="margin-top: 0.7rem">
-              <li>Your store domain, for example acme.myshopify.com</li>
-              <li>The screen: aging, company, statements, reminders, payments, holds</li>
-              <li>The company name or order number involved</li>
-              <li>What you expected versus what the screen showed</li>
-            </ul>
-          </div>
-          <div class="card reveal reveal-1">
             <h3>AskSpace for Confluence</h3>
             <ul class="checks" style="margin-top: 0.7rem">
               <li>Your Atlassian site URL and the space key</li>
@@ -132,14 +123,19 @@
               <li>A screenshot of the question or the list</li>
             </ul>
           </div>
-          <div class="card reveal reveal-2">
+          <div class="card reveal reveal-1">
             <h3>Mermaid Live Preview</h3>
             <ul class="checks" style="margin-top: 0.7rem">
               <li>Your Atlassian site URL and the page title</li>
               <li>The diagram source that fails to render</li>
-              <li>The diagram type: flowchart, sequence, or timeline</li>
+              <li>The diagram type, for example flowchart, sequence or Gantt</li>
               <li>Any error text shown inside the macro</li>
             </ul>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>Live Countdown for Confluence</h3>
+            <p style="margin: 0.7rem 0 0.9rem"><span class="status">Submitted to the Atlassian Marketplace, waiting for approval</span></p>
+            <p>What to include in a message is in the <a href="countdown.html#support">Live Countdown documentation</a>.</p>
           </div>
         </div>
       </div>
@@ -152,27 +148,6 @@
         </div>
         <div class="faq reveal reveal-1">
           <details>
-            <summary>Arrears shows a balance I do not recognise</summary>
-            <p>
-              Arrears builds aging from Shopify payment schedules. If an order was paid outside
-              Shopify, record that payment in Arrears so the allocation matches your bank.
-            </p>
-          </details>
-          <details>
-            <summary>A reminder did not go out</summary>
-            <p>
-              Check the reminder history on the company. Manual sends need approval in the Ready
-              queue, and daily automatic sending is a paid plan feature.
-            </p>
-          </details>
-          <details>
-            <summary>A held company still reaches checkout</summary>
-            <p>
-              Holds turn B2B checkout into a draft order. Send us the store domain and the
-              company name and we will trace the specific attempt.
-            </p>
-          </details>
-          <details>
             <summary>AskSpace is not visible in my space</summary>
             <p>
               Question and answer is per space and off by default. A space admin turns it on,
@@ -182,8 +157,9 @@
           <details>
             <summary>How do I cancel or get a refund?</summary>
             <p>
-              Billing runs through the platform: Shopify for Arrears, the Atlassian Marketplace
-              for the Confluence apps. Cancel there, and email us if an invoice looks wrong.
+              Paid Dortus apps are billed through the Atlassian Marketplace, for Jira and for
+              Confluence alike. Cancel there. Refunds follow Atlassian's policy. Email us if an
+              invoice looks wrong.
             </p>
           </details>
           <details>
@@ -218,59 +194,42 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div>
-        <p class="footer-brand">Dortus</p>
-        <p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
-        <p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
-      </div>
-      <div>
-        <h2>Atlassian</h2>
-        <ul>
-          <li><a href="atlassian.html">Atlassian apps</a></li>
-          <li><a href="mailview.html">MailView</a></li>
-          <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
-<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
-          <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
-          <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
-          <li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
-          <li><a href="partners.html">For Solution Partners</a></li>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
-          <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
-          <li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
-          <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
-          <li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
-          <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
-          <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
-          <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
-          <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
-          <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
-          <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
-          <li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
-          <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
-          <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
-          <li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
-          <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
-          <li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
-          <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
-          <li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
-          <li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
-          <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
-          <li><a href="email-check.html">Email check</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
-          <li><a href="mailto:support@dortus.com">Email us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="wrap footer-rule">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
       <p class="footer-legal">
         Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
         affiliated with Atlassian.

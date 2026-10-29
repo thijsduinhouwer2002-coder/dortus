@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy policy - Dortus</title>
-<meta name="description" content="How Dortus handles data in Arrears for Shopify B2B, in the Confluence apps AskSpace, Mermaid Live Preview and Live Countdown, and in MailView for Jira: what is processed, where it is stored, and how long it is kept." />
+<meta name="description" content="How Dortus handles data in MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace and Live Countdown for Confluence: what is processed, where it is stored, and how long it is kept." />
 <meta name="theme-color" content="#15181c" />
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Privacy policy - Dortus" />
-<meta property="og:description" content="Two platforms, two data stories. Arrears runs on Dortus infrastructure in the EU. The Atlassian apps store nothing on Dortus servers." />
+<meta property="og:description" content="The Dortus apps for Confluence and Jira run on Atlassian Forge. Dortus has no servers for them and receives no app content." />
 <meta property="og:type" content="website" />
 <link rel="canonical" href="https://dortus.com/privacy.html" />
 <meta property="og:url" content="https://dortus.com/privacy.html" />
@@ -25,8 +25,7 @@
 <div class="wrap">
 <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="/">Dortus</a>
-<a href="atlassian.html">Atlassian</a>
+<a href="atlassian.html">Apps</a>
 <a href="/#guides">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-line nav-hide-sm" href="terms.html">Terms</a>
@@ -40,11 +39,11 @@
 <div class="wrap">
 <h1 class="enter">Privacy policy</h1>
 <p class="lede enter enter-1">
-Two platforms, two very different data stories. Arrears runs on servers Dortus
-operates. The Atlassian apps run inside your own Atlassian site. Both are described
-below.
+The Dortus apps for Confluence and Jira run on Atlassian Forge, inside Atlassian's cloud.
+Dortus has no servers for them and receives no app content. Below is what each app
+processes, where it is kept, and for how long.
 </p>
-<p class="page-meta enter enter-2">Last updated: 28 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 29 October 2026</p>
 </div>
 </section>
 
@@ -53,9 +52,19 @@ below.
 
 <h2>1. Who we are</h2>
 <p>
-Dortus ("we", "us") is an independent software vendor. We publish <strong>Arrears</strong>
-for Shopify, <strong>AskSpace</strong>, <strong>Mermaid Live Preview</strong> and
-<strong>Live Countdown</strong> for Atlassian Confluence, and <strong>MailView</strong> for Atlassian Jira.
+Dortus ("we", "us") is an independent software vendor. We publish these apps for Atlassian
+Jira and Confluence:
+</p>
+<ul>
+<li><strong>MailView: .msg &amp; .eml viewer with phishing check for Jira</strong> (in this policy: MailView for Jira, or MailView)</li>
+<li><strong>MailView: .msg &amp; .eml viewer, phishing check for Confluence</strong> (MailView for Confluence)</li>
+<li><strong>Mermaid Live Preview: diagrams as code for Confluence</strong> (Mermaid Live Preview)</li>
+<li><strong>AskSpace: Questions &amp; Answers for Confluence</strong> (AskSpace)</li>
+<li><strong>Live Countdown for Confluence</strong> (Live Countdown)</li>
+</ul>
+<p>
+We also publish <strong>Arrears</strong> for Shopify, a separate product. It is described in
+<a href="#arrears">section 14</a>.
 </p>
 <p>
 Contact for privacy questions and data requests:
@@ -65,8 +74,8 @@ Contact for privacy questions and data requests:
 <h2>2. Our role</h2>
 <p>
 For business data inside our apps, you are the controller and Dortus is the processor.
-You decide which companies, contacts, questions, pages or attachments exist. We process
-that data only to deliver the features you switched on.
+You decide which questions, diagrams, pages or attachments exist. We process that data
+only to deliver the features you switched on.
 </p>
 <p>
 For your own contact with us (support email, billing questions), Dortus is the
@@ -75,93 +84,24 @@ controller of that correspondence.
 
 <div class="note">
 <p>
-<strong>Short version.</strong> Arrears stores merchant and B2B contact data on
-Dortus-operated infrastructure in the EU, because a collections desk needs a
-database. The Atlassian apps store nothing on Dortus servers at all, and MailView
-stores nothing anywhere.
+<strong>Short version.</strong> The Atlassian apps store nothing on Dortus servers, because
+there are none. MailView for Jira, MailView for Confluence and Live Countdown have no app
+storage. AskSpace and Mermaid Live Preview keep their data in Forge app storage in your
+Atlassian site. MailView for Jira counts how often it is used, as three numbers per site,
+through Atlassian.
 </p>
 </div>
 
-<h2>3. Arrears for Shopify</h2>
+<h2>3. The Dortus apps for Atlassian</h2>
 
-<h3>3.1 What the app does</h3>
-<p>
-Arrears is an embedded Shopify app for business-to-business collections. It reads your
-companies, company locations, contacts, orders, and payment terms through the Shopify
-Admin API, and turns them into aging views, statements, reminders, payment allocations,
-and credit holds.
-</p>
-
-<h3>3.2 Where it runs</h3>
-<p>
-Unlike our Atlassian apps, Arrears needs a server. We host it on
-<strong>Fly.io in the Amsterdam region (EU)</strong>, with the application database on
-a persistent volume attached to that machine. Access to the production environment is
-limited to Dortus.
-</p>
-
-<h3>3.3 What data Arrears processes and stores</h3>
-<ul>
-<li>Your shop domain and the Shopify access token issued during install</li>
-<li>Company names, company locations, and payment terms as configured in Shopify</li>
-<li>Company contact names and email addresses, used to address statements and reminders</li>
-<li>Order references, amounts, currencies, due dates, and payment schedule status</li>
-<li>Reminder records: recipient address, subject, message body, send time, and result</li>
-<li>Payment records you enter, including allocation across open invoices</li>
-<li>Credit limits, hold and release events, and the staff action behind them</li>
-<li>App settings, such as sender name, dunning policy, and automation switches</li>
-</ul>
-<p>
-Arrears does not ask for or store payment card details. Subscription charges are handled
-by Shopify billing.
-</p>
-
-<h3>3.4 Protected customer data</h3>
-<p>
-Business contact data (company contact names and email addresses) is used only to
-produce and send the statements and reminders you request, and to show you who was
-contacted. We do not use it for our own marketing, we do not sell it, and we do not
-share it with anyone outside the subprocessors listed in section 5.
-</p>
-
-<h3>3.5 Email sending</h3>
-<p>
-Statement and reminder emails are delivered through <strong>Resend</strong>. That means
-the recipient address, subject, and message body pass through Resend in order to be
-delivered, along with normal delivery metadata.
-</p>
-
-<h3>3.6 Shopify data requests and deletion</h3>
-<p>Arrears implements Shopify's mandatory compliance webhooks:</p>
-<ul>
-<li>
-<strong>customers/data_request</strong>: we respond to the merchant with the data we
-hold for the requested person.
-</li>
-<li>
-<strong>customers/redact</strong>: we delete or anonymise the stored personal data
-for that person.
-</li>
-<li>
-<strong>shop/redact</strong>: we delete the shop's stored data after Shopify's
-redaction window.
-</li>
-</ul>
-<p>
-Uninstalling the app also revokes our access: the stored session for your shop is
-removed when we receive the <strong>app/uninstalled</strong> webhook.
-</p>
-
-<h2>4. AskSpace, Mermaid Live Preview, Live Countdown and MailView for Atlassian</h2>
-
-<h3>4.1 Where the data lives</h3>
+<h3 id="atlassian">3.1 Where the data lives</h3>
 <p>
 These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
 Atlassian's cloud. AskSpace keeps its data in <strong>Forge app storage in your
 Atlassian site</strong>. Mermaid Live Preview saves the diagram source in the macro on the
 Confluence page, and keeps version history in <strong>Forge app storage in your Atlassian
 site</strong>. Live Countdown saves its settings in the macro on the Confluence page
-and has no app storage. MailView and MailView for Confluence have
+and has no app storage. MailView for Jira and MailView for Confluence have
 no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
@@ -185,7 +125,7 @@ where the app is installed, so we can see how often the app is used on your site
 what was in the emails.
 </p>
 
-<h3>4.2 What AskSpace processes</h3>
+<h3 id="askspace">3.2 What AskSpace processes</h3>
 <ul>
 <li>Question and answer text people enter, and the tags they add</li>
 <li>Votes and best-answer marks</li>
@@ -202,7 +142,7 @@ see in Confluence, and it does not change anything in Questions for Confluence. 
 reads, it keeps only the imported questions and answers, in Forge app storage.
 </p>
 
-<h3>4.3 What Mermaid Live Preview processes</h3>
+<h3 id="mermaid">3.3 What Mermaid Live Preview processes</h3>
 <ul>
 <li>The diagram source you type in the macro</li>
 <li>Earlier versions of that source (the last 20 saves per diagram), kept so you can step back after a bad edit</li>
@@ -214,7 +154,7 @@ in Forge app storage in your Atlassian site. The diagram is drawn in the browser
 person viewing the page. The app uses no external services, and nothing is sent to Dortus.
 </p>
 
-<h3>4.4 What MailView processes</h3>
+<h3 id="mailview">3.4 What MailView for Jira processes</h3>
 <p>
 MailView shows .eml and .msg email attachments on a Jira work item. When the panel opens,
 the app reads the work item's email attachments, and files without a known file type to see whether they are emails,
@@ -224,13 +164,13 @@ as the panel is open.
 </p>
 <ul>
 <li>MailView keeps no copies: it has no app storage and no server.</li>
-<li>No email content is sent to Dortus or to any third party. The only thing that reaches Dortus are the three counters described in section 4.1, through Atlassian. The app makes no other outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>
+<li>No email content is sent to Dortus or to any third party. The only thing that reaches Dortus are the three counters described in section 3.1, through Atlassian. The app makes no other outbound connections; images and other resources that an email tries to load from the internet are blocked.</li>
 <li>Emails usually contain personal data (names, addresses, message text). That data stays in your Jira attachment, under your organisation's control, exactly as before you installed the app.</li>
 <li>The app asks for one permission: read access to work items and their attachments. It cannot change, send or delete anything.</li>
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3>4.5 What MailView for Confluence processes</h3>
+<h3 id="mailview-confluence">3.5 What MailView for Confluence processes</h3>
 <p>
 MailView for Confluence shows .eml and .msg email attachments on a Confluence page. It
 only reads the email attachments of the page you open, with your own Confluence
@@ -247,7 +187,7 @@ The email is rendered <strong>in your browser</strong> and only for as long as i
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3 id="countdown">4.6 What Live Countdown for Confluence processes</h3>
+<h3 id="countdown">3.6 What Live Countdown for Confluence processes</h3>
 <ul>
 <li>The settings of each countdown: title, date, time, time zone, display options, and the text to show when the time is up</li>
 </ul>
@@ -265,61 +205,40 @@ platform with the macro's settings. The function returns a line of text for the 
 file. It calls nothing else and keeps nothing afterwards.
 </p>
 
-<h3>4.7 Billing</h3>
+<h3>3.7 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
 
-<h2>5. Subprocessors</h2>
+<h2>4. Subprocessors</h2>
 <ul>
 <li>
-<strong>Shopify Inc.</strong>: platform, app hosting surface, and billing for Arrears.
-</li>
-<li>
-<strong>Fly.io</strong>: application hosting and database storage for Arrears, EU
-(Amsterdam) region.
-</li>
-<li>
-<strong>Resend</strong>: delivery of statement and reminder email from Arrears.
-</li>
-<li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
-AskSpace, Mermaid Live Preview, Live Countdown and MailView.
+MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace and Live Countdown.
 </li>
 </ul>
 <p>
-We do not use advertising networks, session recording, or third-party analytics inside
-our apps.
+The subprocessors for Arrears are listed in section 14. We do not use advertising networks,
+session recording, or third-party analytics inside our apps.
 </p>
 
-<h2>6. This website</h2>
+<h2>5. This website</h2>
 <p>
 This site is a static set of pages. We do not set tracking cookies and we run no
 analytics script. Fonts are served from this site. Your browser does not contact Google
 or any other third party to load them.
 </p>
+
+<h2>6. Why we process data</h2>
 <p>
-The product walkthrough on the Arrears page is a YouTube embed served from
-youtube.com. It loads only when you open that page, and playing it means
-YouTube receives your IP address and player data under Google's own terms.
+Only to provide the features you enable: storing and displaying questions and answers,
+rendering diagrams, showing countdowns, and showing email attachments. Our legal basis is
+the performance of our agreement with you, and our legitimate interest in keeping the
+service running securely.
 </p>
 
-<h2>7. Why we process data</h2>
-<p>
-Only to provide the features you enable: showing aging, producing statements, sending
-the reminders you approve, allocating payments, applying credit holds, storing and
-displaying questions and answers, rendering diagrams, showing countdowns, and showing email attachments.
-Our legal basis is the performance of our agreement with you, and our legitimate
-interest in keeping the service running securely.
-</p>
-
-<h2>8. Retention</h2>
+<h2>7. Retention</h2>
 <ul>
-<li>
-<strong>Arrears</strong>: data is kept while the app is installed. It is deleted on
-shop redaction, and on request. Reminder history is kept so you can prove what was
-sent, until the shop data is deleted.
-</li>
 <li>
 <strong>AskSpace</strong>: content stays in Forge storage for
 your site. Uninstall and deletion follow Atlassian's platform rules for app storage.
@@ -336,6 +255,7 @@ follow the page's own retention and deletion. The app keeps nothing else.
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.
+The same goes for MailView for Confluence: closing the page is enough.
 </li>
 <li>
 <strong>Support email</strong>: kept only as long as needed to help you and to keep a
@@ -343,57 +263,168 @@ record of the issue.
 </li>
 </ul>
 
-<h2>9. Security</h2>
+<h2>8. Security</h2>
 <p>
-Traffic to Arrears is served over HTTPS only. Platform credentials and API keys are
-held as environment secrets, not in source code. Access to production is limited to
-Dortus. MailView removes scripts, forms, embedded frames and remote resources from an
+MailView removes scripts, forms, embedded frames and remote resources from an
 email before showing it, and renders it in an isolated area. We are a small vendor and
 we do not claim certifications we do not have: if you need a security review or a data
 processing agreement, email us and we will answer concretely.
 </p>
 
-<h2>10. Your rights</h2>
+<h2>9. Your rights</h2>
 <p>
 Depending on where you live, you may have rights to access, correct, export, or delete
-personal data.
+personal data. For data inside Confluence, Jira or Forge, start with your Atlassian site
+administrator.
 </p>
-<ul>
-<li>
-For data inside Confluence, Jira or Forge, start with your Atlassian site administrator.
-</li>
-<li>
-For data inside Arrears, start with the merchant that installed the app, or contact us
-directly.
-</li>
-</ul>
 <p>
 You can always email
 <a href="mailto:support@dortus.com">support@dortus.com</a> and
 we will answer within one business day.
 </p>
 
-<h2>11. International transfers</h2>
+<h2>10. International transfers</h2>
 <p>
-Arrears is hosted in the EU. Some subprocessors listed in section 5 are established
-outside the EU and may process limited data there under their own transfer mechanisms.
+Atlassian, listed in section 4, is established outside the EU and may process limited
+data there under its own transfer mechanisms.
 </p>
 
-<h2>12. Children</h2>
+<h2>11. Children</h2>
 <p>Our apps are intended for workplace use, not for children.</p>
 
-<h2>13. Changes</h2>
+<h2>12. Changes</h2>
 <p>
 We may update this policy. The "last updated" date at the top of the page changes when
 we do, and material changes will be noted in the app release notes.
 </p>
 
-<h2>14. Contact</h2>
+<h2>13. Contact</h2>
 <p>
 Dortus<br />
 <a href="mailto:support@dortus.com">support@dortus.com</a><br />
 <a href="/">Home</a> &middot; <a href="support.html">Support</a> &middot;
 <a href="terms.html">Terms of service</a>
+</p>
+
+<h2 id="arrears">14. Arrears for Shopify (separate product)</h2>
+<p>
+Arrears runs on servers Dortus operates, unlike the Atlassian apps above. The general parts
+of this policy apply to Arrears as well. This section covers what is specific to Arrears.
+</p>
+
+<h3>14.1 What the app does</h3>
+<p>
+Arrears is an embedded Shopify app for business-to-business collections. It reads your
+companies, company locations, contacts, orders, and payment terms through the Shopify
+Admin API, and turns them into aging views, statements, reminders, payment allocations,
+and credit holds.
+</p>
+
+<h3>14.2 Where it runs</h3>
+<p>
+Unlike our Atlassian apps, Arrears needs a server. We host it on
+<strong>Fly.io in the Amsterdam region (EU)</strong>, with the application database on
+a persistent volume attached to that machine. Access to the production environment is
+limited to Dortus.
+</p>
+
+<h3>14.3 What data Arrears processes and stores</h3>
+<ul>
+<li>Your shop domain and the Shopify access token issued during install</li>
+<li>Company names, company locations, and payment terms as configured in Shopify</li>
+<li>Company contact names and email addresses, used to address statements and reminders</li>
+<li>Order references, amounts, currencies, due dates, and payment schedule status</li>
+<li>Reminder records: recipient address, subject, message body, send time, and result</li>
+<li>Payment records you enter, including allocation across open invoices</li>
+<li>Credit limits, hold and release events, and the staff action behind them</li>
+<li>App settings, such as sender name, dunning policy, and automation switches</li>
+</ul>
+<p>
+Arrears does not ask for or store payment card details. Subscription charges are handled
+by Shopify billing.
+</p>
+<p>
+We process this data only to show aging, produce statements, send the reminders you
+approve, allocate payments and apply credit holds, on the same legal basis as described
+in section 6.
+</p>
+
+<h3>14.4 Protected customer data</h3>
+<p>
+Business contact data (company contact names and email addresses) is used only to
+produce and send the statements and reminders you request, and to show you who was
+contacted. We do not use it for our own marketing, we do not sell it, and we do not
+share it with anyone outside the subprocessors listed in section 14.7.
+</p>
+
+<h3>14.5 Email sending</h3>
+<p>
+Statement and reminder emails are delivered through <strong>Resend</strong>. That means
+the recipient address, subject, and message body pass through Resend in order to be
+delivered, along with normal delivery metadata.
+</p>
+
+<h3>14.6 Shopify data requests and deletion</h3>
+<p>Arrears implements Shopify's mandatory compliance webhooks:</p>
+<ul>
+<li>
+<strong>customers/data_request</strong>: we respond to the merchant with the data we
+hold for the requested person.
+</li>
+<li>
+<strong>customers/redact</strong>: we delete or anonymise the stored personal data
+for that person.
+</li>
+<li>
+<strong>shop/redact</strong>: we delete the shop's stored data after Shopify's
+redaction window.
+</li>
+</ul>
+<p>
+Uninstalling the app also revokes our access: the stored session for your shop is
+removed when we receive the <strong>app/uninstalled</strong> webhook.
+</p>
+
+<h3>14.7 Subprocessors for Arrears</h3>
+<ul>
+<li>
+<strong>Shopify Inc.</strong>: platform, app hosting surface, and billing for Arrears.
+</li>
+<li>
+<strong>Fly.io</strong>: application hosting and database storage for Arrears, EU
+(Amsterdam) region.
+</li>
+<li>
+<strong>Resend</strong>: delivery of statement and reminder email from Arrears.
+</li>
+</ul>
+<p>
+Arrears is hosted in the EU. Some of these subprocessors are established outside the EU
+and may process limited data there under their own transfer mechanisms.
+</p>
+
+<h3>14.8 Retention and security</h3>
+<p>
+Data is kept while the app is installed. It is deleted on shop redaction, and on request.
+Reminder history is kept so you can prove what was sent, until the shop data is deleted.
+</p>
+<p>
+Traffic to Arrears is served over HTTPS only. Platform credentials and API keys are
+held as environment secrets, not in source code. Access to production is limited to
+Dortus.
+</p>
+
+<h3>14.9 Your rights</h3>
+<p>
+For data inside Arrears, start with the merchant that installed the app, or contact us
+directly.
+</p>
+
+<h3>14.10 The Arrears page on this website</h3>
+<p>
+The product walkthrough on the Arrears page is a YouTube embed served from
+youtube.com. It loads only when you open that page, and playing it means
+YouTube receives your IP address and player data under Google's own terms.
 </p>
 
 </div>
@@ -403,53 +434,36 @@ Dortus<br />
 <footer class="site-footer">
 <div class="wrap">
 <div>
-<p class="footer-brand">Dortus</p>
-<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
-<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
 </div>
 <div>
-<h2>Atlassian</h2>
+<h2>Guides</h2>
 <ul>
-<li><a href="atlassian.html">Atlassian apps</a></li>
-<li><a href="mailview.html">MailView</a></li>
-<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
-<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
-<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
-<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
-<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
-<li><a href="partners.html">For Solution Partners</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
-<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
-<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
-<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
-<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
-<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
-<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
-<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
-<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
-<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
-<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
-<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
-<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
-<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
-<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
-<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
-<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
-<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
-<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
-<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
-<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
-<li><a href="email-check.html">Email check</a></li>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
 </ul>
 </div>
 <div>
 <h2>Company</h2>
 <ul>
 <li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
-<li><a href="mailto:support@dortus.com">Email us</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
 </ul>
 </div>
 </div>
