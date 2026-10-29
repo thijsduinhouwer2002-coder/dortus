@@ -102,7 +102,7 @@ This page lists every way to actually read it, including the free ones.
 <li><strong>Safety of rendering.</strong> Scripts, forms and remote images inside an email should be stripped, so reading a suspicious email in the ticket is safe.</li>
 <li><strong>Phishing context.</strong> Helpdesks receive "is this mail legit?" tickets all day. A viewer that shows SPF/DKIM/DMARC results and the address behind each link saves the round-trip to a separate analysis tool.</li>
 </ul>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing and sends nothing anywhere. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item with formatting, inline images and the files inside, plus a plain-English verdict with the reasons (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing, and the email never leaves your Atlassian site. It is built on Atlassian Forge and works in Jira and the agent view of Jira Service Management.</p>
 
 <h3 id="which">Which option fits</h3>
 <p>One email a month: downloading is fine. A migration folder full of .msg files, or a service desk where customers forward emails daily: an in-Jira viewer pays for itself quickly, and a security-minded team will want the rendering isolation and the authentication details rather than agents opening attachments in Outlook.</p>
@@ -117,7 +117,7 @@ This page lists every way to actually read it, including the free ones.
 <div class="card">
 <p class="eyebrow">MailView by Dortus</p>
 <h3>Read .msg and .eml attachments on the work item</h3>
-<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, and the email never leaves your Atlassian site. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Available on the Atlassian Marketplace</a>.</p>
 </div>

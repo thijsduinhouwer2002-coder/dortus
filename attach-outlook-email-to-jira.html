@@ -98,7 +98,7 @@ The email belongs on the work item. There are four ways to get it there, and the
 
 <h3 id="readable">Keeping the email readable on the work item</h3>
 <p>Ways 2 and 3 are the ones people actually use day to day, and both leave an email on the work item that Jira cannot show. Renaming <a href="msg-vs-eml.html"><code>.msg</code> to <code>.eml</code></a> does not help; the formats are unrelated. What does help is a viewer inside Jira. Compare apps on these points: whether the email is rendered in your browser with no external servers ("Runs on Atlassian"), whether both formats are covered, including <code>.msg</code> files that only carry RTF and forwarded emails without an extension, and whether scripts and remote images are stripped before anything is shown.</p>
-<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> lists the email files on the work item and shows the one you click (up to 10 MB) with formatting, inline images and the files inside, whether the file was uploaded, dragged in or forwarded through the mail handler. It also gives a plain-English check for suspicious mail (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing and sends nothing anywhere, and it works in Jira and in the agent view of Jira Service Management.</p>
+<p>Full disclosure: Dortus makes such an app. <a href="mailview.html">MailView</a> lists the email files on the work item and shows the one you click (up to 10 MB) with formatting, inline images and the files inside, whether the file was uploaded, dragged in or forwarded through the mail handler. It also gives a plain-English check for suspicious mail (authentication results, domains with lookalike letters from other alphabets or with accents, links whose text points elsewhere). It stores nothing, and the email never leaves your Atlassian site, and it works in Jira and in the agent view of Jira Service Management.</p>
 
 <h3 id="faq">Short answers</h3>
 <p><strong>Which way should a team pick?</strong> If everyone works in Outlook and will install the add-in, Way 1 gives readable emails out of the box. If emails arrive from customers, automations or colleagues who just drag and drop, plan for <code>.msg</code> and <code>.eml</code> files on your work items and add a viewer.</p>
@@ -110,7 +110,7 @@ The email belongs on the work item. There are four ways to get it there, and the
 <div class="card">
 <p class="eyebrow">MailView by Dortus</p>
 <h3>Read .msg and .eml attachments on the work item</h3>
-<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, sends nothing anywhere. Works in Jira and the Jira Service Management agent view.</p>
+<p>The email as it was sent, with inline images and the files inside, plus a plain-English phishing check. Runs on Atlassian, stores nothing, and the email never leaves your Atlassian site. Works in Jira and the Jira Service Management agent view.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Available on the Atlassian Marketplace</a>.</p>
 </div>

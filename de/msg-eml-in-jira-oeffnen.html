@@ -102,7 +102,7 @@ Diese Seite listet alle Wege auf, die E-Mail tatsächlich zu lesen, die kostenlo
 <li><strong>Sicheres Rendern.</strong> Skripte, Formulare und externe Bilder in einer E-Mail sollten entfernt werden, damit das Lesen einer verdächtigen E-Mail im Ticket sicher ist.</li>
 <li><strong>Phishing-Kontext.</strong> Helpdesks bekommen den ganzen Tag Tickets der Sorte „Ist diese Mail echt?". Ein Viewer, der SPF/DKIM/DMARC-Ergebnisse und die Adresse hinter jedem Link anzeigt, erspart den Umweg über ein separates Analysewerkzeug.</li>
 </ul>
-<p>Zur Transparenz: Dortus stellt eine solche App her. <a href="../mailview.html">MailView</a> zeigt .msg- und .eml-Anhänge im Vorgang mit Formatierung, eingebetteten Bildern und den enthaltenen Dateien, dazu ein klar formuliertes Urteil mit Begründung (Authentifizierungsergebnisse, Domains mit ähnlich aussehenden Buchstaben aus anderen Alphabeten oder mit Akzenten, Links, deren Text woandershin zeigt). Die App speichert nichts und sendet nichts irgendwohin. Sie ist auf Atlassian Forge gebaut und funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+<p>Zur Transparenz: Dortus stellt eine solche App her. <a href="../mailview.html">MailView</a> zeigt .msg- und .eml-Anhänge im Vorgang mit Formatierung, eingebetteten Bildern und den enthaltenen Dateien, dazu ein klar formuliertes Urteil mit Begründung (Authentifizierungsergebnisse, Domains mit ähnlich aussehenden Buchstaben aus anderen Alphabeten oder mit Akzenten, Links, deren Text woandershin zeigt). Die App speichert nichts, und die E-Mail verlässt Ihre Atlassian-Site nie. Sie ist auf Atlassian Forge gebaut und funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
 
 <h3 id="which">Welche Option passt</h3>
 <p>Eine E-Mail im Monat: Herunterladen reicht. Ein Migrationsordner voller .msg-Dateien oder ein Service Desk, an den Kunden täglich E-Mails weiterleiten: Ein Viewer in Jira zahlt sich schnell aus, und ein sicherheitsbewusstes Team will die isolierte Darstellung und die Authentifizierungsdetails, statt dass Agenten Anhänge in Outlook öffnen.</p>
@@ -117,7 +117,7 @@ Diese Seite listet alle Wege auf, die E-Mail tatsächlich zu lesen, die kostenlo
 <div class="card">
 <p class="eyebrow">MailView von Dortus</p>
 <h3>.msg- und .eml-Anhänge direkt im Vorgang lesen</h3>
-<p>Die E-Mail so, wie sie gesendet wurde, mit eingebetteten Bildern und den enthaltenen Dateien, dazu eine klar formulierte Phishing-Prüfung. Runs on Atlassian, speichert nichts, sendet nichts irgendwohin. Funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
+<p>Die E-Mail so, wie sie gesendet wurde, mit eingebetteten Bildern und den enthaltenen Dateien, dazu eine klar formulierte Phishing-Prüfung. Runs on Atlassian, speichert nichts, und die E-Mail verlässt Ihre Atlassian-Site nie. Funktioniert in Jira und in der Agentenansicht von Jira Service Management.</p>
 <p class="btns"><a class="btn btn-primary" href="../mailview.html">Über MailView <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small"><a href="https://marketplace.atlassian.com/apps/4078695191">Erhältlich im Atlassian Marketplace</a>.</p>
 </div>
