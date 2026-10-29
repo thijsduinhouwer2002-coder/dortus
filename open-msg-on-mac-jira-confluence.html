@@ -26,7 +26,7 @@
     "https://dortus.com/assets/mailview-01-message.png"
   ],
   "datePublished": "2026-10-23T10:00:00+00:00",
-  "dateModified": "2026-10-23T10:00:00+00:00",
+  "dateModified": "2026-10-29T12:00:00+00:00",
   "author": {
     "@type": "Organization",
     "name": "Dortus",
@@ -57,9 +57,8 @@
 <div class="wrap">
 <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
 <nav class="nav" aria-label="Primary">
-<a class="nav-hide-sm" href="/">Dortus</a>
-<a href="atlassian.html" aria-current="page">Atlassian</a>
-<a href="/#guides">Guides</a>
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
 <a href="support.html">Support</a>
 <a class="btn btn-primary" href="mailview.html">MailView <span class="arrow" aria-hidden="true">&rarr;</span></a>
 </nav>
@@ -96,12 +95,12 @@ ways to read it, starting with the free ones.
 
 <h3 id="in-jira-confluence">Option 4: read it inside Jira or Confluence</h3>
 <p>The routes above all mean downloading a copy and opening it outside Jira or Confluence. A Marketplace app can show the email where it is attached instead.</p>
-<p>Full disclosure: Dortus makes such an app. MailView reads .msg and .eml files in the browser, so it works the same on Mac, Windows and Linux. Nobody needs Outlook. It shows the email as it was sent, with a plain-English phishing check, and it stores nothing and sends nothing anywhere. There are two separate apps:</p>
+<p>Full disclosure: Dortus makes such an app. MailView reads .msg and .eml files in the browser, so it works the same on Mac, Windows and Linux. Nobody needs Outlook. It shows the email as it was sent, with a plain-English phishing check. It stores nothing, and the email never leaves your Atlassian site. There are two separate apps:</p>
 <ul>
 <li><strong>Jira:</strong> <a href="mailview.html">MailView</a> shows .msg and .eml attachments on the work item, also in the agent view of Jira Service Management (<a href="https://marketplace.atlassian.com/apps/4078695191">Marketplace</a>).</li>
 <li><strong>Confluence:</strong> <a href="mailview-confluence.html">MailView for Confluence</a> shows an email attachment on the page with a macro, and lists the emails on a page (<a href="https://marketplace.atlassian.com/apps/218321273">Marketplace</a>).</li>
 </ul>
-<p>Both are free on sites with up to 10 users. One limit: protected Outlook messages (.rpmsg) only open in Outlook; MailView says so and offers the download link.</p>
+<p>MailView for Jira is free on sites with up to 10 users. One limit: protected Outlook messages (.rpmsg) only open in Outlook; MailView says so and offers the download link.</p>
 
 <h3 id="teams">Tip for mixed Mac and Windows teams</h3>
 <p>If some people use Macs, save emails as .eml rather than .msg when you attach them. An .eml opens in Apple Mail, Thunderbird and Outlook, and it always keeps the full headers. The new Outlook for Windows can save a message as .eml (More actions, Save as). How to do that in each mail program: <a href="msg-vs-eml.html">Outlook .msg vs .eml</a>.</p>
@@ -116,7 +115,7 @@ ways to read it, starting with the free ones.
 <div class="card">
 <p class="eyebrow">MailView by Dortus</p>
 <h3>Read .msg files in Jira and Confluence, on any computer</h3>
-<p>The email as it was sent, read in your browser on Mac, Windows or Linux. No Outlook needed. Runs on Atlassian, stores nothing, sends nothing anywhere.</p>
+<p>The email as it was sent, read in your browser on Mac, Windows or Linux. No Outlook needed. Runs on Atlassian, stores nothing, and the email never leaves your Atlassian site.</p>
 <p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView <span class="arrow" aria-hidden="true">&rarr;</span></a> <a class="btn btn-line" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 <p class="small">Available on the Atlassian Marketplace: <a href="https://marketplace.atlassian.com/apps/4078695191">MailView for Jira</a> and <a href="https://marketplace.atlassian.com/apps/218321273">MailView for Confluence</a>.</p>
 </div>
@@ -130,54 +129,36 @@ ways to read it, starting with the free ones.
 <footer class="site-footer">
 <div class="wrap">
 <div>
-<p class="footer-brand">Dortus</p>
-<p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
-<p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
 </div>
 <div>
-<h2>Atlassian</h2>
+<h2>Guides</h2>
 <ul>
-<li><a href="atlassian.html">Atlassian apps</a></li>
-<li><a href="mailview.html">MailView</a></li>
-<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
-<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
-<li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
-<li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
-<li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
-<li><a href="partners.html">For Solution Partners</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
-<li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
-<li><a href="open-msg-on-mac-jira-confluence.html">How to open .msg files on a Mac from Jira or Confluence</a></li>
-<li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
-<li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
-<li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
-<li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
-<li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
-<li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
-<li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
-<li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
-<li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
-<li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
-<li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
-<li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
-<li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
-<li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
-<li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
-<li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
-<li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
-<li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
-<li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
-<li><a href="email-check.html">Email check</a></li>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
 </ul>
 </div>
 <div>
 <h2>Company</h2>
 <ul>
 <li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
-<li><a href="mailto:support@dortus.com">Email us</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
 </ul>
 </div>
 </div>

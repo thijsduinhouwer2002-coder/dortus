@@ -370,7 +370,8 @@ ol {
   color: var(--ink);
 }
 
-.nav > a[aria-current="page"] {
+/* "page" on the page itself, "true" on the section it belongs to (Apps, Guides). */
+.nav > a[aria-current] {
   color: var(--ink);
   border-bottom-color: var(--brand);
 }
@@ -1631,31 +1632,15 @@ html:not(.no-js) .enter-3 {
   }
 }
 
-html:not(.no-js) .reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-html:not(.no-js) .reveal.is-in {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-1 {
-  transition-delay: 0.07s;
-}
-
-.reveal-2 {
-  transition-delay: 0.14s;
-}
+/* .reveal (29 okt 2026): no fade-in on scroll any more. Content further down
+   the page is visible straight away, also when someone scrolls fast. The
+   class stays in the HTML but does nothing. */
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  html:not(.no-js) .enter,
-  html:not(.no-js) .reveal {
+  html:not(.no-js) .enter {
     animation: none;
     opacity: 1;
     transform: none;
