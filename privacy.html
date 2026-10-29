@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy policy - Dortus</title>
-<meta name="description" content="How Dortus handles data in MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace, Live Countdown for Confluence and Mermaid Live Preview for Jira: what is processed, where it is stored, and how long it is kept." />
+<meta name="description" content="How Dortus handles data in MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace, Live Countdown for Confluence, Mermaid Live Preview for Jira and Math for Confluence: what is processed, where it is stored, and how long it is kept." />
 <meta name="theme-color" content="#15181c" />
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Privacy policy - Dortus" />
@@ -62,6 +62,7 @@ Jira and Confluence:
 <li><strong>AskSpace: Questions &amp; Answers for Confluence</strong> (AskSpace)</li>
 <li><strong>Live Countdown for Confluence</strong> (Live Countdown)</li>
 <li><strong>Mermaid Live Preview for Jira</strong> (Mermaid Live Preview for Jira)</li>
+<li><strong>Math for Confluence</strong> (Math for Confluence; not on the Marketplace yet)</li>
 </ul>
 <p>
 We also publish <strong>Arrears</strong> for Shopify, a separate product. It is described in
@@ -88,8 +89,8 @@ controller of that correspondence.
 <strong>Short version.</strong> The Atlassian apps store nothing on Dortus servers, because
 there are none. MailView for Jira, MailView for Confluence, Live Countdown and Mermaid Live
 Preview for Jira have no app storage; Mermaid Live Preview for Jira keeps its diagrams on the
-Jira work item. AskSpace and Mermaid Live Preview keep their data in Forge app storage in your
-Atlassian site. MailView for Jira counts how often it is used, as three numbers per site,
+Jira work item. AskSpace, Mermaid Live Preview and Math for Confluence keep their data in
+Forge app storage in your Atlassian site. MailView for Jira counts how often it is used, as three numbers per site,
 through Atlassian.
 </p>
 </div>
@@ -103,7 +104,9 @@ Atlassian's cloud. AskSpace keeps its data in <strong>Forge app storage in your
 Atlassian site</strong>. Mermaid Live Preview saves the diagram source in the macro on the
 Confluence page, and keeps version history in <strong>Forge app storage in your Atlassian
 site</strong>. Mermaid Live Preview for Jira saves diagrams on the Jira work item, as
-issue properties, and has no app storage. Live Countdown saves its settings in the macro on the Confluence page
+issue properties, and has no app storage. Math for Confluence saves the formula in the macro
+on the Confluence page, and keeps version history in <strong>Forge app storage in your
+Atlassian site</strong>. Live Countdown saves its settings in the macro on the Confluence page
 and has no app storage. MailView for Jira and MailView for Confluence have
 no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
@@ -117,7 +120,7 @@ data egress to Dortus for normal use of the apps.
 One thing does reach us: Atlassian lets the developer of a Forge app see technical logs from
 the sites where it is installed, in Atlassian's developer console, for 30 days. AskSpace and
 MailView for Confluence only write error types, status codes, counts and timings to those logs, never your
-content, names or IDs. MailView for Jira writes no log lines in the published version. Live Countdown and Mermaid Live Preview for Jira write no log lines. Log sharing is on by default; your site's admins can turn it off.
+content, names or IDs. MailView for Jira writes no log lines in the published version. Live Countdown, Mermaid Live Preview for Jira and Math for Confluence write no log lines. Log sharing is on by default; your site's admins can turn it off.
 </p>
 <p>
 MailView for Jira also keeps three plain counters through Atlassian's Forge metrics: how often the
@@ -236,7 +239,31 @@ Jira. It makes no other network calls, uses no external services, and nothing is
 Dortus.
 </p>
 
-<h3>3.8 Billing</h3>
+<h3 id="math">3.8 What Math for Confluence processes</h3>
+<ul>
+<li>The LaTeX of each formula people type in the macro, and its display options (size and alignment)</li>
+<li>Earlier versions of each formula (up to 20, at most 64 KB per formula): the LaTeX, the size and alignment, and when each version was saved</li>
+</ul>
+<p>
+The formula is saved in the macro on the Confluence page, like the settings of any
+Confluence macro, so it follows the page's permissions and version history. Earlier
+versions are kept in Forge app storage in your Atlassian site, under the macro's ID. The app
+stores no account IDs, names or email addresses, unless someone types them into a formula.
+</p>
+<p>
+The formula is drawn in the browser of the person viewing the page, with KaTeX and fonts
+that are part of the app. For a PDF or Word export, Confluence calls the app's export
+function on Atlassian's Forge platform with the formula. The function returns an image or
+text for the export file. It fetches nothing and keeps nothing afterwards.
+</p>
+<p>
+The app asks for one permission, <code>storage:app</code>, for the version history. Atlassian
+tells the app whether its subscription on your site is active; the app stores nothing about
+that. It makes no network calls outside Atlassian, uses no external services, and nothing is
+sent to Dortus.
+</p>
+
+<h3>3.9 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
@@ -245,8 +272,8 @@ Marketplace billing is handled by Atlassian. We never see card details.
 <ul>
 <li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
-MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace, Live Countdown and
-Mermaid Live Preview for Jira.
+MailView for Jira, MailView for Confluence, Mermaid Live Preview, AskSpace, Live Countdown,
+Mermaid Live Preview for Jira and Math for Confluence.
 </li>
 </ul>
 <p>
@@ -264,7 +291,7 @@ or any other third party to load them.
 <h2>6. Why we process data</h2>
 <p>
 Only to provide the features you enable: storing and displaying questions and answers,
-rendering diagrams, showing countdowns, and showing email attachments. Our legal basis is
+rendering diagrams and formulas, showing countdowns, and showing email attachments. Our legal basis is
 the performance of our agreement with you, and our legitimate interest in keeping the
 service running securely.
 </p>
@@ -291,6 +318,12 @@ Jira work item, as issue properties, so they follow the work item's own retentio
 deletion. Deleting a diagram in the app removes it and its versions. Deleting the work item
 removes all of them. Issue properties are Jira data, not app storage, so we expect them to
 stay on the work items after an uninstall. This is not confirmed yet.
+</li>
+<li>
+<strong>Math for Confluence</strong>: the formula is part of the Confluence page, so it
+follows the page's own retention and deletion. Version history (up to 20 saves per formula)
+stays in Forge storage for your site. Uninstall and deletion follow Atlassian's platform
+rules for app storage.
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.

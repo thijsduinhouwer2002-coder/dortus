@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math for Confluence - documentation · Dortus</title>
+  <meta name="description" content="Math for Confluence is a pair of macros by Dortus. Type LaTeX and see the equation as you type, on its own line or inside a sentence. How to add one, its limits, and how it handles your data." />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Math for Confluence - documentation" />
+  <meta property="og:description" content="LaTeX equations in Confluence, drawn with KaTeX as you type. How to add one, its limits, and how the app handles your data." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/math.html" />
+  <meta property="og:url" content="https://dortus.com/math.html" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+  <meta property="og:image:alt" content="Dortus logo" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="atlassian.html" aria-current="true">Apps</a>
+        <a href="/#guides">Guides</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#docs">Documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap">
+        <p class="eyebrow enter">Math for Confluence &middot; Confluence macros</p>
+        <h1 class="enter enter-1">LaTeX equations in Confluence.</h1>
+        <p class="lede enter enter-2">
+          Type LaTeX and see the equation as you type. Put it on its own line or inside a
+          sentence. A mistake shows its line and column. Nothing leaves Atlassian.
+        </p>
+        <div class="btns enter enter-2">
+          <a class="btn btn-light" href="#docs">Read the documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="#privacy">Privacy and security</a>
+        </div>
+        <!-- When the app is submitted: "Submitted to the Atlassian Marketplace on <date>, waiting for approval." -->
+        <p style="margin-top: 1.3rem"><span class="status enter enter-3">Coming soon to the Atlassian Marketplace.</span></p>
+      </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Write math as LaTeX, see it as you type</h2>
+          <p class="lede">
+            Math for Confluence draws LaTeX with KaTeX 0.19. Fractions, matrices, aligned
+            equations and chemistry, on a Confluence page.
+          </p>
+        </div>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <h3>See the equation as you type</h3>
+            <p>Type LaTeX and the equation is drawn as you type. Start from an example: fractions, sums, integrals, limits, matrices, aligned equations, cases and chemistry.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>Mistakes point to the exact spot</h3>
+            <p>A typo shows what is wrong in plain words, with the line and column and a marker under the spot. The last version that worked stays in view.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>In a sentence or on its own line</h3>
+            <p>Use the block macro for an equation on its own line, centred or left. Use the inline macro for a formula inside a sentence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forge trust -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Draws in the reader's browser</h2>
+          <p class="lede">
+            The macros run on Atlassian Forge. The formula is saved in the macro on the
+            Confluence page. Version history is kept in Forge app storage in your Atlassian site.
+            The formula is drawn in the browser of the person viewing the page, with KaTeX and
+            fonts that are part of the app. Nothing is loaded from elsewhere, and nothing is sent
+            to Dortus.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge macros</dd>
+          </div>
+          <div>
+            <dt>Formula</dt>
+            <dd>In the macro on the page</dd>
+          </div>
+          <div>
+            <dt>History</dt>
+            <dd>Up to 20 versions, Forge app storage</dd>
+          </div>
+          <div>
+            <dt>Sent outside Atlassian</dt>
+            <dd>Nothing</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="#privacy">Privacy and security <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <section class="band" id="docs">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Documentation</h2>
+          <p class="lede">How to add an equation, what the editor does, its limits, and what to do when something looks wrong.</p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+
+          <p class="small">
+            On this page:
+            <a href="#what-it-does">What it does</a> &middot;
+            <a href="#add">Add an equation</a> &middot;
+            <a href="#inline">A formula inside a sentence</a> &middot;
+            <a href="#examples">Examples</a> &middot;
+            <a href="#paste">Pasting</a> &middot;
+            <a href="#errors">When something is wrong</a> &middot;
+            <a href="#on-the-page">On the page</a> &middot;
+            <a href="#versions">Version history</a> &middot;
+            <a href="#export">PDF and Word export</a> &middot;
+            <a href="#subscription">Subscription</a> &middot;
+            <a href="#accessibility">Accessibility</a> &middot;
+            <a href="#limits">Limits</a> &middot;
+            <a href="#troubleshooting">Troubleshooting</a> &middot;
+            <a href="#privacy">Privacy and security</a> &middot;
+            <a href="#support">Contact</a>
+          </p>
+
+          <h3 id="what-it-does">What it does</h3>
+          <p>Math for Confluence adds two macros to Confluence Cloud pages:</p>
+          <ul>
+            <li><strong>Math block (LaTeX)</strong>, for an equation on its own line.</li>
+            <li><strong>Math inline (LaTeX)</strong>, for a formula inside a sentence.</li>
+          </ul>
+          <p>You type LaTeX and see the equation as you type. It is drawn with KaTeX 0.19.</p>
+
+          <h3 id="add">Add an equation</h3>
+          <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+            <li>A Confluence admin installs Math for Confluence from the Atlassian Marketplace.</li>
+            <li>Edit a Confluence page and type <code>/math</code>. Choose <strong>Math block (LaTeX)</strong>.</li>
+            <li>Type LaTeX in the editor, without <code>$</code> signs. The preview shows the equation as you type: next to the code in a wide window, under it in a narrow one.</li>
+            <li>Choose the size: <strong>Display</strong> (full size, on its own line) or <strong>Text</strong> (the size of body text). Choose <strong>Center</strong> or <strong>Left</strong>.</li>
+            <li>Click <strong>Insert formula</strong>, or press Ctrl+Enter (Cmd+Enter on a Mac).</li>
+            <li>Publish the page.</li>
+          </ol>
+          <p>To change a formula later, edit the page, select the formula and click the pencil. The button then says <strong>Save formula</strong>.</p>
+
+          <h3 id="inline">A formula inside a sentence</h3>
+          <p>Type <code>/math</code> and choose <strong>Math inline (LaTeX)</strong>. The editor is the same. The preview shows the formula inside a sample sentence. On the page it takes only the width of the formula, at text size.</p>
+
+          <h3 id="examples">Examples</h3>
+          <p>The editor has one-click examples: Fraction, Quadratic formula, Sum, Integral, Limit, Matrix, Aligned, Cases, Chemistry and Probability. A few to copy:</p>
+<pre><code>x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+
+A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}, \quad \det A = ad - bc
+
+\begin{aligned}
+(a+b)^2 &amp;= (a+b)(a+b) \\
+        &amp;= a^2 + 2ab + b^2
+\end{aligned}
+
+|x| = \begin{cases} x &amp; \text{if } x \ge 0 \\ -x &amp; \text{if } x &lt; 0 \end{cases}
+
+\ce{CH4 + 2 O2 -&gt; CO2 + 2 H2O}</code></pre>
+          <p>On the page, the commands KaTeX supports work, apart from a few that are switched off on purpose (see <a href="#limits">Limits</a>). That includes <code>\tag</code>, <code>\def</code> and <code>\newcommand</code> inside one formula, colours, and chemistry with <code>\ce</code> and <code>\pu</code>. The full list is in <a href="https://katex.org/docs/supported.html" rel="noopener noreferrer">KaTeX's supported commands</a>. The <strong>Supported commands</strong> link in the editor opens it too.</p>
+
+          <h3 id="paste">Pasting</h3>
+          <p>A formula pasted with <code>$$ … $$</code>, <code>\[ … \]</code>, <code>\( … \)</code> or <code>$ … $</code> around it is cleaned up. The delimiters are removed and the rest stays as it was.</p>
+
+          <h3 id="errors">When something is wrong</h3>
+          <p>The preview says what is wrong in plain words, for example "A { is never closed" or "Unknown command \foo". It says where, for example "Line 3, column 6". It shows the line with a marker under the spot, and gives a hint. The spot is also underlined in the code. While you fix it, the last version that worked stays in the preview, faded.</p>
+          <p>On the page, it depends on who is looking:</p>
+          <ul>
+            <li><strong>While the page is being edited</strong>, a broken formula shows the same box instead of the formula, so you see what to fix.</li>
+            <li><strong>People reading the published page</strong> see one short grey line where the formula would be: "This formula has an error. Edit the page to fix it." No LaTeX and no error wording. An inline formula shows "formula error" in the sentence, with that line on hover and for screen readers.</li>
+            <li>An empty formula tells readers "No formula yet. Edit the page to add one."</li>
+          </ul>
+
+          <h3 id="on-the-page">On the page</h3>
+          <ul>
+            <li><strong>Copy LaTeX.</strong> Hover over an equation, or tab to it, and click <strong>LaTeX</strong> to copy its source. Selecting a formula and pressing Ctrl+C (Cmd+C on a Mac) also copies the LaTeX.</li>
+            <li><strong>Wide formulas.</strong> A formula wider than its column scrolls sideways inside its own box, with a short note under it. The page itself never scrolls sideways. With the keyboard, tab to the formula and use the arrow keys.</li>
+            <li><strong>Links</strong> in a formula (<code>\href</code>, <code>\url</code>) open in a new tab. Only http and https links become links.</li>
+            <li><strong>Light and dark.</strong> Formulas follow the Confluence theme, also when it is switched while the page is open.</li>
+          </ul>
+
+          <h3 id="versions">Version history</h3>
+          <p><strong>Versions</strong> in the editor lists the last 20 saved versions of that formula, newest first. A very long formula keeps fewer, because the history of one formula is kept under 64 KB.</p>
+          <p>Click a version to load it into the editor. Nothing changes on the page until you save.</p>
+
+          <h3 id="export">PDF and Word export</h3>
+          <p>No JavaScript runs in an export. So when you export a page to PDF or Word, Confluence asks the app for a static version of each formula. The app makes it in its own function on Atlassian's Forge platform.</p>
+          <p><strong>Not yet confirmed.</strong> We have not yet checked exported PDF and Word files in Confluence, so we don't promise how formulas look in them. If you rely on export, try it on a test page first.</p>
+
+          <h3 id="subscription">Subscription</h3>
+          <p>Math for Confluence is a paid app on the Atlassian Marketplace. Atlassian handles the trial, the subscription and the bill. The app only reads whether the subscription on your site is active. A trial counts as active.</p>
+          <p>Without an active subscription, for example when a trial ended without a subscription:</p>
+          <ul>
+            <li><strong>Every formula stays on your pages.</strong> Readers, and people editing the page, see each formula as before. Your formulas are your content, stored in your pages, and the app never hides them.</li>
+            <li><strong>Copy LaTeX</strong> keeps working on every formula.</li>
+            <li><strong>Editing formulas is paused.</strong> Opening the formula editor shows "Editing formulas is paused" and asks you to contact a Confluence admin to renew the subscription. Nothing on the page changes.</li>
+            <li><strong>Version history</strong> is not written while editing is paused. Saved versions stay.</li>
+          </ul>
+          <p>When the subscription is active again, the editor opens as always. Prices are on the Marketplace listing. To cancel, use the Atlassian Marketplace; refunds follow Atlassian's policy.</p>
+
+          <h3 id="accessibility">Accessibility</h3>
+          <ul>
+            <li><strong>MathML.</strong> Every formula is also written as MathML. The visual part is hidden from screen readers, so they read the MathML instead.</li>
+            <li><strong>Keyboard.</strong> All buttons have names, keyboard focus is visible, and a scrolling formula can be reached and scrolled with the keyboard.</li>
+            <li><strong>Errors.</strong> In the editor, an error is announced to screen readers once you pause typing, not on every key.</li>
+            <li><strong>Automated checks.</strong> Our tests run axe-core on a formula, an error as a reader and as a writer sees it, the inline macro and the editor, in light and dark. They find no serious or critical issues.</li>
+          </ul>
+
+          <h3 id="limits">Limits and what is not confirmed yet</h3>
+          <ul>
+            <li><strong>Confluence Cloud only.</strong> Not Confluence Data Center or Server.</li>
+            <li><strong>10,000 characters</strong> per formula.</li>
+            <li><strong>1,000 command expansions</strong> per formula. A <code>\def</code> that uses itself stops with an error. So does a long formula with very many commands.</li>
+            <li><strong>30,000 symbols</strong> after expansion. A short <code>\def</code> that repeats another one many times stops with "This formula is too large to draw" instead of freezing the page.</li>
+            <li><strong>Sizes are capped.</strong> On the page, very large sizes such as <code>\rule{100000em}{…}</code> are capped.</li>
+            <li><strong>Switched off on purpose:</strong> <code>\includegraphics</code> (it would load an image from anywhere), <code>\htmlClass</code>, <code>\htmlId</code>, <code>\htmlStyle</code>, <code>\htmlData</code>, and links other than http and https. They show as red text.</li>
+            <li><strong>One formula at a time.</strong> A <code>\def</code> in one formula does not carry over to the next.</li>
+          </ul>
+          <p><strong>Not yet confirmed.</strong> We have not tested these in Confluence yet, so we don't promise them:</p>
+          <ul>
+            <li><strong>PDF and Word export:</strong> how formulas look in the exported file.</li>
+            <li><strong>Inline formulas:</strong> how a formula inside a sentence lines up with the text around it.</li>
+            <li><strong>Readers and writers:</strong> that Confluence tells the app, on every kind of page, whether the page is being edited. If it doesn't, a broken formula shows the short grey line while editing too. The formula editor always shows the full explanation.</li>
+            <li><strong>Include Page, Expand and Tabs:</strong> a formula on an included page, or in an Expand or tab that is closed.</li>
+            <li><strong>Many formulas:</strong> a page with 30 or more formulas.</li>
+            <li><strong>The LaTeX button:</strong> whether it may write to the clipboard inside Confluence. If not, select the formula and press Ctrl+C.</li>
+            <li><strong>Screen readers:</strong> how a formula sounds with a screen reader such as VoiceOver or NVDA.</li>
+            <li><strong>Browsers:</strong> Firefox and Safari.</li>
+          </ul>
+          <p>If you rely on one of these, try it on a test page first, and tell us what you see.</p>
+
+          <h3 id="troubleshooting">Troubleshooting</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">You see</th><th scope="col">What it means</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A box with a line and column instead of the formula</td><td>The LaTeX has a mistake at that spot. The box says what is wrong and gives a hint. Edit the formula to fix it. See <a href="#errors">When something is wrong</a>.</td></tr>
+              <tr><td>"This formula has an error. Edit the page to fix it."</td><td>The same mistake, as a reader sees it. Edit the page to see what is wrong.</td></tr>
+              <tr><td>"This formula is too large to draw"</td><td>The formula grows past 30,000 symbols, for example through a <code>\def</code> that repeats another one many times. See <a href="#limits">Limits</a>.</td></tr>
+              <tr><td>A command shows as red text</td><td>The command is switched off on purpose, or it is a link that is not http or https. See <a href="#limits">Limits</a>.</td></tr>
+              <tr><td>"Editing formulas is paused"</td><td>The Math for Confluence subscription on your site is not active. Formulas on your pages still show. A Confluence admin can renew it. See <a href="#subscription">Subscription</a>.</td></tr>
+              <tr><td>The <strong>LaTeX</strong> button says "Press Ctrl+C"</td><td>The browser doesn't let the app write to the clipboard here. Select the formula and press Ctrl+C (Cmd+C on a Mac).</td></tr>
+              <tr><td>A formula has a scrollbar</td><td>It is wider than its column. Scroll inside the box, or put it in a wider column.</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="privacy">Privacy and security</h3>
+          <p><strong>Where is the formula stored?</strong> In the page itself, as the macro's settings, like any other Confluence macro. It follows the page's permissions and its version history. The app does not keep a copy of pages.</p>
+          <p><strong>What is in the version history?</strong> Up to 20 saved versions per formula, at most 64 KB: the LaTeX, the size and alignment, and the time each version was saved. It is kept in Forge app storage, Atlassian's own storage for apps, under the macro's ID. It holds no user names, account IDs or page content.</p>
+          <p><strong>What permissions does the app ask for?</strong> One: <code>storage:app</code>, for the version history. The app also allows inline styles in its own frame, because KaTeX places each symbol with them. It asks for no access to your Confluence content: no pages, no users, no spaces.</p>
+          <p><strong>Where is the formula drawn?</strong> In the browser of the person viewing the page, from the app's own files. KaTeX and its fonts are part of the app. Nothing is loaded from a CDN or any other server, and the app has no permission to call outside servers.</p>
+          <p><strong>What does the app send outside Atlassian?</strong> Nothing. There is no Dortus server behind the app, and nothing is sent to Dortus or to any third party. There is no analytics and no tracking.</p>
+          <p><strong>Is there a part that runs outside the browser?</strong> Yes, inside Atlassian. The version history and the PDF and Word export run in the app's functions on Atlassian's Forge platform. For an export, Confluence sends the export function the formula, and the function returns a static version for the export file. It fetches nothing and logs nothing.</p>
+          <p><strong>What does the app know about the subscription?</strong> Only whether it is active, which Atlassian tells the app. The app stores nothing about it.</p>
+          <p><strong>What happens if I uninstall?</strong> The formula text is part of the page, so it follows the page's own retention and deletion. The version history in Forge app storage follows Atlassian's platform rules for app storage.</p>
+          <p><strong>Third-party software.</strong> KaTeX (MIT), MathJax (Apache-2.0, export only), resvg-wasm (MPL-2.0, export only) and CodeMirror (MIT, editor only). All of them are part of the app.</p>
+          <p>The app is built on Atlassian Forge, for Atlassian's Runs on Atlassian programme. Full policy: <a href="privacy.html#math">Privacy policy</a>, section 3.8. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+          <h3 id="support">Contact</h3>
+          <p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=Math%20for%20Confluence">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL, a link to the page, the LaTeX of the formula, your browser, what you expected and what happened.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. KaTeX is
+        an open source project. Dortus is not affiliated with Atlassian or the KaTeX project.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
