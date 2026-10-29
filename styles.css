@@ -91,6 +91,9 @@ body[data-world="atlassian"] {
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* A link to a heading (privacy.html#mermaid-jira, #privacy on an app page) lands
+     below the sticky header instead of under it. */
+  scroll-padding-top: 5rem;
 }
 
 body {
