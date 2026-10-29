@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mermaid Live Preview for Jira - documentation · Dortus</title>
+  <meta name="description" content="Mermaid Live Preview for Jira is a work item panel by Dortus. Type Mermaid code and see the diagram as you type, saved on the Jira work item. How to use it, who can change a diagram, and how it handles your data." />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Mermaid Live Preview for Jira - documentation" />
+  <meta property="og:description" content="Mermaid diagrams with a live preview on Jira work items. How to add one, who can change it, and how the app handles your data." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/mermaid-jira.html" />
+  <meta property="og:url" content="https://dortus.com/mermaid-jira.html" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+  <meta property="og:image:alt" content="Dortus logo" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="atlassian.html" aria-current="true">Apps</a>
+        <a href="/#guides">Guides</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#docs">Documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap">
+        <p class="eyebrow enter">Mermaid Live Preview for Jira &middot; Work item panel</p>
+        <h1 class="enter enter-1">Mermaid diagrams on a Jira work item.</h1>
+        <p class="lede enter enter-2">
+          Type Mermaid code and see the diagram as you type, right on the work item. The diagram
+          is saved on the work item itself. There is no external account, and nothing leaves
+          Atlassian.
+        </p>
+        <div class="btns enter enter-2">
+          <a class="btn btn-light" href="#docs">Read the documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="#privacy">Privacy and security</a>
+        </div>
+        <p style="margin-top: 1.3rem"><span class="status enter enter-3">Submitted to the Atlassian Marketplace on 29 October 2026, waiting for approval.</span></p>
+      </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>The diagram sits with the work</h2>
+          <p class="lede">
+            Write a flowchart, sequence diagram, Gantt chart or another Mermaid diagram as text,
+            on the work item it belongs to. Change a line and the drawing follows.
+          </p>
+        </div>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <h3>Live preview on the work item</h3>
+            <p>Choose <strong>Apps</strong>, then <strong>Mermaid diagrams</strong>, and the editor opens with a live preview of your code. Start from one of 12 examples or paste your own.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>Saved on the work item</h3>
+            <p>Diagrams are stored on the work item as Jira issue properties. There is no account to create or link, no app backend and no outside service.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>Follows your Jira permissions</h3>
+            <p>Adding, editing, reordering and deleting diagrams need permission to edit the work item, and Jira checks every change itself. Each diagram keeps up to 20 saved versions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forge trust -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Runs in your browser, talks only to your Jira</h2>
+          <p class="lede">
+            The panel runs on Atlassian Forge. It reads and saves diagrams through Jira's own
+            REST API, in your browser and as you. The diagram is drawn in the browser of the
+            person viewing the work item. The app has no backend and no app storage, and nothing
+            is sent to Dortus.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge issue panel</dd>
+          </div>
+          <div>
+            <dt>Permissions</dt>
+            <dd>Read and write Jira work items</dd>
+          </div>
+          <div>
+            <dt>Diagrams</dt>
+            <dd>On the work item, as issue properties</dd>
+          </div>
+          <div>
+            <dt>Sent outside Atlassian</dt>
+            <dd>Nothing</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="#privacy">Privacy and security <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <section class="band" id="docs">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Documentation</h2>
+          <p class="lede">How to add a diagram, who can change it, and what to do when something looks wrong.</p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+
+          <p class="small">
+            On this page:
+            <a href="#what-it-does">What it does</a> &middot;
+            <a href="#add">Add a diagram</a> &middot;
+            <a href="#edit">Edit and versions</a> &middot;
+            <a href="#two-people">Two people at once</a> &middot;
+            <a href="#order-delete">Order, delete and undo</a> &middot;
+            <a href="#view">Viewing a diagram</a> &middot;
+            <a href="#clone">Cloning a work item</a> &middot;
+            <a href="#permissions">Permissions</a> &middot;
+            <a href="#all-work-items">Show the panel on every work item</a> &middot;
+            <a href="#size">Size limits</a> &middot;
+            <a href="#limits">Limits</a> &middot;
+            <a href="#troubleshooting">Troubleshooting</a> &middot;
+            <a href="#privacy">Privacy and security</a> &middot;
+            <a href="#support">Contact</a>
+          </p>
+
+          <h3 id="what-it-does">What it does</h3>
+          <p>Mermaid Live Preview for Jira adds a <strong>Mermaid diagrams</strong> panel to Jira Cloud work items. You type Mermaid code, see the diagram as you type, and save it on the work item.</p>
+          <p>A work item can hold several diagrams, each with an optional title, in the order you choose. Diagrams are drawn with Mermaid 12, and the editor colours the code as you type.</p>
+          <p>There is no Mermaid account to create or link. The app has no backend of its own and only talks to your Jira.</p>
+
+          <h3 id="add">Add a diagram</h3>
+          <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+            <li>A Jira admin installs Mermaid Live Preview for Jira from the Atlassian Marketplace.</li>
+            <li>Open a work item. Click <strong>Apps</strong> and choose <strong>Mermaid diagrams</strong>. The panel appears above <strong>Activity</strong> and the editor opens.</li>
+            <li>Pick one of the 12 examples or type your own code. If you paste a <code>```mermaid</code> block, the fences are removed for you.</li>
+            <li>Give the diagram a title if you like.</li>
+            <li>Click <strong>Add diagram</strong>.</li>
+          </ol>
+          <p>The examples are flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+          <p>The <strong>Apps</strong> button is only shown to people who may edit the work item. Once the panel is on a work item, it stays there.</p>
+
+          <h3 id="edit">Edit and versions</h3>
+          <p>Click <strong>Edit</strong> on a diagram. The editor opens with the latest saved version. If someone changed it since your page loaded, the editor says so.</p>
+          <p><strong>Versions</strong> in the editor lists up to 20 saved versions of that diagram. Pick one to load it, then save. A large diagram keeps fewer versions. See <a href="#size">Size limits</a>.</p>
+          <p>When the code has a mistake, the preview shows the line, a marker under the spot, and what Mermaid expected.</p>
+
+          <h3 id="two-people">Two people at once</h3>
+          <p>When you save, the app checks whether someone else saved the same diagram, its code or its title, after you opened the editor. If so, you choose:</p>
+          <ul>
+            <li><strong>Load their version.</strong> The editor shows what they saved.</li>
+            <li><strong>Save mine anyway.</strong> Their version is put in Versions first. If it can't be kept there, your save is refused and nothing is replaced.</li>
+          </ul>
+          <p>If someone saves right after you, the editor stays open with your text and says so. Two people working on different diagrams of the same work item never get in each other's way.</p>
+          <p>Jira has no way to lock a value. Two saves that land at the same moment can still cross. The app then tells the person whose save was replaced, when it can.</p>
+
+          <h3 id="order-delete">Order, delete and undo</h3>
+          <ul>
+            <li><strong>Move up and Move down</strong> (the arrows) change the order of the diagrams on the work item.</li>
+            <li><strong>Delete</strong> asks first, then removes the diagram and its versions. If someone else changed the diagram since your page loaded, it is not deleted. The panel shows the latest version instead.</li>
+            <li><strong>Undo</strong> appears right after you delete and brings the diagram and its versions back. It stays until you reload the page or make another change.</li>
+          </ul>
+
+          <h3 id="view">Viewing a diagram</h3>
+          <ul>
+            <li><strong>Fit, zoom and Open large.</strong> Diagrams fit the width of the panel. Hover over a diagram, or tab to it, to zoom or to open it large.</li>
+            <li><strong>Keys on a focused diagram.</strong> <code>+</code> and <code>-</code> zoom, <code>0</code> fits, the arrow keys move, and Enter opens it large.</li>
+            <li><strong>Links</strong> inside a diagram open in a new tab.</li>
+            <li><strong>Light and dark.</strong> The panel follows Jira's theme.</li>
+          </ul>
+
+          <h3 id="clone">Cloning a work item</h3>
+          <p>Jira's <strong>Clone</strong> does not copy the diagrams. A clone starts without them and without the panel.</p>
+          <p>To take the diagrams along, open the clone, click <strong>Apps</strong> and choose <strong>Mermaid diagrams</strong>. The panel offers to copy the diagrams from the original. Nothing is copied until you click it, and the original is not changed. Versions are not copied: the clone starts its own.</p>
+
+          <h3 id="permissions">Permissions</h3>
+          <p>The app uses Jira's own permissions:</p>
+          <table>
+            <thead>
+              <tr><th scope="col">You can</th><th scope="col">When Jira lets you</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>See the diagrams of a work item</td><td>See the work item (Browse projects)</td></tr>
+              <tr><td>Add, edit, reorder or delete diagrams</td><td>Edit the work item (Edit issues)</td></tr>
+            </tbody>
+          </table>
+          <p>The app works as you, so it can only do what you can do. Jira checks every change itself and refuses a change you have no permission for.</p>
+
+          <h3 id="all-work-items">Show the panel on every work item (Jira admins)</h3>
+          <p>By default, someone adds the panel to a work item with <strong>Apps</strong>. A Jira admin can show it on every work item: open the panel's <strong>&bull;&bull;&bull;</strong> menu and choose <strong>Show for all work items</strong>.</p>
+          <p>Careful: <strong>Hide from all work items</strong> also removes the panels that people added themselves.</p>
+
+          <h3 id="size">Size limits</h3>
+          <ul>
+            <li><strong>32 KB per diagram.</strong> Jira allows 32 KB per issue property, and each diagram has its own. A typical diagram is well under 1 KB. The editor shows how much is used and won't save past the limit.</li>
+            <li><strong>Versions.</strong> The versions of a diagram have their own 32 KB. When that is full, the oldest versions go first. For a diagram over about 16 KB, Versions holds one or two. A version that <strong>Save mine anyway</strong> just replaced is never the one that goes.</li>
+          </ul>
+
+          <h3 id="limits">Limits and what is not confirmed yet</h3>
+          <ul>
+            <li><strong>Jira Cloud only.</strong> Not Jira Data Center or Server.</li>
+            <li><strong>In its own panel.</strong> Diagrams show in the Mermaid diagrams panel above Activity, not in the description.</li>
+            <li><strong>Not in the Jira Service Management portal.</strong> Portal customers and anonymous visitors of public projects don't get the panel.</li>
+            <li><strong>Clones.</strong> Jira's Clone does not copy diagrams. See <a href="#clone">Cloning a work item</a>.</li>
+          </ul>
+          <p><strong>Not yet confirmed.</strong> We have not tested these on a real Jira site yet, so we don't promise them:</p>
+          <ul>
+            <li><strong>Read-only users:</strong> that someone who can see but not edit the work item sees the diagrams without Add, Edit, Move and Delete.</li>
+            <li><strong>Moving a work item</strong> to another project: whether the diagrams stay.</li>
+            <li><strong>Uninstalling:</strong> whether the diagrams stay on the work items. See <a href="#privacy">Privacy and security</a>.</li>
+            <li><strong>SVG and PNG download</strong> from the panel inside Jira.</li>
+            <li><strong>Narrow views:</strong> the panel in a board's side view and in the work item view that opens from a board.</li>
+            <li><strong>Browsers:</strong> Firefox and Safari.</li>
+          </ul>
+          <p>If you rely on one of these, try it on a test work item first, and tell us what you see.</p>
+
+          <h3 id="troubleshooting">Troubleshooting</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">You see</th><th scope="col">What it means</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>No <strong>Apps</strong> button, or no Mermaid diagrams under it</td><td>The button is only shown to people who may edit the work item. Check that you have edit permission and that the app is installed. A Jira admin can also show the panel on every work item.</td></tr>
+              <tr><td>The editor says someone else saved the diagram</td><td>Someone saved it after you opened the editor. Choose <strong>Load their version</strong> or <strong>Save mine anyway</strong>. See <a href="#two-people">Two people at once</a>.</td></tr>
+              <tr><td>The editor won't save because the diagram is too large</td><td>A diagram can be up to 32 KB. See <a href="#size">Size limits</a>.</td></tr>
+              <tr><td>Delete did nothing and the panel shows another version</td><td>Someone else changed the diagram since your page loaded. Check the latest version, then delete again if you still want to.</td></tr>
+              <tr><td>A card says a diagram can't be read here</td><td>The stored value was written by a newer version of the app, or changed by hand or by another tool. The app shows it without Edit or Delete, and never overwrites or deletes it.</td></tr>
+              <tr><td>A clone has no diagrams</td><td>Jira's Clone does not copy them. See <a href="#clone">Cloning a work item</a>.</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="privacy">Privacy and security</h3>
+          <p><strong>Where is data stored?</strong> On the Jira work item itself, as Jira issue properties. Issue properties are Jira's built-in way to store small values on a work item. Nothing is stored anywhere else. The app has no app storage and no database.</p>
+          <table>
+            <thead>
+              <tr><th scope="col">Issue property</th><th scope="col">What is in it</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>dortus-mermaid-d-&lt;id&gt;</code>, one per diagram</td><td>The diagram's id, title and Mermaid code, and when it was created and last saved</td></tr>
+              <tr><td><code>dortus-mermaid-h-&lt;id&gt;</code>, one per diagram</td><td>Its earlier versions: the code and when each was saved. Up to 20</td></tr>
+              <tr><td><code>dortus-mermaid-order</code></td><td>The order of the diagrams on the panel</td></tr>
+            </tbody>
+          </table>
+          <p>Jira itself also keeps a small property on the work item to remember that the panel was added.</p>
+          <p><strong>Is personal data stored?</strong> The app stores no account IDs, names or email addresses. It only stores what is in the table above. Personal data ends up there only if you type it into a diagram or a title yourself.</p>
+          <p><strong>Who can read the diagrams?</strong> Everyone who can see the work item, in the panel or through Jira's REST API. Issue properties are not private to the app. Other apps on your site that may read Jira work items can read them too.</p>
+          <p><strong>What permissions does the app ask for?</strong> Two Jira scopes: <code>read:jira-work</code> and <code>write:jira-work</code>. The app uses them to read and save its own issue properties, and to ask Jira whether you may edit the work item. It also lets Mermaid use inline styles in its own frame, which Mermaid needs to draw.</p>
+          <p><strong>Where does the app run?</strong> In the browser of the person viewing the work item. It talks only to your Jira, as that person. It makes no other network calls and loads no fonts, images or scripts from elsewhere. There is no app backend.</p>
+          <p><strong>What does the app send outside Atlassian?</strong> Nothing. There is no Dortus server behind the app, and nothing is sent to Dortus or to any third party. There is no analytics and no tracking.</p>
+          <p><strong>How are diagrams deleted?</strong> With <strong>Delete</strong> in the panel. It removes the diagram's versions first, then the diagram. If the versions can't be removed, the diagram stays. Deleting the work item deletes its diagrams with it.</p>
+          <p><strong>What happens if I uninstall?</strong> Not yet confirmed. Issue properties are Jira data, not app storage, so we expect the diagrams to stay on the work items. To remove them, delete them in the panel before you uninstall.</p>
+          <p>The app is built on Atlassian Forge, for Atlassian's Runs on Atlassian programme. Full policy: <a href="privacy.html#mermaid-jira">Privacy policy</a>, section 3.7. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+          <h3 id="support">Contact</h3>
+          <p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=Mermaid%20Live%20Preview%20for%20Jira">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL, the work item key, your browser, what you expected and what happened.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Live Preview</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+        affiliated with Atlassian.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
