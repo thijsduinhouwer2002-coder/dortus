@@ -13,8 +13,8 @@
 <link rel="canonical" href="https://dortus.com/partners.html" />
 <meta property="og:url" content="https://dortus.com/partners.html" />
 <meta property="og:site_name" content="Dortus" />
-<meta property="og:image" content="https://dortus.com/assets/mailview-01-message.png" />
-<meta property="og:image:alt" content="MailView showing an email attachment as it was sent: sender, recipients, date and the message" />
+<meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
+<meta property="og:image:alt" content="MailView in Jira: an email that asks to pay an invoice to new bank details, with a Likely phishing notice" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -47,9 +47,13 @@ on a demo site in a minute.
 </p>
 </div>
 
-<figure class="frame" style="max-width: 975px; width: 100%; margin-inline: auto">
+<figure class="frame" style="max-width: 1100px; width: 100%; margin-inline: auto">
 <span class="frame-media">
-<img src="assets/mailview-demo-phishing.gif" width="975" height="661" loading="lazy" alt="MailView on a Jira Service Management request: a list of email attachments, one opened with a 'Likely phishing' verdict, and a Details tab with SPF, DKIM and DMARC results and link destinations." />
+<picture>
+  <source media="(max-width: 560px)" srcset="assets/mailview-message-narrow.webp" width="800" height="1861" />
+  <source media="(max-width: 860px)" srcset="assets/mailview-message.webp" width="1280" height="1848" />
+  <img src="assets/mailview-full-view.webp" alt="MailView in Jira, opened in full view: an email that asks Accounts Payable to pay invoice 2291 to new bank details. Reply-To is marked different domain than From. Under the tabs Message, Details and Original, a Likely phishing notice lists a failed DMARC check, a failed SPF check and a link that shows one domain but goes to another." width="1717" height="721" />
+</picture>
 </span>
 </figure>
 

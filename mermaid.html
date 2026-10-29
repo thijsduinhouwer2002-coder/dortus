@@ -13,9 +13,9 @@
   <link rel="canonical" href="https://dortus.com/mermaid.html" />
   <meta property="og:url" content="https://dortus.com/mermaid.html" />
   <meta property="og:site_name" content="Dortus" />
-  <meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
-  <meta property="og:image:alt" content="Dortus logo" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+  <meta property="og:image:alt" content="Mermaid Live Preview editor: Mermaid code on the left, the flowchart it draws on the right" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-world="atlassian">
@@ -52,29 +52,12 @@
           <p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://marketplace.atlassian.com/apps/4235692896">Live on the Atlassian Marketplace</a></p>
         </div>
 
-        <div class="enter enter-3">
-          <div class="mock">
-            <div class="mock-bar">Diagram macro: source and live preview</div>
-            <div class="mock-split">
-              <pre class="mock-code">flowchart TD
-  A[Order placed]
-  A --&gt; B{Credit ok?}
-  B -- yes --&gt; C[Fulfil]
-  B -- no --&gt; D[Hold account]</pre>
-              <div class="mock-render" role="img" aria-label="Flowchart: order placed, then a credit check, then either fulfil or hold the account">
-                <span class="mock-node">Order placed</span>
-                <span class="mock-link" aria-hidden="true"></span>
-                <span class="mock-node">Credit ok?</span>
-                <span class="mock-link" aria-hidden="true"></span>
-                <span class="mock-node mock-node-alt">Fulfil</span>
-                <span class="mock-node">Hold account</span>
-              </div>
-            </div>
-          </div>
-          <p class="mock-note">
-            Layout of the macro, drawn in CSS.
-          </p>
-        </div>
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="assets/mermaid-page.webp" width="1120" height="1412" alt="A Mermaid flowchart drawn by the macro on a Confluence page: Customer places order, then Payment OK?. Yes leads to Reserve stock, Pick and pack and Order shipped; No leads to Ask for another card and back to Payment OK?. Above the diagram: zoom out, 100%, zoom in, Open large, SVG and PNG." />
+          </span>
+          <figcaption><strong>On the page.</strong> The diagram fits the width. Zoom, open it large, or download it as SVG or PNG.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -89,6 +72,15 @@
             text: change one line, the drawing follows.
           </p>
         </div>
+        <figure class="frame reveal" style="max-width: 1076px; margin: 0 auto clamp(1.6rem, 3vw, 2.4rem)">
+          <span class="frame-media">
+            <picture>
+              <source media="(max-width: 640px)" srcset="assets/mermaid-editor-code.webp" width="545" height="690" />
+              <img src="assets/mermaid-editor.webp" width="1075" height="690" loading="lazy" alt="The Mermaid Live Preview editor in Confluence. Left: Type your diagram, example buttons from Flowchart to Kanban, and seven lines of flowchart code for an order process. Right: the preview of that flowchart, with zoom, Open large, SVG and PNG. At the bottom: Cancel and Insert diagram." />
+            </picture>
+          </span>
+          <figcaption><strong>The editor.</strong> Pick an example or type Mermaid code. The preview next to it redraws as you type.</figcaption>
+        </figure>
         <div class="cols cols-3">
           <div class="card reveal">
             <h3>Write it in the page</h3>
@@ -140,17 +132,12 @@
           </ul>
         </div>
 
-        <div class="reveal reveal-2">
-          <div class="mock">
-            <div class="mock-bar">Sequence source</div>
-            <pre class="mock-code">sequenceDiagram
-  Buyer-&gt;&gt;Store: Order on net 30
-  Store-&gt;&gt;Billing: Payment schedule
-  Billing-&gt;&gt;Buyer: Reminder at day 31
-  Buyer-&gt;&gt;Store: Bank transfer</pre>
-          </div>
-          <p class="mock-note">Same macro, sequence syntax.</p>
-        </div>
+        <figure class="frame reveal reveal-2">
+          <span class="frame-media">
+            <img src="assets/mermaid-sequence.webp" width="1080" height="826" loading="lazy" alt="A Mermaid sequence diagram drawn by the macro: Web shop, Payment service and Warehouse. Charge card, Payment confirmed, Reserve items, Items reserved, Ship order." />
+          </span>
+          <figcaption><strong>Sequence.</strong> Same macro: who calls whom, in order.</figcaption>
+        </figure>
       </div>
     </section>
 

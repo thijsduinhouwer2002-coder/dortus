@@ -884,6 +884,13 @@ body:not([data-world]) .btn-primary {
   object-position: top center;
 }
 
+.frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #eef3fa;
+}
+
 .frame figcaption {
   font-size: 0.88rem;
   line-height: 1.45;
@@ -1153,123 +1160,6 @@ body:not([data-world]) .btn-primary {
   height: 8px;
   border-radius: 2px;
   background: var(--brand);
-}
-
-/* ===============================================================
-   Mocks for screens we cannot show yet
-   =============================================================== */
-
-.mock {
-  background: #fff;
-  border-radius: var(--r);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  overflow: hidden;
-  color: var(--ink);
-}
-
-.band-tint .mock,
-.band-grey .mock,
-body > main .band:not(.band-deep):not(.band-dark) .mock {
-  border-color: var(--line);
-}
-
-.mock-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--atl-deep);
-  color: #fff;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.55rem 0.9rem;
-}
-
-.mock-bar::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.mock-split {
-  display: grid;
-  gap: 0;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 560px) {
-  .mock-split {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.mock-code {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  line-height: 1.65;
-  margin: 0;
-  padding: 1rem;
-  background: var(--atl-deep);
-  color: #dbe7ff;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.mock-render {
-  padding: 1.1rem;
-  display: grid;
-  gap: 0.45rem;
-  place-content: center;
-  background: var(--paper);
-}
-
-.mock-node {
-  border: 1.5px solid var(--atl);
-  color: var(--atl-deep);
-  background: var(--atl-tint);
-  border-radius: 6px;
-  padding: 0.4rem 0.7rem;
-  font-size: 0.84rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.mock-node-alt {
-  background: #e3fcef;
-  border-color: var(--atl-success);
-  color: #006644;
-}
-
-.mock-link {
-  justify-self: center;
-  width: 1.5px;
-  height: 16px;
-  background: var(--line-strong);
-  position: relative;
-}
-
-.mock-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid var(--line-strong);
-}
-
-.mock-note {
-  font-size: 0.84rem;
-  color: var(--ink-3);
-  margin: 0.7rem 0 0;
-}
-
-.band-deep .mock-note,
-.band-dark .mock-note,
-.world-hero .mock-note {
-  color: rgba(255, 255, 255, 0.66);
 }
 
 /* ===============================================================

@@ -9,8 +9,8 @@
   <link rel="icon" href="assets/app-icon.png" />
   <meta property="og:title" content="AskSpace - question and answer per Confluence space" />
   <meta property="og:description" content="Keep the question and the answer in the space where the work already happens. Built on Atlassian Forge." />
-  <meta property="og:image" content="https://dortus.com/assets/01-question-list-app.png" />
-  <meta property="og:image:alt" content="AskSpace question list inside a Confluence Engineering space, showing solved, still open and unanswered questions" />
+  <meta property="og:image" content="https://dortus.com/assets/og-askspace.png" />
+  <meta property="og:image:alt" content="AskSpace question list in a Confluence space, with answer counts, authors and tags" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://dortus.com/askspace.html" />
   <meta property="og:url" content="https://dortus.com/askspace.html" />
@@ -54,7 +54,7 @@
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <img src="assets/askspace-hl1-questions.webp" alt="AskSpace question list: a search field, an Ask a question button, the tabs All, Unanswered, Solved and For you, and questions with answer counts and tags" width="1840" height="900" />
+            <img src="assets/askspace-list.webp" alt="AskSpace question list: a search field, an Ask a question button, the tabs All (8), Unanswered (1), Solved (5) and For you, and four questions with their answer count, a short description, who asked it and when, and tags such as access and onboarding. The solved question has a green check." width="1120" height="1214" />
           </span>
           <figcaption><strong>The list.</strong> Search, tabs and tags on every question in the space.</figcaption>
         </figure>
@@ -149,9 +149,9 @@
 
         <figure class="frame reveal reveal-2">
           <span class="frame-media">
-            <img src="assets/askspace-hl2-permissions.webp" alt="AskSpace space settings: Turn on Q&amp;A in this space, who may ask and who may answer (Everyone in the space, Space admins only, Chosen groups), moderator groups, and Import &amp; export" width="1840" height="900" loading="lazy" />
+            <img src="assets/askspace-import.webp" alt="AskSpace Import questions dialog: We found 6 questions and 6 answers. A table with the first 5 questions, who asked them, the date and the number of answers, and the buttons Back and Import 6 questions." width="798" height="690" loading="lazy" />
           </span>
-          <figcaption><strong>Space settings.</strong> Who may ask, who may answer, moderator groups, and import and export.</figcaption>
+          <figcaption><strong>Import.</strong> A preview of the first five questions before anything is imported.</figcaption>
         </figure>
       </div>
     </section>
@@ -162,21 +162,24 @@
         <div class="head reveal">
           <h2>What it looks like in a real space</h2>
           <p class="lede">
-            Captured in an Engineering space with the questions a team actually asks.
+            A short tour of the screens, and a solved question up close.
           </p>
         </div>
         <div class="shots" style="grid-template-columns: 1fr">
           <figure class="frame reveal">
-            <span class="frame-media">
-              <img src="assets/askspace-hl3-import.webp" alt="AskSpace Import questions dialog: 10 questions and 10 answers found, a table with the first 5 questions, who asked them, the date and the number of answers, and an Import 10 questions button" width="1840" height="900" loading="lazy" />
-            </span>
-            <figcaption><strong>Import.</strong> A preview of the first five questions before anything is imported.</figcaption>
+            <video controls muted playsinline preload="none" poster="assets/askspace-demo-poster.webp" width="1840" height="900" aria-label="AskSpace demo without sound: the question list, a search for ticket that finds it in the answers, a solved question with its best answer, the space settings for who may ask and who may answer, and the Import questions preview.">
+              <source src="assets/askspace-demo.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>A 23-second tour.</strong> The list, search that also reads the answers, a best answer, the space settings, and import.</figcaption>
           </figure>
-          <figure class="frame reveal">
+          <figure class="frame reveal" style="max-width: 760px; width: 100%; margin-inline: auto">
             <span class="frame-media">
-              <img src="assets/askspace-extra-best-answer.webp" alt="An imported AskSpace question marked solved, with two tags and two answers; the best answer contains a code block, the other has a Choose this as best button" width="1840" height="900" loading="lazy" />
+              <picture>
+                <source media="(max-width: 560px)" srcset="assets/askspace-question-narrow.webp" width="880" height="1598" />
+                <img src="assets/askspace-question.webp" alt="A solved AskSpace question: How do I request access to a new Confluence space?, asked by Maya Chen, with the tags access and onboarding. Three answers sorted by Top rated: the best answer with 3 votes on top, then answers with 1 and 0 votes, each with a Mark as best answer button." width="1440" height="1174" loading="lazy" />
+              </picture>
             </span>
-            <figcaption><strong>Best answer.</strong> A solved question with a code block in the best answer.</figcaption>
+            <figcaption><strong>Best answer.</strong> The best answer stays on top. Votes rank the rest.</figcaption>
           </figure>
         </div>
       </div>
