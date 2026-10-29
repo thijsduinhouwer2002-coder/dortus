@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy policy - Dortus</title>
-<meta name="description" content="How Dortus handles data in Arrears for Shopify B2B, in the Confluence apps AskSpace and Mermaid Live Preview, and in MailView for Jira: what is processed, where it is stored, and how long it is kept." />
+<meta name="description" content="How Dortus handles data in Arrears for Shopify B2B, in the Confluence apps AskSpace, Mermaid Live Preview and Live Countdown, and in MailView for Jira: what is processed, where it is stored, and how long it is kept." />
 <meta name="theme-color" content="#15181c" />
 <link rel="icon" href="assets/app-icon.png" />
 <meta property="og:title" content="Privacy policy - Dortus" />
@@ -44,7 +44,7 @@ Two platforms, two very different data stories. Arrears runs on servers Dortus
 operates. The Atlassian apps run inside your own Atlassian site. Both are described
 below.
 </p>
-<p class="page-meta enter enter-2">Last updated: 27 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 28 October 2026</p>
 </div>
 </section>
 
@@ -54,8 +54,8 @@ below.
 <h2>1. Who we are</h2>
 <p>
 Dortus ("we", "us") is an independent software vendor. We publish <strong>Arrears</strong>
-for Shopify, <strong>AskSpace</strong> and <strong>Mermaid Live Preview</strong> for
-Atlassian Confluence, and <strong>MailView</strong> for Atlassian Jira.
+for Shopify, <strong>AskSpace</strong>, <strong>Mermaid Live Preview</strong> and
+<strong>Live Countdown</strong> for Atlassian Confluence, and <strong>MailView</strong> for Atlassian Jira.
 </p>
 <p>
 Contact for privacy questions and data requests:
@@ -152,7 +152,7 @@ Uninstalling the app also revokes our access: the stored session for your shop i
 removed when we receive the <strong>app/uninstalled</strong> webhook.
 </p>
 
-<h2>4. AskSpace, Mermaid Live Preview and MailView for Atlassian</h2>
+<h2>4. AskSpace, Mermaid Live Preview, Live Countdown and MailView for Atlassian</h2>
 
 <h3>4.1 Where the data lives</h3>
 <p>
@@ -160,7 +160,8 @@ These apps are built on <strong>Atlassian Forge</strong> and run entirely inside
 Atlassian's cloud. AskSpace keeps its data in <strong>Forge app storage in your
 Atlassian site</strong>. Mermaid Live Preview saves the diagram source in the macro on the
 Confluence page, and keeps version history in <strong>Forge app storage in your Atlassian
-site</strong>. MailView and MailView for Confluence have
+site</strong>. Live Countdown saves its settings in the macro on the Confluence page
+and has no app storage. MailView and MailView for Confluence have
 no storage at all.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
@@ -173,7 +174,7 @@ data egress to Dortus for normal use of the apps.
 One thing does reach us: Atlassian lets the developer of a Forge app see technical logs from
 the sites where it is installed, in Atlassian's developer console, for 30 days. AskSpace and
 MailView for Confluence only write error types, status codes, counts and timings to those logs, never your
-content, names or IDs. MailView for Jira writes no log lines in the published version. Log sharing is on by default; your site's admins can turn it off.
+content, names or IDs. MailView for Jira writes no log lines in the published version. Live Countdown writes no log lines. Log sharing is on by default; your site's admins can turn it off.
 </p>
 <p>
 MailView for Jira also keeps three plain counters through Atlassian's Forge metrics: how often the
@@ -246,7 +247,25 @@ The email is rendered <strong>in your browser</strong> and only for as long as i
 <li>In Atlassian's development environment the app can show technical diagnostics to the developer (timings, status codes, sizes). These never contain email content, subjects or addresses, and they are not shown in the published version.</li>
 </ul>
 
-<h3>4.6 Billing</h3>
+<h3 id="countdown">4.6 What Live Countdown for Confluence processes</h3>
+<ul>
+<li>The settings of each countdown: title, date, time, time zone, display options, and the text to show when the time is up</li>
+</ul>
+<p>
+The settings are saved in the macro on the Confluence page, like the settings of any
+Confluence macro, so they follow the page's permissions and version history. The app has
+no app storage and asks for no permissions. It stores nothing about the people who add a
+countdown or read the page, and it uses no cookies or other storage in the browser. The
+countdown is worked out in the browser of the person viewing the page. The app makes no
+network calls, uses no external services, and nothing is sent to Dortus.
+</p>
+<p>
+For a PDF or Word export, Confluence calls the app's export function on Atlassian's Forge
+platform with the macro's settings. The function returns a line of text for the export
+file. It calls nothing else and keeps nothing afterwards.
+</p>
+
+<h3>4.7 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
@@ -265,7 +284,7 @@ Marketplace billing is handled by Atlassian. We never see card details.
 </li>
 <li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
-AskSpace, Mermaid Live Preview and MailView.
+AskSpace, Mermaid Live Preview, Live Countdown and MailView.
 </li>
 </ul>
 <p>
@@ -289,7 +308,7 @@ YouTube receives your IP address and player data under Google's own terms.
 <p>
 Only to provide the features you enable: showing aging, producing statements, sending
 the reminders you approve, allocating payments, applying credit holds, storing and
-displaying questions and answers, rendering diagrams, and showing email attachments.
+displaying questions and answers, rendering diagrams, showing countdowns, and showing email attachments.
 Our legal basis is the performance of our agreement with you, and our legitimate
 interest in keeping the service running securely.
 </p>
@@ -310,6 +329,10 @@ your site. Uninstall and deletion follow Atlassian's platform rules for app stor
 so it follows the page's own retention and deletion. Version history (the last 20 saves
 per diagram) and the feedback counter per account ID stay in Forge storage for your site.
 Uninstall and deletion follow Atlassian's platform rules for app storage.
+</li>
+<li>
+<strong>Live Countdown</strong>: the settings are part of the Confluence page, so they
+follow the page's own retention and deletion. The app keeps nothing else.
 </li>
 <li>
 <strong>MailView</strong>: nothing is retained. Closing the work item is enough.

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Countdown for Confluence - documentation · Dortus</title>
+  <meta name="description" content="Live Countdown for Confluence is a macro by Dortus. Count down to a deadline, release or event, or count up from a past moment, in the right time zone. How to add it, every setting, and how it handles your data." />
+  <meta name="theme-color" content="#0052cc" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="Live Countdown for Confluence - documentation" />
+  <meta property="og:description" content="A live countdown on a Confluence page. How to add it, every setting, time zones and summer time, and how it handles your data." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/countdown.html" />
+  <meta property="og:url" content="https://dortus.com/countdown.html" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+  <meta property="og:image:alt" content="Dortus logo" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-hide-sm" href="/">Dortus</a>
+        <a href="atlassian.html" aria-current="page">Atlassian</a>
+        <a href="/#guides">Guides</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="#docs">Documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">Live Countdown &middot; Confluence macro</p>
+          <h1 class="enter enter-1">A live countdown in Confluence.</h1>
+          <p class="lede enter enter-2">
+            Count down to a release, a launch, an event or a deadline, or count up from a past
+            moment. Pick the date, the time and the time zone. The clock ticks for everyone who
+            opens the page.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#docs">Read the documentation <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="#privacy">Privacy and security</a>
+          </div>
+        </div>
+
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="assets/countdown-hl1-time-zones.webp" alt="Countdown settings with the date 12/01/2026, the time 09:00 AM and the time zone New York, next to a preview card: Release 4.0 goes live, 12 days, 23 hours, 33 minutes, 10 seconds, until Tue, Dec 1, 2026, 9:00 AM EST, 3:00 PM your time" width="1840" height="900" />
+          </span>
+          <figcaption><strong>Settings and preview.</strong> Date, time and time zone on the left, a live preview on the right.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- What it looks like -->
+    <section class="band">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>One moment, the same for every reader</h2>
+          <p class="lede">
+            The countdown reaches zero at the same instant for everyone, wherever they are.
+            Readers in another time zone also see the moment in their own time. Show it as a
+            large card or as one compact line.
+          </p>
+        </div>
+        <div class="shots">
+          <figure class="frame reveal">
+            <span class="frame-media">
+              <img src="assets/countdown-hl2-layouts.webp" alt="Five countdowns: a full-width card with days, hours, minutes and seconds; a card in a narrow column; a compact line; a count-up since go-live; and a table cell that shows the end text We're live!" width="1840" height="900" loading="lazy" />
+            </span>
+            <figcaption><strong>Card or compact line.</strong> Large tiles on a wide page, one short line in a narrow column or a table cell.</figcaption>
+          </figure>
+          <figure class="frame reveal reveal-1">
+            <span class="frame-media">
+              <img src="assets/countdown-hl3-light-dark.webp" alt="The same three countdowns in Confluence's light theme and dark theme: a card, a compact line, and a finished countdown that shows We're live!" width="1840" height="900" loading="lazy" />
+            </span>
+            <figcaption><strong>Light or dark.</strong> The countdown follows Confluence's theme.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forge trust -->
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Runs in the reader's browser</h2>
+          <p class="lede">
+            The macro runs on Atlassian Forge. Its settings are saved in the macro on the
+            Confluence page. The countdown is worked out in the browser of the person viewing the
+            page. The app asks for no permissions, stores nothing and makes no network calls, and
+            nothing is sent to Dortus.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge macro</dd>
+          </div>
+          <div>
+            <dt>Permissions</dt>
+            <dd>None</dd>
+          </div>
+          <div>
+            <dt>Settings</dt>
+            <dd>In the macro on the page</dd>
+          </div>
+          <div>
+            <dt>Sent outside Atlassian</dt>
+            <dd>Nothing</dd>
+          </div>
+        </dl>
+        <p class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-line" href="#privacy">Privacy and security <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </section>
+
+    <section class="band" id="docs">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Documentation</h2>
+          <p class="lede">How to add a countdown, what each setting does, and what to do when something looks wrong.</p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+
+          <p class="small">
+            On this page:
+            <a href="#what-it-does">What it does</a> &middot;
+            <a href="#add">Add a countdown</a> &middot;
+            <a href="#settings">Settings</a> &middot;
+            <a href="#time-zones">Time zones and summer time</a> &middot;
+            <a href="#style">Card or compact line</a> &middot;
+            <a href="#count-up">Counting up</a> &middot;
+            <a href="#end-text">When the time is up</a> &middot;
+            <a href="#language">Language and 12 or 24 hours</a> &middot;
+            <a href="#theme">Light and dark</a> &middot;
+            <a href="#where">Where it works</a> &middot;
+            <a href="#limits">Limits</a> &middot;
+            <a href="#troubleshooting">Troubleshooting</a> &middot;
+            <a href="#privacy">Privacy and security</a> &middot;
+            <a href="#support">Contact</a>
+          </p>
+
+          <h3 id="what-it-does">What it does</h3>
+          <p>Live Countdown for Confluence adds a countdown macro to Confluence Cloud pages. It counts down to a date and time, such as release day, a launch, an event or a deadline. It can also count up from a past moment, for example the days since the last incident.</p>
+          <p>The clock ticks on the page for everyone who opens it, and everyone counts to the same moment.</p>
+
+          <h3 id="add">Add a countdown to a page</h3>
+          <ol style="display: grid; gap: 0.5rem; margin: 0 0 1.1rem; padding-left: 1.4rem">
+            <li>A Confluence admin installs Live Countdown for Confluence from the Atlassian Marketplace.</li>
+            <li>Edit a Confluence page and type <code>/countdown</code>. Choose <strong>Countdown timer</strong>.</li>
+            <li>The settings dialog opens with a preview on the right. Fill in the moment (see <a href="#settings">Settings</a>) and click <strong>Insert</strong>.</li>
+            <li>Publish the page. The countdown ticks for everyone who opens it.</li>
+          </ol>
+          <p>To change a countdown later, edit the page, select the countdown and click the pencil (<strong>Edit</strong>). Click <strong>Save</strong> when you are done.</p>
+
+          <h3 id="settings">Settings</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">Setting</th><th scope="col">What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Title</th><td>Optional. Shown above the clock, for example "Release 4.0".</td></tr>
+              <tr><th scope="row">Count</th><td><em>Down to a moment</em> (a countdown) or <em>Up since a moment</em> (time since, for example "days since the last incident"). Before the start, a count-up shows "Not started yet".</td></tr>
+              <tr><th scope="row">Date, Time</th><td>The moment itself. Leave the time empty for 00:00 (midnight). The dialog says so under the field.</td></tr>
+              <tr><th scope="row">Time zone</th><td>The time zone the date and time belong to. Your own zone and the common ones (UTC, London, Amsterdam, Berlin, Paris, New York, Chicago, Denver, Los Angeles, Sydney, Tokyo, Kolkata) are at the top. Type in the search box above the list to find any other: a city ("york"), a region ("pacific") or an offset ("+05:30"). Enter picks the first match.</td></tr>
+              <tr><th scope="row">Show</th><td><em>Days to seconds</em>, <em>Days to minutes</em> or <em>Days only</em>. Days only counts calendar days in the event's time zone and shows "Today" on the day itself.</td></tr>
+              <tr><th scope="row">Style</th><td><em>Card</em>: large tiles. <em>Compact line</em>: one short line in its own block. See <a href="#style">Card or compact line</a>.</td></tr>
+              <tr><th scope="row">When the time is up, show</th><td>The text that replaces the clock once the moment has passed, for example "We're live!". Leave it empty to keep the clock at zero. Count-ups don't use it.</td></tr>
+              <tr><th scope="row">Show the date and time under the countdown</th><td>Shows the moment with the clock, for example "Until Tue, 1 Dec 2026, 09:00 CET".</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Keyboard.</strong> Tab moves through the fields, and the arrow keys change the choice within Count, Show and Style. Enter in a text, date or time field saves. Escape closes the dialog without saving, like Cancel and without asking, but only when you are not in a field. Inside a field, Escape belongs to that field: it closes the date picker or the time zone list, or clears the search.</p>
+
+          <h3 id="time-zones">Time zones and summer time</h3>
+          <ul>
+            <li><strong>Everyone counts to the same moment.</strong> The countdown reaches zero at the same instant for every reader, wherever they are.</li>
+            <li><strong>Readers in another time zone also see their own time.</strong> For example, under "Until Tue, 1 Dec 2026, 09:00 CET", a reader in London sees "· 08:00 your time". This shows in both styles, but only when the date is shown and the reader's clock reads differently.</li>
+            <li><strong>Summer time is handled.</strong> 09:00 on a date in July means 09:00 summer time, whatever the clocks say on the day you set it up.</li>
+            <li><strong>Times that don't exist, or happen twice.</strong> When the clocks go forward, 02:30 is skipped. The countdown then uses 03:30, the time it would have been. When the clocks go back, 02:30 happens twice, and the countdown uses the first one. The settings dialog shows a note in both cases.</li>
+            <li><strong>The clock counts real time.</strong> Over a weekend when the clocks go forward, Saturday 09:00 to Monday 09:00 shows 1 day 23 hours, because that is all the time there is. <em>Days only</em> counts calendar days, so it shows 2 days.</li>
+            <li><strong>Rounding.</strong> A countdown rounds up to the smallest unit it shows. With 4.2 seconds left it shows 5, so it never reads zero before the moment itself. A count-up rounds down, like a stopwatch.</li>
+            <li><strong>The countdown uses the reader's own computer clock.</strong> It needs no internet connection to keep time. If a computer's clock is wrong, its countdown is wrong by the same amount.</li>
+          </ul>
+
+          <h3 id="style">Card or compact line</h3>
+          <p><strong>Card</strong> shows the time in large tiles, with the title above. <strong>Compact line</strong> shows the countdown as one short line, handy in a table cell or a narrow column.</p>
+          <p>The compact line sits in its own block. You can't place it inside a sentence, because the macro is a block, not inline.</p>
+          <p>In narrow places, such as layout columns and table cells, the tiles of a card shrink so they stay on one row. In very narrow cells they become one line of text.</p>
+
+          <h3 id="count-up">Counting up</h3>
+          <p>Choose <em>Up since a moment</em> under <strong>Count</strong> to show the time since a moment, for example the days since the last incident or since go-live. Before the start, a count-up shows "Not started yet". A count-up rounds down, like a stopwatch, and doesn't use the end text.</p>
+
+          <h3 id="end-text">When the time is up</h3>
+          <p>Fill in <strong>When the time is up, show</strong> to replace the clock with your own text once the moment has passed, for example "We're live!". Leave it empty to keep the clock at zero.</p>
+
+          <h3 id="language">Language, date format and 12 or 24 hours</h3>
+          <p>Dates and times follow the language set in each reader's Atlassian account, which is the one Confluence itself uses. That includes 12- or 24-hour time, for example "Tue, Dec 1, 2026, 9:00 AM" in English (US) and "di 1 dec 2026, 09:00" in Dutch.</p>
+          <p>The words (days, hours, Until) are in English for now.</p>
+
+          <h3 id="theme">Light and dark</h3>
+          <p>The countdown uses Atlassian's design colours and follows Confluence's light or dark theme. There is nothing to set.</p>
+
+          <h3 id="where">Where it works</h3>
+          <ul>
+            <li><strong>On pages</strong>, in the editor and in Confluence's preview.</li>
+            <li><strong>In layout columns and table cells.</strong> The tiles shrink so they stay on one row, and in very narrow cells they become one line of text.</li>
+            <li><strong>In an Expand.</strong> The clock pauses while the Expand is closed and is drawn correctly when you open it.</li>
+            <li><strong>With many countdowns on one page.</strong> Only the ones on screen tick, and none tick while the browser tab is in the background.</li>
+          </ul>
+
+          <h3 id="limits">Limits and what is not confirmed yet</h3>
+          <ul>
+            <li><strong>Confluence Cloud only.</strong> Not Confluence Data Center or Server.</li>
+            <li><strong>Not inside a sentence.</strong> The macro is a block. The compact line is its smallest form.</li>
+            <li><strong>Words in English.</strong> Dates and times follow each reader's language. The words on the countdown are in English for now.</li>
+            <li><strong>The reader's clock.</strong> The countdown is as right as the clock of the computer it runs on.</li>
+            <li><strong>Very old browsers.</strong> A browser that doesn't know the saved time zone uses UTC instead, and the countdown says so. See <a href="#troubleshooting">Troubleshooting</a>.</li>
+          </ul>
+          <p><strong>Not yet confirmed.</strong> We have not tested these in Confluence yet, so we don't promise them:</p>
+          <ul>
+            <li><strong>PDF and Word export:</strong> how a countdown shows in an exported file.</li>
+            <li><strong>Include Page and Excerpt Include:</strong> a countdown on a page that is included in another page.</li>
+            <li><strong>Tabs:</strong> a countdown inside a tab that is not open.</li>
+            <li><strong>Screen readers:</strong> how the countdown sounds with a screen reader such as VoiceOver or NVDA.</li>
+          </ul>
+          <p>If you rely on one of these, try it on a test page first, and tell us what you see.</p>
+
+          <h3 id="troubleshooting">Troubleshooting</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">You see</th><th scope="col">What it means</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>"No date yet. Edit this macro to pick the moment to count down to."</td><td>The countdown has no valid date. Edit it and pick one.</td></tr>
+              <tr><td>"The countdown could not load. Reload the page to try again."</td><td>Confluence did not hand the countdown its settings in time, or its script did not load. Reloading the page usually fixes it.</td></tr>
+              <tr><td>"Time zone "…" is not known here, so UTC is used."</td><td>The saved time zone isn't known to this browser, for example a very old browser. Edit the countdown and pick the time zone again.</td></tr>
+              <tr><td>A note in the settings dialog about a skipped or repeated time</td><td>The time falls in the hour the clocks change. The note says which time the countdown uses. See <a href="#time-zones">Time zones and summer time</a>.</td></tr>
+              <tr><td>The clock is a few minutes off</td><td>Check the clock on the reader's computer. See <a href="#time-zones">Time zones and summer time</a>.</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="privacy">Privacy and security</h3>
+          <p><strong>Where is data stored?</strong> The app stores nothing. The settings of a countdown (title, date, time, time zone and display options) are saved in the macro on the Confluence page, like the settings of any Confluence macro. They follow the page's permissions and its version history. The app has no app storage, and it uses no cookies or other storage in the browser.</p>
+          <p><strong>What permissions does the app ask for?</strong> None. The app asks for no access to your Confluence site: no pages, no users, no spaces.</p>
+          <p><strong>Where does the countdown run?</strong> In the browser of the person viewing the page. The app makes no network calls and loads no fonts, images or scripts from elsewhere.</p>
+          <p><strong>What does the app send outside Atlassian?</strong> Nothing. There is no Dortus server behind the app, and nothing is sent to Dortus or to any third party. The app writes no log lines.</p>
+          <p><strong>Is there a part that runs outside the browser?</strong> One, inside Atlassian. For a PDF or Word export, Confluence calls the app's export function on Atlassian's Forge platform. Confluence sends it the macro's settings, and the function returns a line of text for the export file. It calls nothing else, stores nothing and has no internet access.</p>
+          <p><strong>What happens if I uninstall?</strong> Nothing to clean up, because the app stored nothing.</p>
+          <p>The app is built on Atlassian Forge, for Atlassian's Runs on Atlassian programme. Full policy: <a href="privacy.html#countdown">Privacy policy</a>, section 4.6. Terms: <a href="terms.html">Terms of service</a>.</p>
+
+          <h3 id="support">Contact</h3>
+          <p>Questions, a bug, or an idea? Email <a href="mailto:support@dortus.com?subject=Live%20Countdown%20for%20Confluence">support@dortus.com</a>. The person who builds the app reads every message. Please include your site URL, a link to the page, your browser and time zone, what you expected and what happened.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="footer-brand">Dortus</p>
+        <p>Small apps for Jira and Confluence that run entirely on Atlassian. Your content never reaches Dortus.</p>
+        <p class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></p>
+      </div>
+      <div>
+        <h2>Atlassian</h2>
+        <ul>
+          <li><a href="atlassian.html">Atlassian apps</a></li>
+          <li><a href="mailview.html">MailView</a></li>
+          <li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="email-attachment-audit.html">Email Attachment Audit (free)</a></li>
+          <li><a href="export-questions-for-confluence-cloud.html">Export Questions for Confluence Cloud data</a></li>
+          <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrate Questions for Confluence to Cloud</a></li>
+          <li><a href="limit-who-answers-questions-for-confluence.html">Who can answer in Questions for Confluence</a></li>
+          <li><a href="partners.html">For Solution Partners</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></li>
+          <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></li>
+          <li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
+          <li><a href="build-faq-confluence-cloud.html">How to build an FAQ in Confluence Cloud</a></li>
+          <li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet</a></li>
+          <li><a href="confluence-cloud-storage-full.html">When Confluence Cloud storage is full</a></li>
+          <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></li>
+          <li><a href="create-jira-work-items-from-email.html">Create Jira work items from email</a></li>
+          <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
+          <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal vs Q&amp;A in Confluence</a></li>
+          <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack</a></li>
+          <li><a href="open-questions-confluence-comments.html">Open questions in Confluence comments</a></li>
+          <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
+          <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
+          <li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
+          <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
+          <li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
+          <li><a href="jsm-not-creating-requests-from-email.html">JSM not creating requests from email</a></li>
+          <li><a href="jsm-shared-mailbox-microsoft-365.html">Microsoft 365 shared mailbox in JSM</a></li>
+          <li><a href="original-email-jira-service-management.html">See the original email behind a JSM request</a></li>
+          <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
+          <li><a href="email-check.html">Email check</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="mailto:support@dortus.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
+        affiliated with Atlassian.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
