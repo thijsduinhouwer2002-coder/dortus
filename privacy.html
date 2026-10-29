@@ -90,7 +90,8 @@ there are none. MailView for Jira, MailView for Confluence, Live Countdown and M
 Preview for Jira have no app storage; Mermaid Live Preview for Jira keeps its diagrams on the
 Jira work item. AskSpace and Mermaid Editor for Confluence keep their data in Forge app storage in your
 Atlassian site. MailView for Jira counts how often it is used, as three numbers per site,
-through Atlassian.
+through Atlassian. From version 1.2, Mermaid Editor for Confluence keeps similar plain
+counters about inserts and its feedback question.
 </p>
 </div>
 
@@ -127,6 +128,14 @@ exist so we can tell whether the app is used at all. Atlassian shows these count
 where the app is installed, so we can see how often the app is used on your site, but nothing about
 what was in the emails.
 </p>
+<p>
+From version 1.2, Mermaid Editor for Confluence keeps plain counters the same way: how often a
+diagram is inserted, and how often the feedback question in the editor is shown, answered, closed,
+or leads to the review or support page. Only the name of the counter and +1 leave the browser, to
+Atlassian's platform. There is no diagram text, page, account ID or name in them. Atlassian shows
+these counts to us per site. Your site admins can turn custom metrics off for the app in Atlassian
+Administration.
+</p>
 
 <h3 id="askspace">3.2 What AskSpace processes</h3>
 <ul>
@@ -149,12 +158,13 @@ reads, it keeps only the imported questions and answers, in Forge app storage.
 <ul>
 <li>The diagram source you type in the macro</li>
 <li>Earlier versions of that source (the last 20 saves per diagram), kept so you can step back after a bad edit</li>
-<li>For each person who inserts diagrams: their Atlassian account ID, a count of successful inserts (it stops at 3) and whether the app has already asked them once for feedback. Nothing else about the person is stored, and their answer is not stored</li>
+<li>For each person who inserts diagrams: their Atlassian account ID, a count of successful inserts (it stops at 3), when their first insert happened, how often and when the app asked them for feedback (at most twice), and whether they answered or closed that question. Nothing else about the person is stored, and their answer is not stored</li>
 </ul>
 <p>
 The diagram source is saved in the macro on the Confluence page. Earlier versions are kept
 in Forge app storage in your Atlassian site. The diagram is drawn in the browser of the
-person viewing the page. The app uses no external services, and nothing is sent to Dortus.
+person viewing the page. The app uses no external services. Apart from the plain counters
+described in section 3.1 (from version 1.2), nothing is sent to Dortus.
 </p>
 
 <h3 id="mailview">3.4 What MailView for Jira processes</h3>
