@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Can you send an email to Confluence Cloud? · Dortus</title>
+<meta name="description" content="Confluence Cloud has no address to email a page or space. Four ways to get emails in anyway (by hand, automation, apps, JSM) and what each one keeps." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Can you send an email to Confluence Cloud?" />
+<meta property="og:description" content="No, not out of the box. Four ways to get an email onto a Confluence Cloud page anyway, and what each one keeps." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/email-to-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/email-to-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Can you send an email to Confluence Cloud?",
+  "description": "Confluence Cloud has no address to email a page or space. Four ways to get emails in anyway (by hand, automation, apps, JSM) and what each one keeps.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-30T09:00:00+00:00",
+  "dateModified": "2026-10-30T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/email-to-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Confluence Cloud have an email address I can forward to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Not for a page, a space or the site. The request to create pages from email has been open since 2004 (CONFCLOUD-1726). Some Marketplace apps add an address; Confluence itself does not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I email a page from Confluence Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the other direction works. Share sends a page by email to people or groups, and Confluence sends notifications and digests. It just cannot receive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Confluence Server could archive a mailbox. What replaces that in Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nothing built in. Mail Archives and Create content with email are Data Center features. In Cloud you attach the saved .msg or .eml files to a page, or use an app or automation to bring emails in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Power Automate or Zapier create a Confluence page from an email?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In principle yes, through the Confluence Cloud REST API, if the tool can make an HTTP request with an API token. Expect to spend time on the body formatting and on attachments, which need separate uploads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "After I attach the email, can people read it on the page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with Confluence Cloud alone: a .msg or .eml stays a file to download. A Marketplace app can show it on the page. MailView for Confluence, made by Dortus, does that; other apps on the Marketplace handle email in Confluence too."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview-confluence.html">MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Can you send an email to Confluence Cloud?</h1>
+<p class="lede">
+People try it all the time: forward a customer email to Confluence, mail a newsletter to a space, send meeting notes to a page. Nothing arrives, because Confluence Cloud has no address to send to. This page explains what Confluence Cloud can and cannot do with incoming email, and the four ways people get emails into a space anyway: by hand, with automation, with a Marketplace app, or through Jira Service Management. For each one: what it keeps and what it loses.
+</p>
+<p class="page-meta">Published 30 October 2026</p>
+</div>
+<div class="prose">
+
+<h2 id="answer">The short answer</h2>
+<p>No. Confluence Cloud has no inbound email address, not for a page, not for a space, not for the site. Creating a page or space from an email is one of the oldest open requests on Atlassian&rsquo;s tracker: filed in 2004, still &ldquo;Gathering Interest&rdquo;, with 253 votes at the time of writing (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-1726" rel="noopener noreferrer">CONFCLOUD-1726</a>). A newer request, &ldquo;Email into Confluence&rdquo;, notes that the feature exists only in Confluence Server and Data Center (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-79455" rel="noopener noreferrer">CONFCLOUD-79455</a>). People keep asking on Atlassian Community too, for example &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Email-to-Confluence/qaq-p/2105663" rel="noopener noreferrer">Email to Confluence</a>&rdquo; and &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Email-management-within-Confluence/qaq-p/2256750" rel="noopener noreferrer">Email management within Confluence</a>&rdquo;.</p>
+<p>Data Center is different. It can create pages and blog posts from email sent to a configured mailbox, and a space can archive a mailbox (Atlassian: <a href="https://confluence.atlassian.com/doc/create-content-with-email-1236929886.html" rel="noopener noreferrer">Create content with email</a>, <a href="https://confluence.atlassian.com/spaces/DOC/pages/139502/Mail+Archives" rel="noopener noreferrer">Mail Archives</a>). If you moved from Server or Data Center and used those, this is why they are gone.</p>
+
+<h2 id="manual">Way 1: save the email and put it on a page by hand</h2>
+<p>The method that always works. In Outlook, save the email as a file (classic Outlook: <strong>File &rarr; Save As</strong>, which gives a .msg; the new Outlook and Outlook on the web download an .eml or .msg) and upload the file to the page, or copy the text into the page, or print the email to PDF and attach that. The text becomes searchable page content but loses the attachments and headers; the PDF keeps the look but not the attachments; the .msg or .eml keeps everything but shows as a file. <a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a> walks through all three with the Atlassian and Microsoft sources.</p>
+<p>The weak spot is discipline: somebody has to remember, every time, and a thread of twenty emails is twenty uploads.</p>
+
+<h2 id="automation">Way 2: automation that calls the Confluence API</h2>
+<p>Confluence Cloud has a REST API that can create a page (Atlassian: <a href="https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/" rel="noopener noreferrer">Confluence Cloud REST API, pages</a>). An automation tool that watches a mailbox and can make an HTTP request can therefore turn &ldquo;new email in folder X&rdquo; into &ldquo;new page under parent Y&rdquo;: Power Automate, Zapier, Make, n8n or a small script of your own.</p>
+<ul>
+<li><strong>What you get.</strong> A page per email, without anyone lifting a finger, and the text is searchable.</li>
+<li><strong>What it loses.</strong> Attachments and inline images need extra steps (upload them as attachments, then reference them), HTML email bodies rarely survive the conversion to Confluence&rsquo;s page format cleanly, and the technical headers are gone unless you store them too.</li>
+<li><strong>What it costs.</strong> Someone has to build and maintain it, with an API token that may write to the space.</li>
+</ul>
+
+<h2 id="apps">Way 3: a Marketplace app that gives a space an address</h2>
+<p>Some apps on the Atlassian Marketplace add an inbound address to Confluence Cloud: email sent to it becomes a page, or an attachment on a page. Points worth comparing before you install one: where the email is processed (the vendor&rsquo;s servers or inside Atlassian), what happens to attachments, whether the original .eml is kept, and who can send to the address. An inbound address is an entry point into your wiki, so spam matters. MailView, the app Dortus makes, does not do this.</p>
+
+<h2 id="jsm">Way 4: if the emails are requests, use Jira Service Management</h2>
+<p>Often the real need is &ldquo;customer emails should end up somewhere the team sees them&rdquo;. That is what Jira Service Management is built for: it receives email at a project address and creates a request per email, with the attachments (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/receive-requests-from-an-email-address/" rel="noopener noreferrer">Receive requests from an email address</a>). Its knowledge base can live in a Confluence space, so the answers end up in Confluence while the emails stay in Jira (see <a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a>).</p>
+
+<h2 id="readable">Once the email is on the page: keeping it readable</h2>
+<p>Ways 1 and 3 often end with a .msg or .eml file attached to the page. Confluence Cloud shows it as a file, not as an email; previewing .msg files is an open request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-74736" rel="noopener noreferrer">CONFCLOUD-74736</a>). Readers download it and open it in a mail app, which fails on a Mac or a phone for .msg.</p>
+<p>Full disclosure: Dortus makes <a href="mailview-confluence.html">MailView for Confluence</a>. It shows an attached .msg or .eml as a readable email on the page: insert the <em>Email (MailView)</em> macro, pick the attachment, publish. Readers see sender, recipients, date, the formatted message, the images stored inside the email and its attachments, plus a phishing verdict with reasons. <em>Emails on this page</em>, under the page title, lists all email attachments of the page. The email is read in the reader&rsquo;s browser; MailView keeps no copy and sends nothing outside Atlassian. It does not give the space an email address, and it does not copy the text into the page, so if people must find the email with Confluence search, paste the key text as well. Files over 10 MB show a download link. Confluence Cloud only; a Confluence admin installs it and it needs an active license.</p>
+
+<h2 id="which">Which way fits</h2>
+<p>An occasional email that belongs with a page: save it and attach it (Way 1), with MailView or a PDF beside it if readers should see it on the page. A steady stream of emails that should become pages: automation (Way 2) or an app with an inbound address (Way 3). Emails that are really requests: Jira Service Management (Way 4), with Confluence as the knowledge base.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Does Confluence Cloud have an email address I can forward to?</summary>
+<p>No. Not for a page, a space or the site. The request to create pages from email has been open since 2004 (CONFCLOUD-1726). Some Marketplace apps add an address; Confluence itself does not.</p>
+</details>
+<details>
+<summary>Can I email a page from Confluence Cloud?</summary>
+<p>Yes, the other direction works. Share sends a page by email to people or groups, and Confluence sends notifications and digests. It just cannot receive.</p>
+</details>
+<details>
+<summary>Confluence Server could archive a mailbox. What replaces that in Cloud?</summary>
+<p>Nothing built in. Mail Archives and Create content with email are Data Center features. In Cloud you attach the saved .msg or .eml files to a page, or use an app or automation to bring emails in.</p>
+</details>
+<details>
+<summary>Can Power Automate or Zapier create a Confluence page from an email?</summary>
+<p>In principle yes, through the Confluence Cloud REST API, if the tool can make an HTTP request with an API token. Expect to spend time on the body formatting and on attachments, which need separate uploads.</p>
+</details>
+<details>
+<summary>After I attach the email, can people read it on the page?</summary>
+<p>Not with Confluence Cloud alone: a .msg or .eml stays a file to download. A Marketplace app can show it on the page. MailView for Confluence, made by Dortus, does that; other apps on the Marketplace handle email in Confluence too.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Email%20to%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView for Confluence by Dortus</p>
+<h3>Read .msg and .eml attachments on the page</h3>
+<p>Shows a chosen email attachment on the page, lists the emails on a page, and keeps the email readable in PDF and Word exports. Built on Atlassian Forge. Keeps no copy of the email and sends nothing outside Atlassian.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+<p>See also: <a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a>, <a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a> and <a href="msg-vs-eml.html">Outlook .msg vs .eml</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Microsoft, Outlook and Power Automate are trademarks of Microsoft Corporation. Zapier, Make and n8n are products of their respective companies. Dortus is not affiliated with these companies.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
