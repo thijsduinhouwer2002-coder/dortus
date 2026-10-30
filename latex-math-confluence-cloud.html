@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to write LaTeX math in Confluence Cloud · Dortus</title>
+<meta name="description" content="Confluence Cloud has no built-in LaTeX: a typed formula stays plain text. Three ways to put math on a page (an image, a code block, or a Marketplace app), five common formulas with their LaTeX code, and a short FAQ." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to write LaTeX math in Confluence Cloud" />
+<meta property="og:description" content="Confluence Cloud has no built-in LaTeX. Three ways to put math on a page, and five common formulas with their LaTeX code." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/latex-math-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/latex-math-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to write LaTeX math in Confluence Cloud",
+  "description": "Confluence Cloud has no built-in LaTeX: a typed formula stays plain text. Three ways to put math on a page (an image, a code block, or a Marketplace app), five common formulas with their LaTeX code, and a short FAQ.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-30T09:00:00+00:00",
+  "dateModified": "2026-10-30T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/latex-math-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I type $x^2$ in a Confluence page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can, but Confluence shows it as typed, dollar signs included. For a simple power or index, Unicode characters such as x² or H₂O work in normal text. For anything more, use one of the three options above." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know LaTeX?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A few commands go a long way: ^ for a power, _ for a subscript, \\frac{a}{b} for a fraction and \\sqrt{x} for a square root. The five formulas on this page cover most of what people write. KaTeX keeps a full list of supported commands at katex.org." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ChatGPT or Claude write the LaTeX for me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Describe the formula in words and ask for the LaTeX only, without dollar signs. Check the result in a preview before you publish: an assistant sometimes uses a command your tool does not support." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I write chemistry formulas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the mhchem commands \\ce and \\pu, if your LaTeX tool supports them. Math for Confluence does, for example \\ce{CH4 + 2 O2 -> CO2 + 2 H2O}." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Math for Confluence available now?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not yet: it is coming soon to the Atlassian Marketplace. Until then, an image or a code block works without an app." }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* Formulas below their LaTeX code: MathML, drawn by the browser itself
+     (no script, no font download). */
+  .prose .formula-shown { margin: -0.4rem 0 1.4rem; padding: 0.9rem 1rem; overflow-x: auto; border: 1px solid var(--line); border-radius: 0 0 6px 6px; }
+  .prose .formula-shown math { font-size: 1.15rem; }
+</style>
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="math.html">Math for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to write LaTeX math in Confluence Cloud</h1>
+<p class="lede">
+Confluence Cloud has no built-in LaTeX: a formula you type, such as <code>\frac{a}{b}</code> or <code>$x^2$</code>, stays plain text. To put math on a page you have three options: an image of the formula, a code block with the LaTeX, or a Marketplace app that draws LaTeX on the page.
+</p>
+<p class="page-meta">Published 30 October 2026</p>
+</div>
+<div class="prose">
+
+<h2 id="built-in">Does Confluence Cloud support LaTeX?</h2>
+<p>No. Confluence Cloud has no LaTeX engine of its own, so the editor does not turn LaTeX or dollar signs into an equation. That leaves the three options below. The first two work today without installing anything.</p>
+
+<h2 id="image">Option 1: an image of the formula</h2>
+<p>Draw the formula with any LaTeX tool (an online equation editor, or LaTeX on your own computer), save it as PNG or SVG, and upload the image to the page.</p>
+<ul>
+<li><strong>Readers see a real equation</strong>, in every browser and in exports.</li>
+<li><strong>Nobody can edit it on the page.</strong> To change one symbol, someone has to find the LaTeX, draw it again and replace the image.</li>
+<li><strong>The text is lost.</strong> Search and screen readers see only the image, unless you add alt text.</li>
+</ul>
+<p>If you go this way, put the LaTeX in the image's alt text or in a code block under it, so the next person can redraw it.</p>
+
+<h2 id="code-block">Option 2: a code block with the LaTeX</h2>
+<p>Insert a code block (type <code>/code</code> in the editor) and paste the LaTeX into it.</p>
+<ul>
+<li><strong>The source is safe and easy to copy.</strong> Anyone can take the LaTeX into another tool.</li>
+<li><strong>Readers see code, not an equation.</strong> Fine for a team that reads LaTeX, hard for everyone else.</li>
+</ul>
+<p>This suits technical notes where the formula is reference material, not something people need to read at a glance.</p>
+
+<h2 id="app">Option 3: a Marketplace app that draws LaTeX</h2>
+<p>Several apps on the Atlassian Marketplace add a LaTeX macro to Confluence Cloud: you type LaTeX, and the page shows the equation. Points worth comparing:</p>
+<ul>
+<li><strong>A preview while you type</strong>, and a clear message when the LaTeX has a mistake.</li>
+<li><strong>Inline formulas</strong>, inside a sentence, as well as equations on their own line.</li>
+<li><strong>Where the formula is drawn</strong>: in the reader's browser, or on the vendor's servers.</li>
+<li><strong>PDF and Word export</strong>: try it on a test page if you rely on it.</li>
+</ul>
+<p>Full disclosure: Dortus makes <a href="math.html">Math for Confluence</a>, coming soon to the Atlassian Marketplace. What it does:</p>
+<ul>
+<li><strong>Two macros.</strong> Math block (LaTeX) puts an equation on its own line, display or text size, centred or left. Math inline (LaTeX) puts a formula inside a sentence.</li>
+<li><strong>See the equation as you type.</strong> Start from an example, or type LaTeX. A mistake shows what is wrong in plain words, with the line and column.</li>
+<li><strong>Pasting is cleaned up.</strong> A formula pasted with <code>$$ … $$</code> or <code>\[ … \]</code> around it loses the delimiters.</li>
+<li><strong>KaTeX 0.19</strong>, with chemistry through mhchem: <code>\ce{2H2 + O2 -&gt; 2H2O}</code>.</li>
+<li><strong>Copy LaTeX</strong> in one click, and a version history of up to 20 saved versions per formula.</li>
+<li><strong>Readable for everyone.</strong> Light and dark mode follow Confluence, and each equation is also written as MathML for screen readers.</li>
+<li><strong>No external servers.</strong> Formulas are drawn in the browser and stay in Confluence.</li>
+</ul>
+
+<h2 id="formulas">Five common formulas in LaTeX</h2>
+<p>Copy the code into any LaTeX tool or app, without dollar signs. Each formula is shown under its code.</p>
+
+<h3 id="quadratic">Quadratic formula</h3>
+<p><code>\frac{top}{bottom}</code> is a fraction, <code>\sqrt{…}</code> a square root, <code>^</code> a power and <code>\pm</code> plus-or-minus.</p>
+<pre><code>x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</code></pre>
+<div class="formula-shown"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></div>
+
+<h3 id="mean">Mean of a list of numbers</h3>
+<p><code>\sum_{from}^{to}</code> is a sum, <code>_</code> a subscript and <code>\bar{x}</code> a bar over the x.</p>
+<pre><code>\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i</code></pre>
+<div class="formula-shown"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i</annotation></semantics></math></div>
+
+<h3 id="integral">Integral</h3>
+<p><code>\int_{0}^{\infty}</code> is an integral from 0 to infinity. <code>\,</code> adds a thin space before <code>dx</code>.</p>
+<pre><code>\int_{0}^{\infty} e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}</code></pre>
+<div class="formula-shown"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><msqrt><mi>π</mi></msqrt><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\int_{0}^{\infty} e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}</annotation></semantics></math></div>
+
+<h3 id="matrix">Matrix</h3>
+<p>Inside <code>pmatrix</code>, <code>&amp;</code> separates columns and <code>\\</code> starts a new row. <code>\quad</code> is a wide space.</p>
+<pre><code>A = \begin{pmatrix}
+  a &amp; b \\
+  c &amp; d
+\end{pmatrix}, \quad \det A = ad - bc</code></pre>
+<div class="formula-shown"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>a</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>b</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>c</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>d</mi></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mspace width="1em"/><mi>det</mi><mo>⁡</mo><mi>A</mi><mo>=</mo><mi>a</mi><mi>d</mi><mo>−</mo><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix}
+  a &amp; b \\
+  c &amp; d
+\end{pmatrix}, \quad \det A = ad - bc</annotation></semantics></math></div>
+
+<h3 id="cases">Piecewise function</h3>
+<p><code>cases</code> puts the options under each other with one brace. <code>\text{…}</code> writes normal words inside a formula.</p>
+<pre><code>|x| = \begin{cases}
+  x &amp; \text{if } x \ge 0 \\
+  -x &amp; \text{if } x &lt; 0
+\end{cases}</code></pre>
+<div class="formula-shown"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">|x| = \begin{cases}
+  x &amp; \text{if } x \ge 0 \\
+  -x &amp; \text{if } x &lt; 0
+\end{cases}</annotation></semantics></math></div>
+
+<h2 id="which">Which option fits</h2>
+<p>One formula that will never change: an image, with the LaTeX saved next to it. A formula as reference for people who read LaTeX: a code block. Formulas that people read at a glance and keep editing on the page: a Marketplace app.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can I type $x^2$ in a Confluence page?</summary>
+<p>You can, but Confluence shows it as typed, dollar signs included. For a simple power or index, Unicode characters such as x² or H₂O work in normal text. For anything more, use one of the <a href="#built-in">three options above</a>.</p>
+</details>
+<details>
+<summary>Do I need to know LaTeX?</summary>
+<p>A few commands go a long way: <code>^</code> for a power, <code>_</code> for a subscript, <code>\frac{a}{b}</code> for a fraction and <code>\sqrt{x}</code> for a square root. The <a href="#formulas">five formulas on this page</a> cover most of what people write. KaTeX keeps a full list of <a href="https://katex.org/docs/supported.html" rel="noopener noreferrer">supported commands</a>.</p>
+</details>
+<details>
+<summary>Can ChatGPT or Claude write the LaTeX for me?</summary>
+<p>Yes. Describe the formula in words and ask for the LaTeX only, without dollar signs. Check the result in a preview before you publish: an assistant sometimes uses a command your tool does not support.</p>
+</details>
+<details>
+<summary>Can I write chemistry formulas?</summary>
+<p>Yes, with the mhchem commands <code>\ce</code> and <code>\pu</code>, if your LaTeX tool supports them. Math for Confluence does, for example <code>\ce{CH4 + 2 O2 -&gt; CO2 + 2 H2O}</code>.</p>
+</details>
+<details>
+<summary>Is Math for Confluence available now?</summary>
+<p>Not yet: it is coming soon to the Atlassian Marketplace. Until then, an <a href="#image">image</a> or a <a href="#code-block">code block</a> works without an app.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or an option we missed? Email <a href="mailto:support@dortus.com?subject=LaTeX%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Math for Confluence by Dortus</p>
+<h3>Type LaTeX, see the equation</h3>
+<p>Two Confluence macros: an equation on its own line, or a formula inside a sentence. The equation is drawn as you type, and nothing leaves Atlassian.</p>
+<p class="btns"><a class="btn btn-primary" href="math.html">About Math for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Coming soon to the Atlassian Marketplace.</p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. LaTeX and KaTeX
+are open source projects. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is
+not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
