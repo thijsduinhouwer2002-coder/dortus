@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to read email headers to spot phishing · Dortus</title>
+<meta name="description" content="Where the headers are in Outlook or a .msg or .eml file, and what to check: SPF, DKIM, DMARC, Return-Path, Reply-To, Received lines. Plus Jira work items." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to read email headers to spot phishing" />
+<meta property="og:description" content="Where the headers are, how to get them out of Outlook or a .msg or .eml file, and the five things to check before you call an email phishing." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/read-email-headers-phishing.html" />
+<meta property="og:url" content="https://dortus.com/read-email-headers-phishing.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to read email headers to spot phishing",
+  "description": "Where the headers are in Outlook or a .msg or .eml file, and what to check: SPF, DKIM, DMARC, Return-Path, Reply-To, Received lines. Plus Jira work items.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-30T09:00:00+00:00",
+  "dateModified": "2026-10-30T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/read-email-headers-phishing.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can email headers be faked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The lines the sender writes can: From, Reply-To, Subject, Date, and even the first Received line. The lines your own mail server added cannot, including the Authentication-Results line with the SPF, DKIM and DMARC results. Read the headers from your server down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does SPF, DKIM or DMARC none mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The sending domain publishes no SPF record, no DKIM signature was found, or the domain has no DMARC policy. Many small businesses are in that position, so none is not proof of phishing. Fail is the result to act on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The email passed SPF, DKIM and DMARC. Is it safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It came from a server allowed to send for that domain and was not changed on the way. That is all. A hacked mailbox at a real supplier passes every check, so still look at the Reply-To, the links and the attachments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my .msg file have no internet headers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Outlook only stores internet headers in a .msg when the email came in over the internet. An email sent inside the same Exchange organisation never had them. An .eml file carries whatever headers the email had."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I check the headers without downloading the attachment from Jira?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with Jira Cloud alone: it shows a .msg or .eml as a file to download. A Marketplace app can show the email and its headers on the work item; MailView for Jira, made by Dortus, does that in a Details tab."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mailview.html">MailView for Jira <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Jira and Jira Service Management</p>
+<h1 style="margin-bottom: 0.9rem">How to read email headers to spot phishing</h1>
+<p class="lede">
+An employee forwards an email to the service desk: &ldquo;Is this legit?&rdquo; The text and the sender name tell you little, because the sender wrote both. The headers are different: the mail servers the email passed through added them, and the server at your end wrote down whether the sender was allowed to use that domain. This page shows where the headers are, how to get them out of Outlook or a saved .msg or .eml file, what to look for, and how this works on a Jira work item.
+</p>
+<p class="page-meta">Published 30 October 2026</p>
+</div>
+<div class="prose">
+
+<h2 id="what">What email headers are</h2>
+<p>Every email starts with a block of header lines that the mail app hides. Some are written by the sender and can say anything: <code>From</code>, <code>To</code>, <code>Subject</code>, <code>Date</code>, <code>Reply-To</code>. Others are written by the servers that handled the email: each adds a <code>Received</code> line, and the server at your end usually adds an <code>Authentication-Results</code> line with the SPF, DKIM and DMARC results. Those are the lines you can trust.</p>
+<p>One limit up front: an email that never left your organisation often has no authentication results at all. That is not suspicious in itself.</p>
+
+<h2 id="find">Where to find the headers</h2>
+<h3 id="outlook">In Outlook</h3>
+<ul>
+<li><strong>Classic Outlook for Windows.</strong> Open the email in its own window and choose <strong>File &rarr; Properties</strong>. The headers are in the <strong>Internet headers</strong> box.</li>
+<li><strong>New Outlook for Windows.</strong> Open the email, click <strong>More actions</strong> (the three dots) and choose <strong>View &rarr; View message details</strong> (Microsoft: <a href="https://support.microsoft.com/en-us/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c" rel="noopener noreferrer">View internet message headers in Outlook</a>).</li>
+<li><strong>Outlook on the web.</strong> Open the email, click the three dots in the reading pane and choose <strong>View &rarr; View message details</strong>.</li>
+<li><strong>Outlook for Mac.</strong> Control-click the email in the list and choose <strong>View Source</strong>.</li>
+</ul>
+<h3 id="file">In a saved .eml or .msg file</h3>
+<p>Reported emails often arrive as a file, because the reporter forwarded the email as an attachment. An <strong>.eml</strong> file is plain text: open it in Notepad or TextEdit and the headers are the first lines, down to the first empty line. A <strong>.msg</strong> file is Outlook&rsquo;s binary format: open it in Outlook for Windows and use <strong>File &rarr; Properties</strong>. A .msg only carries internet headers if the email came in over the internet (see <a href="msg-vs-eml.html">Outlook .msg vs .eml</a>). On a Mac without Outlook, see <a href="open-msg-on-mac-jira-confluence.html">how to open a .msg file on a Mac</a>.</p>
+<p>A header analyser such as Microsoft&rsquo;s Message Header Analyzer or MxToolbox lays the block out as a table, with the hops in order. These tools run on their makers&rsquo; servers, so do not paste headers from an email you may not share.</p>
+
+<h2 id="check">Five things to check</h2>
+<ol>
+<li><strong>Authentication-Results.</strong> Look for <code>spf=</code>, <code>dkim=</code> and <code>dmarc=</code>. <code>pass</code> means the sending server was allowed to send for that domain and the message was not changed on the way. <code>fail</code> is a strong warning. <code>none</code> means the domain publishes no policy, which is common for small senders and says little on its own. Only the line added by <em>your</em> mail server counts; a forwarded email can carry results from the reporter&rsquo;s server too.</li>
+<li><strong>From versus Return-Path.</strong> <code>From</code> is what the reader sees. <code>Return-Path</code> is where bounces go, and the address SPF was checked against. A newsletter service legitimately uses a different one. A bank sending from a random domain does not.</li>
+<li><strong>Reply-To.</strong> If it points to a different domain than <code>From</code>, replies go somewhere else than the reader thinks. Invoice fraud relies on this.</li>
+<li><strong>The Received lines.</strong> Read them from the bottom up: the lowest line is the first server that handled the email, the top line is your own. A mail from &ldquo;your IT department&rdquo; that entered through a consumer mail provider abroad deserves a second look. The very first hop can be forged; the lines your own servers added cannot.</li>
+<li><strong>The sender domain.</strong> Look for lookalike letters and domains starting with <code>xn--</code>, an international domain name that can hide accented or Cyrillic letters. A typo in plain letters, such as a 1 for an l, you have to spot by eye.</li>
+</ol>
+<p>Then look at the body the same way: links whose text names one domain while the address goes to another, attachments that can run code (.exe, .js, .html, .svg, archives with such files inside), and urgency.</p>
+
+<h2 id="limits">Where this falls short</h2>
+<p>Headers tell you whether the email came from where it claims. They do not tell you whether a genuine but compromised mailbox sent it: phishing from a hacked supplier passes SPF, DKIM and DMARC. Reading headers also takes time and the wrong tool. A service desk agent working from a Jira work item has to download the .msg, open Outlook, find Properties and paste into an analyser, for every report. On a Mac or a phone, a .msg does not even open.</p>
+
+<h2 id="jira">On a Jira work item</h2>
+<p>Full disclosure: Dortus makes <a href="mailview.html">MailView for Jira</a>. It shows a .msg or .eml attachment as a readable email on the work item, including a forwarded email that arrived without a file name. Its <strong>Details</strong> tab lists every header, the SPF, DKIM and DMARC results recorded by the receiving mail server, and the address behind every link (short links and redirects are not followed). Above that sits a verdict, <em>Looks OK</em>, <em>Be careful</em>, <em>Likely phishing</em> or <em>Not enough to judge</em>, with the reasons. <strong>Copy findings</strong> puts a defanged summary in the clipboard for the ticket comment. Scripts, forms and remote images are removed before anything is shown.</p>
+<p>The verdict is an aid for the person triaging, not a security control, and it can miss things. MailView runs on Atlassian Forge, reads the attachment with your own permissions, renders it in your browser and keeps no copy. Want to try the check without Jira? The free <a href="email-check.html">email check</a> runs the same checks on a .msg or .eml file in your browser and uploads nothing.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can email headers be faked?</summary>
+<p>The lines the sender writes can: From, Reply-To, Subject, Date, and even the first Received line. The lines your own mail server added cannot, including the Authentication-Results line with the SPF, DKIM and DMARC results. Read the headers from your server down.</p>
+</details>
+<details>
+<summary>What does SPF, DKIM or DMARC none mean?</summary>
+<p>The sending domain publishes no SPF record, no DKIM signature was found, or the domain has no DMARC policy. Many small businesses are in that position, so none is not proof of phishing. Fail is the result to act on.</p>
+</details>
+<details>
+<summary>The email passed SPF, DKIM and DMARC. Is it safe?</summary>
+<p>It came from a server allowed to send for that domain and was not changed on the way. That is all. A hacked mailbox at a real supplier passes every check, so still look at the Reply-To, the links and the attachments.</p>
+</details>
+<details>
+<summary>Why does my .msg file have no internet headers?</summary>
+<p>Outlook only stores internet headers in a .msg when the email came in over the internet. An email sent inside the same Exchange organisation never had them. An .eml file carries whatever headers the email had.</p>
+</details>
+<details>
+<summary>Can I check the headers without downloading the attachment from Jira?</summary>
+<p>Not with Jira Cloud alone: it shows a .msg or .eml as a file to download. A Marketplace app can show the email and its headers on the work item; MailView for Jira, made by Dortus, does that in a Details tab.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Email%20headers">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">MailView for Jira by Dortus</p>
+<h3>Read .msg and .eml attachments on the work item</h3>
+<p>The email as it was sent, a Details tab with every header, the authentication results and every link, and a plain-English verdict for reported emails. Runs on Atlassian Forge. Keeps no copy of the email and sends nothing outside Atlassian. Free for up to 10 users.</p>
+<p class="btns"><a class="btn btn-primary" href="mailview.html">About MailView for Jira <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+<p>See also: <a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a>, <a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a> and <a href="original-email-jira-service-management.html">See the original email behind a Jira Service Management request</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Microsoft, Outlook and Exchange are trademarks of Microsoft Corporation. MxToolbox is a product of MxToolbox, Inc. Dortus is not affiliated with these companies.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
