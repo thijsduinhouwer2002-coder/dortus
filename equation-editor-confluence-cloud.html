@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Does Confluence have an equation editor? · Dortus</title>
+<meta name="description" content="Confluence Cloud has no equation editor. What the editor can do (subscript, superscript, symbols), a formula as an image, and what a LaTeX app adds." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="Does Confluence have an equation editor? How to insert a formula in Confluence Cloud" />
+<meta property="og:description" content="No. What the Confluence Cloud editor can do for simple formulas, how to insert a real equation as an image, and what a LaTeX app adds." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/equation-editor-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/equation-editor-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Does Confluence have an equation editor? How to insert a formula in Confluence Cloud",
+  "description": "Confluence Cloud has no equation editor. What the editor can do (subscript, superscript, symbols), a formula as an image, and what a LaTeX app adds.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-30T09:00:00+00:00",
+  "dateModified": "2026-10-30T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/equation-editor-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I paste an equation from Word into Confluence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not as an editable equation; Confluence has nothing to hold one. Insert a picture of it instead, or switch the equation to LaTeX mode in Word and paste the LaTeX into a formula macro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a fraction in Confluence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Without an app, as an image or as text with a slash: (a + b) / 2. A LaTeX macro shows a real stacked fraction from \\frac{a + b}{2}."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to learn LaTeX for a formula app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A handful of commands cover most formulas: ^ for a power, _ for a subscript, \\frac{}{} for a fraction, \\sqrt{} for a root. Start from the app's examples, or ask ChatGPT or Claude for the LaTeX of a formula you describe in words."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I write chemistry formulas in Confluence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple ones with subscript formatting: H2O with the 2 as subscript. Reactions with arrows and states need a LaTeX app with mhchem support, such as \\ce{2H2 + O2 -> 2H2O}."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Math for Confluence available now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet. It was submitted to the Atlassian Marketplace on 30 October 2026 and is waiting for approval. Until then, use subscript and superscript or an image."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="math.html">Math for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Does Confluence have an equation editor? How to insert a formula in Confluence Cloud</h1>
+<p class="lede">
+Word has one, Google Docs has one, PowerPoint has one. So people look for Insert &rarr; Equation in Confluence Cloud and come up empty. The request for math in Confluence has been open on Atlassian&rsquo;s tracker since 2013 (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-30543" rel="noopener noreferrer">CONFCLOUD-30543</a>, 143 votes at the time of writing), and the question keeps coming back on Atlassian Community: &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Can-Latex-be-used-to-create-formulae-in-Confluence-pages/qaq-p/2004728" rel="noopener noreferrer">Can LaTeX be used to create formulae in Confluence pages?</a>&rdquo;, and app vendors write <a href="https://community.atlassian.com/forums/App-Central-articles/How-to-use-LaTeX-math-formulas-math-equations-in-Confluence/ba-p/2733179" rel="noopener noreferrer">whole articles</a> answering it. This page is for people who want a formula on a page and do not want to learn LaTeX first.
+</p>
+<p class="page-meta">Published 30 October 2026</p>
+</div>
+<div class="prose">
+
+<h2 id="answer">The short answer</h2>
+<p>No. Confluence Cloud has no equation editor and no equation macro of its own. Typed math stays plain text: <code>x^2</code> shows as x^2. What you can do without installing anything: format simple formulas with the editor&rsquo;s subscript and superscript, type Unicode symbols, or make the equation elsewhere and insert it as an image. For equations people read and edit on the page, a Marketplace app adds a formula macro.</p>
+<p>One thing to rule out first: if you mean a <em>calculation</em>, a column in a Confluence database that adds up other columns, that is a different request (Atlassian: <a href="https://jira.atlassian.com/browse/CONFCLOUD-78459" rel="noopener noreferrer">CONFCLOUD-78459</a>, under consideration). This page is about showing mathematics.</p>
+
+<h2 id="editor">Option 1: what the editor can do by itself</h2>
+<p>For chemistry, units and simple powers you may not need anything else.</p>
+<ul>
+<li><strong>Subscript and superscript.</strong> Select the characters, open the <strong>(&hellip;) more formatting</strong> menu in the toolbar and choose <strong>Subscript</strong> or <strong>Superscript</strong>. Shortcuts: Ctrl+Shift+, for subscript and Ctrl+Shift+. for superscript (Cmd on a Mac) (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/format-text/" rel="noopener noreferrer">Format text</a>). That gives H<sub>2</sub>O, E = mc<sup>2</sup>, 10<sup>-6</sup>, CO<sub>2</sub>.</li>
+<li><strong>Symbols.</strong> Characters such as &plusmn; &times; &divide; &le; &ge; &ne; &radic; &pi; &sum; &infin; &deg; &micro; are ordinary text. Type them with your keyboard&rsquo;s symbol input, or copy them from any character table and paste. They survive export and search.</li>
+<li><strong>Monospace for code-like formulas.</strong> A code block (type <code>/code</code>) keeps spacing, so a formula written on several lines with aligned terms stays aligned.</li>
+</ul>
+<p><strong>Where it stops.</strong> Fractions, square roots over an expression, sums with limits, matrices and anything with two levels of sub- or superscript. The editor has no way to stack things vertically.</p>
+
+<h2 id="image">Option 2: make the equation elsewhere and insert an image</h2>
+<p>Use the equation editor you already have: Word (<strong>Insert &rarr; Equation</strong>), Google Docs (<strong>Insert &rarr; Equation</strong>), PowerPoint, or a free online LaTeX editor that previews as you type. Then take a picture of it: a screenshot, or the editor&rsquo;s PNG or SVG export if it has one. Drag the image into the Confluence page or type <code>/image</code>.</p>
+<ul>
+<li><strong>What you get.</strong> A proper equation, typeset correctly, in every browser and in exports. No app, no admin.</li>
+<li><strong>What it loses.</strong> Nobody can edit it on the page; to change one symbol someone has to find the original file. Confluence search and screen readers see only an image, unless you add alt text. Twenty equations means twenty images to keep in sync.</li>
+</ul>
+<p>If you go this way, keep the source: paste the Word file or the LaTeX code in a code block under the image, or into the image&rsquo;s alt text, so the next person can redraw it.</p>
+
+<h2 id="app">Option 3: a formula macro from the Marketplace</h2>
+<p>Apps on the Atlassian Marketplace add a math macro to Confluence Cloud. Nearly all of them use LaTeX, the notation mathematicians have used for forty years and the one Word&rsquo;s own editor can show you (switch an equation to <em>LaTeX</em> mode on the Equation tab). The good news for people who do not know LaTeX: you rarely need more than a handful of commands, the apps come with examples to start from, and ChatGPT or Claude write correct LaTeX from a description. Points worth comparing: a live preview while you type, a clear message when something is wrong, inline formulas inside a sentence, where the formula is drawn (in your browser or on the vendor&rsquo;s servers), and how it exports to PDF and Word.</p>
+<p>Full disclosure: Dortus makes <a href="math.html">Math for Confluence</a>, submitted to the Atlassian Marketplace on 30 October 2026 and waiting for approval, so you cannot install it yet. What it does: two macros, <em>Math block (LaTeX)</em> for an equation on its own line and <em>Math inline (LaTeX)</em> for a formula inside a sentence. Type <code>/math</code>, pick an example (fraction, quadratic formula, sum, integral, limit, matrix, aligned equations, cases, chemistry, probability) or type LaTeX, and the equation is drawn as you type. A mistake is explained in plain words with its line and column. A formula pasted with <code>$$</code> or <code>\[ \]</code> around it is cleaned up. It draws with KaTeX in the reader&rsquo;s browser, writes MathML for screen readers, follows light and dark mode, keeps up to 20 versions per formula, and sends nothing outside Atlassian. Until it is approved, Option 1 or 2 is the way.</p>
+
+<h2 id="starter">Five formulas you can copy</h2>
+<p>For any LaTeX app, without dollar signs. <code>\frac{top}{bottom}</code> is a fraction, <code>\sqrt{}</code> a root, <code>^</code> a power and <code>_</code> a subscript.</p>
+<pre><code>\frac{a}{b}
+\sqrt{x^2 + y^2}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\sum_{i=1}^{n} x_i
+\ce{CH4 + 2 O2 -&gt; CO2 + 2 H2O}</code></pre>
+<p>The last one is chemistry with the mhchem commands, which Math for Confluence supports. More examples, shown as they render: <a href="latex-math-confluence-cloud.html">How to write LaTeX math in Confluence Cloud</a>.</p>
+
+<h2 id="which">Which option fits</h2>
+<p>Chemical formulas, units and squares in running text: the editor&rsquo;s subscript and superscript. A few equations that will not change: images, with the source kept next to them. Equations that people read at a glance and keep editing, or more than a handful of them: a LaTeX macro from the Marketplace.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can I paste an equation from Word into Confluence?</summary>
+<p>Not as an editable equation; Confluence has nothing to hold one. Insert a picture of it instead, or switch the equation to LaTeX mode in Word and paste the LaTeX into a formula macro.</p>
+</details>
+<details>
+<summary>How do I write a fraction in Confluence?</summary>
+<p>Without an app, as an image or as text with a slash: (a + b) / 2. A LaTeX macro shows a real stacked fraction from \frac{a + b}{2}.</p>
+</details>
+<details>
+<summary>Do I need to learn LaTeX for a formula app?</summary>
+<p>A handful of commands cover most formulas: ^ for a power, _ for a subscript, \frac{}{} for a fraction, \sqrt{} for a root. Start from the app's examples, or ask ChatGPT or Claude for the LaTeX of a formula you describe in words.</p>
+</details>
+<details>
+<summary>Can I write chemistry formulas in Confluence?</summary>
+<p>Simple ones with subscript formatting: H2O with the 2 as subscript. Reactions with arrows and states need a LaTeX app with mhchem support, such as \ce{2H2 + O2 -> 2H2O}.</p>
+</details>
+<details>
+<summary>Is Math for Confluence available now?</summary>
+<p>Not yet. It was submitted to the Atlassian Marketplace on 30 October 2026 and is waiting for approval. Until then, use subscript and superscript or an image.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Equation%20editor%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Math for Confluence by Dortus</p>
+<h3>Type LaTeX, see the equation</h3>
+<p>Two Confluence macros: an equation on its own line, or a formula inside a sentence. The equation is drawn as you type, and nothing leaves Atlassian.</p>
+<p class="btns"><a class="btn btn-primary" href="math.html">About Math for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small">Submitted to the Atlassian Marketplace on 30 October 2026, waiting for approval.</p>
+</div>
+<p>See also: <a href="latex-math-confluence-cloud.html">How to write LaTeX math in Confluence Cloud</a> and <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Microsoft, Word and PowerPoint are trademarks of Microsoft Corporation. Google Docs is a product of Google LLC. LaTeX and KaTeX are open source projects. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

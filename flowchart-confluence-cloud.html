@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to make a flowchart in Confluence Cloud · Dortus</title>
+<meta name="description" content="Confluence Cloud has no flowchart macro. Three ways: a whiteboard (built in), a Marketplace diagram app, or a flowchart written as text in Mermaid." />
+<meta name="theme-color" content="#0052cc" />
+<link rel="icon" href="assets/app-icon.png" />
+<meta property="og:title" content="How to make a flowchart in Confluence Cloud" />
+<meta property="og:description" content="Confluence Cloud has no Flowchart macro. A whiteboard, a Marketplace diagram app or a text-based Mermaid flowchart: what each one keeps and loses." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/flowchart-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/flowchart-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/logo-dortus-d-1024.png" />
+<meta property="og:image:alt" content="Dortus logo" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to make a flowchart in Confluence Cloud",
+  "description": "Confluence Cloud has no flowchart macro. Three ways: a whiteboard (built in), a Marketplace diagram app, or a flowchart written as text in Mermaid.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-10-30T09:00:00+00:00",
+  "dateModified": "2026-10-30T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/flowchart-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I draw a flowchart directly in a Confluence page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with the editor alone: it has no shapes or arrows. Use a whiteboard and embed it, a diagram app, or a Mermaid macro. All three show the flowchart on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a Confluence whiteboard free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whiteboards are included on all Confluence Cloud plans. The Free plan allows three active whiteboards per user and Standard ten; older boards become read-only but can still be viewed and copied."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn a Mermaid flowchart into an image?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Mermaid Editor for Confluence downloads a diagram as SVG or PNG, and the Mermaid Live Editor on mermaid.live exports images too. Keep the text somewhere, so the diagram can be edited later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ChatGPT or Claude write the flowchart for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Describe the process in words and ask for Mermaid flowchart code. Paste it into a Mermaid macro and read the result carefully: assistants sometimes invent a step or use syntax a renderer does not support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where did the old Flowchart macro go?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It belonged to Confluence Server. Confluence Cloud never had it, and Server reached end of support in February 2024. In Cloud the options are a whiteboard, a Marketplace diagram app or a Mermaid macro."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="band">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to make a flowchart in Confluence Cloud</h1>
+<p class="lede">
+A process page without a flowchart is a wall of text. So people look for the flowchart button in Confluence Cloud, do not find one, and ask on Atlassian Community: &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/Where-have-the-flow-charts-gone/qaq-p/1282047" rel="noopener noreferrer">Where have the flow charts gone?</a>&rdquo;, &ldquo;<a href="https://community.atlassian.com/forums/Confluence-questions/How-to-embed-or-attach-documents-to-a-flowchart-in-Confluence/qaq-p/2858036" rel="noopener noreferrer">How to embed or attach documents to a flowchart in Confluence</a>&rdquo;, and there is a whole <a href="https://community.atlassian.com/forums/tag/flow-chart/tg-p" rel="noopener noreferrer">flow-chart tag</a> of such questions. Here are the three ways that work today, with what each one keeps and loses.
+</p>
+<p class="page-meta">Published 30 October 2026</p>
+</div>
+<div class="prose">
+
+<h2 id="built-in">Does Confluence Cloud have a flowchart macro?</h2>
+<p>No. The Flowchart macro in Atlassian&rsquo;s documentation belongs to old Confluence Server versions and was never part of Confluence Cloud. The Cloud editor can draw a table, a layout with columns and a few status lozenges, but no boxes with arrows between them. For that you use a whiteboard, an app, or a diagram written as text.</p>
+
+<h2 id="whiteboard">Option 1: a Confluence whiteboard</h2>
+<p>Whiteboards are part of Confluence Cloud on every plan (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/understand-confluence-whiteboards-plans-and-features" rel="noopener noreferrer">Understand Confluence whiteboards plans and features</a>). A whiteboard is its own item in the space, next to pages. Create one, choose <strong>Shape</strong> or open <strong>More shapes</strong> for the flowchart shapes (process, decision, terminator and so on), and drag a <strong>connector</strong> from one shape to the next (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/use-shapes-to-visualize-ideas/" rel="noopener noreferrer">Use shapes to visualize ideas</a>). To show it on a page, paste the whiteboard&rsquo;s link into the page: Confluence turns it into a Smart Link that embeds the board (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/integrate-whiteboards-into-your-atlassian-workflow/" rel="noopener noreferrer">Integrate whiteboards into your Atlassian workflow</a>). You can also export the board or a selected area as PNG, JPG or PDF and upload that image to the page (Atlassian: <a href="https://support.atlassian.com/confluence-cloud/docs/export-or-import-your-whiteboard/" rel="noopener noreferrer">Export or import your whiteboard</a>).</p>
+<ul>
+<li><strong>What you get.</strong> A real drawing tool, nothing to install, and shapes that can be turned into Jira work items.</li>
+<li><strong>Limits.</strong> On the Free plan each user has three active whiteboards, on Standard ten; boards beyond that become read-only. Smart connectors and smart sections are Premium and Enterprise features; plain connectors work everywhere. A whiteboard lives outside the page, so the flowchart and the page can drift apart, and an exported image is a picture that nobody can edit.</li>
+</ul>
+
+<h2 id="apps">Option 2: a diagram app from the Marketplace</h2>
+<p>Apps such as draw.io, Gliffy and Lucidchart add a diagram macro to the Confluence editor: you draw in a full diagram editor and the result sits in the page, editable later. They have the richest shape libraries (BPMN, swimlanes, UML, network diagrams) and templates. Points worth comparing: where the diagram data is stored (as a page attachment inside Confluence, or on the vendor&rsquo;s servers), how PDF export of the page looks, and the price, which Marketplace apps charge per Confluence user, not per person who draws. This is the right choice when the drawing itself is the work: detailed process maps, architecture, anything that needs to look exactly so.</p>
+
+<h2 id="mermaid">Option 3: write the flowchart as text with Mermaid</h2>
+<p>Mermaid is an open source notation for diagrams. A flowchart is a few lines of text:</p>
+<pre><code>flowchart TD
+  A[Request received] --&gt; B{Complete?}
+  B -- Yes --&gt; C[Assign to team]
+  B -- No --&gt; D[Ask for details]
+  D --&gt; A
+  C --&gt; E[Done]</code></pre>
+<p><code>TD</code> means top to bottom (<code>LR</code> is left to right), square brackets make a box, curly braces a decision diamond, and <code>--&gt;</code> an arrow with an optional label. Confluence Cloud does not draw Mermaid on its own: pasted into a page, the text stays text. You need a Mermaid macro from the Marketplace, or you draw the diagram elsewhere and upload the image. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes, and <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has twelve diagrams to copy, starting with a flowchart.</p>
+<ul>
+<li><strong>What you get.</strong> A flowchart that changes when you change a line, lives in the page, and can be written by ChatGPT or Claude from a description of the process. Diffs and copy-paste work, because it is text.</li>
+<li><strong>Limits.</strong> Mermaid decides the layout; you can nudge it with direction and subgraphs, but you cannot drag a box two centimetres to the left. Very large flowcharts get hard to read. Styling is limited compared to a drawing tool.</li>
+</ul>
+<p>Full disclosure: Dortus makes <a href="mermaid.html">Mermaid Editor for Confluence</a>, a macro on the Atlassian Marketplace. Insert the macro, type Mermaid on the left, and the preview on the right redraws as you type; a mistake shows the line and what Mermaid expected. The editor has 12 examples, flowchart first. On the page the diagram fits the width, can be zoomed or opened large, and can be downloaded as SVG or PNG. The diagram source is saved in the macro on the page, and the last 20 saves are kept. It runs on Atlassian Forge, draws in the reader&rsquo;s browser, and sends nothing to Dortus. Other Mermaid apps exist on the Marketplace; this guide only describes the one we make.</p>
+
+<h2 id="which">Which option fits</h2>
+<p>A quick sketch for a workshop, or a flowchart that also needs sticky notes and votes: a whiteboard. A detailed process map that has to look exactly right, with swimlanes and company shapes: a diagram app. A flowchart that belongs in a runbook or a process page and will change every few months: Mermaid, so the next person edits six lines instead of redrawing a picture.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can I draw a flowchart directly in a Confluence page?</summary>
+<p>Not with the editor alone: it has no shapes or arrows. Use a whiteboard and embed it, a diagram app, or a Mermaid macro. All three show the flowchart on the page.</p>
+</details>
+<details>
+<summary>Is a Confluence whiteboard free?</summary>
+<p>Whiteboards are included on all Confluence Cloud plans. The Free plan allows three active whiteboards per user and Standard ten; older boards become read-only but can still be viewed and copied.</p>
+</details>
+<details>
+<summary>Can I turn a Mermaid flowchart into an image?</summary>
+<p>Yes. Mermaid Editor for Confluence downloads a diagram as SVG or PNG, and the Mermaid Live Editor on mermaid.live exports images too. Keep the text somewhere, so the diagram can be edited later.</p>
+</details>
+<details>
+<summary>Can ChatGPT or Claude write the flowchart for me?</summary>
+<p>Yes. Describe the process in words and ask for Mermaid flowchart code. Paste it into a Mermaid macro and read the result carefully: assistants sometimes invent a step or use syntax a renderer does not support.</p>
+</details>
+<details>
+<summary>Where did the old Flowchart macro go?</summary>
+<p>It belonged to Confluence Server. Confluence Cloud never had it, and Server reached end of support in February 2024. In Cloud the options are a whiteboard, a Marketplace diagram app or a Mermaid macro.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or a way we missed? Email <a href="mailto:support@dortus.com?subject=Flowchart%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>Flowcharts, sequence diagrams, Gantt charts and more as text in a Confluence macro, with a live preview while you type. Runs on Atlassian Forge, draws in the browser, sends nothing to Dortus.</p>
+<p class="btns"><a class="btn btn-primary" href="mermaid.html">About Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> and <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mailview.html">MailView for Jira</a></li>
+<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
+<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
+<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
+<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="partners.html">For Solution Partners</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io, Gliffy and Lucidchart are products of their respective companies. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
