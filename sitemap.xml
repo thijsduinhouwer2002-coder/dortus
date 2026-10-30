@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dortus.com/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/mermaid.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/countdown.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/mermaid-jira.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://dortus.com/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mermaid.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/countdown.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mermaid-jira.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mailview-vs-msg-eml-email-viewer.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/open-msg-eml-in-jira.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/open-msg-eml-in-confluence.html</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://dortus.com/open-msg-on-mac-jira-confluence.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://dortus.com/open-msg-on-mac-jira-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/attach-outlook-email-to-jira.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/phishing-reports-jira-service-management.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://dortus.com/migration-email-attachments-jira.html</loc><lastmod>2026-10-21</lastmod></url>
@@ -21,12 +21,12 @@
   <url><loc>https://dortus.com/jsm-not-creating-requests-from-email.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/msg-vs-eml.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/email-check.html</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://dortus.com/support.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/privacy.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/terms.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://dortus.com/support.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/privacy.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/terms.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/partners.html</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://dortus.com/security.html</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://dortus.com/mailview-security.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://dortus.com/security.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mailview-security.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mailview-agents.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://dortus.com/docs/askspace/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://dortus.com/stack-internal-vs-confluence-qa.html</loc><lastmod>2026-10-14</lastmod></url>
@@ -34,7 +34,7 @@
   <url><loc>https://dortus.com/build-faq-confluence-cloud.html</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://dortus.com/askspace-vs-questions-for-confluence.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/export-questions-for-confluence-cloud.html</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://dortus.com/confluence-cloud-storage-full.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://dortus.com/confluence-cloud-storage-full.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/migrate-questions-for-confluence-to-cloud.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://dortus.com/original-email-jira-service-management.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/create-jira-work-items-from-email.html</loc><lastmod>2026-10-16</lastmod></url>
@@ -51,6 +51,6 @@
   <url><loc>https://dortus.com/de/email-anhaenge-nach-jira-migration.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dortus.com/de/phishing-meldungen-jira-service-management.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dortus.com/attach-email-to-existing-jira-work-item.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://dortus.com/mermaid-diagrams-confluence-cloud.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://dortus.com/mermaid-examples-confluence.html</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://dortus.com/mermaid-diagrams-confluence-cloud.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mermaid-examples-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>
