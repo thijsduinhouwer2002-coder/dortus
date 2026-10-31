@@ -1823,3 +1823,41 @@ body:not([data-world="shopify"]) .facts dt {
   text-transform: none;
   letter-spacing: 0;
 }
+
+/* Every page starts on the same lavender graph paper: app heroes, guides,
+   support and legal pages alike. */
+body:not([data-world="shopify"]) .page-head {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 1px solid var(--lavender-line);
+}
+
+.guide-head .head {
+  margin-bottom: 0;
+}
+
+.guide-head h1 {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem);
+  max-width: 24ch;
+}
+
+.guide-head .eyebrow {
+  color: var(--violet-deep) !important;
+}
+
+.guide-head + .band {
+  padding-top: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+@media (max-width: 900px) {
+  body:not([data-world="shopify"]) .world-hero-math::before {
+    display: none;
+  }
+}
+
+.guide-head + .band .prose {
+  padding-top: 0;
+}
