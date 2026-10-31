@@ -6,7 +6,8 @@
   <title>Dortus: Mermaid and LaTeX editors for Confluence Cloud, running on Atlassian</title>
   <meta name="description" content="Dortus makes editors for Confluence Cloud: type Mermaid or LaTeX, or paste it from any AI, and see the diagram or formula as you type. Everything runs on Atlassian; no Dortus servers, none of your content leaves your site." />
   <meta name="theme-color" content="#004c3f" />
-  <link rel="icon" href="assets/app-icon.png" />
+  <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
   <meta property="og:title" content="Dortus: Mermaid and LaTeX editors for Confluence Cloud" />
   <meta property="og:description" content="Type Mermaid or LaTeX in Confluence, or paste it from any AI, and see the diagram or formula as you type. Runs on Atlassian." />
   <meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
@@ -190,7 +191,7 @@
     <section class="h-section">
       <div class="wrap">
         <h2>Nothing leaves your Atlassian site</h2>
-        <p class="h-intro">This is the same for every Dortus app on the Atlassian Marketplace.</p>
+        <p class="h-intro">Both editors are built on Atlassian Forge, like every Dortus app.</p>
         <dl class="h-promise">
           <div>
             <dt>Built on Forge</dt>
@@ -208,65 +209,31 @@
       </div>
     </section>
 
-    <section class="h-section">
-      <div class="wrap">
-        <h2>Also from Dortus</h2>
-        <p class="h-intro">Smaller apps for Jira and Confluence, built the same way.</p>
-        <ul class="h-others">
-          <li>
-            <a class="name" href="mailview.html">MailView for Jira</a>
-            <span class="what">Reads .msg and .eml attachments on a work item, with a plain-English phishing check.</span>
-            <span class="where">On the Marketplace</span>
-          </li>
-          <li>
-            <a class="name" href="mailview-confluence.html">MailView for Confluence</a>
-            <span class="what">Shows .msg and .eml attachments on a Confluence page, also in PDF and Word exports.</span>
-            <span class="where">On the Marketplace</span>
-          </li>
-          <li>
-            <a class="name" href="askspace.html">AskSpace</a>
-            <span class="what">Questions and answers for each Confluence space, with votes and one best answer.</span>
-            <span class="where">On the Marketplace</span>
-          </li>
-          <li>
-            <a class="name" href="countdown.html">Live Countdown for Confluence</a>
-            <span class="what">Counts down to a release, launch or deadline, in the right time zone.</span>
-            <span class="where">Waiting for approval</span>
-          </li>
-          <li>
-            <a class="name" href="mermaid-jira.html">Mermaid Live Preview for Jira</a>
-            <span class="what">Mermaid diagrams on a Jira work item, saved on the work item itself.</span>
-            <span class="where">Waiting for approval</span>
-          </li>
-          <li>
-            <a class="name" href="email-check.html">Email check</a>
-            <span class="what">Check a .msg or .eml file or pasted headers for phishing, in your browser.</span>
-            <span class="where">Free on this site</span>
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- Guides -->
-    <section class="band band-tint" id="guides" style="scroll-margin-top: 4rem">
+    <section class="h-section h-guides" id="guides" style="scroll-margin-top: 4rem">
       <div class="wrap">
-        <div class="head reveal">
-          <h2>Guides</h2>
-        </div>
-        <div class="prose reveal" style="padding-block: 0">
-
-          <h3 id="guides-diagrams" style="margin-top: 0">Diagrams in Confluence</h3>
+        <h2>Guides</h2>
+        <p class="h-intro">Written for people who want diagrams and formulas in Confluence, with or without our apps.</p>
+        <div class="h-guide-cols">
+          <div>
+          <h3 id="guides-diagrams">Diagrams in Confluence</h3>
           <ul>
             <li><a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></li>
             <li><a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence: copy and paste</a></li>
             <li><a href="flowchart-confluence-cloud.html">How to make a flowchart in Confluence Cloud</a></li>
           </ul>
-
+          </div>
+          <div>
           <h3 id="guides-math">Math in Confluence</h3>
           <ul>
             <li><a href="latex-math-confluence-cloud.html">How to write LaTeX math in Confluence Cloud</a></li>
             <li><a href="equation-editor-confluence-cloud.html">Does Confluence have an equation editor? How to insert a formula</a></li>
           </ul>
+          </div>
+        </div>
+        <details class="h-more">
+          <summary>Guides for our other apps: email in Jira and Confluence, Q&amp;A, storage</summary>
+          <div class="prose">
           <h3 id="guides-jira">Email in Jira and Jira Service Management</h3>
           <ul>
             <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml email attachments in Jira</a></li>
@@ -314,12 +281,9 @@
           <ul>
             <li><a href="confluence-cloud-storage-full.html">Confluence Cloud storage is full? How to find what takes up space</a></li>
           </ul>
-        </div>
-
-        <p class="home-foot-note">
-          <span>Screens on this site come from the running products.</span>
-          <a href="support.html">Support, answered by the person who wrote the code</a>
-        </p>
+          </div>
+        </details>
+        <p class="h-more-apps">Looking for MailView, AskSpace or Live Countdown? <a href="atlassian.html">See all Dortus apps</a>.</p>
       </div>
     </section>
 
@@ -331,23 +295,19 @@
 <div>
 <h2>Apps</h2>
 <ul>
-<li><a href="mailview.html">MailView for Jira</a></li>
-<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
 <li><a href="math.html">Math for Confluence</a></li>
-<li><a href="askspace.html">AskSpace</a></li>
 <li><a href="atlassian.html">All apps</a></li>
 </ul>
 </div>
 <div>
 <h2>Guides</h2>
 <ul>
-<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
-<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
-<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
-<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
 <li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
-<li><a href="/#guides">All guides</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
 </ul>
 </div>
 <div>

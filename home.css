@@ -400,3 +400,141 @@ body.home .btn-primary:hover {
   display: block;
   min-height: 1.6em;
 }
+
+/* ---------------------------------------------------- brand, round 2 */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
+body.home {
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --display: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  font-family: var(--sans);
+}
+
+body.home .brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 1.2rem;
+}
+
+body.home .brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  background: url("assets/dortus-mark.svg") center / contain no-repeat;
+}
+
+body.home .brand-mark::before {
+  content: none;
+}
+
+body.home .site-header {
+  background: #f5f4ff;
+  border-bottom: 1px solid #ddd8fb;
+}
+
+/* Hero sits on lavender graph paper; the specimen is the white sheet on it. */
+.h-hero {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#e6e2fc 1px, transparent 1px),
+    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 1px solid #ddd8fb;
+}
+
+.h-hero h1,
+.h-section > .wrap > h2,
+.h-editor h3,
+.h-promise dt {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.h-hero h1 {
+  line-height: 1.06;
+}
+
+.h-specimen {
+  background-color: #ffffff;
+  background-image: none;
+  border-color: #ddd8fb;
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
+
+.h-guides h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.h-guide-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+}
+
+.h-guide-cols ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  line-height: 1.45;
+}
+
+.h-guides a {
+  color: var(--h-violet-deep);
+}
+
+.h-more {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--h-grid);
+  padding-top: 1.2rem;
+}
+
+.h-more summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--h-ink-2);
+}
+
+.h-more .prose {
+  padding-top: 1rem;
+}
+
+.h-more-apps {
+  margin: 1.6rem 0 0;
+  color: var(--h-ink-2);
+}
+
+@media (max-width: 860px) {
+  .h-guide-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+body.home .site-footer {
+  background: var(--h-ink);
+}
+
+body.home .site-footer h2 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
