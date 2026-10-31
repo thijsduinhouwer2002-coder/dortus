@@ -1744,8 +1744,8 @@ body:not([data-world="shopify"]) .world-hero,
 body:not([data-world="shopify"]) .world-hero-blue {
   background-color: #f5f4ff;
   background-image:
-    linear-gradient(#e6e2fc 1px, transparent 1px),
-    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
   background-size: 24px 24px;
   color: var(--ink);
   border-bottom: 1px solid var(--lavender-line);

@@ -391,8 +391,8 @@ body.home .btn-primary:hover {
 .h-hero {
   background-color: #f5f4ff;
   background-image:
-    linear-gradient(#e6e2fc 1px, transparent 1px),
-    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
   background-size: 24px 24px;
   border-bottom: 1px solid #ddd8fb;
 }
@@ -478,8 +478,8 @@ body.home {
 .h-paper {
   background-color: #f5f4ff;
   background-image:
-    linear-gradient(#e6e2fc 1px, transparent 1px),
-    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -506,4 +506,21 @@ body.home {
 
 .h-hero {
   border-bottom: 1px solid #ddd8fb;
+}
+
+/* Tighter rhythm: less empty space between blocks. */
+.h-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.h-editor + .h-editor {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.h-section > .wrap > .h-intro {
+  margin-bottom: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.h-hero {
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(2.5rem, 4vw, 3.25rem);
 }
