@@ -1736,3 +1736,80 @@ body[data-world="shopify"] .site-footer {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* Brand v2: every app hero is the same lavender graph paper as the home page.
+   Mermaid and Math get their own drawing on the paper; the other apps get
+   the plain sheet. */
+body:not([data-world="shopify"]) .world-hero,
+body:not([data-world="shopify"]) .world-hero-blue {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#e6e2fc 1px, transparent 1px),
+    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--lavender-line);
+}
+
+body:not([data-world="shopify"]) .world-hero::before {
+  background: none;
+}
+
+body:not([data-world="shopify"]) .world-hero-math::before {
+  background: url("assets/paper-math.svg") no-repeat right 4vw center / min(42vw, 540px) auto;
+  opacity: 0.6;
+}
+
+body:not([data-world="shopify"]) .world-hero .lede {
+  color: #2c3850;
+}
+
+body:not([data-world="shopify"]) .world-hero .small {
+  color: var(--ink-2);
+}
+
+body:not([data-world="shopify"]) .world-hero .eyebrow {
+  color: var(--violet-deep);
+}
+
+body:not([data-world="shopify"]) .eyebrow {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-light {
+  background: var(--ink);
+  color: #fff;
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-light:hover {
+  background: var(--violet-deep);
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-line {
+  border-color: var(--lavender-line);
+  background: #fff;
+  color: var(--ink);
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-line:hover {
+  border-color: var(--violet);
+  background: #fff;
+}
+
+body:not([data-world="shopify"]) .world-hero .status {
+  background: #fff;
+  border-color: var(--lavender-line);
+  color: var(--ink-2);
+}
+
+body:not([data-world="shopify"]) .world-hero .status::before {
+  background: var(--violet);
+}
+
+body:not([data-world="shopify"]) .world-hero .frame {
+  border-color: var(--lavender-line);
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
