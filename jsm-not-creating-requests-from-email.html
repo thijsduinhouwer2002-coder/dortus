@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#13213a" />
 <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <meta property="og:title" content="Jira Service Management not creating requests from email: a checklist" />
 <meta property="og:description" content="Emails that never become requests in Jira Service Management Cloud: what to check, in order, with Atlassian's documentation for each step." />
 <meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
@@ -68,7 +69,7 @@
 
 <main id="main">
 
-<section class="band">
+<section class="page-head guide-head">
 <div class="wrap">
 <div class="head">
 <p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Email channel</p>
@@ -77,6 +78,11 @@
 A customer says they emailed the service desk, and no request shows up. This page goes through the usual causes in Jira Service Management Cloud, in the order worth checking, with a link to Atlassian's documentation for each. Atlassian's newer screens say space where older ones say project; the menus are the same.
 </p>
 </div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
 <div class="prose">
 <h3 id="log">Start with the email log</h3>
 <p>Every email Jira Service Management fetches gets a line in the processing log, with a status: New request, New comment, Failed or Rejected. For Failed and Rejected, the Details column says why (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/about-email-logs-in-jira-service-management/" rel="noopener noreferrer">About email logs in Jira Service Management</a>). As a project admin, go to Channels &amp; self service, then Email, select View logs for the account and choose Processing log. You can search by sender, subject or work item key, and download the raw message as an .eml file (Atlassian: <a href="https://support.atlassian.com/jira-service-management-cloud/docs/view-the-email-processing-and-connectivity-logs/" rel="noopener noreferrer">View the email processing and connectivity logs</a>).</p>
@@ -176,7 +182,6 @@ A customer says they emailed the service desk, and no request shows up. This pag
 <ul>
 <li><a href="support.html">Support</a></li>
 <li><a href="security.html">Security</a></li>
-<li><a href="partners.html">For Solution Partners</a></li>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of service</a></li>
 <li><a href="email-check.html">Email check</a></li>
