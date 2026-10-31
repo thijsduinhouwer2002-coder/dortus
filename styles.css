@@ -1813,3 +1813,13 @@ body:not([data-world="shopify"]) .world-hero .frame {
   border-color: var(--lavender-line);
   box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
 }
+
+/* Dark bands are navy ink, like the footer, not violet. */
+body:not([data-world="shopify"]) .band-deep {
+  background: var(--ink);
+}
+
+body:not([data-world="shopify"]) .facts dt {
+  text-transform: none;
+  letter-spacing: 0;
+}
