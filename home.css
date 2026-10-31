@@ -4,22 +4,6 @@
    body.home so the rest of the site keeps its look.
    ========================================================================== */
 
-@font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
-}
-
 body.home {
   /* Paper, ink and the lavender of a Mermaid node, so the screenshots belong */
   --h-paper: #ffffff;
@@ -403,50 +387,6 @@ body.home .btn-primary:hover {
 
 /* ---------------------------------------------------- brand, round 2 */
 
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
-}
-
-body.home {
-  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --display: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  font-family: var(--sans);
-}
-
-body.home .brand {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-size: 1.2rem;
-}
-
-body.home .brand-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 0;
-  background: url("assets/dortus-mark.svg") center / contain no-repeat;
-}
-
-body.home .brand-mark::before {
-  content: none;
-}
-
-body.home .site-header {
-  background: #f5f4ff;
-  border-bottom: 1px solid #ddd8fb;
-}
-
 /* Hero sits on lavender graph paper; the specimen is the white sheet on it. */
 .h-hero {
   background-color: #f5f4ff;
@@ -525,18 +465,6 @@ body.home .site-header {
   .h-guide-cols {
     grid-template-columns: minmax(0, 1fr);
   }
-}
-
-body.home .site-footer {
-  background: var(--h-ink);
-}
-
-body.home .site-footer h2 {
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Graph paper wherever the product is shown (hero and the editors);
