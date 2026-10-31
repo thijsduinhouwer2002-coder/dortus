@@ -528,3 +528,10 @@ body.home {
 .h-about .h-intro {
   margin-bottom: 1.2rem;
 }
+
+.h-formula {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  color: var(--h-ink);
+}
