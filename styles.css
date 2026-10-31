@@ -1617,3 +1617,209 @@ div.door:hover .door-peek {
 
 /* 22 okt 2026: taalwissel-regel onder de h1 van vertaalde gidsen */
 .lang-note { font-size: 0.9rem; color: var(--muted, #5e6c84); margin: 0.25rem 0 1rem; }
+
+/* ==========================================================================
+   Brand v2 (31 Oct 2026): the D-as-connector logo, IBM Plex, navy ink and
+   Mermaid lavender. Applies to every page except the Shopify world (Arrears).
+   ========================================================================== */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+
+:root {
+  --ink: #13213a;
+  --ink-2: #34405a;
+  --ink-3: #5a6680;
+  --violet: #5847d4;
+  --violet-deep: #3f30b0;
+  --lavender: #ececff;
+  --lavender-line: #ddd8fb;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --display: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+body[data-world="atlassian"] {
+  --brand: var(--ink);
+  --brand-deep: var(--violet-deep);
+  --brand-dark: #0b1528;
+  --brand-tint: #f5f4ff;
+  --brand-text: var(--violet-deep);
+}
+
+body:not([data-world="shopify"]) h1,
+body:not([data-world="shopify"]) h2,
+body:not([data-world="shopify"]) h3,
+body:not([data-world="shopify"]) h4,
+body:not([data-world="shopify"]) .footer-brand,
+body:not([data-world="shopify"]) .plan-price {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+body:not([data-world="shopify"]) h1 {
+  line-height: 1.08;
+}
+
+body:not([data-world="shopify"]) .brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 1.2rem;
+}
+
+body:not([data-world="shopify"]) .brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  background: url("assets/dortus-mark.svg") center / contain no-repeat;
+}
+
+body:not([data-world="shopify"]) .brand-mark::before {
+  content: none;
+}
+
+body:not([data-world="shopify"]) .site-header {
+  background: #f5f4ff;
+  border-bottom: 1px solid var(--lavender-line);
+}
+
+body:not([data-world="shopify"]) .world-hero-blue,
+body:not([data-world="shopify"]) .door-atlassian {
+  background: var(--ink);
+}
+
+body:not([data-world="shopify"]) .door-atlassian .door-enter {
+  color: var(--ink);
+}
+
+.site-footer {
+  background: var(--ink);
+}
+
+body[data-world="shopify"] .site-footer {
+  background: #15181c;
+}
+
+.site-footer h2 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Brand v2: every app hero is the same lavender graph paper as the home page.
+   Mermaid and Math get their own drawing on the paper; the other apps get
+   the plain sheet. */
+body:not([data-world="shopify"]) .world-hero,
+body:not([data-world="shopify"]) .world-hero-blue {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--lavender-line);
+}
+
+body:not([data-world="shopify"]) .world-hero::before {
+  background: none;
+}
+
+body:not([data-world="shopify"]) .world-hero-math::before {
+  background: url("assets/paper-math.svg") no-repeat right 4vw center / min(42vw, 540px) auto;
+  opacity: 0.6;
+}
+
+body:not([data-world="shopify"]) .world-hero .lede {
+  color: #2c3850;
+}
+
+body:not([data-world="shopify"]) .world-hero .small {
+  color: var(--ink-2);
+}
+
+body:not([data-world="shopify"]) .world-hero .eyebrow {
+  color: var(--violet-deep);
+}
+
+body:not([data-world="shopify"]) .eyebrow {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-light {
+  background: var(--ink);
+  color: #fff;
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-light:hover {
+  background: var(--violet-deep);
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-line {
+  border-color: var(--lavender-line);
+  background: #fff;
+  color: var(--ink);
+}
+
+body:not([data-world="shopify"]) .world-hero .btn-line:hover {
+  border-color: var(--violet);
+  background: #fff;
+}
+
+body:not([data-world="shopify"]) .world-hero .status {
+  background: #fff;
+  border-color: var(--lavender-line);
+  color: var(--ink-2);
+}
+
+body:not([data-world="shopify"]) .world-hero .status::before {
+  background: var(--violet);
+}
+
+body:not([data-world="shopify"]) .world-hero .frame {
+  border-color: var(--lavender-line);
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
+
+/* Dark bands are navy ink, like the footer, not violet. */
+body:not([data-world="shopify"]) .band-deep {
+  background: var(--ink);
+}
+
+body:not([data-world="shopify"]) .facts dt {
+  text-transform: none;
+  letter-spacing: 0;
+}

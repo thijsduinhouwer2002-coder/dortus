@@ -1,0 +1,530 @@
+/* ==========================================================================
+   Home page: "editors for technical teams in Confluence".
+   Loaded only by index.html, after styles.css. Everything is scoped to
+   body.home so the rest of the site keeps its look.
+   ========================================================================== */
+
+body.home {
+  /* Paper, ink and the lavender of a Mermaid node, so the screenshots belong */
+  --h-paper: #ffffff;
+  --h-grid: #e4e8f0;
+  --h-ink: #13213a;
+  --h-ink-2: #4b5870;
+  --h-violet: #5847d4;
+  --h-violet-deep: #3f30b0;
+  --h-lavender: #ececff;
+  --h-lavender-line: #9b8cf2;
+  --h-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  background: var(--h-paper);
+  color: var(--h-ink);
+}
+
+body.home .btn-primary {
+  background: var(--h-ink);
+}
+
+body.home .btn-primary:hover {
+  background: var(--h-violet-deep);
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.h-hero {
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.h-hero h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  max-width: 27ch;
+  margin: 0;
+  color: var(--h-ink);
+}
+
+.h-lede {
+  font-size: clamp(1.06rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--h-ink-2);
+  max-width: 58ch;
+  margin: 1.4rem 0 0;
+}
+
+.h-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.9rem;
+}
+
+/* The specimen: what you type on the left, what Confluence shows on the right,
+   drawn on graph paper. This is the one loud thing on the page. */
+.h-specimen {
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  border: 1px solid var(--h-grid);
+  border-radius: 6px;
+  background-color: #fbfcfe;
+  background-image:
+    linear-gradient(var(--h-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--h-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+  overflow: hidden;
+}
+
+.h-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+}
+
+.h-row + .h-row {
+  border-top: 1px solid var(--h-grid);
+}
+
+.h-src,
+.h-out {
+  padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.1rem, 3vw, 2.5rem);
+}
+
+.h-out {
+  border-left: 1px solid var(--h-grid);
+  display: grid;
+  place-items: center;
+  min-height: 11rem;
+}
+
+.h-cap {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--h-ink-2);
+  margin-bottom: 0.9rem;
+}
+
+.h-code {
+  margin: 0;
+  font-family: var(--h-mono);
+  font-weight: 500;
+  font-size: clamp(0.88rem, 1.35vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--h-ink);
+  white-space: pre;
+  overflow-x: auto;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.h-code .k {
+  color: var(--h-violet);
+}
+
+.h-code .c {
+  color: var(--h-ink-2);
+}
+
+.h-flow {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+}
+
+.h-math {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--h-ink);
+}
+
+.h-math math {
+  font-size: 1em;
+}
+
+/* One orchestrated moment on load: the source appears line by line, then the
+   result. Nothing else on the page moves on its own. */
+@media (prefers-reduced-motion: no-preference) {
+  .h-code .l {
+    animation: h-line 0.28s ease-out both;
+  }
+  .h-out > * {
+    animation: h-show 0.5s ease-out both;
+  }
+  .h-row:nth-child(1) .l:nth-child(1) { animation-delay: 0.15s; }
+  .h-row:nth-child(1) .l:nth-child(2) { animation-delay: 0.35s; }
+  .h-row:nth-child(1) .l:nth-child(3) { animation-delay: 0.55s; }
+  .h-row:nth-child(1) .l:nth-child(4) { animation-delay: 0.75s; }
+  .h-row:nth-child(1) .l:nth-child(5) { animation-delay: 0.95s; }
+  .h-row:nth-child(1) .h-out > * { animation-delay: 1.25s; }
+  .h-row:nth-child(2) .l:nth-child(1) { animation-delay: 1.65s; }
+  .h-row:nth-child(2) .h-out > * { animation-delay: 2s; }
+}
+
+@keyframes h-line {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes h-show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* -------------------------------------------------------------- editors */
+
+.h-section {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.h-section + .h-section {
+  border-top: 1px solid var(--h-grid);
+}
+
+.h-section > .wrap > h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 0.6rem;
+  max-width: 24ch;
+}
+
+.h-section > .wrap > .h-intro {
+  color: var(--h-ink-2);
+  max-width: 60ch;
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  line-height: 1.55;
+}
+
+.h-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.h-editor + .h-editor {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.h-editor.is-flipped {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
+}
+
+.h-editor.is-flipped .h-shot {
+  order: 2;
+}
+
+.h-shot {
+  margin: 0;
+  border: 1px solid var(--h-grid);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 0 var(--h-grid), 0 18px 40px -28px rgba(19, 33, 58, 0.45);
+}
+
+.h-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.h-editor h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.7rem;
+}
+
+.h-editor p {
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+
+.h-facts {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+}
+
+.h-facts li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin: 0.45rem 0;
+  line-height: 1.45;
+  color: var(--h-ink-2);
+}
+
+.h-facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--h-lavender-line);
+  background: var(--h-lavender);
+}
+
+.h-status {
+  font-size: 0.92rem;
+  color: var(--h-ink-2);
+  margin-bottom: 1.1rem;
+}
+
+.h-status strong {
+  color: var(--h-ink);
+}
+
+.h-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  align-items: center;
+}
+
+.h-textlink {
+  font-weight: 600;
+  color: var(--h-violet-deep);
+}
+
+/* ------------------------------------------------------------- promise */
+
+.h-promise {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.h-promise dt {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.45rem;
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--h-ink);
+}
+
+.h-promise dd {
+  margin: 0;
+  color: var(--h-ink-2);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------- others */
+
+.h-others {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--h-grid);
+}
+
+.h-others li {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) auto;
+  gap: 0.4rem 2rem;
+  align-items: baseline;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--h-grid);
+}
+
+.h-others a.name {
+  font-weight: 700;
+  color: var(--h-ink);
+  text-decoration: none;
+}
+
+.h-others a.name:hover {
+  color: var(--h-violet-deep);
+  text-decoration: underline;
+}
+
+.h-others .what {
+  color: var(--h-ink-2);
+  line-height: 1.45;
+}
+
+.h-others .where {
+  font-size: 0.88rem;
+  color: var(--h-ink-2);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- mobile */
+
+@media (max-width: 860px) {
+  .h-row,
+  .h-editor,
+  .h-editor.is-flipped,
+  .h-promise {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .h-out {
+    border-left: 0;
+    border-top: 1px dashed var(--h-grid);
+  }
+  .h-editor.is-flipped .h-shot {
+    order: 0;
+  }
+  .h-others li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .h-others .where {
+    white-space: normal;
+  }
+}
+
+.h-code .l {
+  display: block;
+  min-height: 1.6em;
+}
+
+/* ---------------------------------------------------- brand, round 2 */
+
+/* Hero sits on lavender graph paper; the specimen is the white sheet on it. */
+.h-hero {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 1px solid #ddd8fb;
+}
+
+.h-hero h1,
+.h-section > .wrap > h2,
+.h-editor h3,
+.h-promise dt {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.h-hero h1 {
+  line-height: 1.06;
+}
+
+.h-specimen {
+  background-color: #ffffff;
+  background-image: none;
+  border-color: #ddd8fb;
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
+
+.h-guides h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.h-guide-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+}
+
+.h-guide-cols ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  line-height: 1.45;
+}
+
+.h-guides a {
+  color: var(--h-violet-deep);
+}
+
+.h-more {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--h-grid);
+  padding-top: 1.2rem;
+}
+
+.h-more summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--h-ink-2);
+}
+
+.h-more .prose {
+  padding-top: 1rem;
+}
+
+.h-more-apps {
+  margin: 1.6rem 0 0;
+  color: var(--h-ink-2);
+}
+
+@media (max-width: 860px) {
+  .h-guide-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Graph paper wherever the product is shown (hero and the editors);
+   plain white where people read. Darker secondary text so it holds up
+   on the lavender. */
+body.home {
+  --h-ink-2: #34405a;
+}
+
+.h-hero,
+.h-paper {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#ecebfd 1px, transparent 1px),
+    linear-gradient(90deg, #ecebfd 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.h-hero {
+  border-bottom: 0;
+}
+
+.h-paper {
+  border-bottom: 1px solid #ddd8fb;
+}
+
+.h-paper + .h-section {
+  border-top: 0;
+}
+
+.h-paper .h-shot {
+  border-color: #ddd8fb;
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
+
+.h-lede {
+  color: #2c3850;
+}
+
+.h-hero {
+  border-bottom: 1px solid #ddd8fb;
+}
+
+/* Tighter rhythm: less empty space between blocks. */
+.h-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.h-editor + .h-editor {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.h-section > .wrap > .h-intro {
+  margin-bottom: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.h-hero {
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(2.5rem, 4vw, 3.25rem);
+}
+
+.h-about .h-intro {
+  margin-bottom: 1.2rem;
+}

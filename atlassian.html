@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apps for Confluence and Jira Cloud · Dortus</title>
-  <meta name="description" content="All Dortus apps for Confluence and Jira Cloud: MailView for Jira, MailView for Confluence, Mermaid Editor for Confluence and AskSpace, plus Live Countdown and Mermaid Live Preview for Jira, which are waiting for Marketplace approval. They run on Atlassian, and Dortus has no servers for them." />
-  <meta name="theme-color" content="#0052cc" />
-  <link rel="icon" href="assets/app-icon.png" />
-  <meta property="og:title" content="Dortus apps for Confluence and Jira Cloud" />
-  <meta property="og:description" content="MailView for Jira, MailView for Confluence, Mermaid Editor for Confluence and AskSpace. Small, focused apps that run on Atlassian." />
+  <title>All apps · Dortus</title>
+  <meta name="description" content="All Dortus apps. The editors for Confluence Cloud: Mermaid Editor and Math for Confluence. Plus earlier apps such as MailView and AskSpace. Every app runs on Atlassian Forge, and Dortus has no servers for them." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <meta property="og:title" content="All Dortus apps" />
+  <meta property="og:description" content="Mermaid Editor and Math for Confluence, plus earlier Dortus apps. Everything runs on Atlassian." />
   <meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
   <meta property="og:image:alt" content="MailView in Jira: an email that asks to pay an invoice to new bank details, with a Likely phishing notice" />
   <meta property="og:type" content="website" />
@@ -38,189 +39,103 @@
     <section class="world-hero world-hero-blue">
       <div class="wrap split">
         <div>
-          <p class="eyebrow enter">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-              <path d="M5 4h9l5 5v11H5V4Z" stroke-linejoin="round" />
-              <path d="M14 4v5h5" stroke-linejoin="round" />
-              <path d="M9 13h6M9 16.5h4" stroke-linecap="round" />
-            </svg>
-            Dortus apps
-          </p>
-          <h1 class="enter enter-1">Apps for Confluence and Jira Cloud</h1>
+          <h1 class="enter enter-1">All Dortus apps</h1>
           <p class="lede enter enter-2">
-            Each one does one job. They all run on Atlassian Forge. Dortus has no servers for
-            them and receives none of your content.
+            Dortus builds editors for Confluence Cloud: write it as text, see it on the page. A few
+            older apps are listed further down for the sites that use them. Every app runs on
+            Atlassian Forge, and Dortus has no servers for them.
           </p>
           <div class="btns enter enter-2">
-            <a class="btn btn-light" href="#apps">Pick an app <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-line" href="support.html">Support</a>
+            <a class="btn btn-light" href="#editors">The editors <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="#other-apps">Other apps</a>
           </div>
-          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Runs on Atlassian, no Dortus server</span></p>
         </div>
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <picture>
-              <source media="(max-width: 560px)" srcset="assets/mailview-message-narrow.webp" width="800" height="1861" />
-              <img src="assets/mailview-message.webp" alt="MailView on a Jira work item, showing an email that asks to pay invoice 2291 to new bank details. At the top: All emails, Download the original and Open in full view. Then From, To, Date and a Reply-To marked different domain than From; the tabs Message, Details and Original; a Likely phishing notice with a failed DMARC check, a failed SPF check and a link that goes to another domain; the email itself; and the attached Invoice-2291.pdf." width="1280" height="1848" />
-            </picture>
+            <img src="assets/mermaid-editor.webp" width="1075" height="690" alt="Mermaid Editor for Confluence while editing a page: flowchart code on the left, the drawn flowchart on the right." />
           </span>
-          <figcaption><strong>MailView.</strong> The email as it was sent, read on the work item or page where people already work.</figcaption>
+          <figcaption><strong>Mermaid Editor.</strong> Code on the left, the diagram on the right, drawn as you type.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- All apps -->
-    <section class="band band-tint" id="apps" style="scroll-margin-top: 4rem">
+    <!-- Editors -->
+    <section class="band" id="editors" style="scroll-margin-top: 4rem">
       <div class="wrap">
         <div class="head reveal">
-          <h2>The apps</h2>
+          <h2>The editors</h2>
           <p class="lede">
-            Four apps are on the Atlassian Marketplace. Live Countdown and Mermaid Live Preview for
-            Jira are waiting for Atlassian's approval. Each app is a separate install.
+            Type Mermaid or LaTeX, or paste it from ChatGPT or Claude, and the result draws as you
+            type. More editors are on the way.
           </p>
         </div>
 
-        <div class="cols cols-2" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr))">
-          <div class="card reveal">
-            <h3>MailView for Jira</h3>
-            <p>
-              Reads .msg and .eml email attachments on the Jira work item, also in the Jira Service
-              Management agent view, with a plain-English phishing check.
-            </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4078695191">Available on the Atlassian Marketplace</a></p>
-            <p class="btns">
-              <a class="btn btn-primary" href="mailview.html">About MailView for Jira <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal reveal-1">
-            <h3>MailView for Confluence</h3>
-            <p>
-              Shows .msg and .eml email attachments on the Confluence page, keeps them readable in
-              PDF and Word exports, and tells you when an email looks like phishing.
-            </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/218321273">Available on the Atlassian Marketplace</a></p>
-            <p class="btns">
-              <a class="btn btn-primary" href="mailview-confluence.html">About MailView for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
+        <div class="cols cols-2">
           <div class="card reveal">
             <h3>Mermaid Editor for Confluence</h3>
             <p>
-              Type a Mermaid diagram in a Confluence page and watch it draw next to the text, with
-              the source kept editable in the page.
+              Flowcharts, sequence diagrams, Gantt charts, mind maps and more, from a few lines of
+              text. The source stays editable in the page.
             </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4235692896">Available on the Atlassian Marketplace</a></p>
+            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4235692896">Free on the Atlassian Marketplace</a></p>
             <p class="btns">
-              <a class="btn btn-primary" href="mermaid.html">About Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal reveal-1">
-            <h3>AskSpace</h3>
-            <p>
-              Gives each Confluence space its own questions and answers, with votes, one best answer
-              and separate permissions for asking and answering.
-            </p>
-            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/822331687/askspace-questions-answers-for-confluence">Available on the Atlassian Marketplace</a></p>
-            <p class="btns">
-              <a class="btn btn-primary" href="askspace.html">About AskSpace <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Live Countdown for Confluence</h3>
-            <p>
-              Counts down to a release, a launch, an event or a deadline on a Confluence page, in
-              the right time zone.
-            </p>
-            <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, waiting for approval</span></p>
-            <p class="btns">
-              <a class="btn btn-line" href="countdown.html">About Live Countdown <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get Mermaid Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-line" href="mermaid.html">How it works</a>
             </p>
           </div>
 
           <div class="card reveal reveal-1">
             <h3>Math for Confluence</h3>
             <p>
-              LaTeX equations on a Confluence page, drawn as you type. On their own line or inside
-              a sentence; nothing leaves Atlassian.
+              LaTeX equations on their own line or inside a sentence, drawn as you type. A typo
+              shows its line and column.
             </p>
             <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, waiting for approval</span></p>
             <p class="btns">
-              <a class="btn btn-line" href="math.html">About Math for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            </p>
-          </div>
-
-          <div class="card reveal reveal-1">
-            <h3>Mermaid Live Preview for Jira</h3>
-            <p>
-              Mermaid diagrams on a Jira work item, with a live preview as you type. The diagrams
-              are saved on the work item itself.
-            </p>
-            <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, waiting for approval</span></p>
-            <p class="btns">
-              <a class="btn btn-line" href="mermaid-jira.html">About Mermaid Live Preview for Jira <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-line" href="math.html">How it works <span class="arrow" aria-hidden="true">&rarr;</span></a>
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="reveal" style="margin-top: 2.4rem">
-          <h3 style="margin-bottom: 0.9rem">Guides</h3>
-          <ul class="rows">
-            <li>
-              <b>Jira</b>
-              <p><a href="open-msg-eml-in-jira.html">How to open .msg and .eml attachments in Jira</a></p>
-            </li>
-            <li>
-              <b>Jira</b>
-              <p><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item</a></p>
-            </li>
-            <li>
-              <b>Jira Service Management</b>
-              <p><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></p>
-            </li>
-            <li>
-              <b>Jira Service Management</b>
-              <p><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml attachments in Confluence</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="flowchart-confluence-cloud.html">How to make a flowchart in Confluence Cloud</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="email-to-confluence-cloud.html">Can you send an email to Confluence Cloud?</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="forum-discussion-board-confluence-cloud.html">Can you make a forum or discussion board in Confluence Cloud?</a></p>
-            </li>
-            <li>
-              <b>Confluence</b>
-              <p><a href="equation-editor-confluence-cloud.html">Does Confluence have an equation editor?</a></p>
-            </li>
-            <li>
-              <b>Jira Service Management</b>
-              <p><a href="read-email-headers-phishing.html">How to read email headers to spot phishing</a></p>
-            </li>
-          </ul>
-          <p style="margin-top: 1.1rem"><a href="/#guides">All guides</a></p>
+    <!-- Other apps -->
+    <section class="band band-tint" id="other-apps" style="scroll-margin-top: 4rem">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Other apps</h2>
+          <p class="lede">
+            Earlier Dortus apps. They keep working for the sites that use them, and questions about
+            them go to the same support address.
+          </p>
         </div>
+        <ul class="rows reveal">
+          <li>
+            <b><a href="mailview.html">MailView for Jira</a></b>
+            <p>Reads .msg and .eml email attachments on a Jira work item, with a plain-English phishing check.</p>
+          </li>
+          <li>
+            <b><a href="mailview-confluence.html">MailView for Confluence</a></b>
+            <p>Shows .msg and .eml email attachments on a Confluence page, also in PDF and Word exports.</p>
+          </li>
+          <li>
+            <b><a href="askspace.html">AskSpace</a></b>
+            <p>Questions and answers for each Confluence space, with votes and one best answer.</p>
+          </li>
+          <li>
+            <b><a href="countdown.html">Live Countdown for Confluence</a></b>
+            <p>Counts down to a release, launch or deadline on a Confluence page. Waiting for Atlassian's approval.</p>
+          </li>
+          <li>
+            <b><a href="mermaid-jira.html">Mermaid Live Preview for Jira</a></b>
+            <p>Mermaid diagrams on a Jira work item. Waiting for Atlassian's approval.</p>
+          </li>
+          <li>
+            <b><a href="email-check.html">Email check</a></b>
+            <p>Check a .msg or .eml file or pasted headers for phishing, in your browser, on this site.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -230,10 +145,10 @@
         <div class="head reveal">
           <h2>Your content stays with Atlassian</h2>
           <p class="lede">
-            All Dortus apps run on Atlassian Forge. Dortus operates no server for them and receives
-            no app content. MailView for Jira, MailView for Confluence and Live Countdown store
-            nothing. AskSpace and Mermaid Editor for Confluence keep their data in Forge app storage in your Atlassian site. MailView for Jira
-            also counts how often it is used, as three numbers per site, through Atlassian.
+            Every Dortus app runs on Atlassian Forge. Dortus operates no server for them and
+            receives none of your content. Where an app keeps data, such as version history, it
+            stays in Forge app storage in your Atlassian site. The privacy policy lists what each
+            app stores.
           </p>
         </div>
         <dl class="facts facts-4 reveal">
@@ -284,21 +199,19 @@
 <div>
 <h2>Apps</h2>
 <ul>
-<li><a href="mailview.html">MailView for Jira</a></li>
-<li><a href="mailview-confluence.html">MailView for Confluence</a></li>
 <li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
-<li><a href="askspace.html">AskSpace</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
 <li><a href="atlassian.html">All apps</a></li>
 </ul>
 </div>
 <div>
 <h2>Guides</h2>
 <ul>
-<li><a href="open-msg-eml-in-jira.html">Open .msg and .eml attachments in Jira</a></li>
-<li><a href="phishing-reports-jira-service-management.html">Phishing reports in Jira Service Management</a></li>
-<li><a href="open-msg-eml-in-confluence.html">Open .msg and .eml attachments in Confluence</a></li>
-<li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
 <li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
 <li><a href="/#guides">All guides</a></li>
 </ul>
 </div>
