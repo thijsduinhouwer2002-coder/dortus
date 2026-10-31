@@ -109,7 +109,11 @@ issue properties, and has no app storage. Math for Confluence saves the formula 
 on the Confluence page, and keeps version history in <strong>Forge app storage in your
 Atlassian site</strong>. Live Countdown saves its settings in the macro on the Confluence page
 and has no app storage. MailView for Jira and MailView for Confluence have
-no storage at all.
+no app storage. To ask you once whether MailView works well for you, they keep one small entry in
+your browser's local storage, for the app's frame only: how many emails you have read in MailView
+(up to three), when the first was, how often the question was shown, and whether you answered it.
+It holds no account ID, no email content, subject, sender or file name, and not which answer you
+gave. It never leaves your browser, and clearing your browser data removes it.
 <strong>We do not operate an application server for these apps, and app content is not
 sent to Dortus.</strong>
 </p>
@@ -132,6 +136,14 @@ where the app is installed, so we can see how often the app is used on your site
 what was in the emails.
 </p>
 <p>
+From version 1.13, MailView for Jira and MailView for Confluence also keep plain counters for that
+feedback question: emails read, the question shown, Yes, Not really, closed, and the review or
+support page opened. AskSpace keeps plain counters the same way: questions asked, answers posted,
+and the same feedback counters. Only the name of the counter and +1 leave the browser, to
+Atlassian's platform. Your site admins can turn custom metrics off for the app in Atlassian
+Administration.
+</p>
+<p>
 From version 1.2, Mermaid Editor for Confluence keeps plain counters the same way: how often a
 diagram is inserted, and how often the feedback question in the editor is shown, answered, closed,
 or leads to the review or support page. Only the name of the counter and +1 leave the browser, to
@@ -149,6 +161,7 @@ Administration.
 <li>Atlassian account identifiers, needed to show authors and enforce permissions</li>
 <li>Display names and avatar URLs provided by Atlassian APIs, so authors can be shown</li>
 <li>In-app notification records, for example that someone answered your question</li>
+<li>For the feedback question, per person: how many questions and answers they posted (up to three), when the first was, how often the question was shown, and whether they answered it; not which answer they gave</li>
 </ul>
 <p>
 AskSpace reads Confluence content only to import questions from Questions for Confluence,
@@ -336,7 +349,7 @@ stays in Forge storage for your site. Uninstall and deletion follow Atlassian's 
 rules for app storage.
 </li>
 <li>
-<strong>MailView</strong>: nothing is retained. Closing the work item is enough.
+<strong>MailView</strong>: nothing is retained by Dortus or in Atlassian. Closing the work item is enough. The feedback entry described in section 3.1 stays in your browser until you clear it.
 The same goes for MailView for Confluence: closing the page is enough.
 </li>
 <li>
