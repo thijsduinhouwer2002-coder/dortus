@@ -538,3 +538,40 @@ body.home .site-footer h2 {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* Graph paper wherever the product is shown (hero and the editors);
+   plain white where people read. Darker secondary text so it holds up
+   on the lavender. */
+body.home {
+  --h-ink-2: #34405a;
+}
+
+.h-hero,
+.h-paper {
+  background-color: #f5f4ff;
+  background-image:
+    linear-gradient(#e6e2fc 1px, transparent 1px),
+    linear-gradient(90deg, #e6e2fc 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.h-hero {
+  border-bottom: 0;
+}
+
+.h-paper {
+  border-bottom: 1px solid #ddd8fb;
+}
+
+.h-paper + .h-section {
+  border-top: 0;
+}
+
+.h-paper .h-shot {
+  border-color: #ddd8fb;
+  box-shadow: 0 24px 48px -32px rgba(63, 48, 176, 0.5);
+}
+
+.h-lede {
+  color: #2c3850;
+}
