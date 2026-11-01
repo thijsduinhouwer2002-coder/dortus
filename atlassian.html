@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>All apps · Dortus</title>
-  <meta name="description" content="All Dortus apps. The editors for Confluence Cloud: Mermaid Editor and Math for Confluence. Plus earlier apps such as MailView and AskSpace. Every app runs on Atlassian Forge, and Dortus has no servers for them." />
+  <meta name="description" content="All Dortus apps. The editors for Confluence Cloud: Mermaid Editor, PlantUML Editor, Markdown Live Editor and Math for Confluence. Plus earlier apps such as MailView and AskSpace. Every app runs on Atlassian Forge, and Dortus has no servers for them." />
   <meta name="theme-color" content="#13213a" />
   <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/app-icon.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta property="og:title" content="All Dortus apps" />
-  <meta property="og:description" content="Mermaid Editor and Math for Confluence, plus earlier Dortus apps. Everything runs on Atlassian." />
+  <meta property="og:description" content="Mermaid Editor, PlantUML Editor, Markdown Live Editor and Math for Confluence, plus earlier Dortus apps. Everything runs on Atlassian." />
   <meta property="og:image" content="https://dortus.com/assets/og-mailview.png" />
   <meta property="og:image:alt" content="MailView in Jira: an email that asks to pay an invoice to new bank details, with a Likely phishing notice" />
   <meta property="og:type" content="website" />
@@ -67,12 +67,12 @@
         <div class="head reveal">
           <h2>The editors</h2>
           <p class="lede">
-            Type Mermaid or LaTeX, or paste it from ChatGPT or Claude, and the result draws as you
-            type. More editors are on the way.
+            Type Mermaid, PlantUML, Markdown or LaTeX, or paste it from ChatGPT or Claude, and the
+            result draws as you type.
           </p>
         </div>
 
-        <div class="cols cols-2">
+        <div class="cols cols-2" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr))">
           <div class="card reveal">
             <h3>Mermaid Editor for Confluence</h3>
             <p>
@@ -87,6 +87,19 @@
           </div>
 
           <div class="card reveal reveal-1">
+            <h3>PlantUML Editor for Confluence</h3>
+            <p>
+              Sequence, class, activity, C4 and more, drawn as you type. No PlantUML server: the
+              diagram is drawn in the browser.
+            </p>
+            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/4172665310">Free on the Atlassian Marketplace</a></p>
+            <p class="btns">
+              <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4172665310">Get PlantUML Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-line" href="plantuml.html">How it works</a>
+            </p>
+          </div>
+
+          <div class="card reveal reveal-1">
             <h3>Math for Confluence</h3>
             <p>
               LaTeX equations on their own line or inside a sentence, drawn as you type. A typo
@@ -95,6 +108,19 @@
             <p style="margin: 1rem 0"><span class="status">Submitted to the Atlassian Marketplace, waiting for approval</span></p>
             <p class="btns">
               <a class="btn btn-line" href="math.html">How it works <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </p>
+          </div>
+
+          <div class="card reveal reveal-1">
+            <h3>Markdown Live Editor for Confluence</h3>
+            <p>
+              Paste Markdown from a README or an AI chat and see it formatted as you type. Tables,
+              task lists, code in colour and Mermaid diagrams.
+            </p>
+            <p style="margin: 1rem 0"><a class="status" href="https://marketplace.atlassian.com/apps/3649687838">Free on the Atlassian Marketplace</a></p>
+            <p class="btns">
+              <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/3649687838">Get Markdown Live Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-line" href="markdown.html">How it works</a>
             </p>
           </div>
         </div>
@@ -201,7 +227,9 @@
 <h2>Apps</h2>
 <ul>
 <li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="plantuml.html">PlantUML Editor for Confluence</a></li>
 <li><a href="math.html">Math for Confluence</a></li>
+<li><a href="markdown.html">Markdown Live Editor for Confluence</a></li>
 <li><a href="atlassian.html">All apps</a></li>
 </ul>
 </div>
@@ -211,6 +239,7 @@
 <li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
 <li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
 <li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="plantuml-confluence-cloud.html">PlantUML diagrams in Confluence Cloud</a></li>
 <li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
 <li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
 <li><a href="/#guides">All guides</a></li>

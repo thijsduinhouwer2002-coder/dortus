@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dortus.com/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/askspace.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mermaid.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/plantuml.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://dortus.com/plantuml-confluence-cloud.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://dortus.com/countdown.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mermaid-jira.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/markdown.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://dortus.com/mailview-vs-msg-eml-email-viewer.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://dortus.com/open-msg-eml-in-jira.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://dortus.com/open-msg-eml-in-confluence.html</loc><lastmod>2026-10-20</lastmod></url>
