@@ -6,8 +6,6 @@
 <title>How to add PlantUML diagrams to Confluence Cloud · Dortus</title>
 <meta name="description" content="Confluence Cloud does not draw PlantUML on its own. Three ways to get a PlantUML diagram on the page, what each one sends where, and how to use C4." />
 <meta name="theme-color" content="#13213a" />
-<!-- Not linked yet: goes live with the PlantUML Editor page (plantuml.html). -->
-<meta name="robots" content="noindex" />
 <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="assets/app-icon.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -77,7 +75,7 @@ You have PlantUML code: a sequence diagram from a design doc, a class diagram fr
 </ul>
 
 <h3 id="browser">Option 3: a macro that draws in the browser</h3>
-<p>Full disclosure: Dortus makes <a href="plantuml.html">PlantUML Editor for Confluence</a>. It is not on the Atlassian Marketplace yet. What it does:</p>
+<p>Full disclosure: Dortus makes <a href="plantuml.html">PlantUML Editor for Confluence</a> (<a href="https://marketplace.atlassian.com/apps/4172665310">on the Atlassian Marketplace</a>). What it does:</p>
 <ul>
 <li><strong>No PlantUML server.</strong> The PlantUML engine is inside the app and draws the diagram in the browser of the person viewing the page. The app does not connect to the internet.</li>
 <li><strong>Code and preview side by side.</strong> The preview redraws while you type. An error marks the line.</li>
@@ -118,6 +116,13 @@ Rel(api, db, "Reads and writes")
 
 <h3 id="support">Questions</h3>
 <p>Spotted something wrong on this page, or an option we missed? Email <a href="mailto:support@dortus.com?subject=PlantUML%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">PlantUML Editor for Confluence by Dortus</p>
+<h3>PlantUML in Confluence, without a PlantUML server</h3>
+<p>A Confluence macro with PlantUML code on the left and a live preview on the right. The diagram is drawn in the browser, C4 included. Runs on Atlassian Forge; nothing is sent to Dortus.</p>
+<p class="btns"><a class="btn btn-primary" href="plantuml.html">About PlantUML Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="https://marketplace.atlassian.com/apps/4172665310">Available on the Atlassian Marketplace</a>.</p>
+</div>
 <p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
 </div>
 </div>
@@ -131,6 +136,7 @@ Rel(api, db, "Reads and writes")
 <h2>Apps</h2>
 <ul>
 <li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="plantuml.html">PlantUML Editor for Confluence</a></li>
 <li><a href="math.html">Math for Confluence</a></li>
 <li><a href="atlassian.html">All apps</a></li>
 </ul>
@@ -141,6 +147,7 @@ Rel(api, db, "Reads and writes")
 <li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
 <li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
 <li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="plantuml-confluence-cloud.html">PlantUML diagrams in Confluence Cloud</a></li>
 <li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
 <li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
 <li><a href="/#guides">All guides</a></li>
