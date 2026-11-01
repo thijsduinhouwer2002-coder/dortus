@@ -1,0 +1,37 @@
+# Tells Bing (and the other IndexNow search engines: Yandex, Seznam, Naver)
+# which pages exist or changed, so new guides show up in Bing, which also
+# feeds ChatGPT search and Copilot. The key file 99b51feeb51a9a81cb709b26637cf03d.txt in the site root
+# proves we own dortus.com (https://www.indexnow.org/documentation).
+# Runs after a push to main that touches HTML or the sitemap, and by hand.
+name: indexnow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to publish
+        run: sleep 120
+      - name: Send the sitemap's URLs to IndexNow
+        run: |
+          python3 - <<'PY'
+          import json, re, urllib.request
+          key = "99b51feeb51a9a81cb709b26637cf03d"
+          urls = re.findall(r"<loc>(.*?)</loc>", open("sitemap.xml").read())
+          body = json.dumps({"host": "dortus.com", "key": key,
+                             "keyLocation": f"https://dortus.com/{key}.txt",
+                             "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req) as r:
+              print(r.status, len(urls), "URLs sent")
+          PY
