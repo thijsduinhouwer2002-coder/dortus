@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mind map in Confluence Cloud (free, with Mermaid) &middot; Dortus</title>
+<meta name="description" content="Confluence Cloud shows a pasted Mermaid mind map as plain code. How to draw it on the page with a free app, with a project mind map to copy and common mistakes." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Mind map in Confluence Cloud (free, with Mermaid)" />
+<meta property="og:description" content="Pasted Mermaid stays code in Confluence Cloud. Draw a mind map on the page with a free app: a project mind map to copy, how indentation works, and the usual mistakes." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/mind-map-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/mind-map-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mind map in Confluence Cloud (free, with Mermaid)",
+  "description": "Confluence Cloud shows a pasted Mermaid mind map as plain code. How to draw it on the page with a free app, with a project mind map to copy and common mistakes.",
+  "image": [
+    "https://dortus.com/assets/mermaid-examples/mindmap-project.png",
+    "https://dortus.com/assets/og-mermaid.png"
+  ],
+  "datePublished": "2026-11-02T09:00:00+00:00",
+  "dateModified": "2026-11-02T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/mind-map-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I make a mind map in Confluence Cloud without an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can draw one by hand on a Confluence whiteboard with shapes and connectors. As text, no: in our tests a pasted Mermaid mindmap block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws it on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a branch to a Mermaid mind map?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add a line under the topic it belongs to, indented two spaces more than that topic. Indent it the same as the other topics at that level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the shape of a node?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Give the node an id and put the text in brackets: id[text] for a square, id(text) for rounded, id((text)) for a circle, id{{text}} for a hexagon, id)text( for a cloud and id))text(( for a bang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ChatGPT or Claude turn my notes into a mind map?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paste your notes and ask for a Mermaid mindmap with one root and at most three levels. Paste the answer into the editor and check that every topic is under the right branch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I use a flowchart instead of a mind map?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a mind map for topics around one idea, where the order does not matter. Use a flowchart when steps follow each other or when there are decisions with yes and no."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Mind map in Confluence Cloud (free, with Mermaid)</h1>
+<p class="lede">
+Confluence Cloud does not draw Mermaid on its own. Paste a Mermaid <code>mindmap</code> block into a page and it stays a code block: readers see an indented list, not a mind map. A Mermaid app draws it. With Mermaid Editor for Confluence, a free app on the Atlassian Marketplace, you type the topics as an indented list and the mind map draws next to it while you type. Below: the steps, a project mind map to copy, how the syntax works, and the mistakes that put a branch in the wrong place.
+</p>
+<p class="page-meta">Published 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="confluence">What Confluence Cloud does with Mermaid on its own</h2>
+<p>Confluence Cloud does not draw Mermaid itself. In our tests in October and November 2026, a <code>```mermaid</code> block pasted into a page became an ordinary code block: readers see an indented list, not the mind map. The code is kept safely, but nothing is drawn.</p>
+<p>To see the mind map you need a Mermaid app that adds a macro to the editor, or you draw the diagram elsewhere and upload a picture. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes.</p>
+
+<h2 id="steps">How to add a mind map with Mermaid Editor for Confluence</h2>
+<p>Full disclosure: Dortus makes this app. The steps:</p>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> from the Atlassian Marketplace. The app is free.</li>
+<li>Open the page in edit mode. Type <code>/mermaid</code> and choose <strong>Mermaid Editor</strong>. You can also open the <strong>+</strong> insert menu in the toolbar and search for Mermaid Editor.</li>
+<li>The editor opens with the code on the left and a live preview on the right. Click the <strong>Mindmap</strong> example to start from a short launch mind map, or paste the example from this page. If you paste a block that starts with <code>```mermaid</code>, the fences are removed for you.</li>
+<li>Change the text. The preview redraws as you type. If a line is wrong, the preview says what is wrong and names the line, and that line is marked in the code.</li>
+<li>Click <strong>Insert diagram</strong>, or press <strong>Ctrl+Enter</strong> (Cmd+Enter on a Mac). Publish the page.</li>
+<li>To change it later, select the diagram in the editor and click the pencil icon. <strong>Versions</strong> in the editor brings back any of the last 20 saves.</li>
+</ol>
+<p>On the page the diagram fits the width of the page. Hover over it, or tab to it, for the zoom buttons. Click it, or use <strong>Open large</strong>, to see it in a big window. <strong>SVG</strong> and <strong>PNG</strong> download the diagram for a slide or an email. In Confluence&rsquo;s dark mode the diagram is drawn in Mermaid&rsquo;s dark colours. The app has 12 examples to start from: flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+<p>Where it lives: the app runs on Atlassian Forge. The Mermaid code is saved in the macro on the page, earlier versions in Forge storage in your own Atlassian site, and the diagram is drawn in the browser of the person reading the page.</p>
+
+<h2 id="example">Example: a project mind map</h2>
+<p>A mind map for a customer portal project: goals, scope, team, risks and timeline around one centre. Copy it and replace the topics with your own.</p>
+<pre><code>mindmap
+  root((Customer portal))
+    Goals
+      Fewer support emails
+      Self-service invoices
+    Scope
+      Login and accounts
+      Invoice history
+      Support tickets
+    Team
+      Design
+      Backend
+      QA
+    Risks
+      SSO delays
+      Data migration
+    Timeline
+      Beta in March
+      Launch in May</code></pre>
+<p class="example-render"><img src="assets/mermaid-examples/mindmap-project.png" width="855" height="504" loading="lazy" alt="Rendered mind map with Customer portal in a circle at the centre and five branches: goals, scope, team, risks and timeline, each with two or three topics" style="max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;background:#fff"></p>
+<p class="small">Drawn with Mermaid 12.2, the version the app uses. Mermaid picks the layout and a colour per branch.</p>
+<h3 id="syntax">How the syntax works</h3>
+<ul>
+<li><code>mindmap</code> on the first line names the diagram type.</li>
+<li>The next line is the centre, the root. There is only one.</li>
+<li>Indentation sets the level. A line belongs to the nearest line above it that is indented less. <code>Goals</code> is indented more than the root, so it is a branch of the root; <code>Fewer support emails</code> is indented more than <code>Goals</code>, so it hangs under Goals.</li>
+<li><code>root((Customer portal))</code> gives the node an id, <code>root</code>, and draws the text in a circle. Other shapes: <code>id[text]</code> square, <code>id(text)</code> rounded, <code>id))text((</code> bang, <code>id)text(</code> cloud, <code>id{{text}}</code> hexagon. Text without brackets gets the default shape.</li>
+<li>Mermaid places the branches around the centre itself. You decide the order of the lines, not where they end up.</li>
+</ul>
+<p><strong>Let an AI assistant write the first version.</strong> ChatGPT and Claude can write Mermaid. Describe the topic and your notes in plain words, ask for a Mermaid mindmap with one root and at most three levels, and paste the answer into the editor. Read the result: assistants sometimes invent a topic or use syntax that does not draw.</p>
+
+<h2 id="mistakes">Common mistakes and how to fix them</h2>
+<ul>
+<li><strong>Two lines at the top level.</strong> A mind map has one centre. If two lines have the lowest indentation, the diagram stops with &ldquo;There can be only one root&rdquo;. Fix: keep one centre line and indent everything else under it.</li>
+<li><strong>Tabs and spaces mixed.</strong> Mermaid counts the characters of indentation, so a tab and spaces that look the same in one editor can mean a different level. In our test a topic meant as a branch of the root ended up under the branch above it, without an error. Fix: indent with spaces only, two per level.</li>
+<li><strong>Brackets in the text.</strong> <code>Login (SSO)</code> is read as a node called <code>Login</code> with a rounded shape and the text &ldquo;SSO&rdquo;. In our test only &ldquo;SSO&rdquo; was shown. The same happens with square brackets. Fix: give the node an id and put the text in quotes: <code>login["Login (SSO)"]</code>.</li>
+<li><strong>The wrong spelling of the first line.</strong> Diagram types are case sensitive. <code>mindMap</code> or <code>Mindmap</code> gives &ldquo;Unknown diagram type&rdquo; in the editor. Fix: <code>mindmap</code>, all lower case.</li>
+</ul>
+
+<h2 id="alternatives">Other ways</h2>
+<p>Other Mermaid apps exist on the Atlassian Marketplace; <a href="mermaid-diagrams-confluence-cloud.html">the Mermaid guide</a> lists points worth comparing. For a mind map you build live in a workshop by dragging notes around, a Confluence whiteboard or a drawing app such as draw.io fits better.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can I make a mind map in Confluence Cloud without an app?</summary>
+<p>You can draw one by hand on a Confluence whiteboard with shapes and connectors. As text, no: in our tests a pasted Mermaid mindmap block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws it on the page.</p>
+</details>
+<details>
+<summary>How do I add a branch to a Mermaid mind map?</summary>
+<p>Add a line under the topic it belongs to, indented two spaces more than that topic. Indent it the same as the other topics at that level.</p>
+</details>
+<details>
+<summary>Can I change the shape of a node?</summary>
+<p>Yes. Give the node an id and put the text in brackets: id[text] for a square, id(text) for rounded, id((text)) for a circle, id{{text}} for a hexagon, id)text( for a cloud and id))text(( for a bang.</p>
+</details>
+<details>
+<summary>Can ChatGPT or Claude turn my notes into a mind map?</summary>
+<p>Yes. Paste your notes and ask for a Mermaid mindmap with one root and at most three levels. Paste the answer into the editor and check that every topic is under the right branch.</p>
+</details>
+<details>
+<summary>When should I use a flowchart instead of a mind map?</summary>
+<p>Use a mind map for topics around one idea, where the order does not matter. Use a flowchart when steps follow each other or when there are decisions with yes and no.</p>
+</details>
+</div>
+
+<h2 id="more">By diagram type</h2>
+<p>A mind map shows topics around one idea. <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has a short example of each of twelve diagram types. Guides that go deeper on one type:</p>
+<ul>
+<li><a href="gantt-chart-confluence-cloud.html">Gantt charts in Confluence Cloud</a></li>
+<li><a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a></li>
+<li><a href="er-diagram-confluence-cloud.html">ER diagrams (entity relationship) in Confluence Cloud</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+</ul>
+
+<h2 id="support">Questions</h2>
+<p>An example that does not draw for you, or a mistake we missed? Email <a href="mailto:support@dortus.com?subject=Mind%20map%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io is a product of its respective company. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

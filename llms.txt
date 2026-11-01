@@ -1,0 +1,41 @@
+# Dortus
+
+> Dortus makes editors for Confluence Cloud: you write a diagram or a formula as text and see it drawn on the page as you type. The apps run on Atlassian Forge, so diagrams and formulas stay in your own Atlassian site.
+
+Mermaid Editor for Confluence is live and free on the Atlassian Marketplace. Math for Confluence has been submitted to the Atlassian Marketplace and is waiting for approval. Confluence Cloud does not draw Mermaid on its own: a pasted Mermaid block stays a code block until an app such as Mermaid Editor for Confluence draws it.
+
+## Apps
+
+- [Mermaid Editor for Confluence](https://dortus.com/mermaid.html): a Confluence Cloud macro with Mermaid code on the left and a live preview on the right. 12 examples to start from, errors that name the line, zoom, open large, SVG and PNG download, light and dark mode, and the last 20 versions of each diagram. Free. [On the Atlassian Marketplace](https://marketplace.atlassian.com/apps/4235692896).
+- [Math for Confluence](https://dortus.com/math.html): equations in LaTeX on their own line or inside a sentence, drawn as you type. Waiting for Atlassian Marketplace approval.
+
+## Guides: diagrams in Confluence
+
+- [How to add Mermaid diagrams to Confluence Cloud](https://dortus.com/mermaid-diagrams-confluence-cloud.html): what Confluence does with pasted Mermaid, three ways to get a real diagram, and diagrams from ChatGPT or Claude.
+- [Mermaid diagram examples for Confluence](https://dortus.com/mermaid-examples-confluence.html): twelve short examples to copy, one per diagram type.
+- [Gantt chart in Confluence Cloud](https://dortus.com/gantt-chart-confluence-cloud.html): a release plan in Mermaid, the syntax and common mistakes.
+- [Sequence diagram in Confluence Cloud](https://dortus.com/sequence-diagram-confluence-cloud.html): an API login flow in Mermaid, the syntax and common mistakes.
+- [Mind map in Confluence Cloud](https://dortus.com/mind-map-confluence-cloud.html): a project mind map in Mermaid, the syntax and common mistakes.
+- [ER diagram in Confluence Cloud](https://dortus.com/er-diagram-confluence-cloud.html): an orders and customers data model in Mermaid, the syntax and common mistakes.
+- [How to make a flowchart in Confluence Cloud](https://dortus.com/flowchart-confluence-cloud.html): a whiteboard, a diagram app, or a Mermaid flowchart.
+
+## Guides: math in Confluence
+
+- [How to write LaTeX math in Confluence Cloud](https://dortus.com/latex-math-confluence-cloud.html)
+- [Does Confluence have an equation editor?](https://dortus.com/equation-editor-confluence-cloud.html)
+
+## Guides: Markdown in Confluence
+
+- [Markdown in Confluence Cloud: what works and what doesn't](https://dortus.com/markdown-confluence-cloud.html)
+- [How to paste a ChatGPT or Claude answer into Confluence](https://dortus.com/paste-chatgpt-answer-into-confluence.html)
+
+## Company
+
+- [Support](https://dortus.com/support.html): questions go to support@dortus.com.
+- [Security](https://dortus.com/security.html)
+- [Privacy policy](https://dortus.com/privacy.html): what each app stores.
+
+## Optional
+
+- [All Dortus apps](https://dortus.com/atlassian.html): also lists earlier apps that keep working for the sites that use them.
+- [All guides](https://dortus.com/#guides)

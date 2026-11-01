@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gantt chart in Confluence Cloud (free, with Mermaid) &middot; Dortus</title>
+<meta name="description" content="Confluence Cloud shows a pasted Mermaid Gantt chart as plain code. How to draw it on the page with a free app, with a release plan to copy and common mistakes." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Gantt chart in Confluence Cloud (free, with Mermaid)" />
+<meta property="og:description" content="Pasted Mermaid stays code in Confluence Cloud. Draw a Gantt chart on the page with a free app: a release plan to copy, the syntax, and the mistakes to avoid." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/gantt-chart-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/gantt-chart-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Gantt chart in Confluence Cloud (free, with Mermaid)",
+  "description": "Confluence Cloud shows a pasted Mermaid Gantt chart as plain code. How to draw it on the page with a free app, with a release plan to copy and common mistakes.",
+  "image": [
+    "https://dortus.com/assets/mermaid-examples/gantt-release-plan.png",
+    "https://dortus.com/assets/og-mermaid.png"
+  ],
+  "datePublished": "2026-11-02T09:00:00+00:00",
+  "dateModified": "2026-11-02T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/gantt-chart-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I make a Gantt chart in Confluence Cloud without an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not from Mermaid code. In our tests a pasted Mermaid gantt block stayed a code block. You can draw the chart in the Mermaid Live Editor at mermaid.live and upload the image, but then the chart is a picture that nobody can edit on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Mermaid Editor for Confluence free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free on the Atlassian Marketplace. Mermaid itself is an open source project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make one task start after another?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Give the first task an id and start the next one with after and that id, for example after api. With two ids, after api web, the task starts when the later of the two ends. Change one duration and the tasks after it move along."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a milestone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add the milestone tag and a duration of 0d, for example Go live :milestone, live, after fix, 0d. Mermaid draws it as a diamond."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Gantt chart update from Jira?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The chart is drawn from the text in the macro. It does not read Jira work items. To change the plan, change the text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I put the Gantt chart in a slide or an email?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Mermaid Editor for Confluence downloads the diagram as SVG or PNG from the page. The Mermaid text stays in the page, so the plan can still be edited later."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Gantt chart in Confluence Cloud (free, with Mermaid)</h1>
+<p class="lede">
+Confluence Cloud does not draw Mermaid on its own. Paste a Mermaid <code>gantt</code> block into a page and it stays a code block: readers see text, not a chart. A Mermaid app draws it. With Mermaid Editor for Confluence, a free app on the Atlassian Marketplace, you type or paste the plan as text and the Gantt chart draws next to it while you type. Below: the steps, a release plan to copy, how the syntax works, and the mistakes that move bars to the wrong date.
+</p>
+<p class="page-meta">Published 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="confluence">What Confluence Cloud does with Mermaid on its own</h2>
+<p>Confluence Cloud does not draw Mermaid itself. In our tests in October and November 2026, a <code>```mermaid</code> block pasted into a page became an ordinary code block: readers see the lines of the plan, not the chart. The code is kept safely, but nothing is drawn.</p>
+<p>To see the chart you need a Mermaid app that adds a macro to the editor, or you draw the diagram elsewhere and upload a picture. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes.</p>
+
+<h2 id="steps">How to add a Gantt chart with Mermaid Editor for Confluence</h2>
+<p>Full disclosure: Dortus makes this app. The steps:</p>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> from the Atlassian Marketplace. The app is free.</li>
+<li>Open the page in edit mode. Type <code>/mermaid</code> and choose <strong>Mermaid Editor</strong>. You can also open the <strong>+</strong> insert menu in the toolbar and search for Mermaid Editor.</li>
+<li>The editor opens with the code on the left and a live preview on the right. Click the <strong>Gantt</strong> example to start from a short release plan, or paste the example from this page. If you paste a block that starts with <code>```mermaid</code>, the fences are removed for you.</li>
+<li>Change the text. The preview redraws as you type. If a line is wrong, the preview says what is wrong and names the line, and that line is marked in the code.</li>
+<li>Click <strong>Insert diagram</strong>, or press <strong>Ctrl+Enter</strong> (Cmd+Enter on a Mac). Publish the page.</li>
+<li>To change it later, select the diagram in the editor and click the pencil icon. <strong>Versions</strong> in the editor brings back any of the last 20 saves.</li>
+</ol>
+<p>On the page the diagram fits the width of the page. Hover over it, or tab to it, for the zoom buttons. Click it, or use <strong>Open large</strong>, to see it in a big window. <strong>SVG</strong> and <strong>PNG</strong> download the diagram for a slide or an email. In Confluence&rsquo;s dark mode the diagram is drawn in Mermaid&rsquo;s dark colours. The app has 12 examples to start from: flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+<p>Where it lives: the app runs on Atlassian Forge. The Mermaid code is saved in the macro on the page, earlier versions in Forge storage in your own Atlassian site, and the diagram is drawn in the browser of the person reading the page.</p>
+
+<h2 id="example">Example: a release plan</h2>
+<p>A release with build, test and release work, two dependencies and a go-live milestone. Copy it, change the names and dates, and paste it into the editor.</p>
+<pre><code>gantt
+    title Release 2.4 plan
+    dateFormat YYYY-MM-DD
+    axisFormat %d %b
+    excludes weekends
+    section Build
+    API changes          :done,   api,  2026-11-02, 5d
+    Web app screens      :active, web,  2026-11-04, 8d
+    section Test
+    Integration tests    :        test, after api web, 4d
+    Fix blocking bugs    :crit,   fix,  after test, 3d
+    section Release
+    Release notes        :        docs, after web, 2d
+    Go live              :milestone, live, after fix docs, 0d</code></pre>
+<p class="example-render"><img src="assets/mermaid-examples/gantt-release-plan.png" width="872" height="276" loading="lazy" alt="Rendered Gantt chart of release 2.4: API changes and web app screens in Build, integration tests and fixing blocking bugs in Test, release notes and a go-live milestone in Release, with weekends shaded" style="max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;background:#fff"></p>
+<p class="small">Drawn with Mermaid 12.2, the version the app uses, on 2 November 2026. The red line is the day it was drawn: a Gantt chart marks today.</p>
+<h3 id="syntax">How the syntax works</h3>
+<ul>
+<li><code>gantt</code> on the first line names the diagram type. <code>title</code> puts a heading above the chart.</li>
+<li><code>dateFormat YYYY-MM-DD</code> is how you write dates in the tasks. <code>axisFormat %d %b</code> is how dates are shown along the bottom: day and short month.</li>
+<li><code>excludes weekends</code> skips Saturdays and Sundays. A task of <code>5d</code> then takes five working days, and weekends are shaded grey.</li>
+<li><code>section Build</code> starts a group of tasks with a label on the left.</li>
+<li>A task is a name, a colon, and then values separated by commas: optional tags, an id, a start, and a duration. In <code>API changes :done, api, 2026-11-02, 5d</code> the tag is <code>done</code>, the id is <code>api</code>, it starts on 2 November and takes five days.</li>
+<li>Tags: <code>done</code> (grey), <code>active</code> (highlighted), <code>crit</code> (red, critical) and <code>milestone</code>.</li>
+<li><code>after api web</code> starts a task when the later of those two tasks ends. Make <code>api</code> longer and everything after it moves along.</li>
+<li>Durations use a number and a unit, with no space: <code>3d</code> for days, <code>2w</code> for weeks, <code>4h</code> for hours.</li>
+<li>A milestone with <code>0d</code> is drawn as a diamond. The red line for today can be switched off with a line <code>todayMarker off</code>.</li>
+</ul>
+<p><strong>Let an AI assistant write the first version.</strong> ChatGPT and Claude can write Mermaid. Describe the plan in plain words, ask for a Mermaid gantt chart with dateFormat YYYY-MM-DD, and paste the answer into the editor. Read the result: assistants sometimes invent a date or use syntax that does not draw.</p>
+
+<h2 id="mistakes">Common mistakes and how to fix them</h2>
+<p>Watch out: most Gantt mistakes give no error. Mermaid draws a chart, just not the one you meant. Check the dates in the preview.</p>
+<ul>
+<li><strong>A date in another format than <code>dateFormat</code>.</strong> With <code>dateFormat YYYY-MM-DD</code>, a task that starts on <code>05-11-2026</code> was drawn in May 2026 in our test, not on 5 November. A date such as <code>31-12-2026</code> stops the chart with &ldquo;Invalid date&rdquo;. Fix: write every date the way <code>dateFormat</code> says, or change <code>dateFormat</code> to <code>DD-MM-YYYY</code>.</li>
+<li><strong><code>after</code> with an id that does not exist.</strong> A typo such as <code>after biuld</code>, or a task without an id, makes the task start today, without an error. Fix: give the earlier task an id (the value after the tags) and check the spelling.</li>
+<li><strong>A colon in the task name.</strong> <code>Phase 1: design :des, 2026-11-02, 5d</code> was drawn as &ldquo;Phase 1&rdquo;: the colon ends the name. Fix: leave the colon out, or write it as <code>#58;</code>, as in <code>Phase 1#58; design</code>.</li>
+<li><strong>A duration in words.</strong> <code>5 days</code> or <code>1 week</code> is not read, and the task gets no bar. Fix: <code>5d</code> or <code>1w</code>, with no space.</li>
+<li><strong>The same id twice.</strong> In our test the second task with id <code>des</code> was not drawn as a bar. Fix: give every task its own id.</li>
+</ul>
+
+<h2 id="alternatives">Other ways</h2>
+<p>Other Mermaid apps exist on the Atlassian Marketplace; <a href="mermaid-diagrams-confluence-cloud.html">the Mermaid guide</a> lists points worth comparing. For a timeline you want to draw by hand, with bars and shapes placed exactly where you want them, a drawing app such as draw.io fits better.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can I make a Gantt chart in Confluence Cloud without an app?</summary>
+<p>Not from Mermaid code. In our tests a pasted Mermaid gantt block stayed a code block. You can draw the chart in the Mermaid Live Editor at mermaid.live and upload the image, but then the chart is a picture that nobody can edit on the page.</p>
+</details>
+<details>
+<summary>Is Mermaid Editor for Confluence free?</summary>
+<p>Yes. It is free on the Atlassian Marketplace. Mermaid itself is an open source project.</p>
+</details>
+<details>
+<summary>How do I make one task start after another?</summary>
+<p>Give the first task an id and start the next one with after and that id, for example after api. With two ids, after api web, the task starts when the later of the two ends. Change one duration and the tasks after it move along.</p>
+</details>
+<details>
+<summary>How do I add a milestone?</summary>
+<p>Add the milestone tag and a duration of 0d, for example Go live :milestone, live, after fix, 0d. Mermaid draws it as a diamond.</p>
+</details>
+<details>
+<summary>Does the Gantt chart update from Jira?</summary>
+<p>No. The chart is drawn from the text in the macro. It does not read Jira work items. To change the plan, change the text.</p>
+</details>
+<details>
+<summary>Can I put the Gantt chart in a slide or an email?</summary>
+<p>Yes. Mermaid Editor for Confluence downloads the diagram as SVG or PNG from the page. The Mermaid text stays in the page, so the plan can still be edited later.</p>
+</details>
+</div>
+
+<h2 id="more">By diagram type</h2>
+<p>A Gantt chart shows work over time. <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has a short example of each of twelve diagram types. Guides that go deeper on one type:</p>
+<ul>
+<li><a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a></li>
+<li><a href="mind-map-confluence-cloud.html">Mind maps in Confluence Cloud</a></li>
+<li><a href="er-diagram-confluence-cloud.html">ER diagrams (entity relationship) in Confluence Cloud</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+</ul>
+
+<h2 id="support">Questions</h2>
+<p>An example that does not draw for you, or a mistake we missed? Email <a href="mailto:support@dortus.com?subject=Gantt%20chart%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io is a product of its respective company. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

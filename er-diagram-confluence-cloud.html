@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ER diagram in Confluence Cloud (free, with Mermaid) &middot; Dortus</title>
+<meta name="description" content="Confluence Cloud shows a pasted Mermaid ER diagram as plain code. Draw entity relationship diagrams on the page with a free app: an orders example and fixes." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="ER diagram in Confluence Cloud: entity relationship diagrams, free with Mermaid" />
+<meta property="og:description" content="Pasted Mermaid stays code in Confluence Cloud. Draw an entity relationship diagram on the page with a free app: an orders and customers model, the syntax, and fixes." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/er-diagram-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/er-diagram-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ER diagram in Confluence Cloud: entity relationship diagrams, free with Mermaid",
+  "description": "Confluence Cloud shows a pasted Mermaid ER diagram as plain code. Draw entity relationship diagrams on the page with a free app: an orders example and fixes.",
+  "image": [
+    "https://dortus.com/assets/mermaid-examples/er-orders-customers.png",
+    "https://dortus.com/assets/og-mermaid.png"
+  ],
+  "datePublished": "2026-11-02T09:00:00+00:00",
+  "dateModified": "2026-11-02T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/er-diagram-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Confluence Cloud draw an ER diagram from text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not on its own. In our tests a pasted Mermaid erDiagram block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the entity relationship diagram on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does ||--o{ mean in a Mermaid ER diagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is crow's foot notation. || on the left means exactly one, o{ on the right means zero or more. CUSTOMER ||--o{ ORDER : places reads: one customer places zero or more orders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I mark primary and foreign keys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Write PK, FK or UK after the column name, for example int customer_id FK. A column that is both a primary and a foreign key gets PK, FK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the app read my database and draw the diagram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Mermaid Editor for Confluence draws what you type; it does not connect to a database. You can give your CREATE TABLE statements to ChatGPT or Claude, ask for a Mermaid erDiagram, and check the result in the editor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a solid and a dashed line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A solid line, --, is an identifying relationship: the child cannot exist without the parent. A dashed line, .., is non-identifying. In Mermaid you only change the two characters in the middle."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">ER diagram in Confluence Cloud: entity relationship diagrams, free with Mermaid</h1>
+<p class="lede">
+Confluence Cloud does not draw Mermaid on its own. Paste a Mermaid <code>erDiagram</code> block into a page and it stays a code block: readers see the tables as text, not as an entity relationship diagram. A Mermaid app draws it. With Mermaid Editor for Confluence, a free app on the Atlassian Marketplace, you type the tables and relationships and the ER diagram draws next to them while you type. Below: the steps, an orders and customers model to copy, how the crow&rsquo;s foot symbols work, and the mistakes that add boxes you did not ask for.
+</p>
+<p class="page-meta">Published 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="confluence">What Confluence Cloud does with Mermaid on its own</h2>
+<p>Confluence Cloud does not draw Mermaid itself. In our tests in October and November 2026, a <code>```mermaid</code> block pasted into a page became an ordinary code block: readers see the tables as text, not the diagram. The code is kept safely, but nothing is drawn.</p>
+<p>To see the diagram you need a Mermaid app that adds a macro to the editor, or you draw the diagram elsewhere and upload a picture. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes.</p>
+
+<h2 id="steps">How to add an ER diagram with Mermaid Editor for Confluence</h2>
+<p>Full disclosure: Dortus makes this app. The steps:</p>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> from the Atlassian Marketplace. The app is free.</li>
+<li>Open the page in edit mode. Type <code>/mermaid</code> and choose <strong>Mermaid Editor</strong>. You can also open the <strong>+</strong> insert menu in the toolbar and search for Mermaid Editor.</li>
+<li>The editor opens with the code on the left and a live preview on the right. Click the <strong>ER</strong> example to start from a short customer and order model, or paste the example from this page. If you paste a block that starts with <code>```mermaid</code>, the fences are removed for you.</li>
+<li>Change the text. The preview redraws as you type. If a line is wrong, the preview says what is wrong and names the line, and that line is marked in the code.</li>
+<li>Click <strong>Insert diagram</strong>, or press <strong>Ctrl+Enter</strong> (Cmd+Enter on a Mac). Publish the page.</li>
+<li>To change it later, select the diagram in the editor and click the pencil icon. <strong>Versions</strong> in the editor brings back any of the last 20 saves.</li>
+</ol>
+<p>On the page the diagram fits the width of the page. Hover over it, or tab to it, for the zoom buttons. Click it, or use <strong>Open large</strong>, to see it in a big window. <strong>SVG</strong> and <strong>PNG</strong> download the diagram for a slide or an email. In Confluence&rsquo;s dark mode the diagram is drawn in Mermaid&rsquo;s dark colours. The app has 12 examples to start from: flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+<p>Where it lives: the app runs on Atlassian Forge. The Mermaid code is saved in the macro on the page, earlier versions in Forge storage in your own Atlassian site, and the diagram is drawn in the browser of the person reading the page.</p>
+
+<h2 id="example">Example: orders and customers</h2>
+<p>A small shop database: customers place orders, an order has order lines, each line points to a product, and a customer can have addresses. Copy it and change the tables to your own schema.</p>
+<pre><code>erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ ORDER_LINE : contains
+    PRODUCT ||--o{ ORDER_LINE : "is ordered in"
+    CUSTOMER ||--o{ ADDRESS : "has"
+    CUSTOMER {
+        int id PK
+        string name
+        string email UK
+        date created_at
+    }
+    ORDER {
+        int id PK
+        int customer_id FK
+        date ordered_at
+        string status "new, paid, shipped"
+    }
+    ORDER_LINE {
+        int order_id PK, FK
+        int product_id PK, FK
+        int quantity
+        decimal unit_price
+    }
+    PRODUCT {
+        int id PK
+        string sku UK
+        string name
+        decimal price
+    }
+    ADDRESS {
+        int id PK
+        int customer_id FK
+        string street
+        string city
+        string postcode
+    }</code></pre>
+<p class="example-render"><img src="assets/mermaid-examples/er-orders-customers.png" width="924" height="934" loading="lazy" alt="Rendered entity relationship diagram: customer places orders and has addresses, an order contains order lines, a product is ordered in order lines, each table with its columns and PK, FK or UK keys" style="max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;background:#fff"></p>
+<p class="small">Drawn with Mermaid 12.2, the version the app uses.</p>
+<h3 id="syntax">How the syntax works</h3>
+<ul>
+<li><code>erDiagram</code> on the first line names the diagram type.</li>
+<li>A relationship is: table, symbols, table, colon, label. <code>CUSTOMER ||--o{ ORDER : places</code> reads &ldquo;one customer places zero or more orders&rdquo;.</li>
+<li>The symbols on each side of the line say how many: <code>||</code> exactly one, <code>|o</code> or <code>o|</code> zero or one, <code>}o</code> or <code>o{</code> zero or more, <code>}|</code> or <code>|{</code> one or more. Each symbol is about the table it stands next to: in <code>CUSTOMER ||--o{ ORDER</code>, <code>||</code> says each order has exactly one customer and <code>o{</code> says a customer has zero or more orders.</li>
+<li><code>--</code> draws a solid line (an identifying relationship). <code>..</code> draws a dashed line (non-identifying).</li>
+<li>A label with spaces needs quotes: <code>"is ordered in"</code>.</li>
+<li>A table&rsquo;s columns go between <code>{</code> and <code>}</code>, one per line: type, name, then optional keys and a comment. Keys are <code>PK</code>, <code>FK</code> and <code>UK</code>; a column that is both is <code>PK, FK</code>. A comment goes in quotes at the end, as in <code>string status "new, paid, shipped"</code>.</li>
+<li>Table names can use letters, digits, underscores and hyphens: <code>ORDER_LINE</code>.</li>
+</ul>
+<p><strong>Let an AI assistant write the first version.</strong> ChatGPT and Claude can write Mermaid. Describe your tables, or paste the CREATE TABLE statements, in plain words, ask for a Mermaid erDiagram with PK and FK marked, and paste the answer into the editor. Read the result: assistants sometimes invent a column or use syntax that does not draw.</p>
+
+<h2 id="mistakes">Common mistakes and how to fix them</h2>
+<ul>
+<li><strong>A relationship without a label.</strong> <code>CUSTOMER ||--o{ ORDER</code> is an error: Mermaid wants a colon and a label. The editor names the line. Fix: add <code>: places</code>, or <code>: ""</code> for an empty label.</li>
+<li><strong>A label with spaces and no quotes.</strong> <code>PRODUCT ||--o{ ORDER_LINE : is ordered in</code> gives no error, but in our test the extra words became tables of their own, called &ldquo;ordered&rdquo; and &ldquo;in&rdquo;. Fix: <code>"is ordered in"</code>.</li>
+<li><strong>A space in a table name.</strong> <code>ORDER LINE</code> was drawn as two tables, ORDER and LINE. Fix: <code>ORDER_LINE</code>.</li>
+<li><strong>Commas or spaces in the columns.</strong> <code>int id PK,</code> at the end of a line, or a column name with a space such as <code>string first name</code>, is an error. Fix: one column per line, no commas between columns, and <code>first_name</code> as one word.</li>
+<li><strong>Arrows from a flowchart.</strong> <code>CUSTOMER --&gt; ORDER : places</code> is an error in an ER diagram. Fix: use the symbols, for example <code>||--o{</code>.</li>
+</ul>
+
+<h2 id="alternatives">Other ways</h2>
+<p>Other Mermaid apps exist on the Atlassian Marketplace; <a href="mermaid-diagrams-confluence-cloud.html">the Mermaid guide</a> lists points worth comparing. For a data model you want to lay out by hand, with every table placed exactly, a drawing app such as draw.io fits better.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can Confluence Cloud draw an ER diagram from text?</summary>
+<p>Not on its own. In our tests a pasted Mermaid erDiagram block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the entity relationship diagram on the page.</p>
+</details>
+<details>
+<summary>What does ||--o{ mean in a Mermaid ER diagram?</summary>
+<p>It is crow's foot notation. || on the left means exactly one, o{ on the right means zero or more. CUSTOMER ||--o{ ORDER : places reads: one customer places zero or more orders.</p>
+</details>
+<details>
+<summary>How do I mark primary and foreign keys?</summary>
+<p>Write PK, FK or UK after the column name, for example int customer_id FK. A column that is both a primary and a foreign key gets PK, FK.</p>
+</details>
+<details>
+<summary>Can the app read my database and draw the diagram?</summary>
+<p>No. Mermaid Editor for Confluence draws what you type; it does not connect to a database. You can give your CREATE TABLE statements to ChatGPT or Claude, ask for a Mermaid erDiagram, and check the result in the editor.</p>
+</details>
+<details>
+<summary>What is the difference between a solid and a dashed line?</summary>
+<p>A solid line, --, is an identifying relationship: the child cannot exist without the parent. A dashed line, .., is non-identifying. In Mermaid you only change the two characters in the middle.</p>
+</details>
+</div>
+
+<h2 id="more">By diagram type</h2>
+<p>An ER diagram shows tables and how they link. <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has a short example of each of twelve diagram types. Guides that go deeper on one type:</p>
+<ul>
+<li><a href="gantt-chart-confluence-cloud.html">Gantt charts in Confluence Cloud</a></li>
+<li><a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a></li>
+<li><a href="mind-map-confluence-cloud.html">Mind maps in Confluence Cloud</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+</ul>
+
+<h2 id="support">Questions</h2>
+<p>An example that does not draw for you, or a mistake we missed? Email <a href="mailto:support@dortus.com?subject=ER%20diagram%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io is a product of its respective company. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
