@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to add PlantUML diagrams to Confluence Cloud · Dortus</title>
+<meta name="description" content="Confluence Cloud does not draw PlantUML on its own. Three ways to get a PlantUML diagram on the page, what each one sends where, and how to use C4." />
+<meta name="theme-color" content="#13213a" />
+<!-- Not linked yet: goes live with the PlantUML Editor page (plantuml.html). -->
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="assets/app-icon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="How to add PlantUML diagrams to Confluence Cloud" />
+<meta property="og:description" content="Three ways to get a PlantUML diagram on a Confluence Cloud page, and where your diagram text goes with each." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/plantuml-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/plantuml-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-dortus.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="plantuml.html">PlantUML Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to add PlantUML diagrams to Confluence Cloud</h1>
+<p class="lede">
+You have PlantUML code: a sequence diagram from a design doc, a class diagram from a repository, or C4 code an AI assistant wrote for you. You want the diagram on a Confluence Cloud page. This page shows three ways, and where your diagram text goes with each one.
+</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h3 id="what-confluence-does">What Confluence Cloud does with PlantUML on its own</h3>
+<p>Confluence Cloud has no PlantUML support of its own. Pasted PlantUML stays text: put it in a code block and readers see the code, not the diagram. To see the diagram you need one of the options below.</p>
+
+<h3 id="where-it-goes">First: where does your diagram text go?</h3>
+<p>PlantUML is a Java program. Most ways to draw it send your diagram text to a PlantUML server, which sends a picture back. The public server at plantuml.com even puts the (compressed) diagram text in the image address. For a diagram of your internal architecture, that matters: ask who runs the server and what it logs.</p>
+
+<h3 id="image">Option 1: render an image and upload it</h3>
+<p>Draw the diagram in a PlantUML editor (an IDE plugin, a local PlantUML install, or an online editor), download it as PNG or SVG, and upload the image to the page.</p>
+<ul>
+<li><strong>It works today</strong> without installing anything in Confluence.</li>
+<li><strong>The image goes stale.</strong> When the design changes, someone has to find the code, draw it again and replace the image.</li>
+<li><strong>Online editors send your text to their server.</strong> A local install or IDE plugin does not.</li>
+</ul>
+<p>If you go this way, put the PlantUML code in a code block (or an expand) under the image, so the next person can redraw it.</p>
+
+<h3 id="server-macro">Option 2: a PlantUML macro that uses a PlantUML server</h3>
+<p>Several apps on the Atlassian Marketplace add a PlantUML macro. Many of them draw through a PlantUML server: the public one by default, or one your company runs. Check on the app's listing whether it uses a server, and which one.</p>
+<ul>
+<li><strong>The code stays in the page,</strong> so the diagram stays editable.</li>
+<li><strong>Your diagram text goes to that server</strong> each time the diagram is drawn. Running your own server keeps it inside your company, but someone has to host and update it.</li>
+</ul>
+
+<h3 id="browser">Option 3: a macro that draws in the browser</h3>
+<p>Full disclosure: Dortus makes <a href="plantuml.html">PlantUML Editor for Confluence</a>. It is not on the Atlassian Marketplace yet. What it does:</p>
+<ul>
+<li><strong>No PlantUML server.</strong> The PlantUML engine is inside the app and draws the diagram in the browser of the person viewing the page. The app does not connect to the internet.</li>
+<li><strong>Code and preview side by side.</strong> The preview redraws while you type. An error marks the line.</li>
+<li><strong>C4 built in.</strong> The C4-PlantUML library is included (see below).</li>
+<li><strong>12 examples</strong> to start from: sequence, use case, class, activity, component, state, deployment, ER, C4 context, C4 container, Gantt and mind map.</li>
+<li><strong>On the page:</strong> zoom, open large, download SVG or PNG. Light and dark theme follow Confluence.</li>
+</ul>
+<p>A few other PlantUML apps on the Marketplace also draw in the browser. Points worth comparing: the editor (a preview while you type, errors on the right line), C4 support, and what happens on PDF export.</p>
+<p>One limit of drawing without a server: includes from a web address (<code>!include https://...</code>) are refused, because the app does not fetch anything from the internet. Paste the included code into the diagram instead.</p>
+
+<h3 id="c4">C4 diagrams</h3>
+<p>C4-PlantUML adds context, container and component diagrams to PlantUML. Most examples on the web start with an include from GitHub:</p>
+<pre><code>!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml</code></pre>
+<p>PlantUML also ships the same library inside its standard library. Write the include with angle brackets and nothing is fetched:</p>
+<pre><code>@startuml
+!include &lt;C4/C4_Container&gt;
+Person(customer, "Customer")
+System_Boundary(shop, "Online shop") {
+  Container(web, "Web app", "React")
+  Container(api, "API", "Node.js")
+  ContainerDb(db, "Database", "PostgreSQL")
+}
+Rel(customer, web, "Uses")
+Rel(web, api, "Calls", "JSON")
+Rel(api, db, "Reads and writes")
+@enduml</code></pre>
+<p>That form works on a PlantUML server and in PlantUML Editor for Confluence alike.</p>
+
+<h3 id="ai">Asking an AI assistant for PlantUML</h3>
+<p>ChatGPT and Claude can write PlantUML. Describe the system in plain words, name the diagram type, and ask for the code only. Two things that save time:</p>
+<ul>
+<li><strong>Ask for the standard library include</strong> for C4 (<code>!include &lt;C4/C4_Container&gt;</code>), not the GitHub address.</li>
+<li><strong>Paste the error back.</strong> If PlantUML reports an error on a line, give that line and the message to the assistant and ask for a corrected version.</li>
+</ul>
+
+<h3 id="which">Which option fits</h3>
+<p>One diagram that will never change: an image, with the code saved under it. Diagrams people keep editing, and a PlantUML server you trust: a server-based macro. Diagrams people keep editing, and no server at all: a macro that draws in the browser.</p>
+
+<h3 id="support">Questions</h3>
+<p>Spotted something wrong on this page, or an option we missed? Email <a href="mailto:support@dortus.com?subject=PlantUML%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. PlantUML and C4-PlantUML are
+open source projects. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not
+affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

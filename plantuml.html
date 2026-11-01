@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlantUML Editor for Confluence - no PlantUML server · Dortus</title>
+  <meta name="description" content="PlantUML Editor for Confluence is a macro by Dortus. Write PlantUML and see the diagram as you type. Sequence, class, activity, C4 and more, drawn in the browser with no PlantUML server." />
+  <meta name="theme-color" content="#13213a" />
+  <!-- Not on the Marketplace yet: keep this page out of search until it is. -->
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:title" content="PlantUML Editor for Confluence - no PlantUML server" />
+  <meta property="og:description" content="Write PlantUML in Confluence and see the diagram as you type. Drawn in the browser: no PlantUML server, nothing sent out." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://dortus.com/plantuml.html" />
+  <meta property="og:url" content="https://dortus.com/plantuml.html" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/assets/og-dortus.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="atlassian.html" aria-current="true">Apps</a>
+        <a href="/#guides">Guides</a>
+        <a href="support.html">Support</a>
+        <a class="btn btn-primary" href="mermaid.html">See Mermaid Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">PlantUML Editor &middot; Confluence macro</p>
+          <h1 class="enter enter-1">PlantUML in Confluence, without a PlantUML server.</h1>
+          <p class="lede enter enter-2">
+            Write PlantUML next to a live preview. Sequence, class, activity, C4 and more. The
+            diagram is drawn in the browser of the person reading the page, so your diagram text
+            never leaves Atlassian.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#how">How it works <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="atlassian.html">All apps</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">In development. Not on the Atlassian Marketplace yet.</span></p>
+        </div>
+
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="assets/plantuml-page.webp" width="1120" height="773" alt="A PlantUML sequence diagram drawn by the macro on a Confluence page: Customer, Support and Engineering. Reports a problem, Escalates, Fix ready, Fixed." />
+          </span>
+          <figcaption><strong>On the page.</strong> The diagram fits the width. Zoom, open it large, or download it as SVG or PNG.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="how">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Type the code, see the diagram</h2>
+          <p class="lede">
+            Many PlantUML macros send your diagram text to a PlantUML server to get a picture
+            back. This one has the PlantUML engine inside the app. Nothing to host, nothing to
+            configure, and no server that can be down.
+          </p>
+        </div>
+        <figure class="frame reveal" style="max-width: 1180px; margin: 0 auto clamp(1.6rem, 3vw, 2.4rem)">
+          <span class="frame-media">
+            <img src="assets/plantuml-editor.webp" width="1180" height="520" loading="lazy" alt="PlantUML Editor while editing a page. Left: example buttons from Sequence to Mind map, and fourteen lines of PlantUML for a support request. Right: the sequence diagram it draws, with zoom, Open large, SVG and PNG. At the bottom: Cancel and Save diagram." />
+          </span>
+          <figcaption><strong>The editor.</strong> Pick an example or type PlantUML. The preview redraws as you type.</figcaption>
+        </figure>
+        <div class="cols cols-3">
+          <div class="card reveal">
+            <h3>Errors point to the line</h3>
+            <p>A mistake marks the line in the code and says what is wrong in plain words. Click a shape in the preview to jump to its line.</p>
+          </div>
+          <div class="card reveal reveal-1">
+            <h3>C4 built in</h3>
+            <p>The C4-PlantUML library is included, so <code>!include &lt;C4/C4_Container&gt;</code> works with no setup.</p>
+          </div>
+          <div class="card reveal reveal-2">
+            <h3>Step back safely</h3>
+            <p>Each save is kept under Versions, so a bad edit is not a lost diagram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-tint">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Start from an example</h2>
+          <p class="lede">
+            12 examples: sequence, use case, class, activity, component, state, deployment, ER,
+            C4 context, C4 container, Gantt and mind map. Light and dark theme follow Confluence.
+          </p>
+        </div>
+        <div class="cols cols-3">
+          <figure class="frame reveal">
+            <span class="frame-media"><img src="assets/plantuml-c4.webp" width="1120" height="1800" loading="lazy" alt="A C4 container diagram: Customer uses the Web app, which calls the API, which reads and writes the Database." /></span>
+            <figcaption><strong>C4 container.</strong></figcaption>
+          </figure>
+          <figure class="frame reveal reveal-1">
+            <span class="frame-media"><img src="assets/plantuml-class.webp" width="920" height="1280" loading="lazy" alt="A class diagram: Customer places Order, Order has LineItems and implements Payable." /></span>
+            <figcaption><strong>Class.</strong></figcaption>
+          </figure>
+          <figure class="frame reveal reveal-2">
+            <span class="frame-media"><img src="assets/plantuml-activity.webp" width="920" height="1280" loading="lazy" alt="An activity diagram: Receive request, Approved? Yes leads to Plan the work, then Build and Write docs in parallel, then Ship it; No leads to Send back with notes." /></span>
+            <figcaption><strong>Activity.</strong></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Runs on Forge, draws in your browser</h2>
+          <p class="lede">
+            The macro runs on Atlassian Forge. The diagram source is saved in the macro on the
+            Confluence page. Version history is kept in Forge app storage in your cloud site. The
+            app does not connect to the internet: includes from a web address are refused with a
+            clear message. Nothing is sent to Dortus.
+          </p>
+        </div>
+        <dl class="facts facts-4 reveal reveal-1">
+          <div>
+            <dt>Platform</dt>
+            <dd>Atlassian Forge macro</dd>
+          </div>
+          <div>
+            <dt>Source</dt>
+            <dd>In the macro on the page</dd>
+          </div>
+          <div>
+            <dt>Rendering</dt>
+            <dd>PlantUML engine, in the viewer's browser</dd>
+          </div>
+          <div>
+            <dt>Server</dt>
+            <dd>None, no PlantUML server</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band" id="guides">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>Guides</h2>
+        </div>
+        <div class="prose reveal" style="padding-block: 0">
+          <ul>
+            <li><a href="plantuml-confluence-cloud.html">How to add PlantUML diagrams to Confluence Cloud (and where your diagram text goes)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-brand">
+      <div class="wrap wrap-narrow">
+        <h2 class="reveal">Coming to the Atlassian Marketplace</h2>
+        <p class="lede reveal reveal-1" style="margin-top: 0.9rem">
+          PlantUML Editor for Confluence is the next editor from Dortus, after Mermaid Editor and
+          Math for Confluence. Want to know when it is out? Mail
+          <a href="mailto:support@dortus.com">support@dortus.com</a>.
+        </p>
+        <div class="btns reveal reveal-2" style="margin-top: 1.6rem">
+          <a class="btn btn-light" href="mermaid.html">See Mermaid Editor <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="math.html">See Math for Confluence</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+      <p class="footer-legal">
+        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. PlantUML is an
+        open source project. Dortus is not affiliated with these companies or projects.
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
