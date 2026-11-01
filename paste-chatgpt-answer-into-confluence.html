@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Paste a ChatGPT or Claude answer into Confluence · Dortus</title>
+<meta name="description" content="How to paste an AI answer into Confluence Cloud and keep tables, code, task lists and diagrams. Markdown or formatted text, what breaks, and tips." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="How to paste a ChatGPT or Claude answer into Confluence without losing the formatting" />
+<meta property="og:description" content="Tables, code, task lists and Mermaid diagrams from an AI chat in Confluence Cloud: what to copy, what breaks, and how to fix it." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/paste-chatgpt-answer-into-confluence.html" />
+<meta property="og:url" content="https://dortus.com/paste-chatgpt-answer-into-confluence.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-dortus.png" />
+<meta property="og:image:alt" content="Dortus: editors for Confluence Cloud" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to paste a ChatGPT or Claude answer into Confluence without losing the formatting",
+  "description": "How to get an answer from ChatGPT, Claude or another AI chat into Confluence Cloud with its tables, code, task lists and Mermaid diagrams: copying Markdown versus formatted text, what breaks, and tips.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-11-01T09:00:00+00:00",
+  "dateModified": "2026-11-01T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/paste-chatgpt-answer-into-confluence.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why did my whole answer become one code block?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The answer was probably wrapped in a fence: ```markdown at the top and ``` at the bottom. Confluence then makes one code block of everything. Copy only the lines between the fences, or ask the assistant not to wrap the answer in a code block." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my checkboxes turn into bullets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In our test, task lists only became Confluence tasks when the clipboard held Markdown (- [ ] and - [x]). Formatted text with checkboxes came in as a normal bullet list. Copy the answer as Markdown, or convert the bullets to tasks by hand." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Confluence show a Mermaid diagram from an AI answer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. A Mermaid code block arrives as a plain code block with the code as text. To see the diagram you need an image of it or a Marketplace app that draws Mermaid." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I undo the conversion and keep the raw text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In our test, a small menu appeared right after pasting Markdown. Under Paste as, choose Plain text: the text is pasted again as typed, with the # and * characters." }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="atlassian.html">Dortus apps for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">How to paste a ChatGPT or Claude answer into Confluence without losing the formatting</h1>
+<p class="lede">
+An answer from ChatGPT, Claude or another AI chat often has headings, a table, some code and maybe a task list or a diagram. Paste it into Confluence Cloud the wrong way and you get a wall of <code>#</code> and <code>|</code> characters, or one big code block. This page shows what to copy, what Confluence does with it, and what still breaks.
+</p>
+<p class="page-meta">Published 1 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="two-kinds">Two kinds of copy: Markdown or formatted text</h2>
+<p>AI chat apps write their answers in Markdown and show them formatted. When you copy an answer, your clipboard holds one of two things, depending on the app and on how you copy:</p>
+<ul>
+<li><strong>Markdown text</strong>: the answer with its <code>#</code>, <code>**</code>, <code>|</code> and <code>```</code> characters.</li>
+<li><strong>Formatted text</strong> (rich text): what you get when you select the answer on the screen with your mouse and copy it, like copying from any web page.</li>
+</ul>
+<p>Confluence treats the two differently, so it helps to know which one you have. A quick check: paste into a plain text editor such as Notepad, or TextEdit in plain text mode. If you see <code>#</code> and <code>**</code>, you copied Markdown.</p>
+
+<h2 id="markdown">Copy as Markdown: usually the best result</h2>
+<p>When the clipboard holds Markdown, Confluence Cloud converts it while pasting. In our test on 1 November 2026, these came through as real Confluence formatting:</p>
+<ul>
+<li>Headings, bold, italic, strikethrough, inline code and links</li>
+<li>Bullet and numbered lists, including nested items</li>
+<li><strong>Task lists</strong>: <code>-&nbsp;[ ]</code> and <code>-&nbsp;[x]</code> became Confluence tasks, open and done</li>
+<li><strong>Tables</strong>, with the first row as header row</li>
+<li><strong>Code blocks</strong>: a block marked <code>```python</code> kept its language, so the code was shown in colour</li>
+<li>Quotes and dividers</li>
+</ul>
+<p>Use the app's copy button or a "copy as Markdown" option if it has one, and check what you got with the plain text editor test above.</p>
+
+<h2 id="rich">Copy as formatted text: what changes</h2>
+<p>When we pasted formatted text with the same kinds of elements, Confluence kept the headings, bold, inline code, lists and the table. Two things were lost:</p>
+<ul>
+<li><strong>Checkboxes became plain bullets.</strong> The task list arrived as a normal bullet list.</li>
+<li><strong>Code blocks lost their language</strong>, so the code was shown without colours. You can set the language again in the code block's menu.</li>
+</ul>
+<p>The formatted text that each chat app puts on the clipboard is a bit different, so your result can differ in details. If tasks or code matter, copy as Markdown.</p>
+
+<h2 id="breaks">What breaks either way</h2>
+<table>
+<thead>
+<tr><th scope="col">In the answer</th><th scope="col">In Confluence</th></tr>
+</thead>
+<tbody>
+<tr><td>A Mermaid diagram (<code>```mermaid</code>)</td><td>A plain code block with the Mermaid code; no diagram</td></tr>
+<tr><td>Math such as <code>$$E = mc^2$$</code></td><td>Plain text, dollar signs included</td></tr>
+<tr><td>Footnotes (<code>[^1]</code>)</td><td>Plain text</td></tr>
+<tr><td>HTML tags in the Markdown</td><td>Plain text, tags and all</td></tr>
+<tr><td>Column alignment in a table (<code>:--</code>, <code>--:</code>)</td><td>Dropped; all columns left-aligned</td></tr>
+<tr><td>The whole answer wrapped in <code>```markdown</code></td><td>One big code block</td></tr>
+</tbody>
+</table>
+<p>And one thing to know before you paste: Confluence does not keep the Markdown. The pasted answer becomes ordinary Confluence content. That is fine for a page people will edit as a normal page, but you cannot open it later and edit the Markdown. More on that in <a href="markdown-confluence-cloud.html">Markdown in Confluence Cloud: what works and what doesn't</a>.</p>
+
+<h2 id="steps">Step by step</h2>
+<ol>
+<li>Copy the answer as Markdown (check it with a plain text editor if you are not sure).</li>
+<li>If the answer starts with <code>```markdown</code> and ends with <code>```</code>, remove those two lines.</li>
+<li>Put the cursor on an empty line in the Confluence page and paste.</li>
+<li>Check the result. If you wanted the raw Markdown instead, use the menu that appears after pasting: <strong>Paste as</strong>, then <strong>Plain text</strong>.</li>
+<li>Look over code blocks (language set?), tasks and tables, and replace any Mermaid code block with a real diagram (see below).</li>
+</ol>
+
+<h2 id="tips">Tips for the prompt</h2>
+<p>A few words in your prompt save cleanup later:</p>
+<ul>
+<li><strong>"Reply in Markdown. Do not wrap the whole answer in a code block."</strong> This avoids the one-big-code-block problem.</li>
+<li><strong>"Write tasks as a Markdown task list with <code>-&nbsp;[ ]</code>."</strong> These become Confluence tasks when pasted as Markdown.</li>
+<li><strong>"Put the language name after the opening backticks of each code block."</strong> Then Confluence can show the code in colour.</li>
+<li><strong>"No HTML."</strong> HTML ends up on the page as text.</li>
+<li><strong>Keep table cells short.</strong> Long text in a cell makes a wide table that is hard to read on a Confluence page.</li>
+</ul>
+
+<h2 id="mermaid">Mermaid diagrams from an AI answer</h2>
+<p>AI assistants are good at writing Mermaid code for flowcharts, sequence diagrams and timelines. Confluence shows that code as text. To see the diagram, export it as an image, or use a Marketplace app that draws Mermaid on the page. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> walks through the options, with an example prompt.</p>
+
+<h2 id="keep-markdown">When the Markdown should stay editable</h2>
+<p>If people will keep updating the answer, for example a runbook or a checklist that started in an AI chat, consider a Markdown macro app from the Atlassian Marketplace. Several exist. The Markdown stays in the macro on the page, so the next person can edit it as Markdown instead of rich text. Points worth comparing: a preview while you type, support for task lists and Mermaid, and whether your text is rendered in the browser or sent to a server outside Atlassian.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Why did my whole answer become one code block?</summary>
+<p>The answer was probably wrapped in a fence: <code>```markdown</code> at the top and <code>```</code> at the bottom. Confluence then makes one code block of everything. Copy only the lines between the fences, or ask the assistant not to wrap the answer in a code block.</p>
+</details>
+<details>
+<summary>Why did my checkboxes turn into bullets?</summary>
+<p>In our test, task lists only became Confluence tasks when the clipboard held Markdown (<code>-&nbsp;[ ]</code> and <code>-&nbsp;[x]</code>). Formatted text with checkboxes came in as a normal bullet list. Copy the answer <a href="#markdown">as Markdown</a>, or convert the bullets to tasks by hand.</p>
+</details>
+<details>
+<summary>Can Confluence show a Mermaid diagram from an AI answer?</summary>
+<p>Not on its own. A Mermaid code block arrives as a plain code block with the code as text. To see the diagram you need an image of it or a Marketplace app that draws Mermaid: see <a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a>.</p>
+</details>
+<details>
+<summary>How do I undo the conversion and keep the raw text?</summary>
+<p>In our test, a small menu appeared right after pasting Markdown. Under <strong>Paste as</strong>, choose <strong>Plain text</strong>: the text is pasted again as typed, with the <code>#</code> and <code>*</code> characters.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or did your paste behave differently? Email <a href="mailto:support@dortus.com?subject=Pasting%20AI%20answers%20into%20Confluence">support@dortus.com</a>.</p>
+<p><strong>Disclosure: Dortus makes Markdown Live Editor for Confluence</strong>, one of those Markdown macros. You paste the answer as it is, see it formatted as you type, and Mermaid code blocks are drawn as diagrams. It is not on the Atlassian Marketplace yet. <a href="https://dortus.com/markdown.html">About Markdown Live Editor for Confluence</a>.</p>
+<p>See also: <a href="markdown-confluence-cloud.html">Markdown in Confluence Cloud: what works and what doesn't</a> and <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an
+open source project. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not
+affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

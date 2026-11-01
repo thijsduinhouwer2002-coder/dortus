@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markdown in Confluence Cloud: what works, what doesn't · Dortus</title>
+<meta name="description" content="What Confluence Cloud does with Markdown you type or paste: what converts, what stays plain text, what it never keeps, and three ways to work with Markdown." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Markdown in Confluence Cloud: what works and what doesn't (2026)" />
+<meta property="og:description" content="We pasted and typed Markdown in the Confluence Cloud editor. What converts, what stays plain text, and three ways to work with Markdown in Confluence." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/markdown-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/markdown-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-dortus.png" />
+<meta property="og:image:alt" content="Dortus: editors for Confluence Cloud" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Markdown in Confluence Cloud: what works and what doesn't (2026)",
+  "description": "What the Confluence Cloud editor does with Markdown you type or paste: which elements convert, what stays plain text (Mermaid, HTML, math, footnotes), why no Markdown source is kept, and three ways to work with Markdown in Confluence.",
+  "image": [
+    "https://dortus.com/assets/logo-dortus-d-1024.png"
+  ],
+  "datePublished": "2026-11-01T09:00:00+00:00",
+  "dateModified": "2026-11-01T09:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/markdown-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Confluence Cloud support Markdown?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Partly. The editor understands Markdown shortcuts while you type, and it converts Markdown you paste into normal Confluence formatting. It does not keep the Markdown itself: after that, the page is edited as rich text." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit a Confluence page in Markdown?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not with the built-in editor. Pasted Markdown is turned into Confluence formatting and saved that way. To keep Markdown as the source you can edit, use a Markdown macro app, or keep the Markdown files elsewhere and publish them with an import tool." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my pasted Markdown end up in one code block?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The text probably starts with a fence such as ```markdown and ends with ```. Confluence then treats everything as one code block. Copy only the lines between the fences, or remove the first and last line before you paste." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I paste Markdown as plain text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In our test, a small menu appeared after pasting, with Paste as: Markdown or Plain text. Plain text puts the Markdown back on the page as typed, with the # and * characters." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Confluence draw Mermaid diagrams from Markdown?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A ```mermaid block becomes an ordinary code block with the Mermaid code as text. To see the diagram you need an image or an app." }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="atlassian.html">Dortus apps for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Markdown in Confluence Cloud: what works and what doesn't (2026)</h1>
+<p class="lede">
+Confluence Cloud understands more Markdown than many people expect. Paste a README and most of it turns into normal Confluence formatting. But the Markdown itself is not kept, and some things stay plain text. This page shows what we saw when we typed and pasted Markdown in the Confluence Cloud editor, and your options.
+</p>
+<p class="page-meta">Published 1 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="short-answer">The short answer</h2>
+<ul>
+<li><strong>Typing Markdown works for the basics.</strong> <code>## </code> makes a heading, <code>**bold**</code> makes bold, <code>[] </code> makes a task.</li>
+<li><strong>Pasting Markdown converts most of it</strong>: headings, lists, task lists, tables, quotes, links and code blocks.</li>
+<li><strong>Some things stay text</strong>: Mermaid diagrams, HTML, math and footnotes.</li>
+<li><strong>The Markdown is not kept.</strong> After the paste, the page is ordinary Confluence content. You edit it as rich text, not as Markdown.</li>
+</ul>
+
+<h2 id="paste">What happens when you paste Markdown</h2>
+<p>We pasted one Markdown document with every common element into a new page in Confluence Cloud on 1 November 2026, from a clipboard that held plain Markdown text (as when you copy from a <code>.md</code> file or a code editor). This is what each element became:</p>
+<table>
+<thead>
+<tr><th scope="col">You paste</th><th scope="col">Confluence shows</th></tr>
+</thead>
+<tbody>
+<tr><td><code># Heading</code>, <code>## Heading</code></td><td>Headings</td></tr>
+<tr><td><code>**bold**</code>, <code>*italic*</code>, <code>~~strike~~</code></td><td>Bold, italic, strikethrough</td></tr>
+<tr><td><code>`code`</code> and <code>[text](url)</code></td><td>Inline code and a link</td></tr>
+<tr><td><code>- item</code>, nested items, <code>1. item</code></td><td>Bullet and numbered lists, nesting kept</td></tr>
+<tr><td><code>-&nbsp;[ ]&nbsp;task</code>, <code>-&nbsp;[x]&nbsp;done</code></td><td>Confluence tasks, open and done</td></tr>
+<tr><td><code>&gt; quote</code></td><td>A quote</td></tr>
+<tr><td>A table with <code>|</code> and <code>---</code></td><td>A table with a header row; column alignment (<code>:--</code>, <code>--:</code>) is not kept</td></tr>
+<tr><td><code>```python</code> code block</td><td>A code block with Python colours</td></tr>
+<tr><td><code>```mermaid</code> code block</td><td>A plain code block with the Mermaid code; no diagram</td></tr>
+<tr><td><code>---</code></td><td>A divider</td></tr>
+<tr><td><code>![alt](https://…)</code></td><td>An image block; in our test it showed "Preview unavailable"</td></tr>
+<tr><td>HTML such as <code>&lt;div&gt;</code> or <code>&lt;b&gt;</code></td><td>Plain text, tags and all</td></tr>
+<tr><td>Footnotes (<code>[^1]</code>) and math (<code>$$…$$</code>)</td><td>Plain text, as typed</td></tr>
+</tbody>
+</table>
+<p>Right after the paste, a small menu appeared next to the pasted text. Under <strong>Paste as</strong> it offered <strong>Markdown</strong> (what you see above) and <strong>Plain text</strong>. Plain text puts everything on the page as typed, with the <code>#</code> and <code>*</code> characters.</p>
+<p>One trap: if the whole text is wrapped in a fence, such as <code>```markdown</code> at the top and <code>```</code> at the bottom, Confluence makes one big code block of it. Remove those two lines first.</p>
+
+<h2 id="typing">Markdown shortcuts while you type</h2>
+<p>Atlassian lists the Markdown you can type in the editor on its page <a href="https://support.atlassian.com/confluence-cloud/docs/find-keyboard-shortcuts" rel="noopener noreferrer">Keyboard shortcuts and autocomplete</a>. The main ones:</p>
+<ul>
+<li><code>#</code> to <code>######</code> and a space: heading 1 to 6</li>
+<li><code>**bold**</code>, <code>*italic*</code>, <code>~~strikethrough~~</code>, <code>`code`</code></li>
+<li><code>*</code> and a space: bullet list; <code>1.</code> and a space: numbered list</li>
+<li><code>&gt;</code> and a space: quote; <code>---</code> and a space: divider</li>
+<li>Three backticks: code block</li>
+<li><code>[text](https://…)</code>: link</li>
+<li><code>[]</code> and a space: task (Atlassian calls it an action item); <code>&lt;&gt;</code> and a space: decision</li>
+</ul>
+<p>What we noticed when we typed them:</p>
+<ul>
+<li><strong>A task is <code>[] </code>, not <code>-&nbsp;[ ]&nbsp;</code>.</strong> Typing <code>-&nbsp;[ ]&nbsp;</code> gives a bullet with the characters <code>[ ]</code> in it. (Pasted, <code>-&nbsp;[ ]</code> does become a task.)</li>
+<li><strong>A table cannot be typed.</strong> <code>| a | b |</code> stays text. Insert a table with <code>/table</code> or the toolbar.</li>
+<li><strong>The language after the backticks is not read.</strong> When we typed <code>```mermaid</code>, the code block started at the backticks and the word <code>mermaid</code> ended up as the first line inside it. Pick the language from the code block's own menu instead.</li>
+</ul>
+
+<h2 id="not">What Confluence Cloud does not do with Markdown</h2>
+<ul>
+<li><strong>It does not keep the Markdown.</strong> A pasted heading is saved as a Confluence heading. We checked the page in Confluence's own storage format: no Markdown left. You cannot open the page later and see or edit the Markdown.</li>
+<li><strong>Editing later is rich text.</strong> The shortcuts above still work for new text, but there is no Markdown view of the page.</li>
+<li><strong>Mermaid becomes a code block</strong>, not a diagram. See <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> for ways to get the diagram.</li>
+<li><strong>HTML is not rendered.</strong> It shows up as text with the tags.</li>
+<li><strong>Math and footnotes are not converted.</strong> <code>$$E = mc^2$$</code> stays as typed. For formulas, see <a href="latex-math-confluence-cloud.html">How to write LaTeX math in Confluence Cloud</a>.</li>
+<li><strong>Table column alignment is dropped.</strong> All columns come in left-aligned.</li>
+</ul>
+
+<h2 id="options">Three ways to work with Markdown in Confluence</h2>
+
+<h3 id="option-paste">1. Paste and let Confluence convert it</h3>
+<p>Nothing to install. Good for a one-off: a README you want to share once, meeting notes from a Markdown editor, an answer from an AI chat. After the paste, the page is normal Confluence content that anyone can edit. The cost: the Markdown is gone, so if the original file changes, you paste again.</p>
+
+<h3 id="option-import">2. Import Markdown files with a tool</h3>
+<p>If your Markdown lives in files (docs in a Git repository, for example), there are import apps on the Atlassian Marketplace, and open source scripts that convert Markdown and publish it through the Confluence REST API. These suit teams who keep editing the files outside Confluence and want Confluence to show a copy. Check what each tool does with the elements in the table above, especially code, tasks and diagrams.</p>
+
+<h3 id="option-macro">3. A Markdown macro that keeps the source</h3>
+<p>Several Marketplace apps add a Markdown macro: you write or paste Markdown in the macro, it shows the result on the page, and the Markdown stays in the macro so the next person can edit it as Markdown. Points worth comparing: whether you see a preview while you type, which Markdown it supports (tables, task lists, Mermaid), and whether your text is rendered in the browser or sent to a server outside Atlassian.</p>
+
+<h2 id="which">How to choose</h2>
+<table>
+<thead>
+<tr><th scope="col">Your situation</th><th scope="col">Best fit</th></tr>
+</thead>
+<tbody>
+<tr><td>A one-off paste; people will edit it as a normal page afterwards</td><td>Paste and convert</td></tr>
+<tr><td>The Markdown lives in a repository and is edited there</td><td>An import tool</td></tr>
+<tr><td>People should keep editing the Markdown on the page, or you need Mermaid diagrams drawn</td><td>A Markdown macro app</td></tr>
+</tbody>
+</table>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Does Confluence Cloud support Markdown?</summary>
+<p>Partly. The editor understands <a href="#typing">Markdown shortcuts</a> while you type, and it converts Markdown you <a href="#paste">paste</a> into normal Confluence formatting. It does not keep the Markdown itself: after that, the page is edited as rich text.</p>
+</details>
+<details>
+<summary>Can I edit a Confluence page in Markdown?</summary>
+<p>Not with the built-in editor. Pasted Markdown is turned into Confluence formatting and saved that way. To keep Markdown as the source you can edit, use a <a href="#option-macro">Markdown macro app</a>, or keep the files elsewhere and publish them with an <a href="#option-import">import tool</a>.</p>
+</details>
+<details>
+<summary>Why does my pasted Markdown end up in one code block?</summary>
+<p>The text probably starts with a fence such as <code>```markdown</code> and ends with <code>```</code>. Confluence then treats everything as one code block. Copy only the lines between the fences, or remove the first and last line before you paste.</p>
+</details>
+<details>
+<summary>How do I paste Markdown as plain text?</summary>
+<p>In our test, a small menu appeared after pasting, with <strong>Paste as</strong>: Markdown or Plain text. Plain text puts the Markdown back on the page as typed, with the <code>#</code> and <code>*</code> characters.</p>
+</details>
+<details>
+<summary>Does Confluence draw Mermaid diagrams from Markdown?</summary>
+<p>No. A <code>```mermaid</code> block becomes an ordinary code block with the Mermaid code as text. To see the diagram you need an image or an app: see <a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a>.</p>
+</details>
+</div>
+
+<h2 id="support">Questions</h2>
+<p>Spotted something wrong on this page, or did Confluence behave differently for you? Email <a href="mailto:support@dortus.com?subject=Markdown%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<p><strong>Disclosure: Dortus makes Markdown Live Editor for Confluence</strong>, a macro of the third kind above: Markdown on the left, the formatted result on the right as you type, with tables, task lists, code in colour and Mermaid diagrams. It is not on the Atlassian Marketplace yet. <a href="https://dortus.com/markdown.html">About Markdown Live Editor for Confluence</a>.</p>
+<p>See also: <a href="paste-chatgpt-answer-into-confluence.html">How to paste a ChatGPT or Claude answer into Confluence without losing the formatting</a> and <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an
+open source project. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
