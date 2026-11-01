@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy policy - Dortus</title>
-<meta name="description" content="How Dortus handles data in MailView for Jira, MailView for Confluence, Mermaid Editor for Confluence, AskSpace, Live Countdown for Confluence, Mermaid Live Preview for Jira, Math for Confluence and PlantUML Editor for Confluence: what is processed, where it is stored, and how long it is kept." />
+<meta name="description" content="How Dortus handles data in MailView for Jira, MailView for Confluence, Mermaid Editor for Confluence, AskSpace, Live Countdown for Confluence, Mermaid Live Preview for Jira, Math for Confluence, PlantUML Editor for Confluence and Markdown Live Editor for Confluence: what is processed, where it is stored, and how long it is kept." />
 <meta name="theme-color" content="#15181c" />
 <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/app-icon.png" />
@@ -45,7 +45,7 @@ The Dortus apps for Confluence and Jira run on Atlassian Forge, inside Atlassian
 Dortus has no servers for them and receives no app content. Below is what each app
 processes, where it is kept, and for how long.
 </p>
-<p class="page-meta enter enter-2">Last updated: 30 October 2026</p>
+<p class="page-meta enter enter-2">Last updated: 1 November 2026</p>
 </div>
 </section>
 
@@ -66,6 +66,7 @@ Jira and Confluence:
 <li><strong>Mermaid Live Preview for Jira</strong> (Mermaid Live Preview for Jira)</li>
 <li><strong>Math for Confluence</strong> (Math for Confluence; submitted to the Marketplace, waiting for approval)</li>
 <li><strong>PlantUML Editor for Confluence</strong> (PlantUML Editor)</li>
+<li><strong>Markdown Live Editor for Confluence</strong> (Markdown Live Editor)</li>
 </ul>
 <p>
 We also publish <strong>Arrears</strong> for Shopify, a separate product. It is described in
@@ -92,7 +93,7 @@ controller of that correspondence.
 <strong>Short version.</strong> The Atlassian apps store nothing on Dortus servers, because
 there are none. MailView for Jira, MailView for Confluence, Live Countdown and Mermaid Live
 Preview for Jira have no app storage; Mermaid Live Preview for Jira keeps its diagrams on the
-Jira work item. AskSpace, Mermaid Editor for Confluence, Math for Confluence and PlantUML Editor keep their data in
+Jira work item. AskSpace, Mermaid Editor for Confluence, Math for Confluence, PlantUML Editor and Markdown Live Editor keep their data in
 Forge app storage in your Atlassian site. MailView for Jira counts how often it is used, as three numbers per site,
 through Atlassian. From version 1.2, Mermaid Editor for Confluence keeps similar plain
 counters about inserts and its feedback question.
@@ -112,6 +113,8 @@ issue properties, and has no app storage. Math for Confluence saves the formula 
 on the Confluence page, and keeps version history in <strong>Forge app storage in your
 Atlassian site</strong>. PlantUML Editor saves the diagram source in the macro on the Confluence page, and keeps
 version history and its feedback question in <strong>Forge app storage in your Atlassian
+site</strong>. Markdown Live Editor saves the Markdown in the macro on the Confluence page, and keeps
+version history and its feedback question in <strong>Forge app storage in your Atlassian
 site</strong>. Live Countdown saves its settings in the macro on the Confluence page
 and has no app storage. MailView for Jira and MailView for Confluence have
 no app storage. To ask you once whether MailView works well for you, they keep one small entry in
@@ -130,7 +133,7 @@ data egress to Dortus for normal use of the apps.
 One thing does reach us: Atlassian lets the developer of a Forge app see technical logs from
 the sites where it is installed, in Atlassian's developer console, for 30 days. AskSpace and
 MailView for Confluence only write error types, status codes, counts and timings to those logs, never your
-content, names or IDs. MailView for Jira writes no log lines in the published version. Live Countdown, Mermaid Live Preview for Jira, Math for Confluence and PlantUML Editor write no log lines. Log sharing is on by default; your site's admins can turn it off.
+content, names or IDs. MailView for Jira writes no log lines in the published version. Live Countdown, Mermaid Live Preview for Jira, Math for Confluence, PlantUML Editor and Markdown Live Editor write no log lines. Log sharing is on by default; your site's admins can turn it off.
 </p>
 <p>
 MailView for Jira also keeps three plain counters through Atlassian's Forge metrics: how often the
@@ -314,7 +317,33 @@ leave the browser. There is no diagram text, page, account ID or name in them. Y
 can turn custom metrics off for the app in Atlassian Administration. Nothing is sent to Dortus.
 </p>
 
-<h3>3.10 Billing</h3>
+<h3 id="markdown">3.10 What Markdown Live Editor for Confluence processes</h3>
+<ul>
+<li>The Markdown you type or paste in the macro</li>
+<li>Earlier versions of that Markdown (up to 20 saves per macro, at most 200 KB together), each with the time it was saved, kept so you can step back after a bad edit</li>
+<li>For each person who inserts Markdown: their Atlassian account ID, a count of successful inserts (it stops at 3), when their first insert happened, how often and when the app asked them for feedback (at most twice), and whether they answered or closed that question. Nothing else about the person is stored, and their answer is not stored</li>
+</ul>
+<p>
+The Markdown is saved in the macro on the Confluence page, like the settings of any Confluence
+macro, so it follows the page's permissions and version history. Earlier versions and the
+feedback entry are kept in Forge app storage in your Atlassian site; earlier versions are kept
+under the macro's ID. The Markdown is turned into formatted text in the browser of the person
+viewing the page, by code that is part of the app. All HTML is cleaned before it is shown, so no
+script can run. Images from web addresses are not loaded: the page shows their description
+instead. For a PDF or Word export, Confluence calls the app's export function on Atlassian's
+Forge platform with the Markdown, which turns it into Confluence content and keeps nothing
+afterwards. The app asks for one permission, <code>storage:app</code>, and makes no network calls
+outside Atlassian.
+</p>
+<p>
+Like Mermaid Editor for Confluence, the app keeps plain counters through Atlassian's custom
+metrics: how often Markdown is inserted, and how often the feedback question is shown,
+answered, closed, or leads to the review or support page. Only the name of the counter and +1
+leave the browser. There is no Markdown, page, account ID or name in them. Your site admins
+can turn custom metrics off for the app in Atlassian Administration. Nothing is sent to Dortus.
+</p>
+
+<h3>3.11 Billing</h3>
 <p>
 Marketplace billing is handled by Atlassian. We never see card details.
 </p>
@@ -324,7 +353,8 @@ Marketplace billing is handled by Atlassian. We never see card details.
 <li>
 <strong>Atlassian Pty Ltd</strong>: platform, Forge runtime, storage, and billing for
 MailView for Jira, MailView for Confluence, Mermaid Editor for Confluence, AskSpace, Live Countdown,
-Mermaid Live Preview for Jira, Math for Confluence and PlantUML Editor for Confluence.
+Mermaid Live Preview for Jira, Math for Confluence, PlantUML Editor for Confluence and
+Markdown Live Editor for Confluence.
 </li>
 </ul>
 <p>
@@ -342,7 +372,7 @@ or any other third party to load them.
 <h2>6. Why we process data</h2>
 <p>
 Only to provide the features you enable: storing and displaying questions and answers,
-rendering diagrams and formulas, showing countdowns, and showing email attachments. Our legal basis is
+rendering diagrams, formulas and Markdown, showing countdowns, and showing email attachments. Our legal basis is
 the performance of our agreement with you, and our legitimate interest in keeping the
 service running securely.
 </p>
@@ -380,6 +410,12 @@ rules for app storage.
 <strong>PlantUML Editor for Confluence</strong>: the diagram source is part of the Confluence
 page, so it follows the page's own retention and deletion. Version history (the last 20 saves
 per diagram) and the feedback entry stay in Forge storage for your site. Uninstall and deletion
+follow Atlassian's platform rules for app storage.
+</li>
+<li>
+<strong>Markdown Live Editor for Confluence</strong>: the Markdown is part of the Confluence
+page, so it follows the page's own retention and deletion. Version history (up to 20 saves
+per macro) and the feedback entry stay in Forge storage for your site. Uninstall and deletion
 follow Atlassian's platform rules for app storage.
 </li>
 <li>
