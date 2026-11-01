@@ -207,11 +207,12 @@ body.home .btn-primary:hover {
   margin-top: clamp(3rem, 7vw, 5rem);
 }
 
-.h-editor.is-flipped {
+/* Every second editor has the screenshot on the right. */
+.h-editor:nth-of-type(even) {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
 }
 
-.h-editor.is-flipped .h-shot {
+.h-editor:nth-of-type(even) .h-shot {
   order: 2;
 }
 
@@ -361,7 +362,7 @@ body.home .btn-primary:hover {
 @media (max-width: 860px) {
   .h-row,
   .h-editor,
-  .h-editor.is-flipped,
+  .h-editor:nth-of-type(even),
   .h-promise {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -369,7 +370,7 @@ body.home .btn-primary:hover {
     border-left: 0;
     border-top: 1px dashed var(--h-grid);
   }
-  .h-editor.is-flipped .h-shot {
+  .h-editor:nth-of-type(even) .h-shot {
     order: 0;
   }
   .h-others li {
