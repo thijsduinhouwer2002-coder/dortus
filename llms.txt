@@ -13,6 +13,7 @@ Mermaid Editor for Confluence is live and free on the Atlassian Marketplace. Mat
 
 - [How to add Mermaid diagrams to Confluence Cloud](https://dortus.com/mermaid-diagrams-confluence-cloud.html): what Confluence does with pasted Mermaid, three ways to get a real diagram, and diagrams from ChatGPT or Claude.
 - [Mermaid diagram examples for Confluence](https://dortus.com/mermaid-examples-confluence.html): twelve short examples to copy, one per diagram type.
+- [Mermaid apps for Confluence Cloud compared](https://dortus.com/mermaid-apps-confluence-cloud-compared.html): twelve Mermaid apps side by side (price, Runs on Atlassian, live preview, PDF export, dark mode, installs, rating), from their Marketplace listings on 2 November 2026. Dortus makes one of them.
 - [Gantt chart in Confluence Cloud](https://dortus.com/gantt-chart-confluence-cloud.html): a release plan in Mermaid, the syntax and common mistakes.
 - [Sequence diagram in Confluence Cloud](https://dortus.com/sequence-diagram-confluence-cloud.html): an API login flow in Mermaid, the syntax and common mistakes.
 - [Mind map in Confluence Cloud](https://dortus.com/mind-map-confluence-cloud.html): a project mind map in Mermaid, the syntax and common mistakes.
