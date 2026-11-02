@@ -45,7 +45,7 @@ The Dortus apps for Confluence and Jira run on Atlassian Forge, inside Atlassian
 Dortus has no servers for them and receives no app content. Below is what each app
 processes, where it is kept, and for how long.
 </p>
-<p class="page-meta enter enter-2">Last updated: 1 November 2026</p>
+<p class="page-meta enter enter-2">Last updated: 2 November 2026</p>
 </div>
 </section>
 
@@ -182,11 +182,12 @@ reads, it keeps only the imported questions and answers, in Forge app storage.
 <ul>
 <li>The diagram source you type in the macro</li>
 <li>Earlier versions of that source (the last 20 saves per diagram), kept so you can step back after a bad edit</li>
+<li>From version 1.3: a picture (PNG) of the diagram as drawn in the editor, with a fingerprint (hash) of its source, kept so the diagram shows as a picture in a PDF export of the page. One picture per diagram, replaced when the diagram changes</li>
 <li>For each person who inserts diagrams: their Atlassian account ID, a count of successful inserts (it stops at 3), when their first insert happened, how often and when the app asked them for feedback (at most twice), and whether they answered or closed that question. Nothing else about the person is stored, and their answer is not stored</li>
 </ul>
 <p>
-The diagram source is saved in the macro on the Confluence page. Earlier versions are kept
-in Forge app storage in your Atlassian site. The diagram is drawn in the browser of the
+The diagram source is saved in the macro on the Confluence page. Earlier versions, and from
+version 1.3 the picture used for PDF export, are kept in Forge app storage in your Atlassian site. The diagram is drawn in the browser of the
 person viewing the page. The app uses no external services. Apart from the plain counters
 described in section 3.1 (from version 1.2), nothing is sent to Dortus.
 </p>
@@ -386,7 +387,7 @@ your site. Uninstall and deletion follow Atlassian's platform rules for app stor
 <li>
 <strong>Mermaid Editor for Confluence</strong>: the diagram source is part of the Confluence page,
 so it follows the page's own retention and deletion. Version history (the last 20 saves
-per diagram) and the feedback counter per account ID stay in Forge storage for your site.
+per diagram), the picture for PDF export (from version 1.3) and the feedback counter per account ID stay in Forge storage for your site.
 Uninstall and deletion follow Atlassian's platform rules for app storage.
 </li>
 <li>
