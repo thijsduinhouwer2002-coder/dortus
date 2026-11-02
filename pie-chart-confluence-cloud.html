@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pie chart in Confluence Cloud (free, with Mermaid) &middot; Dortus</title>
+<meta name="description" content="Confluence Cloud shows a pasted Mermaid pie chart as plain code. Draw a pie chart on the page with a free app: a support tickets example and fixes." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Pie chart in Confluence Cloud: pie charts from text, free with Mermaid" />
+<meta property="og:description" content="Pasted Mermaid stays code in Confluence Cloud. Draw a pie chart on the page with a free app: support tickets by cause, the syntax, and fixes." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/pie-chart-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/pie-chart-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pie chart in Confluence Cloud: pie charts from text, free with Mermaid",
+  "description": "Confluence Cloud shows a pasted Mermaid pie chart as plain code. Draw a pie chart on the page with a free app: a support tickets example and fixes.",
+  "image": [
+    "https://dortus.com/assets/mermaid-examples/pie-support-tickets.png",
+    "https://dortus.com/assets/og-mermaid.png"
+  ],
+  "datePublished": "2026-11-02T15:00:00+00:00",
+  "dateModified": "2026-11-02T15:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/pie-chart-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Confluence Cloud draw a pie chart from Mermaid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not on its own. In our tests a pasted Mermaid pie block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the pie chart on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I type percentages or counts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Counts, or any positive numbers. Mermaid adds them up and shows each slice as a rounded percentage of the total. A percent sign after a number gives an error."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I show the numbers next to the labels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Write pie showData on the first line. The legend then shows each number in square brackets after its label, for example Login and SSO [128]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is one of my slices missing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two common causes: the slice is under 1% of the total, which Mermaid does not draw, or the same label appears twice, in which case only the first line counts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the pie chart update from Jira data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The chart shows the numbers you type in the code. To change it, edit the diagram and change the numbers. For a chart that follows live Jira data, use a Jira gadget or a chart app that reads the data."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Pie chart in Confluence Cloud: pie charts from text, free with Mermaid</h1>
+<p class="lede">
+Confluence Cloud does not draw Mermaid on its own. Paste a Mermaid <code>pie</code> block into a page and it stays a code block: readers see the labels and numbers as text, not as a pie chart. A Mermaid app draws it. With Mermaid Editor for Confluence, a free app on the Atlassian Marketplace, you type the labels and numbers and the pie chart draws next to them while you type. Below: the steps, a support tickets example to copy, how the syntax works, and the mistakes that make a slice go missing.
+</p>
+<p class="page-meta">Published 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="confluence">What Confluence Cloud does with Mermaid on its own</h2>
+<p>Confluence Cloud does not draw Mermaid itself. In our tests in October and November 2026, a <code>```mermaid</code> block pasted into a page became an ordinary code block: readers see the labels and numbers as text, not the diagram. The code is kept safely, but nothing is drawn.</p>
+<p>To see the diagram you need a Mermaid app that adds a macro to the editor, or you draw the diagram elsewhere and upload a picture. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes.</p>
+
+<h2 id="steps">How to add a pie chart with Mermaid Editor for Confluence</h2>
+<p>Full disclosure: Dortus makes this app. The steps:</p>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> from the Atlassian Marketplace. The app is free.</li>
+<li>Open the page in edit mode. Type <code>/mermaid</code> and choose <strong>Mermaid Editor</strong>. You can also open the <strong>+</strong> insert menu in the toolbar and search for Mermaid Editor.</li>
+<li>The editor opens with the code on the left and a live preview on the right. Click the <strong>Pie</strong> example to start from a short where-the-time-goes chart, or paste the example from this page. If you paste a block that starts with <code>```mermaid</code>, the fences are removed for you.</li>
+<li>Change the text. The preview redraws as you type. If a line is wrong, the preview says what is wrong and names the line, and that line is marked in the code.</li>
+<li>Click <strong>Insert diagram</strong>, or press <strong>Ctrl+Enter</strong> (Cmd+Enter on a Mac). Publish the page.</li>
+<li>To change it later, select the diagram in the editor and click the pencil icon. <strong>Versions</strong> in the editor brings back any of the last 20 saves.</li>
+</ol>
+<p>On the page the diagram fits the width of the page. Hover over it, or tab to it, for the zoom buttons. Click it, or use <strong>Open large</strong>, to see it in a big window. <strong>SVG</strong> and <strong>PNG</strong> download the diagram for a slide or an email. In Confluence&rsquo;s dark mode the diagram is drawn in Mermaid&rsquo;s dark colours. A PDF export of the page shows the diagram as a picture, made when you click Insert diagram; a Word export shows the Mermaid code. The app has 12 examples to start from: flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+<p>Where it lives: the app runs on Atlassian Forge. The Mermaid code is saved in the macro on the page, earlier versions and the picture for PDF export in Forge storage in your own Atlassian site, and the diagram is drawn in the browser of the person reading the page. No diagram text leaves your Atlassian site. The app does count a few actions, such as a diagram inserted, as anonymous numbers; <a href="privacy.html">the privacy policy</a> lists them.</p>
+
+<h2 id="example">Example: support tickets by cause</h2>
+<p>A support team&rsquo;s tickets for one quarter, by cause: 412 tickets in five groups. Copy it and change the labels and numbers to your own.</p>
+<pre><code>pie showData
+    title Support tickets by cause, Q3 2026
+    "Login and SSO" : 128
+    "Billing questions" : 94
+    "Bug reports" : 87
+    "Feature requests" : 61
+    "Other" : 42</code></pre>
+<p class="example-render"><img src="assets/mermaid-examples/pie-support-tickets.png" width="706" height="482" loading="lazy" alt="Rendered pie chart titled Support tickets by cause, Q3 2026: login and SSO 31 percent, billing questions 23 percent, bug reports 21 percent, feature requests 15 percent, other 10 percent, with the counts in the legend" style="max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;background:#fff"></p>
+<p class="small">Drawn with Mermaid 12.2, the version the app uses.</p>
+<h3 id="syntax">How the syntax works</h3>
+<ul>
+<li><code>pie</code> on the first line names the diagram type. <code>showData</code> after it adds the numbers to the legend, as in <code>Login and SSO [128]</code>.</li>
+<li><code>title</code> adds a heading. It can also go on the first line: <code>pie title Support tickets</code>.</li>
+<li>Each slice is a label in double quotes, a colon and a number: <code>"Bug reports" : 87</code>.</li>
+<li>Type the counts, not the percentages. Mermaid adds them up and writes each slice&rsquo;s share as a percentage, rounded to a whole number.</li>
+<li>A decimal number uses a point: <code>12.5</code>.</li>
+<li>Slices are drawn in the order you write them. Put the largest first if you want it to start at the top.</li>
+</ul>
+<p><strong>Let an AI assistant write the first version.</strong> ChatGPT and Claude can write Mermaid. Paste the numbers from a spreadsheet or a Jira filter, ask for a Mermaid pie chart, and paste the answer into the editor. Check that the numbers match your source: assistants sometimes round or turn counts into percentages.</p>
+
+<h2 id="mistakes">Common mistakes and how to fix them</h2>
+<ul>
+<li><strong>A label without quotes.</strong> <code>Login : 128</code> is an error, and the editor names the line. Fix: <code>"Login" : 128</code>.</li>
+<li><strong>A percent sign or a decimal comma.</strong> <code>"Login" : 31%</code> and <code>"Login" : 12,5</code> are errors. Fix: plain numbers with a decimal point, <code>31</code> or <code>12.5</code>. Mermaid works out the percentages.</li>
+<li><strong>A negative number.</strong> <code>"Refunds" : -5</code> is an error; the editor shows Mermaid&rsquo;s message that negative values are not allowed. Fix: a pie chart shows parts of a whole, so use zero or more. For gains and losses, a table or a bar chart fits better.</li>
+<li><strong>The same label twice.</strong> Two lines called <code>"Login"</code> give no error, but in our test only the first one counted and the second was left out. Fix: add the numbers up in one line, or give the lines different labels.</li>
+<li><strong>A very small slice.</strong> A slice under 1% of the total is not drawn; it only shows in the legend. In our test 3 out of 503 tickets left no slice. Fix: group small values into &ldquo;Other&rdquo;.</li>
+</ul>
+
+<h2 id="alternatives">Other ways</h2>
+<p>Other Mermaid apps exist on the Atlassian Marketplace; <a href="mermaid-diagrams-confluence-cloud.html">the Mermaid guide</a> lists points worth comparing. A Mermaid pie chart is drawn from numbers you type: it does not update itself. For a chart that follows live data, such as open Jira work items, use a Jira gadget or a chart app that reads the data. For a one-off chart from a spreadsheet, a picture of the spreadsheet&rsquo;s chart also works.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can Confluence Cloud draw a pie chart from Mermaid?</summary>
+<p>Not on its own. In our tests a pasted Mermaid pie block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the pie chart on the page.</p>
+</details>
+<details>
+<summary>Do I type percentages or counts?</summary>
+<p>Counts, or any positive numbers. Mermaid adds them up and shows each slice as a rounded percentage of the total. A percent sign after a number gives an error.</p>
+</details>
+<details>
+<summary>How do I show the numbers next to the labels?</summary>
+<p>Write pie showData on the first line. The legend then shows each number in square brackets after its label, for example Login and SSO [128].</p>
+</details>
+<details>
+<summary>Why is one of my slices missing?</summary>
+<p>Two common causes: the slice is under 1% of the total, which Mermaid does not draw, or the same label appears twice, in which case only the first line counts.</p>
+</details>
+<details>
+<summary>Can the pie chart update from Jira data?</summary>
+<p>No. The chart shows the numbers you type in the code. To change it, edit the diagram and change the numbers. For a chart that follows live Jira data, use a Jira gadget or a chart app that reads the data.</p>
+</details>
+</div>
+
+<h2 id="more">By diagram type</h2>
+<p>A pie chart shows the parts of one whole. <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has a short example of each of twelve diagram types. Guides that go deeper on one type:</p>
+<ul>
+<li><a href="gantt-chart-confluence-cloud.html">Gantt charts in Confluence Cloud</a></li>
+<li><a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a></li>
+<li><a href="mind-map-confluence-cloud.html">Mind maps in Confluence Cloud</a></li>
+<li><a href="er-diagram-confluence-cloud.html">ER diagrams (entity relationship) in Confluence Cloud</a></li>
+<li><a href="class-diagram-confluence-cloud.html">Class diagrams in Confluence Cloud</a></li>
+<li><a href="state-diagram-confluence-cloud.html">State diagrams in Confluence Cloud</a></li>
+<li><a href="timeline-confluence-cloud.html">Timelines in Confluence Cloud</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+</ul>
+
+<h2 id="support">Questions</h2>
+<p>An example that does not draw for you, or a mistake we missed? Email <a href="mailto:support@dortus.com?subject=Pie%20chart%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io is a product of its respective company. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

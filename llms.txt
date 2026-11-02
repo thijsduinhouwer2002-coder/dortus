@@ -17,6 +17,10 @@ Mermaid Editor for Confluence is live and free on the Atlassian Marketplace. Mat
 - [Sequence diagram in Confluence Cloud](https://dortus.com/sequence-diagram-confluence-cloud.html): an API login flow in Mermaid, the syntax and common mistakes.
 - [Mind map in Confluence Cloud](https://dortus.com/mind-map-confluence-cloud.html): a project mind map in Mermaid, the syntax and common mistakes.
 - [ER diagram in Confluence Cloud](https://dortus.com/er-diagram-confluence-cloud.html): an orders and customers data model in Mermaid, the syntax and common mistakes.
+- [Class diagram in Confluence Cloud](https://dortus.com/class-diagram-confluence-cloud.html): a subscription billing model as a UML class diagram in Mermaid, the syntax and common mistakes.
+- [State diagram in Confluence Cloud](https://dortus.com/state-diagram-confluence-cloud.html): a support ticket lifecycle in Mermaid, the syntax and common mistakes.
+- [Timeline in Confluence Cloud](https://dortus.com/timeline-confluence-cloud.html): a migration plan by month as a Mermaid timeline, the syntax and common mistakes.
+- [Pie chart in Confluence Cloud](https://dortus.com/pie-chart-confluence-cloud.html): support tickets by cause as a Mermaid pie chart, the syntax and common mistakes.
 - [How to make a flowchart in Confluence Cloud](https://dortus.com/flowchart-confluence-cloud.html): a whiteboard, a diagram app, or a Mermaid flowchart.
 
 ## Guides: math in Confluence
