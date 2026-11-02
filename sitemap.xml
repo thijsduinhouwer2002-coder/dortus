@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dortus.com/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://dortus.com/atlassian.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mailview.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/mailview-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
@@ -51,9 +51,9 @@
   <url><loc>https://dortus.com/de/email-anhaenge-nach-jira-migration.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dortus.com/de/phishing-meldungen-jira-service-management.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://dortus.com/attach-email-to-existing-jira-work-item.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://dortus.com/mermaid-diagrams-confluence-cloud.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://dortus.com/mermaid-diagrams-confluence-cloud.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://dortus.com/latex-math-confluence-cloud.html</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://dortus.com/mermaid-examples-confluence.html</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://dortus.com/mermaid-examples-confluence.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://dortus.com/read-email-headers-phishing.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/email-to-confluence-cloud.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/forum-discussion-board-confluence-cloud.html</loc><lastmod>2026-10-30</lastmod></url>
@@ -61,4 +61,8 @@
   <url><loc>https://dortus.com/equation-editor-confluence-cloud.html</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://dortus.com/markdown-confluence-cloud.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://dortus.com/paste-chatgpt-answer-into-confluence.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://dortus.com/gantt-chart-confluence-cloud.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://dortus.com/sequence-diagram-confluence-cloud.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://dortus.com/mind-map-confluence-cloud.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://dortus.com/er-diagram-confluence-cloud.html</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
