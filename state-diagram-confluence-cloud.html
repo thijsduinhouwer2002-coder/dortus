@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>State diagram in Confluence Cloud (free, with Mermaid) &middot; Dortus</title>
+<meta name="description" content="Confluence Cloud shows a pasted Mermaid state diagram as plain code. Draw state machines on the page with a free app: a support ticket example and fixes." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="State diagram in Confluence Cloud: state machines, free with Mermaid" />
+<meta property="og:description" content="Pasted Mermaid stays code in Confluence Cloud. Draw a state diagram on the page with a free app: a support ticket lifecycle, the syntax, and fixes." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/state-diagram-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/state-diagram-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "State diagram in Confluence Cloud: state machines, free with Mermaid",
+  "description": "Confluence Cloud shows a pasted Mermaid state diagram as plain code. Draw state machines on the page with a free app: a support ticket example and fixes.",
+  "image": [
+    "https://dortus.com/assets/mermaid-examples/state-support-ticket.png",
+    "https://dortus.com/assets/og-mermaid.png"
+  ],
+  "datePublished": "2026-11-02T15:00:00+00:00",
+  "dateModified": "2026-11-02T15:00:00+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dortus.com/assets/logo-dortus-d-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dortus.com/state-diagram-confluence-cloud.html"
+  },
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Confluence Cloud draw a state diagram from text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not on its own. In our tests a pasted Mermaid stateDiagram-v2 block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the state diagram on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between stateDiagram and stateDiagram-v2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both work in the Mermaid version the app uses and draw a state diagram from the same text. The Mermaid documentation uses stateDiagram-v2 in its examples, so that is the one to pick for new diagrams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use a state name with spaces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Give the state an id: state \"In progress\" as InProgress. Use the id in the arrows; the diagram shows the name with spaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I show a state with steps inside it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Write state InProgress { on one line, the moves between the inner states below it, and } at the end. The inner part can have its own [*] start."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I draw my Jira workflow this way?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, by typing it. The app does not read Jira workflows, but you can list your statuses and transitions, or ask ChatGPT or Claude to turn them into a Mermaid stateDiagram-v2, and paste the result into the editor."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">State diagram in Confluence Cloud: state machines, free with Mermaid</h1>
+<p class="lede">
+Confluence Cloud does not draw Mermaid on its own. Paste a Mermaid <code>stateDiagram-v2</code> block into a page and it stays a code block: readers see the states as text, not as a state diagram. A Mermaid app draws it. With Mermaid Editor for Confluence, a free app on the Atlassian Marketplace, you type the states and the moves between them and the state diagram draws next to them while you type. Below: the steps, a support ticket lifecycle to copy, how the syntax works, and the mistakes that add states you did not ask for.
+</p>
+<p class="page-meta">Published 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="confluence">What Confluence Cloud does with Mermaid on its own</h2>
+<p>Confluence Cloud does not draw Mermaid itself. In our tests in October and November 2026, a <code>```mermaid</code> block pasted into a page became an ordinary code block: readers see the states as text, not the diagram. The code is kept safely, but nothing is drawn.</p>
+<p>To see the diagram you need a Mermaid app that adds a macro to the editor, or you draw the diagram elsewhere and upload a picture. <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a> compares those routes.</p>
+
+<h2 id="steps">How to add a state diagram with Mermaid Editor for Confluence</h2>
+<p>Full disclosure: Dortus makes this app. The steps:</p>
+<ol>
+<li>A Confluence admin installs <a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> from the Atlassian Marketplace. The app is free.</li>
+<li>Open the page in edit mode. Type <code>/mermaid</code> and choose <strong>Mermaid Editor</strong>. You can also open the <strong>+</strong> insert menu in the toolbar and search for Mermaid Editor.</li>
+<li>The editor opens with the code on the left and a live preview on the right. Click the <strong>State</strong> example to start from a short draft, review and approve example, or paste the example from this page. If you paste a block that starts with <code>```mermaid</code>, the fences are removed for you.</li>
+<li>Change the text. The preview redraws as you type. If a line is wrong, the preview says what is wrong and names the line, and that line is marked in the code.</li>
+<li>Click <strong>Insert diagram</strong>, or press <strong>Ctrl+Enter</strong> (Cmd+Enter on a Mac). Publish the page.</li>
+<li>To change it later, select the diagram in the editor and click the pencil icon. <strong>Versions</strong> in the editor brings back any of the last 20 saves.</li>
+</ol>
+<p>On the page the diagram fits the width of the page. Hover over it, or tab to it, for the zoom buttons. Click it, or use <strong>Open large</strong>, to see it in a big window. <strong>SVG</strong> and <strong>PNG</strong> download the diagram for a slide or an email. In Confluence&rsquo;s dark mode the diagram is drawn in Mermaid&rsquo;s dark colours. A PDF export of the page shows the diagram as a picture, made when you click Insert diagram; a Word export shows the Mermaid code. The app has 12 examples to start from: flowchart, sequence, class, state, Gantt, pie, mindmap, timeline, journey, ER, architecture and kanban.</p>
+<p>Where it lives: the app runs on Atlassian Forge. The Mermaid code is saved in the macro on the page, earlier versions and the picture for PDF export in Forge storage in your own Atlassian site, and the diagram is drawn in the browser of the person reading the page. No diagram text leaves your Atlassian site. The app does count a few actions, such as a diagram inserted, as anonymous numbers; <a href="privacy.html">the privacy policy</a> lists them.</p>
+
+<h2 id="example">Example: a support ticket lifecycle</h2>
+<p>The life of a support ticket: new, triaged, in progress (with its own steps inside), resolved and closed, and back to in progress when the customer reopens it. Copy it and change the states to your own workflow.</p>
+<pre><code>stateDiagram-v2
+    [*] --&gt; New
+    New --&gt; Triaged : support picks it up
+    Triaged --&gt; InProgress : assigned
+    state InProgress {
+        [*] --&gt; Investigating
+        Investigating --&gt; WaitingForCustomer : needs info
+        WaitingForCustomer --&gt; Investigating : customer replies
+        Investigating --&gt; Fixing : cause found
+    }
+    InProgress --&gt; Resolved : fix shipped
+    Resolved --&gt; InProgress : customer reopens
+    Resolved --&gt; Closed : no reply in 7 days
+    Closed --&gt; [*]
+    note right of WaitingForCustomer : The SLA clock pauses here</code></pre>
+<p class="example-render"><img src="assets/mermaid-examples/state-support-ticket.png" width="631" height="1218" loading="lazy" alt="Rendered state diagram of a support ticket: New, Triaged, an InProgress state containing Investigating, WaitingForCustomer and Fixing, then Resolved and Closed, with a reopen arrow back to InProgress and a note that the SLA clock pauses while waiting for the customer" style="max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;background:#fff"></p>
+<p class="small">Drawn with Mermaid 12.2, the version the app uses.</p>
+<h3 id="syntax">How the syntax works</h3>
+<ul>
+<li><code>stateDiagram-v2</code> on the first line names the diagram type. The older <code>stateDiagram</code> works too.</li>
+<li><code>[*]</code> is the start when it is on the left of an arrow, and the end when it is on the right.</li>
+<li>A move between two states is <code>New --&gt; Triaged</code>. Text after a colon is the label on the arrow: <code>New --&gt; Triaged : support picks it up</code>.</li>
+<li>A state name is one word. For a name with spaces, give it an id: <code>state "In progress" as InProgress</code>, then use <code>InProgress</code> in the arrows.</li>
+<li>A state with steps inside is <code>state InProgress {</code>, the inner moves, and <code>}</code>. It can have its own <code>[*]</code> start.</li>
+<li>A note goes next to a state: <code>note right of WaitingForCustomer : text</code>. <code>left of</code> works too.</li>
+<li><code>direction LR</code> on the second line draws the diagram from left to right instead of top to bottom.</li>
+</ul>
+<p><strong>Let an AI assistant write the first version.</strong> ChatGPT and Claude can write Mermaid. Describe the workflow in plain words, or paste the statuses from your Jira workflow, ask for a Mermaid stateDiagram-v2, and paste the answer into the editor. Read the result: assistants sometimes use state names with spaces, which split into extra states.</p>
+
+<h2 id="mistakes">Common mistakes and how to fix them</h2>
+<ul>
+<li><strong>A state name with spaces.</strong> <code>[*] --&gt; In Progress</code> gives no error, but in our test it drew two states, &ldquo;In&rdquo; and &ldquo;Progress&rdquo;. Fix: <code>InProgress</code>, or <code>state "In progress" as InProgress</code> to show the spaces.</li>
+<li><strong>A label without a colon.</strong> <code>New --&gt; Triaged support picks it up</code> gives no error, but each extra word became a state of its own. Fix: <code>New --&gt; Triaged : support picks it up</code>.</li>
+<li><strong>A one-dash arrow.</strong> <code>New -&gt; Triaged</code> is an error, and the editor names the line. A hyphen in a state name, as in <code>In-Progress</code>, gives the same error. Fix: <code>--&gt;</code>, and <code>InProgress</code> or an underscore in the name.</li>
+<li><strong>A composite state without its closing brace.</strong> <code>state InProgress {</code> with no <code>}</code> is an error: the editor says the bracket on the <code>state</code> line is never closed. Fix: add <code>}</code> after the last inner move.</li>
+<li><strong>A note without a side.</strong> <code>note New : first state</code> is an error. Fix: <code>note right of New : first state</code>.</li>
+</ul>
+
+<h2 id="alternatives">Other ways</h2>
+<p>Other Mermaid apps exist on the Atlassian Marketplace; <a href="mermaid-diagrams-confluence-cloud.html">the Mermaid guide</a> lists points worth comparing. If the steps are a process with decisions rather than states, a <a href="flowchart-confluence-cloud.html">flowchart</a> may read better. For a diagram you want to lay out by hand, a drawing app such as draw.io fits better.</p>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can Confluence Cloud draw a state diagram from text?</summary>
+<p>Not on its own. In our tests a pasted Mermaid stateDiagram-v2 block stayed a code block. A Mermaid app such as Mermaid Editor for Confluence draws the state diagram on the page.</p>
+</details>
+<details>
+<summary>What is the difference between stateDiagram and stateDiagram-v2?</summary>
+<p>Both work in the Mermaid version the app uses and draw a state diagram from the same text. The Mermaid documentation uses stateDiagram-v2 in its examples, so that is the one to pick for new diagrams.</p>
+</details>
+<details>
+<summary>How do I use a state name with spaces?</summary>
+<p>Give the state an id: state "In progress" as InProgress. Use the id in the arrows; the diagram shows the name with spaces.</p>
+</details>
+<details>
+<summary>How do I show a state with steps inside it?</summary>
+<p>Write state InProgress { on one line, the moves between the inner states below it, and } at the end. The inner part can have its own [*] start.</p>
+</details>
+<details>
+<summary>Can I draw my Jira workflow this way?</summary>
+<p>Yes, by typing it. The app does not read Jira workflows, but you can list your statuses and transitions, or ask ChatGPT or Claude to turn them into a Mermaid stateDiagram-v2, and paste the result into the editor.</p>
+</details>
+</div>
+
+<h2 id="more">By diagram type</h2>
+<p>A state diagram shows the states something can be in and how it moves between them. <a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence</a> has a short example of each of twelve diagram types. Guides that go deeper on one type:</p>
+<ul>
+<li><a href="gantt-chart-confluence-cloud.html">Gantt charts in Confluence Cloud</a></li>
+<li><a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a></li>
+<li><a href="mind-map-confluence-cloud.html">Mind maps in Confluence Cloud</a></li>
+<li><a href="er-diagram-confluence-cloud.html">ER diagrams (entity relationship) in Confluence Cloud</a></li>
+<li><a href="class-diagram-confluence-cloud.html">Class diagrams in Confluence Cloud</a></li>
+<li><a href="timeline-confluence-cloud.html">Timelines in Confluence Cloud</a></li>
+<li><a href="pie-chart-confluence-cloud.html">Pie charts in Confluence Cloud</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+</ul>
+
+<h2 id="support">Questions</h2>
+<p>An example that does not draw for you, or a mistake we missed? Email <a href="mailto:support@dortus.com?subject=State%20diagram%20in%20Confluence%20Cloud">support@dortus.com</a>.</p>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>A Confluence macro with Mermaid code on the left and a live preview on the right. The code stays in the page, so the diagram stays editable. Runs on Atlassian Forge.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. draw.io is a product of its respective company. ChatGPT is a product of OpenAI and Claude a product of Anthropic. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
