@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diagrams as code in Confluence Cloud: Mermaid or PlantUML &middot; Dortus</title>
+<meta name="description" content="How to write diagrams as code in Confluence Cloud: when to use Mermaid and when PlantUML, which apps draw them, and what to check before you pick one. Facts from Marketplace listings on 2 November 2026." />
+<meta name="theme-color" content="#13213a" />
+<link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="assets/app-icon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Diagrams as code in Confluence Cloud: Mermaid or PlantUML" />
+<meta property="og:description" content="When to use Mermaid and when PlantUML in Confluence Cloud, which apps draw them, and what to check before you choose." />
+<meta property="og:type" content="article" />
+<link rel="canonical" href="https://dortus.com/diagrams-as-code-confluence-cloud.html" />
+<meta property="og:url" content="https://dortus.com/diagrams-as-code-confluence-cloud.html" />
+<meta property="og:site_name" content="Dortus" />
+<meta property="og:image" content="https://dortus.com/assets/og-mermaid.png" />
+<meta property="og:image:alt" content="Mermaid Editor for Confluence: Mermaid code on the left, the flowchart it draws on the right" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diagrams as code in Confluence Cloud: Mermaid or PlantUML",
+  "description": "How to write diagrams as code in Confluence Cloud: when to use Mermaid and when PlantUML, which apps draw them, and what to check before you pick one.",
+  "image": ["https://dortus.com/assets/og-mermaid.png"],
+  "datePublished": "2026-11-04T10:00:00+00:00",
+  "dateModified": "2026-11-04T10:00:00+00:00",
+  "author": {"@type": "Organization", "name": "Dortus", "url": "https://dortus.com/"},
+  "publisher": {"@type": "Organization", "name": "Dortus", "url": "https://dortus.com/", "logo": {"@type": "ImageObject", "url": "https://dortus.com/assets/logo-dortus-d-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dortus.com/diagrams-as-code-confluence-cloud.html"},
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Can Confluence Cloud draw diagrams from code without an app?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. In our tests in October and November 2026, Mermaid or PlantUML code pasted into a Confluence Cloud page stayed a code block. You need an app from the Atlassian Marketplace, or you draw the diagram elsewhere and upload a picture, which you then cannot edit on the page."}},
+    {"@type": "Question", "name": "Should I use Mermaid or PlantUML in Confluence?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Use Mermaid for flowcharts, sequence diagrams, Gantt charts, mind maps and timelines when you want short, readable code that many developers already know from GitHub and GitLab. Use PlantUML when you need the full set of UML diagrams, such as class, component, deployment, use case and activity diagrams, or when your team already has PlantUML files. Many teams use both."}},
+    {"@type": "Question", "name": "Is there one app for both Mermaid and PlantUML in Confluence Cloud?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. On 2 November 2026 Fulstech's Excalidraw, Mermaid, PlantUML app listed both, as did RVS Softek with separate free apps for Mermaid and for PlantUML. Most other apps do one language. Check the listing for the Runs on Atlassian badge and PDF export before you choose."}},
+    {"@type": "Question", "name": "Which diagrams-as-code apps for Confluence keep data inside Atlassian?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Look for the Runs on Atlassian badge on the Marketplace listing. On 2 November 2026 it was shown, among others, by Mermaid diagrams viewer (Atlassian Labs), Mermaid and PlantUML for Confluence Cloud (Narva Software) and Mermaid Editor for Confluence (Dortus). The most installed PlantUML app, PlantUML Diagrams by Stratus Add-ons, did not show the badge."}}
+  ]
+}
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-world="atlassian">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+<nav class="nav" aria-label="Primary">
+<a href="atlassian.html">Apps</a>
+<a href="/#guides" aria-current="true">Guides</a>
+<a href="support.html">Support</a>
+<a class="btn btn-primary" href="mermaid.html">Mermaid Editor for Confluence <span class="arrow" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section class="page-head guide-head">
+<div class="wrap">
+<div class="head">
+<p class="eyebrow" style="color: var(--brand-text)">Guide &middot; Confluence Cloud</p>
+<h1 style="margin-bottom: 0.9rem">Diagrams as code in Confluence Cloud: Mermaid or PlantUML</h1>
+<p class="lede">
+&ldquo;Diagrams as code&rdquo; means you type a diagram as text and a tool draws it. The text lives in the page, so anyone can change one line instead of redrawing boxes, and you can copy the same text into Git, a README or a pull request. Confluence Cloud does not draw diagram code on its own, so you need an app. This guide shows which language fits which diagram, which apps draw them, and what to check before you choose.
+</p>
+<p class="lede"><strong>Disclosure: Dortus makes diagram editors for Confluence Cloud, including one of the apps below.</strong> Corrections are welcome at <a href="mailto:support@dortus.com?subject=Diagrams%20as%20code%20guide">support@dortus.com</a>.</p>
+<p class="page-meta">Published 4 November 2026 &middot; Listings checked 2 November 2026</p>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="prose">
+
+<h2 id="which">Mermaid or PlantUML: which one for which diagram</h2>
+<p>The two languages overlap, but each is stronger at different things.</p>
+<div role="region" aria-label="Which language for which diagram" tabindex="0" style="overflow-x:auto">
+<table>
+<thead><tr><th scope="col">Diagram</th><th scope="col">Mermaid</th><th scope="col">PlantUML</th></tr></thead>
+<tbody>
+<tr><th scope="row">Flowchart</th><td>Yes, short syntax</td><td>Yes (activity diagram)</td></tr>
+<tr><th scope="row">Sequence diagram</th><td>Yes</td><td>Yes, with more layout options</td></tr>
+<tr><th scope="row">Class diagram</th><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Component, deployment, use case</th><td>Partly: C4 and architecture diagrams, still marked experimental in the Mermaid docs</td><td>Yes</td></tr>
+<tr><th scope="row">Gantt chart, timeline</th><td>Yes</td><td>Gantt yes</td></tr>
+<tr><th scope="row">Mind map</th><td>Yes</td><td>Yes</td></tr>
+<tr><th scope="row">Entity relationship (database)</th><td>Yes</td><td>Yes (IE and Chen notation)</td></tr>
+<tr><th scope="row">Where else it works</th><td>GitHub, GitLab, Azure DevOps and many Markdown tools draw it</td><td>Many IDE plugins and documentation tools; GitHub shows it only as code</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">Wide table: scroll sideways on a small screen. Based on the Mermaid and PlantUML documentation.</p>
+<p><strong>Rule of thumb.</strong> Start with Mermaid if your team writes flowcharts, sequence diagrams and plans, and already uses Markdown in Git. Pick PlantUML if you need the full UML set, or if you already have <code>.puml</code> files from an older wiki or Confluence Server. Many teams end up with both: Mermaid for quick sketches, PlantUML for architecture.</p>
+
+<h2 id="same">The same diagram in both languages</h2>
+<p>A login flow as a sequence diagram. Mermaid:</p>
+<pre><code>sequenceDiagram
+  User-&gt;&gt;App: Log in
+  App-&gt;&gt;Auth: Check password
+  Auth--&gt;&gt;App: OK
+  App--&gt;&gt;User: Welcome</code></pre>
+<p>PlantUML:</p>
+<pre><code>@startuml
+User -&gt; App : Log in
+App -&gt; Auth : Check password
+Auth --&gt; App : OK
+App --&gt; User : Welcome
+@enduml</code></pre>
+<p>For a diagram like this the two are almost the same. The difference shows up in bigger diagrams: PlantUML has more control over layout and more UML types, Mermaid is shorter and draws in more places outside Confluence.</p>
+
+<h2 id="apps">Apps that draw diagram code in Confluence Cloud</h2>
+<p>From the Atlassian Marketplace listings for Confluence Cloud on 2 November 2026. &ldquo;RoA&rdquo; is the Runs on Atlassian badge: the app runs on Atlassian's own platform and sends no data to servers outside Atlassian. Installs change every day; the listing shows the current number.</p>
+<div role="region" aria-label="Diagrams-as-code apps for Confluence Cloud" tabindex="0" style="overflow-x:auto">
+<table>
+<thead><tr><th scope="col">App (vendor)</th><th scope="col">Languages</th><th scope="col">Price</th><th scope="col">RoA badge</th></tr></thead>
+<tbody>
+<tr><th scope="row"><a href="https://marketplace.atlassian.com/apps/1232887/mermaid-diagrams-viewer" rel="noopener noreferrer">Mermaid diagrams viewer</a> (Atlassian Labs)</th><td>Mermaid</td><td>Free</td><td>Yes</td></tr>
+<tr><th scope="row"><a href="https://marketplace.atlassian.com/apps/1226567" rel="noopener noreferrer">Mermaid Diagrams for Confluence</a> (Stratus Add-ons)</th><td>Mermaid</td><td>Paid</td><td>No</td></tr>
+<tr><th scope="row"><a href="https://marketplace.atlassian.com/apps/2563578593/mermaid" rel="noopener noreferrer">Mermaid</a> (Narva Software)</th><td>Mermaid</td><td>Free</td><td>Yes</td></tr>
+<tr><th scope="row"><a href="https://marketplace.atlassian.com/apps/4235692896">Mermaid Editor for Confluence</a> (Dortus)</th><td>Mermaid</td><td>Free</td><td>Yes</td></tr>
+<tr><th scope="row">PlantUML Diagrams (Stratus Add-ons)</th><td>PlantUML</td><td>Paid</td><td>No</td></tr>
+<tr><th scope="row">PlantUML (Instant Diagrams) (AppsFoundry)</th><td>PlantUML</td><td>Free</td><td>No</td></tr>
+<tr><th scope="row">Flowchart &amp; PlantUML (Toshihiro Sato)</th><td>PlantUML, flowchart</td><td>Paid</td><td>No</td></tr>
+<tr><th scope="row">PlantUML for Confluence Cloud (Narva Software)</th><td>PlantUML</td><td>Free</td><td>Yes</td></tr>
+<tr><th scope="row">Excalidraw, Mermaid, PlantUML (Fulstech)</th><td>Mermaid, PlantUML, Excalidraw</td><td>Paid</td><td>No</td></tr>
+<tr><th scope="row"><a href="https://marketplace.atlassian.com/apps/3305228805" rel="noopener noreferrer">Mermaid Diagrams &amp; Charts</a> and PlantUML Diagrams &amp; Charts (RVS Softek)</th><td>Mermaid, PlantUML (two apps)</td><td>Free</td><td>No</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">Wide table: scroll sideways on a small screen. Twelve Mermaid apps in more detail: <a href="mermaid-apps-confluence-cloud-compared.html">Mermaid apps for Confluence Cloud compared</a>. Dortus also has a PlantUML editor; on 4 November 2026 it was still waiting for Marketplace approval, so it is not in this table.</p>
+
+<h2 id="check">What to check before you pick an app</h2>
+<ul>
+<li><strong>Does the data have to stay in Atlassian?</strong> Some PlantUML apps send the code to a PlantUML server to draw it. Look for the Runs on Atlassian badge, or read the listing's privacy and security section.</li>
+<li><strong>Can people edit the diagram on the page?</strong> An editor with code and a live preview side by side is easier for people who do not write diagram code every day.</li>
+<li><strong>Do you export pages to PDF or Word?</strong> Not every app puts the drawn diagram into an export. Test one with your own diagram.</li>
+<li><strong>Dark mode.</strong> Some apps follow Confluence's dark theme; others draw a white diagram on a dark page.</li>
+<li><strong>Price per user.</strong> Marketplace prices count every user on the site, not only the people who draw.</li>
+<li><strong>Coming from Confluence Server or Data Center?</strong> Old diagram macros often stop working after a move to Cloud: the page shows &ldquo;Unknown macro&rdquo; or &ldquo;Error loading the extension!&rdquo; where the diagram was. The diagram code is usually still in the page, so it can be moved into a Cloud app. Check this before the move, not after.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq">
+<details>
+<summary>Can Confluence Cloud draw diagrams from code without an app?</summary>
+<p>No. In our tests in October and November 2026, Mermaid or PlantUML code pasted into a Confluence Cloud page stayed a code block. You need an app from the Atlassian Marketplace, or you draw the diagram elsewhere and upload a picture, which you then cannot edit on the page.</p>
+</details>
+<details>
+<summary>Should I use Mermaid or PlantUML in Confluence?</summary>
+<p>Use Mermaid for flowcharts, sequence diagrams, Gantt charts, mind maps and timelines when you want short, readable code that many developers already know from GitHub and GitLab. Use PlantUML when you need the full set of UML diagrams, such as class, component, deployment, use case and activity diagrams, or when your team already has PlantUML files. Many teams use both.</p>
+</details>
+<details>
+<summary>Is there one app for both Mermaid and PlantUML in Confluence Cloud?</summary>
+<p>Yes. On 2 November 2026 Fulstech's Excalidraw, Mermaid, PlantUML app listed both, as did RVS Softek with separate free apps for Mermaid and for PlantUML. Most other apps do one language. Check the listing for the Runs on Atlassian badge and PDF export before you choose.</p>
+</details>
+<details>
+<summary>Which diagrams-as-code apps for Confluence keep data inside Atlassian?</summary>
+<p>Look for the Runs on Atlassian badge on the Marketplace listing. On 2 November 2026 it was shown, among others, by Mermaid diagrams viewer (Atlassian Labs), Mermaid and PlantUML for Confluence Cloud (Narva Software) and Mermaid Editor for Confluence (Dortus). The most installed PlantUML app, PlantUML Diagrams by Stratus Add-ons, did not show the badge.</p>
+</details>
+</div>
+
+<h2 id="method">How we checked</h2>
+<p>On 2 November 2026 we read the public Atlassian Marketplace listings for Confluence Cloud, without logging in and without installing the other apps. We wrote down only what the listing said, so this page says nothing about how well each app works. For our own app the facts come from its code and changelog. If something is wrong or out of date, email <a href="mailto:support@dortus.com?subject=Diagrams%20as%20code%20guide">support@dortus.com</a> and we will correct it.</p>
+
+<h2 id="more">More</h2>
+<div class="card">
+<p class="eyebrow">Mermaid Editor for Confluence by Dortus</p>
+<h3>Type the diagram, watch it draw</h3>
+<p>Mermaid code on the left, a live preview on the right that redraws as you type. Free, Runs on Atlassian, no outside account.</p>
+<p class="btns"><a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it free on the Atlassian Marketplace <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="small"><a href="mermaid.html">About Mermaid Editor for Confluence</a></p>
+</div>
+<p>See also: <a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud</a>, <a href="mermaid-examples-confluence.html">Mermaid examples to copy</a> and <a href="sequence-diagram-confluence-cloud.html">Sequence diagrams in Confluence Cloud</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div>
+<h2>Apps</h2>
+<ul>
+<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
+<li><a href="math.html">Math for Confluence</a></li>
+<li><a href="atlassian.html">All apps</a></li>
+</ul>
+</div>
+<div>
+<h2>Guides</h2>
+<ul>
+<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
+<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
+<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
+<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
+<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
+<li><a href="/#guides">All guides</a></li>
+</ul>
+</div>
+<div>
+<h2>Company</h2>
+<ul>
+<li><a href="support.html">Support</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="privacy.html">Privacy policy</a></li>
+<li><a href="terms.html">Terms of service</a></li>
+<li><a href="email-check.html">Email check</a></li>
+<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
+</ul>
+</div>
+</div>
+<div class="wrap footer-rule">
+<p class="footer-legal">
+Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Mermaid is an open source project. PlantUML is an open source project. App names on this page belong to their makers. Dortus is not affiliated with these companies or projects.
+</p>
+</div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
