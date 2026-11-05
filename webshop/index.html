@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is je Shopify-winkel klaar om te verkopen? Gratis check voor Nederlandse winkels</title>
+<meta name="description" content="Gratis check voor je Shopify-winkel in 1 minuut: wat klanten afschrikt, waarom iDEAL niet aan gaat en wat de wet vraagt (KVK, btw, herroepingsknop). Per punt zie je hoe je het oplost.">
+<link rel="canonical" href="https://dortus.com/webshop/">
+<meta property="og:url" content="https://dortus.com/webshop/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dortus">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Is je Shopify-winkel klaar om te verkopen?">
+<meta property="og:description" content="Gratis check voor Nederlandse Shopify-winkels: uitstraling, iDEAL en de regels. Per punt hoe je het oplost.">
+<style>
+  :root {
+    --papier:#f2f4f1; --wit:#ffffff; --inkt:#14261f; --zacht:#5c6b64; --lijn:#d6ddd8;
+    --oranje:#ff6a13; --oranje-donker:#d9520a;
+    --rood:#c8233a; --rood-bg:#fbe9ec; --groen:#17805a; --groen-bg:#e3f3ea;
+    --amber:#9a6412; --amber-bg:#fbf0da; --grijs:#5c6b64; --grijs-bg:#e8ece9;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; color:var(--inkt); background:var(--papier); line-height:1.5; font-size:17px; }
+  a { color:inherit; }
+  :focus-visible { outline:3px solid var(--oranje); outline-offset:2px; border-radius:6px; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Bovenbalk */
+  .top { display:flex; justify-content:space-between; align-items:center; padding:18px 0; font-size:15px; color:var(--zacht); }
+  .top strong { color:var(--inkt); font-weight:700; }
+  .top a.van { text-decoration:none; }
+  .top a.van:hover { text-decoration:underline; }
+
+  /* Hero */
+  .hero { display:grid; grid-template-columns: 1.15fr .85fr; gap:48px; align-items:center; padding:28px 0 56px; }
+  h1 { font-size: clamp(34px, 6vw, 62px); line-height:1.02; letter-spacing:-.03em; font-weight:800; margin:0 0 18px; max-width:13ch; }
+  .lead { font-size: clamp(18px, 2.2vw, 21px); color:var(--zacht); margin:0 0 28px; max-width:34em; }
+  form.check { display:flex; gap:8px; background:var(--wit); border:2px solid var(--inkt); border-radius:14px; padding:6px; max-width:560px; }
+  form.check input { flex:1; min-width:0; font:inherit; font-size:18px; padding:12px 12px; border:0; background:transparent; color:var(--inkt); }
+  form.check input:focus { outline:none; }
+  form.check:focus-within { box-shadow:0 0 0 4px rgba(255,106,19,.25); }
+  .knop { font:inherit; font-weight:700; font-size:17px; padding:12px 20px; border:0; border-radius:10px; background:var(--oranje); color:#1a0d04; cursor:pointer; white-space:nowrap; }
+  .knop:hover { background:var(--oranje-donker); color:#fff; }
+  .knop[disabled] { opacity:.7; cursor:wait; }
+  .knop.licht { background:var(--wit); color:var(--inkt); border:2px solid var(--inkt); }
+  .knop.licht:hover { background:var(--inkt); color:#fff; }
+  .onder-form { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:12px; font-size:15px; color:var(--zacht); }
+  .gerust { display:flex; gap:8px; align-items:flex-start; color:var(--inkt); font-weight:500; flex-basis:100%; }
+  .gerust svg { width:18px; height:18px; flex:none; margin-top:2px; color:var(--groen); }
+  .linkknop { font:inherit; background:none; border:0; padding:0; color:var(--inkt); text-decoration:underline; text-underline-offset:3px; cursor:pointer; font-weight:600; }
+  .fout { color:var(--rood); font-weight:600; margin-top:12px; min-height:1.5em; }
+
+  /* Het nagemaakte betaalscherm */
+  .kassa { background:var(--wit); border-radius:20px; padding:22px; box-shadow: 0 1px 0 var(--lijn), 0 24px 48px -24px rgba(20,38,31,.35); max-width:400px; justify-self:end; width:100%; }
+  .kassa-kop { display:flex; justify-content:space-between; font-size:14px; color:var(--zacht); margin-bottom:14px; }
+  .kassa-titel { font-weight:700; font-size:19px; margin:0 0 12px; }
+  .kassa-teller { margin-top:14px; padding-top:14px; border-top:1px dashed var(--lijn); font-size:15px; color:var(--zacht); }
+  .kassa-teller b { color:var(--inkt); }
+  @keyframes wiebel { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+
+  /* Overzicht per onderdeel (kaartje rechts en in de rapportkop) */
+  .onderdeel { display:flex; align-items:center; gap:12px; padding:13px 14px; border:1.5px solid var(--lijn); border-radius:12px; margin-bottom:8px; font-weight:600; width:100%; font:inherit; font-weight:600; text-align:left; background:transparent; color:inherit; }
+  button.onderdeel { cursor:pointer; }
+  button.onderdeel:hover { border-color:var(--inkt); }
+  .onderdeel .rechts { margin-left:auto; font-size:13px; font-weight:700; padding:3px 9px; border-radius:999px; background:var(--grijs-bg); color:var(--zacht); white-space:nowrap; }
+  .onderdeel .rechts.rood { background:var(--rood-bg); color:var(--rood); }
+  .onderdeel .rechts.geel { background:var(--amber-bg); color:var(--amber); }
+  .onderdeel .rechts.groen { background:var(--groen-bg); color:var(--groen); }
+  .onderdeel.ideal.dicht { background:repeating-linear-gradient(-45deg, #fff, #fff 8px, #f4f6f5 8px, #f4f6f5 16px); border-color:var(--inkt); }
+  .onderdeel.ideal.open { border-color:var(--groen); background:var(--groen-bg); }
+  .onderdeel .slot { width:16px; height:16px; flex:none; }
+  .onderdeel.wiebel { animation: wiebel .5s ease; }
+  .rapport-kop .onderdeel { border-color:#3a4c45; color:#fff; }
+  .rapport-kop button.onderdeel:hover { border-color:#fff; }
+  .rapport-kop .onderdeel.ideal.dicht { background:repeating-linear-gradient(-45deg, #1b2e27, #1b2e27 8px, #22362e 8px, #22362e 16px); border-color:#ff8a9b; }
+  .rapport-kop .onderdeel.ideal.open { background:#1d4535; border-color:#4cc08c; }
+  .top3 { list-style:none; margin:14px 0 0; padding:0; counter-reset:top; }
+  .top3 li { counter-increment:top; margin-bottom:8px; }
+  .top3 button { all:unset; box-sizing:border-box; cursor:pointer; display:grid; grid-template-columns:34px 1fr; gap:2px 12px; width:100%; padding:12px 14px; border-radius:12px; background:#22362e; }
+  .top3 button:hover, .top3 button:focus-visible { background:#2c4439; outline:2px solid var(--oranje); }
+  .top3 button::before { content:counter(top); grid-row:1 / 3; width:34px; height:34px; border-radius:50%; background:var(--oranje); color:#1a0d04; font-weight:800; display:grid; place-items:center; }
+  .top3 .t { font-weight:700; color:#fff; }
+  .top3 .w { font-size:14px; color:#b9c6bf; }
+
+  /* Bezig */
+  .bezig { background:var(--wit); border-radius:16px; padding:22px 24px; margin:0 0 40px; max-width:640px; }
+  .bezig h2 { margin:0 0 10px; font-size:20px; }
+  .stappen { list-style:none; margin:0; padding:0; }
+  .stappen li { display:flex; gap:10px; align-items:center; padding:6px 0; color:var(--zacht); }
+  .stappen li::before { content:""; width:16px; height:16px; border-radius:50%; border:2px solid var(--lijn); flex:none; }
+  .stappen li.nu { color:var(--inkt); font-weight:600; }
+  .stappen li.nu::before { border-color:var(--oranje); border-top-color:transparent; animation: draai .8s linear infinite; }
+  .stappen li.klaar { color:var(--inkt); }
+  .stappen li.klaar::before { background:var(--inkt); border-color:var(--inkt); }
+  @keyframes draai { to { transform:rotate(360deg); } }
+
+  /* Rapport */
+  #rapport { scroll-margin-top:16px; }
+  .rapport-kop { background:var(--inkt); color:#fff; border-radius:20px; padding:28px; display:grid; grid-template-columns: 1.3fr 1fr; gap:8px 36px; align-items:start; }
+  .rapport-kop h2 { margin:0; font-size: clamp(22px, 3vw, 30px); line-height:1.15; letter-spacing:-.01em; }
+  .rapport-kop p { margin:6px 0 0; color:#b9c6bf; }
+  .rapport-kop .winkel { color:#fff; font-weight:600; overflow-wrap:anywhere; }
+  .voorbeeld-rij { grid-column:1 / -1; }
+  .voorbeeld-label { display:inline-block; background:var(--oranje); color:#1a0d04; font-weight:700; font-size:14px; padding:3px 10px; border-radius:999px; margin-bottom:10px; }
+
+  .blok { margin-top:36px; }
+  .blok-kop { display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-bottom:2px solid var(--inkt); padding-bottom:8px; margin-bottom:12px; }
+  .blok-kop h3 { margin:0; font-size:22px; letter-spacing:-.01em; }
+  .blok-kop span { color:var(--zacht); font-size:15px; white-space:nowrap; }
+  .blok-uitleg { color:var(--zacht); margin:0 0 12px; font-size:16px; max-width:44em; }
+
+  .groep-strook { display:flex; gap:12px 20px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:16px 0 0; padding:14px 18px; border-radius:12px; border:2px dashed var(--oranje); background:#fff4ec; }
+  .groep-strook > div { max-width:42em; }
+  .groep-strook .binnenkort { font-weight:700; color:var(--oranje-donker); white-space:nowrap; }
+  details.punt { background:var(--wit); border-radius:12px; margin-bottom:8px; border-left:6px solid var(--lijn); }
+  details.punt.ontbreekt { border-left-color:var(--rood); }
+  details.punt.niet_zeker, details.punt.let_op { border-left-color:var(--amber); }
+  details.punt.goed { border-left-color:var(--groen); }
+  details.punt.is-opgelost { border-left-color:var(--groen); }
+  details.punt.is-opgelost summary .titel { text-decoration: line-through; text-decoration-thickness:2px; color:var(--zacht); }
+  details.punt summary { list-style:none; cursor:pointer; display:flex; gap:12px; align-items:center; padding:14px 16px; }
+  details.punt summary::-webkit-details-marker { display:none; }
+  .titel { font-weight:650; flex:1; }
+  .label { font-size:13px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
+  .label.goed { background:var(--groen-bg); color:var(--groen); }
+  .label.ontbreekt { background:var(--rood-bg); color:var(--rood); }
+  .label.let_op, .label.niet_zeker { background:var(--amber-bg); color:var(--amber); }
+  .label.opgelost { background:var(--groen-bg); color:var(--groen); }
+  .pijl { width:12px; height:12px; flex:none; border-right:2.5px solid var(--zacht); border-bottom:2.5px solid var(--zacht); transform:rotate(45deg) translateY(-3px); transition:transform .2s; }
+  details[open] .pijl { transform:rotate(-135deg) translateY(-2px); }
+  .punt-body { padding:0 16px 16px 16px; max-width:46em; }
+  .punt-body p { margin:0 0 10px; }
+  .oplossen { background:var(--papier); border-radius:10px; padding:12px 14px; margin:0 0 12px; }
+  .oplossen strong { display:block; margin-bottom:2px; }
+  .punt-acties { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; font-size:15px; }
+  .vinkje { display:flex; gap:8px; align-items:center; cursor:pointer; font-weight:600; }
+  .vinkje input { width:20px; height:20px; accent-color: var(--groen); }
+  .bron { color:var(--zacht); }
+
+  .verder { margin-top:40px; display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+  .kaart { background:var(--wit); border-radius:16px; padding:22px; }
+  .kaart h3 { margin:0 0 6px; font-size:20px; }
+  .kaart p { margin:0 0 14px; color:var(--zacht); }
+  .kaart.groep { background:var(--oranje); }
+  .kaart.groep p { color:#3d1a04; }
+  .kaart.groep .knop { background:var(--inkt); color:#fff; }
+  .kaart.groep .knop:hover { background:#000; }
+  .knoppen { display:flex; flex-wrap:wrap; gap:8px; }
+
+  /* Onder de vouw */
+  section.uitleg { padding:64px 0 24px; }
+  section.uitleg h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing:-.02em; line-height:1.1; margin:0 0 8px; }
+  section.uitleg > p { color:var(--zacht); margin:0 0 28px; max-width:40em; }
+  .lijsten { display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
+  .lijst { background:var(--wit); border-radius:16px; padding:20px; }
+  .lijst h3 { margin:0 0 4px; font-size:18px; }
+  .lijst p { margin:0 0 10px; font-size:15px; color:var(--zacht); }
+  .lijst ul { margin:0; padding-left:18px; font-size:15px; }
+  .lijst li { margin:4px 0; }
+
+  .vragen { max-width:760px; }
+  .vragen details { border-bottom:1px solid var(--lijn); }
+  .vragen summary { cursor:pointer; font-weight:700; font-size:19px; padding:16px 0; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .vragen summary::-webkit-details-marker { display:none; }
+  .vragen summary::after { content:"+"; font-weight:400; font-size:24px; line-height:1; color:var(--zacht); }
+  .vragen details[open] summary::after { content:"\2212"; }
+  .vragen details p { margin:0 0 16px; max-width:40em; }
+
+  footer { padding:40px 0 100px; font-size:14px; color:var(--zacht); }
+  footer p { max-width:48em; margin:0 0 8px; }
+
+  /* Balk onderaan op mobiel na een check */
+  .plakbalk { position:fixed; left:0; right:0; bottom:0; background:var(--inkt); color:#fff; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); display:none; align-items:center; justify-content:space-between; gap:12px; z-index:5; }
+  .plakbalk.aan { display:flex; }
+  .plakbalk .knop { padding:9px 14px; font-size:15px; width:auto; }
+  .plakbalk > span { min-width:0; flex:1; font-weight:600; }
+  .plak-volgende { all:unset; cursor:pointer; display:flex; flex-direction:column; min-width:0; max-width:100%; }
+  .plak-label { font-size:13px; color:#b9c6bf; font-weight:500; }
+  .plak-titel { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+  [hidden] { display:none !important; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns:1fr; gap:32px; padding-top:8px; }
+    .kassa { justify-self:start; }
+    .lijsten, .verder { grid-template-columns:1fr; }
+    .rapport-kop { grid-template-columns:1fr; gap:16px; padding:22px; }
+    .rapport-kop .onderdeel { padding:10px 12px; font-size:15px; margin-bottom:6px; }
+    .top .van { display:none; }
+  }
+  @media (min-width: 861px) { .plakbalk { display:none !important; } }
+  @media (max-width: 480px) {
+    form.check { flex-direction:column; }
+    .knop { width:100%; }
+    .knoppen .knop { width:auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation:none !important; transition:none !important; }
+    html { scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span><strong>Winkelklaar</strong>, gratis check voor je Shopify-winkel</span><a class="van" href="/">van Dortus</a></div>
+
+  <div class="hero">
+    <div>
+      <h1>Is je Shopify-winkel klaar om te verkopen?</h1>
+      <p class="lead">Gratis check in een minuut. Je ziet wat klanten afschrikt, waarom iDEAL niet aan gaat en wat de wet van je vraagt. Bij elk punt staat hoe je het in Shopify oplost.</p>
+      <form class="check" id="f">
+        <input id="u" name="url" placeholder="jouwwinkel.nl" autocomplete="url" inputmode="url" autocapitalize="off" spellcheck="false" required aria-label="Adres van je winkel">
+        <button class="knop" id="b" type="submit">Check mijn winkel</button>
+      </form>
+      <div class="onder-form">
+        <span class="gerust"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2.5 3.2v4.3c0 3.4 2.3 6.1 5.5 7.4 3.2-1.3 5.5-4 5.5-7.4V3.2L8 1Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m5.4 8 1.8 1.8 3.4-3.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Je hebt alleen je winkeladres nodig. Geen wachtwoord, je winkel blijft zoals hij is. We kijken net als een klant en slaan niets op.</span>
+        <button class="linkknop" id="demo" type="button">Bekijk eerst een voorbeeld</button>
+      </div>
+      <div class="fout" id="err" role="alert"></div>
+    </div>
+
+    <div class="kassa" aria-label="Wat de check bekijkt">
+      <div class="kassa-kop"><span id="kassa-winkel">jouwwinkel.nl</span><span id="kassa-rechts">22 punten</span></div>
+      <p class="kassa-titel" id="kassa-titel">Wat de check bekijkt</p>
+      <div id="kaart-rijen"></div>
+      <div class="kassa-teller" id="kassa-teller">Bij elk punt: wat er mis is en hoe je het oplost.</div>
+    </div>
+  </div>
+
+  <div class="bezig" id="bezig" hidden aria-live="polite">
+    <h2 id="bezig-titel">Ik check je winkel</h2>
+    <ol class="stappen" id="stappen">
+      <li>Winkel openen</li>
+      <li>Beleidspagina's lezen</li>
+      <li>KVK- en btw-nummer zoeken</li>
+      <li>Btw-nummer controleren bij de EU</li>
+      <li>Producten, foto's en teksten bekijken</li>
+    </ol>
+  </div>
+
+  <div id="rapport" aria-live="polite"></div>
+
+  <section class="uitleg" id="wat">
+    <h2>Wat de check bekijkt</h2>
+    <p>22 punten in vier groepen. Ik kijk alleen naar wat iedereen op je winkel kan zien, net als een klant, Shopify en de ACM.</p>
+    <div class="lijsten">
+      <div class="lijst">
+        <h3>Uitstraling en vertrouwen</h3>
+        <p>Wat klanten als eerste zien. Hier verlies je vaak verkopen zonder dat je het merkt.</p>
+        <ul><li>Voorbeeldtekst van het thema</li><li>Foto's bij je producten</li><li>Productbeschrijvingen</li><li>Eigen domeinnaam</li><li>Pagina over wie je bent</li><li>Icoontje in het tabblad</li><li>Tekst voor Google</li></ul>
+      </div>
+      <div class="lijst">
+        <h3>Eisen van Shopify voor iDEAL</h3>
+        <p>Mist er één, dan blijft iDEAL uit.</p>
+        <ul><li>Winkel staat open</li><li>Juridische vermelding</li><li>Retourbeleid</li><li>Prijzen in euro</li><li>Nederland als markt</li></ul>
+      </div>
+      <div class="lijst">
+        <h3>Verplicht volgens de wet</h3>
+        <p>Regels van KVK en ACM voor elke webshop.</p>
+        <ul><li>KVK-nummer</li><li>Btw-nummer, gecontroleerd bij de EU</li><li>E-mailadres en telefoonnummer</li><li>Herroepingsknop (sinds 19 juni 2026)</li><li>14 dagen bedenktijd</li><li>Voorwaarden en privacyverklaring</li></ul>
+      </div>
+      <div class="lijst">
+        <h3>Goed om te checken</h3>
+        <p>Hier gaat het vaak mis, ook bij grotere winkels.</p>
+        <ul><li>Cookiebanner bij tracking</li><li>Doorgestreepte prijzen</li><li>Fabrikantgegevens (GPSR)</li><li>Verzendkosten en levertijd</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="uitleg vragen" id="vragen">
+    <h2>Vragen die starters vaak hebben</h2>
+    <details><summary>Wat kan ik het eerst verbeteren aan mijn winkel?</summary>
+      <p>Begin bij wat klanten als eerste zien: echte foto's, een beschrijving bij elk product, geen voorbeeldtekst van het thema en een eigen domeinnaam. Zorg daarna dat iDEAL werkt, want daar betalen de meeste Nederlanders mee. De check zet de 3 belangrijkste punten voor jouw winkel bovenaan.</p></details>
+    <details><summary>Waarom staat iDEAL bij mij uit of grijs?</summary>
+      <p>Shopify zet iDEAL alleen aan als je winkel open is, een juridische vermelding en retourbeleid heeft, in euro rekent en Nederland als markt heeft. Shopify controleert dit zelf. Ontbreekt er iets, dan blijft iDEAL uit, vaak zonder duidelijke melding.</p></details>
+    <details><summary>Ik heb alles aangepast. Hoe lang duurt het voor iDEAL aan gaat?</summary>
+      <p>Shopify controleert je winkel opnieuw, maar zegt niet precies wanneer. Check eerst hier of alles echt goed staat. Staat alles op groen en blijft iDEAL uit, neem dan contact op met Shopify Support.</p></details>
+    <details><summary>Moet mijn KVK-nummer echt op mijn site?</summary>
+      <p>Ja. Elke webshop moet zijn KVK-nummer, btw-nummer, adres en een e-mailadres op de site zetten. Een contactformulier alleen is niet genoeg. Werk je vanuit huis, dan kun je bij de KVK je woonadres afschermen.</p></details>
+    <details><summary>Wat is de herroepingsknop?</summary>
+      <p>Sinds 19 juni 2026 moet een klant online met één duidelijke knop een aankoop kunnen herroepen, net zo makkelijk als bestellen. De ACM let hierop. Shopify heeft dit niet standaard, dus je hebt een app of een eigen pagina nodig. <a href="/webshop/herroepingsknop-shopify.html">Zo voeg je hem toe</a>.</p></details>
+    <details><summary>Is dit juridisch advies?</summary>
+      <p>Nee. Het is een automatische check van wat openbaar op je winkel staat. Hij kan dingen missen die op andere pagina's staan. Twijfel je, kijk dan bij de KVK of vraag het een jurist.</p></details>
+  </section>
+
+  <footer>
+    <p>Automatische check, geen juridisch advies. Bronnen: Shopify Help (iDEAL-eisen), KVK (regels voor online verkopen), ACM (herroepingsknop, kortingen), Autoriteit Persoonsgegevens (cookies).</p>
+    <p>Uitleg: <a href="/webshop/herroepingsknop-shopify.html">Herroepingsknop in Shopify toevoegen</a>.</p>
+    <p>Winkelklaar is gemaakt door <a href="/">Dortus</a>. We slaan geen winkeladressen of uitslagen op.</p>
+  </footer>
+</div>
+
+<div class="plakbalk" id="plakbalk"><span id="plak-tekst"></span><button class="knop" type="button" id="plak-knop">Check opnieuw</button></div>
+
+<script>window.NL_KLAAR_API = "https://winkelklaar.thijs-duinhouwer2002.workers.dev/api/check";</script>
+<script>
+(function () {
+  var API = window.NL_KLAAR_API || "/api/check";
+  var GROUP_URL = window.NL_KLAAR_GROUP_URL || "";
+  var DEMO = {"winkel":"https://zonnig-zeepje.myshopify.com","isShopify":true,"bereikbaar":true,"checks":[{"id":"voorbeeldtekst","blok":"starter","titel":"Geen voorbeeldtekst van het thema","status":"let_op","uitleg":"Op je winkel staat nog voorbeeldtekst van het thema, zoals \"talk about your brand\". Bezoekers zien meteen dat de winkel niet af is.","oplossing":"Shopify-beheer: Onlinewinkel > Thema's > Aanpassen (Online Store > Themes > Customize): klik de blokken langs en vervang of verwijder de voorbeeldtekst."},{"id":"productfotos","blok":"starter","titel":"Foto's bij je producten","status":"let_op","uitleg":"Een product heeft geen foto, zoals \"Trui\". Zonder foto koopt bijna niemand.","oplossing":"Shopify-beheer: Producten (Products): open het product en voeg foto's toe."},{"id":"productbeschrijving","blok":"starter","titel":"Beschrijving bij je producten","status":"let_op","uitleg":"Een product heeft geen of een heel korte beschrijving, zoals \"Trui\". Klanten willen weten wat ze kopen, en Google vindt je product zo slecht.","oplossing":"Shopify-beheer: Producten (Products): schrijf per product een paar zinnen: wat is het, waarvan gemaakt, welke maat, waarom fijn."},{"id":"eigen-domein","blok":"starter","titel":"Eigen domeinnaam","status":"let_op","uitleg":"Je winkel staat op zonnig-zeepje.myshopify.com. Klanten vertrouwen een eigen naam (zoals jouwwinkel.nl) meer, en hij is makkelijker te onthouden.","oplossing":"Shopify-beheer: Instellingen > Domeinen (Settings > Domains): koppel of koop een eigen domein. Dat kost meestal een paar tientjes per jaar."},{"id":"over-ons","blok":"starter","titel":"Pagina over wie je bent","status":"let_op","uitleg":"Ik zie geen pagina als \"Over ons\". Bij een onbekende winkel willen klanten weten wie erachter zit voordat ze betalen.","oplossing":"Shopify-beheer: Onlinewinkel > Pagina's (Online Store > Pages): maak een korte pagina over jou en je winkel en zet hem in je menu."},{"id":"favicon","blok":"starter","titel":"Icoontje in het browsertabblad","status":"let_op","uitleg":"Ik zie geen eigen icoontje (favicon) voor het browsertabblad. Klein ding, maar zonder ziet je winkel er minder af uit.","oplossing":"Shopify-beheer: Onlinewinkel > Thema's > Aanpassen > Thema-instellingen > Logo (Online Store > Themes > Customize > Theme settings > Logo): upload een favicon, bijvoorbeeld je logo in een vierkantje."},{"id":"google-tekst","blok":"starter","titel":"Tekst voor Google","status":"let_op","uitleg":"Je homepage heeft geen (goede) beschrijving voor Google. Dan kiest Google zelf een stukje tekst, vaak iets onhandigs.","oplossing":"Shopify-beheer: Onlinewinkel > Voorkeuren (Online Store > Preferences): vul de metabeschrijving in, één of twee zinnen over wat je verkoopt."},{"id":"open","blok":"ideal","titel":"Winkel is open voor bezoekers","status":"goed","uitleg":"Je winkel is openbaar te bekijken."},{"id":"juridische-vermelding","blok":"ideal","titel":"Juridische vermelding met naam, adres en contact","status":"ontbreekt","uitleg":"Ik vind geen juridische vermelding (impressum). Shopify eist die voor iDEAL: bedrijfsnaam, adres en contactgegevens op een vaste pagina.","oplossing":"Shopify-beheer: Instellingen > Beleid > Contactgegevens (Settings > Policies > Contact information): vul je gegevens in. Shopify maakt er dan automatisch een pagina van en zet die onder in de kassa."},{"id":"retourbeleid","blok":"ideal","titel":"Duidelijk retourbeleid","status":"niet_zeker","uitleg":"Er is een retourpagina, maar die is erg kort. Shopify wil een duidelijk retourbeleid zien.","oplossing":"Shopify-beheer: Instellingen > Beleid (Settings > Policies): schrijf je retourbeleid uit (termijn, kosten, hoe je retourneert).","bron":"https://zonnig-zeepje.myshopify.com/policies/refund-policy"},{"id":"euro","blok":"ideal","titel":"Winkel rekent in euro","status":"ontbreekt","uitleg":"Ik zie prijzen in USD. iDEAL werkt alleen bij betalingen in euro.","oplossing":"Shopify-beheer: Instellingen > Markten (Settings > Markets): zorg dat de markt Nederland in euro verkoopt."},{"id":"markt-nl","blok":"ideal","titel":"Nederland is een actieve markt","status":"niet_zeker","uitleg":"Je winkel herkent Nederland, maar rekent in USD. Dat wijst erop dat Nederland nog niet goed als markt (in euro) is ingesteld.","oplossing":"Shopify-beheer: Instellingen > Markten (Settings > Markets): zet Nederland in een actieve markt die in euro verkoopt."},{"id":"kvk","blok":"wet","titel":"KVK-nummer staat op je site","status":"ontbreekt","uitleg":"Ik vind geen KVK-nummer. Webshops moeten hun KVK-nummer op de site zetten.","oplossing":"Shopify-beheer: Instellingen > Beleid > Contactgegevens (Settings > Policies > Contact information): zet je KVK-nummer erbij. Handig is ook de footer van je winkel."},{"id":"btw","blok":"wet","titel":"Btw-nummer staat op je site en is geldig","status":"ontbreekt","uitleg":"Ik vind geen btw-nummer (btw-id, zoals NL123456789B01). Webshops moeten dit op hun site zetten. Let op: dit is je btw-identificatienummer, niet je omzetbelastingnummer.","oplossing":"Shopify-beheer: Instellingen > Beleid > Contactgegevens (Settings > Policies > Contact information): zet je btw-id erbij."},{"id":"email-telefoon","blok":"wet","titel":"E-mailadres én telefoonnummer zichtbaar","status":"ontbreekt","uitleg":"Ik vind geen e-mailadres en geen telefoonnummer. Je hebt wel een contactformulier, maar dat is niet genoeg: de ACM wil een e-mailadres én een andere manier om je te bereiken.","oplossing":"Shopify-beheer: Instellingen > Beleid > Contactgegevens (Settings > Policies > Contact information): zet ze erbij, en liefst ook in de footer."},{"id":"herroepingsknop","blok":"wet","titel":"Herroepingsknop (verplicht sinds 19 juni 2026)","status":"niet_zeker","uitleg":"Ik zie geen herroepingsknop op je homepage of retourpagina. Misschien staat hij ergens anders. Hij moet makkelijk te vinden zijn, met een duidelijke tekst zoals \"mijn aankoop ongedaan maken\", en zonder verplicht account. Ontbreekt hij, dan kan de bedenktijd tot een jaar verlengd worden.","oplossing":"Voeg een herroepingsknop toe (via een app of een eigen pagina) en zet de link in je footer: Shopify-beheer: Onlinewinkel > Navigatie, footermenu (Online Store > Navigation, footer menu)."},{"id":"bedenktijd","blok":"wet","titel":"Minimaal 14 dagen bedenktijd","status":"niet_zeker","uitleg":"Je retourbeleid noemt 7 dagen. De wettelijke bedenktijd is minimaal 14 dagen. Uitzonderingen zijn er voor bijvoorbeeld bederfelijke of op maat gemaakte producten; geldt dat voor jou, dan is het goed.","oplossing":"Shopify-beheer: Instellingen > Beleid (Settings > Policies): zet erin dat klanten 14 dagen bedenktijd hebben, en noem apart welke producten daarvan zijn uitgezonderd.","bron":"https://zonnig-zeepje.myshopify.com/policies/refund-policy"},{"id":"voorwaarden-privacy","blok":"wet","titel":"Algemene voorwaarden en privacyverklaring","status":"let_op","uitleg":"Ik vind geen algemene voorwaarden. Algemene voorwaarden zijn niet altijd verplicht, maar wel sterk aan te raden.","oplossing":"Shopify-beheer: Instellingen > Beleid (Settings > Policies): vul de vakken in."},{"id":"cookies","blok":"waarschuwing","titel":"Cookiebanner bij tracking","status":"let_op","uitleg":"Ik zie trackers (Google Analytics/Tag Manager) maar geen cookiebanner. Voor trackingcookies heb je toestemming nodig, en weigeren moet even makkelijk zijn als accepteren.","oplossing":"Shopify-beheer: Instellingen > Klantprivacy (Settings > Customer privacy): zet de cookiebanner aan voor Nederland."},{"id":"van-voor","blok":"waarschuwing","titel":"Doorgestreepte prijzen (van-voor)","status":"let_op","uitleg":"Ik zie doorgestreepte prijzen (bijvoorbeeld bij \"Trui\"). Regel: de \"van\"-prijs moet de laagste prijs van de afgelopen 30 dagen zijn. De ACM controleert hierop en deelt boetes uit."},{"id":"fabrikant","blok":"waarschuwing","titel":"Fabrikantgegevens op de productpagina (GPSR)","status":"let_op","uitleg":"Op je productpagina zie ik geen gegevens van de fabrikant. Sinds de EU-regels voor productveiligheid (GPSR) moeten naam en contactadres van de fabrikant (of importeur) bij het product staan. Verkoop je eigen gemaakte producten, dan ben jij de fabrikant.","bron":"https://zonnig-zeepje.myshopify.com/products/trui"},{"id":"verzendbeleid","blok":"waarschuwing","titel":"Verzendbeleid en levertijden","status":"let_op","uitleg":"Ik vind geen verzendbeleid. Klanten moeten vóór de bestelling weten wat verzenden kost en hoe lang het duurt.","oplossing":"Shopify-beheer: Instellingen > Beleid (Settings > Policies): vul het verzendbeleid in."}],"samenvatting":{"goed":1,"ontbreekt":5,"niet_zeker":4,"let_op":12},"idealKlaar":false};
+  var f = document.getElementById("f"), u = document.getElementById("u"), b = document.getElementById("b");
+  var err = document.getElementById("err"), rapport = document.getElementById("rapport");
+  var bezig = document.getElementById("bezig"), stappen = document.getElementById("stappen").children;
+  var plak = document.getElementById("plakbalk"), plakTekst = document.getElementById("plak-tekst");
+  var LABEL = { goed: "In orde", ontbreekt: "Ontbreekt", let_op: "Let op", niet_zeker: "Niet zeker" };
+  var VOLGORDE = { ontbreekt: 0, niet_zeker: 1, let_op: 2, goed: 3 };
+  var BLOKKEN = {
+    starter: ["Uitstraling en vertrouwen", "Dit zien klanten als eerste. Hier verlies je vaak verkopen zonder dat je het merkt."],
+    ideal: ["Eisen van Shopify voor iDEAL", "Dit bepaalt of iDEAL aan gaat. De meeste Nederlanders betalen met iDEAL."],
+    wet: ["Verplicht volgens de wet", "Hier kan de ACM je op aanspreken, ook als iDEAL al werkt."],
+    waarschuwing: ["Goed om te checken", "Geen harde fout gevonden, maar kijk er even naar."]
+  };
+  var KORT = { starter: "Uitstraling en vertrouwen", ideal: "iDEAL", wet: "Verplicht volgens de wet", waarschuwing: "Goed om te checken" };
+  // Hoe belangrijk een punt is, voor de lijst "Begin met deze 3".
+  var GEWICHT = { voorbeeldtekst: 92, productfotos: 90, productbeschrijving: 72, "eigen-domein": 62, "over-ons": 56, "google-tekst": 40, favicon: 34 };
+  var huidig = null, isDemo = false, opgelost = {}, stapTimer = null;
+  var SLOT = '<svg class="slot" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="7" width="11" height="8" rx="2" fill="currentColor"/><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+  var SLOT_OPEN = SLOT.replace("M5 7V5a3 3 0 0 1 6 0v2", "M5 7V5a3 3 0 0 1 6 0");
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function kaal(url) { return String(url).replace(/^https?:\/\//, "").replace(/\/$/, ""); }
+
+  function isOpen(c) { return c.status !== "goed" && !opgelost[c.id]; }
+  function idealKlaar(r) { return r.idealKlaar || !r.checks.some(function (c) { return c.blok === "ideal" && isOpen(c); }); }
+  function volgorde(r) { return idealKlaar(r) ? ["starter", "wet", "waarschuwing", "ideal"] : ["ideal", "starter", "wet", "waarschuwing"]; }
+  function gewicht(c) {
+    if (c.blok === "ideal") return c.status === "ontbreekt" ? 100 : 85;
+    if (c.blok === "starter") return c.status === "niet_zeker" ? 20 : (GEWICHT[c.id] || 30);
+    if (c.blok === "wet") return c.status === "ontbreekt" ? 80 : 48;
+    return 28;
+  }
+
+  // Eén rij per onderdeel. Wordt gebruikt in het kaartje rechts en in de kop van het rapport.
+  function rijen(doel, r, klikbaar) {
+    doel.textContent = "";
+    ["starter", "ideal", "wet", "waarschuwing"].forEach(function (blok) {
+      var rij = el(klikbaar ? "button" : "div", "onderdeel");
+      if (klikbaar) { rij.type = "button"; rij.addEventListener("click", function () { naar("blok-" + blok); }); }
+      var tekst = el("span", null, KORT[blok]);
+      var st = el("span", "rechts");
+      if (blok === "ideal") {
+        var klaar = r ? idealKlaar(r) : false;
+        rij.className += " ideal " + (klaar ? "open" : "dicht");
+        var ic = el("span"); ic.innerHTML = klaar ? SLOT_OPEN : SLOT; rij.appendChild(ic.firstChild);
+      }
+      rij.appendChild(tekst);
+      if (!r) {
+        var aantal = { starter: 7, ideal: 5, wet: 6, waarschuwing: 4 }[blok];
+        st.textContent = blok === "ideal" ? "Op slot?" : aantal + " punten";
+      } else {
+        var items = r.checks.filter(function (c) { return c.blok === blok; });
+        var open = items.filter(isOpen), rood = open.filter(function (c) { return c.status === "ontbreekt"; });
+        if (blok === "ideal") { st.textContent = idealKlaar(r) ? "Klaar" : "Op slot, " + open.length + " te doen"; st.className += idealKlaar(r) ? " groen" : " rood"; }
+        else if (!open.length) { st.textContent = "In orde"; st.className += " groen"; }
+        else { st.textContent = open.length + " te doen"; st.className += rood.length ? " rood" : " geel"; }
+      }
+      rij.appendChild(st);
+      doel.appendChild(rij);
+    });
+  }
+
+  function naar(id) {
+    var e = document.getElementById(id); if (!e) return;
+    if (e.tagName === "DETAILS") e.open = true;
+    e.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+
+  function telling(r) {
+    var lijst = document.getElementById("top3");
+    if (!lijst) return;
+    var open = r.checks.filter(isOpen).sort(function (a, b2) { return gewicht(b2) - gewicht(a); });
+    lijst.textContent = "";
+    open.slice(0, 3).forEach(function (c) {
+      var li = el("li"), knop = el("button"); knop.type = "button";
+      knop.appendChild(el("span", "t", c.titel));
+      knop.appendChild(el("span", "w", KORT[c.blok]));
+      knop.addEventListener("click", function () { naar("punt-" + c.id); });
+      li.appendChild(knop); lijst.appendChild(li);
+    });
+    var kop = document.getElementById("kop-tekst"), sub = document.getElementById("kop-sub");
+    kop.textContent = open.length ? (open.length <= 3 ? "Nog " + open.length + " te doen" : "Begin met deze 3") : "Alles staat goed";
+    sub.textContent = open.length > 3 ? "Dit levert je winkel het meest op. Daarna nog " + (open.length - 3) + " punten, die staan hieronder per onderdeel." : (open.length ? "Je bent er bijna." : "Doe de check opnieuw als je iets aan je winkel verandert.");
+    rijen(document.getElementById("kop-rijen"), r, true);
+    rijen(document.getElementById("kaart-rijen"), r, false);
+    document.getElementById("kassa-winkel").textContent = kaal(r.winkel);
+    document.getElementById("kassa-rechts").textContent = "Jouw check";
+    document.getElementById("kassa-titel").textContent = open.length ? open.length + " punten om te verbeteren" : "Alles in orde";
+    document.getElementById("kassa-teller").textContent = "Vink punten af als je ze hebt opgelost. Dit overzicht loopt mee.";
+    plakTekst.textContent = "";
+    if (open.length) {
+      var volgend = open[0], kn = el("button", "plak-volgende"); kn.type = "button";
+      kn.appendChild(el("span", "plak-label", "Volgende:")); kn.appendChild(el("span", "plak-titel", volgend.titel));
+      kn.addEventListener("click", function () { naar("punt-" + volgend.id); });
+      plakTekst.appendChild(kn);
+    } else plakTekst.textContent = "Alles in orde";
+  }
+
+  function punt(c) {
+    var d = el("details", "punt " + c.status); d.id = "punt-" + c.id;
+    if (c.status === "ontbreekt") d.open = true;
+    var s = el("summary");
+    s.appendChild(el("span", "titel", c.titel));
+    var lab = el("span", "label " + c.status, LABEL[c.status] || c.status);
+    s.appendChild(lab);
+    s.appendChild(el("span", "pijl"));
+    d.appendChild(s);
+    var body = el("div", "punt-body");
+    body.appendChild(el("p", null, c.uitleg));
+    if (c.oplossing && c.status !== "goed") {
+      var o = el("div", "oplossen"); o.appendChild(el("strong", null, "Zo los je het op")); o.appendChild(document.createTextNode(c.oplossing)); body.appendChild(o);
+    }
+    var acties = el("div", "punt-acties");
+    if (c.status !== "goed") {
+      var lbl = el("label", "vinkje"), cb = el("input"); cb.type = "checkbox";
+      cb.addEventListener("change", function () {
+        if (cb.checked) opgelost[c.id] = true; else delete opgelost[c.id];
+        d.classList.toggle("is-opgelost", cb.checked);
+        lab.className = "label " + (cb.checked ? "opgelost" : c.status);
+        lab.textContent = cb.checked ? "Opgelost" : (LABEL[c.status] || c.status);
+        telling(huidig);
+      });
+      lbl.appendChild(cb); lbl.appendChild(document.createTextNode("Ik heb dit opgelost"));
+      acties.appendChild(lbl);
+    }
+    if (c.bron) { var a = el("a", "bron", "Bron"); a.href = c.bron; a.target = "_blank"; a.rel = "noopener nofollow"; acties.appendChild(a); }
+    if (acties.childNodes.length) body.appendChild(acties);
+    d.appendChild(body);
+    return d;
+  }
+
+  function groepStrook() {
+    var g = el("div", "groep-strook");
+    var t = el("div");
+    t.appendChild(el("strong", null, "Kom je er niet uit?"));
+    t.appendChild(el("span", null, " Andere Nederlandse Shopify-starters hadden hetzelfde probleem. Vraag het in de groep."));
+    g.appendChild(t);
+    if (GROUP_URL) { var a = el("a", "knop", "Naar de groep"); a.href = GROUP_URL; g.appendChild(a); }
+    else g.appendChild(el("span", "binnenkort", "Start binnenkort"));
+    return g;
+  }
+
+  function render(r, demo) {
+    huidig = r; isDemo = !!demo; opgelost = {};
+    rapport.textContent = "";
+    if (!r.bereikbaar) {
+      var code = r.httpStatus;
+      err.textContent = "Ik kon " + kaal(r.winkel) + " niet openen" + (code ? " (de site gaf foutcode " + code + ")" : "") + ". Klopt het adres? Probeer ook het adres dat eindigt op myshopify.com.";
+      return;
+    }
+    if (!r.isShopify) {
+      err.textContent = kaal(r.winkel) + " lijkt geen Shopify-winkel. Deze check werkt alleen voor Shopify. Gebruik je Shopify wel? Probeer dan het adres dat eindigt op myshopify.com.";
+      return;
+    }
+
+    var kop = el("div", "rapport-kop");
+    if (demo) { var vl = el("div", "voorbeeld-rij"); vl.appendChild(el("span", "voorbeeld-label", "Voorbeeld van een beginnende winkel")); kop.appendChild(vl); }
+    var links = el("div");
+    var h = el("h2"); h.id = "kop-tekst"; links.appendChild(h);
+    var p1 = el("p"); p1.id = "kop-sub"; links.appendChild(p1);
+    var ol = el("ol", "top3"); ol.id = "top3"; links.appendChild(ol);
+    kop.appendChild(links);
+    var rechts = el("div");
+    var p2 = el("p"); p2.appendChild(document.createTextNode("Winkel: ")); p2.appendChild(el("span", "winkel", kaal(r.winkel))); rechts.appendChild(p2);
+    var kr = el("div"); kr.id = "kop-rijen"; rechts.appendChild(kr);
+    kop.appendChild(rechts);
+    rapport.appendChild(kop);
+
+    volgorde(r).forEach(function (sleutel, i) {
+      var bk = BLOKKEN[sleutel];
+      var items = r.checks.filter(function (c) { return c.blok === sleutel; }).sort(function (a, b2) { return VOLGORDE[a.status] - VOLGORDE[b2.status]; });
+      if (!items.length) return;
+      var blok = el("section", "blok"), bkop = el("div", "blok-kop"); blok.id = "blok-" + sleutel;
+      bkop.appendChild(el("h3", null, bk[0]));
+      var g = items.filter(function (c) { return c.status === "goed"; }).length;
+      bkop.appendChild(el("span", "num", g + " van " + items.length + " in orde"));
+      blok.appendChild(bkop);
+      blok.appendChild(el("p", "blok-uitleg", bk[1]));
+      items.forEach(function (c) { blok.appendChild(punt(c)); });
+      rapport.appendChild(blok);
+      if (i === 0) rapport.appendChild(groepStrook());
+    });
+
+    var verder = el("div", "verder");
+    var k1 = el("div", "kaart groep");
+    k1.appendChild(el("h3", null, "Loop je vast? Je bent niet de enige."));
+    k1.appendChild(el("p", null, "Een gratis groep voor Nederlandse Shopify-starters. Vraag hulp bij je winkel, iDEAL, btw en de regels, en zie hoe anderen het hebben opgelost. Zonder verkopers."));
+    if (GROUP_URL) { var ga = el("a", "knop", "Kom in de groep"); ga.href = GROUP_URL; k1.appendChild(ga); }
+    else { k1.appendChild(el("p", null, "De groep start binnenkort. Check later nog eens terug.")); }
+    verder.appendChild(k1);
+    var k2 = el("div", "kaart");
+    k2.appendChild(el("h3", null, demo ? "Nu je eigen winkel" : "Iets aangepast?"));
+    k2.appendChild(el("p", null, demo ? "Dit was een verzonnen winkel. Vul je eigen adres in en zie hoe jij ervoor staat." : "Check opnieuw om te zien of het nu goed staat. Ken je iemand met een webshop? Stuur de check door."));
+    var kn = el("div", "knoppen");
+    var opn = el("button", "knop", demo ? "Check mijn eigen winkel" : "Check opnieuw"); opn.type = "button";
+    opn.addEventListener("click", opnieuw);
+    kn.appendChild(opn);
+    var deel = el("button", "knop licht", "Deel de check"); deel.type = "button";
+    deel.addEventListener("click", function () { delen(deel); });
+    kn.appendChild(deel);
+    k2.appendChild(kn);
+    verder.appendChild(k2);
+    rapport.appendChild(verder);
+
+    telling(r);
+    plak.classList.add("aan");
+    document.getElementById("plak-knop").textContent = demo ? "Check mijn winkel" : "Check opnieuw";
+    rapport.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+
+  function delen(knop) {
+    var link = location.origin + location.pathname;
+    var tekst = "Gratis check: is je Shopify-winkel klaar om te verkopen?";
+    if (navigator.share) { navigator.share({ title: "Winkelklaar", text: tekst, url: link }).catch(function () {}); return; }
+    if (navigator.clipboard) navigator.clipboard.writeText(link).then(function () { knop.textContent = "Link gekopieerd"; setTimeout(function () { knop.textContent = "Deel de check"; }, 2000); });
+  }
+
+  function opnieuw() {
+    if (isDemo || !u.value) { window.scrollTo({ top: 0, behavior: "smooth" }); u.focus(); return; }
+    start(u.value);
+  }
+
+  function stapjes(aan) {
+    clearInterval(stapTimer);
+    for (var i = 0; i < stappen.length; i++) stappen[i].className = "";
+    if (!aan) { bezig.hidden = true; return; }
+    bezig.hidden = false;
+    var n = 0; stappen[0].className = "nu";
+    stapTimer = setInterval(function () {
+      if (n < stappen.length - 1) { stappen[n].className = "klaar"; n++; stappen[n].className = "nu"; }
+    }, 1300);
+  }
+
+  function start(waarde) {
+    err.textContent = ""; rapport.textContent = ""; plak.classList.remove("aan");
+    b.disabled = true; b.textContent = "Bezig…";
+    document.getElementById("bezig-titel").textContent = "Ik check " + kaal(waarde);
+    stapjes(true);
+    bezig.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    try { history.replaceState(null, "", "?winkel=" + encodeURIComponent(kaal(waarde))); } catch (e) {}
+    fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url: waarde }) })
+      .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j }; }); })
+      .then(function (x) { stapjes(false); if (!x.ok) { err.textContent = x.j.fout || "De check is mislukt. Probeer het zo nog eens."; return; } render(x.j, false); })
+      .catch(function () { stapjes(false); err.textContent = "De check is mislukt. Controleer je internet en probeer het nog eens."; })
+      .finally(function () { b.disabled = false; b.textContent = "Check mijn winkel"; });
+  }
+
+  f.addEventListener("submit", function (e) { e.preventDefault(); start(u.value); });
+  document.getElementById("demo").addEventListener("click", function () { err.textContent = ""; render(DEMO, true); });
+  document.getElementById("plak-knop").addEventListener("click", opnieuw);
+
+  rijen(document.getElementById("kaart-rijen"), null, false);
+
+  // Een gedeelde link met ?winkel=... vult het adres in en start de check.
+  var q = new URLSearchParams(location.search).get("winkel");
+  if (q) { u.value = q; start(q); }
+})();
+</script>
+</body>
+</html>

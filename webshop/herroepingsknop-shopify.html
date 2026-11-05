@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herroepingsknop in Shopify toevoegen: zo doe je het (verplicht sinds juni 2026)</title>
+<meta name="description" content="Shopify heeft geen ingebouwde herroepingsknop. Lees in gewone taal wat de wet vraagt, hoe je de knop in je Shopify-winkel zet en hoe je test of hij goed werkt.">
+<link rel="canonical" href="https://dortus.com/webshop/herroepingsknop-shopify.html">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Herroepingsknop in Shopify toevoegen">
+<meta property="og:description" content="Wat de wet vraagt, hoe je de knop in Shopify zet en hoe je test of hij werkt. In gewone taal.">
+<meta property="og:url" content="https://dortus.com/webshop/herroepingsknop-shopify.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dortus">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Herroepingsknop in Shopify toevoegen","inLanguage":"nl","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Organization","name":"Dortus","url":"https://dortus.com/"},"publisher":{"@type":"Organization","name":"Dortus","url":"https://dortus.com/"},"mainEntityOfPage":"https://dortus.com/webshop/herroepingsknop-shopify.html"}
+</script>
+<style>
+  :root {
+    --papier:#f2f4f1; --wit:#ffffff; --inkt:#14261f; --zacht:#5c6b64; --lijn:#d6ddd8;
+    --oranje:#ff6a13; --oranje-donker:#d9520a; --groen:#17805a; --groen-bg:#e3f3ea;
+    --amber:#9a6412; --amber-bg:#fbf0da;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; color:var(--inkt); background:var(--papier); line-height:1.6; font-size:18px; }
+  a { color:inherit; text-underline-offset:3px; }
+  :focus-visible { outline:3px solid var(--oranje); outline-offset:2px; border-radius:6px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .top { display:flex; justify-content:space-between; align-items:center; padding:18px 0; font-size:15px; color:var(--zacht); max-width:1080px; margin:0 auto; padding-left:20px; padding-right:20px; }
+  .top a { text-decoration:none; }
+  .top a:hover { text-decoration:underline; }
+  .top strong { color:var(--inkt); }
+  header.kop { padding:32px 0 8px; }
+  h1 { font-size: clamp(32px, 5vw, 48px); line-height:1.08; letter-spacing:-.02em; margin:0 0 16px; }
+  .intro { font-size:20px; color:var(--zacht); margin:0 0 24px; }
+  .kort { background:var(--wit); border-radius:16px; padding:20px 24px; margin:0 0 40px; border-left:6px solid var(--oranje); }
+  .kort h2 { font-size:18px; margin:0 0 8px; }
+  .kort ul { margin:0; padding-left:20px; }
+  .kort li { margin:4px 0; }
+  h2 { font-size: clamp(24px, 3.4vw, 30px); letter-spacing:-.01em; line-height:1.15; margin:48px 0 12px; }
+  h3 { font-size:20px; margin:28px 0 8px; }
+  p, li { max-width:40em; }
+  ol.stappen { padding-left:0; list-style:none; counter-reset:stap; }
+  ol.stappen > li { counter-increment:stap; position:relative; padding-left:52px; margin:0 0 22px; }
+  ol.stappen > li::before { content:counter(stap); position:absolute; left:0; top:0; width:36px; height:36px; border-radius:50%; background:var(--inkt); color:#fff; font-weight:800; display:grid; place-items:center; font-size:16px; }
+  ol.stappen strong { display:block; font-size:19px; }
+  .pad { font-size:16px; background:var(--wit); border:1px solid var(--lijn); border-radius:8px; padding:2px 8px; white-space:nowrap; }
+  .let-op { background:var(--amber-bg); border-radius:12px; padding:14px 18px; margin:20px 0; }
+  .let-op p { margin:0; }
+  table { border-collapse:collapse; width:100%; background:var(--wit); border-radius:12px; overflow:hidden; font-size:16px; margin:12px 0 8px; }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--lijn); vertical-align:top; }
+  th { background:#e8ece9; }
+  .cta { background:var(--inkt); color:#fff; border-radius:20px; padding:28px; margin:48px 0 24px; }
+  .cta h2 { color:#fff; margin:0 0 8px; }
+  .cta p { color:#c9d4ce; margin:0 0 18px; }
+  .knop { display:inline-block; background:var(--oranje); color:#1a0d04; font-weight:800; text-decoration:none; padding:14px 22px; border-radius:12px; font-size:18px; }
+  .knop:hover { background:var(--oranje-donker); color:#fff; }
+  .bronnen { font-size:15px; color:var(--zacht); }
+  .bronnen li { margin:4px 0; }
+  footer { padding:32px 0 64px; font-size:14px; color:var(--zacht); }
+  @media (max-width:560px) { body { font-size:17px; } .pad { white-space:normal; } }
+</style>
+</head>
+<body>
+<div class="top"><span><a href="/webshop/"><strong>Winkelklaar</strong>, gratis check voor je Shopify-winkel</a></span><a href="/">van Dortus</a></div>
+
+<main class="wrap">
+  <header class="kop">
+    <h1>Herroepingsknop in Shopify toevoegen</h1>
+    <p class="intro">Sinds juni 2026 moet elke webshop een knop hebben waarmee een klant een online aankoop ongedaan maakt. Shopify heeft die knop niet ingebouwd. Hier lees je wat de regel precies vraagt en hoe je hem in je winkel zet.</p>
+  </header>
+
+  <section class="kort" aria-label="In het kort">
+    <h2>In het kort</h2>
+    <ul>
+      <li>De knop is verplicht voor iedereen die online aan consumenten verkoopt, ook kleine winkels en verkopers via social media.</li>
+      <li>Annuleren moet net zo makkelijk zijn als bestellen. Geen verplicht account, geen app, niet bellen.</li>
+      <li>De klant krijgt meteen een bevestiging, met wat er geannuleerd is en wanneer.</li>
+      <li>In Shopify regel je dit met een app of een eigen pagina met formulier, en een link in je footer.</li>
+    </ul>
+  </section>
+
+  <h2>Wat is een herroepingsknop?</h2>
+  <p>Klanten die online kopen hebben 14 dagen bedenktijd. In die tijd mogen ze zonder reden van de koop af. Dat heet "herroepen" of "ontbinden". Dat recht bestond al. Nieuw is dat je webshop er nu een vaste, duidelijke knop voor moet hebben.</p>
+  <p>De regel komt uit Europa (richtlijn 2023/2673) en geldt dus ook als je naar België of Duitsland verkoopt. In Nederland houdt de ACM (de toezichthouder voor consumentenregels) er toezicht op.</p>
+  <p>De knop komt erbij. Klanten mogen nog steeds mailen, bellen of het bekende modelformulier gebruiken. Dat formulier moet je dus ook blijven aanbieden.</p>
+
+  <h2>Wat moet de knop kunnen?</h2>
+  <table>
+    <thead><tr><th>Eis</th><th>Wat betekent dat voor jou?</th></tr></thead>
+    <tbody>
+      <tr><td>Duidelijke tekst</td><td>Iedereen moet snappen wat de knop doet. Denk aan "Bestelling annuleren" of "Aankoop ongedaan maken". Niet "Contact" of "Service".</td></tr>
+      <tr><td>Makkelijk te vinden</td><td>Goed zichtbaar op je site, de hele bedenktijd lang. De footer van elke pagina is de logische plek.</td></tr>
+      <tr><td>Geen drempels</td><td>Geen verplicht account en geen app downloaden. Inloggen mag je aanbieden, maar alleen als keuze voor klanten die al een account hebben.</td></tr>
+      <tr><td>Alleen nodige gegevens</td><td>Vraag alleen wat je nodig hebt om de bestelling terug te vinden, zoals naam, e-mailadres en bestelnummer. Geen verplichte reden.</td></tr>
+      <tr><td>Bevestigen</td><td>Na het invullen bevestigt de klant de annulering met een tweede knop.</td></tr>
+      <tr><td>Bevestiging sturen</td><td>De klant krijgt meteen een bevestiging die hij kan bewaren, zoals een e-mail, met welke aankoop is geannuleerd en de datum en tijd.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Wat als je hem niet hebt?</h2>
+  <p>Twee risico's. De bedenktijd van je klanten kan automatisch verlengd worden tot een jaar: zolang kunnen ze dan nog van de koop af. En de ACM kan een boete geven. Voor een kleine winkel is vooral dat eerste vervelend: een klant die na maanden alsnog zijn geld terug mag vragen.</p>
+
+  <h2>Zo zet je de knop in je Shopify-winkel</h2>
+  <ol class="stappen">
+    <li><strong>Kies een app of een eigen pagina</strong>
+      <p>Het makkelijkst is een app. Zoek in de Shopify App Store op "withdrawal button" of "herroeping". Er zijn apps die precies dit doen, sommige met een gratis plan. Let bij het kiezen op drie dingen: werkt het zonder dat de klant inlogt, krijgt de klant automatisch een bevestigingsmail met datum en tijd, en is de tekst in het Nederlands aan te passen.</p>
+      <p>Een eigen pagina met het standaard contactformulier van Shopify kan ook, maar is vaak niet genoeg: dat formulier stuurt de klant geen eigen bevestiging. Kies je toch die route, test dan extra goed of de klant echt een bevestiging krijgt.</p></li>
+    <li><strong>Zet de link in je footer</strong>
+      <p>Ga naar <span class="pad">Onlinewinkel &gt; Navigatie</span> (Online Store &gt; Navigation), open je footermenu en voeg een link toe naar de pagina van de knop. Noem hem bijvoorbeeld "Bestelling annuleren".</p></li>
+    <li><strong>Noem de knop in je retourbeleid</strong>
+      <p>Je moet klanten vóór de aankoop vertellen dat de knop bestaat en waar hij staat. Zet het in je retourbeleid via <span class="pad">Instellingen &gt; Beleid</span> (Settings &gt; Policies), met de link erbij.</p></li>
+    <li><strong>Zet de link in je bevestigingsmail</strong>
+      <p>Niet verplicht, wel slim: dan vinden klanten hem meteen. Dat doe je via <span class="pad">Instellingen &gt; Meldingen</span> (Settings &gt; Notifications), bij de orderbevestiging.</p></li>
+    <li><strong>Test het zelf</strong>
+      <p>Open je winkel in een privévenster, waar je niet ingelogd bent. Vind je de knop binnen een paar seconden? Kun je annuleren zonder account? Krijg je meteen een mail met de bestelling, datum en tijd? Zo niet, dan is het nog niet goed.</p></li>
+  </ol>
+
+  <div class="let-op"><p>Verkoop je producten zonder bedenktijd, zoals bederfelijke of op maat gemaakte spullen? Dan hoeft voor die producten geen herroeping mogelijk te zijn. Zet in je retourbeleid duidelijk welke producten zijn uitgezonderd. Verkoop je ook gewone producten, dan heb je de knop wel nodig.</p></div>
+
+  <h2>Veelgestelde vragen</h2>
+  <h3>Moet ik als kleine winkel of starter ook een knop hebben?</h3>
+  <p>Ja. De regel geldt voor iedereen die online aan consumenten verkoopt. Er is geen uitzondering voor kleine bedrijven.</p>
+  <h3>Is een knop "Retour aanmelden" genoeg?</h3>
+  <p>Alleen als die knop precies doet wat hierboven staat: duidelijke tekst, geen account nodig en een bevestiging met datum en tijd. Een retourportaal waar je eerst moet inloggen voldoet niet.</p>
+  <h3>Verkoop ik alleen aan bedrijven?</h3>
+  <p>Dan geldt de regel niet. Bedrijven hebben geen wettelijke bedenktijd. Verkoop je aan zowel bedrijven als consumenten, dan heb je hem wel nodig.</p>
+  <h3>Is dit juridisch advies?</h3>
+  <p>Nee. Dit is uitleg in gewone taal, op basis van wat de ACM en de KVK erover schrijven. Twijfel je over jouw situatie, kijk dan bij de bronnen hieronder of vraag een jurist.</p>
+
+  <section class="cta">
+    <h2>Check of je winkel klaar is</h2>
+    <p>Winkelklaar kijkt in 1 minuut of je herroepingsknop te vinden is, en checkt meteen de rest: KVK- en btw-nummer, iDEAL, retourbeleid en wat klanten afschrikt. Gratis, zonder account.</p>
+    <a class="knop" href="/webshop/">Check mijn winkel</a>
+  </section>
+
+  <h2>Bronnen</h2>
+  <ul class="bronnen">
+    <li><a href="https://www.acm.nl/nl/publicaties/acm-roept-online-retailers-op-zich-voor-te-bereiden-op-herroepingsknop">ACM: online retailers moeten zich voorbereiden op de herroepingsknop</a></li>
+    <li><a href="https://www.acm.nl/nl/verkoop-aan-consumenten/klantenservice/bedenktijd">ACM: bedenktijd en de verplichte knop</a></li>
+    <li><a href="https://www.kvk.nl/wetten-en-regels/herroepingsknop-verplicht-voor-webshops/">KVK: herroepingsknop verplicht voor webshops</a></li>
+    <li><a href="https://eur-lex.europa.eu/eli/dir/2023/2673/oj">Richtlijn (EU) 2023/2673 op EUR-Lex</a></li>
+  </ul>
+</main>
+
+<footer class="wrap">
+  <p>Bijgewerkt op 5 november 2026. Geen juridisch advies.</p>
+  <p>Winkelklaar is gemaakt door <a href="/">Dortus</a>. Dortus is niet verbonden aan Shopify.</p>
+</footer>
+</body>
+</html>
