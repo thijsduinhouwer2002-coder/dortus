@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bison &amp; Flex: Bison/Yacc and Flex/Lex files in JetBrains IDEs · Dortus</title>
+  <meta name="description" content="A plugin for JetBrains IDEs that treats Bison/Yacc grammars (.y, .yy) and Flex/Lex scanners (.l, .ll) as real languages: highlighting, syntax errors, Structure view, go to definition, find usages and rename. Free, with a Pro part for work across grammar and scanner." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/bison-flex/" />
+  <meta property="og:title" content="Bison &amp; Flex: grammars and scanners as real languages in your JetBrains IDE" />
+  <meta property="og:description" content="Highlighting, syntax errors, Structure view, go to definition and rename for .y and .l files. For C and C++ developers who write parsers and lexers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dortus.com/bison-flex/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/bison-flex/grammar-light.png" />
+  <meta property="og:image:alt" content="A Bison grammar for a calculator open in the IDE, with colored directives, tokens, rules and C actions, and the Structure view listing the token NUM and the rules input, line and exp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bison & Flex",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "JetBrains IDEs (Windows, macOS, Linux)",
+    "url": "https://dortus.com/bison-flex/",
+    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#support">Support</a>
+        <a class="btn btn-primary" href="#pro">Free and Pro <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">Bison &amp; Flex &middot; plugin for JetBrains IDEs</p>
+          <h1 class="enter enter-1">Your grammar and your scanner, as real languages.</h1>
+          <p class="lede enter enter-2">
+            Bison/Yacc grammars (<code>.y</code>, <code>.yy</code>) and Flex/Lex scanners
+            (<code>.l</code>, <code>.ll</code>) get colors, syntax errors, a Structure view,
+            go to definition and rename. Made for C and C++ developers who write parsers and lexers.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#features">What it does <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="#pro">Free and Pro</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Coming soon to JetBrains Marketplace.</span></p>
+        </div>
+
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="grammar-light.png" alt="The calculator grammar calc.y open in the IDE. Directives such as %token and %left, the rules input, line and exp, and the C actions with $$ and $1 each have their own color. The Structure view on the left lists the token NUM under Declarations and the three rules under Rules." width="1440" height="900" />
+          </span>
+          <figcaption><strong>A Bison grammar.</strong> Colors from your own scheme, and the Structure view with tokens and rules.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="features">
+      <div class="wrap">
+        <div class="head">
+          <h2>What you can do</h2>
+          <p class="lede">
+            Without a plugin the IDE opens these files as plain text. With Bison &amp; Flex they
+            behave like the rest of your code.
+          </p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ul>
+            <li><strong>Read it at a glance.</strong> Directives, tokens, rules, start conditions and regular expressions each get a color from your color scheme, in light, dark and any theme. You can change them under Settings, Editor, Color Scheme.</li>
+            <li><strong>C code in actions.</strong> Keywords, strings, comments and <code>$$</code>, <code>$1</code>, <code>@1</code> are highlighted inside <code>{ ... }</code>.</li>
+            <li><strong>See mistakes while you type.</strong> Syntax errors in the grammar and the scanner are marked in the editor.</li>
+            <li><strong>Find your way.</strong> Fold rules and code blocks, and open the Structure view to see every rule, token and definition.</li>
+            <li><strong>Jump and rename.</strong> Go to definition, find usages and rename a rule, token or start condition within a file.</li>
+            <li><strong>Grammar and scanner together (Pro).</strong> Jump from a token in the <code>.l</code> scanner to its <code>%token</code> in the <code>.y</code> grammar, and find or rename a token in both files at once. Renaming a token that your scanner also uses changes both files, so it needs Pro.</li>
+          </ul>
+        </div>
+        <div class="shots" style="align-items: start; margin-top: 2rem">
+          <figure class="frame">
+            <span class="frame-media">
+              <img src="scanner-dark.png" alt="The scanner calc.l in a dark theme, with %option, the definition DIGIT, the patterns and their C actions in color, and the Structure view listing the definition and the four rules." width="1440" height="900" loading="lazy" />
+            </span>
+            <figcaption><strong>A Flex scanner.</strong> Definitions, patterns and actions, here in a dark theme.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="pro">
+      <div class="wrap">
+        <div class="head">
+          <h2>Free and Pro</h2>
+          <p class="lede">
+            Colors, errors, folding, the Structure view and navigation inside a file are free, and
+            keep working after the trial. Pro adds the features that work across grammar and
+            scanner, including renaming a token that both files use. It comes with a 30-day free
+            trial through your JetBrains account: start it from the Pro notice in the IDE, or
+            under Help, Register. The price will be shown on
+            JetBrains Marketplace, where you can pay monthly or yearly. No sign-up with us.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="install">
+      <div class="wrap">
+        <div class="head">
+          <h2>Install</h2>
+          <p class="lede">
+            Once it is listed: open Settings, Plugins, Marketplace, search for Bison and press
+            Install. If another plugin for <code>.y</code> files is installed, turn that one off,
+            so the IDE uses one plugin for these files.
+          </p>
+        </div>
+        <dl class="facts facts-4">
+          <div>
+            <dt>Files</dt>
+            <dd><code>.y</code> <code>.yy</code> <code>.l</code> <code>.ll</code></dd>
+          </div>
+          <div>
+            <dt>Works in</dt>
+            <dd>JetBrains IDEs, tested in IntelliJ IDEA</dd>
+          </div>
+          <div>
+            <dt>Price</dt>
+            <dd>Free. Pro after a 30-day trial</dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd><a href="eula.html">End user license agreement</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="privacy">
+      <div class="wrap">
+        <div class="head">
+          <h2>Privacy</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>
+            Bison &amp; Flex has no telemetry and sends nothing to Dortus. It reads the files you
+            open in your project to color them and to find rules and tokens. Files are only
+            changed when you rename something yourself.
+          </p>
+          <p>
+            Licenses and trials go through JetBrains: the IDE checks your license with your
+            JetBrains account, the same way it does for the IDE itself. JetBrains processes that
+            data under its own <a href="https://www.jetbrains.com/legal/docs/privacy/privacy/">privacy policy</a>.
+            JetBrains handles payment and invoices. If JetBrains shares buyer details with us as
+            the seller, or you email us, we use them only for your license and for support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="support">
+      <div class="wrap">
+        <div class="head">
+          <h2>Support</h2>
+          <p class="lede">
+            A question, an idea or a bug? Write to
+            <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>. Please add your IDE version
+            and, if you can, a small <code>.y</code> or <code>.l</code> file that shows the problem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Bison &amp; Flex is made by <a href="/">Dortus</a>. JetBrains and IntelliJ IDEA are
+        trademarks of JetBrains s.r.o. GNU Bison and Flex are free software projects by their own
+        authors. Dortus is not affiliated with JetBrains or with these projects.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
