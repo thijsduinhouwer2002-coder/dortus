@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rollwright: dice roller and random tables for Obsidian · Dortus</title>
+  <meta name="description" content="Rollwright is a dice roller plugin for Obsidian. Roll dice and random tables inside your notes with the dice: notation, draw from tables, lists, sections and tags, and keep a roll history. Free, with two optional paid skins." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/rollwright/" />
+  <meta property="og:title" content="Rollwright: dice and random tables in your Obsidian notes" />
+  <meta property="og:description" content="Write a formula, read the result, click to roll again. For game masters and solo players who keep their sessions in Obsidian." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dortus.com/rollwright/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/rollwright/live-preview.png" />
+  <meta property="og:image:alt" content="A session note in Obsidian with rolled results for a perception check, trap damage, an encounter, the weather and loot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rollwright",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Obsidian (Windows, macOS, Linux)",
+    "softwareVersion": "0.2.0",
+    "url": "https://dortus.com/rollwright/",
+    "downloadUrl": "https://github.com/thijsduinhouwer2002-coder/rollwright/releases",
+    "offers": [
+      { "@type": "Offer", "name": "Rollwright", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Rollwright skins (Parchment and Arcane)", "price": "6", "priceCurrency": "USD" }
+    ],
+    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#support">Support</a>
+        <a class="btn btn-primary" href="#install">Install <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow enter">Rollwright &middot; Obsidian plugin</p>
+          <h1 class="enter enter-1">Dice and random tables, right in your notes.</h1>
+          <p class="lede enter enter-2">
+            Write a formula, read the result, click to roll again. Roll on your own tables,
+            lists, sections and tags, and keep a history of every roll. Made for game masters
+            and solo players who keep their sessions in Obsidian.
+          </p>
+          <div class="btns enter enter-2">
+            <a class="btn btn-light" href="#install">How to install <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="https://github.com/thijsduinhouwer2002-coder/rollwright#full-reference">Full reference</a>
+          </div>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.2.0 is out on GitHub. The listing in Obsidian's Community plugins is on its way.</span></p>
+        </div>
+
+        <figure class="frame enter enter-3">
+          <span class="frame-media">
+            <img src="live-preview.png" alt="A session note in Live Preview: the Perception line shows the code you type, dice: 1d20 + 4|text(Perception), and the lines around it show rolled results for trap damage, an encounter, the weather, loot and a line from the toll keeper." width="1024" height="610" />
+          </span>
+          <figcaption><strong>Live Preview.</strong> The line you edit shows its code, the rest shows results.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="features">
+      <div class="wrap">
+        <div class="head">
+          <h2>What you can do</h2>
+          <p class="lede">
+            Rollwright uses the <code>dice:</code> notation known from the Dice Roller plugin,
+            so most notes you already have should keep working. All rolling is free.
+          </p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ul>
+            <li><strong>Roll dice in a sentence.</strong> <code>`dice: 1d20 + 4`</code> becomes a result you can click to roll again. Keep highest, exploding dice, rerolls, success counting, Fudge dice and the narrative dice of Genesys and the Star Wars roleplaying games.</li>
+            <li><strong>Roll on your own notes.</strong> A random row from a table, an item from a list, a block from a note, a line, or a note with a tag.</li>
+            <li><strong>Lookup tables.</strong> Put a formula in the first header and Rollwright picks the matching row. Cells can hold rolls too.</li>
+            <li><strong>Keep or write a result.</strong> <code>dice+:</code> keeps a result after a restart, <code>dice-mod:</code> writes it into the note after you confirm.</li>
+            <li><strong>Roll history.</strong> A side panel shows what you rolled, from which note, and lets you roll again.</li>
+            <li><strong>Your numbers in your rolls.</strong> Save formulas by name, or use a number from the note's frontmatter: with <code>str: 3</code>, <code>`dice: 1d20 + str`</code> adds 3.</li>
+            <li><strong>Works where you write.</strong> Reading view and Live Preview look the same, in light and dark themes.</li>
+          </ul>
+        </div>
+        <div class="shots" style="align-items: start; margin-top: 2rem">
+          <figure class="frame">
+            <span class="frame-media">
+              <img src="reading-view.png" alt="The same session note in reading view, with each roll shown as a clickable result." width="1024" height="540" loading="lazy" />
+            </span>
+            <figcaption><strong>Reading view.</strong> Click any result to roll it again.</figcaption>
+          </figure>
+          <figure class="frame">
+            <span class="frame-media">
+              <img src="roll-history.png" alt="The roll history panel next to the note, with each roll, its formula or source table, and its source note." width="1024" height="740" loading="lazy" />
+            </span>
+            <figcaption><strong>Roll history.</strong> Every roll with its formula or table, and the note it came from.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="install">
+      <div class="wrap">
+        <div class="head">
+          <h2>Install</h2>
+          <p class="lede">
+            Once Rollwright is listed: open Settings, Community plugins, Browse, search for
+            Rollwright, install and turn it on. Until then you can install it by hand.
+          </p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ol>
+            <li>Download <code>main.js</code>, <code>manifest.json</code> and <code>styles.css</code> from the <a href="https://github.com/thijsduinhouwer2002-coder/rollwright/releases/latest">latest release</a>.</li>
+            <li>Put them in a folder <code>.obsidian/plugins/rollwright/</code> inside your vault.</li>
+            <li>Restart Obsidian, open Settings, Community plugins, and turn on Rollwright.</li>
+            <li>In any note, type <code>`dice: 2d6 + 3`</code> with the backticks, then move the cursor away.</li>
+          </ol>
+        </div>
+        <dl class="facts facts-4">
+          <div>
+            <dt>Price</dt>
+            <dd>Free. Two skins $6, once</dd>
+          </div>
+          <div>
+            <dt>Works on</dt>
+            <dd>Obsidian desktop. Mobile not yet tested</dd>
+          </div>
+          <div>
+            <dt>Account</dt>
+            <dd>None needed</dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd>MIT, open source</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="skins">
+      <div class="wrap">
+        <div class="head">
+          <h2>Paid skins</h2>
+          <p class="lede">
+            Every rolling feature is free. Two extra looks, Parchment and Arcane,
+            are a one-time purchase of $6 through Polar. Press Buy in the settings, pay, then paste
+            the license key and press Activate. One key works on all your devices. The Classic
+            skin is free.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="privacy">
+      <div class="wrap">
+        <div class="head">
+          <h2>Privacy</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>
+            Rollwright has no telemetry and needs no account. It reads your notes to roll on them.
+            Your notes are only changed when you confirm a <code>dice-mod:</code> code, and then only
+            that code in that note. Outside the vault it touches nothing.
+          </p>
+          <p>
+            Its only network connection is the license check for the paid skins, and only once you
+            use a license key. It then contacts <code>api.polar.sh</code> when you press Activate, and
+            after that at most once every 30 days. It sends your key, our organization id and our
+            benefit id, nothing else. Polar sees your IP address. The plugin keeps only the key and
+            the date of the last check. Read Polar's <a href="https://polar.sh/legal/privacy">privacy policy</a>.
+            Nothing is sent to Dortus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="support">
+      <div class="wrap">
+        <div class="head">
+          <h2>Support</h2>
+          <p class="lede">
+            A question, an idea or a bug? Open an issue on
+            <a href="https://github.com/thijsduinhouwer2002-coder/rollwright/issues">GitHub</a>
+            or write to <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Rollwright is made by <a href="/">Dortus</a>. Obsidian is a trademark of Dynalist Inc.
+        Dortus is not affiliated with Obsidian. Dice Roller is a plugin by its own authors and is
+        not affiliated with Dortus.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
