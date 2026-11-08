@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bison &amp; Flex: Bison/Yacc and Flex/Lex files in JetBrains IDEs · Dortus</title>
-  <meta name="description" content="A plugin for JetBrains IDEs that treats Bison/Yacc grammars (.y, .yy) and Flex/Lex scanners (.l, .ll) as real languages: highlighting, syntax errors, Structure view, go to definition, find usages and rename. Free, with a Pro part for work across grammar and scanner." />
+  <meta name="description" content="A plugin for JetBrains IDEs that treats Bison/Yacc grammars (.y, .yy) and Flex/Lex scanners (.l, .ll) as real languages: highlighting, syntax errors, Structure view, go to definition, find usages and rename, in CLion and other JetBrains IDEs. Free, with a Pro part for work across grammar and scanner, and for warnings about undefined and unused names." />
   <meta name="theme-color" content="#13213a" />
   <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/app-icon.png" />
@@ -56,7 +56,8 @@
           <p class="lede enter enter-2">
             Bison/Yacc grammars (<code>.y</code>, <code>.yy</code>) and Flex/Lex scanners
             (<code>.l</code>, <code>.ll</code>) get colors, syntax errors, a Structure view,
-            go to definition and rename. Made for C and C++ developers who write parsers and lexers.
+            go to definition and rename, in CLion and other JetBrains IDEs. Made for C and C++
+            developers who write parsers and lexers.
           </p>
           <div class="btns enter enter-2">
             <a class="btn btn-light" href="#features">What it does <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -91,6 +92,7 @@
             <li><strong>Find your way.</strong> Fold rules and code blocks, and open the Structure view to see every rule, token and definition.</li>
             <li><strong>Jump and rename.</strong> Go to definition, find usages and rename a rule, token or start condition within a file.</li>
             <li><strong>Grammar and scanner together (Pro).</strong> Jump from a token in the <code>.l</code> scanner to its <code>%token</code> in the <code>.y</code> grammar, and find or rename a token in both files at once. Renaming a token that your scanner also uses changes both files, so it needs Pro.</li>
+            <li><strong>Warnings for loose ends (Pro).</strong> A symbol in a rule that is neither a rule nor a token, a rule or token nothing uses (your scanner counts too), and start conditions that are undeclared or never used are flagged in the editor. A quick fix removes the unused ones.</li>
           </ul>
         </div>
         <div class="shots" style="align-items: start; margin-top: 2rem">
@@ -111,10 +113,15 @@
           <p class="lede">
             Colors, errors, folding, the Structure view and navigation inside a file are free, and
             keep working after the trial. Pro adds the features that work across grammar and
-            scanner, including renaming a token that both files use. It comes with a 30-day free
-            trial through your JetBrains account: start it from the Pro notice in the IDE, or
-            under Help, Register. The price will be shown on
-            JetBrains Marketplace, where you can pay monthly or yearly. No sign-up with us.
+            scanner, including renaming a token that both files use, and the warnings for undefined
+            and unused names. It comes with a 30-day free trial through your JetBrains account:
+            start it from the Pro notice in the IDE, or under Help, Register. No sign-up with us.
+          </p>
+          <p class="lede">
+            Planned price for Pro: $19 a year for individuals and $49 a year for companies, or
+            $1.90 and $4.90 a month. Students, teachers and open source projects are meant to get it free
+            through JetBrains' discount programs. The price on JetBrains Marketplace is the one that
+            counts; JetBrains handles payment and invoices.
           </p>
         </div>
         <div class="shots" style="align-items: start; margin-top: 2rem">
@@ -145,11 +152,11 @@
           </div>
           <div>
             <dt>Works in</dt>
-            <dd>JetBrains IDEs, tested in IntelliJ IDEA</dd>
+            <dd>CLion, IntelliJ IDEA and other JetBrains IDEs, version 2025.2 and later</dd>
           </div>
           <div>
             <dt>Price</dt>
-            <dd>Free. Pro after a 30-day trial</dd>
+            <dd>Free. Pro from $19 a year after a 30-day trial (planned)</dd>
           </div>
           <div>
             <dt>License</dt>
@@ -166,9 +173,9 @@
         </div>
         <div class="prose" style="padding-block: 0">
           <p>
-            Bison &amp; Flex has no telemetry and sends nothing to Dortus. It reads the files you
-            open in your project to color them and to find rules and tokens. Files are only
-            changed when you rename something yourself.
+            Bison &amp; Flex has no telemetry and sends nothing to Dortus. It reads the <code>.y</code> and <code>.l</code>
+            files in your project to color them and to find rules and tokens. Files are only
+            changed when you rename something or apply a quick fix yourself.
           </p>
           <p>
             Licenses and trials go through JetBrains: the IDE checks your license with your
@@ -199,7 +206,7 @@
   <footer class="site-footer">
     <div class="wrap footer-rule">
       <p class="footer-legal">
-        Bison &amp; Flex is made by <a href="/">Dortus</a>. JetBrains and IntelliJ IDEA are
+        Bison &amp; Flex is made by <a href="/">Dortus</a>. JetBrains, CLion and IntelliJ IDEA are
         trademarks of JetBrains s.r.o. GNU Bison and Flex are free software projects by their own
         authors. Dortus is not affiliated with JetBrains or with these projects.
       </p>
