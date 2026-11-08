@@ -74,9 +74,9 @@
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <img src="grammar-light.png" alt="The calculator grammar calc.y open in the IDE. Directives such as %token and %left, the rules input, line and exp, and the C actions with $$ and $1 each have their own color. The Structure view on the left lists the token NUM under Declarations and the three rules under Rules." width="1440" height="900" />
+            <img src="poster-v2.jpg" alt="Poster: Bison &amp; Flex for JetBrains IDEs. In the scanner calc.l the token NUM in return NUM; is highlighted, and an arrow labeled Ctrl + Click, Pro, leads to %token NUM in the grammar calc.y. Text: Your grammar and scanner, finally connected. Free: colors, structure and syntax errors. Pro: jump, rename and unused-code warnings across grammar and scanner." width="2400" height="1520" />
           </span>
-          <figcaption><strong>A Bison grammar.</strong> Colors from your own scheme, and the Structure view with tokens and rules.</figcaption>
+          <figcaption><strong>Grammar and scanner, connected.</strong> Free for everything inside a file, Pro across both files.</figcaption>
         </figure>
       </div>
     </section>
@@ -104,7 +104,7 @@
         <div class="shots" style="align-items: start; margin-top: 2rem">
           <figure class="frame">
             <span class="frame-media">
-              <img src="scanner-dark.png" alt="The scanner calc.l in a dark theme, with %option, the definition DIGIT, the patterns and their C actions in color, and the Structure view listing the definition and the four rules." width="1440" height="900" loading="lazy" />
+              <img src="scanner-card.jpg" alt="Free: your scanner gets the same care. The scanner calc.l in a dark theme with definitions, regular expressions and the C code in actions in color, and the Structure view." width="2400" height="1520" loading="lazy" />
             </span>
             <figcaption><strong>A Flex scanner.</strong> Definitions, patterns and actions, here in a dark theme.</figcaption>
           </figure>
@@ -133,9 +133,15 @@
         <div class="shots" style="align-items: start; margin-top: 2rem">
           <figure class="frame">
             <span class="frame-media">
-              <img src="poster.jpg" alt="Poster: Bison &amp; Flex for JetBrains IDEs. Two files side by side. In the scanner calc.l the token NUM in return NUM; is highlighted, and an arrow labeled Ctrl + Click, Pro, leads to %token NUM in the grammar calc.y. Text: Your grammar and scanner, finally connected. Click from return NUM; straight to its %token. Rename it in both files at once. Free: colors, structure and syntax errors. Pro: jump and rename across files." width="1600" height="1013" loading="lazy" />
+              <img src="pro-unused.jpg" alt="Pro: dead rules gone with Alt+Enter. Before: the unused rule term is grey with the quick fix Remove unused rule 'term'. After: the same grammar without that rule." width="2400" height="1520" loading="lazy" />
             </span>
-            <figcaption><strong>Pro: from scanner to grammar.</strong> Ctrl+Click a token in the <code>.l</code> file to reach its <code>%token</code> in the <code>.y</code> file.</figcaption>
+            <figcaption><strong>Pro: loose ends.</strong> Unused rules and tokens turn grey, and one quick fix removes them.</figcaption>
+          </figure>
+          <figure class="frame">
+            <span class="frame-media">
+              <img src="pro-rename.jpg" alt="Pro: rename once, both files follow. After Shift+F6 from NUM to NUMBER, the %token and the rule exp in calc.y and return NUMBER; in calc.l all say NUMBER." width="2400" height="1520" loading="lazy" />
+            </span>
+            <figcaption><strong>Pro: rename across files.</strong> Shift+F6 on a token changes the grammar and the scanner together.</figcaption>
           </figure>
         </div>
       </div>
