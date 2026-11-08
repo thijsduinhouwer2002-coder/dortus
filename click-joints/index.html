@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Click Joints: ball joints for 3D printed figures in Blender · Dortus</title>
+  <meta name="description" content="Click Joints is a free Blender add-on that cuts a ball or pin joint into your figure for 3D printing, with clearance in mm, a fit colour on the cut and the measured bend range of every ball joint. See how far it bends, before you print." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-joints/" />
+  <meta property="og:title" content="Click Joints for Blender: see how far it bends, before you print" />
+  <meta property="og:description" content="Cut a ball joint into your figure. Click Joints measures the bend in 8 directions and shows it on the model, with wall and clearance in mm. Free on Blender Extensions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dortus.com/click-joints/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-joints/poster-1200.jpg" />
+  <meta property="og:image:alt" content="Click Joints for Blender: see how far it bends, before you print. A cut limb with a protractor on the model at 20 degrees and a red wedge 8 degrees past the limit." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Click Joints",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Blender 4.2 or newer (Windows, macOS, Linux)",
+    "softwareVersion": "0.1.0",
+    "url": "https://dortus.com/click-joints/",
+    "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#support">Support</a>
+        <a class="btn btn-primary" href="#install">Install <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap">
+        <figure class="frame enter" style="margin: 0 0 2.4rem">
+          <span class="frame-media">
+            <img src="poster.jpg" alt="Poster: Click Joints for Blender. See how far it bends, before you print. A cut limb with a ball joint, a protractor on the model at 20 degrees and a red wedge where the part is bent 8 degrees past the limit. Labels: plus or minus 20 degrees measured bend range, Good fit with wall and clearance in mm, plus 8 degrees red when you bend past it. Free on Blender Extensions, STL and 3MF, Blender 4.2 to 5.2. Made by Thijs at Dortus." width="1600" height="900" />
+          </span>
+        </figure>
+        <p class="eyebrow enter enter-1">Click Joints &middot; free Blender add-on for 3D printing</p>
+        <h1 class="enter enter-1">See how far it bends, before you print.</h1>
+        <p class="lede enter enter-2">
+          Cut a ball or pin joint into your figure, sized with the clearance your printer needs, in
+          millimetres. For a ball joint, Click Joints measures how far it bends before the parts
+          collide, in 8 directions, and shows that range on the model. Made for people who print
+          poseable figures, dolls and props from a Blender model.
+        </p>
+        <div class="btns enter enter-2">
+          <a class="btn btn-light" href="#install">How to install <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="#features">What it does</a>
+        </div>
+        <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.1.0, free. On its way to Blender Extensions.</span></p>
+      </div>
+    </section>
+
+    <section class="band" id="features">
+      <div class="wrap">
+        <div class="head">
+          <h2>Drag the bend. Red means too far.</h2>
+          <p class="lede">
+            Auto picks the widest bend with a good fit, and the panel shows the measured angle,
+            for example <em>Bends &plusmn;20&deg;</em>. Tilt the part past that limit and the spot where it hits turns red.
+          </p>
+        </div>
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media">
+            <img src="bend.jpg" alt="Drag the bend. Red means too far. Left: bend 15 degrees, inside the measured 20 degrees, the protractor stays white. Right: bend 28 degrees, 8 degrees past the limit, the wedge past 20 degrees is red." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Inside the range, or past it.</strong> You see it on the model, not after the print.</figcaption>
+        </figure>
+
+        <div class="head">
+          <h2>Good fit, measured in mm.</h2>
+          <p class="lede">
+            A ring on the cut shows the fit: green is a good fit, yellow is tight, red is too thin or
+            breaks through the surface. The panel tells you why, with the wall and the clearance in mm.
+          </p>
+        </div>
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media">
+            <img src="panel.jpg" alt="Good fit, measured in mm. The Click Joints panel in Blender with three steps. Step 3, Fit and export, reads Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm measured. Next to it: 1 Place, 2 Joint, 3 Fit, 4 Export, one STL or 3MF per part, in mm." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Three steps in one panel.</strong> Place, joint, fit and export.</figcaption>
+        </figure>
+
+        <div class="head">
+          <h2>What you get, free</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ul>
+            <li><strong>Ball and socket, or pin and hole.</strong> Set the 3D cursor where the joint goes, click <em>Place joint</em>, and the mesh is cut into two watertight parts.</li>
+            <li><strong>Clearance in mm.</strong> Set the gap between the parts (0.1 to 0.3 mm is typical). Auto picks the largest ball with a good fit, or tells you when none fits well.</li>
+            <li><strong>Fit colour on the cut.</strong> Green, yellow or red, with the reason in the panel, for example <em>Tight: wall 0.89 mm (aim for 1.5 mm or more)</em>.</li>
+            <li><strong>Bend range in degrees.</strong> The measured bend of every ball joint, for example &plusmn;20&deg;, with the spot where it hits in red when you tilt past it.</li>
+            <li><strong>STL and 3MF.</strong> One file per part, always in millimetres. An exploded view shows the ball and socket apart; the export stays in place.</li>
+            <li><strong>Make watertight.</strong> For open or messy meshes, on a copy. Your original stays untouched.</li>
+            <li><strong>Honest limits.</strong> A spot too thin for a ball joint, or too close to another joint, is refused with a clear message instead of a broken part.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="install">
+      <div class="wrap">
+        <div class="head">
+          <h2>Install</h2>
+          <p class="lede">
+            In Blender 4.2 or newer: open Edit, Preferences, <strong>Get Extensions</strong>, search for
+            Click Joints and press Install. The panel appears in the 3D viewport sidebar (press N), tab Click Joints.
+          </p>
+        </div>
+        <dl class="facts facts-4" style="margin-top: 1.6rem">
+          <div>
+            <dt>Price</dt>
+            <dd>Free</dd>
+          </div>
+          <div>
+            <dt>Works on</dt>
+            <dd>Blender 4.2 or newer. Tested on 4.2 LTS and 5.2 LTS</dd>
+          </div>
+          <div>
+            <dt>Account</dt>
+            <dd>None needed</dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd>GPL 3.0 or later</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band" id="privacy">
+      <div class="wrap">
+        <div class="head">
+          <h2>Privacy</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>
+            Click Joints works offline. It makes no network connections, has no telemetry and needs
+            no account. It writes files only when you press Export, as STL or 3MF, in the folder you
+            choose or next to your .blend file. Make watertight works on a copy, so your original mesh is kept as it was. Nothing is sent to Dortus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="support">
+      <div class="wrap">
+        <div class="head">
+          <h2>Support</h2>
+          <p class="lede">
+            A question, an idea or a bug? Write to <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.
+          </p>
+          <p class="lede">Made by Thijs at Dortus.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Joints is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
