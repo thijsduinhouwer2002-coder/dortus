@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rollwright: dice roller and random tables for Obsidian · Dortus</title>
-  <meta name="description" content="Rollwright is a dice roller plugin for Obsidian. Roll dice and random tables inside your notes with the dice: notation, draw from tables, lists, sections and tags, and keep a roll history. Free, with two optional paid skins." />
+  <title>Rollwright: roll dice right in your Obsidian notes · Dortus</title>
+  <meta name="description" content="Rollwright is a dice roller plugin for Obsidian. Roll dice and random tables inside your notes with the dice: notation, see a natural 20 land in gold, draw from tables, lists, sections and tags, and keep a roll log. Free, with two optional paid skins." />
   <meta name="theme-color" content="#13213a" />
   <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/app-icon.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="canonical" href="https://dortus.com/rollwright/" />
-  <meta property="og:title" content="Rollwright: dice and random tables in your Obsidian notes" />
-  <meta property="og:description" content="Write a formula, read the result, click to roll again. For game masters and solo players who keep their sessions in Obsidian." />
+  <meta property="og:title" content="Rollwright: roll dice right in your Obsidian notes" />
+  <meta property="og:description" content="Write a formula, read the result, click to roll again. A natural 20 lands in gold. For game masters and solo players who keep their sessions in Obsidian." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dortus.com/rollwright/" />
   <meta property="og:site_name" content="Dortus" />
-  <meta property="og:image" content="https://dortus.com/rollwright/live-preview.png" />
-  <meta property="og:image:alt" content="A session note in Obsidian with rolled results for a perception check, trap damage, an encounter, the weather and loot" />
+  <meta property="og:image" content="https://dortus.com/rollwright/poster-1200.jpg" />
+  <meta property="og:image:alt" content="Rollwright for Obsidian: roll dice right in your notes. A session note with a Wisdom save that rolled a natural 20 in gold." />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="/styles.css" />
   <script type="application/ld+json">
@@ -26,7 +26,7 @@
     "name": "Rollwright",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Obsidian (Windows, macOS, Linux)",
-    "softwareVersion": "0.2.0",
+    "softwareVersion": "0.3.0",
     "url": "https://dortus.com/rollwright/",
     "downloadUrl": "https://github.com/thijsduinhouwer2002-coder/rollwright/releases",
     "offers": [
@@ -58,30 +58,43 @@
       <div class="wrap split">
         <div>
           <p class="eyebrow enter">Rollwright &middot; Obsidian plugin</p>
-          <h1 class="enter enter-1">Dice and random tables, right in your notes.</h1>
+          <h1 class="enter enter-1">Roll dice right in your notes.</h1>
           <p class="lede enter enter-2">
-            Write a formula, read the result, click to roll again. Roll on your own tables,
-            lists, sections and tags, and keep a history of every roll. Made for game masters
-            and solo players who keep their sessions in Obsidian.
+            Write <code>`dice: 1d20 + 5`</code>, read the result, click to roll again. A natural 20
+            lands in gold. Roll on your own tables, lists, sections and tags, and read your session
+            back in the Roll log. Made for game masters and solo players who keep their sessions in Obsidian.
           </p>
           <div class="btns enter enter-2">
             <a class="btn btn-light" href="#install">How to install <span class="arrow" aria-hidden="true">&rarr;</span></a>
             <a class="btn btn-line" href="https://github.com/thijsduinhouwer2002-coder/rollwright#full-reference">Full reference</a>
           </div>
-          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.2.0 is out on GitHub. The listing in Obsidian's Community plugins is on its way.</span></p>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.3.0 is out on GitHub. The listing in Obsidian's Community plugins is on its way.</span></p>
         </div>
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <img src="live-preview.png" alt="A session note in Live Preview: the Perception line shows the code you type, dice: 1d20 + 4|text(Perception), and the lines around it show rolled results for trap damage, an encounter, the weather, loot and a line from the toll keeper." width="1024" height="610" />
+            <video src="demo.mp4" poster="demo-first.jpg" width="800" height="482" autoplay muted loop playsinline preload="metadata" style="display:block; width:100%; height:auto" aria-label="The Rollwright example note in Obsidian. The mouse clicks the damage roll and it rolls again, then clicks the Wisdom save, which lands on a natural 20: it turns gold with a NAT 20 stamp and the view zooms in on it."></video>
           </span>
-          <figcaption><strong>Live Preview.</strong> The line you edit shows its code, the rest shows results.</figcaption>
+          <figcaption><strong>Three clicks.</strong> The last one is a natural 20.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="band" id="features">
       <div class="wrap">
+        <div class="head">
+          <h2>Every roll is a small game piece</h2>
+          <p class="lede">
+            Click a roll and it tumbles and lands in about half a second. The highest possible roll
+            lights up gold, with a NAT 20 stamp on a natural 20. The lowest turns red. Roll animations
+            are off when your system asks for reduced motion.
+          </p>
+        </div>
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media">
+            <img src="poster.png" alt="Rollwright for Obsidian: roll dice right in your notes. You type dice: 1d20 + 5 and get a result you can click to roll again. Next to it a session note where a Wisdom save rolled a natural 20, shown in gold with a NAT 20 stamp." width="2400" height="1600" loading="lazy" />
+          </span>
+        </figure>
         <div class="head">
           <h2>What you can do</h2>
           <p class="lede">
@@ -95,25 +108,18 @@
             <li><strong>Roll on your own notes.</strong> A random row from a table, an item from a list, a block from a note, a line, or a note with a tag.</li>
             <li><strong>Lookup tables.</strong> Put a formula in the first header and Rollwright picks the matching row. Cells can hold rolls too.</li>
             <li><strong>Keep or write a result.</strong> <code>dice+:</code> keeps a result after a restart, <code>dice-mod:</code> writes it into the note after you confirm.</li>
-            <li><strong>Roll history.</strong> A side panel shows what you rolled, from which note, and lets you roll again.</li>
+            <li><strong>Roll log.</strong> Every roll you click lands in a side panel with its note, its dice and the time, grouped by note and session. Reroll any line with one click. The log is kept after you close Obsidian.</li>
+            <li><strong>New to it?</strong> Open the empty Roll log and press <em>Try it: create an example note</em>: a tavern scene where every roll is live.</li>
             <li><strong>Your numbers in your rolls.</strong> Save formulas by name, or use a number from the note's frontmatter: with <code>str: 3</code>, <code>`dice: 1d20 + str`</code> adds 3.</li>
-            <li><strong>Works where you write.</strong> Reading view and Live Preview look the same, in light and dark themes.</li>
+            <li><strong>Works where you write.</strong> Reading view and Live Preview look the same, in light and dark and popular themes.</li>
           </ul>
         </div>
-        <div class="shots" style="align-items: start; margin-top: 2rem">
-          <figure class="frame">
-            <span class="frame-media">
-              <img src="reading-view.png" alt="The same session note in reading view, with each roll shown as a clickable result." width="1024" height="540" loading="lazy" />
-            </span>
-            <figcaption><strong>Reading view.</strong> Click any result to roll it again.</figcaption>
-          </figure>
-          <figure class="frame">
-            <span class="frame-media">
-              <img src="roll-history.png" alt="The roll history panel next to the note, with each roll, its formula or source table, and its source note." width="1024" height="740" loading="lazy" />
-            </span>
-            <figcaption><strong>Roll history.</strong> Every roll with its formula or table, and the note it came from.</figcaption>
-          </figure>
-        </div>
+        <figure class="frame" style="margin-top: 2rem">
+          <span class="frame-media">
+            <img src="roll-log.jpg" alt="A roll log that reads like your session. A session note next to the Roll log panel, where each roll you clicked shows its result, its dice or source table, and the time, under a heading with the note and session." width="2400" height="1600" loading="lazy" />
+          </span>
+          <figcaption><strong>Roll log.</strong> Every roll you click, with its note, its dice and the time.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -163,9 +169,14 @@
             Every rolling feature is free. Two extra looks, Parchment and Arcane,
             are a one-time purchase of $6 through Polar. Press Buy in the settings, pay, then paste
             the license key and press Activate. One key works on all your devices. The Classic
-            skin is free.
+            skin is free and follows your theme.
           </p>
         </div>
+        <figure class="frame">
+          <span class="frame-media">
+            <img src="skins.jpg" alt="Three skins for your table: the same session note in Classic (free), Parchment and Arcane ($6 for both), each in a dark and a light theme." width="2400" height="1600" loading="lazy" />
+          </span>
+        </figure>
       </div>
     </section>
 
