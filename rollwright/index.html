@@ -26,9 +26,9 @@
     "name": "Rollwright",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Obsidian (Windows, macOS, Linux)",
-    "softwareVersion": "0.3.1",
+    "softwareVersion": "0.3.2",
     "url": "https://dortus.com/rollwright/",
-    "downloadUrl": "https://github.com/thijsduinhouwer2002-coder/rollwright/releases",
+    "downloadUrl": "https://obsidian.md/plugins?id=rollwright",
     "offers": [
       { "@type": "Offer", "name": "Rollwright", "price": "0", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Rollwright skins (Parchment and Arcane)", "price": "6", "priceCurrency": "USD" }
@@ -65,15 +65,15 @@
             back in the Roll log. Made for game masters and solo players who keep their sessions in Obsidian.
           </p>
           <div class="btns enter enter-2">
-            <a class="btn btn-light" href="#install">How to install <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-line" href="https://github.com/thijsduinhouwer2002-coder/rollwright#full-reference">Full reference</a>
+            <a class="btn btn-light" href="obsidian://show-plugin?id=rollwright">Open in Obsidian <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-line" href="#install">How to install</a>
           </div>
-          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.3.1 is out on GitHub. The listing in Obsidian's Community plugins is on its way.</span></p>
+          <p style="margin-top: 1.3rem"><span class="status enter enter-3">Live in Obsidian's Community plugins. Version 0.3.2.</span></p>
         </div>
 
         <figure class="frame enter enter-3">
           <span class="frame-media">
-            <video src="demo.mp4" poster="demo-first.jpg" width="800" height="482" autoplay muted loop playsinline preload="metadata" style="display:block; width:100%; height:auto" aria-label="The Rollwright example note in Obsidian. The mouse clicks the Initiative roll, then the damage roll, and each rolls again. Then it clicks the Wisdom save, which lands on a natural 20: it turns gold with a NAT 20 stamp and the view zooms in on it."></video>
+            <video src="demo.mp4" poster="demo-first.jpg" width="800" height="482" autoplay muted loop playsinline preload="metadata" style="display:block; width:100%; height:auto" aria-label="The Rollwright example note in Obsidian. The mouse clicks the Initiative roll, then the damage roll, and each rolls again. Then it clicks the Wisdom save, which lands on a natural 20: it gets a gold border and number with a small NAT 20 stamp and the view zooms in on it."></video>
           </span>
           <figcaption><strong>Three clicks.</strong> The last one is a natural 20.</figcaption>
         </figure>
@@ -99,7 +99,7 @@
           <h2>What you can do</h2>
           <p class="lede">
             Rollwright uses the <code>dice:</code> notation known from the Dice Roller plugin,
-            so most notes you already have should keep working. All rolling is free.
+            so most notes you already have should keep working. All rolling is free. Every option is in the <a href="https://github.com/thijsduinhouwer2002-coder/rollwright#full-reference">full reference</a>.
           </p>
         </div>
         <div class="prose" style="padding-block: 0">
@@ -128,18 +128,19 @@
         <div class="head">
           <h2>Install</h2>
           <p class="lede">
-            Once Rollwright is listed: open Settings, Community plugins, Browse, search for
-            Rollwright, install and turn it on. Until then you can install it by hand.
+            In Obsidian, open Settings, Community plugins, Browse, search for Rollwright,
+            press Install and then Enable. Or <a href="obsidian://show-plugin?id=rollwright">open it in Obsidian</a> straight away.
+            Then type <code>`dice: 2d6 + 3`</code> in any note, with the backticks, and move the cursor away.
           </p>
         </div>
-        <div class="prose" style="padding-block: 0">
+        <details class="prose" style="padding-block: 0">
+          <summary>Install by hand instead</summary>
           <ol>
             <li>Download <code>main.js</code>, <code>manifest.json</code> and <code>styles.css</code> from the <a href="https://github.com/thijsduinhouwer2002-coder/rollwright/releases/latest">latest release</a>.</li>
             <li>Put them in a folder <code>.obsidian/plugins/rollwright/</code> inside your vault.</li>
             <li>Restart Obsidian, open Settings, Community plugins, and turn on Rollwright.</li>
-            <li>In any note, type <code>`dice: 2d6 + 3`</code> with the backticks, then move the cursor away.</li>
           </ol>
-        </div>
+        </details>
         <dl class="facts facts-4" style="margin-top: 1.6rem">
           <div>
             <dt>Price</dt>
@@ -172,6 +173,12 @@
             skin is free and follows your theme.
           </p>
         </div>
+        <figure class="frame" style="margin-top: 2rem">
+          <span class="frame-media">
+            <img src="skins.jpg" alt="The two optional skins side by side, each in a dark and a light theme. Parchment: rolls on old paper with red ink, a red NAT 20 seal and a dark NAT 1 seal. Arcane: rolls on a night-sky token with a glowing edge and a golden aura on a natural 20." width="1476" height="970" loading="lazy" />
+          </span>
+          <figcaption><strong>Parchment and Arcane.</strong> Optional skins, $6 once. Classic stays free.</figcaption>
+        </figure>
       </div>
     </section>
 
