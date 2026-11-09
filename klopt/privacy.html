@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klopt privacy policy · Dortus</title>
+  <meta name="description" content="How Klopt, the TikTok Shop to Moneybird app by Dortus, handles shop data: what it reads, what it stores, where, for how long, and how it is deleted." />
+  <meta name="theme-color" content="#4F3BD1" />
+  <link rel="icon" href="teken.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://dortus.com/klopt/privacy" />
+  <link rel="stylesheet" href="klopt.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="merk" href="/klopt/"><svg class="teken" viewBox="0 0 30 30" aria-hidden="true"><path d="M6 3h18v22l-3-2-3 2-3-2-3 2-3-2-3 2z" fill="#4F3BD1"/><path d="M10 9h10M10 13h10" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".55"/><path d="M10.5 18.2l2.6 2.5 6-6" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Klopt</a>
+      <nav class="nav" aria-label="Menu">
+        <a href="./#hoe">How it works</a>
+        <a href="prijs.html#en">Pricing</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="./#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="held" style="padding-bottom:16px">
+      <div class="wrap tekst" style="display:block">
+        <p class="oog">Klopt for TikTok Shop</p>
+        <h1>Privacy policy</h1>
+        <p class="meta">Last updated: 9 November 2026</p>
+        <p class="noot" style="background:var(--accent-zacht);color:#2A1F7A"><b style="color:var(--accent)">Before launch.</b> Klopt is in development and not yet available. This policy describes how Klopt is being built to handle data. We will check it against the finished app, and update the date above, before Klopt goes live. A Dutch summary is at the end.</p>
+      </div>
+    </section>
+
+    <section class="blok" style="border-top:0;padding-top:8px">
+      <div class="wrap tekst">
+        <h2>1. Who we are</h2>
+        <p>Klopt is made by Thijs Duinhouwer, trading as Dortus, the Netherlands (&ldquo;Dortus&rdquo;, &ldquo;we&rdquo;). Contact for privacy questions and data requests: <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>. The general <a href="/privacy">Dortus privacy policy</a> covers our other products; this page covers Klopt.</p>
+
+        <h2>2. What Klopt does</h2>
+        <p>Klopt reads the settlements (payouts) of your TikTok Shop and books them in your Moneybird administration as journal entries: revenue, discounts, refunds, commission, shipping fees and taxes, each on a ledger account you choose, checked against the amount paid out to you.</p>
+
+        <h2>3. Our role</h2>
+        <p>For your shop and accounting data, you (the seller who installs Klopt) are the controller and Dortus is the processor: we process that data only to show and make the bookings you switch on. For your own contact with us (support email, billing questions), Dortus is the controller of that correspondence.</p>
+
+        <h2>4. What Klopt reads and stores</h2>
+        <h3>From TikTok Shop</h3>
+        <ul>
+          <li>Your shop identifier and shop name, your seller name and seller ID as TikTok sends them, and the access and refresh tokens TikTok issues when you authorise Klopt.</li>
+          <li>Finance data: settlements and their transactions per order, with order IDs, product and SKU names and quantities, amounts, fees, currencies and dates (the finance response as TikTok sends it).</li>
+        </ul>
+        <p>Klopt asks TikTok only for finance data. It does not ask for buyer names, addresses, phone numbers or email addresses, and it does not store them.</p>
+        <h3>From and to Moneybird</h3>
+        <ul>
+          <li>The access token Moneybird issues when you connect, and the ID and name of the administration you choose.</li>
+          <li>Your ledger accounts and tax rates, so you can pick where each amount goes.</li>
+          <li>Klopt writes journal entries to your administration with the settlement date, amounts and a reference with the TikTok settlement ID. It writes one line per type of amount; order details stay in Klopt. It stores the ID of each entry it made, so it never books the same settlement twice.</li>
+        </ul>
+        <h3>In Klopt itself</h3>
+        <ul>
+          <li>Your settings: chosen ledger accounts, tax rates and start date.</li>
+          <li>The status of each settlement (for example booked, waiting, set aside) and short technical notes about errors, so you can see what happened.</li>
+          <li>Settlement and order transactions, kept while Klopt is connected so you can see how each settlement was booked. They are deleted with the rest of your shop data (section 8).</li>
+        </ul>
+
+        <h2>5. Billing</h2>
+        <p>Subscriptions are sold by <strong>Polar</strong> (polar.sh), which acts as merchant of record: Polar takes the payment, charges VAT and sends your invoice. Polar processes your name, email address and payment details under its own privacy policy. Klopt stores only a shop key, your Polar customer ID and your subscription status (whether you pay, and until when). We never see card details.</p>
+
+        <h2>6. Where it runs</h2>
+        <p>Klopt runs on <strong>Cloudflare Workers</strong>, with its data in a Cloudflare D1 database that is encrypted at rest. Our own app keys are kept as Cloudflare secrets, not in source code. The TikTok and Moneybird tokens of your shop are stored in the D1 database, which is encrypted at rest. All traffic uses HTTPS. Access to production is limited to Dortus.</p>
+
+        <h2>7. Subprocessors</h2>
+        <ul>
+          <li><strong>Cloudflare, Inc.</strong>: hosting and database.</li>
+          </ul>
+        <p>TikTok Shop and Moneybird are the services you connect yourself; they process your data under their own terms. <strong>Polar Software, Inc.</strong> sells the subscription as merchant of record and processes billing data under its own privacy policy; Klopt passes Polar only a shop key. Some providers are established outside the EU and may process limited data there under their own transfer mechanisms, such as the EU Standard Contractual Clauses.</p>
+        <p>We do not sell data, we do not use advertising networks, and we do not use your shop data for our own marketing or to train AI models.</p>
+
+        <h2>8. Retention and deletion</h2>
+        <ul>
+          <li>Data is kept while Klopt is connected to your shop.</li>
+          <li>When you disconnect Klopt or uninstall it in TikTok Shop, booking stops at once, we revoke our Moneybird access, and we delete the data of that shop, including tokens, settings, statuses and stored transactions, within 30 days. Your subscription is cancelled at the end of the paid period.</li>
+          <li>Journal entries already in Moneybird stay there: they are part of your own administration.</li>
+          <li>Invoices remain with Polar for as long as tax law requires.</li>
+          <li>You can ask us to delete your data sooner by emailing <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.</li>
+        </ul>
+
+        <h2>9. Your rights</h2>
+        <p>Depending on where you live, you may have the right to access, correct, export or delete personal data, and to object to processing. Email <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>; we usually answer within one business day and handle the request within 30 days. You can also complain to your data protection authority; in the Netherlands that is the Autoriteit Persoonsgegevens.</p>
+
+        <h2>10. Changes</h2>
+        <p>We may update this policy. The date at the top changes when we do, and we tell connected shops about material changes by email or in the app.</p>
+
+        <h2 lang="nl">Kort in het Nederlands</h2>
+        <p lang="nl">Klopt leest alleen de financi&euml;le gegevens van je TikTok-winkel (uitbetalingen, bestelnummers en bedragen), geen namen of adressen van kopers, en boekt ze als memoriaal in jouw Moneybird. We bewaren je instellingen, de status per uitbetaling en de sleutels voor TikTok en Moneybird, versleuteld bij Cloudflare. Betalen gaat via Polar; je betaalgegevens zien wij niet. Ontkoppel je Klopt, dan wissen we de gegevens van je winkel binnen 30 dagen; wat al in Moneybird staat blijft staan. Vragen: <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="voet">
+    <div class="wrap">
+      <p>Klopt is made by Thijs Duinhouwer, trading as <a href="/">Dortus</a>, the Netherlands. TikTok and TikTok Shop are trademarks of their owners; Moneybird is a trademark of Moneybird B.V. Dortus is not affiliated with TikTok or Moneybird. <a href="./">Klopt</a> · <a href="prijs.html#en">Pricing</a></p>
+    </div>
+  </footer>
+</body>
+</html>
