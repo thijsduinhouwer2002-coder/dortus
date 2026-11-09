@@ -69,6 +69,10 @@ mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradie
 .prijs .bedrag{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:4px 0}
 .prijs ul{margin:12px 0 0 18px;color:#3E3C45;font-size:15px}
 .prijs li{margin:4px 0}
+.prijs .kaart p{margin-top:8px}
+.prijs .per{font-size:16px;font-weight:600;color:var(--zacht);letter-spacing:0}
+.kaart.uit{border:2px solid var(--accent);box-shadow:0 14px 34px -20px rgba(79,59,209,.45)}
+.label{display:inline-block;vertical-align:2px;margin-left:8px;padding:2px 9px;border-radius:10px;background:var(--accent-zacht);color:var(--accent);font-size:12.5px;font-weight:600}
 .tekst{max-width:46em}
 .tekst p,.tekst ul{margin:10px 0}.tekst ul{padding-left:20px}.tekst li{margin:5px 0}
 .tekst h2{margin-top:36px}
@@ -91,3 +95,4 @@ mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradie
  .nav{gap:14px;font-size:14px;margin-left:0;width:100%;padding-bottom:10px}
  .knop{width:100%;justify-content:center}
 }
+.prijs-noot{margin-top:14px}
