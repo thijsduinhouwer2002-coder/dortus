@@ -53,7 +53,9 @@
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
     .card:hover { border-color: #5a4b78; }
     .card .shot { display: block; background: var(--bg-2); }
-    .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; object-position: center; display: block; }
+    .card img { width: 100%; height: auto; aspect-ratio: var(--r); object-fit: cover; object-position: center; display: block; }
+    .row1 img { --r: 16 / 9; }
+    .row2 img { --r: 3 / 2; }
     .card .body { padding: 18px 22px 22px; display: flex; flex-direction: column; flex: 1; }
     .card .where { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 6px; }
     .card h2 { font: 700 24px "Archivo", sans-serif; margin: 0 0 6px; }
@@ -68,7 +70,7 @@
     .btn.more:hover { border-color: #5a4b78; }
     .status { font-size: 14px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); }
     .soon { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; border: 1px dashed #5a4b78; border-radius: 16px; padding: 22px 24px; margin-bottom: 64px; }
-    .soon .hat { width: 56px; height: 56px; }
+    .soon .cap { width: 232px; height: auto; aspect-ratio: 462 / 174; border-radius: 10px; display: block; }
     .soon h2 { font: 700 20px "Archivo", sans-serif; margin: 0 0 4px; }
     .soon p { margin: 0; color: var(--ink-2); font-size: 16px; }
     .about { border-top: 1px solid var(--line); padding: 48px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -80,6 +82,13 @@
       .hero { grid-template-columns: 1fr; padding: 28px 0 36px; }
       .door { max-width: 140px; justify-self: start; order: -1; }
       .grid { grid-template-columns: 1fr; }
+      .card img { --r: var(--own); }
+      .card .body { padding: 16px 18px 20px; }
+      .actions { flex-wrap: nowrap; gap: 8px; }
+      .btn { padding: 9px 13px; white-space: nowrap; }
+      .status { white-space: nowrap; font-size: 13px; padding: 4px 10px; }
+      .soon { grid-template-columns: 1fr; padding: 18px; gap: 14px; }
+      .soon .cap { width: 100%; max-width: 360px; }
       .about { grid-template-columns: 1fr; }
       header nav { display: none; }
     }
@@ -104,8 +113,8 @@
     </section>
 
     <section class="grid" id="products" aria-label="Products">
-      <article class="card">
-        <a class="shot" href="/ebb/" tabindex="-1" aria-hidden="true"><img src="/ebb/og-1200.jpg" alt="" loading="lazy" /></a>
+      <article class="card row1">
+        <a class="shot" href="/ebb/" tabindex="-1" aria-hidden="true"><img style="--own: 1200 / 630" width="1200" height="630" src="/ebb/og-1200.jpg" alt="" loading="lazy" /></a>
         <div class="body">
           <p class="where">Garmin watches</p>
           <h2><a href="/ebb/">Ebb for Garmin</a></h2>
@@ -113,13 +122,13 @@
           <p class="price">$4.99 once, no subscription</p>
           <div class="actions">
             <a class="btn store" href="https://apps.garmin.com/apps/5280653d-1681-452d-8c03-7cbdc7284641">Get it on Connect IQ</a>
-            <a class="btn more" href="/ebb/">More about Ebb</a>
+            <a class="btn more" href="/ebb/">More</a>
           </div>
         </div>
       </article>
 
-      <article class="card">
-        <a class="shot" href="/click-joints/" tabindex="-1" aria-hidden="true"><img src="/click-joints/poster-1200.jpg" alt="" loading="lazy" /></a>
+      <article class="card row1">
+        <a class="shot" href="/click-joints/" tabindex="-1" aria-hidden="true"><img style="--own: 1200 / 675" width="1200" height="675" src="/click-joints/poster-1200.jpg" alt="" loading="lazy" /></a>
         <div class="body">
           <p class="where">Blender add-on</p>
           <h2><a href="/click-joints/">Click Joints</a></h2>
@@ -132,8 +141,8 @@
         </div>
       </article>
 
-      <article class="card">
-        <a class="shot" href="/rollwright/" tabindex="-1" aria-hidden="true"><img src="/rollwright/poster-1200.jpg" alt="" loading="lazy" /></a>
+      <article class="card row2">
+        <a class="shot" href="/rollwright/" tabindex="-1" aria-hidden="true"><img style="--own: 1200 / 800" width="1200" height="800" src="/rollwright/poster-1200.jpg" alt="" loading="lazy" /></a>
         <div class="body">
           <p class="where">Obsidian plugin</p>
           <h2><a href="/rollwright/">Rollwright</a></h2>
@@ -146,8 +155,8 @@
         </div>
       </article>
 
-      <article class="card">
-        <a class="shot" href="/bison-flex/" tabindex="-1" aria-hidden="true"><img src="/bison-flex/poster-v2.jpg" alt="" loading="lazy" /></a>
+      <article class="card row2">
+        <a class="shot" href="/bison-flex/" tabindex="-1" aria-hidden="true"><img style="--own: 2400 / 1520" width="2400" height="1520" src="/bison-flex/poster-v2.jpg" alt="" loading="lazy" /></a>
         <div class="body">
           <p class="where">JetBrains IDEs</p>
           <h2><a href="/bison-flex/">Bison &amp; Flex</a></h2>
@@ -161,7 +170,7 @@
     </section>
 
     <section class="soon" aria-label="On the way">
-      <svg class="hat" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L46 40 H18 Z" fill="#a58cff"/><ellipse cx="32" cy="42" rx="26" ry="8" fill="#7b62d6"/><circle cx="32" cy="6" r="4" fill="#ffd25c"/><rect x="20" y="34" width="24" height="5" rx="2" fill="#ffd25c"/></svg>
+      <img class="cap" src="/assets/hats-of-the-fallen-462.jpg" width="462" height="174" alt="Hats of the Fallen: a small knight in a pot helmet and a green one-eyed slime on a pile of gold coins" loading="lazy" />
       <div>
         <h2>On the way: Hats of the Fallen</h2>
         <p>Our first small game, a tiny dungeon on your taskbar. It is not in any store yet; we will put it here when it is.</p>
