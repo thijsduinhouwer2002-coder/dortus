@@ -1,364 +1,190 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dortus: Mermaid and LaTeX editors for Confluence Cloud, running on Atlassian</title>
-  <meta name="description" content="Dortus makes editors for Confluence Cloud: type Mermaid or LaTeX, or paste it from any AI, and see the diagram or formula as you type. Everything runs on Atlassian; no Dortus servers, none of your content leaves your site." />
-  <meta name="theme-color" content="#004c3f" />
-  <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="assets/app-icon.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <meta property="og:title" content="Dortus: Mermaid and LaTeX editors for Confluence Cloud" />
-  <meta property="og:description" content="Type Mermaid or LaTeX in Confluence, or paste it from any AI, and see the diagram or formula as you type. Runs on Atlassian." />
-  <meta property="og:image" content="https://dortus.com/assets/og-home.png" />
-  <meta property="og:image:alt" content="Dortus: editors for Confluence Cloud. Mermaid Editor with code on the left and the diagram on the right." />
-  <meta property="og:type" content="website" />
+  <title>Dortus: small apps and tools that fill a real gap</title>
+  <meta name="description" content="Dortus makes small apps and tools that each do one thing well: Ebb for Garmin watches, Click Joints for Blender, Rollwright for Obsidian and Bison &amp; Flex for JetBrains IDEs. A small game is on the way. Made by Thijs in the Netherlands." />
+  <meta name="theme-color" content="#1d1426" />
+  <link rel="icon" href="/assets/dortus-door-small.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/dortus-door-512.png" />
   <link rel="canonical" href="https://dortus.com/" />
+  <meta property="og:title" content="Dortus: focused tools today, small games on the way" />
+  <meta property="og:description" content="Ebb for Garmin, Click Joints for Blender, Rollwright for Obsidian, Bison &amp; Flex for JetBrains. Made by Thijs in the Netherlands." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dortus.com/" />
   <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/assets/og-dortus-home.png" />
+  <meta property="og:image:alt" content="Dortus: focused tools today, small games on the way. The Dortus D as a door standing ajar with warm light behind it." />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://dortus.com/#organization",
-        "name": "Dortus",
-        "url": "https://dortus.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://dortus.com/assets/logo-dortus-d-512.png"
-        },
-        "email": "support@dortus.com"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://dortus.com/#website",
-        "name": "Dortus",
-        "url": "https://dortus.com/",
-        "publisher": {
-          "@id": "https://dortus.com/#organization"
-        },
-        "inLanguage": "en"
-      }
-    ]
+    "@type": "Organization",
+    "name": "Dortus",
+    "url": "https://dortus.com/",
+    "logo": "https://dortus.com/assets/dortus-door-512.png",
+    "email": "thijs@dortus.com"
   }
   </script>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="home.css" />
+  <style>
+    @font-face { font-family: "Archivo"; font-weight: 500 800; font-display: swap; src: url("/assets/fonts/archivo-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Public Sans"; font-weight: 400 700; font-display: swap; src: url("/assets/fonts/publicsans-latin.woff2") format("woff2"); }
+    :root { --bg: #1d1426; --bg-2: #160f1d; --card: #2a1e33; --line: #3f2846; --ink: #fff4e0; --ink-2: #cdbfd8; --ink-3: #a597b3; --accent: #ffd25c; --lila: #a58cff; }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Public Sans", system-ui, sans-serif; }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 22px 0; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font: 700 22px "Archivo", sans-serif; text-decoration: none; }
+    .brand img { width: 36px; height: 36px; border-radius: 9px; }
+    header nav { display: flex; gap: 20px; font-size: 15px; color: var(--ink-2); }
+    header nav a { text-decoration: none; }
+    header nav a:hover { color: var(--ink); }
+    .hero { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 32px; padding: 56px 0 48px; }
+    .door { width: 100%; max-width: 320px; justify-self: center; }
+    .hero h1 { font: 800 clamp(36px, 6vw, 64px)/1.05 "Archivo", sans-serif; letter-spacing: -0.02em; margin: 0 0 20px; max-width: 14ch; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { color: var(--ink-2); font-size: 20px; max-width: 46ch; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding-bottom: 32px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
+    .card:hover { border-color: #5a4b78; }
+    .card .shot { display: block; background: var(--bg-2); }
+    .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; object-position: center; display: block; }
+    .card .body { padding: 18px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+    .card .where { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 6px; }
+    .card h2 { font: 700 24px "Archivo", sans-serif; margin: 0 0 6px; }
+    .card h2 a { text-decoration: none; }
+    .card h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .card p { margin: 0; color: var(--ink-2); font-size: 16px; }
+    .card .price { margin-top: 10px; font-size: 15px; color: var(--ink); }
+    .actions { margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .btn { display: inline-block; font-weight: 600; font-size: 15px; padding: 9px 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); }
+    .btn.store { background: var(--accent); color: #1d1426; border-color: var(--accent); }
+    .btn.store:hover { background: #ffe08f; }
+    .btn.more:hover { border-color: #5a4b78; }
+    .status { font-size: 14px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); }
+    .soon { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; border: 1px dashed #5a4b78; border-radius: 16px; padding: 22px 24px; margin-bottom: 64px; }
+    .soon .hat { width: 56px; height: 56px; }
+    .soon h2 { font: 700 20px "Archivo", sans-serif; margin: 0 0 4px; }
+    .soon p { margin: 0; color: var(--ink-2); font-size: 16px; }
+    .about { border-top: 1px solid var(--line); padding: 48px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .about h3 { font: 700 20px "Archivo", sans-serif; margin: 0 0 8px; }
+    .about p { margin: 0; color: var(--ink-2); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-3); font-size: 15px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding: 28px 0 36px; }
+      .door { max-width: 140px; justify-self: start; order: -1; }
+      .grid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      header nav { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+  </style>
 </head>
-<body class="home">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
+<body>
+  <header>
     <div class="wrap">
-      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="atlassian.html">Apps</a>
-        <a href="/#guides">Guides</a>
-        <a href="support.html">Support</a>
-        <a class="btn btn-primary nav-hide-sm" href="https://marketplace.atlassian.com/apps/4235692896">Get Mermaid Editor</a>
-      </nav>
+      <a class="brand" href="/"><img src="/assets/dortus-door-512.png" alt="" />Dortus</a>
+      <nav aria-label="Main"><a href="#products">Products</a><a href="/support.html">Support</a><a href="mailto:thijs@dortus.com">Contact</a></nav>
     </div>
   </header>
 
-  <main id="main">
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Small tools that fill a <em>real gap.</em></h1>
+        <p>Dortus makes small apps and plugins that each do one thing well, look good, and say plainly what is free and what is paid. Our first small game is on the way.</p>
+      </div>
+      <img class="door" src="/assets/dortus-door.svg" alt="The Dortus D: a door standing ajar with warm light behind it" />
+    </section>
 
-    <section class="h-hero">
-      <div class="wrap">
-        <h1>Editors for Confluence Cloud. Write it as text, see it on the page.</h1>
-        <p class="h-lede">
-          Mermaid Editor for diagrams and Math for Confluence for LaTeX formulas, with more editors on the
-          way. Type the code, or paste it from ChatGPT or Claude, and the result draws as you type. Everything
-          runs on Atlassian: no Dortus servers, and none of your content leaves your site.
-        </p>
-        <p class="h-actions">
-          <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get Mermaid Editor, free</a>
-          <a class="btn btn-line" href="https://marketplace.atlassian.com/apps/3750803491">Get Math for Confluence</a>
-        </p>
-
-        <div class="h-specimen" role="group" aria-label="Two examples: what you type, and what the page shows">
-          <div class="h-row">
-            <div class="h-src">
-              <span class="h-cap">You type, in Mermaid</span>
-              <pre class="h-code"><span class="l"><span class="k">flowchart</span> LR</span><span class="l">  Idea --&gt; Draft --&gt; Review</span><span class="l">  Review --&gt;|ok| Publish</span><span class="l">  Review --&gt;|changes| Draft</span><span class="l"><span class="c">%% pasted from any AI works too</span></span></pre>
-            </div>
-            <div class="h-out">
-              <svg class="h-flow" viewBox="0 28 470 122" role="img" aria-label="Flowchart: Idea to Draft to Review; Review goes to Publish when ok, or back to Draft for changes">
-                <defs>
-                  <marker id="h-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M0,0 L10,5 L0,10 z" fill="#333" />
-                  </marker>
-                </defs>
-                <g font-family="Public Sans, system-ui, sans-serif" font-size="14" fill="#333" text-anchor="middle">
-                  <rect x="6" y="100" width="74" height="42" rx="3" fill="#ececff" stroke="#9370db" />
-                  <text x="43" y="126">Idea</text>
-                  <rect x="122" y="100" width="80" height="42" rx="3" fill="#ececff" stroke="#9370db" />
-                  <text x="162" y="126">Draft</text>
-                  <rect x="244" y="100" width="88" height="42" rx="3" fill="#ececff" stroke="#9370db" />
-                  <text x="288" y="126">Review</text>
-                  <rect x="378" y="100" width="86" height="42" rx="3" fill="#ececff" stroke="#9370db" />
-                  <text x="421" y="126">Publish</text>
-                  <path d="M80,121 L120,121" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#h-arrow)" />
-                  <path d="M202,121 L242,121" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#h-arrow)" />
-                  <path d="M332,121 L376,121" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#h-arrow)" />
-                  <path d="M288,100 C288,40 162,40 162,98" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#h-arrow)" />
-                  <rect x="341" y="106" width="26" height="18" fill="#e8e8e8" opacity="0.9" />
-                  <text x="354" y="119" font-size="12">ok</text>
-                  <rect x="194" y="41" width="62" height="18" fill="#e8e8e8" opacity="0.9" />
-                  <text x="225" y="54" font-size="12">changes</text>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="h-row">
-            <div class="h-src">
-              <span class="h-cap">You type, in LaTeX</span>
-              <pre class="h-code"><span class="l">x = <span class="k">\frac</span>{-b <span class="k">\pm</span> <span class="k">\sqrt</span>{b^2-4ac}}{2a}</span></pre>
-            </div>
-            <div class="h-out">
-              <div class="h-math">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20.765ex" height="5.291ex" class="h-formula" role="img" focusable="false" aria-label="x equals minus b plus or minus the square root of b squared minus 4 a c, all over 2 a" viewBox="0 -1642.5 9178 2338.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(849.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(1905.6,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(778,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g><g data-mml-node="mo" transform="translate(1429.2,0)"><path data-c="B1" d="M56 320T56 333T70 353H369V502Q369 651 371 655Q376 666 388 666Q402 666 405 654T409 596V500V353H707Q722 345 722 333Q722 320 707 313H409V40H707Q722 32 722 20T707 0H70Q56 7 56 20T70 40H369V313H70Q56 320 56 333Z"></path></g><g data-mml-node="msqrt" transform="translate(2429.4,0)"><g transform="translate(853,0)"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g><g data-mml-node="mn" transform="translate(462,289) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(1087.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2088,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g><g data-mml-node="mi" transform="translate(2588,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(3117,0)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g><g data-mml-node="mo" transform="translate(0,106.5)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="3550" height="60" x="853" y="846.5"></rect></g></g><g data-mml-node="mrow" transform="translate(3121.7,-686)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g></g><rect width="7032.4" height="60" x="120" y="220"></rect></g></g></g></svg>
-              </div>
-            </div>
+    <section class="grid" id="products" aria-label="Products">
+      <article class="card">
+        <a class="shot" href="/ebb/" tabindex="-1" aria-hidden="true"><img src="/ebb/og-1200.jpg" alt="" loading="lazy" /></a>
+        <div class="body">
+          <p class="where">Garmin watches</p>
+          <h2><a href="/ebb/">Ebb for Garmin</a></h2>
+          <p>Breath hold rounds and calm 4-7-8 breathing on your watch, drawn as a small sea that rises and falls with your breath.</p>
+          <p class="price">$4.99 once, no subscription</p>
+          <div class="actions">
+            <a class="btn store" href="https://apps.garmin.com/apps/5280653d-1681-452d-8c03-7cbdc7284641">Get it on Connect IQ</a>
+            <a class="btn more" href="/ebb/">More about Ebb</a>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="h-section" id="apps" style="scroll-margin-top: 4rem">
-      <div class="wrap">
-        <h2>The editors</h2>
-        <p class="h-intro">
-          Both work the same way: code on the left, the result on the right, a clear message when something is
-          wrong, and earlier versions one click away. The result is saved in the page, so it shows up in search,
-          exports and copies of the page like any other content.
-        </p>
-
-        <article class="h-editor">
-          <figure class="h-shot">
-            <img src="assets/mermaid-editor.webp" width="1075" height="690" loading="lazy"
-                 alt="Mermaid Editor in Confluence: a flowchart typed on the left and drawn on the right" />
-          </figure>
-          <div>
-            <h3>Mermaid Editor for Confluence</h3>
-            <p>Flowcharts, sequence diagrams, Gantt charts, mind maps and more, from a few lines of text.</p>
-            <ul class="h-facts">
-              <li>Twelve examples to start from, or paste what an AI wrote</li>
-              <li>Errors say what is wrong and mark the line</li>
-              <li>Zoom, open large, download as SVG or PNG</li>
-              <li>The last 20 versions of every diagram</li>
-            </ul>
-            <p class="h-status"><strong>Free</strong> on the Atlassian Marketplace</p>
-            <p class="h-links">
-              <a class="btn btn-primary" href="https://marketplace.atlassian.com/apps/4235692896">Get it on the Marketplace</a>
-              <a class="h-textlink" href="mermaid.html">How it works</a>
-            </p>
-          </div>
-        </article>
-
-        <article class="h-editor is-flipped">
-          <figure class="h-shot">
-            <img src="assets/math-editor.webp" width="1300" height="534" loading="lazy"
-                 alt="Math for Confluence: Maxwell's equations typed in LaTeX on the left and drawn on the right" />
-          </figure>
-          <div>
-            <h3>Math for Confluence</h3>
-            <p>Equations on their own line or inside a sentence, written in LaTeX and drawn as you type.</p>
-            <ul class="h-facts">
-              <li>Fractions, matrices, aligned equations and chemistry</li>
-              <li>A typo shows its line and column, and the last good version stays visible</li>
-              <li>Paste with $$ around it; the delimiters are removed for you</li>
-              <li>Readable in light and dark mode, with MathML for screen readers</li>
-            </ul>
-            <p class="h-status"><strong>Free for up to 10 users</strong> on the Atlassian Marketplace</p>
-            <p class="h-links">
-              <a class="h-textlink" href="https://marketplace.atlassian.com/apps/3750803491">Get it on the Marketplace</a>
-              <a class="h-textlink" href="math.html">How it works</a>
-              <a class="h-textlink" href="latex-math-confluence-cloud.html">LaTeX in Confluence: a guide</a>
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="h-section">
-      <div class="wrap">
-        <h2>Nothing leaves your Atlassian site</h2>
-        <p class="h-intro">Both editors are built on Atlassian Forge, like every Dortus app.</p>
-        <dl class="h-promise">
-          <div>
-            <dt>Built on Forge</dt>
-            <dd>The apps run inside Atlassian's cloud. Dortus has no servers for them to send anything to.</dd>
-          </div>
-          <div>
-            <dt>Your content stays yours</dt>
-            <dd>Diagrams and formulas are drawn in your browser and saved in your pages. Version history sits in Atlassian's storage for your site. <a href="privacy.html">What each app stores</a></dd>
-          </div>
-          <div>
-            <dt>Answered by the developer</dt>
-            <dd>Questions go to the person who wrote the code, at <a href="mailto:support@dortus.com">support@dortus.com</a>. <a href="security.html">Security</a></dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-
-    <section class="h-section h-about">
-      <div class="wrap">
-        <h2>Who is behind Dortus</h2>
-        <p class="h-intro">
-          Dortus is one developer, Thijs. He writes the code, tests every release and answers every support
-          email himself. That is also why the apps are built the way they are: small, on Atlassian Forge,
-          with no servers of their own to run, secure or lose.
-        </p>
-        <p class="h-links">
-          <a class="h-textlink" href="support.html">How support works</a>
-          <a class="h-textlink" href="security.html">Security</a>
-          <a class="h-textlink" href="privacy.html">Privacy</a>
-        </p>
-      </div>
-    </section>
-
-    <section class="h-section h-guides" id="guides" style="scroll-margin-top: 4rem">
-      <div class="wrap">
-        <h2>Guides</h2>
-        <p class="h-intro">Written for people who want diagrams, formulas and Markdown in Confluence, with or without our apps.</p>
-        <div class="h-guide-cols">
-          <div>
-          <h3 id="guides-diagrams">Diagrams in Confluence</h3>
-          <ul>
-            <li><a href="mermaid-diagrams-confluence-cloud.html">How to add Mermaid diagrams to Confluence Cloud (including diagrams from ChatGPT or Claude)</a></li>
-            <li><a href="mermaid-examples-confluence.html">Mermaid diagram examples for Confluence: copy and paste</a></li>
-            <li><a href="flowchart-confluence-cloud.html">How to make a flowchart in Confluence Cloud</a></li>
-            <li><a href="gantt-chart-confluence-cloud.html">Gantt chart in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="sequence-diagram-confluence-cloud.html">Sequence diagram in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="mind-map-confluence-cloud.html">Mind map in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="er-diagram-confluence-cloud.html">ER diagram in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="class-diagram-confluence-cloud.html">Class diagram in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="state-diagram-confluence-cloud.html">State diagram in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="timeline-confluence-cloud.html">Timeline in Confluence Cloud (free, with Mermaid)</a></li>
-            <li><a href="pie-chart-confluence-cloud.html">Pie chart in Confluence Cloud (free, with Mermaid)</a></li>
-          </ul>
-          </div>
-          <div>
-          <h3 id="guides-math">Math in Confluence</h3>
-          <ul>
-            <li><a href="latex-math-confluence-cloud.html">How to write LaTeX math in Confluence Cloud</a></li>
-            <li><a href="equation-editor-confluence-cloud.html">Does Confluence have an equation editor? How to insert a formula</a></li>
-          </ul>
-          </div>
-          <div>
-          <h3 id="guides-markdown">Markdown in Confluence</h3>
-          <ul>
-            <li><a href="markdown-confluence-cloud.html">Markdown in Confluence Cloud: what works and what doesn't</a></li>
-            <li><a href="paste-chatgpt-answer-into-confluence.html">How to paste a ChatGPT or Claude answer into Confluence without losing the formatting</a></li>
-          </ul>
+      <article class="card">
+        <a class="shot" href="/click-joints/" tabindex="-1" aria-hidden="true"><img src="/click-joints/poster-1200.jpg" alt="" loading="lazy" /></a>
+        <div class="body">
+          <p class="where">Blender add-on</p>
+          <h2><a href="/click-joints/">Click Joints</a></h2>
+          <p>Ball and pin joints for 3D printed figures, with the bend range measured on the model before you print.</p>
+          <p class="price">Free</p>
+          <div class="actions">
+            <a class="btn store" href="https://extensions.blender.org/add-ons/click-joints/">Get it on Blender Extensions</a>
+            <a class="btn more" href="/click-joints/">More</a>
           </div>
         </div>
-        <details class="h-more">
-          <summary>Guides for our other apps: email in Jira and Confluence, Q&amp;A, storage</summary>
-          <div class="prose">
-          <h3 id="guides-jira">Email in Jira and Jira Service Management</h3>
-          <ul>
-            <li><a href="open-msg-eml-in-jira.html">How to open .msg and .eml email attachments in Jira</a></li>
-            <li><a href="attach-outlook-email-to-jira.html">How to attach an Outlook email to a Jira work item (and keep it readable)</a></li>
-            <li><a href="attach-email-to-existing-jira-work-item.html">How to add an email to an existing Jira work item</a></li>
-            <li><a href="create-jira-work-items-from-email.html">How to create Jira work items from email (Jira, not Jira Service Management)</a></li>
-            <li><a href="phishing-reports-jira-service-management.html">Handling phishing reports in Jira Service Management</a></li>
-            <li><a href="mailview-vs-msg-eml-email-viewer.html">MailView vs MSG/EML Email Viewer for Jira: a side-by-side test</a></li>
-            <li><a href="migration-email-attachments-jira.html">Email attachments after a Jira migration</a></li>
-            <li><a href="forwarding-email-jira-service-management.html">Forwarding emails into Jira Service Management</a></li>
-            <li><a href="email-attachments-missing-jira-service-management.html">Email request attachments missing in JSM</a></li>
-            <li><a href="winmail-dat-jira-service-management.html">winmail.dat on a Jira or JSM request</a></li>
-            <li><a href="jsm-not-creating-requests-from-email.html">Jira Service Management not creating requests from email: a checklist</a></li>
-            <li><a href="jsm-shared-mailbox-microsoft-365.html">Connecting a Microsoft 365 shared mailbox to JSM Cloud</a></li>
-            <li><a href="original-email-jira-service-management.html">How to see the original email behind a Jira Service Management request</a></li>
-            <li><a href="email-replies-new-request-jira-service-management.html">Email replies that become new requests in JSM</a></li>
-            <li><a href="msg-vs-eml.html">Outlook .msg vs .eml</a></li>
-            <li><a href="read-email-headers-phishing.html">How to read email headers to spot phishing</a></li>
-          </ul>
+      </article>
 
-          <h3 id="guides-confluence-email">Email in Confluence</h3>
-          <ul>
-            <li><a href="open-msg-eml-in-confluence.html">How to open .msg and .eml email attachments in Confluence</a></li>
-            <li><a href="outlook-email-on-confluence-page.html">How to put an Outlook email on a Confluence page</a></li>
-            <li><a href="open-msg-on-mac-jira-confluence.html">How to open an Outlook .msg file on a Mac from Jira or Confluence</a></li>
-            <li><a href="email-to-confluence-cloud.html">Can you send an email to Confluence Cloud?</a></li>
-          </ul>
-
-          <h3 id="guides-qa">Questions and answers in Confluence</h3>
-          <ul>
-            <li><a href="confluence-cloud-qa-options.html">Q&amp;A in Confluence Cloud: your options</a></li>
-            <li><a href="stack-internal-vs-confluence-qa.html">Stack Internal (Stack Overflow for Teams) vs Q&amp;A inside Confluence</a></li>
-            <li><a href="slack-questions-to-confluence.html">Stop answering the same questions in Slack: keep them in Confluence</a></li>
-            <li><a href="open-questions-confluence-comments.html">Open questions buried in Confluence comments</a></li>
-            <li><a href="askspace-vs-questions-for-confluence.html">Questions for Confluence vs AskSpace: an honest comparison</a></li>
-            <li><a href="export-questions-for-confluence-cloud.html">How to export Questions for Confluence Cloud data</a></li>
-            <li><a href="migrate-questions-for-confluence-to-cloud.html">Migrating Questions for Confluence to Cloud: when questions are missing</a></li>
-            <li><a href="limit-who-answers-questions-for-confluence.html">Can you limit who answers in Questions for Confluence?</a></li>
-            <li><a href="build-faq-confluence-cloud.html">Confluence FAQ: the FAQ macro, a template and 3 ways that work</a></li>
-            <li><a href="import-faq-spreadsheet-confluence.html">Import an FAQ from a spreadsheet into Confluence Cloud</a></li>
-            <li><a href="forum-discussion-board-confluence-cloud.html">Can you make a forum or discussion board in Confluence Cloud?</a></li>
-          </ul>
-
-          <h3 id="guides-storage">Confluence storage</h3>
-          <ul>
-            <li><a href="confluence-cloud-storage-full.html">Confluence Cloud storage is full? How to find what takes up space</a></li>
-          </ul>
+      <article class="card">
+        <a class="shot" href="/rollwright/" tabindex="-1" aria-hidden="true"><img src="/rollwright/poster-1200.jpg" alt="" loading="lazy" /></a>
+        <div class="body">
+          <p class="where">Obsidian plugin</p>
+          <h2><a href="/rollwright/">Rollwright</a></h2>
+          <p>Roll dice right in your notes. Click to roll again, roll on your own tables, keep a roll log.</p>
+          <p class="price">Free, two optional skins $6</p>
+          <div class="actions">
+            <a class="btn store" href="https://obsidian.md/plugins?id=rollwright">Get it in Obsidian</a>
+            <a class="btn more" href="/rollwright/">More</a>
           </div>
-        </details>
-        <p class="h-more-apps">Looking for MailView, AskSpace or Live Countdown? <a href="atlassian.html">See all Dortus apps</a>.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="/bison-flex/" tabindex="-1" aria-hidden="true"><img src="/bison-flex/poster-v2.jpg" alt="" loading="lazy" /></a>
+        <div class="body">
+          <p class="where">JetBrains IDEs</p>
+          <h2><a href="/bison-flex/">Bison &amp; Flex</a></h2>
+          <p>Bison/Yacc grammars and Flex/Lex scanners as real languages: colors, errors, structure, rename.</p>
+          <div class="actions">
+            <span class="status">Coming to JetBrains Marketplace</span>
+            <a class="btn more" href="/bison-flex/">More</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="soon" aria-label="On the way">
+      <svg class="hat" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L46 40 H18 Z" fill="#a58cff"/><ellipse cx="32" cy="42" rx="26" ry="8" fill="#7b62d6"/><circle cx="32" cy="6" r="4" fill="#ffd25c"/><rect x="20" y="34" width="24" height="5" rx="2" fill="#ffd25c"/></svg>
+      <div>
+        <h2>On the way: Hats of the Fallen</h2>
+        <p>Our first small game, a tiny dungeon on your taskbar. It is not in any store yet; we will put it here when it is.</p>
       </div>
     </section>
 
+    <section class="about">
+      <div>
+        <h3>Who makes this</h3>
+        <p>Dortus is Thijs, from the Netherlands, building with the help of AI tools. Questions, bugs or ideas go straight to him: <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.</p>
+      </div>
+      <div>
+        <h3>Earlier: apps for Confluence</h3>
+        <p>We used to make editors and apps for Atlassian Confluence and Jira. The guides and pages are still here: <a href="/atlassian.html">all Confluence apps and guides</a>.</p>
+      </div>
+    </section>
   </main>
 
-
-  <footer class="site-footer">
-<div class="wrap">
-<div>
-<h2>Apps</h2>
-<ul>
-<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
-<li><a href="math.html">Math for Confluence</a></li>
-<li><a href="atlassian.html">All apps</a></li>
-</ul>
-</div>
-<div>
-<h2>Guides</h2>
-<ul>
-<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
-<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
-<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
-<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
-<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
-<li><a href="/#guides">All guides</a></li>
-</ul>
-</div>
-<div>
-<h2>Company</h2>
-<ul>
-<li><a href="support.html">Support</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="privacy.html">Privacy policy</a></li>
-<li><a href="terms.html">Terms of service</a></li>
-<li><a href="email-check.html">Email check</a></li>
-<li><a href="webshop/" hreflang="nl" lang="nl">Shopify-check (NL)</a></li>
-<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
-</ul>
-</div>
-</div>
-<div class="wrap footer-rule">
-      <p class="footer-legal">
-        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
-        affiliated with Atlassian.
-      </p>
+  <footer>
+    <div class="wrap">
+      <div>&copy; 2026 Dortus</div>
+      <nav aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="mailto:thijs@dortus.com">thijs@dortus.com</a></nav>
     </div>
   </footer>
-
-  <script src="site.js" defer></script>
 </body>
 </html>
