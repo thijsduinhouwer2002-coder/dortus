@@ -43,6 +43,7 @@
       <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
       <nav class="nav" aria-label="Primary">
         <a href="#features">Features</a>
+        <a href="#pro">Pro</a>
         <a href="#privacy">Privacy</a>
         <a href="#support">Support</a>
         <a class="btn btn-primary" href="#install">Install <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -69,7 +70,7 @@
         </p>
         <div class="btns enter enter-2">
           <a class="btn btn-light" href="https://extensions.blender.org/add-ons/click-joints/">Get it on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <a class="btn btn-line" href="#install">How to install</a>
+          <a class="btn btn-line" href="#pro">Click Joints Pro: hinges</a>
         </div>
         <p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://extensions.blender.org/add-ons/click-joints/">Version 0.1.1, free on Blender Extensions</a></p>
       </div>
@@ -152,7 +153,45 @@
       </div>
     </section>
 
-    <section class="band" id="privacy">
+    <section class="band" id="pro">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Click Joints Pro &middot; paid, on Superhive</p>
+          <h2>Hinges that click and stop at 115&deg;.</h2>
+          <p class="lede">
+            Pro adds a printable click hinge for knees and elbows: it bends from 0&deg; to 115&deg; and
+            stops there, instead of flopping backwards. Drag the pose slider and you see the range in
+            degrees before you print. Pose past the stop and the spots that collide turn red on both parts.
+          </p>
+        </div>
+        <figure class="frame" style="margin: 1.6rem 0 2rem">
+          <span class="frame-media">
+            <img src="pro.jpg" alt="Click Joints for Blender, Pro. Hinges that click and stop at 115 degrees. A bent limb with a hinge, a degree arc from 0 to 115 degrees, and a close-up of the knuckle with 0.2 mm clearance in green. Labels: 0 to 115 degrees measured bend range, 0.2 mm clearance around the knuckle, plus 3 degrees red when you pose past the stop. Pro on Superhive, STL and 3MF. Made by Thijs at Dortus." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>The hinge in Pro.</strong> A render from Blender of a hinge the add-on placed.</figcaption>
+        </figure>
+        <div class="prose" style="padding-block: 0">
+          <ul>
+            <li><strong>Click hinge with an end stop</strong>, measured from 0&deg; to 115&deg; and shown as a degree arc around the axis.</li>
+            <li><strong>Pose slider per hinge.</strong> Check the bend in the viewport; the export is not affected by the pose.</li>
+            <li><strong>Green fit band</strong> on the seam and the knuckle. A hinge is only placed when the fit is good.</li>
+            <li><strong>Red past the limit</strong>, on both parts, so you know before you print.</li>
+            <li><strong>Spacing checks.</strong> Hinges and ball joints too close together are refused with a clear message.</li>
+            <li><strong>Everything from the free Click Joints</strong>: ball and pin joints, fit colour, bend range, STL and 3MF.</li>
+          </ul>
+          <p>
+            Personal license $12, studio license for up to 5 people $45, with 12 months of updates. Your
+            version keeps working after that. The free Click Joints and Pro can not be enabled at the same
+            time: disable the free one first, your settings stay in the .blend file. The free version stays free.
+          </p>
+        </div>
+        <div class="btns" style="margin-top: 1.6rem">
+          <a class="btn btn-primary" href="https://superhivemarket.com/products/click-joints-pro">Get Click Joints Pro on Superhive <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="privacy">
       <div class="wrap">
         <div class="head">
           <h2>Privacy</h2>
@@ -167,7 +206,7 @@
       </div>
     </section>
 
-    <section class="band band-deep" id="support">
+    <section class="band" id="support">
       <div class="wrap">
         <div class="head">
           <h2>Support</h2>
