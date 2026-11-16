@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="canonical" href="https://dortus.com/click-joints/tips/" />
   <meta property="og:title" content="Printable joints in Blender: short tips" />
-  <meta property="og:description" content="One short tip a day for printable ball and pin joints in Blender, each with one picture. Day 1: ball joint too tight to snap in?" />
+  <meta property="og:description" content="One short tip a day for printable ball and pin joints in Blender, each with one picture. Day 1: ball joint clicks in but won't turn?" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://dortus.com/click-joints/tips/" />
   <meta property="og:site_name" content="Dortus" />
@@ -28,6 +28,8 @@
     .tip figure { margin: 0; }
     .tip figure img { display: block; width: 100%; height: auto; border-radius: 12px; }
     .tip figcaption { font-size: .9rem; margin-top: .6rem; opacity: .8; }
+    .tips-end { padding-bottom: clamp(2rem, 5.5vw, 4.4rem); }
+    .tips-end .head, .tips-end .head > :last-child { margin-bottom: 0; }
     @media (min-width: 820px) {
       .tip { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2.6rem; }
     }
@@ -66,19 +68,23 @@
 
           <li class="tip" id="day-1">
             <div>
-              <h2><span class="day">Day 1</span>Ball joint too tight to snap in?</h2>
+              <h2><span class="day">Day 1</span>Ball joint clicks in but won't turn?</h2>
               <p>
                 If the ball and the socket have the exact same size in the model, the printed parts jam
-                or never click together, because every printer adds a little extra plastic. Leave a small
-                gap, the clearance, between them.
+                and won't turn, because every printer adds a little extra plastic. Leave a small gap,
+                the clearance, between them.
               </p>
               <p>
-                Around 0.2&nbsp;mm is a common place to start on an FDM printer, but every printer is
-                different: print a small test first and adjust.
+                Around 0.2&nbsp;mm per side is a common place to start on an FDM printer, but every printer
+                is different: print a small test first and adjust.
               </p>
               <p>
-                In Click Joints you set the clearance in mm before you place the joint, and after placing
-                it the panel shows the clearance it measured on your mesh.
+                In Click Joints you set the clearance in mm per side before you place the joint, and after
+                placing it the panel shows the clearance it measured on your mesh.
+              </p>
+              <p>
+                The clearance decides whether the ball turns freely. In Click Joints, how hard it snaps in
+                is set by the opening of the socket, which stays the same at every clearance.
               </p>
             </div>
             <figure class="frame">
@@ -93,7 +99,7 @@
       </div>
     </section>
 
-    <section class="band band-deep">
+    <section class="band band-deep tips-end">
       <div class="wrap">
         <div class="head">
           <h2>The tool in the tips</h2>
