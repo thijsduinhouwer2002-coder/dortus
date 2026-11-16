@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Rollwright: roll dice right in your Obsidian notes · Dortus</title>
   <meta name="description" content="Rollwright is a free dice roller plugin for Obsidian. Roll dice and your own random tables inside your notes and keep a roll log." />
   <meta name="theme-color" content="#13213a" />
@@ -33,7 +35,7 @@
       { "@type": "Offer", "name": "Rollwright", "price": "0", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Rollwright skins (Parchment and Arcane)", "price": "6", "priceCurrency": "USD" }
     ],
-    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" }
   }
   </script>
   <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
@@ -78,6 +80,15 @@
           </span>
           <figcaption><strong>Three clicks.</strong> The last one is a natural 20.</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="in-short" aria-labelledby="in-short-title">
+      <div class="wrap">
+        <div class="head" style="margin-bottom:0">
+          <h2 id="in-short-title">In short</h2>
+          <p class="lede">Rollwright is a dice roller plugin for Obsidian, for game masters and solo players who keep their sessions in notes. It rolls dice notation such as 1d20 + 5 inside a note, rolls on your own tables, lists, sections and tags, and keeps a roll log. The plugin is free in Obsidian's Community plugins. Two optional skins, Parchment and Arcane, cost $6 once.</p>
+        </div>
       </div>
     </section>
 

@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <!-- CONCEPT (Chris, 13 nov 2026). Pas op main na (1) goedkeuring door Garmin en (2) het ja van Thijs (besluit 12 nov 23:30). -->
   <title>Ebb for Garmin: breathing exercises and breath hold rounds on your watch · Dortus</title>
   <meta name="description" content="Ebb is a breathing app for Garmin watches: breath hold rounds and calm 4-7-8 breathing, guided by vibration. $4.99 once, no subscription." />
@@ -32,7 +34,7 @@
     "url": "https://dortus.com/ebb/",
     "downloadUrl": "https://apps.garmin.com/apps/5280653d-1681-452d-8c03-7cbdc7284641",
     "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" },
-    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" }
   }
   </script>
   <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
@@ -76,6 +78,15 @@
           </span>
           <figcaption><strong>Come back,</strong> and a new friend swims in. <small>Screens from the Garmin simulator.</small></figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="in-short" aria-labelledby="in-short-title">
+      <div class="wrap">
+        <div class="head" style="margin-bottom:0">
+          <h2 id="in-short-title">In short</h2>
+          <p class="lede">Ebb is a breathing app for round Garmin watches, for people who want to practise breath holds or calm down with 4-7-8 breathing without picking up their phone. It draws your breath as a small sea and guides every phase by vibration. Ebb costs $4.99 once in the Connect IQ Store, with no subscription and no extra account.</p>
+        </div>
       </div>
     </section>
 

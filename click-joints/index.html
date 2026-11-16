@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Click Joints: ball joints for 3D printed figures in Blender · Dortus</title>
   <meta name="description" content="Free Blender add-on for 3D printed figures: cut ball and pin joints with clearance in mm and see how far each joint bends before you print." />
   <meta name="theme-color" content="#13213a" />
@@ -29,8 +31,11 @@
     "softwareVersion": "0.1.1",
     "url": "https://dortus.com/click-joints/",
     "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": { "@type": "Organization", "name": "Dortus", "url": "https://dortus.com" }
+    "offers": [
+      { "@type": "Offer", "name": "Click Joints", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Click Joints Pro", "price": "12", "priceCurrency": "USD", "url": "https://duinhouwer8.gumroad.com/l/click-joints-pro" }
+    ],
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" }
   }
   </script>
   <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
@@ -72,6 +77,15 @@
           <a class="btn btn-line" href="#features">What it does</a>
         </div>
         <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.1.1, free on Blender Extensions.</span></p>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="in-short" aria-labelledby="in-short-title">
+      <div class="wrap">
+        <div class="head" style="margin-bottom:0">
+          <h2 id="in-short-title">In short</h2>
+          <p class="lede">Click Joints is a Blender add-on for people who 3D print poseable figures, dolls and props. It cuts a ball or pin joint into your model with the clearance in mm, and shows how far each ball joint bends before you print. It is free on Blender Extensions and works in Blender 4.2 or newer. <a href="https://duinhouwer8.gumroad.com/l/click-joints-pro">Click Joints Pro</a> adds a click hinge with an end stop for knees and elbows, for $12 once on Gumroad.</p>
+        </div>
       </div>
     </section>
 
