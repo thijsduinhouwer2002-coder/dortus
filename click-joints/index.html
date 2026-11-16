@@ -73,10 +73,10 @@
           poseable figures, dolls and props from a Blender model.
         </p>
         <div class="btns enter enter-2">
-          <a class="btn btn-light" href="#install">How to install <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <a class="btn btn-line" href="#features">What it does</a>
+          <a class="btn btn-light" href="https://extensions.blender.org/add-ons/click-joints/">Get it on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="#install">How to install</a>
         </div>
-        <p style="margin-top: 1.3rem"><span class="status enter enter-3">Version 0.1.1, free on Blender Extensions.</span></p>
+        <p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://extensions.blender.org/add-ons/click-joints/">Free on Blender Extensions</a></p>
       </div>
     </section>
 
@@ -84,7 +84,7 @@
       <div class="wrap">
         <div class="head" style="margin-bottom:0">
           <h2 id="in-short-title">In short</h2>
-          <p class="lede">Click Joints is a Blender add-on for people who 3D print poseable figures, dolls and props. It cuts a ball or pin joint into your model with the clearance in mm, and shows how far each ball joint bends before you print. It is free on Blender Extensions and works in Blender 4.2 or newer. <a href="https://duinhouwer8.gumroad.com/l/click-joints-pro">Click Joints Pro</a> adds a click hinge with an end stop for knees and elbows, for $12 once on Gumroad.</p>
+          <p class="lede">Click Joints is a Blender add-on for people who 3D print poseable figures, dolls and props. It cuts a ball or pin joint into your model with the clearance in mm, and shows how far each ball joint bends before you print. It is free on Blender Extensions and works in Blender 4.2 or newer. A paid version, <a href="#pro">Click Joints Pro</a>, adds a click hinge with an end stop for knees and elbows, for $12 once.</p>
         </div>
       </div>
     </section>
@@ -142,7 +142,10 @@
           <h2>Install</h2>
           <p class="lede">
             In Blender 4.2 or newer: open Edit, Preferences, <strong>Get Extensions</strong>, search for
-            Click Joints and press Install. The panel appears in the 3D viewport sidebar (press N), tab Click Joints.
+            <strong>joints</strong> and press Install. Or download it from <a href="https://extensions.blender.org/add-ons/click-joints/">its page on Blender Extensions</a>. The panel appears in the 3D viewport sidebar (press N), tab Click Joints.
+          </p>
+          <p class="lede" style="margin-top: 0.8rem">
+            If it helped, an honest rating on <a href="https://extensions.blender.org/add-ons/click-joints/">extensions.blender.org</a> helps other makers find it.
           </p>
         </div>
         <dl class="facts facts-4" style="margin-top: 1.6rem">
@@ -166,7 +169,45 @@
       </div>
     </section>
 
-    <section class="band" id="privacy">
+    <section class="band" id="pro">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Click Joints Pro &middot; paid, on Gumroad</p>
+          <h2>Hinges that click and stop at 115&deg;.</h2>
+          <p class="lede">
+            Pro adds a printable click hinge for knees and elbows: it bends from 0&deg; to 115&deg; and
+            stops there, instead of flopping backwards. Drag the pose slider and you see the range in
+            degrees before you print. Pose past the stop and the spots that collide turn red on both parts.
+          </p>
+        </div>
+        <figure class="frame" style="margin: 1.6rem 0 2rem">
+          <span class="frame-media">
+            <img src="pro.jpg" alt="Click Joints for Blender, Pro. Hinges that click and stop at 115 degrees. A bent limb with a hinge, a degree arc from 0 to 115 degrees, and a close-up of the knuckle with 0.2 mm clearance in green. Labels: 0 to 115 degrees measured bend range, 0.2 mm clearance around the knuckle, plus 3 degrees red when you pose past the stop. Pro on Superhive, STL and 3MF. Made by Thijs at Dortus." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>The hinge in Pro.</strong> Poster with a screenshot from Blender of a hinge the add-on placed.</figcaption>
+        </figure>
+        <div class="prose" style="padding-block: 0">
+          <ul>
+            <li><strong>Click hinge with an end stop</strong> at 90&deg;, 115&deg; or 135&deg;, shown as a degree arc around the axis.</li>
+            <li><strong>Pose slider per hinge.</strong> Check the bend in the viewport; the export is not affected by the pose.</li>
+            <li><strong>Green fit band</strong> on the seam and the knuckle. A hinge is only placed when the fit is good.</li>
+            <li><strong>Red past the limit</strong>, on both parts, so you know before you print.</li>
+            <li><strong>Spacing checks.</strong> Hinges and ball joints too close together are refused with a clear message.</li>
+            <li><strong>Everything from the free Click Joints</strong>: ball and pin joints, fit colour, bend range, STL and 3MF.</li>
+          </ul>
+          <p>
+            Personal license $12, studio license for up to 5 people $45, all Pro 1.x updates included.
+            Every version you download is yours to keep. The free Click Joints and Pro can not be enabled at the same
+            time: disable the free one first, your settings stay in the .blend file. The free version stays free.
+          </p>
+        </div>
+        <div class="btns" style="margin-top: 1.6rem">
+          <a class="btn btn-primary" href="https://duinhouwer8.gumroad.com/l/click-joints-pro">Get Click Joints Pro on Gumroad <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-deep" id="privacy">
       <div class="wrap">
         <div class="head">
           <h2>Privacy</h2>
@@ -181,7 +222,7 @@
       </div>
     </section>
 
-    <section class="band band-deep" id="support">
+    <section class="band" id="support">
       <div class="wrap">
         <div class="head">
           <h2>Support</h2>
