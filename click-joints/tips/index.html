@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Printable joints in Blender: short tips · Click Joints · Dortus</title>
+  <meta name="description" content="Short tips for printable ball and pin joints in Blender: clearance, wall thickness, bend range and export in mm. One tip a day, each with one picture." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-joints/tips/" />
+  <meta property="og:title" content="Printable joints in Blender: short tips" />
+  <meta property="og:description" content="One short tip a day for printable ball and pin joints in Blender, each with one picture. Day 1: ball joint too tight to snap in?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dortus.com/click-joints/tips/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-joints/poster-1200.jpg" />
+  <meta property="og:image:alt" content="Click Joints for Blender: see how far it bends, before you print." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 3.2rem; }
+    .tip { display: grid; gap: 1.6rem; align-items: start; }
+    .tip h2 { margin: 0 0 .8rem; }
+    .tip .day { display: block; font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .7; margin-bottom: .35rem; }
+    .tip p { margin: 0 0 .9rem; max-width: 38rem; }
+    .tip figure { margin: 0; }
+    .tip figure img { display: block; width: 100%; height: auto; border-radius: 12px; }
+    .tip figcaption { font-size: .9rem; margin-top: .6rem; opacity: .8; }
+    @media (min-width: 820px) {
+      .tip { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/click-joints/">Click Joints</a>
+        <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Get it free <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap">
+        <p class="eyebrow">Tips &middot; Click Joints</p>
+        <h1>Printable joints in Blender</h1>
+        <p class="lede">
+          Short tips for ball and pin joints you print in separate parts and snap together.
+          One tip per day, each with one picture. Every printer is different, so treat the numbers
+          as a place to start and test on your own printer.
+        </p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <ol class="tips">
+
+          <li class="tip" id="day-1">
+            <div>
+              <h2><span class="day">Day 1</span>Ball joint too tight to snap in?</h2>
+              <p>
+                If the ball and the socket have the exact same size in the model, the printed parts jam
+                or never click together, because every printer adds a little extra plastic. Leave a small
+                gap, the clearance, between them.
+              </p>
+              <p>
+                Around 0.2&nbsp;mm is a common place to start on an FDM printer, but every printer is
+                different: print a small test first and adjust.
+              </p>
+              <p>
+                In Click Joints you set the clearance in mm before you place the joint, and after placing
+                it the panel shows the clearance it measured on your mesh.
+              </p>
+            </div>
+            <figure class="frame">
+              <span class="frame-media">
+                <img src="day-1-clearance.jpg" width="656" height="686" loading="lazy" alt="The Click Joints panel in Blender. Clearance (mm) is set to 0.20. Below it, under Fit and export: Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm (measured)." />
+              </span>
+              <figcaption>Set it before you place the joint, read it back after.</figcaption>
+            </figure>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section class="band band-deep">
+      <div class="wrap">
+        <div class="head">
+          <h2>The tool in the tips</h2>
+          <p class="lede">
+            Click Joints is a free Blender add-on that cuts a ball or pin joint into your figure, with
+            the clearance in mm and the measured bend range of every ball joint.
+            <a href="/click-joints/">More about Click Joints</a>.
+          </p>
+          <div class="btns" style="margin-top: 1.4rem">
+            <a class="btn btn-light" href="https://extensions.blender.org/add-ons/click-joints/">Get it on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          </div>
+          <p class="lede" style="margin-top: 1.4rem">Made by Thijs at Dortus.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Joints is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
