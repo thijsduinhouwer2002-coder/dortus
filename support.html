@@ -3,22 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Support - Dortus</title>
-  <meta name="description" content="Support for the Dortus apps for Jira and Confluence: one inbox, answered by the person who wrote the code, first reply within one business day." />
+  <meta name="description" content="Help with Click Joints, Ebb, Rollwright and Bison &amp; Flex. Write to thijs@dortus.com; the person who makes the tools reads every mail." />
   <meta name="theme-color" content="#15181c" />
-  <link rel="icon" href="assets/dortus-mark.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="assets/app-icon.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <meta property="og:title" content="Support - Dortus" />
-  <meta property="og:description" content="One support inbox for every Dortus app. First reply within one business day." />
-  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="canonical" href="https://dortus.com/support.html" />
+  <meta property="og:title" content="Support - Dortus" />
+  <meta property="og:description" content="Help with Click Joints, Ebb, Rollwright and Bison &amp; Flex. One address: thijs@dortus.com." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dortus.com/support.html" />
   <meta property="og:site_name" content="Dortus" />
-  <meta property="og:image" content="https://dortus.com/assets/og-dortus.png" />
-  <meta property="og:image:alt" content="Dortus: editors for Confluence Cloud" />
+  <meta property="og:image" content="https://dortus.com/assets/og-dortus-home.png" />
+  <meta property="og:image:alt" content="Dortus: focused tools today, small games on the way. The Dortus D as a door standing ajar with warm light behind it." />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
   <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
 </head>
 <body>
@@ -28,10 +30,9 @@
     <div class="wrap">
       <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
       <nav class="nav" aria-label="Primary">
-        <a href="atlassian.html">Apps</a>
-        <a href="/#guides">Guides</a>
-        <a href="support.html" aria-current="page">Support</a>
-        <a class="btn btn-primary" href="mailto:support@dortus.com?subject=Dortus%20support">Email support <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="/#products">Products</a>
+        <a href="/support.html" aria-current="page">Support</a>
+        <a class="btn btn-primary" href="mailto:thijs@dortus.com?subject=Dortus%20support">Email Thijs <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </nav>
     </div>
   </header>
@@ -40,202 +41,92 @@
 
     <section class="page-head">
       <div class="wrap">
-        <h1 class="enter">One inbox. Answered by the person who wrote the code.</h1>
+        <h1 class="enter">Support</h1>
         <p class="lede enter enter-1">
-          Support for Mermaid Editor for Confluence, Math for Confluence and every other Dortus app. No ticket portal and no first line script. Write to us in English
-          or Dutch, add the details below, and you get a straight answer.
+          Every Dortus tool is made by Thijs, and he reads every mail himself. A question, an idea
+          or a bug? Write to <a href="mailto:thijs@dortus.com?subject=Dortus%20support">thijs@dortus.com</a>,
+          in English or Dutch. Add the few details for your tool below and you save a round of mails.
         </p>
-        <p class="page-meta enter enter-2">First reply within one business day, Monday to Friday, Europe/Amsterdam</p>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="wrap cols cols-2">
-        <div class="card reveal">
-          <h3>Email Dortus</h3>
-          <p class="mono" style="margin: 0.6rem 0 0.9rem">
-            <a href="mailto:support@dortus.com?subject=Dortus%20support">support@dortus.com</a>
-          </p>
-          <p>
-            One address for every Dortus app. Anything that breaks a page or a work item jumps
-            the queue ahead of feature questions.
-          </p>
-          <p class="btns" style="margin-top: 1.1rem">
-            <a class="btn btn-primary" href="mailto:support@dortus.com?subject=Dortus%20support">Write to support <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          </p>
-        </div>
-        <div class="reveal reveal-1">
-          <h3 style="margin-bottom: 0.9rem">What you get back</h3>
-          <ul class="checks">
-            <li>A first reply within one business day, Monday to Friday.</li>
-            <li>A clear verdict: bug, setting, or not supported.</li>
-            <li>For a confirmed bug, a fix estimate and a note when it ships.</li>
-            <li>For a feature request, an honest yes, no, or not soon. No invented roadmap.</li>
-            <li>No sales follow up because you asked a support question.</li>
-          </ul>
-        </div>
+        <p class="page-meta enter enter-2">We aim to reply within 5 working days.</p>
       </div>
     </section>
 
     <section class="band band-grey">
       <div class="wrap">
-        <div class="head reveal">
-          <h2>Tell us where you are and what you saw</h2>
-          <p class="lede">
-            Most back and forth comes from a missing site name. One extra line usually saves a
-            day.
-          </p>
-        </div>
-        <div class="cols cols-2" style="margin-bottom: clamp(1.1rem, 2.4vw, 1.7rem)">
-          <div class="card reveal">
-            <h3>MailView for Jira and Jira Service Management</h3>
-            <p>
-              Send us what you saw, not the email itself. MailView runs inside your Jira site and we
-              have no access to your data, so a description is all we need.
-            </p>
+        <div class="cols" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr))">
+          <div class="card reveal" id="click-joints">
+            <h3>Click Joints and Click Joints Pro</h3>
+            <p style="margin-top: 0.4rem">Blender add-on for poseable 3D prints.</p>
             <ul class="checks" style="margin-top: 0.7rem">
-              <li>Your Atlassian site URL (yoursite.atlassian.net) and the work item key, for example SUP-123</li>
-              <li>The file type (.msg, .eml, or no extension) and its size</li>
-              <li>What the panel showed: the exact message text, or "no panel"</li>
-              <li>Whether it happened in Jira, in the JSM agent view, or in the full view (Open in full view)</li>
-              <li>Your browser and whether an ad blocker or strict privacy setting is on</li>
-              <li>If you can share the file: only a test email or one without personal data, never a real customer email</li>
+              <li>Your Blender version, and whether you use the free version or Pro</li>
+              <li>What you did and what happened, with a screenshot if you can</li>
+              <li>If the joint comes out wrong: the clearance in mm and, if you can share it, a small .blend file</li>
             </ul>
-          </div>
-          <div class="card reveal reveal-1">
-            <h3>MailView for Confluence</h3>
-            <p>
-              Same as above: a description, not the email.
+            <p style="margin-top: 0.9rem">
+              Bought Pro? Your download link is in the mail from Gumroad. Bugs and ideas can also go
+              to <a href="https://github.com/thijsduinhouwer2002-coder/click-joints/issues">GitHub issues</a>.
+              <a href="/click-joints/#privacy">Privacy</a>.
             </p>
+          </div>
+          <div class="card reveal reveal-1" id="ebb">
+            <h3>Ebb for Garmin</h3>
+            <p style="margin-top: 0.4rem">Breathing app for Garmin watches.</p>
             <ul class="checks" style="margin-top: 0.7rem">
-              <li>Your Atlassian site URL and the page URL</li>
-              <li>Whether you used the "Email (MailView)" macro or "Emails on this page"</li>
-              <li>The file type (.msg, .eml, or no extension) and its size</li>
-              <li>What you saw on the page and in the PDF or Word export, if that is where it went wrong</li>
+              <li>Your watch model</li>
+              <li>What you did and what happened</li>
             </ul>
+            <p style="margin-top: 0.9rem">
+              Refunds follow the Garmin Connect IQ Store: a 48-hour return window after you buy.
+              Safety notes and the watch list are on the <a href="/ebb/support.html">Ebb support page</a>.
+              <a href="/ebb/privacy.html">Privacy</a>.
+            </p>
           </div>
-        </div>
-        <div class="cols cols-3">
-          <div class="card reveal">
-            <h3>AskSpace for Confluence</h3>
+          <div class="card reveal" id="rollwright">
+            <h3>Rollwright</h3>
+            <p style="margin-top: 0.4rem">Free dice roller plugin for Obsidian.</p>
             <ul class="checks" style="margin-top: 0.7rem">
-              <li>Your Atlassian site URL and the space key</li>
-              <li>Whether you are a space admin or a regular user</li>
-              <li>The ask and answer permissions for that space</li>
-              <li>A screenshot of the question or the list</li>
+              <li>Your Obsidian version and Rollwright version (Settings, Community plugins)</li>
+              <li>The dice line or table that goes wrong, copied as text</li>
+              <li>What you expected and what you got</li>
             </ul>
+            <p style="margin-top: 0.9rem">
+              Bugs and ideas can also go to
+              <a href="https://github.com/thijsduinhouwer2002-coder/rollwright/issues">GitHub issues</a>.
+              <a href="/rollwright/#privacy">Privacy</a>.
+            </p>
           </div>
-          <div class="card reveal reveal-1">
-            <h3>Mermaid Editor for Confluence</h3>
+          <div class="card reveal reveal-1" id="bison-flex">
+            <h3>Bison &amp; Flex</h3>
+            <p style="margin-top: 0.4rem">Bison and Flex files in JetBrains IDEs. Coming soon to JetBrains Marketplace.</p>
             <ul class="checks" style="margin-top: 0.7rem">
-              <li>Your Atlassian site URL and the page title</li>
-              <li>The diagram source that fails to render</li>
-              <li>The diagram type, for example flowchart, sequence or Gantt</li>
-              <li>Any error text shown inside the macro</li>
+              <li>Your IDE and its version</li>
+              <li>If you can, a small <code>.y</code> or <code>.l</code> file that shows the problem</li>
             </ul>
+            <p style="margin-top: 0.9rem">
+              <a href="/bison-flex/#privacy">Privacy</a> and
+              <a href="/bison-flex/eula.html">license agreement</a>.
+            </p>
           </div>
-          <div class="card reveal reveal-2">
-            <h3>Live Countdown for Confluence</h3>
-            <p style="margin: 0.7rem 0 0.9rem"><a class="status" href="https://marketplace.atlassian.com/apps/301859578">Free on the Atlassian Marketplace</a></p>
-            <p>What to include in a message is in the <a href="countdown.html#support">Live Countdown documentation</a>.</p>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="wrap wrap-narrow">
-        <div class="head reveal">
-          <h2>Questions that come up most</h2>
-        </div>
-        <div class="faq reveal reveal-1">
-          <details>
-            <summary>AskSpace is not visible in my space</summary>
-            <p>
-              Question and answer is per space and off by default. A space admin turns it on,
-              then sets who may ask and who may answer.
-            </p>
-          </details>
-          <details>
-            <summary>How do I cancel or get a refund?</summary>
-            <p>
-              Paid Dortus apps are billed through the Atlassian Marketplace, for Jira and for
-              Confluence alike. Cancel there. Refunds follow Atlassian's policy. Email us if an
-              invoice looks wrong.
-            </p>
-          </details>
-          <details>
-            <summary>MailView does not appear on a work item</summary>
-            <p>
-              It only appears on work items with an .msg or .eml attachment, or a file without a known
-              file type (such as a forwarded email without an extension). On such a work item, look on the
-              right, below the fields, for the MailView box; it may be collapsed, and in Jira's new work item
-              view it sits inside the Apps group there. For the wide panel, add MailView under Apps (in the
-              new view: the app-actions icon next to the title), or ask a Jira admin to turn the panel on for every work item with an
-              email attachment from the panel menu: Show for all work items. Files over 10 MB show a download link instead. It
-              is not available in the JSM customer portal.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band-grey">
-      <div class="wrap wrap-narrow">
-        <h2 class="reveal">The boring pages, written plainly</h2>
-        <p class="lede reveal reveal-1" style="margin-top: 0.9rem">
-          What each app stores, where it runs, and the rules you agree to when you install.
+        <p class="reveal" style="margin-top: clamp(1.6rem, 3vw, 2.4rem); max-width: 720px">
+          <small>Our former apps for Jira and Confluence are no longer sold. Questions about them can go
+          to the same address. Their <a href="/privacy.html">privacy policy</a> and
+          <a href="/terms.html">terms</a> stay online.</small>
         </p>
-        <div class="btns reveal reveal-2" style="margin-top: 1.6rem">
-          <a class="btn btn-primary" href="privacy.html">Privacy policy</a>
-          <a class="btn btn-line" href="terms.html">Terms of service</a>
-        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-<div class="wrap">
-<div>
-<h2>Apps</h2>
-<ul>
-<li><a href="mermaid.html">Mermaid Editor for Confluence</a></li>
-<li><a href="math.html">Math for Confluence</a></li>
-<li><a href="atlassian.html">All apps</a></li>
-</ul>
-</div>
-<div>
-<h2>Guides</h2>
-<ul>
-<li><a href="mermaid-diagrams-confluence-cloud.html">Mermaid diagrams in Confluence Cloud</a></li>
-<li><a href="mermaid-examples-confluence.html">Mermaid examples to copy</a></li>
-<li><a href="flowchart-confluence-cloud.html">Flowcharts in Confluence Cloud</a></li>
-<li><a href="latex-math-confluence-cloud.html">LaTeX math in Confluence Cloud</a></li>
-<li><a href="equation-editor-confluence-cloud.html">Equation editor for Confluence</a></li>
-<li><a href="/#guides">All guides</a></li>
-</ul>
-</div>
-<div>
-<h2>Company</h2>
-<ul>
-<li><a href="support.html">Support</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="privacy.html">Privacy policy</a></li>
-<li><a href="terms.html">Terms of service</a></li>
-<li><a href="email-check.html">Email check</a></li>
-<li class="mono"><a href="mailto:support@dortus.com">support@dortus.com</a></li>
-</ul>
-</div>
-</div>
-<div class="wrap footer-rule">
+    <div class="wrap footer-rule">
       <p class="footer-legal">
-        Dortus. Atlassian, Jira, Confluence and Forge are trademarks of Atlassian Pty Ltd. Dortus is not
-        affiliated with Atlassian.
+        Made by Thijs at <a href="/">Dortus</a>, in the Netherlands.
+        <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>
       </p>
     </div>
   </footer>
 
-  <script src="site.js" defer></script>
+  <script src="/site.js" defer></script>
 </body>
 </html>
