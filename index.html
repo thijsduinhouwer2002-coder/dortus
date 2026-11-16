@@ -76,6 +76,19 @@
     .about { border-top: 1px solid var(--line); padding: 48px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
     .about h3 { font: 700 20px "Archivo", sans-serif; margin: 0 0 8px; }
     .about p { margin: 0; color: var(--ink-2); }
+    .devlog { margin: -40px 0 64px; }
+    .devlog h2 { font: 700 20px "Archivo", sans-serif; margin: 0 0 4px; }
+    .devlog > p { margin: 0 0 16px; color: var(--ink-2); font-size: 16px; }
+    .devlog ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+    .devlog figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .devlog video { display: block; width: 100%; height: auto; aspect-ratio: 1120 / 240; image-rendering: pixelated; background: var(--bg-2); }
+    .devlog figcaption { padding: 12px 18px 14px; color: var(--ink); font-size: 16px; }
+    .devlog time { color: var(--ink-3); font-size: 14px; margin-right: 8px; }
+    .faq { border-top: 1px solid var(--line); padding: 48px 0 40px; }
+    .faq h2 { font: 700 20px "Archivo", sans-serif; margin: 0 0 16px; }
+    .faq dl { margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .faq dt { font-weight: 700; margin: 0 0 6px; }
+    .faq dd { margin: 0; color: var(--ink-2); }
     footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-3); font-size: 15px; }
     footer nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; }
     @media (max-width: 860px) {
@@ -91,6 +104,8 @@
       .soon { grid-template-columns: 1fr; padding: 18px; gap: 14px; }
       .soon .cap { width: 100%; max-width: 360px; }
       .about { grid-template-columns: 1fr; }
+      .faq dl { grid-template-columns: 1fr; gap: 20px; }
+      .devlog { margin-top: -48px; }
       header nav { display: none; }
     }
     @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
@@ -179,15 +194,46 @@
       </div>
     </section>
 
+    <section class="devlog" aria-label="Hats of the Fallen devlog">
+      <h2>Devlog</h2>
+      <p>One clip from the game each week, with one line about what changed.</p>
+      <ol>
+        <li>
+          <figure>
+            <video src="/assets/devlog/hats-week-1.mp4" poster="/assets/devlog/hats-week-1.jpg" width="1120" height="240" autoplay muted loop playsinline preload="metadata" aria-label="A clip from Hats of the Fallen: a hero with a crown walks up to Gloop, the green one-eyed slime, who swallows him and is left wearing the crown, while another hero in a pot helmet walks in from the left."></video>
+            <figcaption><time datetime="2026-11-16">16 Nov</time>Gloop swallows a hero and keeps his crown.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </section>
+
     <section class="about">
       <div>
         <h3>Who makes this</h3>
-        <p>Dortus is Thijs, from the Netherlands, building with the help of AI tools. Questions, bugs or ideas go straight to him: <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.</p>
+        <p>Dortus is Thijs, from the Netherlands. Questions, bugs or ideas go straight to him: <a href="mailto:thijs@dortus.com">thijs@dortus.com</a>.</p>
       </div>
       <div>
         <h3>Earlier: apps for Confluence</h3>
         <p>We used to make editors and apps for Atlassian Confluence and Jira. The guides and pages are still here: <a href="/atlassian.html">all Confluence apps and guides</a>.</p>
       </div>
+    </section>
+
+    <section class="faq" aria-label="Questions">
+      <h2>Questions</h2>
+      <dl>
+        <div>
+          <dt>How do you build these?</dt>
+          <dd>I choose what to make and decide what ships. The code is written with AI coding tools. Every tool is tested before release: the add-on in Blender, the plugin in Obsidian, Ebb in Garmin's watch simulator.</dd>
+        </div>
+        <div>
+          <dt>What is free and what is paid?</dt>
+          <dd>Click Joints and Rollwright are free. Click Joints Pro ($12), the Rollwright skins ($6) and Ebb ($4.99) are paid once. No subscriptions.</dd>
+        </div>
+        <div>
+          <dt>Found a bug or have an idea?</dt>
+          <dd>Email <a href="mailto:thijs@dortus.com">thijs@dortus.com</a> or open an issue on the tool's GitHub page.</dd>
+        </div>
+      </dl>
     </section>
   </main>
 
