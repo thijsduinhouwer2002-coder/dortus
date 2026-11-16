@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dortus: small apps and tools that fill a real gap</title>
-  <meta name="description" content="Dortus makes small apps and tools that each do one thing well: Ebb for Garmin watches, Click Joints for Blender, Rollwright for Obsidian and Bison &amp; Flex for JetBrains IDEs. A small game is on the way. Made by Thijs in the Netherlands." />
+  <meta name="description" content="Dortus makes small tools that do one thing well: Click Joints for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison &amp; Flex for JetBrains." />
   <meta name="theme-color" content="#1d1426" />
   <link rel="icon" href="/assets/dortus-door-small.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/dortus-door-512.png" />
@@ -20,11 +20,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Dortus",
-    "url": "https://dortus.com/",
-    "logo": "https://dortus.com/assets/dortus-door-512.png",
-    "email": "thijs@dortus.com"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dortus.com/#org",
+        "name": "Dortus",
+        "url": "https://dortus.com/",
+        "logo": "https://dortus.com/assets/dortus-door-512.png",
+        "email": "thijs@dortus.com",
+        "description": "Dortus makes small tools that do one thing well: Click Joints for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison & Flex for JetBrains.",
+        "founder": { "@type": "Person", "name": "Thijs" },
+        "sameAs": ["https://github.com/thijsduinhouwer2002-coder"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dortus.com/#website",
+        "url": "https://dortus.com/",
+        "name": "Dortus",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://dortus.com/#org" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://dortus.com/#products",
+        "name": "Dortus products",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://dortus.com/click-joints/", "name": "Click Joints" },
+          { "@type": "ListItem", "position": 2, "url": "https://dortus.com/ebb/", "name": "Ebb for Garmin" },
+          { "@type": "ListItem", "position": 3, "url": "https://dortus.com/rollwright/", "name": "Rollwright" },
+          { "@type": "ListItem", "position": 4, "url": "https://dortus.com/bison-flex/", "name": "Bison & Flex" }
+        ]
+      }
+    ]
   }
   </script>
   <style>
@@ -49,6 +76,10 @@
     .hero h1 { font: 800 clamp(36px, 6vw, 64px)/1.05 "Archivo", sans-serif; letter-spacing: -0.02em; margin: 0 0 20px; max-width: 14ch; }
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero p { color: var(--ink-2); font-size: 20px; max-width: 46ch; margin: 0; }
+    .hero .cta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+    .hero .cta .btn.store { font-size: 17px; padding: 13px 22px; border-radius: 12px; }
+    .hero .cta .quiet { color: var(--ink-2); font-size: 16px; text-underline-offset: 4px; }
+    .hero .cta .quiet:hover { color: var(--ink); }
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding-bottom: 32px; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
     .card:hover { border-color: #5a4b78; }
@@ -125,6 +156,10 @@
       <div>
         <h1>Small tools that fill a <em>real gap.</em></h1>
         <p>Dortus makes small apps and plugins that each do one thing well, look good, and say plainly what is free and what is paid. Our first small game is on the way.</p>
+        <div class="cta">
+          <a class="btn store" href="/click-joints/">Try Click Joints, free</a>
+          <a class="quiet" href="#products">See all tools</a>
+        </div>
       </div>
       <img class="door" src="/assets/dortus-door.svg" alt="The Dortus D: a door standing ajar with warm light behind it" />
     </section>
