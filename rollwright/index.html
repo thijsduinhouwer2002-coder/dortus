@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://app.kit.com; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Rollwright: roll dice right in your Obsidian notes · Dortus</title>
   <meta name="description" content="Rollwright is a free dice roller plugin for Obsidian. Roll dice and your own random tables inside your notes and keep a roll log." />
@@ -217,6 +217,21 @@
             Nothing is sent to Dortus.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="band" id="updates">
+      <div class="wrap">
+        <div class="head">
+          <h2>Updates by email</h2>
+          <p class="lede">One short email when Rollwright gets a new version or Dortus releases a new tool. Nothing else, and you can unsubscribe in one click.</p>
+        </div>
+        <form class="signup" action="https://app.kit.com/forms/10210621/subscriptions" method="post">
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input id="signup-email" type="email" name="email_address" placeholder="you@example.com" required autocomplete="email" />
+          <button class="btn btn-primary" type="submit">Keep me posted</button>
+        </form>
+        <p class="signup-note">You will get one email to confirm. Your address is kept by Kit, our mail service, and only used for these emails.</p>
       </div>
     </section>
 

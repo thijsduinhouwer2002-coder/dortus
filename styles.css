@@ -415,6 +415,47 @@ ol {
   }
 }
 
+/* --------------------------------------------------------------- mail signup (Kit) */
+
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  max-width: 34rem;
+}
+
+.signup input[type="email"] {
+  flex: 1 1 16rem;
+  font: inherit;
+  font-size: 0.97rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background: #fff;
+  color: #111;
+}
+
+.signup input[type="email"]:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.signup-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 0.7rem;
+}
+
 /* --------------------------------------------------------------- buttons */
 
 .btn {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://app.kit.com; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Click Joints: ball joints for 3D printed figures in Blender · Dortus</title>
   <meta name="description" content="Free Blender add-on for 3D printed figures: cut ball and pin joints with clearance in mm and see how far each joint bends before you print." />
@@ -219,6 +219,21 @@
             choose or next to your .blend file. Make watertight works on a copy, so your original mesh is kept as it was. Nothing is sent to Dortus.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="band" id="updates">
+      <div class="wrap">
+        <div class="head">
+          <h2>Updates by email</h2>
+          <p class="lede">One short email when Click Joints gets a new version or Dortus releases a new tool. Nothing else, and you can unsubscribe in one click.</p>
+        </div>
+        <form class="signup" action="https://app.kit.com/forms/10210621/subscriptions" method="post">
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input id="signup-email" type="email" name="email_address" placeholder="you@example.com" required autocomplete="email" />
+          <button class="btn btn-primary" type="submit">Keep me posted</button>
+        </form>
+        <p class="signup-note">You will get one email to confirm. Your address is kept by Kit, our mail service, and only used for these emails.</p>
       </div>
     </section>
 
