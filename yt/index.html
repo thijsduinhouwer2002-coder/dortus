@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="noindex, follow" />
-  <title>Click Joints Pro for Blender: hinges that click and stop</title>
-  <meta name="description" content="Click Joints Pro for Blender: a printable click hinge with an end stop at 90, 115 or 135 degrees. $19 once. Free version on Blender Extensions." />
+  <title>Click Joints Pro for Blender: rig to printable figure</title>
+  <meta name="description" content="Click Joints Pro for Blender turns a rigged figure into printable parts, with a hinge and end stop at every elbow and knee. $19 once. Free version on Blender Extensions." />
   <meta name="theme-color" content="#13213a" />
   <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/app-icon.png" />
@@ -29,11 +29,9 @@
     <section class="world-hero world-hero-blue">
       <div class="wrap">
         <p class="eyebrow enter enter-1">Click Joints Pro &middot; Blender add-on for 3D printing</p>
-        <h1 class="enter enter-1">Hinges that click and stop at 115&deg;.</h1>
+        <h1 class="enter enter-1">Rig to printable figure: elbows and knees stop where your rig stops.</h1>
         <p class="lede enter enter-2">
-          The add-on from the video. Pro places a printable click hinge for knees and elbows with an end
-          stop at 90&deg;, 115&deg; or 135&deg;. Drag the pose slider to see the range before you print;
-          pose past the stop and the spots that collide turn red.
+          Pick your rigged figure, press one button, and Click Joints Pro cuts it into printable parts with a joint at every shoulder, elbow, hip, knee and neck. Elbows and knees get a hinge with an end stop; shoulders, hips and neck get a ball joint. Next to each joint you see how far it bends, in degrees, before you print.
         </p>
         <div class="btns enter enter-2">
           <a class="btn btn-light" href="https://duinhouwer8.gumroad.com/l/click-joints-pro">Get Click Joints Pro, $19 <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -41,7 +39,7 @@
         </div>
         <figure class="frame enter enter-3" style="margin: 2.4rem 0 0">
           <span class="frame-media">
-            <img src="/click-joints/pro.jpg" alt="Click Joints Pro in Blender: a bent limb with a hinge, a degree arc from 0 to 115 degrees, and a close-up of the knuckle with 0.2 mm clearance in green." width="1600" height="900" style="display:block; width:100%; height:auto" />
+            <img src="/click-joints/pro-rig.jpg" alt="Click Joints Pro in Blender: a rigged figure with a hinge at each elbow and knee and a ball joint at shoulders, hips and neck, a degree number at every joint, and the joint list in the panel." width="1600" height="900" style="display:block; width:100%; height:auto" />
           </span>
         </figure>
       </div>
@@ -51,12 +49,15 @@
       <div class="wrap">
         <div class="prose" style="padding-block: 0">
           <ul>
-            <li><strong>Click hinge with an end stop</strong> at 90&deg;, 115&deg; or 135&deg;, shown as a degree arc around the axis.</li>
-            <li><strong>Green fit band</strong> on the seam and the knuckle. A hinge is only placed when the fit is good.</li>
-            <li><strong>Red past the limit</strong>, on both parts, so you know before you print.</li>
+            <li><strong>Figure from rig.</strong> One button reads your armature: hinges with an end stop at elbows and knees, ball joints at shoulders, hips and neck.</li>
+            <li><strong>The end stop comes from your rig.</strong> A Limit Rotation constraint sets the angle (30&deg; to 150&deg;). No limit gives a preset per body part.</li>
+            <li><strong>Every range in one view:</strong> a degree number at each joint, and a list with where each range came from.</li>
+            <li><strong>Recognises common bone names:</strong> Rigify, Mixamo, Auto-Rig Pro, Unreal, Character Creator, VRoid, Biped and Daz.</li>
+            <li><strong>No rig?</strong> Six body-part presets: place the 3D cursor and click Shoulder, Hip, Neck, Elbow, Knee or Ankle.</li>
+            <li><strong>Hinge with pose slider</strong>, red where parts hit past the stop, and spacing checks between joints.</li>
             <li><strong>Everything from the free Click Joints</strong>: ball and pin joints, fit colour, bend range, STL and 3MF.</li>
           </ul>
-          <p>Personal license $19 once, all Pro 1.x updates included.</p>
+          <p>Measured in Blender, not print tested by us yet: print a test joint first. Works best on figures of about 200 mm or taller with separate arms and legs. Personal license $19 once, all Pro 1.x updates included.</p>
         </div>
         <div class="btns" style="margin-top: 1.6rem">
           <a class="btn btn-primary" href="https://duinhouwer8.gumroad.com/l/click-joints-pro">Get Click Joints Pro on Gumroad <span class="arrow" aria-hidden="true">&rarr;</span></a>
