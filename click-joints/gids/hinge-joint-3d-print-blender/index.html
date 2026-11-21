@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>How to make joints in Blender for 3D printing: a hinge with an end stop · Dortus</title>
+  <meta name="description" content="Step by step: cut a knee or elbow hinge into a model in Blender for 3D printing, with 0.20 mm clearance and an end stop at 90, 115 or 135 degrees, and check how far it bends before you print." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-joints/gids/hinge-joint-3d-print-blender/" />
+  <meta property="og:title" content="How to make joints in Blender for 3D printing: a hinge with an end stop" />
+  <meta property="og:description" content="Cut a knee or elbow hinge that bends one way and stops, with the clearance in mm, and check the range before you print." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dortus.com/click-joints/gids/hinge-joint-3d-print-blender/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-joints/gids/hinge-joint-3d-print-blender/2-hinge.jpg" />
+  <meta property="og:image:alt" content="A leg in Blender cut into a knee hinge, bent to 60 degrees, with a protractor from 0 to 115 degrees drawn at the knee." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>@media (max-width: 600px) { .panel-crop img { max-width: 260px; height: auto; margin: 0 auto; display: block; } }</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to make a hinge joint in Blender for 3D printing",
+    "description": "Cut a knee or elbow hinge with an end stop into a model in Blender, with a set clearance in mm, check the bend range and export one STL or 3MF per part.",
+    "tool": [
+      { "@type": "HowToTool", "name": "Blender 4.2 or newer" },
+      { "@type": "HowToTool", "name": "Click Joints Pro (Blender add-on)" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "name": "Check the size", "text": "Make sure your model is in millimetres and watertight. Click Check mesh in the Click Joints panel." },
+      { "@type": "HowToStep", "name": "Set the 3D cursor", "text": "Shift + right click on the knee or elbow. Look at the joint from the side, or let the axis follow the 3D cursor." },
+      { "@type": "HowToStep", "name": "Place the hinge", "text": "Set Clearance (0.20 mm by default) and click 90, 115 or 135 under Place hinge, bends up to. Use Flip bend if it bends the wrong way." },
+      { "@type": "HowToStep", "name": "Check the range", "text": "Drag Bend under Hinge. Past the end stop the faces that touch turn red." },
+      { "@type": "HowToStep", "name": "Export", "text": "Pick STL or 3MF and click Export. You get one file per part, in millimetres." }
+    ],
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" },
+    "inLanguage": "en"
+  }
+  </script>
+  <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/click-joints/">Click Joints</a>
+        <a href="/click-joints/#pro">Pro</a>
+        <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Free download <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head guide-head">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Guide &middot; Blender for 3D printing</p>
+          <h1 style="margin-bottom: 0.9rem">How to make joints in Blender for 3D printing: a hinge with an end stop</h1>
+          <p class="lede">
+            A knee or an elbow should bend one way and stop. Not swing all the way round, and not bend backwards.
+            This page shows how to cut that kind of hinge into a model in Blender, how big the gap should be,
+            and how to see how far it bends before you print.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="prose">
+
+          <h3 id="by-hand">Why a pin and a hole is not enough</h3>
+          <p>The usual way by hand: cut the limb in two, put a cylinder through both parts as a pin, and subtract a slightly larger cylinder for the hole. Three things only show up after the print:</p>
+          <ul>
+            <li><strong>Nothing stops it.</strong> A plain pin turns as far as the parts let it. The leg bends backwards, or the lower part flops all the way round. A real knee needs an end stop in front and a stop at the back.</li>
+            <li><strong>The gap is wrong somewhere.</strong> The gap has to be the same around the pin, between the side faces, and at the stop faces. One spot that is too tight and the joint is fused.</li>
+            <li><strong>You do not know the angle.</strong> Where the parts hit depends on the shape of the cut. You find out when the figure can not sit down.</li>
+          </ul>
+          <p>The steps below use the hinge in Click Joints Pro, a Blender add-on made by us at Dortus. If you work by hand, the numbers in <a href="#numbers">What gap to use</a> still apply.</p>
+
+          <h3 id="steps">Step by step</h3>
+          <ol>
+            <li><strong>Install Click Joints Pro</strong> (Blender 4.2 or newer): Edit, Preferences, Get Extensions, then in the menu at the top right Install from Disk, and pick the zip. Then press N in the 3D viewport and open the Click Joints tab.</li>
+            <li><strong>Check the model.</strong> Select it and click <em>Check mesh</em>. The model has to be in millimetres and watertight; the panel offers <em>Convert to mm</em> or <em>Make watertight</em> if needed.</li>
+            <li><strong>Set the 3D cursor on the knee.</strong> Shift + right click on the spot where the hinge goes. Choose whether the hinge axis follows the view direction (look at the knee from the side) or the 3D cursor.</li>
+            <li><strong>Place the hinge.</strong> Set the clearance under 2 Joint (0.20 mm by default). Then under <em>Place hinge, bends up to:</em> click <em>90&deg;</em>, <em>115&deg;</em> or <em>135&deg;</em>. The limb is cut into two watertight parts with the stop built in. Bends the wrong way? Click <em>Flip bend</em>.</li>
+            <li><strong>Check the range.</strong> With one part selected, the box <em>Hinge</em> shows the measured range, for example <em>Bends 0&deg; to 115&deg;</em>, and a protractor on the model. Drag <em>Bend</em> to bend the part in the viewport.</li>
+            <li><strong>Export.</strong> Under 3 Fit and export pick STL or 3MF and click <em>Export</em>. You get one file per part, in millimetres. After printing you push the two parts together: the sides flex out a little over the bumps (see below).</li>
+          </ol>
+        </div>
+
+        <figure class="frame" style="margin: 2rem 0 3rem">
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="1-before-panel.jpg" width="245" height="675" /><img src="1-before.jpg" alt="Blender with a wooden leg selected and the Click Joints panel in the sidebar. Under the export step the panel reads Place hinge, bends up to, with buttons 90, 115 and 135 degrees and Flip bend." width="1600" height="900" loading="lazy" /></picture>
+          </span>
+          <figcaption><strong>Before the cut.</strong> The hinge buttons are under <em>Place hinge, bends up to:</em> in the Click Joints panel. Screenshot from Click Joints Pro 1.1 in Blender 5.3.</figcaption>
+        </figure>
+
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="2-hinge-panel.jpg" width="245" height="445" /><img src="2-hinge.jpg" alt="The leg cut into a knee hinge and bent to 60 degrees, with a white protractor from 0 to 115 degrees at the knee and the title Bends 0 to 115 degrees. The panel reads Good fit, and under Hinge: Bends 0 to 115 degrees, Show bend range, Bend 60." width="1600" height="900" loading="lazy" /></picture>
+          </span>
+          <figcaption><strong>After clicking 115&deg;.</strong> Good fit, and the box <em>Hinge</em> says <em>Bends 0&deg; to 115&deg;</em>. <em>Bend</em> is at 60&deg;.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3 id="numbers">What gap to use</h3>
+          <ul>
+            <li><strong>Clearance: start at 0.20 mm.</strong> Click Joints keeps that gap everywhere between the two parts: around the knuckle, along the sides and at the stop faces. Between 0.1 and 0.3 mm is typical for FDM and resin; a looser printer needs more.</li>
+            <li><strong>The stop is where you click.</strong> The stop faces are cut so the parts touch at 90&deg;, 115&deg; or 135&deg;, and Click Joints measures the real stop on the cut parts. In the screenshot it measured 114.96&deg; for 115&deg;.</li>
+            <li><strong>A small bump holds it together.</strong> On each side of the hinge a small bump sits in a dimple, 0.25 mm past the clearance, so the lower part stays on the knuckle. On a thin part it makes the bump smaller, or tells you the spot is too tight instead of placing a weak hinge.</li>
+          </ul>
+          <p>These numbers are measured in Blender, not print tested by us yet. Print one test hinge before the whole figure, every printer is different.</p>
+
+          <h3 id="stop">What happens past the stop</h3>
+          <p>Drag <em>Bend</em> past the measured stop and the faces where the parts would hit turn red, with a label like <em>+2&deg; past limit</em>. That is where the two parts would hit, measured in Blender.</p>
+        </div>
+
+        <figure class="frame" style="margin: 2rem 0 3rem">
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="3-past-stop-panel.jpg" width="245" height="445" /><img src="3-past-stop.jpg" alt="The same knee bent to 117 degrees: a thin red line at the stop, the 115 degree mark red and a red label reading plus 2 degrees past limit. The panel shows Bend 117." width="1600" height="900" loading="lazy" /></picture>
+          </span>
+          <figcaption><strong>Past the stop.</strong> <em>Bend</em> at 117&deg;: red where the parts hit, and <em>+2&deg; past limit</em>.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3 id="more">A whole figure at once</h3>
+          <p>Has your figure got a rig? Then <em>Figure from rig</em> in the panel <em>Figure joints</em> places every joint in one go: hinges at the elbows and knees, ball joints at the shoulders, hips and neck. If a bone has a Limit Rotation constraint, the hinge stops at that angle. No rig: put the 3D cursor on a joint and click Shoulder, Elbow, Hip, Knee, Ankle or Neck.</p>
+          <p>Only need ball joints? Those are in the free version. See <a href="/click-joints/gids/ball-joint-3d-print-blender/">How to make a ball joint in Blender for 3D printing</a>.</p>
+        </div>
+
+        <div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem">
+          <a class="btn btn-primary" href="/click-joints/#pro">Click Joints Pro, $19 <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="https://extensions.blender.org/add-ons/click-joints/">Click Joints, free on Blender Extensions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Joints is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
