@@ -21,6 +21,7 @@
   <meta property="og:image:alt" content="A limb in Blender cut into a ball and a socket, shown apart, with a 20 degree bend range drawn on the model." />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="/styles.css" />
+  <style>@media (max-width: 600px) { .panel-crop img { max-width: 260px; height: auto; margin: 0 auto; display: block; } }</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -99,17 +100,17 @@
         </div>
 
         <figure class="frame" style="margin: 2rem 0 3rem">
-          <span class="frame-media">
-            <img src="1-panel.jpg" alt="Blender with a simple test figure selected and the Click Joints panel open in the sidebar: 1 Place with Check mesh, 2 Joint with Ball, Diameter 5.0 mm on Auto, Clearance 0.20 mm and Place joint, 3 Fit and export reading No joint yet." width="1550" height="920" loading="lazy" />
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="1-panel-panel.jpg" width="260" height="635" /><img src="1-panel.jpg" alt="Blender with a simple test figure selected and the Click Joints panel open in the sidebar: 1 Place with Check mesh, 2 Joint with Ball, Diameter 5.0 mm on Auto, Clearance 0.20 mm and Place joint, 3 Fit and export reading No joint yet." width="1550" height="920" loading="lazy" /></picture>
           </span>
           <figcaption><strong>Before the cut.</strong> The panel in the sidebar (press N), tab Click Joints. Screenshot from our automatic test in Blender 5.3.</figcaption>
         </figure>
 
         <figure class="frame" style="margin: 0 0 3rem">
-          <span class="frame-media">
-            <img src="2-ball-joint.jpg" alt="A cut limb with a green ring on the cut and a 20 degree bend range drawn on the model. The panel reads Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm measured." width="1550" height="920" loading="lazy" />
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="2-ball-joint-panel.jpg" width="260" height="635" /><img src="2-ball-joint.jpg" alt="A cut limb with a green ring on the cut and a 20 degree bend range drawn on the model. The panel reads Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm measured." width="1550" height="920" loading="lazy" /></picture>
           </span>
-          <figcaption><strong>After Place joint.</strong> Green ring: good fit. Wall 1.54 mm, clearance 0.20 mm measured, bends &plusmn;20&deg;.</figcaption>
+          <figcaption><strong>After Place joint.</strong> Green: good fit. Wall 1.54 mm, clearance 0.20 mm measured, bends &plusmn;20&deg;.</figcaption>
         </figure>
 
         <figure class="frame" style="margin: 0 0 3rem">
