@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>How to make a ball joint in Blender for 3D printing (with clearance in mm) · Dortus</title>
+  <meta name="description" content="Step by step: cut a ball and socket joint into a model in Blender, set the clearance in mm, check the wall thickness and see how far the joint bends before you print." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-joints/gids/ball-joint-3d-print-blender/" />
+  <meta property="og:title" content="How to make a ball joint in Blender for 3D printing" />
+  <meta property="og:description" content="Cut a ball and socket joint, set the clearance in mm, check the wall and see how far it bends, all before you print." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dortus.com/click-joints/gids/ball-joint-3d-print-blender/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-joints/gids/ball-joint-3d-print-blender/3-exploded.jpg" />
+  <meta property="og:image:alt" content="A limb in Blender cut into a ball and a socket, shown apart, with a 20 degree bend range drawn on the model." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to make a ball joint in Blender for 3D printing",
+    "description": "Cut a ball and socket joint into a model in Blender with a set clearance in mm, check the wall thickness and the bend range, and export one STL or 3MF per part.",
+    "tool": [
+      { "@type": "HowToTool", "name": "Blender 4.2 or newer" },
+      { "@type": "HowToTool", "name": "Click Joints (free Blender add-on)" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "name": "Check the size", "text": "Make sure your model is in millimetres and watertight. Click Check mesh in the Click Joints panel." },
+      { "@type": "HowToStep", "name": "Set the 3D cursor", "text": "Shift + right click on the spot where the joint goes, for example the shoulder." },
+      { "@type": "HowToStep", "name": "Place the joint", "text": "Choose Ball, leave Diameter on Auto, set Clearance (0.20 mm by default) and click Place joint." },
+      { "@type": "HowToStep", "name": "Read the fit", "text": "Step 3 shows Good fit, Tight or Too thin, the wall in mm, the measured clearance and how far the joint bends." },
+      { "@type": "HowToStep", "name": "Export", "text": "Pick STL or 3MF and click Export. You get one file per part, in millimetres." }
+    ],
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" },
+    "inLanguage": "en"
+  }
+  </script>
+  <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/click-joints/">Click Joints</a>
+        <a href="/click-joints/#pro">Pro</a>
+        <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Free download <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head guide-head">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Guide &middot; Blender for 3D printing</p>
+          <h1 style="margin-bottom: 0.9rem">How to make a ball joint in Blender for 3D printing</h1>
+          <p class="lede">
+            You have a figure, a doll or a prop in Blender and you want the arm or the head to move after printing.
+            That means a ball and socket: a ball on one part, a hollow on the other, and a small gap between them.
+            This page shows how to cut one, how big the gap should be, and how to check the joint before you print.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="prose">
+
+          <h3 id="by-hand">The three things that go wrong</h3>
+          <p>You can build a ball joint by hand: a UV sphere, a Boolean union on one part, a slightly larger sphere as a Boolean difference on the other. It works, but three things only show up after the print:</p>
+          <ul>
+            <li><strong>The gap is wrong.</strong> Too small and the ball is fused or stuck. Too big and the arm hangs loose. The gap is set by the second sphere, and it is easy to get it off by a few tenths.</li>
+            <li><strong>The wall is too thin.</strong> The hollow eats into the part. Next to the socket only a thin skin is left, and it cracks when you push the ball in.</li>
+            <li><strong>It does not bend far.</strong> The neck of the ball hits the rim of the socket after a few degrees. You find out when the figure can not lift its arm.</li>
+          </ul>
+          <p>The steps below use Click Joints, a free Blender add-on made by us at Dortus. It does the cut and shows those three numbers on the model. If you prefer to work by hand, the numbers in the section <a href="#numbers">What gap and wall to use</a> still apply.</p>
+
+          <h3 id="steps">Step by step</h3>
+          <ol>
+            <li><strong>Install Click Joints.</strong> In Blender 4.2 or newer: Edit, Preferences, Get Extensions, search <em>joints</em>, Install. Or download it from <a href="https://extensions.blender.org/add-ons/click-joints/">Blender Extensions</a>. Then press N in the 3D viewport and open the Click Joints tab.</li>
+            <li><strong>Check the model.</strong> Select it and click <em>Check mesh</em>. If the size is not between 5 and 500 mm, the panel offers <em>Convert to mm</em>. If the mesh is not watertight, it offers <em>Make watertight</em>, on a copy.</li>
+            <li><strong>Set the 3D cursor on the joint.</strong> Shift + right click on the spot where the ball should sit, for example the shoulder. Choose whether the joint axis follows the view direction or the 3D cursor.</li>
+            <li><strong>Place the joint.</strong> Under 2 Joint choose <em>Ball</em>. Leave Diameter on <em>Auto</em>: it picks the largest ball with a good fit at that spot. Set the clearance (0.20 mm by default) and click <em>Place joint</em>. The model is cut into two watertight parts.</li>
+            <li><strong>Read the fit.</strong> Under 3 Fit and export the panel says <em>Good fit</em>, <em>Tight</em> or <em>Too thin</em>, with the wall and the clearance in mm and how far the joint bends, for example <em>Bends &plusmn;20&deg;</em>.</li>
+            <li><strong>Export.</strong> Pick STL or 3MF and click <em>Export</em>. You get one file per part, in millimetres.</li>
+          </ol>
+        </div>
+
+        <figure class="frame" style="margin: 2rem 0 3rem">
+          <span class="frame-media">
+            <img src="1-panel.jpg" alt="Blender with a simple test figure selected and the Click Joints panel open in the sidebar: 1 Place with Check mesh, 2 Joint with Ball, Diameter 5.0 mm on Auto, Clearance 0.20 mm and Place joint, 3 Fit and export reading No joint yet." width="1550" height="920" loading="lazy" />
+          </span>
+          <figcaption><strong>Before the cut.</strong> The panel in the sidebar (press N), tab Click Joints. Screenshot from our automatic test in Blender 5.3.</figcaption>
+        </figure>
+
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media">
+            <img src="2-ball-joint.jpg" alt="A cut limb with a green ring on the cut and a 20 degree bend range drawn on the model. The panel reads Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm measured." width="1550" height="920" loading="lazy" />
+          </span>
+          <figcaption><strong>After Place joint.</strong> Green ring: good fit. Wall 1.54 mm, clearance 0.20 mm measured, bends &plusmn;20&deg;.</figcaption>
+        </figure>
+
+        <figure class="frame" style="margin: 0 0 3rem">
+          <span class="frame-media">
+            <img src="3-exploded.jpg" alt="Exploded view: the ball on its neck and the hollow socket shown apart along the joint axis, with the 20 degree bend range drawn on the model." width="1550" height="920" loading="lazy" />
+          </span>
+          <figcaption><strong>Exploded view.</strong> Shows the ball and the socket apart, only in the viewport. The export keeps the parts in place.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3 id="numbers">What gap and wall to use</h3>
+          <ul>
+            <li><strong>Clearance: start at 0.20 mm.</strong> That is the default in Click Joints. Between 0.1 and 0.3 mm is typical for FDM and resin; a looser printer needs more. Print one test joint before the whole figure, every printer is different.</li>
+            <li><strong>Wall: aim for 1.5 mm or more next to the socket.</strong> Click Joints marks a wall under 1.5 mm as <em>Tight</em> and under 0.8 mm as <em>Too thin</em>, and tells you the number.</li>
+            <li><strong>Ball size: about 60% of the narrowest width at the cut.</strong> That is what Auto starts from. It then picks the largest ball that still gives a good fit, in steps of 0.5 mm.</li>
+          </ul>
+          <p>These numbers are measured in Blender, not print tested by us yet. They are a starting point, not a promise that your print clicks.</p>
+
+          <h3 id="bend">How far will it bend?</h3>
+          <p>The bend is limited by the neck of the ball hitting the rim of the socket. Click Joints measures that in Blender and shows it as a protractor on the model. Drag <em>Bend</em> in the panel to tilt the part. Past the measured limit, the spot where it hits turns red, with the number of degrees past the limit.</p>
+        </div>
+
+        <figure class="frame" style="margin: 2rem 0 3rem">
+          <span class="frame-media">
+            <img src="4-too-far.jpg" alt="The same ball joint tilted past its limit: the part of the protractor past 20 degrees is red, the spot where the neck hits the socket is red, and a label reads plus 8 degrees past limit." width="1550" height="920" loading="lazy" />
+          </span>
+          <figcaption><strong>Past the limit.</strong> Red where it hits, and <em>+8&deg; past limit</em>.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3 id="more">Knees and elbows: a hinge, not a ball</h3>
+          <p>A ball joint turns in every direction. For a knee or an elbow you usually want a hinge that bends one way and stops, so the leg does not bend backwards. That is in <a href="/click-joints/#pro">Click Joints Pro</a>: a hinge with an end stop at 90&deg;, 115&deg; or 135&deg;, and for a rigged figure one button that places a joint at every shoulder, elbow, hip, knee and neck.</p>
+        </div>
+
+        <div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem">
+          <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Click Joints, free on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="/click-joints/#pro">Click Joints Pro, $19</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Joints is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
