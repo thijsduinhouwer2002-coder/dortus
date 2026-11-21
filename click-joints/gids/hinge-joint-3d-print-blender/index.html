@@ -36,8 +36,8 @@
       { "@type": "HowToStep", "name": "Check the size", "text": "Make sure your model is in millimetres and watertight. Click Check mesh in the Click Joints panel." },
       { "@type": "HowToStep", "name": "Set the 3D cursor", "text": "Shift + right click on the knee or elbow. Look at the joint from the side, or let the axis follow the 3D cursor." },
       { "@type": "HowToStep", "name": "Place the hinge", "text": "Set Clearance (0.20 mm by default) and click 90, 115 or 135 under Place hinge, bends up to. Use Flip bend if it bends the wrong way." },
-      { "@type": "HowToStep", "name": "Check the range", "text": "Drag Bend under Hinge. Past the end stop the faces that touch turn red." },
-      { "@type": "HowToStep", "name": "Export", "text": "Pick STL or 3MF and click Export. You get one file per part, in millimetres." }
+      { "@type": "HowToStep", "name": "Check the range", "text": "Drag Bend under Hinge. Past the end stop a red line marks the stop and a label shows how far past it you are." },
+      { "@type": "HowToStep", "name": "Export", "text": "Pick STL or 3MF and click Export STL or Export 3MF. You get one file per part, in millimetres." }
     ],
     "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" },
     "inLanguage": "en"
@@ -95,7 +95,7 @@
             <li><strong>Set the 3D cursor on the knee.</strong> Shift + right click on the spot where the hinge goes. Choose whether the hinge axis follows the view direction (look at the knee from the side) or the 3D cursor.</li>
             <li><strong>Place the hinge.</strong> Set the clearance under 2 Joint (0.20 mm by default). Then under <em>Place hinge, bends up to:</em> click <em>90&deg;</em>, <em>115&deg;</em> or <em>135&deg;</em>. The limb is cut into two watertight parts with the stop built in. Bends the wrong way? Click <em>Flip bend</em>.</li>
             <li><strong>Check the range.</strong> With one part selected, the box <em>Hinge</em> shows the measured range, for example <em>Bends 0&deg; to 115&deg;</em>, and a protractor on the model. Drag <em>Bend</em> to bend the part in the viewport.</li>
-            <li><strong>Export.</strong> Under 3 Fit and export pick STL or 3MF and click <em>Export</em>. You get one file per part, in millimetres. After printing you push the two parts together: the sides flex out a little over the bumps (see below).</li>
+            <li><strong>Export.</strong> Under 3 Fit and export pick STL or 3MF and click <em>Export STL</em> (or <em>Export 3MF</em>). You get one file per part, in millimetres. After printing you push the two parts together: the sides flex out a little over the bumps (see below).</li>
           </ol>
         </div>
 
@@ -108,7 +108,7 @@
 
         <figure class="frame" style="margin: 0 0 3rem">
           <span class="frame-media panel-crop">
-            <picture><source media="(max-width: 600px)" srcset="2-hinge-panel.jpg" width="245" height="445" /><img src="2-hinge.jpg" alt="The leg cut into a knee hinge and bent to 60 degrees, with a white protractor from 0 to 115 degrees at the knee and the title Bends 0 to 115 degrees. The panel reads Good fit, and under Hinge: Bends 0 to 115 degrees, Show bend range, Bend 60." width="1600" height="900" loading="lazy" /></picture>
+            <picture><source media="(max-width: 600px)" srcset="2-hinge-knee.jpg" width="700" height="540" /><img src="2-hinge.jpg" alt="The leg cut into a knee hinge and bent to 60 degrees, with a white protractor from 0 to 115 degrees at the knee and the title Bends 0 to 115 degrees. The panel reads Good fit, and under Hinge: Bends 0 to 115 degrees, Show bend range, Bend 60." width="1600" height="900" loading="lazy" /></picture>
           </span>
           <figcaption><strong>After clicking 115&deg;.</strong> Good fit, and the box <em>Hinge</em> says <em>Bends 0&deg; to 115&deg;</em>. <em>Bend</em> is at 60&deg;.</figcaption>
         </figure>
@@ -117,20 +117,20 @@
           <h3 id="numbers">What gap to use</h3>
           <ul>
             <li><strong>Clearance: start at 0.20 mm.</strong> Click Joints keeps that gap everywhere between the two parts: around the knuckle, along the sides and at the stop faces. Between 0.1 and 0.3 mm is typical for FDM and resin; a looser printer needs more.</li>
-            <li><strong>The stop is where you click.</strong> The stop faces are cut so the parts touch at 90&deg;, 115&deg; or 135&deg;, and Click Joints measures the real stop on the cut parts. In the screenshot it measured 114.96&deg; for 115&deg;.</li>
-            <li><strong>A small bump holds it together.</strong> On each side of the hinge a small bump sits in a dimple, 0.25 mm past the clearance, so the lower part stays on the knuckle. On a thin part it makes the bump smaller, or tells you the spot is too tight instead of placing a weak hinge.</li>
+            <li><strong>The stop is the angle you pick.</strong> The stop faces are cut so the parts touch at 90&deg;, 115&deg; or 135&deg;, and Click Joints measures the real stop on the cut parts. In the screenshot it measured 114.96&deg; for 115&deg;.</li>
+            <li><strong>A small bump holds it together.</strong> On each side of the hinge a small bump sits in a dimple, 0.25 mm past the clearance, which is meant to keep the lower part on the knuckle. On a thin part it makes the bump smaller, or tells you the spot is too tight instead of placing a weak hinge.</li>
           </ul>
           <p>These numbers are measured in Blender, not print tested by us yet. Print one test hinge before the whole figure, every printer is different.</p>
 
           <h3 id="stop">What happens past the stop</h3>
-          <p>Drag <em>Bend</em> past the measured stop and the faces where the parts would hit turn red, with a label like <em>+2&deg; past limit</em>. That is where the two parts would hit, measured in Blender.</p>
+          <p>Drag <em>Bend</em> past the measured stop and a red line marks the stop, with a label like <em>+2&deg; past limit</em>. That is where the two parts would hit, measured in Blender.</p>
         </div>
 
         <figure class="frame" style="margin: 2rem 0 3rem">
           <span class="frame-media panel-crop">
-            <picture><source media="(max-width: 600px)" srcset="3-past-stop-panel.jpg" width="245" height="445" /><img src="3-past-stop.jpg" alt="The same knee bent to 117 degrees: a thin red line at the stop, the 115 degree mark red and a red label reading plus 2 degrees past limit. The panel shows Bend 117." width="1600" height="900" loading="lazy" /></picture>
+            <picture><source media="(max-width: 600px)" srcset="3-past-stop-knee.jpg" width="700" height="540" /><img src="3-past-stop.jpg" alt="The same knee bent to 117 degrees: a thin red line at the stop, the 115 degree mark red and a red label reading plus 2 degrees past limit. The panel shows Bend 117." width="1600" height="900" loading="lazy" /></picture>
           </span>
-          <figcaption><strong>Past the stop.</strong> <em>Bend</em> at 117&deg;: red where the parts hit, and <em>+2&deg; past limit</em>.</figcaption>
+          <figcaption><strong>Past the stop.</strong> <em>Bend</em> at 117&deg;: a red line at the stop, and <em>+2&deg; past limit</em>.</figcaption>
         </figure>
 
         <div class="prose">
