@@ -92,7 +92,7 @@
           <ol>
             <li><strong>Install Click Joints Pro</strong> (Blender 4.2 or newer): Edit, Preferences, Get Extensions, then in the menu at the top right Install from Disk, and pick the zip. Then press N in the 3D viewport and open the Click Joints tab.</li>
             <li><strong>Check the model.</strong> Select the mesh and click <em>Check mesh</em>. It has to be in millimetres and watertight; the panel offers <em>Convert to mm</em> or <em>Make watertight</em> if needed. The mesh needs its rig as an Armature modifier or as parent.</li>
-            <li><strong>Optional: set the bend range in the rig.</strong> Give an elbow or knee bone a Limit Rotation constraint on X, for example 0&deg; to 120&deg; on the knee. That angle becomes the end stop of the hinge. Many rigs only have it on the left side; the right side then gets the same range, marked <em>mirror</em>.</li>
+            <li><strong>Optional: set the bend range in the rig.</strong> Give an elbow or knee bone a Limit Rotation constraint on X, for example 0&deg; to 120&deg; on the knee. That angle becomes the end stop of the hinge. Some rigs only have it on the left side; the right side then gets the same range, marked <em>mirror</em>.</li>
             <li><strong>Click Figure from rig.</strong> In the panel <em>Figure joints</em> click <em>Figure from rig</em>. It places hinges with an end stop at the elbows and knees and ball joints at the shoulders, hips and neck. <em>More bones (ankles too)</em> adds the ankles.</li>
             <li><strong>Check the list.</strong> The panel lists every joint with its type, its range and where the range came from. Select a hinge part and drag <em>Bend</em> to see it move.</li>
             <li><strong>Export.</strong> Under 3 Fit and export pick STL or 3MF and click <em>Export STL</em> (or <em>Export 3MF</em>). You get one file per part, in millimetres.</li>
@@ -110,7 +110,7 @@
           <span class="frame-media panel-crop">
             <picture><source media="(max-width: 600px)" srcset="2-figure-phone.jpg" width="500" height="930" /><img src="2-figure.jpg" alt="The same figure after one click, cut into nine joints. Each joint shows its range in green: 140 degrees at both elbows, 120 degrees at both knees, plus or minus 20 degrees at the shoulders, hips and neck. The right knee is bent to 60 degrees and the title reads Right knee: bends 0 to 120 degrees." width="1600" height="900" loading="lazy" /></picture>
           </span>
-          <figcaption><strong>After one click.</strong> Nine joints, each with the range Click Joints measured on the cut parts. The right knee is bent to 60&deg; with <em>Bend</em>.</figcaption>
+          <figcaption><strong>After one click.</strong> Nine joints, each with the range Click Joints measured on the cut parts. The right knee is bent to 60&deg; with <em>Bend</em>. Hip color bands hidden in this image.</figcaption>
         </figure>
 
         <div class="prose">
@@ -135,7 +135,7 @@
           <h3 id="numbers">What gap to use</h3>
           <ul>
             <li><strong>Clearance: start at 0.20 mm.</strong> Every joint of the figure keeps that gap between its parts. Between 0.1 and 0.3 mm is typical for FDM and resin; a looser printer needs more.</li>
-            <li><strong>Size matters.</strong> The figure in the screenshots is 220 mm tall. On a much smaller figure a limb can get too thin for a joint; then that joint is skipped instead of made weak, and the message in the status bar says which one and why (for example <em>Skipped: Left hip (too thin here for a ball joint)</em>).</li>
+            <li><strong>Size matters.</strong> The figure in the screenshots is 220 mm tall. On a much smaller figure a limb can get too thin for a joint; then that joint is skipped instead of made weak, and the message in the status bar says which one and why (for example <em>Skipped: Left hip (no clean spot for a hip ball on this thigh (legs touch or the thigh is short), place it by hand)</em>).</li>
             <li><strong>Every part is one closed piece.</strong> Each cut gives watertight parts, so the slicer sees them as solid.</li>
           </ul>
           <p>These numbers are measured in Blender, not print tested by us yet. Print one test joint before the whole figure, every printer is different.</p>
