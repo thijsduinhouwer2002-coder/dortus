@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Joint tolerance for 3D printing in Blender: what clearance to use · Dortus</title>
+  <meta name="description" content="How much gap to leave between moving parts when you model joints in Blender for 3D printing: what clearance means, where to start (0.1 to 0.3 mm), how to check the wall, and how to find the right number for your printer." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-joints/gids/joint-tolerance-3d-print-blender/" />
+  <meta property="og:title" content="Joint tolerance for 3D printing in Blender: what clearance to use" />
+  <meta property="og:description" content="What clearance means for a printed joint, where to start, how to check the wall, and how to find the number that fits your printer." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dortus.com/click-joints/gids/joint-tolerance-3d-print-blender/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-joints/gids/ball-joint-3d-print-blender/2-ball-joint.jpg" />
+  <meta property="og:image:alt" content="A cut limb in Blender with a green ring on the cut. The panel reads Good fit, Wall 1.54 mm, Clearance 0.20 mm measured." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>@media (max-width: 600px) { .panel-crop img { max-width: 260px; height: auto; margin: 0 auto; display: block; } }</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to set the joint tolerance for 3D printing in Blender",
+    "description": "Pick a clearance between moving parts in Blender, check the wall around the joint, and find the clearance that fits your printer with a test print.",
+    "tool": [
+      { "@type": "HowToTool", "name": "Blender 4.2 or newer" },
+      { "@type": "HowToTool", "name": "Click Joints (free Blender add-on)" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "name": "Start at 0.20 mm", "text": "Set Clearance to 0.20 mm. Between 0.1 and 0.3 mm is typical." },
+      { "@type": "HowToStep", "name": "Place the joint", "text": "Set the 3D cursor on the joint and click Place joint. The model is cut into two watertight parts with that gap between them." },
+      { "@type": "HowToStep", "name": "Check the fit ring", "text": "Green means a good fit, yellow tight, red too thin. The panel shows the wall and the measured clearance in mm." },
+      { "@type": "HowToStep", "name": "Print a test joint", "text": "Print one joint, or the fit test strip with five clearances from 0.10 to 0.30 mm, and use the clearance of the one that turns smoothly without wobble." }
+    ],
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" },
+    "inLanguage": "en"
+  }
+  </script>
+  <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/click-joints/">Click Joints</a>
+        <a href="/click-joints/#pro">Pro</a>
+        <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Free download <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head guide-head">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Guide &middot; Blender for 3D printing</p>
+          <h1 style="margin-bottom: 0.9rem">Joint tolerance for 3D printing in Blender: what clearance to use</h1>
+          <p class="lede">
+            A printed joint only moves if there is a small gap between the two parts. Too small and they fuse or jam.
+            Too big and the joint wobbles. This page explains what that gap means in Blender, where to start,
+            and how to find the number that fits your own printer.
+          </p>
+        </div>
+        <div class="btns" style="margin-top: 1.2rem">
+          <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Click Joints, free on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="prose">
+
+          <h3 id="what">Clearance, tolerance, gap: what it means</h3>
+          <p>People use the three words for the same thing: the empty space between a moving part and the part around it. For a ball joint it is the space between the ball and the socket, on each side. With a clearance of 0.20 mm, the socket is 0.40 mm wider than the ball, so 0.20 mm all around.</p>
+          <p>Your printer does not print that gap exactly. The first layer squishes out, walls come out a little thicker, and resin parts often come out a little oversized. That is why the right clearance is different for every printer, and why you set it in the model, not in the slicer.</p>
+
+          <h3 id="start">Where to start</h3>
+          <ul>
+            <li><strong>0.20 mm</strong> is a good first try. It is the default in Click Joints.</li>
+            <li><strong>0.1 to 0.3 mm</strong> is the typical range for FDM and resin. A well tuned printer can go lower; a looser one needs more.</li>
+            <li><strong>Small figures need care.</strong> On a small part the same gap is a bigger share of the joint. Click Joints works best on figures of about 200 mm or taller.</li>
+          </ul>
+          <p>These are starting points, measured in Blender, not print tested by us yet. Print a test joint before you print the whole figure.</p>
+
+          <h3 id="blender">Set the clearance in Blender</h3>
+          <p>By hand, you model the ball, then make the socket from a second sphere that is larger by twice the clearance, and use it as a Boolean difference. It works, but it is easy to be off by a few tenths, and you can not see the gap once the parts are joined.</p>
+          <p>With Click Joints (a free Blender add-on made by us at Dortus) you type the clearance in mm and the add-on cuts both parts around it:</p>
+          <ol>
+            <li><strong>Install Click Joints.</strong> In Blender 4.2 or newer: Edit, Preferences, Get Extensions, search <em>joints</em>, Install. Press N in the 3D viewport and open the Click Joints tab.</li>
+            <li><strong>Check the model.</strong> Click <em>Check mesh</em>. Your model should be in millimetres and watertight; the panel offers <em>Convert to mm</em> and <em>Make watertight</em> (on a copy) if it is not.</li>
+            <li><strong>Set the clearance.</strong> Under 2 Joint, type the clearance, for example 0.20 mm. Leave Diameter on <em>Auto</em>.</li>
+            <li><strong>Place the joint.</strong> Shift + right click to put the 3D cursor on the joint, then click <em>Place joint</em>. You get two watertight parts with that gap between them.</li>
+            <li><strong>Read the fit ring.</strong> A ring on the cut shows the fit: <strong>green</strong> good, <strong>yellow</strong> tight, <strong>red</strong> too thin. The panel gives the wall in mm and the clearance it measured on the parts.</li>
+          </ol>
+        </div>
+
+        <figure class="frame" style="margin: 2rem 0 3rem">
+          <span class="frame-media panel-crop">
+            <picture><source media="(max-width: 600px)" srcset="/click-joints/gids/ball-joint-3d-print-blender/2-ball-joint-panel.jpg" width="260" height="635" /><img src="/click-joints/gids/ball-joint-3d-print-blender/2-ball-joint.jpg" alt="A cut limb with a green ring on the cut and a 20 degree bend range drawn on the model. The panel reads Good fit, Bends plus or minus 20 degrees, Wall 1.54 mm, Clearance 0.20 mm measured." width="1550" height="920" loading="lazy" /></picture>
+          </span>
+          <figcaption><strong>The fit ring.</strong> Green: good fit. Wall 1.54 mm, clearance 0.20 mm measured. Screenshot from our automatic test in Blender 5.3.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3 id="wall">Clearance and wall go together</h3>
+          <p>A bigger gap means a bigger socket, and a bigger socket leaves less material around it. If you raise the clearance, check the wall again. Click Joints marks a wall under 1.5 mm as <em>Tight</em> (yellow) and under 0.8 mm as <em>Too thin</em> (red). With Diameter on <em>Auto</em> it picks the largest ball that still keeps a good wall at that clearance.</p>
+
+          <h3 id="test">Find the number for your printer</h3>
+          <p>The quickest way is to print several clearances at once and pick the best one. Our free <a href="/click-joints/#fit-test">fit test strip</a> has five ball joints from 0.10 to 0.30 mm, with the clearance printed on each part. Print it flat end down, no supports, put each pair together and use the clearance of the one that turns smoothly without wobble. Then type that number in Click Joints for your figure.</p>
+          <p>Got your number? <a href="/click-joints/#pro">Click Joints Pro</a> puts that clearance in every joint of a rigged figure at once, with a hinge and end stop at elbows and knees. The fit test strip itself was made with Pro.</p>
+
+          <h3 id="more">More guides</h3>
+          <ul>
+            <li><a href="/click-joints/gids/ball-joint-3d-print-blender/">How to make a ball joint in Blender for 3D printing</a>, step by step, with the bend range.</li>
+            <li><a href="/click-joints/gids/hinge-joint-3d-print-blender/">A hinge with an end stop</a> for knees and elbows (Pro).</li>
+            <li><a href="/click-joints/gids/articulated-figure-3d-print-blender/">An articulated action figure from your rig</a> (Pro).</li>
+          </ul>
+        </div>
+
+        <div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem">
+          <a class="btn btn-primary" href="https://extensions.blender.org/add-ons/click-joints/">Click Joints, free on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="/click-joints/#pro">Click Joints Pro, $19</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Joints is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
