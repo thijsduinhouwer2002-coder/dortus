@@ -83,7 +83,7 @@
 
           <h3 id="what">Clearance, tolerance, gap: what it means</h3>
           <p>People use the three words for the same thing: the empty space between a moving part and the part around it. For a ball joint it is the space between the ball and the socket, on each side. With a clearance of 0.20 mm, the socket is 0.40 mm wider than the ball, so 0.20 mm all around.</p>
-          <p>Your printer does not print that gap exactly. The first layer squishes out, walls come out a little thicker, and resin parts often come out a little oversized. That is why the right clearance is different for every printer, and why you set it in the model, not in the slicer.</p>
+          <p>Your printer does not print that gap exactly. The first layer squishes out, walls come out a little thicker, and resin parts can come out a little oversized. That is why the right clearance is different for every printer, and why you set it in the model, not in the slicer.</p>
 
           <h3 id="start">Where to start</h3>
           <ul>
@@ -91,7 +91,7 @@
             <li><strong>0.1 to 0.3 mm</strong> is the typical range for FDM and resin. A well tuned printer can go lower; a looser one needs more.</li>
             <li><strong>Small figures need care.</strong> On a small part the same gap is a bigger share of the joint. Click Joints works best on figures of about 200 mm or taller.</li>
           </ul>
-          <p>These are starting points, measured in Blender, not print tested by us yet. Print a test joint before you print the whole figure.</p>
+          <p>These are starting points, not print tested by us yet. Print a test joint before you print the whole figure.</p>
 
           <h3 id="blender">Set the clearance in Blender</h3>
           <p>By hand, you model the ball, then make the socket from a second sphere that is larger by twice the clearance, and use it as a Boolean difference. It works, but it is easy to be off by a few tenths, and you can not see the gap once the parts are joined.</p>
@@ -117,7 +117,7 @@
           <p>A bigger gap means a bigger socket, and a bigger socket leaves less material around it. If you raise the clearance, check the wall again. Click Joints marks a wall under 1.5 mm as <em>Tight</em> (yellow) and under 0.8 mm as <em>Too thin</em> (red). With Diameter on <em>Auto</em> it picks the largest ball that still keeps a good wall at that clearance.</p>
 
           <h3 id="test">Find the number for your printer</h3>
-          <p>The quickest way is to print several clearances at once and pick the best one. Our free <a href="/click-joints/#fit-test">fit test strip</a> has five ball joints from 0.10 to 0.30 mm, with the clearance printed on each part. Print it flat end down, no supports, put each pair together and use the clearance of the one that turns smoothly without wobble. Then type that number in Click Joints for your figure.</p>
+          <p>The quickest way is to print several clearances at once and pick the best one. Our free <a href="/click-joints/#fit-test">fit test strip</a> has five ball joints from 0.10 to 0.30 mm, with the clearance printed on each part. Print it as it lies, no supports, put each pair together and use the clearance of the one that turns smoothly without wobble. Then type that number in Click Joints for your figure.</p>
           <p>Got your number? <a href="/click-joints/#pro">Click Joints Pro</a> puts that clearance in every joint of a rigged figure at once, with a hinge and end stop at elbows and knees. The fit test strip itself was made with Pro.</p>
 
           <h3 id="more">More guides</h3>
