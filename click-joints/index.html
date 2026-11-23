@@ -74,6 +74,7 @@
         </p>
         <div class="btns enter enter-2">
           <a class="btn btn-light" href="https://extensions.blender.org/add-ons/click-joints/">Get it on Blender Extensions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="/click-joints/click-joints-free.zip" download>Download the zip</a>
           <a class="btn btn-line" href="#install">How to install</a>
         </div>
         <p style="margin-top: 1.3rem"><a class="status enter enter-3" href="https://extensions.blender.org/add-ons/click-joints/">Free on Blender Extensions</a></p>
@@ -142,7 +143,7 @@
           <h2>Install</h2>
           <p class="lede">
             In Blender 4.2 or newer: open Edit, Preferences, <strong>Get Extensions</strong>, search for
-            <strong>joints</strong> and press Install. Or download it from <a href="https://extensions.blender.org/add-ons/click-joints/">its page on Blender Extensions</a>. The panel appears in the 3D viewport sidebar (press N), tab Click Joints.
+            <strong>joints</strong> and press Install. Or download it from <a href="https://extensions.blender.org/add-ons/click-joints/">its page on Blender Extensions</a>, or <a href="/click-joints/click-joints-free.zip" download>download the zip here</a> and install it with Edit, Preferences, Get Extensions, the arrow at the top right, Install from Disk. Already installed from Blender Extensions? Remove that one first. The zip also shows, with a lock, what <a href="#pro">Pro</a> adds. The panel appears in the 3D viewport sidebar (press N), tab Click Joints.
           </p>
           <p class="lede" style="margin-top: 0.8rem">
             Guide: <a href="/click-joints/gids/ball-joint-3d-print-blender/">How to make a ball joint in Blender for 3D printing</a>, with the clearance and wall in mm.
@@ -161,7 +162,7 @@
           </div>
           <div>
             <dt>Works on</dt>
-            <dd>Blender 4.2 or newer. Tested on 4.2 LTS and 5.2 LTS</dd>
+            <dd>Blender 4.2 or newer. Tested on 4.2 LTS, 5.2 LTS and 5.3</dd>
           </div>
           <div>
             <dt>Account</dt>
@@ -172,6 +173,23 @@
             <dd>GPL 3.0 or later, <a href="https://github.com/thijsduinhouwer2002-coder/click-joints">source on GitHub</a></dd>
           </div>
         </dl>
+
+        <div class="head" id="fit-test" style="margin-top: 3rem">
+          <h2>Print this first: which clearance fits your printer?</h2>
+          <p class="lede">
+            Five ball joints, from 0.10 to 0.30 mm clearance. The number on the flat end of both parts is the clearance in hundredths of a millimetre: 10 means 0.10 mm. Print them as they are in the file, flat end down. No supports. Click each pair together. Use the clearance of the one that turns smoothly without wobble.
+          </p>
+          <p class="lede" style="margin-top: 0.8rem">
+            Got your number? <a href="#pro">Click Joints Pro</a> puts that clearance in every joint, with bend range and figures from your rig.
+          </p>
+          <p class="lede" style="margin-top: 0.8rem">
+            Printed it? Email a photo to <a href="mailto:thijs@dortus.com?subject=Fit%20test%20photo">thijs@dortus.com</a> (subject: Fit test photo) and get a free Pro code.
+          </p>
+          <p class="lede" style="margin-top: 0.8rem"><em>Not print tested by us yet.</em> 140 &times; 52 &times; 45 mm, 10 parts, made with Click Joints Pro.</p>
+        </div>
+        <div class="btns" style="margin-top: 1.2rem">
+          <a class="btn btn-line" href="/click-joints/fit-test-strip.stl" download>Download the fit test strip (STL, 3 MB) <span class="arrow" aria-hidden="true">&darr;</span></a>
+        </div>
       </div>
     </section>
 
@@ -194,7 +212,8 @@
           <ul>
             <li><strong>Figure from rig.</strong> One button reads your armature: hinges with an end stop at elbows and knees, ball joints at shoulders, hips and neck.</li>
             <li><strong>The end stop comes from your rig.</strong> A Limit Rotation constraint sets the angle (30&deg; to 150&deg;). No limit gives a preset per body part.</li>
-            <li><strong>Every range in one view:</strong> a degree number at each joint, and a list with where each range came from.</li>
+            <li><strong>Every range at a glance.</strong> Select a joint to see its degree arc and range, with its name. Set Labels to All to show every joint at once, or None for a clean viewport. Plus a list in the panel: name, type, range and where the range came from (from rig, mirror or preset).</li>
+            <li><strong>Fit test strip:</strong> print five joints from 0.10 to 0.30 mm first, so you know which gap fits your printer.</li>
             <li><strong>Recognises common bone names:</strong> Rigify, Mixamo, Auto-Rig Pro, Unreal, Character Creator, VRoid, Biped and Daz.</li>
             <li><strong>No rig?</strong> Six body-part presets: place the 3D cursor and click Shoulder, Hip, Neck, Elbow, Knee or Ankle.</li>
             <li><strong>Hinge with pose slider</strong>, red where parts hit past the stop, and spacing checks between joints.</li>
