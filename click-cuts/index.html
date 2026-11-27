@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Click Cuts: split models for 3D printing in Blender · Guide · Dortus</title>
+  <meta name="description" content="Click Cuts is a Blender add-on that splits a model into parts that fit your printer bed, with pins or magnet holes, part numbers and a fit test. Install, first split, fit test, magnets, Free cut and FAQ." />
+  <meta name="theme-color" content="#13213a" />
+  <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://dortus.com/click-cuts/" />
+  <meta property="og:title" content="Click Cuts for Blender: pick your printer, click once, every part fits" />
+  <meta property="og:description" content="Split a model into parts that fit your printer bed, with pins or magnet holes, engraved part numbers and a fit test for your printer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dortus.com/click-cuts/" />
+  <meta property="og:site_name" content="Dortus" />
+  <meta property="og:image" content="https://dortus.com/click-cuts/poster-1200.jpg" />
+  <meta property="og:image:alt" content="Click Cuts. Pick your printer. Click once. Every part fits. A 520 mm horse statue in a gold box that marks a 256 mm printer bed, and after one click the same statue in 12 colored parts with 48 pins." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Click Cuts",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Blender 4.2 or newer (Windows, macOS, Linux)",
+    "softwareVersion": "1.0.0",
+    "url": "https://dortus.com/click-cuts/",
+    "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+    "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" }
+  }
+  </script>
+  <script defer src="https://analytics.amami.dev/script.js" data-website-id="15a913ac-0312-4c10-bfbb-8c7c412fcd06"></script>
+  <style>
+    .cc-toc { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+    .cc-toc a { font-weight: 600; }
+    .cc-steps { margin: 1rem 0 0; padding-left: 1.4rem; }
+    .cc-steps li { margin: 0 0 0.7rem; }
+    .cc-panel h3 { margin-top: 1.6rem; }
+    .cc-panel h3:first-child { margin-top: 0; }
+    .prose p + p { margin-top: 0.8rem; }
+    .cc-shot { margin: 1.8rem 0 0; }
+    main [id] { scroll-margin-top: 5.5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Dortus</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#start">Guide</a>
+        <a href="#faq">FAQ</a>
+        <a href="#support">Support</a>
+        <a class="btn btn-primary" href="#get">Get it <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="world-hero world-hero-blue">
+      <div class="wrap">
+        <p class="eyebrow enter enter-1">Click Cuts &middot; Pick your printer. Click once. Every part fits.</p>
+        <h1 class="enter enter-1">Click Cuts guide: split models for 3D printing in Blender</h1>
+        <p class="lede enter enter-2">
+          Press Split to fit and Click Cuts plans every cut for you, so each part fits your bed, with pins, pin holes and an engraved part number on the cut faces. Each part turns green when it fits, is watertight and has enough wall around its holes, or orange or red with the reason. Print the small fit test block first and you know which clearance fits your printer, so pins are not loose or stuck.
+        </p>
+        <div class="btns enter enter-2">
+          <a class="btn btn-light" href="#start">Read the guide <span class="arrow" aria-hidden="true">&darr;</span></a>
+          <a class="btn btn-line" href="#get">Get Click Cuts</a>
+        </div>
+        <figure class="frame enter" style="margin: 2.4rem 0 0">
+          <span class="frame-media">
+            <img src="hero.jpg" alt="Click Cuts. Pick your printer. Click once. Every part fits. Left: a horse statue, 520 mm tall, sticks far out of a gold box that marks a 256 mm printer bed. Right, after 1 click: the same statue in 12 colored parts with 48 pins, every part fits the bed." width="1600" height="900" style="display:block; width:100%; height:auto" />
+          </span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="in-short" id="in-short" aria-labelledby="in-short-title">
+      <div class="wrap">
+        <div class="in-short-card">
+          <h2 id="in-short-title" class="in-short-label">In short</h2>
+          <p>Click Cuts is a Blender add-on that splits a model that is too big for your 3D printer into parts that fit your bed. You pick your printer and click Split to fit: it plans the cuts, adds round pins or holes for disc magnets, engraves a part number on the cut faces and checks every part. A small fit test print tells you which clearance fits your printer. It works in Blender 4.2 or newer. This page is the full guide.</p>
+          <ul class="cc-toc" aria-label="On this page">
+            <li><a href="#start">Getting started</a></li>
+            <li><a href="#fit-test">Fit test</a></li>
+            <li><a href="#magnets">Magnets</a></li>
+            <li><a href="#free-cut">Free cut</a></li>
+            <li><a href="#flat">Lay parts flat</a></li>
+            <li><a href="#panel">The panel</a></li>
+            <li><a href="#big">Big models</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="start">
+      <div class="wrap">
+        <div class="head">
+          <h2>Getting started</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p id="install"><strong>Install:</strong> open Blender 4.2 or newer. Drag click_cuts-1.0.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Got a folder instead of a zip? See the <a href="#faq-folder">FAQ</a>. Updating later? Install the new zip the same way.</p>
+          <p><strong>Open the panel:</strong> in the 3D viewport press N and open the Click Cuts tab.</p>
+          <h3 id="first-split">Your first split</h3>
+          <ol class="cc-steps">
+            <li>Under Your printer, pick your printer. Not in the list? Pick Custom size and type your bed size in mm (X, Y, Z).</li>
+            <li>Click your model in the viewport. The panel shows its name and face count, for example &ldquo;Statue: 500 faces&rdquo;.</li>
+            <li>Click Split to fit. Click Cuts plans the cuts, cuts the model into parts that fit your bed, adds pins and pin holes, and engraves a part number on the cut faces. The result box says, for example, &ldquo;8 parts, all fit the bed&rdquo; and &ldquo;12 pins, 0.20 mm clearance&rdquo;.</li>
+            <li>Click Export parts (STL). Every part and the pins are written in millimeters, one file per part: piece_01.stl, piece_02.stl and so on, plus pins_5mm_x12.stl.</li>
+          </ol>
+        </div>
+        <figure class="frame cc-shot">
+          <span class="frame-media">
+            <img src="panel.jpg" alt="Three steps in one tab. The Click Cuts tab in Blender: 1 Your printer, Bambu Lab A1, with Horse (closed): 505,742 faces under it. 2 Split to fit, with the result 12 parts, all fit the bed, 48 pins, 0.20 mm clearance. 3 Export parts (STL). Under it More settings." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Three steps in one tab.</strong> Pick your printer, Split to fit, Export as STL or 3MF in millimeters.</figcaption>
+        </figure>
+        <div class="prose" style="padding-block: 0; margin-top: 1.8rem">
+          <p><strong>Where the files go:</strong> into a click_cuts folder next to your .blend file. Save your .blend first, or the files go to a temporary folder. To pick your own folder, open More settings, step 4, Folder.</p>
+          <p><strong>Your original model is kept:</strong> it is hidden, not changed. The parts are in a new collection called Click Cuts pieces. Click Split to fit again and the old parts are replaced. Ctrl+Z undoes a split.</p>
+          <p><strong>Open model?</strong> If the model has holes, Split to fit first makes a watertight copy (the panel then shows the name with &ldquo;(closed)&rdquo;). The original stays hidden and unchanged.</p>
+          <p><strong>Wrong unit?</strong> If your model is 1000 times too big or too small (a model made in mm, in a scene in meters), Split to fit stops and tells you. Open More settings, step 2, and click Convert to mm. The model itself does not change.</p>
+        </div>
+        <figure class="frame cc-shot">
+          <span class="frame-media">
+            <img src="numbers.jpg" alt="Numbered for assembly. A horse statue split into 12 colored parts with 48 gold pins. A close-up shows part 9 dropping onto part 5: pin holes and the engraved number 5-9 on the cut face, 5 mm pins, 0.2 mm clearance." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Numbered for assembly.</strong> Cut faces get pin holes where a pin fits, and an engraved part number, like 5-9 where part 5 meets part 9.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band-grey" id="fit-test">
+      <div class="wrap">
+        <div class="head">
+          <h2>Print the fit test first</h2>
+          <p class="lede">Every printer prints holes a little differently. The fit test tells you which clearance fits yours, so pins are not loose or stuck.</p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ol class="cc-steps">
+            <li>Open More settings, step 3. In the box Fit test: print this first, pick your Material.</li>
+            <li>Click Make fit test. You get a small block with four holes for your own pin, each with its clearance engraved in front of it (with the default 0.20 mm: 0.15, 0.20, 0.25 and 0.30 mm), plus four pins.</li>
+            <li>Click Export fit test (STL) and print the block and the pins.</li>
+            <li>Push a pin into every hole. Under &ldquo;Printed? Click the one that fits:&rdquo;, click the clearance where the pin goes in by hand and does not wobble.</li>
+          </ol>
+          <p>Click Cuts remembers that clearance for this printer and material. Next time you pick the same printer and material, it is used again (&ldquo;Saved for this printer: 0.20 mm&rdquo;).</p>
+          <p><strong>All four too loose or too tight?</strong> Set Clearance (mm) a step lower or higher and make a new fit test: the four holes move with it.</p>
+        </div>
+        <figure class="frame cc-shot">
+          <span class="frame-media">
+            <img src="fit-test.jpg" alt="Pins that fit your printer. The fit test block with your 5 mm pin at four clearances, 0.15, 0.20, 0.25 and 0.30 mm, engraved in front of each hole. Then every cut gets that clearance: part 11 lowers onto part 7 with the pins and holes Click Cuts added." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Pins that fit your printer.</strong> Your own pin at four clearances. Pick the one that fits, and Click Cuts remembers it for that printer and material.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="magnets">
+      <div class="wrap">
+        <div class="head">
+          <h2>Magnets instead of pins</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>Open More settings, step 3, and switch Joint to Magnets. Pick your magnet size under Magnet (mm): 5x2, 6x2, 6x3, 8x3 or 10x3 mm (diameter x thickness, for disc magnets). Then click Split to fit. Magnets are not included.</p>
+          <p>Each cut face gets a hole for a magnet on both sides, where it fits. The hole is as deep as the magnet plus 0.3 mm for glue, and has at least 1.2 mm of wall around it. Where a magnet does not fit, there is no hole and the notes tell you to glue that joint or pick a smaller magnet. The result box and step 4 count the magnets you need, for example &ldquo;16 magnet holes of 6x2 mm (magnets not included)&rdquo;.</p>
+          <p><strong>Clearance with magnets:</strong> the fit test uses a pin. With Magnets, your clearance goes on the diameter of the hole, half on each side: a 6 mm magnet with 0.20 mm clearance gets a hole of 6.2 mm across.</p>
+          <p><strong>Gluing the magnets:</strong> glue the magnets with matching poles. Glue the first magnet in one part. Then stick the next magnet onto the one already glued, and press it into the other part while they hold together. Now the poles always match.</p>
+        </div>
+        <figure class="frame cc-shot">
+          <span class="frame-media">
+            <img src="magnets.jpg" alt="Magnet holes or pins. The horse statue in 12 parts with 90 magnet holes. A close-up of the cut face where part 9 sits on part 5: a 6 x 2 mm magnet in a 6.2 mm hole, next to the engraved number 5-9. 5 sizes, 5x2 to 10x3 mm, magnets not included." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Pins or magnets.</strong> Holes for disc magnets on both sides where they fit, with at least 1.2 mm wall around them.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band band-grey" id="free-cut">
+      <div class="wrap">
+        <div class="head">
+          <h2>Choose where it cuts: Free cut</h2>
+          <p class="lede">Split to fit cuts along the X, Y and Z axes. Want an extra cut somewhere else, for example an arm at the shoulder?</p>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <ol class="cc-steps">
+            <li>After a split, click the part you want to cut.</li>
+            <li>Open More settings, step 4, and click Add free cut. A cut plane appears on that part.</li>
+            <li>Move it (G), turn it (R) and scale it (S). It only cuts what lies inside its rectangle, on the side its arrow points to.</li>
+            <li>Click Cut piece. The part is cut in two, with pins (or magnet holes) and numbers like the other cuts.</li>
+          </ol>
+        </div>
+
+        <div class="head" id="flat" style="margin-top: 3rem">
+          <h2>Lay parts flat</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>On by default (More settings, step 4). On export, every part is turned so a cut face lies on the bed, if it still fits your printer. A part with no cut face that fits keeps its own way up. Your parts in the scene do not move; only the files are turned. Pins are already flat.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="panel">
+      <div class="wrap">
+        <div class="head">
+          <h2>The panel, step by step</h2>
+          <p class="lede">Split to fit does everything below in one click. Open More settings to change it.</p>
+        </div>
+        <div class="prose cc-panel" style="padding-block: 0">
+          <h3>1 Printer</h3>
+          <p>Margin (mm), the room kept free on every side of the bed (default 2 mm). The panel shows the usable size.</p>
+          <h3>2 Cuts</h3>
+          <p>Make watertight (a closed copy, with Voxel (mm) for the detail). Plan cuts places the cut planes so every part fits with as few parts as possible. Each cut has its own row, for example Cut X (mm): drag or type to move it, or remove it with the X. Add cut: X, Y or Z adds one. Moved a cut? Click Split to fit again: your moved cuts are kept.</p>
+          <h3>3 Joints and numbers</h3>
+          <p>Joint (Pins or Magnets). For pins: Pin diameter (mm) (default 5), Smaller pins on small faces (down to 3 mm, on by default) and Pin length (mm) (default 12; each hole is half this deep plus 0.3 mm). Clearance (mm) (default 0.20) and the fit test. Min. wall (mm), the least material around every hole (default 1.2). Engrave numbers: the cut faces get their part number and its neighbor, for example 3-5 on part 3 where it meets part 5, with Number depth (mm) (default 0.6). Split cuts again with these settings.</p>
+          <h3>4 Check and export</h3>
+          <p>Every part with its size and a color. Green: it fits the bed, is watertight and has enough wall around its holes. Orange: the wall around a hole is thinner than Min. wall. Red: too big for the bed, not watertight, or less than 0.8 mm of wall; the row says which. Colors: Per piece (every part its own color, pins in gold) or Check. Exploded view shows the parts a little apart, only in the viewport. Free cut. Notes from the last split (for example a joint to glue). STL or 3MF, Lay parts flat, Folder, and Export.</p>
+        </div>
+
+        <div class="head" id="big" style="margin-top: 3rem">
+          <h2>Big models</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>Models with a million faces or more show a time estimate under Split to fit, and a memory line when they need 8 GB or more. Tested on a 1 million face scan in Blender 5.3: about 40 seconds (2-core test machine). In Blender 4.2 to 4.4 the same scan takes about 3 minutes and needs about twice the memory, so for very big scans use a newer Blender.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-grey" id="faq">
+      <div class="wrap">
+        <div class="head">
+          <h2>FAQ</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Which Blender versions does it work with?</summary>
+            <p>4.2 and newer, as an extension. Tested in Blender 4.2 and 5.3 on every change.</p>
+          </details>
+          <details>
+            <summary>How do I install it?</summary>
+            <p>Drag click_cuts-1.0.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Then press N in the 3D viewport and open the Click Cuts tab.</p>
+          </details>
+          <details id="faq-folder">
+            <summary>The install failed or I got a folder instead of a zip. What now?</summary>
+            <p>Safari on a Mac can unzip downloads by itself, and Blender cannot install a folder. Download it again with another browser, such as Chrome or Firefox, and drag the zip into Blender without opening it. Also check your Blender version: click the Blender logo at the top left, then About Blender. Click Cuts needs Blender 4.2 or newer and does not install in older versions. Still stuck? Send a message through the store with your Blender version and a screenshot of the error.</p>
+          </details>
+          <details>
+            <summary>Why not just use my slicer's cut tool?</summary>
+            <p>A slicer cuts one plane at a time, and you set every cut and connector yourself. Click Cuts plans all the cuts so every part fits your bed, checks each part (green fits, orange or red tells you why), numbers the parts, and uses the clearance from your own fit test print.</p>
+          </details>
+          <details>
+            <summary>Which connectors?</summary>
+            <p>Round pins, or holes for disc magnets (5x2, 6x2, 6x3, 8x3 or 10x3 mm; you buy the magnets). The magnet hole gets your clearance on the diameter and 0.3 mm extra depth for glue. No dovetails or snap keys.</p>
+          </details>
+          <details>
+            <summary>How do I glue the magnets?</summary>
+            <p>Glue the magnets with matching poles: stick a magnet to the one already glued before you press it in.</p>
+          </details>
+          <details>
+            <summary>My pins are too loose or too tight. What do I do?</summary>
+            <p>Print the fit test first (More settings, step 3, Make fit test): one small block with your own pin at four clearances. Click the clearance where the pin goes in by hand and does not wobble. Click Cuts remembers it for that printer and material and uses it for every split after that. All four wrong? Set Clearance (mm) a step lower or higher and make a new fit test.</p>
+          </details>
+          <details>
+            <summary>Does the fit test work for magnets?</summary>
+            <p>The fit test uses a pin. With Magnets, the same clearance goes on the diameter of the magnet hole, half on each side: a 6 mm magnet with 0.20 mm clearance gets a hole of 6.2 mm across.</p>
+          </details>
+          <details>
+            <summary>Can I choose where it cuts, so it does not go through a character's face?</summary>
+            <p>Partly. Split to fit cuts along the X, Y and Z axes. After splitting, Free cut adds a cut at any angle through one part, for example an arm at the shoulder, with pins and numbers like the other cuts.</p>
+          </details>
+          <details>
+            <summary>Can I move the cuts?</summary>
+            <p>Yes. Open More settings, step 2: every cut has a row, for example Cut X (mm). Drag or type to move it, or remove it. Then click Split to fit again: your moved cuts are kept.</p>
+          </details>
+          <details>
+            <summary>Do parts lie flat for printing?</summary>
+            <p>Yes. Lay parts flat (on by default) turns every part on export so a flat face, usually a cut face, lies on the bed, if it still fits your printer. Otherwise the part keeps its own way up.</p>
+          </details>
+          <details>
+            <summary>A part is red. What now?</summary>
+            <p>The row in More settings, step 4 says why: too big (pick the right printer, or add a cut), not watertight (try Make watertight with a larger Voxel (mm)), or too little wall around a hole (a smaller pin or magnet, or a higher Min. wall (mm) so holes stay further from the edge). Orange means the wall around a hole is thinner than Min. wall (mm).</p>
+          </details>
+          <details>
+            <summary>Thin or hollow models?</summary>
+            <p>Some joints have no room for a pin or magnet; Click Cuts tells you which ones to glue.</p>
+          </details>
+          <details>
+            <summary>Does it fix broken meshes?</summary>
+            <p>Make watertight makes a closed copy (voxel remesh). Very large or detailed models may need to be cleaned first.</p>
+          </details>
+          <details>
+            <summary>Split to fit says &ldquo;Wrong unit?&rdquo;</summary>
+            <p>Your model is 1000 times too big or too small for the scene, usually a model made in mm in a scene in meters. Open More settings, step 2, and click Convert to mm. It sets the scene unit; your model does not change.</p>
+          </details>
+          <details>
+            <summary>Where are my files?</summary>
+            <p>In a click_cuts folder next to your .blend file, one file per part (piece_01.stl and so on) plus the pins, in millimeters. If the .blend is not saved yet, they go to a temporary folder: save first, or pick a Folder in More settings, step 4.</p>
+          </details>
+          <details>
+            <summary>Is my original model changed?</summary>
+            <p>No. It is hidden, not changed, and the parts go into a new collection called Click Cuts pieces. Split again and the old parts are replaced. Ctrl+Z undoes a split.</p>
+          </details>
+          <details>
+            <summary>How fast is it?</summary>
+            <p>Tested on a 1 million face scan in Blender 5.3: about 40 seconds (2-core test machine). In Blender 4.2 to 4.4 the same scan takes about 3 minutes. Big models show a time estimate under Split to fit.</p>
+          </details>
+          <details>
+            <summary>How much memory?</summary>
+            <p>Very large models (3 million faces) need a lot of memory in Blender 4.2 to 4.4: about 9 GB. Blender 5.3 needs about 5 GB. With 8 GB of memory, use Blender 5.3 for models that big.</p>
+          </details>
+          <details>
+            <summary>Does it work with Click Joints Pro?</summary>
+            <p>Yes, side by side. Splitting makes it fit on the bed. <a href="/click-joints/#pro">Click Joints Pro</a> makes it move.</p>
+          </details>
+          <details>
+            <summary>Can I sell what I print with it?</summary>
+            <p>The Click Cuts license covers the add-on, not your models or prints. What you may do with a model depends on that model's own license.</p>
+          </details>
+          <details>
+            <summary>Something does not work?</summary>
+            <p>Send a message through the store or mail <a href="mailto:thijs@dortus.com?subject=Click%20Cuts">thijs@dortus.com</a>, with your Blender version and, if you can, the model or a screenshot of the panel.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="get">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Click Cuts &middot; paid add-on</p>
+          <h2>Get Click Cuts</h2>
+          <p class="lede">On Gumroad and on Superhive. You get the zip to install in Blender, and this guide.</p>
+        </div>
+        <dl class="facts facts-4" style="margin-top: 1.6rem">
+          <div>
+            <dt>Works on</dt>
+            <dd>Blender 4.2 or newer. Tested in 4.2 and 5.3 on every change</dd>
+          </div>
+          <div>
+            <dt>Exports</dt>
+            <dd>STL or 3MF, in millimeters, one file per part</dd>
+          </div>
+          <div>
+            <dt>Account</dt>
+            <dd>None needed in Blender</dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd>GPL 3.0 or later</dd>
+          </div>
+        </dl>
+        <div class="btns" style="margin-top: 1.6rem">
+          <a class="btn btn-primary" href="https://duinhouwer8.gumroad.com/l/click-cuts">Get Click Cuts on Gumroad <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-line" href="https://superhivemarket.com/creators/dortus">Dortus on Superhive</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-grey" id="privacy">
+      <div class="wrap">
+        <div class="head">
+          <h2>Privacy</h2>
+        </div>
+        <div class="prose" style="padding-block: 0">
+          <p>Click Cuts works offline. It makes no network connections, has no telemetry and needs no account. It writes files only when you press Export, as STL or 3MF, in the folder you choose or next to your .blend file. Your fit test clearance is kept in Blender's own preferences. Your original model is hidden, not changed. Nothing is sent to Dortus.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="support">
+      <div class="wrap">
+        <div class="head">
+          <h2>Support</h2>
+          <p class="lede">Made by Thijs at Dortus. Questions or bugs: send a message through the store or mail <a href="mailto:thijs@dortus.com?subject=Click%20Cuts">thijs@dortus.com</a>. Please mention your Blender version and, if you can, send the model or a screenshot of the panel.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-rule">
+      <p class="footer-legal">
+        Click Cuts is made by <a href="/">Dortus</a>. Blender is a trademark of the Blender
+        Foundation. Dortus is not affiliated with the Blender Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
