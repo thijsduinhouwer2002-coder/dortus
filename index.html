@@ -6,13 +6,13 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Dortus: small apps and tools that fill a real gap</title>
-  <meta name="description" content="Dortus makes small tools that do one thing well: Click Joints for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison &amp; Flex for JetBrains." />
+  <meta name="description" content="Dortus makes small tools that do one thing well: Click Joints and Click Cuts for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison &amp; Flex for JetBrains." />
   <meta name="theme-color" content="#1d1426" />
   <link rel="icon" href="/assets/dortus-door-small.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/dortus-door-512.png" />
   <link rel="canonical" href="https://dortus.com/" />
   <meta property="og:title" content="Dortus: focused tools today, small games on the way" />
-  <meta property="og:description" content="Ebb for Garmin, Click Joints for Blender, Rollwright for Obsidian, Bison &amp; Flex for JetBrains. Made by Thijs in the Netherlands." />
+  <meta property="og:description" content="Ebb for Garmin, Click Joints and Click Cuts for Blender, Rollwright for Obsidian, Bison &amp; Flex for JetBrains. Made by Thijs in the Netherlands." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dortus.com/" />
   <meta property="og:site_name" content="Dortus" />
@@ -30,7 +30,7 @@
         "url": "https://dortus.com/",
         "logo": "https://dortus.com/assets/dortus-door-512.png",
         "email": "thijs@dortus.com",
-        "description": "Dortus makes small tools that do one thing well: Click Joints for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison & Flex for JetBrains.",
+        "description": "Dortus makes small tools that do one thing well: Click Joints and Click Cuts for Blender, Ebb for Garmin, Rollwright for Obsidian and Bison & Flex for JetBrains.",
         "founder": { "@type": "Person", "name": "Thijs" },
         "sameAs": ["https://github.com/thijsduinhouwer2002-coder"]
       },
@@ -48,9 +48,10 @@
         "name": "Dortus products",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "url": "https://dortus.com/click-joints/", "name": "Click Joints" },
-          { "@type": "ListItem", "position": 2, "url": "https://dortus.com/ebb/", "name": "Ebb for Garmin" },
-          { "@type": "ListItem", "position": 3, "url": "https://dortus.com/rollwright/", "name": "Rollwright" },
-          { "@type": "ListItem", "position": 4, "url": "https://dortus.com/bison-flex/", "name": "Bison & Flex" }
+          { "@type": "ListItem", "position": 2, "url": "https://dortus.com/click-cuts/", "name": "Click Cuts" },
+          { "@type": "ListItem", "position": 3, "url": "https://dortus.com/ebb/", "name": "Ebb for Garmin" },
+          { "@type": "ListItem", "position": 4, "url": "https://dortus.com/rollwright/", "name": "Rollwright" },
+          { "@type": "ListItem", "position": 5, "url": "https://dortus.com/bison-flex/", "name": "Bison & Flex" }
         ]
       }
     ]
@@ -82,11 +83,13 @@
     .hero .cta .btn.store { font-size: 17px; padding: 13px 22px; border-radius: 12px; }
     .hero .cta .quiet { color: var(--ink-2); font-size: 16px; text-underline-offset: 4px; }
     .hero .cta .quiet:hover { color: var(--ink); }
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; padding-bottom: 32px; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
     .card:hover { border-color: #5a4b78; }
     .card .shot { display: block; background: var(--bg-2); }
     .card img { width: 100%; height: auto; aspect-ratio: var(--r); object-fit: cover; object-position: center; display: block; }
+    .row1 { grid-column: span 3; }
+    .row2 { grid-column: span 2; }
     .row1 img { --r: 16 / 9; }
     .row2 img { --r: 3 / 2; }
     .card .body { padding: 18px 22px 22px; display: flex; flex-direction: column; flex: 1; }
@@ -128,6 +131,7 @@
       .hero { grid-template-columns: 1fr; padding: 28px 0 36px; }
       .door { max-width: 140px; justify-self: start; order: -1; }
       .grid { grid-template-columns: 1fr; }
+      .row1, .row2 { grid-column: auto; }
       .card img { --r: var(--own); }
       .card .body { padding: 16px 18px 20px; }
       .actions { flex-wrap: nowrap; gap: 8px; }
@@ -183,6 +187,20 @@
       </article>
 
       <article class="card row1">
+        <a class="shot" href="/click-cuts/" tabindex="-1" aria-hidden="true"><img style="--own: 1200 / 675" width="1200" height="675" src="/click-cuts/poster-1200.jpg" alt="" loading="lazy" /></a>
+        <div class="body">
+          <p class="where">Blender add-on</p>
+          <h2><a href="/click-cuts/">Click Cuts</a></h2>
+          <p>Too big for your printer? Pick your printer, click once, and the model is split into parts that fit your bed, with pins or magnet holes and a number on every part.</p>
+          <p class="price">$19 once, no subscription</p>
+          <div class="actions">
+            <a class="btn store" href="https://duinhouwer8.gumroad.com/l/click-cuts">Get it on Gumroad</a>
+            <a class="btn more" href="/click-cuts/">Guide</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card row2">
         <a class="shot" href="/ebb/" tabindex="-1" aria-hidden="true"><img style="--own: 1200 / 630" width="1200" height="630" src="/ebb/og-1200.jpg" alt="" loading="lazy" /></a>
         <div class="body">
           <p class="where">Garmin watches</p>
@@ -265,7 +283,7 @@
         </div>
         <div>
           <dt>What is free and what is paid?</dt>
-          <dd>Click Joints and Rollwright are free. Click Joints Pro ($19), the Rollwright skins ($6) and Ebb ($4.99) are paid once. No subscriptions.</dd>
+          <dd>Click Joints and Rollwright are free. Click Cuts ($19), Click Joints Pro ($19), the Rollwright skins ($6) and Ebb ($4.99) are paid once. No subscriptions.</dd>
         </div>
         <div>
           <dt>Found a bug or have an idea?</dt>
