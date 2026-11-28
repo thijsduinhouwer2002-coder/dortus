@@ -115,7 +115,7 @@
             <li>Under Your printer, pick your printer. Not in the list? Pick Custom size and type your bed size in mm (X, Y, Z).</li>
             <li>Click your model in the viewport. The panel shows its name and face count, for example &ldquo;Statue: 500 faces&rdquo;.</li>
             <li>Click Split to fit. Click Cuts plans the cuts, cuts the model into parts that fit your bed, adds pins and pin holes, and engraves a part number on the cut faces. The result box says, for example, &ldquo;8 parts, all fit the bed&rdquo; and &ldquo;12 pins, 0.20 mm clearance&rdquo;.</li>
-            <li>Click Export parts (STL). Every part and the pins are written in millimeters, one file per part: piece_01.stl, piece_02.stl and so on, plus pins_5mm_x12.stl.</li>
+            <li>Save your .blend (Ctrl+S), then click Export parts (STL). Every part and the pins are written in millimeters, one file per part: piece_01.stl, piece_02.stl and so on, plus pins_5mm_x12.stl.</li>
           </ol>
         </div>
         <figure class="frame cc-shot">
@@ -125,7 +125,7 @@
           <figcaption><strong>Three steps in one tab.</strong> Pick your printer, Split to fit, Export as STL or 3MF in millimeters.</figcaption>
         </figure>
         <div class="prose" style="padding-block: 0; margin-top: 1.8rem">
-          <p><strong>Where the files go:</strong> into a click_cuts folder next to your .blend file. Save your .blend first, or the files go to a temporary folder. To pick your own folder, open More settings, step 4, Folder.</p>
+          <p><strong>Where the files go:</strong> into a click_cuts folder next to your .blend file. Not saved yet? Then they go to a temporary folder, and the panel says so under Export parts. To pick your own folder, open More settings, step 4, Folder.</p>
           <p><strong>Your original model is kept:</strong> it is hidden, not changed. The parts are in a new collection called Click Cuts pieces. Click Split to fit again and the old parts are replaced. Ctrl+Z undoes a split.</p>
           <p><strong>Open model?</strong> If the model has holes, Split to fit first makes a watertight copy (the panel then shows the name with &ldquo;(closed)&rdquo;). The original stays hidden and unchanged.</p>
           <p><strong>Wrong unit?</strong> If your model is 1000 times too big or too small (a model made in mm, in a scene in meters), Split to fit stops and tells you. Open More settings, step 2, and click Convert to mm. The model itself does not change.</p>
