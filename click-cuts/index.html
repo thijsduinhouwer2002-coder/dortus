@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://analytics.amami.dev; connect-src 'self' https://analytics.amami.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Click Cuts: split models for 3D printing in Blender · Guide · Dortus</title>
-  <meta name="description" content="Click Cuts is a Blender add-on that splits a model into parts that fit your printer bed, with pins or magnet holes, part numbers and a fit test. Install, first split, fit test, magnets, Free cut and FAQ." />
+  <meta name="description" content="Click Cuts is a Blender add-on that splits a model into parts that fit your printer bed, with pins or magnet holes, part numbers and a fit test. Install, first split, fit test, magnets, Draw cut and FAQ." />
   <meta name="theme-color" content="#13213a" />
   <link rel="icon" href="/assets/dortus-mark.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/app-icon.png" />
@@ -28,7 +28,7 @@
     "name": "Click Cuts",
     "applicationCategory": "DesignApplication",
     "operatingSystem": "Blender 4.2 or newer (Windows, macOS, Linux)",
-    "softwareVersion": "1.0.0",
+    "softwareVersion": "1.1.0",
     "url": "https://dortus.com/click-cuts/",
     "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
     "publisher": { "@type": "Organization", "@id": "https://dortus.com/#org", "name": "Dortus", "url": "https://dortus.com/" }
@@ -92,7 +92,7 @@
             <li><a href="#start">Getting started</a></li>
             <li><a href="#fit-test">Fit test</a></li>
             <li><a href="#magnets">Magnets</a></li>
-            <li><a href="#free-cut">Free cut</a></li>
+            <li><a href="#free-cut">Draw cut</a></li>
             <li><a href="#flat">Lay parts flat</a></li>
             <li><a href="#panel">The panel</a></li>
             <li><a href="#big">Big models</a></li>
@@ -108,7 +108,7 @@
           <h2>Getting started</h2>
         </div>
         <div class="prose" style="padding-block: 0">
-          <p id="install"><strong>Install:</strong> open Blender 4.2 or newer. Drag click_cuts-1.0.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Got a folder instead of a zip? See the <a href="#faq-folder">FAQ</a>. Updating later? Install the new zip the same way.</p>
+          <p id="install"><strong>Install:</strong> open Blender 4.2 or newer. Drag click_cuts-1.1.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Got a folder instead of a zip? See the <a href="#faq-folder">FAQ</a>. Updating later? Install the new zip the same way.</p>
           <p><strong>Open the panel:</strong> in the 3D viewport press N and open the Click Cuts tab.</p>
           <h3 id="first-split">Your first split</h3>
           <ol class="cc-steps">
@@ -148,7 +148,7 @@
         <div class="prose" style="padding-block: 0">
           <ol class="cc-steps">
             <li>Open More settings, step 3. In the box Fit test: print this first, pick your Material.</li>
-            <li>Click Make fit test. You get a small block with four holes for your own pin, each with its clearance engraved in front of it (with the default 0.20 mm: 0.15, 0.20, 0.25 and 0.30 mm), plus four pins.</li>
+            <li>Click Make fit test. You get a small block with four holes for your own pin, each with its clearance engraved in front of it, plus four pins. Until you save a fit test, the clearance starts at a value for your material (PLA 0.20 mm: holes at 0.15, 0.20, 0.25 and 0.30 mm; Resin 0.10 mm: holes at 0.05, 0.10, 0.15 and 0.20 mm; PETG and ABS / ASA 0.25 mm; TPU 0.30 mm).</li>
             <li>Click Export fit test (STL) and print the block and the pins.</li>
             <li>Push a pin into every hole. Under &ldquo;Printed? Click the one that fits:&rdquo;, click the clearance where the pin goes in by hand and does not wobble.</li>
           </ol>
@@ -187,17 +187,25 @@
     <section class="band band-grey" id="free-cut">
       <div class="wrap">
         <div class="head">
-          <h2>Choose where it cuts: Free cut</h2>
-          <p class="lede">Split to fit cuts along the X, Y and Z axes. Want an extra cut somewhere else, for example an arm at the shoulder?</p>
+          <h2>Choose where it cuts: Draw cut</h2>
+          <p><strong>New in 1.1.0.</strong> Bought 1.0.0? Download the new zip from the page where you bought it and install it the same way.</p>
+          <p class="lede">Split to fit cuts along the X, Y and Z axes. Want a cut somewhere else, for example an arm at the shoulder, or a cut that stays out of a face?</p>
         </div>
         <div class="prose" style="padding-block: 0">
           <ol class="cc-steps">
             <li>After a split, click the part you want to cut.</li>
-            <li>Open More settings, step 4, and click Add free cut. A cut plane appears on that part.</li>
-            <li>Move it (G), turn it (R) and scale it (S). It only cuts what lies inside its rectangle, on the side its arrow points to.</li>
+            <li>Under the result, click Draw cut. Drag a line across the part where you want it cut. The cut goes along your line, straight away from you, and only as wide as the line.</li>
+            <li>The part that comes off lights up white, with an arrow that says &ldquo;comes off&rdquo;. Wrong part? Click Flip side.</li>
             <li>Click Cut piece. The part is cut in two, with pins (or magnet holes) and numbers like the other cuts.</li>
           </ol>
+          <p>Want to set the angle exactly? Move (G), turn (R) and scale (S) the cut plane before you click Cut piece. It only cuts what lies inside its rectangle. Add free cut (More settings, step 4) gives the same cut plane without drawing.</p>
         </div>
+        <figure class="frame cc-shot">
+          <span class="frame-media">
+            <img src="draw-cut.jpg" alt="Draw your own cut. A horse statue split into 12 parts in Blender. An orange line is drawn under the chin, and the part that comes off lights up white with an arrow that says comes off. The Click Cuts panel shows 12 parts, all fit the bed, 48 pins, 0.20 mm clearance, and the buttons Draw cut, Cut piece and Flip side." width="1600" height="900" loading="lazy" />
+          </span>
+          <figcaption><strong>Draw your own cut.</strong> Drag a line under the chin or at the shoulder. The part that comes off lights up white before you cut.</figcaption>
+        </figure>
 
         <div class="head" id="flat" style="margin-top: 3rem">
           <h2>Lay parts flat</h2>
@@ -246,7 +254,7 @@
           </details>
           <details>
             <summary>How do I install it?</summary>
-            <p>Drag click_cuts-1.0.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Then press N in the 3D viewport and open the Click Cuts tab.</p>
+            <p>Drag click_cuts-1.1.0.zip into the Blender window and confirm. Do not unzip it. Or go to Edit &gt; Preferences &gt; Get Extensions, open the drop-down menu at the top right, choose Install from Disk and pick the zip. Then press N in the 3D viewport and open the Click Cuts tab.</p>
           </details>
           <details id="faq-folder">
             <summary>The install failed or I got a folder instead of a zip. What now?</summary>
@@ -274,7 +282,7 @@
           </details>
           <details>
             <summary>Can I choose where it cuts, so it does not go through a character's face?</summary>
-            <p>Partly. Split to fit cuts along the X, Y and Z axes. After splitting, Free cut adds a cut at any angle through one part, for example an arm at the shoulder, with pins and numbers like the other cuts.</p>
+            <p>Yes. Split to fit cuts along the X, Y and Z axes. After splitting, click a part, click Draw cut and drag a line where you want it cut, for example an arm at the shoulder or under the chin. The part that comes off lights up white before you cut, and it gets pins and numbers like the other cuts. Click Cuts does not find those places by itself.</p>
           </details>
           <details>
             <summary>Can I move the cuts?</summary>
